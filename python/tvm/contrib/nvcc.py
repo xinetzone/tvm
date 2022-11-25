@@ -70,14 +70,14 @@ def compile_cuda(code, target_format="ptx", arch=None, options=None, path_target
     if target_format not in ["cubin", "ptx", "fatbin"]:
         raise ValueError("target_format must be in cubin, ptx, fatbin")
     temp_code = temp.relpath("my_kernel.cu")
-    temp_target = temp.relpath("my_kernel.%s" % target_format)
+    temp_target = temp.relpath(f"my_kernel.{target_format}")
 
     with open(temp_code, "w") as out_file:
         out_file.write(code)
 
-    file_target = path_target if path_target else temp_target
+    file_target = path_target or temp_target
     cmd = ["nvcc"]
-    cmd += ["--%s" % target_format, "-O3"]
+    cmd += [f"--{target_format}", "-O3"]
     if isinstance(arch, list):
         cmd += arch
     elif isinstance(arch, str):
@@ -113,10 +113,10 @@ def compile_cuda(code, target_format="ptx", arch=None, options=None, path_target
         raise RuntimeError(msg)
 
     with open(file_target, "rb") as f:
-        data = bytearray(f.read())
-        if not data:
+        if data := bytearray(f.read()):
+            return data
+        else:
             raise RuntimeError("Compilation error: empty result is generated")
-        return data
 
 
 def find_cuda_path():
@@ -186,8 +186,7 @@ def get_cuda_version(cuda_path=None):
 @tvm._ffi.register_func
 def tvm_callback_cuda_compile(code):
     """use nvcc to generate fatbin code for better optimization"""
-    ptx = compile_cuda(code, target_format="fatbin")
-    return ptx
+    return compile_cuda(code, target_format="fatbin")
 
 
 @tvm._ffi.register_func("tvm_callback_libdevice_path")
@@ -242,7 +241,7 @@ def find_libdevice_path(arch):
                 selected_path = fn
 
         if selected_path is None:
-            raise RuntimeError("Cannot find libdevice for arch {}".format(arch))
+            raise RuntimeError(f"Cannot find libdevice for arch {arch}")
         path = os.path.join(lib_path, selected_path)
     return path
 
@@ -276,7 +275,7 @@ def get_target_compute_version(target=None):
     target = target or Target.current()
     if target and target.arch:
         major, minor = target.arch.split("_")[1]
-        return major + "." + minor
+        return f"{major}.{minor}"
 
     # 3. GPU compute version
     if tvm.cuda(0).exist:
@@ -310,7 +309,7 @@ def parse_compute_version(compute_version):
         return major, minor
     except (IndexError, ValueError) as err:
         # pylint: disable=raise-missing-from
-        raise RuntimeError("Compute version parsing error: " + str(err))
+        raise RuntimeError(f"Compute version parsing error: {str(err)}")
 
 
 def have_fp16(compute_version):
@@ -324,12 +323,7 @@ def have_fp16(compute_version):
     major, minor = parse_compute_version(compute_version)
     # fp 16 support in reference to:
     # https://docs.nvidia.com/cuda/cuda-c-programming-guide/#arithmetic-instructions
-    if major == 5 and minor == 3:
-        return True
-    if major >= 6:
-        return True
-
-    return False
+    return True if major == 5 and minor == 3 else major >= 6
 
 
 def have_int8(compute_version):
@@ -341,10 +335,7 @@ def have_int8(compute_version):
         compute capability of a GPU (e.g. "6.1")
     """
     major, _ = parse_compute_version(compute_version)
-    if major >= 6:
-        return True
-
-    return False
+    return major >= 6
 
 
 def have_tensorcore(compute_version=None, target=None):
@@ -372,21 +363,16 @@ def have_tensorcore(compute_version=None, target=None):
             compute_version = target.attrs["arch"]
             # Compute version will be in the form "sm_{major}{minor}"
             major, minor = compute_version.split("_")[1]
-            compute_version = major + "." + minor
+            compute_version = f"{major}.{minor}"
     major, _ = parse_compute_version(compute_version)
-    if major >= 7:
-        return True
-
-    return False
+    return major >= 7
 
 
 def have_cudagraph():
     """Either CUDA Graph support is provided"""
     try:
         cuda_ver = get_cuda_version()
-        if cuda_ver < (10, 0):
-            return False
-        return True
+        return cuda_ver >= (10, 0)
     except RuntimeError:
         return False
 
@@ -400,7 +386,4 @@ def have_bf16(compute_version):
         compute capability of a GPU (e.g. "8.0")
     """
     major, _ = parse_compute_version(compute_version)
-    if major >= 8:
-        return True
-
-    return False
+    return major >= 8

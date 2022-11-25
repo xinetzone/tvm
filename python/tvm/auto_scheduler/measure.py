@@ -167,8 +167,8 @@ class BuildResult(Object):
     """
 
     def __init__(self, filename, args, error_no, error_msg, time_cost):
-        filename = filename if filename else ""
-        error_msg = error_msg if error_msg else ""
+        filename = filename or ""
+        error_msg = error_msg or ""
 
         self.__init_handle_by_constructor__(
             _ffi_api.BuildResult, filename, args, error_no, error_msg, time_cost
@@ -194,7 +194,7 @@ class MeasureResult(Object):
     """
 
     def __init__(self, costs, error_no, error_msg, all_cost, timestamp):
-        error_msg = error_msg if error_msg else ""
+        error_msg = error_msg or ""
 
         self.__init_handle_by_constructor__(
             _ffi_api.MeasureResult, costs, error_no, error_msg, all_cost, timestamp
@@ -339,7 +339,7 @@ class LocalBuilder(ProgramBuilder):
             BuildFunc.name = "custom"
             BuildFunc.build_func = build_func
         else:
-            raise ValueError("Invalid build_func" + build_func)
+            raise ValueError(f"Invalid build_func{build_func}")
 
         self.__init_handle_by_constructor__(
             _ffi_api.LocalBuilder, timeout, n_parallel, BuildFunc.name
@@ -626,7 +626,7 @@ def _local_build_worker(inp_serialized, build_func, verbose):
 
     if error_no == 0:
         dirname = tempfile.mkdtemp()
-        filename = os.path.join(dirname, "tmp_func." + build_func.output_format)
+        filename = os.path.join(dirname, f"tmp_func.{build_func.output_format}")
 
         try:
             with transform.PassContext().current():
@@ -691,9 +691,10 @@ def local_builder_build(inputs, timeout, n_parallel, build_func="default", verbo
     res : List[BuildResult]
         The build results of these MeasureInputs.
     """
-    assert build_func == BuildFunc.name, (
-        "BuildFunc.name: " + BuildFunc.name + ", but args is: " + build_func
-    )
+    assert (
+        build_func == BuildFunc.name
+    ), f"BuildFunc.name: {BuildFunc.name}, but args is: {build_func}"
+
     executor = PopenPoolExecutor(
         n_parallel, timeout, reset_global_scope, (AutotvmGlobalScope.current,)
     )
@@ -771,13 +772,11 @@ def register_task_input_check_func(func_name, f=None, override=False):
     def register(myf):
         """internal register function"""
         if func_name in TASK_INPUT_CHECK_FUNC_REGISTRY and not override:
-            raise RuntimeError("%s has been registered already" % func_name)
+            raise RuntimeError(f"{func_name} has been registered already")
         TASK_INPUT_CHECK_FUNC_REGISTRY[func_name] = myf
         return myf
 
-    if f:
-        return register(f)
-    return register
+    return register(f) if f else register
 
 
 def prepare_input_map(args, workload_key=None):
@@ -811,22 +810,22 @@ def prepare_input_map(args, workload_key=None):
     from .search_task import TASK_INPUT_BUFFER_TABLE
 
     # A dict that maps the input tensor arg to a buffer name
-    tensor_input_map = {}
+    tensor_input_map = {
+        arg: arg.op.name
+        for arg in args
+        if isinstance(arg.op, tvm.te.PlaceholderOp)
+        and (
+            workload_key
+            and workload_key in TASK_INPUT_BUFFER_TABLE
+            and arg.op.name in TASK_INPUT_BUFFER_TABLE[workload_key]
+        )
+    }
 
-    # Case 0: Check placeholder name
-    for arg in args:
-        if isinstance(arg.op, tvm.te.PlaceholderOp):
-            if (
-                workload_key
-                and workload_key in TASK_INPUT_BUFFER_TABLE
-                and arg.op.name in TASK_INPUT_BUFFER_TABLE[workload_key]
-            ):
-                tensor_input_map[arg] = arg.op.name
 
     # Case 1: Check specific tensor inputs
     for func_name in TASK_INPUT_CHECK_FUNC_REGISTRY:
         func = TASK_INPUT_CHECK_FUNC_REGISTRY[func_name]
-        tensor_input_map.update(func(args))
+        tensor_input_map |= func(args)
 
     return tensor_input_map
 
@@ -862,16 +861,16 @@ def prepare_runner_args(inp, build_res):
     for arg in build_res.args:
         if arg in tensor_input_map:
             tensor_name = tensor_input_map[arg]
-            if tensor_name in task_input_names:
-                task_input_buffer = get_task_input_buffer(inp.task.workload_key, tensor_name)
-                # convert tvm.NDArray to picklable numpy.ndarray
-                args.append(task_input_buffer.numpy())
-                task_inputs_count += 1
-            else:
+            if tensor_name not in task_input_names:
                 raise ValueError(
-                    "%s not found in task_inputs, " % (tensor_name)
+                    f"{tensor_name} not found in task_inputs, "
                     + "should provide with `SearchTask(..., task_inputs={...})`"
                 )
+
+            task_input_buffer = get_task_input_buffer(inp.task.workload_key, tensor_name)
+            # convert tvm.NDArray to picklable numpy.ndarray
+            args.append(task_input_buffer.numpy())
+            task_inputs_count += 1
         else:
             args.append(None)
     if task_inputs_count != len(task_input_names):
@@ -1154,10 +1153,9 @@ def _rpc_run(
 
             # clean up remote files
             remote.remove(build_res.filename)
-            remote.remove(os.path.splitext(build_res.filename)[0] + ".so")
+            remote.remove(f"{os.path.splitext(build_res.filename)[0]}.so")
             remote.remove("")
             dev.free_raw_stream(stream)
-        # pylint: disable=broad-except
         except Exception:
             dev.free_raw_stream(stream)
             costs = (MAX_FLOAT,)

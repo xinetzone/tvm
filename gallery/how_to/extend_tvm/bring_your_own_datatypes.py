@@ -52,6 +52,7 @@ If you would like to try this with your own datatype library, first bring the li
     ctypes.CDLL('my-datatype-lib.so', ctypes.RTLD_GLOBAL)
 """
 
+
 # sphinx_gallery_start_ignore
 from tvm import testing
 
@@ -82,14 +83,14 @@ np.random.seed(23)  # for reproducibility
 
 x_input = np.random.rand(3).astype("float32")
 y_input = np.random.rand(3).astype("float32")
-print("x: {}".format(x_input))
-print("y: {}".format(y_input))
+print(f"x: {x_input}")
+print(f"y: {y_input}")
 
 ######################################################################
 # Finally, we're ready to run the program:
 
 z_output = relay.create_executor(mod=module).evaluate()(x_input, y_input)
-print("z: {}".format(z_output))
+print(f"z: {z_output}")
 
 ######################################################################
 # Adding Custom Datatypes
@@ -140,7 +141,7 @@ print(program)
 try:
     with tvm.transform.PassContext(config={"tir.disable_vectorize": True}):
         z_output_myfloat = relay.create_executor("graph", mod=module).evaluate()(x_input, y_input)
-        print("z: {}".format(y_myfloat))
+        print(f"z: {y_myfloat}")
 except tvm.TVMError as e:
     # Print last line of error
     print(str(e).split("\n")[-1])
@@ -185,7 +186,7 @@ tvm.target.datatype.register_op(
 try:
     with tvm.transform.PassContext(config={"tir.disable_vectorize": True}):
         z_output_myfloat = relay.create_executor("graph", mod=module).evaluate()(x_input, y_input)
-        print("z: {}".format(z_output_myfloat))
+        print(f"z: {z_output_myfloat}")
 except tvm.TVMError as e:
     # Print last line of error
     print(str(e).split("\n")[-1])
@@ -214,12 +215,12 @@ tvm.target.datatype.register_op(
 # Now, we can run our program without errors.
 with tvm.transform.PassContext(config={"tir.disable_vectorize": True}):
     z_output_myfloat = relay.create_executor(mod=module).evaluate()(x_input, y_input)
-print("z: {}".format(z_output_myfloat))
+print(f"z: {z_output_myfloat}")
 
-print("x:\t\t{}".format(x_input))
-print("y:\t\t{}".format(y_input))
-print("z (float32):\t{}".format(z_output))
-print("z (myfloat32):\t{}".format(z_output_myfloat))
+print(f"x:\t\t{x_input}")
+print(f"y:\t\t{y_input}")
+print(f"z (float32):\t{z_output}")
+print(f"z (myfloat32):\t{z_output_myfloat}")
 
 # Perhaps as expected, the ``myfloat32`` results and ``float32`` are exactly the same!
 

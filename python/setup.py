@@ -90,7 +90,7 @@ def git_describe_version(original_version):
     exec(compile(open(ver_py, "rb").read(), ver_py, "exec"), libver, libver)
     _, gd_version = libver["git_describe_version"]()
     if gd_version != original_version and "--inplace" not in sys.argv:
-        print("Use git describe based version %s" % gd_version)
+        print(f"Use git describe based version {gd_version}")
     return gd_version
 
 
@@ -112,10 +112,7 @@ def config_cython():
         from Cython.Build import cythonize
 
         # from setuptools.extension import Extension
-        if sys.version_info >= (3, 0):
-            subdir = "_cy3"
-        else:
-            subdir = "_cy2"
+        subdir = "_cy3" if sys.version_info >= (3, 0) else "_cy2"
         ret = []
         path = "tvm/_ffi/_cython"
         extra_compile_args = ["-std=c++17", "-DDMLC_USE_LOGGING_LIBRARY=<tvm/runtime/logging.h>"]
@@ -133,24 +130,24 @@ def config_cython():
             library_dirs = None
             libraries = None
 
-        for fn in os.listdir(path):
-            if not fn.endswith(".pyx"):
-                continue
-            ret.append(
-                Extension(
-                    "tvm._ffi.%s.%s" % (subdir, fn[:-4]),
-                    ["tvm/_ffi/_cython/%s" % fn],
-                    include_dirs=[
-                        "../include/",
-                        "../3rdparty/dmlc-core/include",
-                        "../3rdparty/dlpack/include",
-                    ],
-                    extra_compile_args=extra_compile_args,
-                    library_dirs=library_dirs,
-                    libraries=libraries,
-                    language="c++",
-                )
+        ret.extend(
+            Extension(
+                f"tvm._ffi.{subdir}.{fn[:-4]}",
+                [f"tvm/_ffi/_cython/{fn}"],
+                include_dirs=[
+                    "../include/",
+                    "../3rdparty/dmlc-core/include",
+                    "../3rdparty/dlpack/include",
+                ],
+                extra_compile_args=extra_compile_args,
+                library_dirs=library_dirs,
+                libraries=libraries,
+                language="c++",
             )
+            for fn in os.listdir(path)
+            if fn.endswith(".pyx")
+        )
+
         return cythonize(ret, compiler_directives={"language_level": 3})
     except ImportError as error:
         if FFI_MODE == "cython":

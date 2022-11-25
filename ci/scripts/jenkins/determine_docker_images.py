@@ -41,9 +41,7 @@ def docker_api(url: str, use_pagination: bool = False) -> Dict[str, Any]:
         if url not in TEST_DATA:
             raise urllib.error.HTTPError(url, 404, "Not found", {}, None)
         return TEST_DATA[url]
-    pagination = ""
-    if use_pagination:
-        pagination = f"?page_size={PAGE_SIZE}&page=1"
+    pagination = f"?page_size={PAGE_SIZE}&page=1" if use_pagination else ""
     url = DOCKER_API_BASE + url + pagination
     r, headers = get(url)
     reset = headers.get("x-ratelimit-reset")

@@ -330,9 +330,7 @@ class PR:
             else:
                 commits_to_review_status[oid] = [review]
 
-        # Only use the data for the head commit of the PR
-        head_reviews = commits_to_review_status.get(self.head_oid(), [])
-        return head_reviews
+        return commits_to_review_status.get(self.head_oid(), [])
 
     def fetch_data(self):
         """
@@ -407,12 +405,11 @@ class PR:
         logging.info(f"Found co-authors: author_lines={author_lines}")
         full_author_lines = [f"Co-authored-by: {author_line}" for author_line in author_lines]
 
-        authors_to_add = []
-        for author_line in author_lines:
-            if author_line not in body:
-                authors_to_add.append(f"Co-authored-by: {author_line}")
-
-        if len(authors_to_add) > 0:
+        if authors_to_add := [
+            f"Co-authored-by: {author_line}"
+            for author_line in author_lines
+            if author_line not in body
+        ]:
             # If the line isn't already in the PR body (it could have been
             # added manually), put it in
             full_author_text = "\n".join(authors_to_add)
@@ -462,18 +459,13 @@ class PR:
         seen_expected_jobs = {name: False for name in EXPECTED_JOBS}
         logging.info(f"Expected to see jobs: {seen_expected_jobs}")
 
-        missing_expected_jobs = []
         for job in self.ci_jobs():
             seen_expected_jobs[job["name"]] = True
 
-        for name, seen in seen_expected_jobs.items():
-            if not seen:
-                missing_expected_jobs.append(name)
-
-        return missing_expected_jobs
+        return [name for name, seen in seen_expected_jobs.items() if not seen]
 
     def trigger_gha_ci(self, sha: str) -> None:
-        logging.info(f"POST-ing a workflow_dispatch event to main.yml")
+        logging.info("POST-ing a workflow_dispatch event to main.yml")
         actions_github = GitHubRepo(
             user=self.github.user, repo=self.github.repo, token=GH_ACTIONS_TOKEN
         )
@@ -518,19 +510,15 @@ class PR:
                 has_one_approval = True
                 logging.info(f"Found approving review: {to_json_str(review)}")
 
-        if has_one_approval and all_ci_passed:
+        if has_one_approval:
             return self.merge()
-        elif not has_one_approval:
-            self.comment(
-                f"Cannot merge, did not find any approving reviews from users with write access on {self.head_oid()}"
-            )
-            return None
-        elif not all_ci_passed:
-            self.comment(f"Cannot merge, CI did not pass on on {self.head_oid()}")
-            return None
+        self.comment(
+            f"Cannot merge, did not find any approving reviews from users with write access on {self.head_oid()}"
+        )
+        return None
 
     def rerun_jenkins_ci(self) -> None:
-        url = JENKINS_URL + f"job/tvm/job/PR-{self.number}/buildWithParameters"
+        url = f"{JENKINS_URL}job/tvm/job/PR-{self.number}/buildWithParameters"
         logging.info(f"Rerunning ci with URL={url}")
         if self.dry_run:
             logging.info("Dry run, not sending POST")
@@ -562,9 +550,10 @@ class PR:
                     logging.exception(e)
                     # Ignore errors about jobs that are part of the same workflow to avoid
                     # having to figure out which jobs are in which workflows ahead of time
-                    if "The workflow run containing this job is already running" in str(e):
-                        pass
-                    else:
+                    if (
+                        "The workflow run containing this job is already running"
+                        not in str(e)
+                    ):
                         raise e
 
     def comment_failure(self, msg: str, exceptions: Union[Exception, List[Exception]]):
@@ -691,7 +680,7 @@ class Rerun:
         except Exception as e:
             errors.append(e)
 
-        if len(errors) > 0:
+        if errors:
             pr.comment_failure("Failed to re-run CI", errors)
 
 
@@ -729,11 +718,14 @@ if __name__ == "__main__":
 
     # Find the code to run for the command from the user
     user_command = body.lstrip("@tvm-bot").strip()
-    command_to_run = None
-    for command in [Merge, Rerun]:
-        if user_command in command.triggers:
-            command_to_run = command
-            break
+    command_to_run = next(
+        (
+            command
+            for command in [Merge, Rerun]
+            if user_command in command.triggers
+        ),
+        None,
+    )
 
     if command_to_run is None:
         logging.info(f"Command '{user_command}' did not match anything")

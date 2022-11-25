@@ -248,13 +248,12 @@ class ModelBasedTuner(Tuner):
     def update(self, inputs, results):
         for inp, res in zip(inputs, results):
             index = inp.config.index
+            self.xs.append(index)
             if res.error_no == 0:
-                self.xs.append(index)
                 flops = inp.task.flop / np.mean(res.costs)
                 self.flops_max = max(self.flops_max, flops)
                 self.ys.append(flops)
             else:
-                self.xs.append(index)
                 self.ys.append(0.0)
             # Usually the update function is called during the tune loop
             # after the index is already added to the visited set.

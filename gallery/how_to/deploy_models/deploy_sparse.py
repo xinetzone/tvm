@@ -70,6 +70,7 @@ sparsity. A fun exercise is comparing the real speed of PruneBert with the block
 sparse speed using fake weights to see the benefit of structured sparsity.
 """
 
+
 # sphinx_gallery_start_ignore
 from tvm import testing
 
@@ -96,18 +97,13 @@ from tensorflow.python.framework.convert_to_constants import (
 import scipy.sparse as sp
 
 
-# Ask tensorflow to limit its GPU memory to what's actually needed
-# instead of gobbling everything that's available.
-# https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth
-# This way this tutorial is a little more friendly to sphinx-gallery.
-gpus = tf.config.list_physical_devices("GPU")
-if gpus:
+if gpus := tf.config.list_physical_devices("GPU"):
     try:
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
         print("tensorflow will use experimental.set_memory_growth(True)")
     except RuntimeError as e:
-        print("experimental.set_memory_growth option is not available: {}".format(e))
+        print(f"experimental.set_memory_growth option is not available: {e}")
 
 
 ###############################################################################
@@ -155,7 +151,7 @@ def load_keras_model(module, name, seq_len, batch_size, report_runtime=True):
         )
         start = time.time()
         repeats = 50
-        for i in range(repeats):
+        for _ in range(repeats):
             np_out = model(np_input)
         end = time.time()
         print("Keras Runtime: %f ms." % (1000 * ((end - start) / repeats)))

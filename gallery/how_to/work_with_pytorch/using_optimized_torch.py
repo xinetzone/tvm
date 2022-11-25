@@ -122,23 +122,23 @@ results = []
 for i in range(5):
     test_input = torch.rand(1, 3, 224, 224).cuda()
     sub_label = f"[test {i}]"
-    results.append(
-        benchmark.Timer(
-            stmt="resnet18_tvm(test_input)",
-            setup="from __main__ import resnet18_tvm",
-            globals={"test_input": test_input},
-            sub_label=sub_label,
-            description="tuning by meta",
-        ).blocked_autorange()
-    )
-    results.append(
-        benchmark.Timer(
-            stmt="resnet18_torch(test_input)",
-            setup="from __main__ import resnet18_torch",
-            globals={"test_input": test_input},
-            sub_label=sub_label,
-            description="tuning by jit",
-        ).blocked_autorange()
+    results.extend(
+        (
+            benchmark.Timer(
+                stmt="resnet18_tvm(test_input)",
+                setup="from __main__ import resnet18_tvm",
+                globals={"test_input": test_input},
+                sub_label=sub_label,
+                description="tuning by meta",
+            ).blocked_autorange(),
+            benchmark.Timer(
+                stmt="resnet18_torch(test_input)",
+                setup="from __main__ import resnet18_torch",
+                globals={"test_input": test_input},
+                sub_label=sub_label,
+                description="tuning by jit",
+            ).blocked_autorange(),
+        )
     )
 
 compare = benchmark.Compare(results)

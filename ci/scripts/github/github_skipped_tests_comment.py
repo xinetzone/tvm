@@ -52,10 +52,11 @@ def get_main_jenkins_build_number(github, common_commit):
         state = status["state"]
         target_url = str(status["target_url"])
         build_number = (
-            target_url[target_url.find("job/main") : len(target_url)]
+            target_url[target_url.find("job/main") :]
             .strip("job/main/")
             .strip("/display/redirect")
         )
+
         assert build_number.isdigit()
         return {"build_number": build_number, "state": state}
     raise RuntimeError(f"Failed to find main build number for commit {common_commit}")
@@ -74,7 +75,7 @@ def retrieve_test_reports(
 
 
 def get_pr_and_build_numbers(target_url):
-    target_url = target_url[target_url.find("PR-") : len(target_url)]
+    target_url = target_url[target_url.find("PR-"):]
     split = target_url.split("/")
     pr_number = split[0].strip("PR-")
     build_number = split[1]
@@ -212,13 +213,11 @@ def get_skipped_tests_comment(
 
         diff_set = skipped_set - skipped_main
         if len(diff_set) != 0:
-            for test in diff_set:
-                skipped_list.append(f"{to_node_name(subdir)} -> {test}")
-
+            skipped_list.extend(f"{to_node_name(subdir)} -> {test}" for test in diff_set)
     # Sort the list to maintain an order in the output. Helps when validating the output in tests.
     skipped_list.sort()
 
-    if len(skipped_list) == 0:
+    if not skipped_list:
         logging.info("No skipped tests found.")
 
     if not is_dry_run:
@@ -244,14 +243,16 @@ def get_skipped_tests_comment(
             logging.warning(f"Could not find directory {subdir} in the build test set.")
             continue
 
-        for test in test_set:
-            if test in build_tests[subdir]:
-                additional_skipped_tests.append(f"{to_node_name(subdir)} -> {test}")
+        additional_skipped_tests.extend(
+            f"{to_node_name(subdir)} -> {test}"
+            for test in test_set
+            if test in build_tests[subdir]
+        )
 
-    if len(additional_skipped_tests) == 0:
+    if not additional_skipped_tests:
         logging.info("No skipped tests found in the additional list.")
 
-    body = build_comment(
+    return build_comment(
         common_commit_sha,
         common_main_build,
         skipped_list,
@@ -261,5 +262,3 @@ def get_skipped_tests_comment(
         commit_sha,
         jenkins_prefix,
     )
-
-    return body

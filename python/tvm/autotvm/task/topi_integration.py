@@ -183,7 +183,7 @@ def register_topi_compute(task_name, func=None):
                     op.body,
                 )
             else:
-                raise RuntimeError("Unsupported op type: " + str(type(op)))
+                raise RuntimeError(f"Unsupported op type: {str(type(op))}")
 
             if isinstance(node, tensor.Tensor):
                 return op.output(0)
@@ -191,9 +191,7 @@ def register_topi_compute(task_name, func=None):
 
         return wrapper
 
-    if func:
-        return _decorate(func)
-    return _decorate
+    return _decorate(func) if func else _decorate
 
 
 def register_topi_schedule(task_name, func=None):
@@ -243,9 +241,7 @@ def register_topi_schedule(task_name, func=None):
 
         return wrapper
 
-    if func:
-        return _decorate(func)
-    return _decorate
+    return _decorate(func) if func else _decorate
 
 
 def get_workload(outs, task_name=None):

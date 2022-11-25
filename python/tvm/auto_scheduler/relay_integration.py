@@ -280,7 +280,10 @@ def traverse_to_get_io_tensors(outs):
         if isinstance(t.op, PlaceholderOp):
             inputs.append(t)
         elif isinstance(t.op, ComputeOp):
-            has_complex_op = has_complex_op or any([isinstance(e, Reduce) for e in t.op.body])
+            has_complex_op = has_complex_op or any(
+                isinstance(e, Reduce) for e in t.op.body
+            )
+
             if "layout_free_placeholders" in t.op.attrs:
                 layout_free_ops.append(t.op)
             for x in t.op.input_tensors:
@@ -293,7 +296,7 @@ def traverse_to_get_io_tensors(outs):
     io_tensors = inputs + list(outs)
     for tensor in io_tensors:
         # Reject the compute if any of its I/O tensors has dynamic shape.
-        if any([not isinstance(v, int) for v in get_const_tuple(tensor.shape)]):
+        if any(not isinstance(v, int) for v in get_const_tuple(tensor.shape)):
             return ([], False, False)
 
     return (io_tensors, len(layout_free_ops) > 0, has_complex_op)
@@ -357,8 +360,7 @@ def auto_schedule_topi(func_name, outs):
         # in the task extraction mode
         if has_complex_op or env.tracing_mode == TracingMode.EXTRACT_TASK:
             env.add_workload_key(func_name, key)
-            input_map = prepare_input_map(io_tensors, workload_key)
-            if input_map:
+            if input_map := prepare_input_map(io_tensors, workload_key):
                 env.add_workload_input_names(key, list(input_map.values()))
     elif env.tracing_mode == TracingMode.PREPARE_LAYOUT_REWRITE:
         # in prepare_layout_rewrite mode
@@ -375,7 +377,7 @@ def auto_schedule_topi(func_name, outs):
             if new_key != key:
                 dispatch_ctx.update(target, new_key, state)
     else:
-        raise ValueError("Invalid tracing mode: " + env.tracing_mode)
+        raise ValueError(f"Invalid tracing mode: {env.tracing_mode}")
 
     return schedule
 
@@ -458,9 +460,11 @@ def rewrite_compute_body(compute_tensor, new_layout):
     placeholder_op = layout_free_placeholders[0].op
 
     # Rewrite the index expression in body
-    body = []
-    for b in op.body:
-        body.append(_ffi_api.RewriteIndexForNewLayout(placeholder_op, new_layout, b))
+    body = [
+        _ffi_api.RewriteIndexForNewLayout(placeholder_op, new_layout, b)
+        for b in op.body
+    ]
+
     op_node = tvm.te._ffi_api.ComputeOp(op.name, op.tag, op.attrs, op.axis, body)
 
     num = op_node.num_outputs

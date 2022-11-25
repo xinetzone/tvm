@@ -251,7 +251,7 @@ class Analyzer:
         if isinstance(info, ConstIntBound):
             self._const_int_bound_update(var, info, override)
         else:
-            raise TypeError("Do not know how to handle type {}".format(type(info)))
+            raise TypeError(f"Do not know how to handle type {type(info)}")
 
     def can_prove_equal(self, lhs: "PrimExpr", rhs: "PrimExpr"):
         """Whether we can prove that lhs == rhs

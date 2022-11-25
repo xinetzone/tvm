@@ -44,17 +44,19 @@ class PBQPTuner(BaseGraphTuner):
                 for out_node_idx in self._out_nodes_dict[node_idx]:
                     self._in_nodes_dict[out_node_idx].remove(node_idx)
 
-        self._adj_dict = {}
-        for node_idx in self._in_nodes_dict:
-            self._adj_dict[node_idx] = list(self._in_nodes_dict[node_idx]) + list(
-                self._out_nodes_dict[node_idx]
-            )
+        self._adj_dict = {
+            node_idx: list(self._in_nodes_dict[node_idx])
+            + list(self._out_nodes_dict[node_idx])
+            for node_idx in self._in_nodes_dict
+        }
 
-        self._record_cost_dict = {}
-        for key in self._in_nodes_dict:
-            self._record_cost_dict[key] = []
-            for record in self._node_list[key]["record_candidates"]:
-                self._record_cost_dict[key].append(record[1].costs[0])
+        self._record_cost_dict = {
+            key: [
+                record[1].costs[0]
+                for record in self._node_list[key]["record_candidates"]
+            ]
+            for key in self._in_nodes_dict
+        }
 
         self._max_degree = -1
         self._node_degree_dict = {}
@@ -129,7 +131,7 @@ class PBQPTuner(BaseGraphTuner):
         ltf_matrix_y = self._layout_transform_interlayer_cost[(adj_node_y, node_idx)]
         delta_matrix = [[] for _ in range(len(ltf_matrix_x))]
         for i, cost_vec_x in enumerate(ltf_matrix_x):
-            for j, cost_vec_y in enumerate(ltf_matrix_y):
+            for cost_vec_y in ltf_matrix_y:
                 min_cost = INVALID_LAYOUT_TIME
                 for k in range(len(self._record_cost_dict[node_idx])):
                     min_cost = min(
@@ -284,5 +286,5 @@ class PBQPTuner(BaseGraphTuner):
         self._forward()
         self._backward()
         is_optimal = "optimal" if self._is_optimal else "sub-optimal"
-        msg = "Finished PBQPExecutor run. Got %s solution." % is_optimal
+        msg = f"Finished PBQPExecutor run. Got {is_optimal} solution."
         self._logger.info(msg)

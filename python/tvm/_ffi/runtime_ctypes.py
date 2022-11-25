@@ -147,12 +147,12 @@ class DataType(ctypes.Structure):
 
             low, high = head.find("["), head.find("]")
             if not low or not high or low >= high:
-                raise ValueError("Badly formatted custom type string %s" % type_str)
+                raise ValueError(f"Badly formatted custom type string {type_str}")
             type_name = head[low + 1 : high]
             self.type_code = tvm.runtime._ffi_api._datatype_get_type_code(type_name)
             head = head[high + 1 :]
         else:
-            raise ValueError("Do not know how to handle type %s" % type_str)
+            raise ValueError(f"Do not know how to handle type {type_str}")
         bits = int(head) if head else bits
         self.bits = bits
 
@@ -165,7 +165,8 @@ class DataType(ctypes.Structure):
         else:
             import tvm.runtime._ffi_api
 
-            type_name = "custom[%s]" % tvm.runtime._ffi_api._datatype_get_type_name(self.type_code)
+            type_name = f"custom[{tvm.runtime._ffi_api._datatype_get_type_name(self.type_code)}]"
+
         x = "%s%d" % (type_name, self.bits)
         if self.lanes != 1:
             x += "x%d" % self.lanes

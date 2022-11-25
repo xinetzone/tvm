@@ -184,9 +184,7 @@ class DPStage(object):
             for child in self._global_out_nodes_dict[self._idx]:
                 self._global_dep_dict[dep_idx].add(child)
         if len(self._global_out_nodes_dict[self._idx]) > 1:
-            self._global_dep_dict[self._idx] = set()
-            for child in self._global_out_nodes_dict[self._idx]:
-                self._global_dep_dict[self._idx].add(child)
+            self._global_dep_dict[self._idx] = set(self._global_out_nodes_dict[self._idx])
 
     def _create_multi_inputs_states(self):
         """State creation routine for multi_input operator
@@ -235,11 +233,7 @@ class DPStage(object):
             target_sch_idx = (
                 i % (target_multiplier * aligned_shape[target_major_axis])
             ) // target_multiplier
-            if node_time_counted[0]:
-                new_state = 0
-            else:
-                new_state = target_states[i]
-
+            new_state = 0 if node_time_counted[0] else target_states[i]
             for j in range(1, len(states_list)):
                 src_states = src_states_list[j - 1]
                 src_node_idx, src_major_axis, src_multiplier, _ = states_list[j]
@@ -287,9 +281,7 @@ class DPStage(object):
             for child in self._global_out_nodes_dict[self._idx]:
                 self._global_dep_dict[dep].add(child)
         if len(self._global_out_nodes_dict[self._idx]) > 1:
-            self._global_dep_dict[self._idx] = set()
-            for child in self._global_out_nodes_dict[self._idx]:
-                self._global_dep_dict[self._idx].add(child)
+            self._global_dep_dict[self._idx] = set(self._global_out_nodes_dict[self._idx])
 
     @property
     def dep(self):
@@ -343,9 +335,10 @@ class DPStage(object):
             for dep_idx in input_node_stage.dep:
                 if dep_idx not in aligned_node_list:
                     aligned_node_list.append(dep_idx)
-        aligned_shape = []
-        for idx in aligned_node_list:
-            aligned_shape.append(len(node_list[idx]["record_candidates"]))
+        aligned_shape = [
+            len(node_list[idx]["record_candidates"]) for idx in aligned_node_list
+        ]
+
         for input_idx in input_index_list:
             input_node_stage = stage_dict[input_idx]
             input_node_shape_idx_list = [input_idx] + input_node_stage.dep

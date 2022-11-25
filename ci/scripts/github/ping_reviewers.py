@@ -35,9 +35,7 @@ GIT_DATE_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 
 def prs_query(user: str, repo: str, cursor: str = None):
-    after = ""
-    if cursor is not None:
-        after = f', before:"{cursor}"'
+    after = f', before:"{cursor}"' if cursor is not None else ""
     time_keys = "createdAt updatedAt lastEditedAt publishedAt"
     return f"""
         {{
@@ -96,7 +94,7 @@ def find_reviewers(body: str) -> List[str]:
         users = [x.strip() for x in match.split("@")]
         reviewers += users
 
-    reviewers = set(x for x in reviewers if x != "")
+    reviewers = {x for x in reviewers if x != ""}
     return list(reviewers)
 
 
@@ -149,7 +147,7 @@ def check_pr(pr, wait_time, now):
 
     # Anyone that has left a review as a reviewer (this may include the PR
     # author since their responses count as reviews)
-    review_reviewers = list(set(r["author"]["login"] for r in reviews))
+    review_reviewers = list({r["author"]["login"] for r in reviews})
 
     reviewers = cc_reviewers + review_reviewers + pr_body_reviewers
     reviewers = list(set(reviewers))
@@ -177,14 +175,13 @@ def check_pr(pr, wait_time, now):
 def make_ping_message(pr, reviewers):
     reviewers = [f"@{r}" for r in reviewers]
     author = f'@{pr["author"]["login"]}'
-    text = (
+    return (
         "It has been a while since this PR was updated, "
         + " ".join(reviewers)
         + " please leave a review or address the outstanding comments. "
         + f"{author} if this PR is still a work in progress, please [convert it to a draft](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request#converting-a-pull-request-to-a-draft)"
         " until it is ready for review."
     )
-    return text
 
 
 if __name__ == "__main__":

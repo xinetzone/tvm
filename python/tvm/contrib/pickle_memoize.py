@@ -62,7 +62,7 @@ class Cache(object):
 
     def save(self):
         if self.dirty:
-            print("Save memoize result to %s" % self.path)
+            print(f"Save memoize result to {self.path}")
             with open(self.path, "wb") as out_file:
                 pickle.dump(self.cache, out_file, pickle.HIGHEST_PROTOCOL)
 
@@ -94,7 +94,7 @@ def memoize(key, save_at_exit=False):
     def _register(f):
         """Registration function"""
         allow_types = (string_types, int, float, tuple)
-        fkey = key + "." + f.__name__ + ".pkl"
+        fkey = f"{key}.{f.__name__}.pkl"
         if fkey not in Cache.cache_by_key:
             Cache.cache_by_key[fkey] = Cache(fkey, save_at_exit)
         cache = Cache.cache_by_key[fkey]

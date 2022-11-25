@@ -33,7 +33,7 @@ class MyAiHwConv2dPass:
 
     @classmethod
     def _my_ai_hw_conv2d_pass(cls, func, mod, ctx):
-        _loops = dict()
+        _loops = {}
         _handles = []
         _entry_node = None
 

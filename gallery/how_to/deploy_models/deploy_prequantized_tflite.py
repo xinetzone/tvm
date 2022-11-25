@@ -91,7 +91,7 @@ def extract(path):
         tar.extractall(path=dir_path)
         tar.close()
     else:
-        raise RuntimeError("Could not decompress the file: " + path)
+        raise RuntimeError(f"Could not decompress the file: {path}")
 
 
 extract(model_path)
@@ -113,8 +113,7 @@ def get_real_image(im_height, im_width):
     img_path = download_testdata(image_url, img_name, module="data")
     image = Image.open(img_path).resize((im_height, im_width))
     x = np.array(image).astype("uint8")
-    data = np.reshape(x, (1, im_height, im_width, 3))
-    return data
+    return np.reshape(x, (1, im_height, im_width, 3))
 
 
 data = get_real_image(224, 224)
@@ -163,12 +162,10 @@ def run_tflite_model(tflite_model_buf, input_data):
     # Run
     interpreter.invoke()
 
-    # get output
-    tflite_output = list()
-    for i in range(len(output_details)):
-        tflite_output.append(interpreter.get_tensor(output_details[i]["index"]))
-
-    return tflite_output
+    return [
+        interpreter.get_tensor(output_details[i]["index"])
+        for i in range(len(output_details))
+    ]
 
 
 ###############################################################################

@@ -91,8 +91,9 @@ def _should_print_backtrace():
         tvm_backtrace = bool(int(tvm_backtrace))
     except ValueError:
         raise ValueError(
-            "invalid value for TVM_BACKTRACE {}, please set to 0 or 1.".format(tvm_backtrace)
+            f"invalid value for TVM_BACKTRACE {tvm_backtrace}, please set to 0 or 1."
         )
+
 
     return in_pytest or tvm_backtrace
 

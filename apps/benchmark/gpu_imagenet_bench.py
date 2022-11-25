@@ -103,7 +103,10 @@ if __name__ == "__main__":
     else:
         networks = [args.network]
 
-    target = tvm.target.Target("%s -device=%s -model=%s" % (args.target, args.device, args.model))
+    target = tvm.target.Target(
+        f"{args.target} -device={args.device} -model={args.model}"
+    )
+
 
     print("--------------------------------------------------")
     print("%-20s %-20s" % ("Network Name", "Mean Inference Time (std dev)"))
@@ -112,7 +115,7 @@ if __name__ == "__main__":
         if args.thread == 1:
             benchmark(network, target)
         else:
-            threads = list()
+            threads = []
             for n in range(args.thread):
                 thread = threading.Thread(
                     target=benchmark, args=([network, target]), name="thread%d" % n

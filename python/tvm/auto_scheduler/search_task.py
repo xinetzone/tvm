@@ -125,18 +125,7 @@ class HardwareParams(Object):
 
     def __str__(self):
         """Pretty printing for hardware parameter configuration."""
-        format_str = (
-            "HardwareParams:\n"
-            f"  num_cores: {self.num_cores}\n"
-            f"  vector_unit_bytes: {self.vector_unit_bytes}\n"
-            f"  cache_line_bytes: {self.cache_line_bytes}\n"
-            f"  max_shared_memory_per_block: {self.max_shared_memory_per_block}\n"
-            f"  max_local_memory_per_block: {self.max_local_memory_per_block}\n"
-            f"  max_threads_per_block: {self.max_threads_per_block}\n"
-            f"  max_vthread_extent: {self.max_vthread_extent}\n"
-            f"  warp_size: {self.warp_size}\n"
-        )
-        return format_str
+        return f"HardwareParams:\n  num_cores: {self.num_cores}\n  vector_unit_bytes: {self.vector_unit_bytes}\n  cache_line_bytes: {self.cache_line_bytes}\n  max_shared_memory_per_block: {self.max_shared_memory_per_block}\n  max_local_memory_per_block: {self.max_local_memory_per_block}\n  max_threads_per_block: {self.max_threads_per_block}\n  max_vthread_extent: {self.max_vthread_extent}\n  warp_size: {self.warp_size}\n"
 
 
 @tvm._ffi.register_object("auto_scheduler.TuningOptions")
@@ -183,7 +172,7 @@ class TuningOptions(Object):
             if builder == "local":
                 builder = LocalBuilder()
             else:
-                raise ValueError("Invalid builder: " + builder)
+                raise ValueError(f"Invalid builder: {builder}")
         elif not isinstance(builder, tvm.auto_scheduler.measure.ProgramBuilder):
             raise ValueError(
                 "Invalid builder: "
@@ -195,11 +184,12 @@ class TuningOptions(Object):
             if runner == "local":
                 runner = LocalRunner()
             else:
-                raise ValueError("Invalid runner: " + runner)
+                raise ValueError(f"Invalid runner: {runner}")
         elif not isinstance(runner, tvm.auto_scheduler.measure.ProgramRunner):
             raise ValueError(
-                "Invalid runner: " + runner + " . TuningOptions expects a ProgramRunner or string."
+                f"Invalid runner: {runner} . TuningOptions expects a ProgramRunner or string."
             )
+
 
         self.__init_handle_by_constructor__(
             _ffi_api.TuningOptions,
@@ -239,7 +229,7 @@ def _save_buffer_to_file(buffer_name, buffer_data):
     buffer_name += "."
     for i in np_data.shape:
         buffer_name += "%d_" % (i)
-    buffer_name += "%s" % (np_data.dtype)
+    buffer_name += f"{np_data.dtype}"
     buffer_name += ".npy"
 
     np_data.tofile(buffer_name, " ")
@@ -253,7 +243,7 @@ def _try_load_buffer_from_file(buffer_name):
     filelist = os.listdir()
 
     for file in filelist:
-        if file.startswith(buffer_name + "."):
+        if file.startswith(f"{buffer_name}."):
             meta_info = file.split(".")[-2].split("_")
             shape = [int(i) for i in meta_info[:-1]]
             dtype = meta_info[-1]
@@ -305,15 +295,13 @@ def register_task_input_buffer(
 
     if not overwrite:
         if input_name not in input_table.keys():
-            # Try to load buffer data from local file
-            tensor_from_file = _try_load_buffer_from_file(input_name)
-            if tensor_from_file:
+            if tensor_from_file := _try_load_buffer_from_file(input_name):
                 input_table[input_name] = tensor_from_file
         elif input_name in input_table.keys():
             raise RuntimeError(
-                "Tensor %s exists in TASK_INPUT_BUFFER_TABLE, %s"
-                % (input_name, "set overwrite to True or this Tensor will not be registered")
+                f"Tensor {input_name} exists in TASK_INPUT_BUFFER_TABLE, set overwrite to True or this Tensor will not be registered"
             )
+
 
     input_table[input_name] = input_data
     if save_to_file:
@@ -346,9 +334,7 @@ def get_task_input_buffer(workload_key, input_name):
     input_table = TASK_INPUT_BUFFER_TABLE[workload_key]
 
     if input_name not in input_table:
-        # Try to load buffer data from local file
-        tensor_from_file = _try_load_buffer_from_file(input_name)
-        if tensor_from_file:
+        if tensor_from_file := _try_load_buffer_from_file(input_name):
             input_table[input_name] = tensor_from_file
 
     # Then check for the default table, the input names extracted from a relay model will be
@@ -360,8 +346,10 @@ def get_task_input_buffer(workload_key, input_name):
         return input_table[input_name]
 
     raise ValueError(
-        "%s not found in TASK_INPUT_BUFFER_TABLE, " % (input_name)
-        + "should provide with `SearchTask(..., task_inputs={...})`"
+        (
+            f"{input_name} not found in TASK_INPUT_BUFFER_TABLE, "
+            + "should provide with `SearchTask(..., task_inputs={...})`"
+        )
     )
 
 
@@ -519,8 +507,9 @@ class SearchTask(Object):
         )
         if inp is None:
             raise RuntimeError(
-                "Cannot find any valid schedule for %s in file %s" % (self.workload_key, log_file)
+                f"Cannot find any valid schedule for {self.workload_key} in file {log_file}"
             )
+
 
         sch, args = self.compute_dag.apply_steps_from_state(
             inp.state, layout_rewrite_option or self.layout_rewrite_option
@@ -546,8 +535,9 @@ class SearchTask(Object):
         inp, _ = load_best_record(log_file, self.workload_key)
         if inp is None:
             raise RuntimeError(
-                "Cannot find any valid schedule for %s in file %s" % (self.workload_key, log_file)
+                f"Cannot find any valid schedule for {self.workload_key} in file {log_file}"
             )
+
 
         if print_mode == "schedule":
             return self.compute_dag.print_python_code_from_state(inp.state)
@@ -556,7 +546,7 @@ class SearchTask(Object):
             sch, args = self.compute_dag.apply_steps_from_state(inp.state)
             func = build(sch, args, "cuda")
             return func.imported_modules[0].get_source()
-        raise ValueError("Invalid print_mode: %s" % print_mode)
+        raise ValueError(f"Invalid print_mode: {print_mode}")
 
     def __getstate__(self):
         self.target, self.target_host = Target.canon_target_and_host(self.target, self.target_host)
@@ -576,7 +566,7 @@ class SearchTask(Object):
         try:
             workload = json.loads(state["workload_key"])
         except Exception:  # pylint: disable=broad-except
-            raise RuntimeError("Invalid workload key %s" % state["workload_key"])
+            raise RuntimeError(f'Invalid workload key {state["workload_key"]}')
 
         # workload[0] is either the compute function name or the ComputeDAG hash.
         # The compute functions are already registered when importing TVM, so here

@@ -135,10 +135,13 @@ cutlass = tvm.target.Target(
 
 def cutlass_build(mod, target, params=None, target_host=None, mod_name="default"):
     target = [target, cutlass]
-    lib = relay.build_module.build(
-        mod, target=target, params=params, target_host=target_host, mod_name=mod_name
+    return relay.build_module.build(
+        mod,
+        target=target,
+        params=params,
+        target_host=target_host,
+        mod_name=mod_name,
     )
-    return lib
 
 
 ###########################################################

@@ -100,10 +100,7 @@ def negate_vanila(x, y):
     z = torch.zeros(8, 8).bool()
     for i in range(8):
         for j in range(8):
-            if y[i, j] > 0:
-                z[i, j] = x[i, j]
-            else:
-                z[i, j] = ~x[i, j]
+            z[i, j] = x[i, j] if y[i, j] > 0 else ~x[i, j]
     return z
 
 

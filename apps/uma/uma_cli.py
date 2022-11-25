@@ -41,8 +41,7 @@ def _parse_args():
         "--tutorial",
         type=str,
     )
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 def replace_template_name(
@@ -52,8 +51,7 @@ def replace_template_name(
     Replace names in template skeleton code by new name
     """
     for f in files:
-        with open(f) as read_file:
-            data = read_file.read()
+        data = pathlib.Path(f).read_text()
         for case in [underscore, camelize]:
             data = data.replace(case(template_name), case(add_hw_name))
         data = data.replace(template_source, underscore(add_hw_name))

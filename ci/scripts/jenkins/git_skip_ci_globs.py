@@ -41,10 +41,7 @@ globs = [
 
 
 def match_any(f: str) -> Optional[str]:
-    for glob in globs:
-        if fnmatch.fnmatch(f, glob):
-            return glob
-    return None
+    return next((glob for glob in globs if fnmatch.fnmatch(f, glob)), None)
 
 
 if __name__ == "__main__":
@@ -63,7 +60,7 @@ if __name__ == "__main__":
 
     print(f"Changed files:\n{diff}")
 
-    if len(diff) == 0:
+    if not diff:
         print("Found no changed files, skipping CI")
         exit(0)
 

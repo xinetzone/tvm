@@ -38,7 +38,7 @@ if sys.platform == "win32":
         try:
             return x.decode("utf-8")
         except UnicodeDecodeError:
-            encoding = "cp" + str(ctypes.cdll.kernel32.GetACP())
+            encoding = f"cp{str(ctypes.cdll.kernel32.GetACP())}"
         return x.decode(encoding)
 
     py_str = _py_str
@@ -181,9 +181,7 @@ def register_error(func_name=None, cls=None):
         ERROR_TYPE[err_name] = mycls
         return mycls
 
-    if cls is None:
-        return register
-    return register(cls)
+    return register if cls is None else register(cls)
 
 
 def _valid_error_name(name):
@@ -217,17 +215,12 @@ def _find_error_type(line):
             err_name = line[:end_pos].strip()
         else:
             err_name = line[start_pos + 1 : end_pos].strip()
-        if _valid_error_name(err_name):
-            return err_name
-        return None
-
+        return err_name if _valid_error_name(err_name) else None
     end_pos = line.find(":")
     if end_pos == -1:
         return None
     err_name = line[:end_pos]
-    if _valid_error_name(err_name):
-        return err_name
-    return None
+    return err_name if _valid_error_name(err_name) else None
 
 
 def c2pyerror(err_msg):
@@ -255,7 +248,7 @@ def c2pyerror(err_msg):
     message = []
     for line in arr:
         if trace_mode:
-            if line.startswith("        ") and len(stack_trace) > 0:
+            if line.startswith("        ") and stack_trace:
                 stack_trace[-1] += "\n" + line
             elif line.startswith("  "):
                 stack_trace.append(line)

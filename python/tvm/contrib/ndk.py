@@ -46,12 +46,8 @@ def create_shared(output, objects, options=None):
     cmd = [compiler]
     cmd += ["-o", output]
 
-    if isinstance(objects, str):
-        cmd += [objects]
-    else:
-        cmd += objects
-
-    options = options if options else ["-shared", "-fPIC", "-lm"]
+    cmd += [objects] if isinstance(objects, str) else objects
+    options = options or ["-shared", "-fPIC", "-lm"]
     cmd += options
 
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

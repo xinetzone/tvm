@@ -24,6 +24,7 @@ For us to begin with, tensorflow python module is required to be installed.
 Please refer to https://www.tensorflow.org/install
 """
 
+
 # sphinx_gallery_start_ignore
 from tvm import testing
 
@@ -43,18 +44,13 @@ import os.path
 import tensorflow as tf
 
 
-# Ask tensorflow to limit its GPU memory to what's actually needed
-# instead of gobbling everything that's available.
-# https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth
-# This way this tutorial is a little more friendly to sphinx-gallery.
-gpus = tf.config.list_physical_devices("GPU")
-if gpus:
+if gpus := tf.config.list_physical_devices("GPU"):
     try:
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
         print("tensorflow will use experimental.set_memory_growth(True)")
     except RuntimeError as e:
-        print("experimental.set_memory_growth option is not available: {}".format(e))
+        print(f"experimental.set_memory_growth option is not available: {e}")
 
 
 try:

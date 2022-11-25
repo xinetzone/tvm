@@ -140,14 +140,13 @@ class RelayCallNodeDiffer:
     def run_after_pass(self, mod, info):
         # Pop out the latest recorded pass.
         name_before, op_to_cnt_before = self._op_cnt_before_stack.pop()
-        assert name_before == info.name, "name_before: {}, info.name: {} doesn't match".format(
-            name_before, info.name
-        )
+        assert (
+            name_before == info.name
+        ), f"name_before: {name_before}, info.name: {info.name} doesn't match"
+
         cur_depth = len(self._op_cnt_before_stack)
         op_to_cnt_after = self._count_nodes(mod)
-        op_diff = self._diff(op_to_cnt_after, op_to_cnt_before)
-        # only record passes causing differences.
-        if op_diff:
+        if op_diff := self._diff(op_to_cnt_after, op_to_cnt_before):
             self._op_diff.append((cur_depth, info.name, op_diff))
 
     def get_pass_to_op_diff(self):
@@ -183,8 +182,7 @@ class RelayCallNodeDiffer:
         ret = {}
         key_after, key_before = set(d_after), set(d_before)
         for k in key_before & key_after:
-            tmp = d_after[k] - d_before[k]
-            if tmp:
+            if tmp := d_after[k] - d_before[k]:
                 ret[k] = d_after[k] - d_before[k]
         for k in key_after - key_before:
             ret[k] = d_after[k]
@@ -267,14 +265,14 @@ class PassFine(PassExampleBase):
 class PassBadEnterCtx(PassExampleBase):
     def enter_pass_ctx(self):
         print(self._name, "bad enter_pass_ctx!!!")
-        raise ValueError("{} bad enter_pass_ctx".format(self._name))
+        raise ValueError(f"{self._name} bad enter_pass_ctx")
 
 
 @pass_instrument
 class PassBadExitCtx(PassExampleBase):
     def exit_pass_ctx(self):
         print(self._name, "bad exit_pass_ctx!!!")
-        raise ValueError("{} bad exit_pass_ctx".format(self._name))
+        raise ValueError(f"{self._name} bad exit_pass_ctx")
 
 
 ###############################################################################
@@ -329,7 +327,7 @@ except ValueError as ex:
 class PassBadRunBefore(PassExampleBase):
     def run_before_pass(self, mod, pass_info):
         print(self._name, "bad run_before_pass!!!")
-        raise ValueError("{} bad run_before_pass".format(self._name))
+        raise ValueError(f"{self._name} bad run_before_pass")
 
 
 demo_ctx = tvm.transform.PassContext(

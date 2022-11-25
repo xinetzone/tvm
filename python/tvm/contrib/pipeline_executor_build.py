@@ -82,7 +82,7 @@ def build(pipe_configs):
             mod_name=mod_config["mod_name"],
         )
 
-        pipe_config["dev"] = "{},{}".format(dev.device_type, dev.device_id)
+        pipe_config["dev"] = f"{dev.device_type},{dev.device_id}"
         # Use "mod_idx" as the key to create a "module_connection" map which is not only
         # for the module index but also for the module connection used to build the pipeline.
         module_string_config[mod_idx] = pipe_config
@@ -97,10 +97,11 @@ def build(pipe_configs):
     # "module_connection" information. The "input_connection" is used to record the
     # map of global input and subgraph input, and the "module_connection" is used to
     # record module dependency.
-    string_config = {}
-    string_config["param_connection"] = config["param_connection"]
-    string_config["input_connection"] = config["input_connection"]
-    string_config["module_connection"] = module_string_config
+    string_config = {
+        "param_connection": config["param_connection"],
+        "input_connection": config["input_connection"],
+        "module_connection": module_string_config,
+    }
 
     return PipelineExecutorFactoryModule(libs, string_config)
 
@@ -122,22 +123,29 @@ def export_library(factory, directory_path):
     if not directory_path or not os.path.exists(directory_path):
         raise RuntimeError("The directory {directory_path} does not exist.")
     # Create an load configuration.
-    load_config_file_name = "{}/load_config".format(directory_path)
-    pipeline_config_file_name = "{}/pipeline_config".format(directory_path)
-    config = {}
-    config["load_config"] = load_config_file_name
-    config["pipeline_config"] = pipeline_config_file_name
+    load_config_file_name = f"{directory_path}/load_config"
+    pipeline_config_file_name = f"{directory_path}/pipeline_config"
+    config = {
+        "load_config": load_config_file_name,
+        "pipeline_config": pipeline_config_file_name,
+    }
+
     load_config = []
     # Export the library, JSON, and parameter into files, then export these files path
     # into a configuration file.
     for lib_index in factory.pipeline_mods:
-        mconfig = {}
-        mconfig["mod_idx"] = lib_index
-        mconfig["lib_name"] = "{}/lib{}.so".format(directory_path, lib_index)
-        mconfig["json_name"] = "{}/json{}".format(directory_path, lib_index)
-        mconfig["params_name"] = "{}/params{}".format(directory_path, lib_index)
+        mconfig = {
+            "mod_idx": lib_index,
+            "lib_name": f"{directory_path}/lib{lib_index}.so",
+            "json_name": f"{directory_path}/json{lib_index}",
+            "params_name": f"{directory_path}/params{lib_index}",
+        }
+
         lib_config = factory.pipeline_mods[lib_index]
-        mconfig["dev"] = "{},{}".format(lib_config["dev"].device_type, lib_config["dev"].device_id)
+        mconfig[
+            "dev"
+        ] = f'{lib_config["dev"].device_type},{lib_config["dev"].device_id}'
+
         fcompile = lib_config["fcompile"]
         if not fcompile:
             fcompile = False
@@ -159,7 +167,7 @@ def export_library(factory, directory_path):
     with open(pipeline_config_file_name, "w") as file_handle:
         json.dump(factory.mods_config, file_handle)
 
-    config_file_name = "{}/config".format(directory_path)
+    config_file_name = f"{directory_path}/config"
     with open(config_file_name, "w") as file_handle:
         json.dump(config, file_handle)
 
@@ -228,7 +236,7 @@ class PipelineConfig(object):
 
         def __repr__(self):
             # Geting the binding information in the form of text.
-            str_format = "  |{}: ".format(self.name)
+            str_format = f"  |{self.name}: "
             for binding in self.bindings:
                 mname, dname = binding.get_name()
                 str_format += "{0}:{1} ".format(mname, dname)
@@ -245,7 +253,7 @@ class PipelineConfig(object):
             if "interface_name" not in connection_dict:
                 raise RuntimeError('"inteface_name" is missing in global config!"')
             if "connection" not in connection_dict:
-                raise RuntimeError(f'"connection" is missing!"')
+                raise RuntimeError('"connection" is missing!"')
             # The global interface mapping should be one-to-one.
             if not connection_dict["connection"]:
                 raise RuntimeError("The global interface map is empty!")
@@ -354,9 +362,9 @@ class PipelineConfig(object):
                     and self.data_type != binding.data_type
                 ):
                     raise RuntimeError(
-                        f"Illegal type (%s vs. %s): binding type is not same!"
-                        % (self.data_type, binding.data_type)
+                        f"Illegal type ({self.data_type} vs. {binding.data_type}): binding type is not same!"
                     )
+
 
                 binding.parents.append(self)
 
@@ -465,7 +473,7 @@ class PipelineConfig(object):
                     if param.name_hint == key:
                         return param._checked_type_
 
-            if interface_type == "output":
+            elif interface_type == "output":
                 if isinstance(self.output_type, tvm.ir.type.TupleType):
                     if int(key) < len(self.output_type.fields):
                         return self.output_type.fields[int(key)]
@@ -477,13 +485,13 @@ class PipelineConfig(object):
         def set_idx_name(self, idx):
             # Set the index value and generate the module name.
             self.idx = idx
-            self.name = "mod{}".format(str(idx))
+            self.name = f"mod{str(idx)}"
 
         def is_root_mod(self):
             """Check whether this node is the root node in DAG, this function is used
             in topological sort.
             """
-            return all([not b.parents for b in self.input_bindings.bindings.values()])
+            return all(not b.parents for b in self.input_bindings.bindings.values())
 
         def remove_self_from_bindings(self):
             """Remove the current node from child dependencies to reduce the in-degree
@@ -524,7 +532,7 @@ class PipelineConfig(object):
             for interface in self.mod_wrapper[mod].output_bindings.bindings.values():
                 if interface.bindings:
                     mname, dname = interface.get_name()
-                    iname = mname + ".output(" + dname + ")->"
+                    iname = f"{mname}.output({dname})->"
                     for dep in interface.bindings:
                         dep_mname, dep_dname = dep.get_name()
                         if isinstance(dep.io_owner, PipelineConfig.ModuleWrapper):
@@ -565,16 +573,12 @@ class PipelineConfig(object):
 
         # Use topological sort to get the correct order of modules.
         self.dag_topology_sort()
-        mconfig = {}
         module_connection = {}
         for mod in self.mod_wrapper:
-            # Generate pipeline configuration.
-            mconf = {}
             output_conf = []
             module = self.mod_wrapper[mod]
             for _, binding in module.output_bindings.bindings.items():
                 dep_conf = []
-                output = {}
                 if binding.bindings:
                     for dep in binding.bindings:
                         dep_item = {}
@@ -586,14 +590,14 @@ class PipelineConfig(object):
                             dep_item["input_name"] = dname
                         dep_conf.append(dep_item)
 
-                # The value of output_idx start from 0.
-                output["output_idx"] = int(binding.name)
-                output["dependencies"] = dep_conf
+                output = {"output_idx": int(binding.name), "dependencies": dep_conf}
                 output_conf.append(output)
 
-            mconf["mod_idx"] = module.idx
-            mconf["cpu_affinity"] = module.cpu_affinity
-            mconf["output"] = output_conf
+            mconf = {
+                "mod_idx": module.idx,
+                "cpu_affinity": module.cpu_affinity,
+                "output": output_conf,
+            }
 
             module_connection[mod] = {
                 "pipeline": mconf,
@@ -631,10 +635,11 @@ class PipelineConfig(object):
             }
             param_connection.append(param_map)
 
-        mconfig["module_connection"] = module_connection
-        mconfig["input_connection"] = input_connection
-        mconfig["param_connection"] = param_connection
-        return mconfig
+        return {
+            "module_connection": module_connection,
+            "input_connection": input_connection,
+            "param_connection": param_connection,
+        }
 
     def dag_topology_sort(self):
         """Use topological sort to get order of pipeline modules."""

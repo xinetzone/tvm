@@ -262,7 +262,7 @@ test_target = "cpu"
 # Change target configuration.
 # Run `adb shell cat /proc/cpuinfo` to find the arch.
 arch = "arm64"
-target = tvm.target.Target("llvm -mtriple=%s-linux-android" % arch)
+target = tvm.target.Target(f"llvm -mtriple={arch}-linux-android")
 
 if local_demo:
     target = tvm.target.Target("llvm")
@@ -285,7 +285,7 @@ with tvm.transform.PassContext(opt_level=3):
 # Save the library at local temporary directory.
 tmp = utils.tempdir()
 lib_fname = tmp.relpath("net.so")
-fcompile = ndk.create_shared if not local_demo else None
+fcompile = None if local_demo else ndk.create_shared
 lib.export_library(lib_fname, fcompile)
 
 ######################################################################
@@ -305,15 +305,12 @@ else:
     # When running a heavy model, we should increase the `session_timeout`
     remote = tracker.request(key, priority=0, session_timeout=60)
 
-if local_demo:
+if local_demo or test_target not in ["opencl", "vulkan"]:
     dev = remote.cpu(0)
 elif test_target == "opencl":
     dev = remote.cl(0)
-elif test_target == "vulkan":
-    dev = remote.vulkan(0)
 else:
-    dev = remote.cpu(0)
-
+    dev = remote.vulkan(0)
 # upload the library to remote device and load it
 remote.upload(lib_fname)
 rlib = remote.load_module("net.so")
@@ -334,7 +331,7 @@ out = module.get_output(0)
 
 # get top1 result
 top1 = np.argmax(out.numpy())
-print("TVM prediction top-1: {}".format(synset[top1]))
+print(f"TVM prediction top-1: {synset[top1]}")
 
 print("Evaluate inference time cost...")
 print(module.benchmark(dev, number=1, repeat=10))

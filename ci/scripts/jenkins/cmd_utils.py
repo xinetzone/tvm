@@ -72,8 +72,7 @@ class Sh:
             "env": self.env,
             "encoding": "utf-8",
             "cwd": self.cwd,
-        }
-        defaults.update(kwargs)
+        } | kwargs
 
         return subprocess.run(cmd, **defaults)
 

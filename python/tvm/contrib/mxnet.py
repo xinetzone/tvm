@@ -74,5 +74,5 @@ def to_mxnet_func(func, const_loc=None):
         _wrap_async = _get_bridge_func()
         tvm._ffi.registry.register_extension(mxnet.nd.NDArray)
 
-    const_loc = const_loc if const_loc else []
+    const_loc = const_loc or []
     return _wrap_async(func, tvm.runtime._ffi_api.TVMSetStream, len(const_loc), *const_loc)

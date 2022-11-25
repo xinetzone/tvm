@@ -187,22 +187,14 @@ if __name__ == "__main__":
     for i, wkl in enumerate(WORKLOADS):
         fp32_time = run_inference("float32", "float32", "float32", *wkl)
         int8_time = run_inference("uint8", "int8", "int32", *wkl)
-        kernel_h = wkl[4]
         kernel_w = wkl[5]
+        kernel_h = wkl[4]
         LOGGER.info(
-            "Workload#"
-            + str(i)
-            + ", "
-            + str(kernel_h)
-            + "x"
-            + str(kernel_w)
-            + ", "
-            + str(fp32_time)
-            + ", "
-            + str(int8_time)
-            + ", "
-            + str(fp32_time / int8_time)
+            f"Workload#{str(i)}, {str(kernel_h)}x{str(kernel_w)}, {str(fp32_time)}, {str(int8_time)}, {str(fp32_time / int8_time)}"
         )
 
+
         SPEEDUP_ARRAY.append(fp32_time / int8_time)
-    LOGGER.info("Average speedup --> %s" % str(sum(SPEEDUP_ARRAY) / float(len(SPEEDUP_ARRAY))))
+    LOGGER.info(
+        f"Average speedup --> {str(sum(SPEEDUP_ARRAY) / float(len(SPEEDUP_ARRAY)))}"
+    )

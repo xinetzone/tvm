@@ -96,16 +96,14 @@ def change_type(lines: List[str]) -> Change:
     """
     added_images = []
     removed_images = []
-    diff_lines = []
+    diff_lines = [
+        line
+        for line in lines[2:]
+        if line.startswith("-") or line.startswith("+")
+    ]
 
-    for line in lines[2:]:
-        if not line.startswith("-") and not line.startswith("+"):
-            # not a diff line, ignore it
-            continue
 
-        diff_lines.append(line)
-
-    if len(diff_lines) == 0:
+    if not diff_lines:
         # no changes made
         return Change.NONE
 
@@ -127,7 +125,7 @@ def change_type(lines: List[str]) -> Change:
             removed_images.append(match.groups()[0])
 
     # make sure that the added image lines match the removed image lines
-    if len(added_images) > 0 and added_images == removed_images:
+    if added_images and added_images == removed_images:
         return Change.IMAGES_ONLY
     else:
         return Change.FULL
@@ -140,9 +138,7 @@ if __name__ == "__main__":
     parser.add_argument("--check", action="store_true", help="just verify the output didn't change")
     args = parser.parse_args()
 
-    with open(JENKINSFILE) as f:
-        content = f.read()
-
+    content = Path(JENKINSFILE).read_text()
     data["generated_time"] = datetime.datetime.now().isoformat()
     timestamp_match = re.search(r"^// Generated at (.*)$", content, flags=re.MULTILINE)
     if not timestamp_match:
@@ -159,12 +155,13 @@ if __name__ == "__main__":
     template = environment.get_template(str(JENKINSFILE_TEMPLATE.relative_to(REPO_ROOT)))
     new_content = template.render(**data)
 
-    diff = [
-        line
-        for line in difflib.unified_diff(
-            lines_without_generated_tag(content), lines_without_generated_tag(new_content)
+    diff = list(
+        difflib.unified_diff(
+            lines_without_generated_tag(content),
+            lines_without_generated_tag(new_content),
         )
-    ]
+    )
+
     change = change_type(diff)
     if not args.force and change == Change.IMAGES_ONLY or change == Change.NONE:
         if change != Change.NONE:

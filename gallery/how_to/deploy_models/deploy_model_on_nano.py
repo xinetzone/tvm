@@ -231,11 +231,7 @@ remote.upload(lib_fname)
 rlib = remote.load_module("net.tar")
 
 # create the remote runtime module
-if local_demo:
-    dev = remote.cpu(0)
-else:
-    dev = remote.cuda(0)
-
+dev = remote.cpu(0) if local_demo else remote.cuda(0)
 module = runtime.GraphModule(rlib["default"](dev))
 # set input data
 module.set_input("data", tvm.nd.array(x.astype("float32")))
@@ -245,4 +241,4 @@ module.run()
 out = module.get_output(0)
 # get top1 result
 top1 = np.argmax(out.numpy())
-print("TVM prediction top-1: {}".format(synset[top1]))
+print(f"TVM prediction top-1: {synset[top1]}")

@@ -124,8 +124,11 @@ def _make_tvm_args(args, temp_args):
         elif isinstance(arg, NDArrayBase):
             values[i].v_handle = ctypes.cast(arg.handle, ctypes.c_void_p)
             type_codes[i] = (
-                ArgTypeCode.NDARRAY_HANDLE if not arg.is_view else ArgTypeCode.DLTENSOR_HANDLE
+                ArgTypeCode.DLTENSOR_HANDLE
+                if arg.is_view
+                else ArgTypeCode.NDARRAY_HANDLE
             )
+
         elif isinstance(arg, PyNativeObject):
             values[i].v_handle = arg.__tvm_object__.handle
             type_codes[i] = ArgTypeCode.OBJECT_HANDLE
@@ -209,9 +212,12 @@ class PackedFuncBase(object):
         self.is_global = is_global
 
     def __del__(self):
-        if not self.is_global and _LIB is not None:
-            if _LIB.TVMFuncFree(self.handle) != 0:
-                raise get_last_ffi_error()
+        if (
+            not self.is_global
+            and _LIB is not None
+            and _LIB.TVMFuncFree(self.handle) != 0
+        ):
+            raise get_last_ffi_error()
 
     def __call__(self, *args):
         """Call the function with positional arguments
@@ -291,7 +297,7 @@ def _get_global_func(name, allow_missing=False):
     if allow_missing:
         return None
 
-    raise ValueError("Cannot find global function %s" % name)
+    raise ValueError(f"Cannot find global function {name}")
 
 
 # setup return handle for function type

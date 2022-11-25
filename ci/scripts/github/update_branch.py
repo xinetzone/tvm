@@ -63,10 +63,7 @@ def commits_query(user: str, repo: str, cursor: str = None):
     Create a GraphQL query to find the last N commits along with their statuses
     and some metadata (paginated after 'cursor')
     """
-    after = ""
-    if cursor is not None:
-        after = f', after:"{cursor}"'
-
+    after = f', after:"{cursor}"' if cursor is not None else ""
     return f"""
     {{
     repository(name: "{repo}", owner: "{user}") {{
@@ -118,8 +115,7 @@ def commit_passed_ci(commit: Dict[str, Any]) -> bool:
             # Did not find expected job name
             return False
 
-    passed_ci = all(status for name, status in unified_statuses)
-    return passed_ci
+    return all(status for name, status in unified_statuses)
 
 
 def update_branch(user: str, repo: str, sha: str, branch_name: str) -> None:
@@ -185,10 +181,9 @@ if __name__ == "__main__":
         edges = r["data"]["repository"]["defaultBranchRef"]["target"]["history"]["edges"]
         if len(edges) == 0:
             break
-        else:
-            q = commits_query(user, repo, cursor=edges[-1]["cursor"])
-            r = github.graphql(q)
-            commits = r["data"]["repository"]["defaultBranchRef"]["target"]["history"]["nodes"]
+        q = commits_query(user, repo, cursor=edges[-1]["cursor"])
+        r = github.graphql(q)
+        commits = r["data"]["repository"]["defaultBranchRef"]["target"]["history"]["nodes"]
 
         # Backstop to prevent looking through all the past commits
         i += len(commits)

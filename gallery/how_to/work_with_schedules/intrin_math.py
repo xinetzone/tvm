@@ -110,7 +110,7 @@ def my_cuda_math_rule(op):
     dispatch_name = name[4:]
     if op.dtype == "float32":
         # call float function
-        return tvm.tir.call_pure_extern("float32", "%sf" % dispatch_name, op.args[0])
+        return tvm.tir.call_pure_extern("float32", f"{dispatch_name}f", op.args[0])
     elif op.dtype == "float64":
         # call double function
         return tvm.tir.call_pure_extern("float32", dispatch_name, op.args[0])

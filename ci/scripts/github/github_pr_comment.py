@@ -106,10 +106,7 @@ if __name__ == "__main__":
     remote = git(["config", "--get", f"remote.{args.remote}.url"])
     user, repo = parse_remote(remote)
 
-    test_data = None
-    if args.test_data is not None:
-        test_data = json.loads(args.test_data)
-
+    test_data = json.loads(args.test_data) if args.test_data is not None else None
     github = GitHubRepo(
         user=user,
         repo=repo,

@@ -20,6 +20,7 @@ To use it, start a rpc proxy with "python -m tvm.exec.rpc_proxy".
 And configure the proxy host field as commented.
 """
 
+
 import tvm
 from tvm import te
 import os
@@ -33,7 +34,7 @@ import argparse
 # Change target configuration, this is setting for iphone6s
 arch = "arm64"
 sdk = "iphoneos"
-target = "llvm -mtriple=%s-apple-darwin" % arch
+target = f"llvm -mtriple={arch}-apple-darwin"
 
 MODES = {"proxy": rpc.connect, "tracker": rpc.connect_tracker, "standalone": rpc.connect}
 
@@ -105,10 +106,9 @@ if __name__ == "__main__":
         "--mode",
         type=str,
         default="tracker",
-        help="type of RPC connection (default: tracker), possible values: {}".format(
-            ", ".join(MODES.keys())
-        ),
+        help=f'type of RPC connection (default: tracker), possible values: {", ".join(MODES.keys())}',
     )
+
 
     args = parser.parse_args()
     assert args.mode in MODES.keys()

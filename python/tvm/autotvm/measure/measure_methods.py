@@ -113,7 +113,7 @@ class LocalBuilder(Builder):
             elif build_func == "stackvm":
                 build_func = stackvm.build
             else:
-                raise ValueError("Invalid build_func" + build_func)
+                raise ValueError(f"Invalid build_func{build_func}")
         self.build_func = _WrappedBuildFunc(build_func, runtime)
         if not do_fork:
             assert n_parallel in (
@@ -158,33 +158,30 @@ class LocalBuilder(Builder):
                                 time.time(),
                             )
 
-                        else:
-                            if "InstantiationError" in str(exception):
-                                msg = str(exception)
-                                try:
-                                    msg = msg.split("\n")[-2].split(": ")[1]
-                                except Exception:  # pylint: disable=broad-except
-                                    pass
-                                res = MeasureResult(
-                                    (
-                                        tb,
-                                        InstantiationError(msg),
-                                    ),
-                                    MeasureErrorNo.INSTANTIATION_ERROR,
-                                    res.time_cost,
-                                    time.time(),
-                                )
+                        elif "InstantiationError" in str(exception):
+                            msg = str(exception)
+                            with contextlib.suppress(Exception):
+                                msg = msg.split("\n")[-2].split(": ")[1]
+                            res = MeasureResult(
+                                (
+                                    tb,
+                                    InstantiationError(msg),
+                                ),
+                                MeasureErrorNo.INSTANTIATION_ERROR,
+                                res.time_cost,
+                                time.time(),
+                            )
 
-                            else:  # tvm error
-                                res = MeasureResult(
-                                    (
-                                        tb,
-                                        res.error,
-                                    ),
-                                    MeasureErrorNo.COMPILE_HOST,
-                                    res.time_cost,
-                                    time.time(),
-                                )
+                        else:  # tvm error
+                            res = MeasureResult(
+                                (
+                                    tb,
+                                    res.error,
+                                ),
+                                MeasureErrorNo.COMPILE_HOST,
+                                res.time_cost,
+                                time.time(),
+                            )
                 except TimeoutError as ex:
                     tb = traceback.format_exc()
                     res = MeasureResult(
@@ -520,7 +517,7 @@ def _build_func_common(measure_input, runtime=None, check_gpu=None, build_option
             )
             current_config = dict(current_pass_context.config)
             if build_option is not None:
-                current_config.update(build_option)
+                current_config |= build_option
 
             if "tir.add_lower_pass" in current_config:
                 current_add_lower_pass = list(current_config["tir.add_lower_pass"])
@@ -702,8 +699,7 @@ def run_through_rpc(
             costs = time_f(*args).results
 
         if len(costs) > 2:  # remove largest and smallest value to reduce variance
-            costs = list(costs)
-            costs.sort()
+            costs = sorted(costs)
             costs = tuple(costs[1:-1])
     except TVMError as exc:
         msg = str(exc)
@@ -740,7 +736,7 @@ class DefaultModuleLoader:
         finally:
             # clean up remote files
             remote.remove(build_result.filename)
-            remote.remove(os.path.splitext(build_result.filename)[0] + ".so")
+            remote.remove(f"{os.path.splitext(build_result.filename)[0]}.so")
             remote.remove("")
 
 
@@ -791,8 +787,7 @@ def request_remote(device_key, host=None, port=None, priority=1, timeout=60):
     port = port or int(os.environ["TVM_TRACKER_PORT"])
 
     tracker = _rpc.connect_tracker(host, port)
-    remote = tracker.request(device_key, priority=priority, session_timeout=timeout)
-    return remote
+    return tracker.request(device_key, priority=priority, session_timeout=timeout)
 
 
 def check_remote(target, device_key, host=None, port=None, priority=100, timeout=10):

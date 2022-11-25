@@ -60,7 +60,7 @@ def serialize_args(args):
         if isinstance(x, tensor.Tensor):
             return ("TENSOR", get_const_tuple(x.shape), x.dtype)
         if isinstance(x, (tuple, list, container.Array)):
-            return tuple([_encode(a) for a in x])
+            return tuple(_encode(a) for a in x)
         if isinstance(x, (str, int, float, expr.Var, expr.Any)):
             return x
         if isinstance(x, (expr.StringImm, expr.IntImm, expr.FloatImm)):
@@ -203,12 +203,7 @@ class Task(object):
         )
 
     def __repr__(self):
-        return "Task(func_name=%s, args=%s, kwargs=%s, workload=%s)" % (
-            self.name,
-            self.args,
-            self.kwargs,
-            self.workload,
-        )
+        return f"Task(func_name={self.name}, args={self.args}, kwargs={self.kwargs}, workload={self.workload})"
 
 
 TASK_TABLE = {}
@@ -304,13 +299,11 @@ def _register_task_compute(name, func=None):
             TASK_TABLE[name] = TaskTemplate()
         tmpl = TASK_TABLE[name]
         if tmpl.fcompute is not None:
-            raise ValueError("Compute is already registered in autoTVM task %s" % name)
+            raise ValueError(f"Compute is already registered in autoTVM task {name}")
         tmpl.fcompute = f
         return f
 
-    if func:
-        return _do_reg(func)
-    return _do_reg
+    return _do_reg(func) if func else _do_reg
 
 
 def _register_task_schedule(name, func=None):
@@ -336,13 +329,11 @@ def _register_task_schedule(name, func=None):
             TASK_TABLE[name] = TaskTemplate()
         tmpl = TASK_TABLE[name]
         if tmpl.fschedule is not None:
-            raise ValueError("Schedule is already registered in autoTVM task %s" % name)
+            raise ValueError(f"Schedule is already registered in autoTVM task {name}")
         tmpl.fschedule = f
         return f
 
-    if func:
-        return _do_reg(func)
-    return _do_reg
+    return _do_reg(func) if func else _do_reg
 
 
 def _register_customized_task(name, func=None):
@@ -368,13 +359,14 @@ def _register_customized_task(name, func=None):
             TASK_TABLE[name] = TaskTemplate()
         tmpl = TASK_TABLE[name]
         if tmpl.fcustomized is not None:
-            raise ValueError("Customized func is already registered in autoTVM task %s" % name)
+            raise ValueError(
+                f"Customized func is already registered in autoTVM task {name}"
+            )
+
         tmpl.fcustomized = f
         return f
 
-    if func:
-        return _do_reg(func)
-    return _do_reg
+    return _do_reg(func) if func else _do_reg
 
 
 def template(task_name, func=None):
@@ -442,9 +434,7 @@ def template(task_name, func=None):
         _register_customized_task(task_name, f)
         return wrapper
 
-    if func:
-        return _decorate(func)
-    return _decorate
+    return _decorate(func) if func else _decorate
 
 
 def create(task_name, args, target, target_host=None):
@@ -580,7 +570,7 @@ def compute_flop(sch):
             return 0
 
         if isinstance(exp, expr.Call):
-            return sum([_count_flop(x) for x in exp.args])
+            return sum(_count_flop(x) for x in exp.args)
 
         raise FlopCalculationError("Found unsupported operator in the compute expr")
 

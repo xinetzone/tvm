@@ -87,7 +87,7 @@ def latest_tlcpackstaging_image(source: str) -> Optional[str]:
     logging.info(f"Found latest tlcpackstaging tag:\n{latest_tlcpackstaging_tag}")
 
     if latest_tlcpackstaging_tag["name"] == current_tag:
-        logging.info(f"tlcpackstaging tag is the same as the one in the Jenkinsfile")
+        logging.info("tlcpackstaging tag is the same as the one in the Jenkinsfile")
 
     latest_tlcpack_tag = latest_tag(user="tlcpack", repo=repo)
     logging.info(f"Found latest tlcpack tag:\n{latest_tlcpack_tag}")
@@ -139,7 +139,7 @@ if __name__ == "__main__":
             groups = m.groups()
             new_image = latest_tlcpackstaging_image(groups[1])
             if new_image is None:
-                logging.info(f"No new image found")
+                logging.info("No new image found")
                 new_content.append(line)
             else:
                 logging.info(f"Using new image {new_image}")
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     if args.dry_run:
         logging.info("Dry run, would have committed Jenkinsfile")
     else:
-        logging.info(f"Creating git commit")
+        logging.info("Creating git commit")
         git(["checkout", "-B", BRANCH])
         git(["add", str(JENKINSFILE.relative_to(REPO_ROOT))])
         git(["add", str(GENERATED_JENKINSFILE.relative_to(REPO_ROOT))])
@@ -188,7 +188,7 @@ if __name__ == "__main__":
         git(["commit", "-m", message])
         git(["push", "--set-upstream", args.remote, BRANCH, "--force"])
 
-    logging.info(f"Sending PR to GitHub")
+    logging.info("Sending PR to GitHub")
     github = GitHubRepo(user=user, repo=repo, token=GITHUB_TOKEN)
     data = {
         "title": title,
@@ -204,10 +204,7 @@ if __name__ == "__main__":
         try:
             github.post(url, data=data)
         except error.HTTPError as e:
-            # Ignore the exception if the PR already exists (which gives a 422). The
-            # existing PR will have been updated in place
-            if e.code == 422:
-                logging.info("PR already exists, ignoring error")
-                logging.exception(e)
-            else:
+            if e.code != 422:
                 raise e
+            logging.info("PR already exists, ignoring error")
+            logging.exception(e)

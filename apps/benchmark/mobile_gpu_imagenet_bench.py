@@ -46,10 +46,10 @@ def evaluate_network(network, target, target_host, dtype, repeat):
     if "android" in str(target) or "android" in str(target_host):
         from tvm.contrib import ndk
 
-        filename = "%s.so" % network
+        filename = f"{network}.so"
         lib.export_library(tmp.relpath(filename), ndk.create_shared)
     else:
-        filename = "%s.tar" % network
+        filename = f"{network}.tar"
         lib.export_library(tmp.relpath(filename))
 
     # upload library and params

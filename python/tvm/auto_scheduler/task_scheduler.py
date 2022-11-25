@@ -100,34 +100,31 @@ def make_search_policies(
         elif model_type == "random":
             cost_model = RandomModel()
         else:
-            raise ValueError("Invalid search policy: " + search_policy)
+            raise ValueError(f"Invalid search policy: {search_policy}")
 
-        if policy_type == "sketch":
-            if load_log_file:
-                # use the log file to restore the status of search policies.
-                init_search_callbacks = [PreloadMeasuredStates(load_log_file)]
-            else:
-                init_search_callbacks = None
-            search_policies = [
-                SketchPolicy(
-                    task,
-                    cost_model,
-                    params=search_policy_params,
-                    verbose=verbose,
-                    init_search_callbacks=init_search_callbacks,
-                )
-                for task in tasks
-            ]
-        else:
-            raise ValueError("Invalid search policy: " + search_policy)
+        if policy_type != "sketch":
+            raise ValueError(f"Invalid search policy: {search_policy}")
+        init_search_callbacks = (
+            [PreloadMeasuredStates(load_log_file)] if load_log_file else None
+        )
+
+        return [
+            SketchPolicy(
+                task,
+                cost_model,
+                params=search_policy_params,
+                verbose=verbose,
+                init_search_callbacks=init_search_callbacks,
+            )
+            for task in tasks
+        ]
+
     else:
         # check type
         assert isinstance(search_policy, (tuple, list))
         for item in search_policy:
             assert isinstance(item, SearchPolicy)
-        search_policies = search_policy
-
-    return search_policies
+        return search_policy
 
 
 def derive_similarity_tag(dag, log_base=1.618):
@@ -152,8 +149,7 @@ def derive_similarity_tag(dag, log_base=1.618):
     """
     ret = ""
     for op in dag.ops:
-        tag = op.attrs.get("auto_scheduler_task_scheduler_tag", None)
-        if tag:
+        if tag := op.attrs.get("auto_scheduler_task_scheduler_tag", None):
             ret += op.attrs["auto_scheduler_task_scheduler_tag"] + "_"
     if ret:
         ret += "%d" % int(math.log(dag.flop_ct + 1, log_base))
@@ -221,11 +217,10 @@ class TaskScheduler:
         self.tasks = tasks
         if objective_func:  # use custom objective function
             self.objective_func = objective_func
-        else:  # use weighted sum
-            if task_weights:
-                self.objective_func = lambda costs: sum(c * w for c, w in zip(costs, task_weights))
-            else:
-                self.objective_func = sum
+        elif task_weights:
+            self.objective_func = lambda costs: sum(c * w for c, w in zip(costs, task_weights))
+        else:
+            self.objective_func = sum
 
         self.strategy = strategy
         self.load_log_file = load_log_file
@@ -356,10 +351,9 @@ class TaskScheduler:
             if not self.task_cts[idx]:
                 self._tune_task(idx)
         self.best_ct = self.ct
-        self.best_score = self.cur_score
-
         # use the specific strategy to choose workload to tune
         task_idx = -1
+        self.best_score = self.cur_score
         while self.ct < tune_option.num_measure_trials and len(self.dead_tasks) < len(self.tasks):
             if self.strategy == "round-robin":
                 task_idx = (task_idx + 1) % len(self.tasks)
@@ -401,11 +395,10 @@ class TaskScheduler:
                     group_id = self.tag_to_group_id.get(self.task_tags[i], None)
                     if group_id is not None and len(self.group_task_ids[group_id]) > 1:
                         best_flops = max(
-                            [
-                                self.flop_cts[j] / self.best_costs[j]
-                                for j in self.group_task_ids[group_id]
-                            ]
+                            self.flop_cts[j] / self.best_costs[j]
+                            for j in self.group_task_ids[group_id]
                         )
+
                         g_next_2 = self.beta * self.flop_cts[i] / best_flops
 
                     g_next = min(g_next_1, g_next_2)
@@ -423,7 +416,7 @@ class TaskScheduler:
                 else:
                     task_idx = np.argmin(gradients)
             else:
-                raise ValueError("Invalid strategy: " + self.strategy)
+                raise ValueError(f"Invalid strategy: {self.strategy}")
 
             self._tune_task(task_idx)
             self._adjust_similarity_group(task_idx)
@@ -436,10 +429,9 @@ class TaskScheduler:
             ):
                 if self.tune_option.verbose >= 1:
                     print(
-                        "Stop early since no performance improvement in the last "
-                        + str(self.early_stopping_all)
-                        + " measurement trials."
+                        f"Stop early since no performance improvement in the last {str(self.early_stopping_all)} measurement trials."
                     )
+
                 break
 
     def _tune_task(self, task_idx):

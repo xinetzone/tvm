@@ -72,7 +72,7 @@ def get_shape(
     """
     data_shape = (1, in_filter // NUM_VEC_LANES, im_height, im_width, NUM_VEC_LANES)
 
-    if out_dtype == "int32" or out_dtype == "uint32":
+    if out_dtype in ["int32", "uint32"]:
         kernel_shape = (
             out_filter // NUM_VEC_LANES,
             in_filter // NUM_VEC_LANES,
@@ -201,23 +201,15 @@ if __name__ == "__main__":
     for i, wkl in enumerate(WORKLOADS):
         for dtype in ["uint", "int"]:
             fp32_time = run_inference("float32", "float32", "float32", *wkl)
-            int8_time = run_inference("%s8" % dtype, "%s8" % dtype, "%s32" % dtype, *wkl)
+            int8_time = run_inference(f"{dtype}8", f"{dtype}8", f"{dtype}32", *wkl)
             kernel_h = wkl[4]
             kernel_w = wkl[5]
             LOGGER.info(
-                "[%s] Workload#" % dtype
-                + str(i)
-                + ", "
-                + str(kernel_h)
-                + "x"
-                + str(kernel_w)
-                + ", "
-                + str(fp32_time)
-                + ", "
-                + str(int8_time)
-                + ", "
-                + str(fp32_time / int8_time)
+                f"[{dtype}] Workload#{str(i)}, {str(kernel_h)}x{str(kernel_w)}, {str(fp32_time)}, {str(int8_time)}, {str(fp32_time / int8_time)}"
             )
 
+
             SPEEDUP_ARRAY.append(fp32_time / int8_time)
-    LOGGER.info("Average speedup --> %s" % str(sum(SPEEDUP_ARRAY) / float(len(SPEEDUP_ARRAY))))
+    LOGGER.info(
+        f"Average speedup --> {str(sum(SPEEDUP_ARRAY) / float(len(SPEEDUP_ARRAY)))}"
+    )

@@ -91,8 +91,7 @@ def find_hash_for_tag(tag: Dict[str, Any]) -> str:
     name_parts = name.split("-")
     if len(name_parts) != 3:
         raise RuntimeError(f"Image {name} is not using new naming scheme")
-    shorthash = name_parts[2]
-    return shorthash
+    return name_parts[2]
 
 
 def find_commit_in_repo(tags: List[Dict[str, Any]]):

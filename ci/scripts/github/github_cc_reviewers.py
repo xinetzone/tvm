@@ -45,7 +45,7 @@ def find_reviewers(body: str) -> List[str]:
         users = [x.strip() for x in match.split("@")]
         reviewers += users
 
-    reviewers = set(x for x in reviewers if x != "")
+    reviewers = {x for x in reviewers if x != ""}
     return sorted(list(reviewers))
 
 
@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     existing_review_users = [review["user"]["login"] for review in existing_reviews]
     print("PR has reviews from these users:", existing_review_users)
-    existing_review_users = set(r.lower() for r in existing_review_users)
+    existing_review_users = {r.lower() for r in existing_review_users}
 
     existing_reviewers = [review["login"] for review in pr["requested_reviewers"]]
     print("PR already had these reviewers requested:", existing_reviewers)

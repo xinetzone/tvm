@@ -62,7 +62,7 @@ class BotCommentBuilder:
         """
         existing_comment = self.find_bot_comment()
         if existing_comment is None:
-            logging.info(f"No existing comment while searching for body items")
+            logging.info("No existing comment while searching for body items")
             return {}
 
         matches = re.findall(

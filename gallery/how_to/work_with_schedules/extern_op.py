@@ -118,7 +118,7 @@ s = te.create_schedule(D.op)
 #
 @tvm.register_func("tvm.contrib.my_tvm_addone")
 def my_tvm_addone(x, y):
-    print("my_tvm_addone signatures: %s, %s" % (type(x), type(y)))
+    print(f"my_tvm_addone signatures: {type(x)}, {type(y)}")
     tvm.nd.array(x.numpy() + 1).copyto(y)
 
 

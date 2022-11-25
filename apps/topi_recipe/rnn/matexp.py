@@ -42,8 +42,7 @@ SKIP_CHECK = False
 @tvm.register_func("tvm_callback_cuda_compile", override=True)
 def tvm_callback_cuda_compile(code):
     """Use nvcc compiler for better perf."""
-    ptx = nvcc.compile_cuda(code, target_format="ptx")
-    return ptx
+    return nvcc.compile_cuda(code, target_format="ptx")
 
 
 def write_code(code, fname):
@@ -55,9 +54,9 @@ def write_code(code, fname):
 def tvm_callback_cuda_postproc(code):
     if not os.path.exists("perf"):
         os.mkdir("perf")
-    write_code(code, "perf/%s_generated.cu" % TASK)
+    write_code(code, f"perf/{TASK}_generated.cu")
     if USE_MANUAL_CODE:
-        code = open("perf/%s_manual.cu" % TASK).read()
+        code = open(f"perf/{TASK}_manual.cu").read()
     return code
 
 

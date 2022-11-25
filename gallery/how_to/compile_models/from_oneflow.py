@@ -100,8 +100,7 @@ class Graph(flow.nn.Graph):
         self.m = module
 
     def build(self, x):
-        out = self.m(x)
-        return out
+        return self.m(x)
 
 
 graph = Graph(model)
@@ -177,7 +176,10 @@ with flow.no_grad():
     top_oneflow = np.argmax(output.numpy())
     oneflow_class_key = class_id_to_key[top_oneflow]
 
-print("Relay top-1 id: {}, class name: {}".format(top1_tvm, key_to_classname[tvm_class_key]))
 print(
-    "OneFlow top-1 id: {}, class name: {}".format(top_oneflow, key_to_classname[oneflow_class_key])
+    f"Relay top-1 id: {top1_tvm}, class name: {key_to_classname[tvm_class_key]}"
+)
+
+print(
+    f"OneFlow top-1 id: {top_oneflow}, class name: {key_to_classname[oneflow_class_key]}"
 )

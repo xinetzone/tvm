@@ -58,22 +58,20 @@ def bash_to_python(src_path: pathlib.Path, dest_path: pathlib.Path):
                         new_line_required = True
                     else:
                         new_line_required = False
-                        pass
+                elif line == BASH:
+                    bash_detected = True
+                elif line == BASH_IGNORE:
+                    bash_ignore_detected = True
+                elif line in [BASH_MULTILINE_COMMENT_START, BASH_MULTILINE_COMMENT_END]:
+                    if new_line_required:
+                        dest_f.write("\n")
+                    dest_f.write('"""')
+                    new_line_required = True
                 else:
-                    if line == BASH:
-                        bash_detected = True
-                    elif line == BASH_IGNORE:
-                        bash_ignore_detected = True
-                    elif line in [BASH_MULTILINE_COMMENT_START, BASH_MULTILINE_COMMENT_END]:
-                        if new_line_required:
-                            dest_f.write("\n")
-                        dest_f.write('"""')
-                        new_line_required = True
-                    else:
-                        if new_line_required:
-                            dest_f.write("\n")
-                        dest_f.write(f"{line}")
-                        new_line_required = True
+                    if new_line_required:
+                        dest_f.write("\n")
+                    dest_f.write(f"{line}")
+                    new_line_required = True
 
                 line = src_f.readline()
             if new_line_required:

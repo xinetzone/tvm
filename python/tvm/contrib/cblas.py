@@ -79,9 +79,9 @@ def batch_matmul(lhs, rhs, transa=False, transb=False, iterative=False, **kwargs
         (b, n, m),
         [lhs, rhs],
         lambda ins, outs: tvm.tir.call_packed(
-            "tvm.contrib.cblas.batch_matmul"
-            if not iterative
-            else "tvm.contrib.cblas.batch_matmul_iterative",
+            "tvm.contrib.cblas.batch_matmul_iterative"
+            if iterative
+            else "tvm.contrib.cblas.batch_matmul",
             ins[0],
             ins[1],
             outs[0],
@@ -89,5 +89,5 @@ def batch_matmul(lhs, rhs, transa=False, transb=False, iterative=False, **kwargs
             transb,
         ),
         name="C",
-        **kwargs,
+        **kwargs
     )

@@ -36,11 +36,9 @@ SLOW_TEST_TRIGGERS = [
 
 
 def check_match(s: str, searches: List[str]) -> Tuple[bool, Optional[str]]:
-    for search in searches:
-        if search in s:
-            return True, search
-
-    return False, None
+    return next(
+        ((True, search) for search in searches if search in s), (False, None)
+    )
 
 
 def display(long_str: str) -> str:

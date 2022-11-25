@@ -15,6 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 """Example code to do square matrix multiplication on Android Phone."""
+
 import tvm
 from tvm import te
 import os
@@ -30,7 +31,7 @@ key = "android"
 # Change target configuration.
 # Run `adb shell cat /proc/cpuinfo` to find the arch.
 arch = "arm64"
-target = "llvm -mtriple=%s-linux-android" % arch
+target = f"llvm -mtriple={arch}-linux-android"
 
 
 def ngflops(N):

@@ -21,6 +21,7 @@ Use the tracker's address and port when configuring the RPC app.
 Use "android" as the key if you wish to avoid modifying this script.
 """
 
+
 import tvm
 from tvm import te
 import os
@@ -36,7 +37,7 @@ key = "android"
 # Change target configuration.
 # Run `adb shell cat /proc/cpuinfo` to find the arch.
 arch = "arm64"
-target = "llvm -mtriple=%s-linux-android" % arch
+target = f"llvm -mtriple={arch}-linux-android"
 
 # whether enable to execute test on OpenCL target
 test_opencl = False

@@ -43,27 +43,21 @@ class Check:
 
 
 def non_empty(s: str):
-    if len(s) == 0:
-        return FAIL
-    return OK
+    return OK if s else FAIL
 
 
 def usernames(s: str):
     m = GITHUB_USERNAME_REGEX.findall(s)
-    return m if m else OK
+    return m or OK
 
 
 def tags(s: str):
     items = tags_from_title(s)
-    if len(items) == 0:
-        return FAIL
-    return OK
+    return FAIL if len(items) == 0 else OK
 
 
 def trailing_period(s: str):
-    if s.endswith("."):
-        return FAIL
-    return OK
+    return FAIL if s.endswith(".") else OK
 
 
 title_checks = [

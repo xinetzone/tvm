@@ -130,27 +130,28 @@ for i in range(5):
     filters = torch.randn(out_channel, kernel_size)
     res = torch.zeros(out_channel, width - kernel_size + 1)
     sub_label = f"[test {i}]"
-    results.append(
-        benchmark.Timer(
-            stmt="tvm_depthwise(inputs, filters, res)",
-            setup="from __main__ import tvm_depthwise",
-            globals={"inputs": inputs, "filters": filters, "res": res},
-            sub_label=sub_label,
-            description="TVMScript",
-        ).blocked_autorange()
+    results.extend(
+        (
+            benchmark.Timer(
+                stmt="tvm_depthwise(inputs, filters, res)",
+                setup="from __main__ import tvm_depthwise",
+                globals={"inputs": inputs, "filters": filters, "res": res},
+                sub_label=sub_label,
+                description="TVMScript",
+            ).blocked_autorange(),
+            benchmark.Timer(
+                stmt="torch_depthwise(inputs, filters)",
+                setup="from __main__ import torch_depthwise",
+                globals={
+                    "inputs": inputs,
+                    "filters": filters,
+                },
+                sub_label=sub_label,
+                description="PyTorch",
+            ).blocked_autorange(),
+        )
     )
-    results.append(
-        benchmark.Timer(
-            stmt="torch_depthwise(inputs, filters)",
-            setup="from __main__ import torch_depthwise",
-            globals={
-                "inputs": inputs,
-                "filters": filters,
-            },
-            sub_label=sub_label,
-            description="PyTorch",
-        ).blocked_autorange()
-    )
+
 compare = benchmark.Compare(results)
 compare.print()
 

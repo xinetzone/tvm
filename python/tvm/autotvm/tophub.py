@@ -119,7 +119,7 @@ def context(target, extra_files=None):
                 if not check_backend(tophub_location, name):
                     continue
 
-                filename = "%s_%s.log" % (name, PACKAGE_VERSION[name])
+                filename = f"{name}_{PACKAGE_VERSION[name]}.log"
                 best_context.load(Path(AUTOTVM_TOPHUB_ROOT_PATH, filename))
                 break  # only load one file to avoid some fallback template mismatch problem
 
@@ -148,7 +148,7 @@ def check_backend(tophub_location, backend):
     assert backend in PACKAGE_VERSION, 'Cannot find backend "%s" in TopHub' % backend
 
     version = PACKAGE_VERSION[backend]
-    package_name = "%s_%s.log" % (backend, version)
+    package_name = f"{backend}_{version}.log"
     if Path(AUTOTVM_TOPHUB_ROOT_PATH, package_name).is_file():
         return True
 
@@ -206,7 +206,7 @@ def load_reference_log(backend, model, workload_name):
     if backend not in PACKAGE_VERSION:
         return []
     version = PACKAGE_VERSION[backend]
-    package_name = "%s_%s.log" % (backend, version)
+    package_name = f"{backend}_{version}.log"
     filename = Path(AUTOTVM_TOPHUB_ROOT_PATH, package_name)
 
     global REFERENCE_LOG_CACHE
@@ -233,9 +233,13 @@ def load_reference_log(backend, model, workload_name):
             if not find and counts:
                 model = max(counts.items(), key=lambda k: k[1])[0]
 
-            for inp, res in load_from_file(filename):
-                if model == inp.target.model and inp.task.workload[0] == workload_name:
-                    tmp.append((inp, res))
+            tmp.extend(
+                (inp, res)
+                for inp, res in load_from_file(filename)
+                if model == inp.target.model
+                and inp.task.workload[0] == workload_name
+            )
+
         REFERENCE_LOG_CACHE[key] = tmp
 
     return REFERENCE_LOG_CACHE[key]

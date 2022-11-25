@@ -39,7 +39,7 @@ import argparse
 # sdk = "iphonesimulator"
 arch = "arm64"
 sdk = "iphoneos"
-target_host = "llvm -mtriple=%s-apple-darwin" % arch
+target_host = f"llvm -mtriple={arch}-apple-darwin"
 
 MODES = {"proxy": rpc.connect, "tracker": rpc.connect_tracker, "standalone": rpc.connect}
 
@@ -106,10 +106,7 @@ def test_mobilenet(host, port, key, mode):
             remote = MODES[mode](host, port, key=key)
         remote.upload(path_dso)
 
-        if target == "metal":
-            dev = remote.metal(0)
-        else:
-            dev = remote.cpu(0)
+        dev = remote.metal(0) if target == "metal" else remote.cpu(0)
         lib = remote.load_module("deploy.dylib")
         m = graph_executor.GraphModule(lib["default"](dev))
 
@@ -174,10 +171,9 @@ if __name__ == "__main__":
         "--mode",
         type=str,
         default="tracker",
-        help="type of RPC connection (default: tracker), possible values: {}".format(
-            ", ".join(MODES.keys())
-        ),
+        help=f'type of RPC connection (default: tracker), possible values: {", ".join(MODES.keys())}',
     )
+
 
     args = parser.parse_args()
     assert args.mode in MODES.keys()

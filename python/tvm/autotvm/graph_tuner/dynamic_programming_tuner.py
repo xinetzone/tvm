@@ -62,13 +62,15 @@ class DPTuner(BaseGraphTuner):
     def _check_num_states(self, num_states):
         """Track the number of states."""
         self._num_states += num_states
-        if self._max_num_states is not None:
-            if self._num_states > self._max_num_states:
-                raise RuntimeError(
-                    "Too many states detected while running dynamic "
-                    "programming: got %d states but upper limit is %d."
-                    % (self._num_states, self._max_num_states)
-                )
+        if (
+            self._max_num_states is not None
+            and self._num_states > self._max_num_states
+        ):
+            raise RuntimeError(
+                "Too many states detected while running dynamic "
+                "programming: got %d states but upper limit is %d."
+                % (self._num_states, self._max_num_states)
+            )
 
     def _forward(self):
         """Forward pass in DP to generate states for all stages."""
@@ -83,22 +85,12 @@ class DPTuner(BaseGraphTuner):
         """Backward pass in DP to generate optimal solution."""
         self._logger.info("Start backward pass...")
         input_names = self._input_shapes.keys()
-        optimal_record_dict = {}
         # Pick optimal schedule for output nodes
-        output_idx_list = []
-        for key, val in self._out_nodes_dict.items():
-            if not val:
-                output_idx_list.append(key)
-
+        output_idx_list = [key for key, val in self._out_nodes_dict.items() if not val]
         # Restrict number of output nodes to avoid numpy reshape error
         if len(output_idx_list) > MAX_OUTPUT_NODES:
-            msg = (
-                "The number of outputs in graph is larger than upper "
-                "limit: %s vs %s. Usually this is caused by too many "
-                "LAYOUT_FIXED_OP in graph. Switch to greedily select schedule."
-                "No action required at this moment. We will continuously improve graph tuner"
-                % (len(output_idx_list), MAX_OUTPUT_NODES)
-            )
+            msg = f"The number of outputs in graph is larger than upper limit: {len(output_idx_list)} vs {MAX_OUTPUT_NODES}. Usually this is caused by too many LAYOUT_FIXED_OP in graph. Switch to greedily select schedule.No action required at this moment. We will continuously improve graph tuner"
+
             self._logger.warning(msg)
             self._optimal_record_dict = {key: 0 for key in self._in_nodes_dict}
             return
@@ -109,18 +101,19 @@ class DPTuner(BaseGraphTuner):
         num_states = states_list[0][3].size
         self._check_num_states(num_states * len(output_idx_list))
         aligned_node_shape = states_list[0][3].shape
-        min_time = 0
         min_pos = -1
-        for states in states_list:
-            min_time += np.amax(states[3])
+        min_time = sum(np.amax(states[3]) for states in states_list)
         flatten_states_list = [current_states[3].flatten() for current_states in states_list]
         for i in range(num_states):
-            current_time = 0
-            for j, current_states in enumerate(states_list):
-                current_time += flatten_states_list[j][i]
+            current_time = sum(
+                flatten_states_list[j][i]
+                for j, current_states in enumerate(states_list)
+            )
+
             if min_time > current_time:
                 min_time = current_time
                 min_pos = i
+        optimal_record_dict = {}
         for i, states in enumerate(states_list):
             current_major_axis = states[1]
             current_sch_idx = (
@@ -158,7 +151,7 @@ class DPTuner(BaseGraphTuner):
                     bfs_q.put(input_idx)
                     if input_idx not in optimal_record_dict:
                         dep_list = self._stage_dict[node_idx].dep
-                        dep_idx = tuple([optimal_record_dict[item] for item in dep_list])
+                        dep_idx = tuple(optimal_record_dict[item] for item in dep_list)
                         tmp = np.argmin(full_states, axis=1)
                         optimal_input_sch_idx = tmp[(optimal_sch_idx,) + dep_idx]
                         optimal_record_dict[input_idx] = optimal_input_sch_idx
@@ -178,7 +171,7 @@ class DPTuner(BaseGraphTuner):
                         new_states_pos.append(i - 1)
                 if visited_states_idx:
                     tmp = np.transpose(tmp, tuple(visited_states_pos + new_states_pos))
-                    tmp = tmp[tuple([optimal_record_dict[idx] for idx in visited_states_idx])]
+                    tmp = tmp[tuple(optimal_record_dict[idx] for idx in visited_states_idx)]
                 min_pos = np.argmin(tmp)
                 multiplier = 1
                 for i in range(len(new_states_idx)):

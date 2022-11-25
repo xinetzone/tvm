@@ -41,6 +41,7 @@ Currently, TVM supports PyTorch 1.7 and 1.4. Other versions may
 be unstable.
 """
 
+
 # sphinx_gallery_start_ignore
 from tvm import testing
 
@@ -173,5 +174,10 @@ with torch.no_grad():
     top1_torch = np.argmax(output.numpy())
     torch_class_key = class_id_to_key[top1_torch]
 
-print("Relay top-1 id: {}, class name: {}".format(top1_tvm, key_to_classname[tvm_class_key]))
-print("Torch top-1 id: {}, class name: {}".format(top1_torch, key_to_classname[torch_class_key]))
+print(
+    f"Relay top-1 id: {top1_tvm}, class name: {key_to_classname[tvm_class_key]}"
+)
+
+print(
+    f"Torch top-1 id: {top1_torch}, class name: {key_to_classname[torch_class_key]}"
+)

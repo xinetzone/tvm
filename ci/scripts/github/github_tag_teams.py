@@ -54,10 +54,9 @@ def parse_line(line: str) -> Tuple[str, List[str]]:
 
     # From the last word that was part of the tag name, start looking for users
     # tagged with a '@'
-    users = []
-    for piece in line[tag_end:]:
-        if piece.startswith("@"):
-            users.append(piece.lstrip("@"))
+    users = [
+        piece.lstrip("@") for piece in line[tag_end:] if piece.startswith("@")
+    ]
 
     return (tag, list(sorted(users)))
 
@@ -75,7 +74,7 @@ def fetch_issue(github: GitHubRepo, issue_number: int):
         }
     }
     }"""
-    r = github.graphql(
+    return github.graphql(
         query,
         variables={
             "owner": github.user,
@@ -83,7 +82,6 @@ def fetch_issue(github: GitHubRepo, issue_number: int):
             "number": issue_number,
         },
     )
-    return r
 
 
 def parse_teams(r: Dict[str, Any], issue_number: int) -> Dict[str, str]:
@@ -200,9 +198,8 @@ def determine_users_to_cc(
 
     # Update the PR or issue based on tags in the title and GitHub tags
     to_cc = [teams.get(t, []) for t in tags]
-    to_cc = list(set(item for sublist in to_cc for item in sublist))
-    to_cc = [user for user in to_cc if user != author]
-    return to_cc
+    to_cc = list({item for sublist in to_cc for item in sublist})
+    return [user for user in to_cc if user != author]
 
 
 def get_tags(pr_data: Dict[str, Any], github: GitHubRepo, team_issue: int) -> str:
@@ -213,7 +210,7 @@ def get_tags(pr_data: Dict[str, Any], github: GitHubRepo, team_issue: int) -> st
     logging.info(f"Users to cc based on labels: {to_cc}")
     description = "<sub>See [#10317](https://github.com/apache/tvm/issues/10317) for details</sub>"
     if len(to_cc) == 0:
-        return "No users to tag found in teams " + description
+        return f"No users to tag found in teams {description}"
 
     return "cc " + ", ".join([f"@{user}" for user in to_cc]) + " " + description
 
@@ -250,10 +247,9 @@ if __name__ == "__main__":
     if (issue is None and pr is None) or (issue is not None and pr is not None):
         raise RuntimeError("Exactly one of $PR or $ISSUE must be set in the environment")
 
-    if pr is not None:
-        if pr["draft"]:
-            print(f"Terminating since {pr['number']} is a draft")
-            exit(0)
+    if pr is not None and pr["draft"]:
+        print(f"Terminating since {pr['number']} is a draft")
+        exit(0)
 
     # PRs/issues have the same structure for the fields needed here
     item = issue if issue is not None else pr
@@ -264,19 +260,19 @@ if __name__ == "__main__":
         issue=item, github=github, team_issue=args.team_issue, issue_data=issue_data
     )
     existing_tags = list(set(re.findall(GITHUB_NAME_REGEX, body)))
-    existing_tags = set(tag.replace("@", "") for tag in existing_tags)
+    existing_tags = {tag.replace("@", "") for tag in existing_tags}
     logging.info(f"Found existing tags: {existing_tags}")
     to_cc = [user for user in to_cc if user not in existing_tags]
     logging.info("Users to cc based on labels", to_cc)
 
     # Create the new PR/issue body
-    if len(to_cc) == 0:
+    if not to_cc:
         logging.info("No one to cc, exiting")
         exit(0)
 
     new_body = add_ccs_to_body(body, to_cc)
     if new_body is None:
-        logging.info(f"Everyone to cc is already cc'ed, no update needed")
+        logging.info("Everyone to cc is already cc'ed, no update needed")
         exit(0)
 
     logging.info(f"Changing body from:\n----\n{body}\n----\nto:\n----\n{new_body}\n----")

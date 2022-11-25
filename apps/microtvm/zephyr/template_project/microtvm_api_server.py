@@ -70,7 +70,7 @@ CMAKELIST_FILENAME = "CMakeLists.txt"
 # We only check two levels of the version.
 ZEPHYR_VERSION = 2.7
 
-WEST_CMD = default = sys.executable + " -m west" if sys.executable else None
+WEST_CMD = default = f"{sys.executable} -m west" if sys.executable else None
 
 ZEPHYR_BASE = os.getenv("ZEPHYR_BASE")
 
@@ -177,9 +177,8 @@ def _find_platform_from_cmake_file(cmake_file: Union[str, pathlib.Path]) -> str:
     emu_platform = None
     with open(API_SERVER_DIR / CMAKELIST_FILENAME) as cmake_f:
         for line in cmake_f:
-            set_platform = re.match("set\(EMU_PLATFORM (.*)\)", line)
-            if set_platform:
-                emu_platform = set_platform.group(1)
+            if set_platform := re.match("set\(EMU_PLATFORM (.*)\)", line):
+                emu_platform = set_platform[1]
                 break
     return emu_platform
 
@@ -251,13 +250,14 @@ def generic_find_serial_port(serial_number=None):
 
     serial_ports = list(serial.tools.list_ports.grep(regex))
 
-    if len(serial_ports) == 0:
+    if not serial_ports:
         raise Exception(f"No serial port found for board {prop['board']}!")
 
     if len(serial_ports) != 1:
-        ports_lst = ""
-        for port in serial_ports:
-            ports_lst += f"Serial port: {port.device}, serial number: {port.serial_number}\n"
+        ports_lst = "".join(
+            f"Serial port: {port.device}, serial number: {port.serial_number}\n"
+            for port in serial_ports
+        )
 
         raise Exception("Expected 1 serial port, found multiple ports:\n {ports_lst}")
 
@@ -289,17 +289,14 @@ def _get_nrf_device_args(serial_number: str):
 
         return ["--snr", serial_number]
 
-    if not boards:
-        return []
-
-    return ["--snr", boards[0]]
+    return ["--snr", boards[0]] if boards else []
 
 
 PROJECT_TYPES = []
 if IS_TEMPLATE:
-    for d in (API_SERVER_DIR / "src").iterdir():
-        if d.is_dir():
-            PROJECT_TYPES.append(d.name)
+    PROJECT_TYPES.extend(
+        d.name for d in (API_SERVER_DIR / "src").iterdir() if d.is_dir()
+    )
 
 PROJECT_OPTIONS = server.default_project_options(
     project_type={"choices": tuple(PROJECT_TYPES)},
@@ -311,7 +308,9 @@ PROJECT_OPTIONS = server.default_project_options(
         optional=["open_transport"],
         type="int",
         default=None,
-        help=("If given, port number to use when running the local gdbserver."),
+        help=(
+            "If given, port number to use when running the local gdbserver."
+        ),
     ),
     server.ProjectOption(
         "serial_number",
@@ -332,8 +331,14 @@ PROJECT_OPTIONS = server.default_project_options(
     ),
     server.ProjectOption(
         "zephyr_base",
-        required=(["generate_project", "open_transport"] if not ZEPHYR_BASE else None),
-        optional=(["generate_project", "open_transport"] if ZEPHYR_BASE else ["build"]),
+        required=None
+        if ZEPHYR_BASE
+        else ["generate_project", "open_transport"],
+        optional=(
+            ["generate_project", "open_transport"]
+            if ZEPHYR_BASE
+            else ["build"]
+        ),
         type="str",
         default=ZEPHYR_BASE,
         help="Path to the zephyr base directory.",
@@ -378,8 +383,9 @@ def get_zephyr_base(options: dict) -> str:
 
 def get_cmsis_path(options: dict) -> pathlib.Path:
     """Returns CMSIS dependency path"""
-    cmsis_path = options.get("cmsis_path", os.environ.get("CMSIS_PATH", None))
-    if cmsis_path:
+    if cmsis_path := options.get(
+        "cmsis_path", os.environ.get("CMSIS_PATH", None)
+    ):
         return pathlib.Path(cmsis_path)
     return None
 
@@ -849,7 +855,7 @@ class ZephyrSerialTransport:
 
         nrf_board = usb.core.find(idVendor=cls.NRF5340_VENDOR_ID)
 
-        if nrf_board == None:
+        if nrf_board is None:
             raise Exception("_find_nrf_serial_port: unable to find NRF5340DK")
 
         if nrf_board.idProduct in cls.NRF5340_DK_BOARD_VCOM_BY_PRODUCT_ID:
@@ -909,11 +915,10 @@ class ZephyrSerialTransport:
 
     def read(self, n, timeout_sec):
         self._port.timeout = timeout_sec
-        to_return = self._port.read(n)
-        if not to_return:
+        if to_return := self._port.read(n):
+            return to_return
+        else:
             raise server.IoTimeoutError()
-
-        return to_return
 
     def write(self, data, timeout_sec):
         self._port.write_timeout = timeout_sec
@@ -1076,7 +1081,7 @@ class BlockingStream:
 
         data = b""
         if self.unread:
-            data = data + self.unread
+            data += self.unread
             self.unread = None
 
         while len(data) < n:
@@ -1186,7 +1191,7 @@ class ZephyrFvpTransport:
             start_msg = re.match(START_MSG + r" ([0-9]+)\n", line)
             init_msg = re.match(INIT_MSG, line)
             if start_msg:
-                self._queue.put((ZephyrFvpMakeResult.FVP_STARTED, int(start_msg.group(1))))
+                self._queue.put((ZephyrFvpMakeResult.FVP_STARTED, int(start_msg[1])))
             elif init_msg:
                 self._queue.put((ZephyrFvpMakeResult.MICROTVM_API_SERVER_INIT, None))
                 break
@@ -1230,8 +1235,7 @@ class ZephyrFvpTransport:
     def close(self):
         self._model._shutdown_model()
         self._model.client.disconnect(force=True)
-        parent = psutil.Process(self.proc.pid)
-        if parent:
+        if parent := psutil.Process(self.proc.pid):
             for child in parent.children(recursive=True):
                 child.terminate()
             parent.terminate()

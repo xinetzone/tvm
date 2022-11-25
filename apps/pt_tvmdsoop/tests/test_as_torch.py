@@ -52,16 +52,16 @@ def matmul(M: int, N: int, K: int, dtype: str):
 @tvm.script.ir_module
 class ModuleGPU:
     @T.prim_func
-    def main(A: T.Buffer[8, "float32"], B: T.Buffer[8, "float32"]) -> None:
+    def main(self, B: T.Buffer[8, "float32"]) -> None:
         T.func_attr({"global_symbol": "main", "tir.noalias": True})
         for i_0 in T.thread_binding(2, thread="blockIdx.x"):
             for i_2 in T.thread_binding(2, thread="threadIdx.x"):
                 for i_1 in T.serial(2):
                     with T.block("B"):
                         vi = T.axis.spatial(8, i_0 * 4 + i_1 * 2 + i_2)
-                        T.reads(A[vi])
+                        T.reads(self[vi])
                         T.writes(B[vi])
-                        B[vi] = A[vi] + T.float32(1)
+                        B[vi] = self[vi] + T.float32(1)
 
 
 @as_torch
@@ -89,11 +89,11 @@ def func_with_part_access_region(a: T.handle, b: T.handle, c: T.handle) -> None:
 @tvm.script.ir_module
 class MyModule:
     @T.prim_func
-    def main(a: T.handle, b: T.handle):
+    def main(self, b: T.handle):
         # We exchange data between function by handles, which are similar to pointer.
         T.func_attr({"global_symbol": "main", "tir.noalias": True})
         # Create buffer from handles.
-        A = T.match_buffer(a, (8,), dtype="float32")
+        A = T.match_buffer(self, (8,), dtype="float32")
         B = T.match_buffer(b, (8,), dtype="float32")
         for i in range(8):
             # A block is an abstraction for computation.

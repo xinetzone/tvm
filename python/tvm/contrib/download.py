@@ -169,7 +169,7 @@ def download_testdata(url, relpath, module=None, overwrite=False):
     elif isinstance(module, (list, tuple)):
         module_path = Path(*module)
     else:
-        raise ValueError("Unsupported module: " + module)
+        raise ValueError(f"Unsupported module: {module}")
     abspath = Path(TEST_DATA_ROOT_PATH, module_path, relpath)
     download(url, abspath, overwrite=overwrite, size_compare=False)
     return str(abspath)

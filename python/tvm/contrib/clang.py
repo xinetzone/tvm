@@ -52,7 +52,7 @@ def find_clang(required=True):
     valid_list = [utils.which(x) for x in cc_list]
     valid_list = [x for x in valid_list if x]
     if not valid_list and required:
-        raise RuntimeError("cannot find clang, candidates are: " + str(cc_list))
+        raise RuntimeError(f"cannot find clang, candidates are: {cc_list}")
     return valid_list
 
 
@@ -80,11 +80,11 @@ def create_llvm(inputs, output=None, options=None, cc=None):
     code : str
         The generated llvm text IR.
     """
-    cc = cc if cc else find_clang()[0]
+    cc = cc or find_clang()[0]
     cmd = [cc]
     cmd += ["-S", "-emit-llvm"]
     temp = utils.tempdir()
-    output = output if output else temp.relpath("output.ll")
+    output = output or temp.relpath("output.ll")
     inputs = [inputs] if isinstance(inputs, str) else inputs
     input_files = []
     for i, code in enumerate(inputs):

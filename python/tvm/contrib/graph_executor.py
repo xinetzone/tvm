@@ -103,9 +103,7 @@ def get_device(libmod, device):
             assert _rpc_ffi_api.SessTableIndex(libmod) == cur_dev._rpc_sess._tbl_index
             num_rpc_dev += 1
             device_type = cur_dev.device_type % rpc_base.RPC_SESS_MASK
-        device_type_id.append(device_type)
-        device_type_id.append(cur_dev.device_id)
-
+        device_type_id.extend((device_type, cur_dev.device_id))
     if 0 < num_rpc_dev < len(device):
         raise ValueError("Either all or none of the devices should be rpc.")
     return device, num_rpc_dev, device_type_id
@@ -188,11 +186,7 @@ class GraphModule(object):
             keys = list(params.keys())
             keys.sort(key=lambda x: -np.prod(params[x].shape))
             for k in keys:
-                # TODO(zhiics) Skip the weights for submodule in a better way.
-                # We should use ConstLoaderModule for initialization and remove
-                # params from set_input
-                val = self._get_input(k)
-                if val:
+                if val := self._get_input(k):
                     self._get_input(k).copyfrom(params[k])
 
     def run(self, **input_dict):
@@ -434,8 +428,7 @@ class GraphModule(object):
             # Have to unpack kwargs into a single list
             args = []
             for k, v in kwargs.items():
-                args.append(k)
-                args.append(v)
+                args.extend((k, v))
             return self.module.time_evaluator(
                 "run_from_inputs",
                 device,

@@ -210,9 +210,8 @@ class ApplyHistoryBest(DispatchContext):
             if isinstance(rec, str):
                 rec = load_records(rec)
                 joint_records += rec
-            else:
-                if rec is not None:
-                    joint_records.append(rec)
+            elif rec is not None:
+                joint_records.append(rec)
 
         if not joint_records:
             return
@@ -247,14 +246,13 @@ class ApplyHistoryBest(DispatchContext):
             entry, _, workload_args = self.get_workload_entry(
                 best_by_model, inp.task.target.model, inp.task.workload_key
             )
-            if workload_args not in entry:
-                if inp.task.target.model != "unknown":
-                    entry[workload_args] = (inp.state, cost)
-            else:
+            if workload_args in entry:
                 _, other_cost = entry[workload_args]
                 if other_cost > cost:
                     entry[workload_args] = (inp.state, cost)
 
+            elif inp.task.target.model != "unknown":
+                entry[workload_args] = (inp.state, cost)
         logger.debug("Finish loading %d records", counter)
 
     def _query_inside(self, target, workload_key, func_name):
@@ -380,7 +378,7 @@ class ApplyHistoryBestOrSample(ApplyHistoryBest):
         task = SearchTask(workload_key=workload_key, target=target)
         measure_ctx = LocalRPCMeasureContext(min_repeat_ms=300)
 
-        log_file = self.log_dir.relpath("%s.log" % decode_workload_key(workload_key)[0])
+        log_file = self.log_dir.relpath(f"{decode_workload_key(workload_key)[0]}.log")
 
         while ret is None:
             tune_option = TuningOptions(

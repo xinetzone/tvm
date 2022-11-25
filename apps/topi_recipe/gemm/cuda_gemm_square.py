@@ -102,9 +102,9 @@ def test_gemm():
     def check_device(device):
         dev = tvm.device(device, 0)
         if not dev.exist:
-            print("Skip because %s is not enabled" % device)
+            print(f"Skip because {device} is not enabled")
             return
-        print("Device %s" % device)
+        print(f"Device {device}")
         f = tvm.build(s, [A, B, C], device)
         # launch the kernel.
         n, m, l = nn, nn, nn

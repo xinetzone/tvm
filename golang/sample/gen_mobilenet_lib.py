@@ -32,7 +32,7 @@ def extract(path):
         tar.extractall(path=dir_path)
         tar.close()
     else:
-        raise RuntimeError("Could not decompress the file: " + path)
+        raise RuntimeError(f"Could not decompress the file: {path}")
 
 
 ###################################

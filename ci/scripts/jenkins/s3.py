@@ -52,8 +52,7 @@ def parse_output_files(stdout: str) -> List[str]:
         line = line.strip()
         if line == "":
             continue
-        m = S3_DOWNLOAD_REGEX.match(line)
-        if m:
+        if m := S3_DOWNLOAD_REGEX.match(line):
             files.append(m.groups()[0])
 
     return files
@@ -66,7 +65,7 @@ def chmod(files: List[str]) -> None:
     # Add execute bit for downloads
     to_chmod = [str(f) for f in files]
     logging.info(f"Adding execute bit for files: {to_chmod}")
-    if len(to_chmod) > 0:
+    if to_chmod:
         SH.run(f"chmod +x {' '.join(to_chmod)}")
 
 
@@ -118,7 +117,7 @@ if __name__ == "__main__":
 
     if args.items is None:
         if args.action == "upload":
-            logging.error(f"Cannot upload without --items")
+            logging.error("Cannot upload without --items")
             exit(1)
         else:
             # Download the whole prefix
@@ -132,7 +131,7 @@ if __name__ == "__main__":
             source = s3_path
             recursive = True
             if item != ".":
-                source = s3_path + "/" + item
+                source = f"{s3_path}/{item}"
                 recursive = False
             stdout = s3(source=source, destination=item, recursive=recursive)
             files = parse_output_files(stdout)
@@ -142,4 +141,4 @@ if __name__ == "__main__":
                 show_md5(file)
         elif action == Action.UPLOAD:
             show_md5(item)
-            s3(item, s3_path + "/" + item, recursive=Path(item).is_dir())
+            s3(item, f"{s3_path}/{item}", recursive=Path(item).is_dir())

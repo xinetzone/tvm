@@ -209,7 +209,7 @@ class ApplyFixedConfig(DispatchContext):
         elif isinstance(schedule_names, list):
             self._schedule_names = schedule_names
         else:
-            raise RuntimeError("Incorrect type: " + schedule_names)
+            raise RuntimeError(f"Incorrect type: {schedule_names}")
         self._tasks = tasks
         self.workload = None
 
@@ -225,13 +225,11 @@ class ApplyFixedConfig(DispatchContext):
 
         if not config:
             raise RuntimeError(
-                "workload: %s does not exist in %s" % (str(workload), str(self._tasks))
+                f"workload: {str(workload)} does not exist in {str(self._tasks)}"
             )
+
         # Add low cost to the target schedule and high cost to others.
-        if workload[0] in self._schedule_names:
-            config.cost = 1e-6
-        else:
-            config.cost = 100000
+        config.cost = 1e-6 if workload[0] in self._schedule_names else 100000
         return config
 
     def update(self, target, workload, cfg):

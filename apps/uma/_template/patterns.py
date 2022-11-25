@@ -26,5 +26,4 @@ def conv2d_pattern():
 
 
 def dense_pattern():
-    pattern = is_op("nn.dense")(wildcard(), wildcard())
-    return pattern
+    return is_op("nn.dense")(wildcard(), wildcard())

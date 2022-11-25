@@ -66,17 +66,17 @@ class LayoutRewriteOption:
         layout_rewrite_option: LayoutRewriteOption
             The default layout rewrite option for the specified target.
         """
-        layout_rewrite_option = LayoutRewriteOption.NO_REWRITE
         if target.kind.name == "llvm" or (
             "device" in target.attrs and target.attrs["device"] == "mali"
         ):
-            layout_rewrite_option = (
+            return (
                 LayoutRewriteOption.REWRITE_FOR_PRE_TRANSFORMED
                 if in_relay_integration
                 else LayoutRewriteOption.INSERT_TRANSFORM_STAGE
             )
 
-        return layout_rewrite_option
+        else:
+            return LayoutRewriteOption.NO_REWRITE
 
 
 @tvm._ffi.register_object("auto_scheduler.ComputeDAG")
@@ -108,9 +108,9 @@ class ComputeDAG(Object):
             for item in compute_or_sche:
                 if not isinstance(item, tvm.te.Tensor):
                     raise ValueError(
-                        "The input of ComputeDAG should be a list of Tensor, but got %s"
-                        % type(item)
+                        f"The input of ComputeDAG should be a list of Tensor, but got {type(item)}"
                     )
+
             compute = compute_or_sche
             sche = None
         elif isinstance(compute_or_sche, tvm.te.Schedule):
@@ -118,9 +118,9 @@ class ComputeDAG(Object):
             sche = compute_or_sche
         else:
             raise ValueError(
-                "Invalid compute type: %s. ComputeDAG expects string, list of Tensor, or Schedule"
-                % type(compute_or_sche)
+                f"Invalid compute type: {type(compute_or_sche)}. ComputeDAG expects string, list of Tensor, or Schedule"
             )
+
         self.__init_handle_by_constructor__(_ffi_api.ComputeDAG, compute, sche)
 
     def get_init_state(self):
@@ -240,9 +240,7 @@ class ComputeDAG(Object):
         else:
             hash_key = hash_func(str_dag)
 
-        io_shapes = []
-        for tensor in self.tensors:
-            io_shapes.append(get_const_tuple(tensor.shape))
+        io_shapes = [get_const_tuple(tensor.shape) for tensor in self.tensors]
         return json.dumps([hash_key] + io_shapes)
 
     def __str__(self):
@@ -253,9 +251,8 @@ class ComputeDAG(Object):
         lines = []
         for line in raw_lines:
             if len(line) > MAX_LINE_WIDTH:
-                line = (
-                    line[: MAX_LINE_WIDTH // 2] + " ..(OMITTED).. " + line[-MAX_LINE_WIDTH // 2 :]
-                )
+                line = f"{line[:MAX_LINE_WIDTH // 2]} ..(OMITTED).. {line[-MAX_LINE_WIDTH // 2:]}"
+
             lines.append(line)
         return "\n".join(lines)
 

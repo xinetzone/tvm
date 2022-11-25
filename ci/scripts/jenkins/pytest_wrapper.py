@@ -31,9 +31,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 
 
 def lstrip(s: str, prefix: str) -> str:
-    if s.startswith(prefix):
-        s = s[len(prefix) :]
-    return s
+    return s.removeprefix(prefix)
 
 
 def classname_to_file(classname: str) -> str:
@@ -56,7 +54,7 @@ def failed_test_ids() -> List[str]:
                     continue
 
                 if len(case.result) > 0 and isinstance(case.result[0], FAILURE_TYPES):
-                    node_id = classname_to_file(case.classname) + "::" + case.name
+                    node_id = f"{classname_to_file(case.classname)}::{case.name}"
                     failed_node_ids.append(node_id)
 
     return list(set(failed_node_ids))
@@ -89,7 +87,7 @@ def make_issue_url(failed_node_ids: List[str]) -> str:
         + "\n".join(test_bullets)
         + f"\n\n### Jenkins Links\n\n  - {run_url}",
     }
-    return "https://github.com/apache/tvm/issues/new?" + urllib.parse.urlencode(params)
+    return f"https://github.com/apache/tvm/issues/new?{urllib.parse.urlencode(params)}"
 
 
 def show_failure_help(failed_suites: List[str]) -> None:
@@ -116,7 +114,7 @@ def show_failure_help(failed_suites: List[str]) -> None:
         "If there is no test listed below, the failure likely came from a segmentation "
         "fault which you can find in the logs above.\n"
     )
-    if failed_suites is not None and len(failed_suites) > 0:
+    if failed_suites is not None and failed_suites:
         print("\n".join([f"    - {suite}" for suite in failed_suites]))
         print("")
 

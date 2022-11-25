@@ -113,10 +113,7 @@ def parse_virtualbox_attached_usb_devices(vm_uuid):
     )
 
     r = re.compile(VIRTUALBOX_USB_DEVICE_RE)
-    attached_usb_devices = r.findall(output, re.MULTILINE)
-
-    # List of couples (VendorId, ProductId) for all attached USB devices
-    return attached_usb_devices
+    return r.findall(output, re.MULTILINE)
 
 
 VIRTUALBOX_VID_PID_RE = re.compile(r"0x([0-9A-Fa-f]{4}).*")
@@ -228,21 +225,20 @@ ATTACH_USB_DEVICE = {
 
 
 def generate_packer_config(file_path, providers):
-    builders = []
     provisioners = []
-    for provider_name in providers:
-        builders.append(
-            {
-                "name": f"{provider_name}",
-                "type": "vagrant",
-                "box_name": f"microtvm-base-{provider_name}",
-                "output_dir": f"output-packer-{provider_name}",
-                "communicator": "ssh",
-                "source_path": "generic/ubuntu1804",
-                "provider": provider_name,
-                "template": "Vagrantfile.packer-template",
-            }
-        )
+    builders = [
+        {
+            "name": f"{provider_name}",
+            "type": "vagrant",
+            "box_name": f"microtvm-base-{provider_name}",
+            "output_dir": f"output-packer-{provider_name}",
+            "communicator": "ssh",
+            "source_path": "generic/ubuntu1804",
+            "provider": provider_name,
+            "template": "Vagrantfile.packer-template",
+        }
+        for provider_name in providers
+    ]
 
     repo_root = subprocess.check_output(
         ["git", "rev-parse", "--show-toplevel"], encoding="utf-8"
@@ -254,17 +250,17 @@ def generate_packer_config(file_path, providers):
         filename = os.path.basename(script_path)
         provisioners.append({"type": "file", "source": script_path, "destination": f"~/{filename}"})
 
-    provisioners.append(
-        {
-            "type": "shell",
-            "script": "base_box_setup.sh",
-        }
-    )
-    provisioners.append(
-        {
-            "type": "shell",
-            "script": "base_box_provision.sh",
-        }
+    provisioners.extend(
+        (
+            {
+                "type": "shell",
+                "script": "base_box_setup.sh",
+            },
+            {
+                "type": "shell",
+                "script": "base_box_provision.sh",
+            },
+        )
     )
 
     with open(file_path, "w") as f:
@@ -356,9 +352,7 @@ def do_build_release_test_vm(
             if "config.vm.box_version" in line:
                 continue
             m = VM_BOX_RE.match(line)
-            tvm_home_m = VM_TVM_HOME_RE.match(line)
-
-            if tvm_home_m:
+            if tvm_home_m := VM_TVM_HOME_RE.match(line):
                 # Adjust tvm home for testing step
                 f.write(f'{tvm_home_m.group(1)} = "../../../.."\n')
                 continue
@@ -389,10 +383,16 @@ def do_build_release_test_vm(
 
 
 def do_run_release_test(release_test_dir, provider_name, test_config, test_device_serial):
-    with open(
-        os.path.join(release_test_dir, ".vagrant", "machines", "default", provider_name, "id")
-    ) as f:
-        machine_uuid = f.read()
+    machine_uuid = pathlib.Path(
+        os.path.join(
+            release_test_dir,
+            ".vagrant",
+            "machines",
+            "default",
+            provider_name,
+            "id",
+        )
+    ).read_text()
 
     # Check if target is not QEMU
     if test_config["vid_hex"] and test_config["pid_hex"]:
@@ -412,11 +412,12 @@ def do_run_release_test(release_test_dir, provider_name, test_config, test_devic
         + " && "
         + _quote_cmd(
             [
-                f"apps/microtvm/reference-vm/base-box/base_box_test.sh",
+                "apps/microtvm/reference-vm/base-box/base_box_test.sh",
                 test_config["microtvm_board"],
             ]
         )
     )
+
     subprocess.check_call(["vagrant", "ssh", "-c", f"bash -ec '{test_cmd}'"], cwd=release_test_dir)
 
 
@@ -441,7 +442,7 @@ def test_command(args):
 
     providers = args.provider
 
-    release_test_dir = THIS_DIR / f"release-test"
+    release_test_dir = THIS_DIR / "release-test"
 
     if args.skip_build or args.skip_destroy:
         assert (
@@ -485,11 +486,7 @@ def test_command(args):
 
 
 def release_command(args):
-    if args.release_full_name:
-        vm_name = args.release_full_name
-    else:
-        vm_name = "tlcpack/microtvm"
-
+    vm_name = args.release_full_name or "tlcpack/microtvm"
     if not args.skip_creating_release_version:
         subprocess.check_call(
             [
@@ -502,7 +499,7 @@ def release_command(args):
             ]
         )
     if not args.release_version:
-        sys.exit(f"--release-version must be specified")
+        sys.exit("--release-version must be specified")
 
     for provider_name in args.provider:
         subprocess.check_call(
@@ -617,8 +614,7 @@ def parse_args():
         ),
     )
 
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 def main():

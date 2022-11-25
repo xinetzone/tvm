@@ -89,7 +89,7 @@ def _replace_device_with_tracing(target):
     target = str(target)
     if "-device" in target:
         return re.sub("-device=[^\\-$]+", "-device=tracing ", target).strip(" ")
-    return target + " -device=tracing"
+    return f"{target} -device=tracing"
 
 
 def _expr2graph_impl(expr, target_ops, node_dict, node_list, tvm_target):
@@ -119,8 +119,9 @@ def _expr2graph_impl(expr, target_ops, node_dict, node_list, tvm_target):
                     node_entry["types"].append(tupe_type)
             else:
                 raise RuntimeError(
-                    "Unsupported output type %s in operator %s" % (type(out_type), op.name)
+                    f"Unsupported output type {type(out_type)} in operator {op.name}"
                 )
+
 
             # Utilize tracing target to fetch workload with topo-order.
             # Since we only need workload, dummy target can be used to
@@ -168,14 +169,15 @@ def _expr2graph_impl(expr, target_ops, node_dict, node_list, tvm_target):
                 else:
                     node_entry["inputs"].append([in_node_idx, 0, 0])
         elif isinstance(node, Constant):
-            node_entry["name"] = "Constant_" + str(node_index)
+            node_entry["name"] = f"Constant_{node_index}"
             node_entry["types"] = [node.checked_type]
         elif isinstance(node, tvm.ir.Op):
             return
         else:
             raise RuntimeError(
-                "Not supported relay node type in graph tuning: %s" % str(type(node))
+                f"Not supported relay node type in graph tuning: {str(type(node))}"
             )
+
         node_dict[node] = node_index
         node_list.append(node_entry)
 
@@ -292,11 +294,9 @@ def get_in_nodes(node_list, target_ops, input_names):
     # Remove empty nodes to ignore pre-computed sub-graph
     has_empty_node = True
     while has_empty_node:
-        empty_nodes = []
-        for key, val in in_node_dict.items():
-            if not val:
-                empty_nodes.append(key)
-        if empty_nodes:
+        if empty_nodes := [
+            key for key, val in in_node_dict.items() if not val
+        ]:
             has_empty_node = True
             for node in empty_nodes:
                 del in_node_dict[node]
@@ -323,9 +323,7 @@ def get_out_nodes(in_node_dict):
     out : dict of int to list of int
         Dictionary maps node index to closest output nodes.
     """
-    out_node_dict = {}
-    for key in in_node_dict:
-        out_node_dict[key] = []
+    out_node_dict = {key: [] for key in in_node_dict}
     for key, val in in_node_dict.items():
         for item in val:
             if item in out_node_dict:

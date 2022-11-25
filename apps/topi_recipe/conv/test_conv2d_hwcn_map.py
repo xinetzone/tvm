@@ -30,8 +30,7 @@ USE_MANUAL_CODE = False
 
 @tvm.register_func("tvm_callback_cuda_compile", override=True)
 def tvm_callback_cuda_compile(code):
-    ptx = nvcc.compile_cuda(code, target_format="ptx")
-    return ptx
+    return nvcc.compile_cuda(code, target_format="ptx")
 
 
 def write_code(code, fname):
@@ -43,9 +42,9 @@ def write_code(code, fname):
 def tvm_callback_cuda_postproc(code):
     if not os.path.exists("perf"):
         os.mkdir("perf")
-    write_code(code, "perf/%s_generated.cu" % TASK)
+    write_code(code, f"perf/{TASK}_generated.cu")
     if USE_MANUAL_CODE:
-        code = open("perf/%s_manual.cu" % TASK).read()
+        code = open(f"perf/{TASK}_manual.cu").read()
     return code
 
 
@@ -73,7 +72,7 @@ def test_conv2d_hwcn_map():
 
     def check_device(device):
         if not tvm.runtime.enabled(device):
-            print("Skip because %s is not enabled" % device)
+            print(f"Skip because {device} is not enabled")
             return
         dev = tvm.device(device, 0)
         a = tvm.nd.array(a_np, dev)

@@ -49,10 +49,7 @@ def exists():
             exists.  Otherwise, False.
     """
     func = tvm.get_global_func("tvm.contrib.cudnn.exists", allow_missing=True)
-    if func is None:
-        return False
-
-    return bool(func())
+    return False if func is None else bool(func())
 
 
 def algo_to_index(algo_type, algo_name):
@@ -202,7 +199,7 @@ def conv_output_shape(
     """
 
     assert len(x_shape) == len(w_shape)
-    assert len(x_shape) in (4, 5)
+    assert len(x_shape) in {4, 5}
 
     if tensor_format == 0:
         n_output = x_shape[0]
@@ -232,14 +229,13 @@ def conv_output_shape(
         w_shape = w_shape[2:]
 
     else:
-        raise ValueError("Unknown CuDNN tensor format: '{}'".format(tensor_format))
+        raise ValueError(f"Unknown CuDNN tensor format: '{tensor_format}'")
 
     x_lanes = tvm.runtime.DataType(data_dtype).lanes
-    assert x_chan * x_lanes == w_chan_input * groups, (
-        "Mismatched dimensions, data has {} channels/group "
-        "(dimension {} with {} lanes/value, {} groups), "
-        "but weights require {} input channels/group"
-    ).format(x_chan // groups, x_chan, x_lanes, groups, w_chan_input)
+    assert (
+        x_chan * x_lanes == w_chan_input * groups
+    ), f"Mismatched dimensions, data has {x_chan // groups} channels/group (dimension {x_chan} with {x_lanes} lanes/value, {groups} groups), but weights require {w_chan_input} input channels/group"
+
 
     output_dims = []
     for x_shape_i, w_shape_i, pad_i, stride_i, dilation_i in zip(
@@ -253,7 +249,7 @@ def conv_output_shape(
     elif tensor_format == 1:
         output = [n_output, *output_dims, c_output]
     else:
-        raise ValueError("Unknown CuDNN tensor format: '{}'".format(tensor_format))
+        raise ValueError(f"Unknown CuDNN tensor format: '{tensor_format}'")
 
     return output
 
@@ -305,7 +301,7 @@ def conv_dgrad_shape(
         dy_shape = dy_shape[1:-1]
         w_shape = w_shape[1:-1]
     else:
-        raise ValueError("Unsupported CuDNN tensor format: '{}'".format(tensor_format))
+        raise ValueError(f"Unsupported CuDNN tensor format: '{tensor_format}'")
 
     input_dims = []
     for dy_shape_i, w_shape_i, pad_i, stride_i, dilation_i, out_pad in zip(
@@ -316,12 +312,7 @@ def conv_dgrad_shape(
         )
         input_dims.append(input_dim)
 
-    if tensor_format == 0:
-        output = [N, C, *input_dims]
-    else:
-        output = [N, *input_dims, C]
-
-    return output
+    return [N, C, *input_dims] if tensor_format == 0 else [N, *input_dims, C]
 
 
 def _conv_find_algo(
@@ -342,7 +333,7 @@ def _conv_find_algo(
     and the convolution type.
     """
     dims = len(x_shape)
-    assert dims in (4, 5)
+    assert dims in {4, 5}
 
     pad, stride, dilation, xshape, wshape = _prepare_global_func_params(
         dims - 2, pad, stride, dilation, x_shape, w_shape
@@ -577,7 +568,7 @@ def conv_forward(x, w, pad, stride, dilation, conv_mode, tensor_format, algo, co
         The result tensor
     """
     dims = len(x.shape)
-    assert dims in (4, 5)
+    assert dims in {4, 5}
 
     conv_dtype = x.dtype if conv_dtype is None else conv_dtype
     pad, stride, dilation, _, _ = _prepare_global_func_params(dims - 2, pad, stride, dilation)

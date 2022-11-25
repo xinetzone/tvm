@@ -244,20 +244,18 @@ def measure_option(builder, runner):
         if builder == "local":
             builder = LocalBuilder()
         else:
-            raise ValueError("Invalid builder: " + builder)
+            raise ValueError(f"Invalid builder: {builder}")
 
     if isinstance(runner, str):
         if runner == "local":
             runner = LocalRunner()
         else:
-            raise ValueError("Invalid runner: " + runner)
+            raise ValueError(f"Invalid runner: {runner}")
 
-    opt = {
+    return {
         "builder": builder,
         "runner": runner,
     }
-
-    return opt
 
 
 def create_measure_batch(task, option):

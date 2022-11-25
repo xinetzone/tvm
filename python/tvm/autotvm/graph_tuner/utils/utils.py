@@ -91,10 +91,9 @@ def is_boundary_node(node_entry, input_names):
         )
     ]
 
-    out = node_entry["op"] in _LAYOUT_FIXED_OP or (
+    return node_entry["op"] in _LAYOUT_FIXED_OP or (
         "name" in node_entry and node_entry["name"] in input_names
     )
-    return out
 
 
 def is_skipped_node(node_entry):
@@ -146,10 +145,12 @@ def bind_inputs(expr, input_shapes=None, input_dtypes="float32"):
         )
         updated_input_dict[input_name] = updated_input
 
-    rebind_dict = {}
-    for var in expr.params:
-        if var.name_hint in updated_input_dict:
-            rebind_dict[var] = updated_input_dict[var.name_hint]
+    rebind_dict = {
+        var: updated_input_dict[var.name_hint]
+        for var in expr.params
+        if var.name_hint in updated_input_dict
+    }
+
     updated_expr = relay.expr.bind(expr, rebind_dict)
 
     mod = tvm.IRModule.from_expr(updated_expr)

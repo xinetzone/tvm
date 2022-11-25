@@ -52,10 +52,7 @@ _slowest_tests = [
     "tests/python/topi/python/test_topi_conv2d_winograd.py::test_conv2d_nchw",
     "tests/python/relay/test_py_converter.py::test_global_recursion",
 ]
-HARDCODED_ALLOCATIONS = {}
-for idx, test in enumerate(_slowest_tests):
-    HARDCODED_ALLOCATIONS[test] = idx
-
+HARDCODED_ALLOCATIONS = {test: idx for idx, test in enumerate(_slowest_tests)}
 # These rely on running on the same node to pass successfully
 FIXED_ALLOCATION_PREFIXES = {
     "tests/python/unittest/test_tvm_testing_features.py": 0,
@@ -84,7 +81,10 @@ def find_shard_index(nodeid: str, num_shards: int) -> int:
 
 
 def pytest_collection_modifyitems(config, items):
-    if not all(k in os.environ for k in ["CI", "TVM_NUM_SHARDS", "TVM_SHARD_INDEX"]):
+    if any(
+        k not in os.environ
+        for k in ["CI", "TVM_NUM_SHARDS", "TVM_SHARD_INDEX"]
+    ):
         # Only apportion tests if in CI and in a job that is set up for it
         return
 

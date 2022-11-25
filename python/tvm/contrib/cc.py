@@ -43,8 +43,7 @@ def get_cc():
     if not _is_linux_like():
         return None
 
-    env_cxx = os.environ.get("CXX") or os.environ.get("CC")
-    if env_cxx:
+    if env_cxx := os.environ.get("CXX") or os.environ.get("CC"):
         return env_cxx
     cc_names = ["g++", "gcc", "clang++", "clang", "c++", "cc"]
     dirs_in_path = os.get_exec_path()
@@ -126,16 +125,17 @@ def get_target_by_dump_machine(compiler):
 
     def get_target_triple():
         """Get target triple according to dumpmachine option of compiler."""
-        if compiler:
-            cmd = [compiler, "-dumpmachine"]
-            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            (out, _) = proc.communicate()
-            if proc.returncode != 0:
-                msg = "dumpmachine error:\n"
-                msg += py_str(out)
-                return None
-            return py_str(out)
-        return None
+        if not compiler:
+            return None
+
+        cmd = [compiler, "-dumpmachine"]
+        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        (out, _) = proc.communicate()
+        if proc.returncode != 0:
+            msg = "dumpmachine error:\n"
+            msg += py_str(out)
+            return None
+        return py_str(out)
 
     return get_target_triple
 
@@ -209,7 +209,7 @@ def cross_compiler(
 
     if not output_format and hasattr(compile_func, "output_format"):
         output_format = compile_func.output_format
-    output_format = output_format if output_format else "so"
+    output_format = output_format or "so"
 
     if not get_target_triple and hasattr(compile_func, "get_target_triple"):
         get_target_triple = compile_func.get_target_triple
@@ -221,21 +221,17 @@ def cross_compiler(
 
 def _linux_compile(output, objects, options, compile_cmd, compile_shared=False):
     cmd = [compile_cmd]
-    if compile_cmd != "nvcc":
-        if compile_shared or output.endswith(".so") or output.endswith(".dylib"):
-            cmd += ["-shared", "-fPIC"]
-            if sys.platform == "darwin":
-                cmd += ["-undefined", "dynamic_lookup"]
-        elif output.endswith(".obj"):
-            cmd += ["-c"]
-    else:
+    if compile_cmd == "nvcc":
         if compile_shared or output.endswith(".so") or output.endswith(".dylib"):
             cmd += ["--shared"]
+    elif compile_shared or output.endswith(".so") or output.endswith(".dylib"):
+        cmd += ["-shared", "-fPIC"]
+        if sys.platform == "darwin":
+            cmd += ["-undefined", "dynamic_lookup"]
+    elif output.endswith(".obj"):
+        cmd += ["-c"]
     cmd += ["-o", output]
-    if isinstance(objects, str):
-        cmd += [objects]
-    else:
-        cmd += objects
+    cmd += [objects] if isinstance(objects, str) else objects
     if options:
         cmd += options
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

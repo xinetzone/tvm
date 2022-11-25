@@ -131,24 +131,25 @@ def compare_optimize_resnet18_to_torchscript():
     for i in range(20):
         test_input = torch.rand(1, 3, 224, 224).half().cuda()
         sub_label = f"[test {i}]"
-        results.append(
-            benchmark.Timer(
-                stmt="meta_module_resnet18(test_input)",
-                setup="from __main__ import meta_module_resnet18",
-                globals={"test_input": test_input},
-                sub_label=sub_label,
-                description="tuning by meta",
-            ).blocked_autorange()
+        results.extend(
+            (
+                benchmark.Timer(
+                    stmt="meta_module_resnet18(test_input)",
+                    setup="from __main__ import meta_module_resnet18",
+                    globals={"test_input": test_input},
+                    sub_label=sub_label,
+                    description="tuning by meta",
+                ).blocked_autorange(),
+                benchmark.Timer(
+                    stmt="jit_module_resnet18(test_input)",
+                    setup="from __main__ import jit_module_resnet18",
+                    globals={"test_input": test_input},
+                    sub_label=sub_label,
+                    description="tuning by jit",
+                ).blocked_autorange(),
+            )
         )
-        results.append(
-            benchmark.Timer(
-                stmt="jit_module_resnet18(test_input)",
-                setup="from __main__ import jit_module_resnet18",
-                globals={"test_input": test_input},
-                sub_label=sub_label,
-                description="tuning by jit",
-            ).blocked_autorange()
-        )
+
     compare = benchmark.Compare(results)
     compare.print()
 

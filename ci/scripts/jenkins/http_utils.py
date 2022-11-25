@@ -28,7 +28,7 @@ def get(url: str, headers: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
         headers = {}
     req = request.Request(url, headers=headers)
     with request.urlopen(req) as response:
-        response_headers = {k: v for k, v in response.getheaders()}
+        response_headers = dict(response.getheaders())
         response = json.loads(response.read())
 
     return response, response_headers

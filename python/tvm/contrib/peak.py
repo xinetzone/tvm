@@ -93,7 +93,7 @@ def measure_bandwidth_sum(
     n //= lanes
 
     base_type = str(base_type) + str(bits)
-    dtype = base_type if lanes == 1 else base_type + "x" + str(lanes)
+    dtype = base_type if lanes == 1 else f"{base_type}x{str(lanes)}"
 
     k = te.reduce_axis((0, m), name="k")
 
@@ -235,7 +235,7 @@ def measure_compute_mad(
     max_threads = target.max_num_threads
 
     base_type = str(base_type) + str(bits)
-    dtype = base_type if lanes == 1 else base_type + "x" + str(lanes)
+    dtype = base_type if lanes == 1 else f"{base_type}x{str(lanes)}"
 
     def extern(ins, outs):
         # pylint: disable=unused-argument

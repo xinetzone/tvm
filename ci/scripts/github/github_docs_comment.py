@@ -32,7 +32,7 @@ def find_target_url(pr_head: Dict[str, Any]):
 
 
 def get_pr_and_build_numbers(target_url):
-    target_url = target_url[target_url.find("PR-") : len(target_url)]
+    target_url = target_url[target_url.find("PR-"):]
     split = target_url.split("/")
     pr_number = split[0].strip("PR-")
     build_number = split[1]

@@ -125,10 +125,7 @@ class Tuner(object):
         GLOBAL_SCOPE.in_tuning = True
         i = error_ct = 0
         errors = []
-        while i < n_trial:
-            if not self.has_next():
-                break
-
+        while i < n_trial and self.has_next():
             configs = self.next_batch(min(n_parallel, n_trial - i))
 
             inputs = [MeasureInput(self.task.target, self.task, config) for config in configs]
