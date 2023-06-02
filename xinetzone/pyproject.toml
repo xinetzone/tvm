@@ -19,7 +19,7 @@ dependencies = [
     "psutil",
     "typing_extensions",
     "scipy>=1.9.3",
-    "importlib-metadata>=4.12",
+    # "importlib-metadata>=4.12",
     "pytest",
     "graphviz",
     "pybind11",

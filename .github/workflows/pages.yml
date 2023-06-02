@@ -43,7 +43,7 @@ jobs:
       - name: 🔧 Build HTML
         run: |
           cd xinetzone
-          pip install invoke
+          pip install invoke d2py pdm
           invoke init
           invoke config 
           invoke make
