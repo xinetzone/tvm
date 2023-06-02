@@ -2,3 +2,4 @@ logs/
 pdm.lock
 draft/
 tvm-book/
+.pdm-python

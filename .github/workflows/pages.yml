@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy TVM 文档
 
 on:
   # Runs on pushes targeting the default branch
@@ -43,11 +43,9 @@ jobs:
       - name: 🔧 Build HTML
         run: |
           cd xinetzone
-          sudo apt-get install graphviz
           pip install .[doc]
-          conda install -c conda-forge pandoc
-          inv config
-          inv make
+          invoke config
+          invoke make
           invoke doc
       - name: Setup Pages
         uses: actions/configure-pages@main
