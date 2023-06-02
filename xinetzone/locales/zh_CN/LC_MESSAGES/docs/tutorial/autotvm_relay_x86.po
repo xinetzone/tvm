@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,11 +232,13 @@ msgid "要调优的模型的路径"
 msgstr ""
 
 #: ../../xin/docs/tutorial/autotvm_relay_x86.ipynb:210002
-msgid "{class}`~tvm.autotvm.LocalRunner` 在本地设备上运行生成的代码。"
+msgid "{class}`~tvm.autotvm.measure.measure_methods.LocalRunner` 在本地设备上运行生成的代码。"
 msgstr ""
 
 #: ../../xin/docs/tutorial/autotvm_relay_x86.ipynb:210004
-msgid "{class}`~tvm.autotvm.LocalRunner` 使用一组特定参数生成的编译代码，并度量它的性能。"
+msgid ""
+"{class}`~tvm.autotvm.measure.measure_methods.LocalRunner` "
+"使用一组特定参数生成的编译代码，并度量它的性能。"
 msgstr ""
 
 #: ../../xin/docs/tutorial/autotvm_relay_x86.ipynb:210006
@@ -421,5 +423,11 @@ msgstr ""
 #~ msgid ""
 #~ "在这个例子中，为了节省时间，我们将试验次数和提前停止设置为 "
 #~ "10。如果你把这些值设置得更高，你可能会看到更多的性能改进，但这是以花时间调整为代价的。收敛所需的试验次数将取决于模型和目标平台的具体情况。"
+#~ msgstr ""
+
+#~ msgid "{class}`~tvm.autotvm.LocalRunner` 在本地设备上运行生成的代码。"
+#~ msgstr ""
+
+#~ msgid "{class}`~tvm.autotvm.LocalRunner` 使用一组特定参数生成的编译代码，并度量它的性能。"
 #~ msgstr ""
 

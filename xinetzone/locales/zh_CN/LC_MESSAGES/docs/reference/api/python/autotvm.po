@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,13 +49,105 @@ msgstr ""
 msgid "Apply the history best config"
 msgstr ""
 
+#: of tvm.autotvm.measure.measure.MeasureInput:4
+#: tvm.autotvm.measure.measure.MeasureResult:4
+#: tvm.autotvm.measure.measure.create_measure_batch:4
+#: tvm.autotvm.measure.measure.measure_option:6
+#: tvm.autotvm.measure.measure_methods.LocalBuilder:4
+#: tvm.autotvm.measure.measure_methods.LocalRunner:4
+#: tvm.autotvm.measure.measure_methods.RPCRunner:5 tvm.autotvm.record.decode:4
+#: tvm.autotvm.record.encode:4 tvm.autotvm.record.load_from_buffer:5
+#: tvm.autotvm.record.load_from_file:5 tvm.autotvm.record.measure_str_key:4
+#: tvm.autotvm.record.pick_best:7 tvm.autotvm.record.split_workload:5
+#: tvm.autotvm.task.dispatcher.ApplyConfig:4
+#: tvm.autotvm.task.dispatcher.ApplyFixedConfig:6
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest.__init__:2
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest._query_inside:4
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest.update:4
+#: tvm.autotvm.task.dispatcher.ApplyHistoryBest:4
+#: tvm.autotvm.task.dispatcher.ApplyHistoryBest.load:4
+#: tvm.autotvm.task.dispatcher.ApplyHistoryBest.update:4
+#: tvm.autotvm.task.dispatcher.DispatchContext._query_inside:5
+#: tvm.autotvm.task.dispatcher.DispatchContext.query:6
+#: tvm.autotvm.task.dispatcher.DispatchContext.update:4
+#: tvm.autotvm.task.dispatcher.FallbackContext.clear_cache:5
+#: tvm.autotvm.task.dispatcher.FallbackContext.update:4
+#: tvm.autotvm.task.dispatcher.clear_fallback_cache:5
+#: tvm.autotvm.task.space.AnnotateEntity:4
+#: tvm.autotvm.task.space.AnnotateEntity.apply:4
+#: tvm.autotvm.task.space.ConfigEntity:4
+#: tvm.autotvm.task.space.ConfigEntity.from_json_dict:4
+#: tvm.autotvm.task.space.ConfigSpace.__getitem__:5
+#: tvm.autotvm.task.space.ConfigSpace.add_flop:4
+#: tvm.autotvm.task.space.ConfigSpace.axis:4
+#: tvm.autotvm.task.space.ConfigSpace.define_annotate:4
+#: tvm.autotvm.task.space.ConfigSpace.define_knob:4
+#: tvm.autotvm.task.space.ConfigSpace.define_reorder:4
+#: tvm.autotvm.task.space.ConfigSpace.define_split:4
+#: tvm.autotvm.task.space.ConfigSpace.get:4
+#: tvm.autotvm.task.space.ConfigSpace.get_next_index:4
+#: tvm.autotvm.task.space.ConfigSpace.get_rand_index:4
+#: tvm.autotvm.task.space.ConfigSpace.is_index_valid:4
+#: tvm.autotvm.task.space.ConfigSpace.knob2point:4
+#: tvm.autotvm.task.space.ConfigSpace.multi_filter:5
+#: tvm.autotvm.task.space.ConfigSpace.point2knob:4
+#: tvm.autotvm.task.space.ConfigSpace.raise_error:7
+#: tvm.autotvm.task.space.ConfigSpace.random_walk:4
+#: tvm.autotvm.task.space.ConfigSpace.sample_ints:6
+#: tvm.autotvm.task.space.ConfigSpace.subrange_length:4
+#: tvm.autotvm.task.space.FallbackConfigEntity.__setitem__:4
+#: tvm.autotvm.task.space.FallbackConfigEntity.fallback_split:4
+#: tvm.autotvm.task.space.FallbackConfigEntity.fallback_with_reference_log:10
+#: tvm.autotvm.task.space.ReorderEntity:4
+#: tvm.autotvm.task.space.ReorderEntity.apply:4
+#: tvm.autotvm.task.space.SplitEntity:5
+#: tvm.autotvm.task.space.SplitEntity.apply:4
+#: tvm.autotvm.task.space.TransformSpace.__getitem__:4
+#: tvm.autotvm.task.space.VirtualAxis:4 tvm.autotvm.task.space.get_factors:4
+#: tvm.autotvm.task.space.get_pow2s:4 tvm.autotvm.task.task.Task:4
+#: tvm.autotvm.task.task.Task.instantiate:5
+#: tvm.autotvm.task.task._register_customized_task:4
+#: tvm.autotvm.task.task._register_task_compute:4
+#: tvm.autotvm.task.task._register_task_schedule:4
+#: tvm.autotvm.task.task.args_to_workload:6
+#: tvm.autotvm.task.task.compute_flop:4 tvm.autotvm.task.task.create:4
+#: tvm.autotvm.task.task.deserialize_args:4
+#: tvm.autotvm.task.task.serialize_args:4 tvm.autotvm.task.task.template:4
+#: tvm.autotvm.task.topi_integration.TaskExtractEnv.add_task:4
+#: tvm.autotvm.task.topi_integration.TaskExtractEnv.get:4
+#: tvm.autotvm.task.topi_integration.TaskExtractEnv.reset:4
+#: tvm.autotvm.task.topi_integration.register_topi_compute:9
+#: tvm.autotvm.task.topi_integration.register_topi_schedule:12
+#: tvm.autotvm.tuner.callback.log_to_database:4
+#: tvm.autotvm.tuner.callback.log_to_file:5
+#: tvm.autotvm.tuner.callback.progress_bar:4
+#: tvm.autotvm.tuner.ga_tuner.GATuner:6
+#: tvm.autotvm.tuner.ga_tuner.GATuner.load_history:4
+#: tvm.autotvm.tuner.ga_tuner.GATuner.next_batch:4
+#: tvm.autotvm.tuner.ga_tuner.GATuner.update:4
+#: tvm.autotvm.tuner.index_based_tuner.GridSearchTuner.next_batch:4
+#: tvm.autotvm.tuner.index_based_tuner.IndexBaseTuner.load_history:4
+#: tvm.autotvm.tuner.index_based_tuner.RandomTuner:4
+#: tvm.autotvm.tuner.index_based_tuner.RandomTuner.next_batch:4
+#: tvm.autotvm.tuner.model_based_tuner.ModelBasedTuner.load_history:4
+#: tvm.autotvm.tuner.model_based_tuner.ModelBasedTuner.next_batch:4
+#: tvm.autotvm.tuner.model_based_tuner.ModelBasedTuner.update:4
+#: tvm.autotvm.tuner.tuner.Tuner:4 tvm.autotvm.tuner.tuner.Tuner.load_history:4
+#: tvm.autotvm.tuner.tuner.Tuner.next_batch:4
+#: tvm.autotvm.tuner.tuner.Tuner.set_error_threshold:4
+#: tvm.autotvm.tuner.tuner.Tuner.tune:4 tvm.autotvm.tuner.tuner.Tuner.update:4
+#: tvm.autotvm.tuner.xgboost_tuner.XGBTuner:4
+#: tvm.autotvm.tuner.xgboost_tuner.XGBTuner.tune:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm.autotvm.task.dispatcher.ApplyGraphBest.__init__:6
 #: tvm.autotvm.task.dispatcher.ApplyHistoryBest:9
 #: tvm.autotvm.task.dispatcher.ApplyHistoryBest:11
 msgid "records"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyHistoryBest:-1
 msgid "None, Records, or iterator of Records objects, where a"
 msgstr ""
 
@@ -90,7 +182,7 @@ msgstr ""
 msgid "target"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.measure.measure.MeasureInput:-1
 msgid "tvm.target.Target"
 msgstr ""
 
@@ -102,7 +194,7 @@ msgstr ""
 msgid "task"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.measure.measure.MeasureInput:-1
 msgid "task.Task"
 msgstr ""
 
@@ -115,7 +207,7 @@ msgstr ""
 msgid "config"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.measure.measure.MeasureInput:-1
 msgid "ConfigEntity"
 msgstr ""
 
@@ -185,6 +277,16 @@ msgstr ""
 msgid "Specify how to run programs"
 msgstr ""
 
+#: of tvm.autotvm.measure.measure.measure_option:13
+#: tvm.autotvm.task.space.ConfigSpace.define_split:30
+#: tvm.autotvm.task.space.ConfigSpace.multi_filter:18
+#: tvm.autotvm.task.space.FallbackConfigEntity.fallback_split:11
+#: tvm.autotvm.task.task.template:19
+#: tvm.autotvm.task.topi_integration.register_topi_compute:23
+#: tvm.autotvm.task.topi_integration.register_topi_schedule:26
+msgid "Examples"
+msgstr ""
+
 #: of tvm.autotvm.measure.measure.measure_option:14
 msgid ""
 "# example setting for using local devices >>> measure_option = "
@@ -202,6 +304,16 @@ msgid ""
 "        'rasp3b', 'locahost', 9190, # device key, host and port of the "
 "rpc tracker >>>        number=4, >>>        timeout=4) # timeout of a run"
 " on the device. RPC request waiting time is excluded. >>>)"
+msgstr ""
+
+#: of tvm.autotvm.measure.measure.measure_option:32
+#: tvm.autotvm.measure.measure_methods.LocalRunner:32
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest.update:13
+#: tvm.autotvm.task.dispatcher.ApplyHistoryBest.update:13
+#: tvm.autotvm.task.dispatcher.DispatchContext.update:13
+#: tvm.autotvm.task.dispatcher.FallbackContext.update:13
+#: tvm.autotvm.task.dispatcher.clear_fallback_cache:12
+msgid "Note"
 msgstr ""
 
 #: of tvm.autotvm.measure.measure.measure_option:33
@@ -235,6 +347,60 @@ msgstr ""
 msgid ""
 "The option for measuring generated code. You should use the return value "
 "of function :any:`measure_option` for this argument."
+msgstr ""
+
+#: of tvm.autotvm.measure.measure.create_measure_batch:12
+#: tvm.autotvm.record.decode:12 tvm.autotvm.record.encode:12
+#: tvm.autotvm.record.measure_str_key:11
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest._query_inside:11
+#: tvm.autotvm.task.dispatcher.DispatchContext._query_inside:12
+#: tvm.autotvm.task.dispatcher.DispatchContext.query:13
+#: tvm.autotvm.task.space.AnnotateEntity.apply:23
+#: tvm.autotvm.task.space.AnnotateSpace.get_num_output:4
+#: tvm.autotvm.task.space.ConfigEntity.from_json_dict:10
+#: tvm.autotvm.task.space.ConfigEntity.get_flatten_feature:4
+#: tvm.autotvm.task.space.ConfigEntity.get_other_option:2
+#: tvm.autotvm.task.space.ConfigSpace.get:9
+#: tvm.autotvm.task.space.ConfigSpace.get_next_index:16
+#: tvm.autotvm.task.space.ConfigSpace.get_rand_index:13
+#: tvm.autotvm.task.space.ConfigSpace.is_index_valid:9
+#: tvm.autotvm.task.space.ConfigSpace.knob2point:9
+#: tvm.autotvm.task.space.ConfigSpace.point2knob:9
+#: tvm.autotvm.task.space.ConfigSpace.random_walk:9
+#: tvm.autotvm.task.space.ConfigSpace.sample_ints:11
+#: tvm.autotvm.task.space.ConfigSpace.subrange_length:11
+#: tvm.autotvm.task.space.ConfigSpace.valid:9
+#: tvm.autotvm.task.space.OtherOptionSpace.get_num_output:4
+#: tvm.autotvm.task.space.ReorderEntity.apply:13
+#: tvm.autotvm.task.space.ReorderSpace.get_num_output:4
+#: tvm.autotvm.task.space.SplitEntity.apply:13
+#: tvm.autotvm.task.space.SplitSpace.get_num_output:4
+#: tvm.autotvm.task.space.TransformSpace.__getitem__:8
+#: tvm.autotvm.task.space.TransformSpace.get_num_output:4
+#: tvm.autotvm.task.space.VirtualAxis.get_num_output:4
+#: tvm.autotvm.task.space.get_factors:9 tvm.autotvm.task.space.get_pow2s:9
+#: tvm.autotvm.task.task.Task.instantiate:10
+#: tvm.autotvm.task.task._register_customized_task:13
+#: tvm.autotvm.task.task._register_task_compute:13
+#: tvm.autotvm.task.task._register_task_schedule:13
+#: tvm.autotvm.task.task.args_to_workload:14
+#: tvm.autotvm.task.task.compute_flop:9 tvm.autotvm.task.task.create:15
+#: tvm.autotvm.task.task.get_config:4 tvm.autotvm.task.task.template:14
+#: tvm.autotvm.task.topi_integration.TaskExtractEnv.get:11
+#: tvm.autotvm.task.topi_integration.TaskExtractEnv.get_tasks:4
+#: tvm.autotvm.task.topi_integration.register_topi_compute:18
+#: tvm.autotvm.task.topi_integration.register_topi_schedule:21
+#: tvm.autotvm.tuner.callback.log_to_file:12
+#: tvm.autotvm.tuner.ga_tuner.GATuner.has_next:4
+#: tvm.autotvm.tuner.ga_tuner.GATuner.next_batch:9
+#: tvm.autotvm.tuner.index_based_tuner.GridSearchTuner.next_batch:9
+#: tvm.autotvm.tuner.index_based_tuner.IndexBaseTuner.has_next:4
+#: tvm.autotvm.tuner.index_based_tuner.RandomTuner.next_batch:9
+#: tvm.autotvm.tuner.model_based_tuner.ModelBasedTuner.has_next:4
+#: tvm.autotvm.tuner.model_based_tuner.ModelBasedTuner.next_batch:9
+#: tvm.autotvm.tuner.tuner.Tuner.has_next:4
+#: tvm.autotvm.tuner.tuner.Tuner.next_batch:9
+msgid "Returns"
 msgstr ""
 
 #: of tvm.autotvm.measure.measure.create_measure_batch:13
@@ -359,7 +525,8 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.measure.measure_methods.LocalRunner:-1
+#: tvm.autotvm.measure.measure_methods.RPCRunner:-1
 msgid "int, optional"
 msgstr ""
 
@@ -416,7 +583,7 @@ msgstr ""
 msgid "module_loader"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.measure.measure_methods.RPCRunner:-1
 msgid "ModuleLoader"
 msgstr ""
 
@@ -759,7 +926,7 @@ msgstr ""
 msgid "For cross-device or cross-operator tuning, you can use 'curve' only."
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:31
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:33
 msgid "loss_type: str"
 msgstr ""
 
@@ -767,43 +934,45 @@ msgstr ""
 msgid ""
 "If is 'reg', use regression loss to train cost model. The cost model "
 "predicts the normalized flops. If is 'rank', use pairwise rank loss to "
-"train cost model. The cost model predicts relative rank score."
+"train cost model. The cost model predicts relative rank score. If is "
+"'rank-binary', use pairwise rank loss with binarized labels to train cost"
+" model. The cost model predicts relative rank score."
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:34
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:36
 msgid "num_threads: int, optional"
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:34
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:36
 msgid "The number of threads."
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:38
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:40
 msgid "optimizer: str or ModelOptimizer, optional"
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:37
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:39
 msgid ""
 "If is 'sa', use a default simulated annealing optimizer. Otherwise it "
 "should be a ModelOptimizer object."
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:43
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:45
 msgid "diversity_filter_ratio: int or float, optional"
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:41
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:43
 msgid ""
 "If is not None, the tuner will first select top-(plan_size * "
 "diversity_filter_ratio) candidates according to the cost model and then "
 "pick batch_size of them according to the diversity metric."
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:49
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:51
 msgid "log_interval: int = 50"
 msgstr ""
 
-#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:46
+#: of tvm.autotvm.tuner.xgboost_tuner.XGBTuner:48
 msgid ""
 "The verbose level. If is 0, output nothing. Otherwise, output debug "
 "information every `verbose` iterations."
@@ -847,7 +1016,7 @@ msgstr ""
 msgid "file_out"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.tuner.callback.log_to_file:-1
 msgid "File or str"
 msgstr ""
 
@@ -867,7 +1036,7 @@ msgstr ""
 msgid "callback"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.tuner.callback.log_to_file:-1
 msgid "callable"
 msgstr ""
 
@@ -1084,7 +1253,8 @@ msgstr ""
 msgid "task_name"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.record.decode:-1 tvm.autotvm.task.task.args_to_workload:-1
+#: tvm.autotvm.task.task.create:-1
 msgid "str"
 msgstr ""
 
@@ -1098,7 +1268,7 @@ msgstr ""
 msgid "args"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.task.args_to_workload:-1
 msgid "list of args"
 msgstr ""
 
@@ -1136,7 +1306,7 @@ msgstr ""
 msgid "Create a tuning task and initialize its search space"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.task.create:-1
 msgid "List"
 msgstr ""
 
@@ -1144,7 +1314,8 @@ msgstr ""
 msgid "Positional arguments"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyGraphBest._query_inside:-1
+#: tvm.autotvm.task.task.create:-1
 msgid "Target"
 msgstr ""
 
@@ -1323,7 +1494,7 @@ msgstr ""
 msgid "axes"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.space.AnnotateEntity.apply:-1
 msgid "list of tvm.te.schedule.IterVar"
 msgstr ""
 
@@ -1412,7 +1583,7 @@ msgstr ""
 msgid "constraints"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.space.ConfigEntity:-1
 msgid "list"
 msgstr ""
 
@@ -1466,6 +1637,10 @@ msgstr ""
 
 #: of tvm.autotvm.task.space.ConfigEntity.to_json_dict:1
 msgid "convert to a json serializable dictionary"
+msgstr ""
+
+#: of tvm.autotvm.task.space.ConfigEntity.to_json_dict:4
+msgid "Return"
 msgstr ""
 
 #: of tvm.autotvm.task.space.ConfigEntity.to_json_dict:6
@@ -2028,7 +2203,8 @@ msgstr ""
 msgid "Apply reorder to an array of axes"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.space.ReorderEntity.apply:-1
+#: tvm.autotvm.task.space.SplitEntity.apply:-1
 msgid "list of Axis"
 msgstr ""
 
@@ -2171,7 +2347,7 @@ msgstr ""
 msgid "Apply a deterministic config entity for all queries."
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyConfig:-1
 msgid "ConfigSpace or ConfigEntity"
 msgstr ""
 
@@ -2200,7 +2376,7 @@ msgstr ""
 msgid "tasks"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyFixedConfig:-1
 msgid "list[tvm.autotvm.task.task.Task]"
 msgstr ""
 
@@ -2212,7 +2388,7 @@ msgstr ""
 msgid "schedule_names"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyFixedConfig:-1
 msgid "str, List[str]"
 msgstr ""
 
@@ -2236,7 +2412,7 @@ msgid ""
 "index."
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyGraphBest.__init__:-1
 msgid ""
 "str or iterator of (autotvm.measure.MeasureInput, "
 "autotvm.measure.MeasureResult)"
@@ -2284,7 +2460,15 @@ msgstr ""
 msgid "workload"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyGraphBest._query_inside:-1
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest.update:-1
+#: tvm.autotvm.task.dispatcher.ApplyHistoryBest.update:-1
+#: tvm.autotvm.task.dispatcher.DispatchContext._query_inside:-1
+#: tvm.autotvm.task.dispatcher.DispatchContext.query:-1
+#: tvm.autotvm.task.dispatcher.DispatchContext.update:-1
+#: tvm.autotvm.task.dispatcher.FallbackContext.clear_cache:-1
+#: tvm.autotvm.task.dispatcher.FallbackContext.update:-1
+#: tvm.autotvm.task.dispatcher.clear_fallback_cache:-1
 msgid "Workload"
 msgstr ""
 
@@ -2310,7 +2494,13 @@ msgstr ""
 msgid "cfg"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.dispatcher.ApplyGraphBest._query_inside:-1
+#: tvm.autotvm.task.dispatcher.ApplyGraphBest.update:-1
+#: tvm.autotvm.task.dispatcher.ApplyHistoryBest.update:-1
+#: tvm.autotvm.task.dispatcher.DispatchContext._query_inside:-1
+#: tvm.autotvm.task.dispatcher.DispatchContext.query:-1
+#: tvm.autotvm.task.dispatcher.DispatchContext.update:-1
+#: tvm.autotvm.task.dispatcher.FallbackContext.update:-1
 msgid "ConfigSpace"
 msgstr ""
 
@@ -2470,7 +2660,7 @@ msgstr ""
 msgid "allow_duplicate"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.task.topi_integration.TaskExtractEnv.get:-1
 msgid "boolean"
 msgstr ""
 
@@ -2584,7 +2774,7 @@ msgstr ""
 msgid "ret"
 msgstr ""
 
-#: of
+#: of tvm.autotvm.record.decode:-1
 msgid ""
 "tuple(autotvm.measure.MeasureInput, autotvm.measure.MeasureResult), or "
 "None"
@@ -2624,6 +2814,10 @@ msgstr ""
 
 #: of tvm.autotvm.record.load_from_buffer:6
 msgid "file: io.TextIOBase"
+msgstr ""
+
+#: of tvm.autotvm.record.load_from_buffer:9 tvm.autotvm.record.load_from_file:9
+msgid "Yields"
 msgstr ""
 
 #: of tvm.autotvm.record.load_from_buffer:10

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,11 +49,16 @@ msgid ""
 "specific VTA backend."
 msgstr "该对象包含编译到特定 VTA 后端所需的所有信息。"
 
+#: of vta.build_module.build_config:4 vta.environment.Environment:7
+#: vta.rpc_client.program_fpga:4 vta.rpc_client.reconfig_runtime:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.environment.Environment:9
 msgid "cfg"
 msgstr ""
 
-#: of
+#: of vta.environment.Environment:-1
 msgid "dict of str to value."
 msgstr "str 到 value 的 dict。"
 
@@ -61,15 +66,23 @@ msgstr "str 到 value 的 dict。"
 msgid "The configuration parameters."
 msgstr "配置的参数。"
 
+#: of vta.build_module.build_config:17 vta.environment.Environment:12
+msgid "Example"
+msgstr ""
+
 #: of vta.environment.get_env:1
 msgid "Get the current VTA Environment."
 msgstr "获得当前 VTA Environment。"
+
+#: of vta.build_module.build_config:12 vta.environment.get_env:4
+msgid "Returns"
+msgstr ""
 
 #: of vta.environment.get_env:5
 msgid "env"
 msgstr ""
 
-#: of
+#: of vta.environment.get_env:-1
 msgid "Environment"
 msgstr ""
 
@@ -89,7 +102,7 @@ msgstr "基于当前硬件 spec 重新配置远程运行时。"
 msgid "remote"
 msgstr ""
 
-#: of
+#: of vta.rpc_client.program_fpga:-1 vta.rpc_client.reconfig_runtime:-1
 msgid "RPCSession"
 msgstr ""
 
@@ -105,7 +118,7 @@ msgstr ""
 msgid "bitstream"
 msgstr ""
 
-#: of
+#: of vta.rpc_client.program_fpga:-1
 msgid "str, optional"
 msgstr ""
 
@@ -133,7 +146,7 @@ msgstr ""
 msgid "debug_flag"
 msgstr ""
 
-#: of
+#: of vta.build_module.build_config:-1
 msgid "int"
 msgstr ""
 
@@ -145,7 +158,7 @@ msgstr ""
 msgid "kwargs"
 msgstr ""
 
-#: of
+#: of vta.build_module.build_config:-1
 msgid "dict"
 msgstr ""
 
@@ -169,6 +182,10 @@ msgstr ""
 msgid ""
 "This wrapper automatically applies VTA's build_config if there is no user"
 " specified build_config in context."
+msgstr ""
+
+#: of vta.build_module.build:7 vta.build_module.lower:7
+msgid "See Also"
 msgstr ""
 
 #: of vta.build_module.build:8

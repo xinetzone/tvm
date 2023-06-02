@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,16 @@ msgstr ""
 msgid "Find header files for C compilation."
 msgstr ""
 
+#: of tvm._ffi.libinfo.find_include_path:4 tvm._ffi.libinfo.find_lib_path:4
+#: tvm._ffi.libinfo.split_env_var:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm._ffi.libinfo.find_include_path:6 tvm._ffi.libinfo.find_lib_path:6
 msgid "name"
 msgstr ""
 
-#: of
+#: of tvm._ffi.libinfo.find_include_path:-1 tvm._ffi.libinfo.find_lib_path:-1
 msgid "list of str"
 msgstr ""
 
@@ -41,11 +46,17 @@ msgstr ""
 msgid "List of directory names to be searched."
 msgstr ""
 
+#: of tvm._ffi.libinfo.find_include_path:9 tvm._ffi.libinfo.find_lib_path:9
+#: tvm._ffi.libinfo.split_env_var:12
+msgid "Returns"
+msgstr ""
+
 #: of tvm._ffi.libinfo.find_include_path:10
 msgid "include_path"
 msgstr ""
 
-#: of
+#: of tvm._ffi.libinfo.find_include_path:-1 tvm._ffi.libinfo.find_lib_path:-1
+#: tvm._ffi.libinfo.split_env_var:-1
 msgid "list(string)"
 msgstr ""
 
@@ -81,7 +92,7 @@ msgstr ""
 msgid "env_var"
 msgstr ""
 
-#: of
+#: of tvm._ffi.libinfo.split_env_var:-1
 msgid "str"
 msgstr ""
 

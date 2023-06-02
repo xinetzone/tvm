@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,6 +44,59 @@ msgid ""
 "Create an extern op that compute batched matrix mult of A and rhs with "
 "CBLAS This function serves as an example on how to call external "
 "libraries."
+msgstr ""
+
+#: of tvm.contrib.cblas.batch_matmul:5 tvm.contrib.cblas.matmul:5
+#: tvm.contrib.cc.create_executable:4 tvm.contrib.cc.create_shared:4
+#: tvm.contrib.cc.cross_compiler:8 tvm.contrib.cc.get_target_by_dump_machine:4
+#: tvm.contrib.clang.create_llvm:4 tvm.contrib.clang.find_clang:4
+#: tvm.contrib.cublas.batch_matmul:4 tvm.contrib.cublas.matmul:4
+#: tvm.contrib.dlpack.convert_func:5 tvm.contrib.dlpack.to_pytorch_func:4
+#: tvm.contrib.emcc.create_tvmjs_wasm:4
+#: tvm.contrib.miopen._get_np_int32_array_handle:4
+#: tvm.contrib.miopen.conv2d_forward:4 tvm.contrib.miopen.log_softmax:4
+#: tvm.contrib.miopen.softmax:4 tvm.contrib.mxnet.to_mxnet_func:6
+#: tvm.contrib.ndk.create_shared:4 tvm.contrib.nnpack.convolution_inference:5
+#: tvm.contrib.nnpack.convolution_inference_weight_transform:5
+#: tvm.contrib.nnpack.convolution_inference_without_weight_transform:5
+#: tvm.contrib.nnpack.fully_connected_inference:5
+#: tvm.contrib.nvcc.compile_cuda:4 tvm.contrib.nvcc.get_cuda_version:4
+#: tvm.contrib.nvcc.get_target_compute_version:7 tvm.contrib.nvcc.have_bf16:4
+#: tvm.contrib.nvcc.have_fp16:4 tvm.contrib.nvcc.have_int8:4
+#: tvm.contrib.nvcc.have_tensorcore:4 tvm.contrib.nvcc.parse_compute_version:4
+#: tvm.contrib.pickle_memoize.Cache:4 tvm.contrib.pickle_memoize.memoize:4
+#: tvm.contrib.random.normal:6 tvm.contrib.random.randint:6
+#: tvm.contrib.random.uniform:8 tvm.contrib.relay_viz.RelayVisualizer:4
+#: tvm.contrib.relay_viz.RelayVisualizer._add_nodes:4
+#: tvm.contrib.relay_viz.dot.DotGraph:6
+#: tvm.contrib.relay_viz.dot.DotGraph.edge:4
+#: tvm.contrib.relay_viz.dot.DotGraph.node:5
+#: tvm.contrib.relay_viz.dot.DotPlotter:7
+#: tvm.contrib.relay_viz.dot.DotPlotter.create_graph:4
+#: tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges:4
+#: tvm.contrib.relay_viz.interface.Plotter.create_graph:4
+#: tvm.contrib.relay_viz.interface.Plotter.render:4
+#: tvm.contrib.relay_viz.interface.VizEdge:4
+#: tvm.contrib.relay_viz.interface.VizGraph.edge:4
+#: tvm.contrib.relay_viz.interface.VizGraph.node:5
+#: tvm.contrib.relay_viz.interface.VizNode:4
+#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:4
+#: tvm.contrib.relay_viz.terminal.TermGraph:4
+#: tvm.contrib.relay_viz.terminal.TermGraph.edge:4
+#: tvm.contrib.relay_viz.terminal.TermGraph.node:5
+#: tvm.contrib.relay_viz.terminal.TermPlotter.create_graph:4
+#: tvm.contrib.rocblas.batch_matmul:4 tvm.contrib.rocblas.matmul:4
+#: tvm.contrib.rocm.find_lld:4 tvm.contrib.rocm.rocm_link:4
+#: tvm.contrib.sparse.CSRNDArray.__init__:4
+#: tvm.contrib.sparse.CSRPlaceholderOp.__init__:4
+#: tvm.contrib.sparse.SparsePlaceholderOp.__init__:4
+#: tvm.contrib.sparse.placeholder:4 tvm.contrib.spirv.optimize:6
+#: tvm.contrib.tar.tar:4 tvm.contrib.tar.untar:4 tvm.contrib.utils.FileLock:4
+#: tvm.contrib.utils.TempDirectory.relpath:4 tvm.contrib.utils.filelock:4
+#: tvm.contrib.utils.is_source_path:4 tvm.contrib.utils.tempdir:4
+#: tvm.contrib.utils.which:4 tvm.contrib.xcode.compile_metal:4
+#: tvm.contrib.xcode.create_dylib:4 tvm.contrib.xcode.xcrun:4
+msgid "Parameters"
 msgstr ""
 
 #: of tvm.contrib.cblas.batch_matmul:6 tvm.contrib.cblas.matmul:6
@@ -86,6 +139,35 @@ msgstr ""
 msgid "Whether transpose rhs"
 msgstr ""
 
+#: of tvm.contrib.cblas.batch_matmul:16 tvm.contrib.cblas.matmul:16
+#: tvm.contrib.cc.cross_compiler:26 tvm.contrib.cc.get_cc:4
+#: tvm.contrib.cc.get_target_by_dump_machine:9 tvm.contrib.clang.create_llvm:20
+#: tvm.contrib.clang.find_clang:10 tvm.contrib.cublas.batch_matmul:15
+#: tvm.contrib.cublas.matmul:15 tvm.contrib.dlpack.to_pytorch_func:9
+#: tvm.contrib.miopen._get_np_int32_array_handle:9
+#: tvm.contrib.miopen.conv2d_forward:30 tvm.contrib.miopen.log_softmax:12
+#: tvm.contrib.miopen.softmax:12 tvm.contrib.mxnet.to_mxnet_func:17
+#: tvm.contrib.nnpack.convolution_inference:23
+#: tvm.contrib.nnpack.convolution_inference_weight_transform:11
+#: tvm.contrib.nnpack.convolution_inference_without_weight_transform:23
+#: tvm.contrib.nnpack.fully_connected_inference:12
+#: tvm.contrib.nvcc.find_cuda_path:4 tvm.contrib.nvcc.get_cuda_version:11
+#: tvm.contrib.nvcc.get_target_compute_version:12
+#: tvm.contrib.nvcc.parse_compute_version:9
+#: tvm.contrib.pickle_memoize.memoize:11 tvm.contrib.random.normal:16
+#: tvm.contrib.random.randint:13 tvm.contrib.random.uniform:20
+#: tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges:15
+#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:15
+#: tvm.contrib.relay_viz.terminal.TermGraph.render:4
+#: tvm.contrib.rocblas.batch_matmul:15 tvm.contrib.rocblas.matmul:15
+#: tvm.contrib.rocm.find_lld:10 tvm.contrib.sparse.placeholder:21
+#: tvm.contrib.utils.TempDirectory.listdir:4
+#: tvm.contrib.utils.TempDirectory.relpath:9 tvm.contrib.utils.filelock:9
+#: tvm.contrib.utils.is_source_path:9 tvm.contrib.utils.tempdir:11
+#: tvm.contrib.utils.which:9 tvm.contrib.xcode.xcrun:9
+msgid "Returns"
+msgstr ""
+
 #: of tvm.contrib.cblas.batch_matmul:17 tvm.contrib.cblas.matmul:17
 msgid "C: Tensor"
 msgstr ""
@@ -118,7 +200,8 @@ msgstr ""
 msgid "inputs"
 msgstr ""
 
-#: of
+#: of tvm.contrib.clang.create_llvm:-1 tvm.contrib.clang.find_clang:-1
+#: tvm.contrib.rocm.find_lld:-1 tvm.contrib.xcode.xcrun:-1
 msgid "list of str"
 msgstr ""
 
@@ -135,7 +218,10 @@ msgstr ""
 msgid "output"
 msgstr ""
 
-#: of
+#: of tvm.contrib.clang.create_llvm:-1 tvm.contrib.emcc.create_tvmjs_wasm:-1
+#: tvm.contrib.nvcc.compile_cuda:-1 tvm.contrib.nvcc.have_tensorcore:-1
+#: tvm.contrib.rocm.rocm_link:-1 tvm.contrib.utils.tempdir:-1
+#: tvm.contrib.xcode.compile_metal:-1
 msgid "str, optional"
 msgstr ""
 
@@ -150,7 +236,11 @@ msgstr ""
 msgid "options"
 msgstr ""
 
-#: of
+#: of tvm.contrib.clang.create_llvm:-1 tvm.contrib.emcc.create_tvmjs_wasm:-1
+#: tvm.contrib.ndk.create_shared:-1 tvm.contrib.nnpack.convolution_inference:-1
+#: tvm.contrib.nnpack.convolution_inference_without_weight_transform:-1
+#: tvm.contrib.tar.tar:-1 tvm.contrib.utils.TempDirectory.listdir:-1
+#: tvm.contrib.xcode.create_dylib:-1
 msgid "list"
 msgstr ""
 
@@ -175,7 +265,22 @@ msgstr ""
 msgid "code"
 msgstr ""
 
-#: of
+#: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
+#: tvm.contrib.clang.create_llvm:-1 tvm.contrib.emcc.create_tvmjs_wasm:-1
+#: tvm.contrib.ndk.create_shared:-1 tvm.contrib.nvcc.compile_cuda:-1
+#: tvm.contrib.nvcc.find_cuda_path:-1
+#: tvm.contrib.nvcc.get_target_compute_version:-1 tvm.contrib.nvcc.have_bf16:-1
+#: tvm.contrib.nvcc.have_int8:-1 tvm.contrib.nvcc.parse_compute_version:-1
+#: tvm.contrib.relay_viz.dot.DotPlotter.create_graph:-1
+#: tvm.contrib.relay_viz.interface.Plotter.create_graph:-1
+#: tvm.contrib.relay_viz.interface.Plotter.render:-1
+#: tvm.contrib.relay_viz.terminal.TermPlotter.create_graph:-1
+#: tvm.contrib.rocm.rocm_link:-1 tvm.contrib.tar.tar:-1
+#: tvm.contrib.tar.untar:-1 tvm.contrib.utils.FileLock:-1
+#: tvm.contrib.utils.TempDirectory.relpath:-1 tvm.contrib.utils.filelock:-1
+#: tvm.contrib.utils.is_source_path:-1 tvm.contrib.utils.which:-1
+#: tvm.contrib.xcode.compile_metal:-1 tvm.contrib.xcode.create_dylib:-1
+#: tvm.contrib.xcode.xcrun:-1
 msgid "str"
 msgstr ""
 
@@ -191,7 +296,10 @@ msgstr ""
 msgid "required"
 msgstr ""
 
-#: of
+#: of tvm.contrib.clang.find_clang:-1 tvm.contrib.cublas.batch_matmul:-1
+#: tvm.contrib.cublas.matmul:-1 tvm.contrib.rocblas.batch_matmul:-1
+#: tvm.contrib.rocblas.matmul:-1 tvm.contrib.rocm.find_lld:-1
+#: tvm.contrib.utils.is_source_path:-1 tvm.contrib.utils.tempdir:-1
 msgid "bool"
 msgstr ""
 
@@ -207,6 +315,10 @@ msgstr ""
 
 #: of tvm.contrib.clang.find_clang:12 tvm.contrib.rocm.find_lld:12
 msgid "List of possible paths."
+msgstr ""
+
+#: of tvm.contrib.clang.find_clang:15 tvm.contrib.rocm.find_lld:15
+msgid "Note"
 msgstr ""
 
 #: of tvm.contrib.clang.find_clang:16
@@ -237,7 +349,7 @@ msgstr ""
 msgid "objects"
 msgstr ""
 
-#: of
+#: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
 msgid "List[str]"
 msgstr ""
 
@@ -247,7 +359,9 @@ msgstr ""
 msgid "List of object files."
 msgstr ""
 
-#: of
+#: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
+#: tvm.contrib.cc.cross_compiler:-1
+#: tvm.contrib.cc.get_target_by_dump_machine:-1
 msgid "Optional[str]"
 msgstr ""
 
@@ -281,7 +395,7 @@ msgstr ""
 msgid "compile_func"
 msgstr ""
 
-#: of
+#: of tvm.contrib.cc.cross_compiler:-1
 msgid "Union[str, Callable[[str, str, Optional[str]], None]]"
 msgstr ""
 
@@ -289,7 +403,7 @@ msgstr ""
 msgid "Function that performs the actual compilation"
 msgstr ""
 
-#: of
+#: of tvm.contrib.cc.cross_compiler:-1
 msgid "Optional[List[str]]"
 msgstr ""
 
@@ -329,12 +443,16 @@ msgstr ""
 msgid "fcompile"
 msgstr ""
 
-#: of
+#: of tvm.contrib.cc.cross_compiler:-1
 msgid "Callable[[str, str, Optional[str]], None]"
 msgstr ""
 
 #: of tvm.contrib.cc.cross_compiler:28
 msgid "A compilation function that can be passed to export_library."
+msgstr ""
+
+#: of tvm.contrib.cc.cross_compiler:31 tvm.contrib.relay_viz.dot.DotPlotter:20
+msgid "Examples"
 msgstr ""
 
 #: of tvm.contrib.cc.get_cc:1
@@ -393,7 +511,13 @@ msgstr ""
 msgid "lhs"
 msgstr ""
 
-#: of
+#: of tvm.contrib.cublas.batch_matmul:-1 tvm.contrib.cublas.matmul:-1
+#: tvm.contrib.nnpack.convolution_inference:-1
+#: tvm.contrib.nnpack.convolution_inference_weight_transform:-1
+#: tvm.contrib.nnpack.convolution_inference_without_weight_transform:-1
+#: tvm.contrib.nnpack.fully_connected_inference:-1 tvm.contrib.random.normal:-1
+#: tvm.contrib.random.randint:-1 tvm.contrib.random.uniform:-1
+#: tvm.contrib.rocblas.batch_matmul:-1 tvm.contrib.rocblas.matmul:-1
 msgid "Tensor"
 msgstr ""
 
@@ -633,7 +757,7 @@ msgstr ""
 msgid "x"
 msgstr ""
 
-#: of
+#: of tvm.contrib.miopen.log_softmax:-1 tvm.contrib.miopen.softmax:-1
 msgid "tvm.te.Tensor"
 msgstr ""
 
@@ -645,7 +769,8 @@ msgstr ""
 msgid "axis"
 msgstr ""
 
-#: of
+#: of tvm.contrib.miopen.log_softmax:-1 tvm.contrib.miopen.softmax:-1
+#: tvm.contrib.nvcc.parse_compute_version:-1 tvm.contrib.random.randint:-1
 msgid "int"
 msgstr ""
 
@@ -685,7 +810,7 @@ msgstr ""
 msgid "func"
 msgstr ""
 
-#: of
+#: of tvm.contrib.mxnet.to_mxnet_func:-1
 msgid "Function"
 msgstr ""
 
@@ -697,7 +822,7 @@ msgstr ""
 msgid "const_loc"
 msgstr ""
 
-#: of
+#: of tvm.contrib.mxnet.to_mxnet_func:-1
 msgid "list of int"
 msgstr ""
 
@@ -726,7 +851,7 @@ msgstr ""
 msgid "Util to invoke NDK compiler toolchain."
 msgstr ""
 
-#: of
+#: of tvm.contrib.ndk.create_shared:-1
 msgid "list of str, optional"
 msgstr ""
 
@@ -896,7 +1021,7 @@ msgstr ""
 msgid "The cuda architecture."
 msgstr ""
 
-#: of
+#: of tvm.contrib.nvcc.compile_cuda:-1
 msgid "str or list of str"
 msgstr ""
 
@@ -908,11 +1033,20 @@ msgstr ""
 msgid "Output file."
 msgstr ""
 
+#: of tvm.contrib.nvcc.compile_cuda:21
+#: tvm.contrib.relay_viz.dot.DotPlotter.create_graph:9
+#: tvm.contrib.relay_viz.interface.Plotter.create_graph:9
+#: tvm.contrib.relay_viz.terminal.TermPlotter.create_graph:9
+#: tvm.contrib.spirv.optimize:11 tvm.contrib.xcode.compile_metal:15
+msgid "Return"
+msgstr ""
+
 #: of tvm.contrib.nvcc.compile_cuda:22
 msgid "cubin"
 msgstr ""
 
-#: of
+#: of tvm.contrib.nvcc.compile_cuda:-1 tvm.contrib.spirv.optimize:-1
+#: tvm.contrib.xcode.compile_metal:-1
 msgid "bytearray"
 msgstr ""
 
@@ -952,7 +1086,8 @@ msgstr ""
 msgid "version"
 msgstr ""
 
-#: of
+#: of tvm.contrib.nvcc.get_cuda_version:-1 tvm.contrib.random.normal:-1
+#: tvm.contrib.random.uniform:-1
 msgid "float"
 msgstr ""
 
@@ -976,7 +1111,8 @@ msgstr ""
 msgid "target"
 msgstr ""
 
-#: of
+#: of tvm.contrib.nvcc.get_target_compute_version:-1
+#: tvm.contrib.nvcc.have_tensorcore:-1
 msgid "tvm.target.Target, optional"
 msgstr ""
 
@@ -1104,7 +1240,7 @@ msgstr ""
 msgid "fmemoize"
 msgstr ""
 
-#: of
+#: of tvm.contrib.pickle_memoize.memoize:-1
 msgid "function"
 msgstr ""
 
@@ -1148,7 +1284,7 @@ msgstr ""
 msgid "size"
 msgstr ""
 
-#: of
+#: of tvm.contrib.random.normal:-1 tvm.contrib.random.uniform:-1
 msgid "tuple of ints"
 msgstr ""
 
@@ -1269,7 +1405,7 @@ msgstr ""
 msgid "graph"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.RelayVisualizer._add_nodes:-1
 msgid "VizGraph"
 msgstr ""
 
@@ -1283,7 +1419,7 @@ msgstr ""
 msgid "node_to_id"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.RelayVisualizer._add_nodes:-1
 msgid "Dict[relay.expr, str]"
 msgstr ""
 
@@ -1295,7 +1431,7 @@ msgstr ""
 msgid "relay_param"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.RelayVisualizer._add_nodes:-1
 msgid "Dict[str, tvm.runtime.NDarray]"
 msgstr ""
 
@@ -1374,7 +1510,9 @@ msgstr ""
 msgid "viz_edge"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.dot.DotGraph.edge:-1
+#: tvm.contrib.relay_viz.interface.VizGraph.edge:-1
+#: tvm.contrib.relay_viz.terminal.TermGraph.edge:-1
 msgid "VizEdge"
 msgstr ""
 
@@ -1398,7 +1536,9 @@ msgstr ""
 msgid "viz_node"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.dot.DotGraph.node:-1
+#: tvm.contrib.relay_viz.interface.VizGraph.node:-1
+#: tvm.contrib.relay_viz.terminal.TermGraph.node:-1
 msgid "VizNode"
 msgstr ""
 
@@ -1547,7 +1687,8 @@ msgstr ""
 msgid "node"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges:-1
+#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:-1
 msgid "relay.Expr"
 msgstr ""
 
@@ -1566,7 +1707,8 @@ msgstr ""
 msgid "relay parameters dictionary."
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges:-1
+#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:-1
 msgid "Dict[relay.Expr, str]"
 msgstr ""
 
@@ -1582,7 +1724,8 @@ msgstr ""
 msgid "rv1"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges:-1
+#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:-1
 msgid "Union[VizNode, None]"
 msgstr ""
 
@@ -1598,7 +1741,8 @@ msgstr ""
 msgid "rv2"
 msgstr ""
 
-#: of
+#: of tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges:-1
+#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:-1
 msgid "List[VizEdge]"
 msgstr ""
 
@@ -1769,7 +1913,7 @@ msgstr ""
 msgid "arg1"
 msgstr ""
 
-#: of
+#: of tvm.contrib.sparse.CSRNDArray.__init__:-1
 msgid "numpy.ndarray or a tuple with (data, indices, indptr)"
 msgstr ""
 
@@ -1791,7 +1935,7 @@ msgstr ""
 msgid "shape"
 msgstr ""
 
-#: of
+#: of tvm.contrib.sparse.CSRNDArray.__init__:-1
 msgid "tuple of int"
 msgstr ""
 
@@ -2081,7 +2225,7 @@ msgstr ""
 msgid "temp"
 msgstr ""
 
-#: of
+#: of tvm.contrib.utils.tempdir:-1
 msgid "TempDirectory"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,15 @@ msgstr "driver API 的名称空间"
 msgid "Lowering step before build into target."
 msgstr "在建立目标之前的 lowering 步骤。"
 
+#: of tvm.driver.build_module.build:5 tvm.driver.build_module.lower:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm.driver.build_module.lower:6
 msgid "inp"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.lower:-1
 msgid "Union[tvm.te.schedule.Schedule, tvm.tir.PrimFunc, IRModule]"
 msgstr ""
 
@@ -45,7 +49,7 @@ msgstr "要建立的 TE 调度或 TensorIR PrimFunc/IRModule"
 msgid "args"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.build:-1 tvm.driver.build_module.lower:-1
 msgid "Optional[List[Union[tvm.tir.Buffer, tensor.Tensor, Var]]]"
 msgstr ""
 
@@ -61,7 +65,7 @@ msgstr "如果想 lower TensorIR，它应该是 None。"
 msgid "name"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.lower:-1
 msgid "str"
 msgstr ""
 
@@ -73,7 +77,7 @@ msgstr "result 函数的名称。"
 msgid "binds"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.build:-1 tvm.driver.build_module.lower:-1
 msgid "Optional[Mapping[tensor.Tensor, tvm.tir.Buffer]]"
 msgstr ""
 
@@ -88,7 +92,7 @@ msgstr "将 Tensor 映射到 Buffer 的字典，指定了函数的数据布局�
 msgid "simple_mode"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.lower:-1
 msgid "bool"
 msgstr ""
 
@@ -98,11 +102,15 @@ msgid ""
 "LoopPartition, api wrapper generation and Unrolling."
 msgstr "是否只输出简单和紧凑的语句，这将跳过 LoopPartition, api 包装器的生成和展开。"
 
+#: of tvm.driver.build_module.build:35 tvm.driver.build_module.lower:25
+msgid "Returns"
+msgstr ""
+
 #: of tvm.driver.build_module.lower:26
 msgid "m"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.lower:-1
 msgid "IRModule"
 msgstr ""
 
@@ -120,7 +128,7 @@ msgstr "构建以 arguments 作为签名的函数。将为与目标信息相结�
 msgid "inputs"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.build:-1
 msgid ""
 "Union[tvm.te.schedule.Schedule, tvm.tir.PrimFunc, IRModule, Mapping[str, "
 "IRModule]]"
@@ -138,7 +146,7 @@ msgstr "函数的参数列表"
 msgid "target"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.build:-1
 msgid "Optional[Union[str, Target]]"
 msgstr ""
 
@@ -166,7 +174,7 @@ msgstr ""
 msgid "runtime"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.build:-1
 msgid "Optional[Runtime]"
 msgstr ""
 
@@ -174,7 +182,7 @@ msgstr ""
 msgid "Runtime to generate artifacts for"
 msgstr "生成构件的运行时"
 
-#: of
+#: of tvm.driver.build_module.build:-1
 msgid "Optional[str]"
 msgstr ""
 
@@ -192,13 +200,17 @@ msgstr "将 symbolic buffer 的绑定映射到 Tensor 的字典。默认情况�
 msgid "ret"
 msgstr ""
 
-#: of
+#: of tvm.driver.build_module.build:-1
 msgid "tvm.module"
 msgstr ""
 
 #: of tvm.driver.build_module.build:37
 msgid "A module that combines both host and device code."
 msgstr "结合了 host 和 device 代码的模块。"
+
+#: of tvm.driver.build_module.build:40
+msgid "Examples"
+msgstr ""
 
 #: of tvm.driver.build_module.build:41
 msgid ""
@@ -209,6 +221,10 @@ msgstr "根据参数 `inputs` 的类型，这个函数有两种典型的用法�
 #: of tvm.driver.build_module.build:55
 msgid "it is a dict of compilation target to IRModule."
 msgstr "它是 IRModule 的编译 target 字典。"
+
+#: of tvm.driver.build_module.build:71
+msgid "Note"
+msgstr ""
 
 #: of tvm.driver.build_module.build:72
 msgid "See the note on :any:`tvm.target` on target string format."

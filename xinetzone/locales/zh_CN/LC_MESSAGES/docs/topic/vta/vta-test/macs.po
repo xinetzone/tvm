@@ -17,19 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/refs/vta/testing/utils.rst:3
-msgid "``vta.testing.utils``"
+#: ../../xin/docs/topic/vta/vta-test/macs.ipynb:10002
+msgid "MACs 计算"
 msgstr ""
 
-#~ msgid "Parameters"
-#~ msgstr "参数"
+#: ../../xin/docs/topic/vta/vta-test/macs.ipynb:10004
+msgid ""
+"粗略地计算模型的 MACs（Multiply-Accumulate operations）的数量。只有 CONV 和 Dense ops 中的 "
+"MAC 被计算在内。此 pass（`tvm/src/relay/analysis/mac_count.cc`）在类型推断 pass "
+"被调用后有效，否则计数为 `0`。"
+msgstr ""
 
-#~ msgid "Test Utilities"
-#~ msgstr "测试工具"
-
-#~ msgid "Run test function on all available env."
-#~ msgstr "在所有可用的环境上运行测试函数。"
-
-#~ msgid "run_func : function(env, remote)"
-#~ msgstr ""
+#: ../../xin/docs/topic/vta/vta-test/macs.ipynb:40002
+msgid "自定义"
+msgstr ""
 

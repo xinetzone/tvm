@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:30004
-msgid "**Schedule** 是一组变换程序中计算循环的计算变换。"
+msgid "**Schedule** 是一组用于变换程序中计算循环的计算变换。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:50002
@@ -93,85 +93,72 @@ msgstr ""
 msgid "reorder"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:180003
-msgid ":code:`reorder` can reorder the axes in the specified order."
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:180004
+msgid "`reorder` 可以按指定的顺序重新排列坐标轴。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:200002
 msgid "bind"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:200003
-msgid ""
-":code:`bind` can bind a specified axis with a thread axis, often used in "
-"gpu programming."
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:200004
+msgid "`bind` 可以将指定的轴与线程轴绑定，通常用于 gpu 编程。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:220002
 msgid "compute_at"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:220003
-msgid ""
-"For a schedule that consists of multiple operators, TVM will compute "
-"tensors at the root separately by default."
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:220004
+msgid "对于由多个算子组成的调度，默认情况下 TVM 将分别计算根节点上的张量。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:240002
-msgid ""
-":code:`compute_at` can move computation of `B` into the first axis of "
-"computation of `C`."
+msgid "`compute_at` 可以将 `B` 的计算移到 `C` 的计算的第一个轴上。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:260002
 msgid "compute_inline"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:260003
-msgid ""
-":code:`compute_inline` can mark one stage as inline, then the body of "
-"computation will be expanded and inserted at the address where the tensor"
-" is required."
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:260004
+msgid "`compute_inline` 可以将一个阶段标记为内联，然后将计算体扩展并插入到需要张量的地址。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:280002
 msgid "compute_root"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:280003
-msgid ":code:`compute_root` can move computation of one stage to the root."
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:280004
+msgid "`compute_root` 可以将一个阶段的计算移到 root。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300002
-msgid "Summary"
+msgid "小结"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300003
-msgid ""
-"This tutorial provides an introduction to schedule primitives in tvm, "
-"which permits users schedule the computation easily and flexibly."
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300004
+msgid "本教程介绍了 tvm 中的调度原语，允许用户轻松灵活地调度计算。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300007
-msgid ""
-"In order to get a good performance kernel implementation, the general "
-"workflow often is:"
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300006
+msgid "为了得到性能良好的 kernel 实现，一般的工作流程往往是："
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300008
+msgid "通过一系列的运算来描述你的计算。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300009
+msgid "试着用原语来调度计算。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300010
-msgid "Describe your computation via series of operations."
+msgid "编译并运行以查看性能差异。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300011
-msgid "Try to schedule the computation with primitives."
-msgstr ""
-
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300012
-msgid "Compile and run to see the performance difference."
-msgstr ""
-
-#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300013
-msgid "Adjust your schedule according the running result."
+msgid "根据运行时的结果调整你的调度。"
 msgstr ""
 
 #~ msgid ""
@@ -260,5 +247,69 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ":code:`fuse` can fuse two consecutive axes of one computation."
+#~ msgstr ""
+
+#~ msgid "**Schedule** 是一组变换程序中计算循环的计算变换。"
+#~ msgstr ""
+
+#~ msgid ":code:`reorder` can reorder the axes in the specified order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":code:`bind` can bind a specified axis"
+#~ " with a thread axis, often used "
+#~ "in gpu programming."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a schedule that consists of "
+#~ "multiple operators, TVM will compute "
+#~ "tensors at the root separately by "
+#~ "default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":code:`compute_at` can move computation of "
+#~ "`B` into the first axis of "
+#~ "computation of `C`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":code:`compute_inline` can mark one stage "
+#~ "as inline, then the body of "
+#~ "computation will be expanded and "
+#~ "inserted at the address where the "
+#~ "tensor is required."
+#~ msgstr ""
+
+#~ msgid ":code:`compute_root` can move computation of one stage to the root."
+#~ msgstr ""
+
+#~ msgid "Summary"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial provides an introduction "
+#~ "to schedule primitives in tvm, which "
+#~ "permits users schedule the computation "
+#~ "easily and flexibly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to get a good performance"
+#~ " kernel implementation, the general "
+#~ "workflow often is:"
+#~ msgstr ""
+
+#~ msgid "Describe your computation via series of operations."
+#~ msgstr ""
+
+#~ msgid "Try to schedule the computation with primitives."
+#~ msgstr ""
+
+#~ msgid "Compile and run to see the performance difference."
+#~ msgstr ""
+
+#~ msgid "Adjust your schedule according the running result."
 #~ msgstr ""
 

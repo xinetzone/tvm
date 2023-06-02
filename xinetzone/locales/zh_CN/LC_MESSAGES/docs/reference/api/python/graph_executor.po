@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,18 +36,45 @@ msgid ""
 "functions"
 msgstr ""
 
+#: of tvm.contrib.graph_executor.GraphModule:8
+#: tvm.contrib.graph_executor.GraphModule.__getitem__:4
+#: tvm.contrib.graph_executor.GraphModule.benchmark:24
+#: tvm.contrib.graph_executor.GraphModule.debug_get_output:4
+#: tvm.contrib.graph_executor.GraphModule.get_input:4
+#: tvm.contrib.graph_executor.GraphModule.get_input_index:4
+#: tvm.contrib.graph_executor.GraphModule.get_output:4
+#: tvm.contrib.graph_executor.GraphModule.load_params:4
+#: tvm.contrib.graph_executor.GraphModule.run:4
+#: tvm.contrib.graph_executor.GraphModule.set_input:4
+#: tvm.contrib.graph_executor.GraphModule.set_input_zero_copy:4
+#: tvm.contrib.graph_executor.GraphModule.set_output_zero_copy:4
+#: tvm.contrib.graph_executor.GraphModule.share_params:4
+#: tvm.contrib.graph_executor.create:4 tvm.contrib.graph_executor.get_device:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm.contrib.graph_executor.GraphModule:10
 #: tvm.contrib.graph_executor.GraphModule:15
 msgid "module"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule:-1
+#: tvm.contrib.graph_executor.create:-1
+#: tvm.contrib.graph_executor.get_device:-1
 msgid "tvm.runtime.Module"
 msgstr ""
 
 #: of tvm.contrib.graph_executor.GraphModule:10
 #: tvm.contrib.graph_executor.GraphModule:15
 msgid "The internal tvm module that holds the actual graph functions."
+msgstr ""
+
+#: of tvm.contrib.graph_executor.GraphModule:13
+msgid "Attributes"
+msgstr ""
+
+#: of tvm.contrib.graph_executor.GraphModule:18
+msgid "Examples"
 msgstr ""
 
 #: of tvm.contrib.graph_executor.GraphModule.__getitem__:1
@@ -61,7 +88,10 @@ msgstr ""
 msgid "key"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.__getitem__:-1
+#: tvm.contrib.graph_executor.GraphModule.benchmark:-1
+#: tvm.contrib.graph_executor.GraphModule.get_input_index:-1
+#: tvm.contrib.graph_executor.create:-1
 msgid "str"
 msgstr ""
 
@@ -102,7 +132,11 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.benchmark:-1
+#: tvm.contrib.graph_executor.GraphModule.get_input:-1
+#: tvm.contrib.graph_executor.GraphModule.get_num_inputs:-1
+#: tvm.contrib.graph_executor.GraphModule.get_num_outputs:-1
+#: tvm.contrib.graph_executor.GraphModule.get_output:-1
 msgid "int"
 msgstr ""
 
@@ -128,7 +162,7 @@ msgstr ""
 msgid "min_repeat_ms"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.benchmark:-1
 msgid "Optional[int]"
 msgstr ""
 
@@ -153,7 +187,7 @@ msgstr ""
 msgid "end_to_end"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.benchmark:-1
 msgid "bool"
 msgstr ""
 
@@ -186,7 +220,7 @@ msgstr ""
 msgid "kwargs"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.benchmark:-1
 msgid "Dict[str, Object]"
 msgstr ""
 
@@ -196,11 +230,21 @@ msgid ""
 "code, so that data transfer costs are not counted in the runtime."
 msgstr ""
 
+#: of tvm.contrib.graph_executor.GraphModule.benchmark:64
+#: tvm.contrib.graph_executor.GraphModule.get_input_index:9
+#: tvm.contrib.graph_executor.GraphModule.get_input_info:12
+#: tvm.contrib.graph_executor.GraphModule.get_num_inputs:4
+#: tvm.contrib.graph_executor.GraphModule.get_num_outputs:4
+#: tvm.contrib.graph_executor.create:20
+#: tvm.contrib.graph_executor.get_device:11
+msgid "Returns"
+msgstr ""
+
 #: of tvm.contrib.graph_executor.GraphModule.benchmark:66
 msgid "timing_results"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.benchmark:-1
 msgid "BenchmarkResult"
 msgstr ""
 
@@ -218,7 +262,7 @@ msgstr ""
 msgid "node"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.debug_get_output:-1
 msgid "int / str"
 msgstr ""
 
@@ -232,7 +276,9 @@ msgstr ""
 msgid "out"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.debug_get_output:-1
+#: tvm.contrib.graph_executor.GraphModule.get_input:-1
+#: tvm.contrib.graph_executor.GraphModule.get_output:-1
 msgid "NDArray"
 msgstr ""
 
@@ -293,7 +339,7 @@ msgstr ""
 msgid "shape_dict"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.get_input_info:-1
 msgid "Map"
 msgstr ""
 
@@ -347,7 +393,8 @@ msgstr ""
 msgid "params_bytes"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.load_params:-1
+#: tvm.contrib.graph_executor.GraphModule.share_params:-1
 msgid "bytearray"
 msgstr ""
 
@@ -371,7 +418,9 @@ msgstr ""
 msgid "Set inputs to the module via kwargs"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.set_input:-1
+#: tvm.contrib.graph_executor.GraphModule.set_input_zero_copy:-1
+#: tvm.contrib.graph_executor.GraphModule.set_output_zero_copy:-1
 msgid "int or str"
 msgstr ""
 
@@ -386,7 +435,7 @@ msgstr ""
 msgid "value"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.set_input:-1
 msgid "the input value."
 msgstr ""
 
@@ -400,7 +449,8 @@ msgstr ""
 msgid "params"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.set_input:-1
+#: tvm.contrib.graph_executor.GraphModule.set_input_zero_copy:-1
 msgid "dict of str to NDArray"
 msgstr ""
 
@@ -413,7 +463,7 @@ msgstr ""
 msgid "Set inputs to the module via kwargs with zero memory copy"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.set_input_zero_copy:-1
 msgid "the input value in DLPack"
 msgstr ""
 
@@ -425,7 +475,7 @@ msgstr ""
 msgid "The output key"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.GraphModule.set_output_zero_copy:-1
 msgid "the output value in DLPack"
 msgstr ""
 
@@ -480,7 +530,7 @@ msgstr ""
 msgid "device"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.create:-1
 msgid "Device or list of Device"
 msgstr ""
 
@@ -495,12 +545,16 @@ msgstr ""
 msgid "graph_module"
 msgstr ""
 
-#: of
+#: of tvm.contrib.graph_executor.create:-1
 msgid "GraphModule"
 msgstr ""
 
 #: of tvm.contrib.graph_executor.create:22
 msgid "Runtime graph module that can be used to execute the graph."
+msgstr ""
+
+#: of tvm.contrib.graph_executor.create:25
+msgid "Note"
 msgstr ""
 
 #: of tvm.contrib.graph_executor.create:26

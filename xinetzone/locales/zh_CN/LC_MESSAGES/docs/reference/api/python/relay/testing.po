@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,16 @@ msgstr ""
 msgid "batch_size"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.lstm.lstm_cell:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.resnet.residual_unit:-1 tvm.relay.testing.resnet.resnet:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
 msgid "int"
 msgstr ""
 
@@ -70,7 +79,14 @@ msgstr ""
 msgid "num_classes"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
 msgid "int, optional"
 msgstr ""
 
@@ -92,7 +108,15 @@ msgstr ""
 msgid "image_shape"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
 msgid "tuple, optional"
 msgstr ""
 
@@ -119,7 +143,15 @@ msgstr ""
 msgid "dtype"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
 msgid "str, optional"
 msgstr ""
 
@@ -135,12 +167,26 @@ msgstr ""
 msgid "The data type"
 msgstr ""
 
+#: of tvm.relay.testing.dcgan.get_workload:19
+#: tvm.relay.testing.densenet.get_workload:22
+#: tvm.relay.testing.inception_v3.get_net:16
+#: tvm.relay.testing.inception_v3.get_workload:18
+#: tvm.relay.testing.lstm.get_workload:14 tvm.relay.testing.lstm.lstm_cell:12
+#: tvm.relay.testing.mlp.get_net:16 tvm.relay.testing.mlp.get_workload:18
+#: tvm.relay.testing.mobilenet.get_workload:22
+#: tvm.relay.testing.resnet.get_workload:27
+#: tvm.relay.testing.squeezenet.get_workload:21
+#: tvm.relay.testing.vgg.get_workload:24
+msgid "Returns"
+msgstr ""
+
 #: of tvm.relay.testing.inception_v3.get_net:17
 #: tvm.relay.testing.mlp.get_net:17
 msgid "net"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.mlp.get_net:-1
 msgid "relay.Function"
 msgstr ""
 
@@ -153,6 +199,20 @@ msgstr ""
 msgid "Get benchmark workload for a simple multilayer perceptron."
 msgstr ""
 
+#: of tvm.relay.testing.dcgan.get_workload:4
+#: tvm.relay.testing.densenet.get_workload:4
+#: tvm.relay.testing.inception_v3.get_workload:4
+#: tvm.relay.testing.lstm.get_workload:4 tvm.relay.testing.lstm.lstm_cell:4
+#: tvm.relay.testing.mlp.get_workload:4
+#: tvm.relay.testing.mobilenet.get_workload:4
+#: tvm.relay.testing.resnet.get_workload:4
+#: tvm.relay.testing.resnet.residual_unit:4 tvm.relay.testing.resnet.resnet:4
+#: tvm.relay.testing.squeezenet.get_net:4
+#: tvm.relay.testing.squeezenet.get_workload:4 tvm.relay.testing.vgg.get_net:2
+#: tvm.relay.testing.vgg.get_workload:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm.relay.testing.dcgan.get_workload:20
 #: tvm.relay.testing.inception_v3.get_workload:20
 #: tvm.relay.testing.lstm.get_workload:15 tvm.relay.testing.mlp.get_workload:20
@@ -163,7 +223,13 @@ msgstr ""
 msgid "mod"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_workload:-1
 msgid "tvm.IRModule"
 msgstr ""
 
@@ -182,7 +248,14 @@ msgstr ""
 msgid "params"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.densenet.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_workload:-1
 msgid "dict of str to NDArray"
 msgstr ""
 
@@ -254,7 +327,7 @@ msgstr ""
 msgid "kwargs"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.resnet.get_workload:-1
 msgid "dict"
 msgstr ""
 
@@ -274,7 +347,8 @@ msgstr ""
 msgid "data"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.resnet.residual_unit:-1
+#: tvm.relay.testing.resnet.resnet:-1
 msgid "str"
 msgstr ""
 
@@ -302,7 +376,7 @@ msgstr ""
 msgid "stride"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.resnet.residual_unit:-1
 msgid "tuple"
 msgstr ""
 
@@ -314,7 +388,8 @@ msgstr ""
 msgid "dim_match"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.resnet.residual_unit:-1
+#: tvm.relay.testing.resnet.resnet:-1 tvm.relay.testing.vgg.get_workload:-1
 msgid "bool"
 msgstr ""
 
@@ -340,7 +415,7 @@ msgstr ""
 msgid "units"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.resnet.resnet:-1
 msgid "list"
 msgstr ""
 
@@ -372,7 +447,7 @@ msgstr ""
 msgid "data_shape"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.resnet.resnet:-1
 msgid "tuple of int."
 msgstr ""
 
@@ -533,11 +608,11 @@ msgstr ""
 msgid "The size of the hiddxen state"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.lstm.get_workload:-1
 msgid "int, optional (default 1)"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.lstm.get_workload:-1
 msgid "str, optional (default \"float32\")"
 msgstr ""
 
@@ -561,7 +636,7 @@ msgstr ""
 msgid "result"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.lstm.lstm_cell:-1
 msgid "tvm.relay.Function"
 msgstr ""
 
@@ -584,7 +659,7 @@ msgid ""
 "(2015)."
 msgstr ""
 
-#: of tvm.relay.testing.inception_v3:9
+#: of tvm.relay.testing.inception_v3:7
 msgid "Adopted from https://github.com/apache/incubator-mxnet/blob/master/"
 msgstr ""
 
@@ -671,7 +746,7 @@ msgstr ""
 msgid "batch_norm"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.vgg.get_net:-1
 msgid "bool, default False"
 msgstr ""
 
@@ -718,7 +793,7 @@ msgstr ""
 msgid "densenet_size"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.densenet.get_workload:-1
 msgid "int, optional (default 121)"
 msgstr ""
 
@@ -732,7 +807,7 @@ msgstr ""
 msgid "classes"
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.densenet.get_workload:-1
 msgid "int, optional (default 1000)"
 msgstr ""
 
@@ -740,7 +815,7 @@ msgstr ""
 msgid "The number of classes."
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.densenet.get_workload:-1
 msgid "int, optional (detault 4)"
 msgstr ""
 
@@ -748,7 +823,7 @@ msgstr ""
 msgid "The batch size for the network."
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.densenet.get_workload:-1
 msgid "shape, optional (default (3, 224, 224))"
 msgstr ""
 
@@ -756,7 +831,7 @@ msgstr ""
 msgid "The shape of the input data."
 msgstr ""
 
-#: of
+#: of tvm.relay.testing.densenet.get_workload:-1
 msgid "data type, optional (default 'float32')"
 msgstr ""
 

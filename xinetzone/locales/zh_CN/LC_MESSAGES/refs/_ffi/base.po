@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,16 +37,30 @@ msgstr ""
 msgid "Find the error name given the first line of the error message."
 msgstr ""
 
+#: of tvm._ffi.base._find_error_type:4 tvm._ffi.base.c2pyerror:4
+#: tvm._ffi.base.c_array:4 tvm._ffi.base.check_call:7 tvm._ffi.base.decorate:4
+#: tvm._ffi.base.py2cerror:4 tvm._ffi.base.register_error:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm._ffi.base._find_error_type:6
 msgid "line"
 msgstr ""
 
-#: of tvm._ffi.base.c_str:9
+#: of tvm._ffi.base._find_error_type:-1 tvm._ffi.base.c2pyerror:-1
+#: tvm._ffi.base.c_str:9 tvm._ffi.base.py2cerror:-1
 msgid "str"
 msgstr ""
 
 #: of tvm._ffi.base._find_error_type:6
 msgid "The first line of error message."
+msgstr ""
+
+#: of tvm._ffi.base._find_error_type:9 tvm._ffi.base.c2pyerror:9
+#: tvm._ffi.base.c_array:12 tvm._ffi.base.c_str:8
+#: tvm._ffi.base.get_last_ffi_error:4 tvm._ffi.base.py2cerror:9
+#: tvm._ffi.base.register_error:12
+msgid "Returns"
 msgstr ""
 
 #: of tvm._ffi.base._find_error_type:10
@@ -97,7 +111,7 @@ msgstr ""
 msgid "ctype"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.c_array:-1
 msgid "ctypes data type"
 msgstr ""
 
@@ -109,7 +123,7 @@ msgstr ""
 msgid "values"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.c_array:-1
 msgid "tuple or list"
 msgstr ""
 
@@ -121,7 +135,7 @@ msgstr ""
 msgid "out"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.c_array:-1
 msgid "ctypes array"
 msgstr ""
 
@@ -139,7 +153,7 @@ msgstr ""
 msgid "python string"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.c_str:-1
 msgid "c_char_p"
 msgstr ""
 
@@ -161,7 +175,7 @@ msgstr ""
 msgid "ret"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.check_call:-1
 msgid "int"
 msgstr ""
 
@@ -177,7 +191,7 @@ msgstr ""
 msgid "func"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.decorate:-1 tvm._ffi.base.register_error:-1
 msgid "function"
 msgstr ""
 
@@ -201,7 +215,7 @@ msgstr ""
 msgid "err"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.get_last_ffi_error:-1
 msgid "object"
 msgstr ""
 
@@ -221,7 +235,7 @@ msgstr ""
 msgid "func_name"
 msgstr ""
 
-#: of
+#: of tvm._ffi.base.register_error:-1
 msgid "str or function or class"
 msgstr ""
 
@@ -243,6 +257,10 @@ msgstr ""
 
 #: of tvm._ffi.base.register_error:14
 msgid "Register function if f is not specified."
+msgstr ""
+
+#: of tvm._ffi.base.register_error:17
+msgid "Examples"
 msgstr ""
 
 #~ msgid "`_ffi.base`"

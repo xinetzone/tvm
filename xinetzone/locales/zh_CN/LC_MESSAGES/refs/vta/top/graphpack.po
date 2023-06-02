@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "一种 Relay 封装的实现。"
 msgid "Visitor to perform graph annotation on an AST."
 msgstr "访问者在 AST 上执行 graph annotation。"
 
+#: of vta.top.graphpack.ExprDeviceAnnot:4 vta.top.graphpack.graph_pack:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.top.graphpack.ExprDeviceAnnot:5
 msgid "start: int"
 msgstr ""
@@ -44,6 +48,10 @@ msgstr ""
 #: of vta.top.graphpack.ExprDeviceAnnot:8
 msgid "the end location to mark run on vta (exclusive)"
 msgstr "在 vta 上标记运行的结束位置（排除）"
+
+#: of vta.top.graphpack.ExprDeviceAnnot:11 vta.top.graphpack.graph_pack:47
+msgid "Returns"
+msgstr ""
 
 #: of vta.top.graphpack.ExprDeviceAnnot:12
 msgid "None"
@@ -136,7 +144,7 @@ msgstr "将 graph 打包成 batch&channel 打包格式。"
 msgid "expr"
 msgstr ""
 
-#: of
+#: of vta.top.graphpack.graph_pack:-1
 msgid "relay.Expr"
 msgstr ""
 
@@ -148,7 +156,7 @@ msgstr "输入程序。"
 msgid "bfactor"
 msgstr ""
 
-#: of
+#: of vta.top.graphpack.graph_pack:-1
 msgid "int"
 msgstr ""
 
@@ -251,7 +259,7 @@ msgstr ""
 msgid "device annotation end node, after which we mark the nodes as 'cpu'"
 msgstr "设备注解结束节点，之后将节点标记为 'cpu'"
 
-#: of
+#: of vta.top.graphpack.graph_pack:-1
 msgid "Expr"
 msgstr ""
 

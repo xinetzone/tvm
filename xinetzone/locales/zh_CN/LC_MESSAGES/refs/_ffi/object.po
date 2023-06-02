@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,12 +37,19 @@ msgstr ""
 msgid "Initialize the handle by calling constructor function."
 msgstr ""
 
+#: of tvm._ffi._ctypes.object.ObjectBase.__init_handle_by_constructor__:4
+#: tvm._ffi._ctypes.object.ObjectBase.same_as:4
+#: tvm._ffi._ctypes.object.PyNativeObject.__init_tvm_object_by_constructor__:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm._ffi._ctypes.object.ObjectBase.__init_handle_by_constructor__:6
 #: tvm._ffi._ctypes.object.PyNativeObject.__init_tvm_object_by_constructor__:6
 msgid "fconstructor"
 msgstr ""
 
-#: of
+#: of tvm._ffi._ctypes.object.ObjectBase.__init_handle_by_constructor__:-1
+#: tvm._ffi._ctypes.object.PyNativeObject.__init_tvm_object_by_constructor__:-1
 msgid "Function"
 msgstr ""
 
@@ -61,6 +68,11 @@ msgstr ""
 msgid "The arguments to the constructor"
 msgstr ""
 
+#: of tvm._ffi._ctypes.object.ObjectBase.__init_handle_by_constructor__:12
+#: tvm._ffi._ctypes.object.PyNativeObject.__init_tvm_object_by_constructor__:12
+msgid "Note"
+msgstr ""
+
 #: of tvm._ffi._ctypes.object.ObjectBase.__init_handle_by_constructor__:13
 msgid ""
 "We have a special calling convention to call constructor functions. So "
@@ -76,7 +88,7 @@ msgstr ""
 msgid "other"
 msgstr ""
 
-#: of
+#: of tvm._ffi._ctypes.object.ObjectBase.same_as:-1
 msgid "object"
 msgstr ""
 
@@ -84,11 +96,15 @@ msgstr ""
 msgid "The other object to compare against."
 msgstr ""
 
+#: of tvm._ffi._ctypes.object.ObjectBase.same_as:9
+msgid "Returns"
+msgstr ""
+
 #: of tvm._ffi._ctypes.object.ObjectBase.same_as:10
 msgid "result"
 msgstr ""
 
-#: of
+#: of tvm._ffi._ctypes.object.ObjectBase.same_as:-1
 msgid "bool"
 msgstr ""
 
@@ -110,10 +126,6 @@ msgstr ""
 msgid ""
 "We have a special calling convention to call constructor functions. So "
 "the return object is directly set into the object"
-msgstr ""
-
-#: of tvm._ffi._ctypes.packed_func.__init_handle_by_constructor__:1
-msgid "Maps object type index to its constructor"
 msgstr ""
 
 #: of tvm._ffi._ctypes.object._get_object_type_index:1
@@ -163,5 +175,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "Maps object type index to its constructor"
 #~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,10 @@ msgid ""
 "Returns the path to the cached bitstream corresponding to the current "
 "config"
 msgstr "返回与当前配置相对应的缓存 bitstream 的路径"
+
+#: of vta.bitstream.get_bitstream_path:4
+msgid "Returns"
+msgstr ""
 
 #: of vta.bitstream.get_bitstream_path:5
 msgid "bit_path: str"

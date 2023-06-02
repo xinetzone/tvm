@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,17 +29,25 @@ msgstr "定义 VTA 使用的 AutoTVM 组件。"
 msgid "Construct a ModuleLoader implementation specialized for VTA."
 msgstr "构造专门用于 VTA 的 ModuleLoader 实现。"
 
+#: of vta.autotvm.module_loader:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.autotvm.module_loader:6
 msgid "bitsream"
 msgstr ""
 
-#: of
+#: of vta.autotvm.module_loader:-1
 msgid "Optional[str]"
 msgstr ""
 
 #: of vta.autotvm.module_loader:6
 msgid "Path to the bitstream to write prior to uploading code."
 msgstr "在上传代码之前要写入的 bitstream 的路径。"
+
+#: of vta.autotvm.module_loader:9
+msgid "Returns"
+msgstr ""
 
 #: of vta.autotvm.module_loader:10
 msgid "ModuleLoader :"

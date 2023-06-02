@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,15 @@ msgstr "VTA RPC 客户端函数"
 msgid "Upload and program bistream"
 msgstr "上传和编程 bistream"
 
+#: of vta.rpc_client.program_fpga:4 vta.rpc_client.reconfig_runtime:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.rpc_client.program_fpga:6 vta.rpc_client.reconfig_runtime:5
 msgid "remote"
 msgstr ""
 
-#: of
+#: of vta.rpc_client.program_fpga:-1 vta.rpc_client.reconfig_runtime:-1
 msgid "RPCSession"
 msgstr ""
 
@@ -45,7 +49,7 @@ msgstr "TVM RPC 会话"
 msgid "bitstream"
 msgstr ""
 
-#: of
+#: of vta.rpc_client.program_fpga:-1
 msgid "str, optional"
 msgstr ""
 

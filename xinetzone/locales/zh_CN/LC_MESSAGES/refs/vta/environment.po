@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,17 +35,25 @@ msgid ""
 "hold by the Environment."
 msgstr "这包含了由 Environment 保存的所有非面向用户的编译器内部上下文。"
 
+#: of vta.environment.DevContext:7 vta.environment.Environment:7
+msgid "Parameters"
+msgstr ""
+
 #: of vta.environment.DevContext:9 vta.environment.get_env:5
 msgid "env"
 msgstr ""
 
-#: of
+#: of vta.environment.DevContext:-1 vta.environment.get_env:-1
 msgid "Environment"
 msgstr ""
 
 #: of vta.environment.DevContext:9
 msgid "The environment hosting the DevContext"
 msgstr "承载 DevContext 的环境"
+
+#: of vta.environment.DevContext:12
+msgid "Note"
+msgstr ""
 
 #: of vta.environment.DevContext:13
 msgid ""
@@ -71,13 +79,17 @@ msgstr "此对象包含编译到特定 VTA 后端所需的所有信息。"
 msgid "cfg"
 msgstr ""
 
-#: of
+#: of vta.environment.Environment:-1
 msgid "dict of str to value."
 msgstr "str 到 value 的字典。"
 
 #: of vta.environment.Environment:9
 msgid "The configuration parameters."
 msgstr "配置参数。"
+
+#: of vta.environment.Environment:12
+msgid "Example"
+msgstr ""
 
 #: of vta.environment.Environment.alu:1
 msgid "ALU pragma"
@@ -114,6 +126,10 @@ msgstr "初始化默认的全局 env"
 #: of vta.environment.get_env:1
 msgid "Get the current VTA Environment."
 msgstr "获取当前 VTA 环境。"
+
+#: of vta.environment.get_env:4
+msgid "Returns"
+msgstr ""
 
 #: of vta.environment.get_env:6
 msgid "The current environment."

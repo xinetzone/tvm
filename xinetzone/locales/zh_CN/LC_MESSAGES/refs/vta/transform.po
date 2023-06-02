@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,14 @@ msgstr "附加变换 Passes。对 VTA"
 msgid "Pass to insert ALU instruction."
 msgstr "通过插入 ALU 指令。"
 
+#: of vta.transform.AnnotateALUCoProcScope:4 vta.transform.CPUAccessRewrite:9
+#: vta.transform.FoldUopLoop:9 vta.transform.InjectALUIntrin:4
+#: vta.transform.InjectCoProcSync:4 vta.transform.InjectConv2DTransposeSkip:4
+#: vta.transform.InjectDMAIntrin:4 vta.transform.InjectSkipCopy:4
+#: vta.transform.LiftAllocToScopeBegin:4
+msgid "Returns"
+msgstr ""
+
 #: of vta.transform.AnnotateALUCoProcScope:5 vta.transform.CPUAccessRewrite:10
 #: vta.transform.FoldUopLoop:10 vta.transform.InjectALUIntrin:5
 #: vta.transform.InjectCoProcSync:5 vta.transform.InjectConv2DTransposeSkip:5
@@ -37,7 +45,11 @@ msgstr "通过插入 ALU 指令。"
 msgid "fpass"
 msgstr ""
 
-#: of
+#: of vta.transform.AnnotateALUCoProcScope:-1 vta.transform.CPUAccessRewrite:-1
+#: vta.transform.FoldUopLoop:-1 vta.transform.InjectALUIntrin:-1
+#: vta.transform.InjectCoProcSync:-1 vta.transform.InjectConv2DTransposeSkip:-1
+#: vta.transform.InjectDMAIntrin:-1 vta.transform.InjectSkipCopy:-1
+#: vta.transform.LiftAllocToScopeBegin:-1
 msgid "tvm.transform.Pass"
 msgstr ""
 
@@ -100,11 +112,15 @@ msgstr "提升分配到当前作用域的开始。"
 msgid "Internal helper to match stmt to pragma stmt."
 msgstr "将 stmt 匹配到 pragma stmt 的内部助手。"
 
+#: of vta.transform._match_pragma:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.transform._match_pragma:6
 msgid "stmt"
 msgstr ""
 
-#: of
+#: of vta.transform._match_pragma:-1
 msgid "Stmt"
 msgstr ""
 
@@ -116,7 +132,7 @@ msgstr ""
 msgid "key"
 msgstr ""
 
-#: of
+#: of vta.transform._match_pragma:-1
 msgid "str"
 msgstr ""
 

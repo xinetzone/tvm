@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,112 +17,167 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:10002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:20002
 msgid "在 Relay 中使用管道执行器"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:10004
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:20004
 msgid "**原作者**: [Hua Jiang](https://github.com/huajsj)"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:10006
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:20006
 msgid "这是关于如何在 Relay 中使用“管道执行器”（Pipeline Executor）的简短教程。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:30002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:40002
 msgid "创建简单网络，可以是预训练的模型"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:30004
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:40004
 msgid "创建非常简单的网络进行演示。它由卷积、batch normalization、dense 和 ReLU 激活组成。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:50002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:60002
 msgid "将网络分成两个子图"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:50004
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:60004
 msgid "单元测试中的 'graph_split' 函数只是一个例子。用户可以创建自定义的逻辑来分割计算图。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:70002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:80002
 msgid "将网络分成两个子图。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:90002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:100002
 msgid "生成的子图应该如下所示。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:110002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:120002
 msgid "使用 cutlass target 构建子图"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:130002
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:140002
 msgid "使用管道执行器在管道中运行两个子图"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:130004
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:140004
 msgid "在 cmake 中将 `USE_PIPELINE_EXECUTOR` 设置为 `ON`，并将 `USE_CUTLASS` 设置为 `ON`。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:150002
-msgid ""
-"Create subgraph pipeline configuration. Associate a subgraph module with "
-"a target. Use CUTLASS BYOC to build the second subgraph module."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:160002
+msgid "创建子图管道配置。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:170002
-msgid "Get the pipeline executor configuration object."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:160003
+msgid "将子图模块与目标关联。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:190002
-msgid "Set the compile target of the subgraph module."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:160004
+msgid "使用 CUTLASS BYOC 构建第二个子图模块。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:210002
-msgid "Set the compile target of the second subgraph module as cuda."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:180002
+msgid "获取管道执行器配置对象。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:230002
-msgid "The pipeline configuration as below."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:200002
+msgid "设置子图模块的编译目标。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:220002
+msgid "设置第二个子图模块的编译目标为cuda。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:240002
+msgid "管道配置如下。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:250002
-msgid "Build the pipeline executor."
+msgid "构建管道执行器"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:270002
-msgid "Export the parameter configuration to a file."
+msgid "将参数配置导出为文件。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:290002
-msgid "Use the load function to create and initialize PipelineModule."
+msgid "使用 load 函数创建并初始化 PipelineModule"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:310002
-msgid "Run the pipeline executor."
+msgid "运行 pipeline executor"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:310003
-msgid "Allocate input data."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:310005
+msgid "分配输入数据。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:330002
-msgid ""
-"Run the two subgraph in the pipeline mode to get the output "
-"asynchronously or synchronously. In the following example, it is "
-"synchronous."
+msgid "在管道模式下运行两个子图以异步获取输出或同步。在下面的示例中，它是同步的。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:350002
-msgid "Use graph_executor for verification."
+msgid "使用 graph_executor 进行验证"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:350003
-msgid "Run these two subgraphs in sequence with graph_executor to get the output."
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:350004
+msgid "使用 graph_executor 按顺序运行这两个子图以获得输出。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:370002
-msgid "Verify the result."
+msgid "验证结果："
 msgstr ""
+
+#~ msgid ""
+#~ "Create subgraph pipeline configuration. "
+#~ "Associate a subgraph module with a "
+#~ "target. Use CUTLASS BYOC to build "
+#~ "the second subgraph module."
+#~ msgstr ""
+
+#~ msgid "Get the pipeline executor configuration object."
+#~ msgstr ""
+
+#~ msgid "Set the compile target of the subgraph module."
+#~ msgstr ""
+
+#~ msgid "Set the compile target of the second subgraph module as cuda."
+#~ msgstr ""
+
+#~ msgid "The pipeline configuration as below."
+#~ msgstr ""
+
+#~ msgid "Build the pipeline executor."
+#~ msgstr ""
+
+#~ msgid "Export the parameter configuration to a file."
+#~ msgstr ""
+
+#~ msgid "Use the load function to create and initialize PipelineModule."
+#~ msgstr ""
+
+#~ msgid "Run the pipeline executor."
+#~ msgstr ""
+
+#~ msgid "Allocate input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Run the two subgraph in the "
+#~ "pipeline mode to get the output "
+#~ "asynchronously or synchronously. In the "
+#~ "following example, it is synchronous."
+#~ msgstr ""
+
+#~ msgid "Use graph_executor for verification."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Run these two subgraphs in sequence "
+#~ "with graph_executor to get the output."
+#~ msgstr ""
+
+#~ msgid "Verify the result."
+#~ msgstr ""
 

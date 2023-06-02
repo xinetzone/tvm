@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,15 @@ msgstr "VTA 相关的内在特征"
 msgid "Matrix-matrix multiply intrinsic"
 msgstr "矩阵-矩阵乘法内在特征"
 
+#: of vta.intrin.gemm:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.intrin.gemm:6
 msgid "env"
 msgstr ""
 
-#: of
+#: of vta.intrin.gemm:-1
 msgid "Environment"
 msgstr ""
 
@@ -45,7 +49,7 @@ msgstr "环境"
 msgid "mock"
 msgstr ""
 
-#: of
+#: of vta.intrin.gemm:-1
 msgid "bool"
 msgstr ""
 

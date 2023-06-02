@@ -17,19 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/refs/vta/testing/utils.rst:3
-msgid "``vta.testing.utils``"
+#: ../../xin/docs/topic/vta/vta-test/tensor-ir.ipynb:10002
+msgid "VTA 下的 TensorIR"
 msgstr ""
-
-#~ msgid "Parameters"
-#~ msgstr "参数"
-
-#~ msgid "Test Utilities"
-#~ msgstr "测试工具"
-
-#~ msgid "Run test function on all available env."
-#~ msgstr "在所有可用的环境上运行测试函数。"
-
-#~ msgid "run_func : function(env, remote)"
-#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgid ""
 " specified build_config in context."
 msgstr "如果上下文中没有用户指定的 build_config，这个包装器会自动应用 VTA 的 build_config。"
 
+#: of vta.build_module.build:7 vta.build_module.lower:7
+msgid "See Also"
+msgstr ""
+
 #: of vta.build_module.build:8
 msgid "tvm.build : The original TVM's build function"
 msgstr "tvm.build : 原始 TVM 的构建函数"
@@ -47,11 +51,15 @@ msgstr "tvm.build : 原始 TVM 的构建函数"
 msgid "Build a build config for VTA."
 msgstr "为 VTA 创建构建配置。"
 
+#: of vta.build_module.build_config:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.build_module.build_config:6
 msgid "debug_flag"
 msgstr ""
 
-#: of
+#: of vta.build_module.build_config:-1
 msgid "int"
 msgstr ""
 
@@ -63,13 +71,17 @@ msgstr "要传递的 dbeug 标志。"
 msgid "kwargs"
 msgstr ""
 
-#: of
+#: of vta.build_module.build_config:-1
 msgid "dict"
 msgstr ""
 
 #: of vta.build_module.build_config:9
 msgid "Additional configurations."
 msgstr "额外的配置。"
+
+#: of vta.build_module.build_config:12
+msgid "Returns"
+msgstr ""
 
 #: of vta.build_module.build_config:14
 msgid "build_config: tvm.transform.PassContext"
@@ -78,6 +90,10 @@ msgstr ""
 #: of vta.build_module.build_config:14
 msgid "The build config that can be used in TVM."
 msgstr "可以在 TVM 中使用的构建配置。"
+
+#: of vta.build_module.build_config:17
+msgid "Example"
+msgstr ""
 
 #: of vta.build_module.lower:1
 msgid "Thin wrapper of tvm.lower"

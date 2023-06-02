@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,24 @@ msgid ""
 "error."
 msgstr ""
 
+#: of tvm.relay.backend.graph_executor_codegen.GraphExecutorCodegen.codegen:4
+#: tvm.relay.backend.interpreter.Executor._convert_args:12
+#: tvm.relay.backend.interpreter.Executor._make_executor:5
+#: tvm.relay.backend.interpreter.Executor.evaluate:4
+#: tvm.relay.backend.interpreter.Interpreter:4
+#: tvm.relay.backend.te_compiler.CCacheKey:4
+#: tvm.relay.backend.te_compiler.TECompiler.jit:4
+#: tvm.relay.backend.te_compiler.TECompiler.lower:4
+#: tvm.relay.backend.te_compiler.get_valid_implementations:6
+#: tvm.relay.backend.te_compiler.lower_to_primfunc:4
+#: tvm.relay.backend.te_compiler.select_implementation:13
+#: tvm.relay.backend.vm.VMCompiler.lower:4
+#: tvm.relay.backend.vm.VMCompiler.optimize:4
+#: tvm.relay.backend.vm.VMCompiler.set_params:4
+#: tvm.relay.backend.vm.VMExecutor:9 tvm.relay.backend.vm.compile:4
+msgid "Parameters"
+msgstr ""
+
 #: of tvm.relay.backend.interpreter.Executor._convert_args:14
 msgid "expr: relay.Expr"
 msgstr ""
@@ -73,13 +91,7 @@ msgid "The keyword arguments to pass to the evaluator."
 msgstr ""
 
 #: of tvm.relay.backend.interpreter.Executor._convert_args
-msgid "返回"
-msgstr ""
-
-#: of tvm.relay.backend.interpreter.Executor._convert_args:22
-msgid ""
-"List[tvm.nd.NDArray]     The new arguments with all keyword arguments "
-"placed in the correct slot."
+msgid "returns"
 msgstr ""
 
 #: of tvm.relay.backend.interpreter.Executor._convert_args:24
@@ -91,7 +103,11 @@ msgid "The new arguments with all keyword arguments placed in the correct slot."
 msgstr ""
 
 #: of tvm.relay.backend.interpreter.Executor._convert_args
-msgid "返回类型"
+msgid "rtype"
+msgstr ""
+
+#: of tvm.relay.backend.interpreter.Executor._convert_args:26
+msgid "args"
 msgstr ""
 
 #: of tvm.relay.backend.interpreter.Executor._make_executor:1
@@ -104,6 +120,20 @@ msgstr ""
 
 #: of tvm.relay.backend.interpreter.Executor._make_executor:7
 msgid "The Relay expression to execute."
+msgstr ""
+
+#: of tvm.relay.backend.graph_executor_codegen.GraphExecutorCodegen.codegen:11
+#: tvm.relay.backend.interpreter.Executor._make_executor:10
+#: tvm.relay.backend.interpreter.Executor.evaluate:12
+#: tvm.relay.backend.te_compiler.TECompiler.jit:12
+#: tvm.relay.backend.te_compiler.TECompiler.lower:12
+#: tvm.relay.backend.te_compiler.get:4
+#: tvm.relay.backend.te_compiler.get_valid_implementations:23
+#: tvm.relay.backend.te_compiler.lower_to_primfunc:12
+#: tvm.relay.backend.te_compiler.select_implementation:33
+#: tvm.relay.backend.vm.VMCompiler.get_exec:4
+#: tvm.relay.backend.vm.VMCompiler.optimize:19 tvm.relay.backend.vm.compile:26
+msgid "Returns"
 msgstr ""
 
 #: of tvm.relay.backend.interpreter.Executor._make_executor:11
@@ -138,7 +168,7 @@ msgstr ""
 msgid "val"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.interpreter.Executor.evaluate:-1
 msgid "Union[function, Object]"
 msgstr ""
 
@@ -157,7 +187,9 @@ msgstr ""
 msgid "mod"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.interpreter.Interpreter:-1
+#: tvm.relay.backend.vm.VMCompiler.lower:-1
+#: tvm.relay.backend.vm.VMCompiler.optimize:-1 tvm.relay.backend.vm.compile:-1
 msgid "tvm.IRModule"
 msgstr ""
 
@@ -170,7 +202,8 @@ msgstr ""
 msgid "device"
 msgstr ""
 
-#: of tvm.relay.backend.vm.VMExecutor:13
+#: of tvm.relay.backend.interpreter.Interpreter:-1
+#: tvm.relay.backend.vm.VMExecutor:13
 msgid "Device"
 msgstr ""
 
@@ -192,7 +225,10 @@ msgstr ""
 msgid "target"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.interpreter.Interpreter:-1
+#: tvm.relay.backend.te_compiler.CCacheKey:-1
+#: tvm.relay.backend.te_compiler.TECompiler.jit:-1
+#: tvm.relay.backend.te_compiler.TECompiler.lower:-1
 msgid "tvm.Target"
 msgstr ""
 
@@ -242,7 +278,7 @@ msgstr ""
 msgid "source_func"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.CCacheKey:-1
 msgid "tvm.relay.Function"
 msgstr ""
 
@@ -284,7 +320,8 @@ msgstr ""
 msgid "JIT a source_func to a tvm.runtime.PackedFunc."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.TECompiler.jit:-1
+#: tvm.relay.backend.te_compiler.TECompiler.lower:-1
 msgid "Union[tvm.relay.Function, CCacheKey]"
 msgstr ""
 
@@ -326,7 +363,7 @@ msgstr ""
 msgid "engine"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get:-1
 msgid "tvm.relay.backend.TECompiler"
 msgstr ""
 
@@ -352,7 +389,8 @@ msgstr ""
 msgid "op"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get_valid_implementations:-1
+#: tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "tvm.ir.Op"
 msgstr ""
 
@@ -366,7 +404,8 @@ msgstr ""
 msgid "attrs"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get_valid_implementations:-1
+#: tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "object"
 msgstr ""
 
@@ -380,7 +419,8 @@ msgstr ""
 msgid "inputs"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get_valid_implementations:-1
+#: tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "List[tvm.te.Tensor]"
 msgstr ""
 
@@ -394,7 +434,8 @@ msgstr ""
 msgid "out_type"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get_valid_implementations:-1
+#: tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "relay.Type"
 msgstr ""
 
@@ -403,7 +444,8 @@ msgstr ""
 msgid "The output type."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get_valid_implementations:-1
+#: tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "tvm.target.Target"
 msgstr ""
 
@@ -417,7 +459,7 @@ msgstr ""
 msgid "ret"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.get_valid_implementations:-1
 msgid "List[relay.op.OpImplementation]"
 msgstr ""
 
@@ -437,7 +479,7 @@ msgstr ""
 msgid "The source primitive function, created by FuseOps."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.lower_to_primfunc:-1
 msgid "Target"
 msgstr ""
 
@@ -449,7 +491,7 @@ msgstr ""
 msgid "prim_func"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.lower_to_primfunc:-1
 msgid "tir.PrimFunc"
 msgstr ""
 
@@ -478,7 +520,7 @@ msgstr ""
 msgid "use_autotvm"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "bool"
 msgstr ""
 
@@ -486,7 +528,7 @@ msgstr ""
 msgid "Whether query AutoTVM to pick the best."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.te_compiler.select_implementation:-1
 msgid "tuple(relay.op.OpImplementation, List[tvm.te.Tensor])"
 msgstr ""
 
@@ -553,7 +595,7 @@ msgstr ""
 msgid "graph_json"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.graph_executor_codegen.GraphExecutorCodegen.codegen:-1
 msgid "str"
 msgstr ""
 
@@ -561,7 +603,7 @@ msgstr ""
 msgid "The graph json that can be consumed by runtime."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.graph_executor_codegen.GraphExecutorCodegen.codegen:-1
 msgid "IRModule or Dict[Target, IRModule]"
 msgstr ""
 
@@ -576,7 +618,7 @@ msgstr ""
 msgid "params"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.graph_executor_codegen.GraphExecutorCodegen.codegen:-1
 msgid "Dict[str, tvm.nd.NDArray]"
 msgstr ""
 
@@ -613,7 +655,8 @@ msgstr ""
 msgid "exec"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.vm.VMCompiler.get_exec:-1
+#: tvm.relay.backend.vm.compile:-1
 msgid "tvm.runtime.vm.Executable"
 msgstr ""
 
@@ -634,7 +677,9 @@ msgstr ""
 msgid "The Relay module to build."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.vm.VMCompiler.lower:-1
+#: tvm.relay.backend.vm.VMCompiler.optimize:-1
+#: tvm.relay.backend.vm.VMExecutor:-1 tvm.relay.backend.vm.compile:-1
 msgid "any multi-target like object, see Target.canon_multi_target"
 msgstr ""
 
@@ -651,7 +696,8 @@ msgstr ""
 msgid "target_host"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.vm.VMCompiler.lower:-1
+#: tvm.relay.backend.vm.VMCompiler.optimize:-1
 msgid "any target-like object, see Target.canon_target"
 msgstr ""
 
@@ -668,7 +714,9 @@ msgstr ""
 msgid "mod : tvm.IRModule"
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.vm.VMCompiler.optimize:-1
+#: tvm.relay.backend.vm.VMCompiler.set_params:-1
+#: tvm.relay.backend.vm.compile:-1
 msgid "dict of str to NDArray"
 msgstr ""
 
@@ -683,7 +731,7 @@ msgstr ""
 msgid "The optimized relay module."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.vm.VMCompiler.optimize:-1
 msgid "dict"
 msgstr ""
 
@@ -721,7 +769,7 @@ msgstr ""
 msgid "Compile the module to VM executable. A helper function for VMCompiler."
 msgstr ""
 
-#: of
+#: of tvm.relay.backend.vm.compile:-1
 msgid "None, or any target-like object, see Target.canon_target"
 msgstr ""
 

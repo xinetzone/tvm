@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,15 @@ msgstr "Bit packing 算子"
 msgid "Packs lowest dimension into format needed by VTA"
 msgstr "将最低维度打包成 VTA 所需的格式"
 
+#: of vta.top.bitpack.bitpack:4
+msgid "Parameters"
+msgstr ""
+
 #: of vta.top.bitpack.bitpack:5
 msgid "pack_axis"
 msgstr ""
 
-#: of
+#: of vta.top.bitpack.bitpack:-1
 msgid "int"
 msgstr ""
 
@@ -49,11 +53,15 @@ msgstr ""
 msgid "index of axis to place bit axis in resulting packed data"
 msgstr "将位轴放置在结果打包数据中的轴索引"
 
+#: of vta.top.bitpack.bitpack:11
+msgid "Returns"
+msgstr ""
+
 #: of vta.top.bitpack.bitpack:12
 msgid "packed"
 msgstr ""
 
-#: of
+#: of vta.top.bitpack.bitpack:-1
 msgid "Tensor"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,17 +29,25 @@ msgstr "库信息。"
 msgid "Get lib name with extension"
 msgstr "获取带扩展名的库名"
 
+#: of vta.libinfo._get_lib_name:4 vta.libinfo.find_libvta:4
+msgid "Returns"
+msgstr ""
+
 #: of vta.libinfo._get_lib_name:6
 msgid "lib_name_ext"
 msgstr ""
 
-#: of
+#: of vta.libinfo._get_lib_name:-1 vta.libinfo.find_libvta:-1
 msgid "str"
 msgstr ""
 
 #: of vta.libinfo._get_lib_name:6
 msgid "Name of VTA shared library with extension"
 msgstr "带扩展名的 VTA 共享库名称"
+
+#: of vta.libinfo._get_lib_name:9 vta.libinfo.find_libvta:9
+msgid "Parameters"
+msgstr ""
 
 #: of vta.libinfo._get_lib_name:10
 msgid "lib_name"
@@ -69,7 +77,7 @@ msgstr ""
 msgid "optional"
 msgstr ""
 
-#: of
+#: of vta.libinfo.find_libvta:-1
 msgid "bool"
 msgstr ""
 

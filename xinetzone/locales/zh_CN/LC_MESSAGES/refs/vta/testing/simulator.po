@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"POT-Creation-Date: 2023-05-05 16:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,46 +21,36 @@ msgstr ""
 msgid "``vta.testing.simulator``"
 msgstr ""
 
-#: of vta.testing.simulator:1
-msgid "Utilities to start simulator."
-msgstr "实用程序启动 simulator。"
-
-#: of vta.testing.simulator._load_sw:1
-msgid "Load hardware library for simulator."
-msgstr "加载 simulator 硬件库。"
-
-#: of vta.testing.simulator.clear_stats:1
-msgid "Clear profiler statistics."
-msgstr "清空 profiler 统计。"
-
-#: of vta.testing.simulator.debug_mode:1
-msgid "Set debug mode Paramaters ---------- flag : int"
-msgstr "设置调试模式参数 ----------  flag: int"
-
-#: of vta.testing.simulator.debug_mode:5
-msgid "The debug flag, 0 means clear all flags."
-msgstr "调试标志，0 表示清除所有标志。"
-
-#: of vta.testing.simulator.enabled:1
-msgid "Check if simulator is enabled."
-msgstr "检查 simulator 是否已启用。"
-
-#: of vta.testing.simulator.stats:1
-msgid "Get profiler statistics"
-msgstr "获取 profiler 统计"
-
-#: of vta.testing.simulator.stats:5
-msgid "stats"
-msgstr ""
-
-#: of
-msgid "dict"
-msgstr ""
-
-#: of vta.testing.simulator.stats:6
-msgid "Current profiler statistics"
-msgstr "当前 profiler 统计"
-
 #~ msgid "Returns"
 #~ msgstr "返回值"
+
+#~ msgid "Utilities to start simulator."
+#~ msgstr "实用程序启动 simulator。"
+
+#~ msgid "Load hardware library for simulator."
+#~ msgstr "加载 simulator 硬件库。"
+
+#~ msgid "Clear profiler statistics."
+#~ msgstr "清空 profiler 统计。"
+
+#~ msgid "Set debug mode Paramaters ---------- flag : int"
+#~ msgstr "设置调试模式参数 ----------  flag: int"
+
+#~ msgid "The debug flag, 0 means clear all flags."
+#~ msgstr "调试标志，0 表示清除所有标志。"
+
+#~ msgid "Check if simulator is enabled."
+#~ msgstr "检查 simulator 是否已启用。"
+
+#~ msgid "Get profiler statistics"
+#~ msgstr "获取 profiler 统计"
+
+#~ msgid "stats"
+#~ msgstr ""
+
+#~ msgid "dict"
+#~ msgstr ""
+
+#~ msgid "Current profiler statistics"
+#~ msgstr "当前 profiler 统计"
 
