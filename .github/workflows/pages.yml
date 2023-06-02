@@ -44,8 +44,6 @@ jobs:
         run: |
           cd xinetzone
           pip install .[doc]
-          invoke config
-          invoke make
           invoke doc
       - name: Setup Pages
         uses: actions/configure-pages@main
