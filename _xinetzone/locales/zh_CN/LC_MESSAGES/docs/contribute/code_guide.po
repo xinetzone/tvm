@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/contribute/code_guide.rst:21
+msgid "Code Guide and Tips"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:27
+msgid ""
+"This is a document used to record tips in TVM codebase for reviewers and "
+"contributors. Most of them are summarized through lessons during the "
+"contributing and process."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:32
+msgid "C++ Code Styles"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:33
+msgid "Use the Google C/C++ style."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:34
+msgid "The public facing functions are documented in doxygen format."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:35
+msgid "Favor concrete type declaration over ``auto`` as long as it is short."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:36
+msgid ""
+"Favor passing by const reference (e.g. ``const Expr&``) over passing by "
+"value. Except when the function consumes the value by copy constructor or"
+" move, pass by value is better than pass by const reference in such "
+"cases."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:39
+msgid "Favor ``const`` member function when possible."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:41
+msgid ""
+"We use ``clang-format`` to enforce the code style. Because different "
+"version of clang-format might change by its version, it is recommended to"
+" use the same version of the clang-format as the main one. You can also "
+"use the following command via docker."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:55
+msgid ""
+"clang-format is also not perfect, when necessary, you can use disble "
+"clang-format on certain code regions."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:66
+msgid ""
+"Because clang-format may not recognize macros, it is recommended to use "
+"macro like normal function styles."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:87
+msgid "Python Code Styles"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:88
+msgid ""
+"The functions and classes are documented in `numpydoc "
+"<https://numpydoc.readthedocs.io/en/latest/>`_ format."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:89
+msgid "Check your code style using ``python tests/scripts/ci.py lint``"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:90
+msgid "Stick to language features in ``python 3.7``"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:92
+msgid ""
+"For functions with early returns, prefer ``if``/``elif``/``else` chains "
+"for functions with parallel and short bodies to the conditions, such as "
+"functions that apply a simple mapping to the arguments.  For more "
+"procedural functions, especially where the final ``else`` block would be "
+"much longer than the ``if`` and ``elif`` blocks, prefer having the final "
+"``else`` case unindented."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:99
+msgid ""
+"The pylint check ``no-else-return`` is disabled to allow for this "
+"distinction.  See further discussion `here "
+"<https://github.com/apache/tvm/pull/11327>`."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:129
+msgid "Writing Python Tests"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:130
+msgid ""
+"We use `pytest <https://docs.pytest.org/en/stable/>`_ for all python "
+"testing. ``tests/python`` contains all the tests."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:132
+msgid ""
+"If you want your test to run over a variety of targets, use the "
+":py:func:`tvm.testing.parametrize_targets` decorator. For example:"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:140
+msgid ""
+"will run ``test_mytest`` with ``target=\"llvm\"``, ``target=\"cuda\"``, "
+"and few others. This also ensures that your test is run on the correct "
+"hardware by the CI. If you only want to test against a couple targets use"
+" ``@tvm.testing.parametrize_targets(\"target_1\", \"target_2\")``. If you"
+" want to test on a single target, use the associated decorator from "
+":py:func:`tvm.testing`. For example, CUDA tests use the "
+"``@tvm.testing.requires_cuda`` decorator."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:144
+msgid "Network Resources"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:146
+msgid ""
+"In CI, downloading files from the Internet is a big source of flaky test "
+"failures (e.g. remote server can go down or be slow), so try to avoid "
+"using the network at all during tests. In some cases this isn't a "
+"reasonable proposition (e.g. the docs tutorials which need to download "
+"models)."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:150
+msgid ""
+"In these cases you can re-host files in S3 for fast access in CI. A "
+"committer can upload a file, specified by a name, hash, and path in S3, "
+"using the ``workflow_dispatch`` event on `the upload_ci_resource.yml "
+"GitHub Actions workflow "
+"<https://github.com/apache/tvm/actions/workflows/upload_ci_resource.yml>`_."
+"  The sha256 must match the file or it will not be uploaded. The upload "
+"path is user-defined so it can be any path (no trailing or leading "
+"slashes allowed) but be careful not to collide with existing resources on"
+" accident. Once uploaded you should send a PR to update the ``URL_MAP`` "
+"in `request_hook.py "
+"<https://github.com/apache/tvm/blob/main/tests/scripts/request_hook/request_hook.py>`_"
+" with the new URL."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:162
+msgid "Handle Integer Constant Expression"
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:163
+msgid ""
+"We often need to handle constant integer expressions in TVM. Before we do"
+" so, the first question we want to ask is that is it really necessary to "
+"get a constant integer. If symbolic expression also works and let the "
+"logic flow, we should use symbolic expression as much as possible. So the"
+" generated code works for shapes that are not known ahead of time."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:165
+msgid ""
+"Note that in some cases we cannot know certain information, e.g. sign of "
+"symbolic variable, it is ok to make assumptions in certain cases. While "
+"adding precise support if the variable is constant."
+msgstr ""
+
+#: ../../xin/docs/contribute/code_guide.rst:167
+msgid ""
+"If we do have to get constant integer expression, we should get the "
+"constant value using type ``int64_t`` instead of ``int``, to avoid "
+"potential integer overflow. We can always reconstruct an integer with the"
+" corresponding expression type via ``make_const``. The following code "
+"gives an example."
+msgstr ""
+
+#~ msgid ""
+#~ "We use `clang-format` to enforce "
+#~ "the code style. Because different "
+#~ "version of clang-format might change "
+#~ "by its version, it is recommended "
+#~ "to use the same version of the "
+#~ "clang-format as the main one. You"
+#~ " can also use the following command"
+#~ " via docker."
+#~ msgstr ""
+
+#~ msgid "Check your code style using ``make pylint``"
+#~ msgstr ""
+
+#~ msgid "Stick to language features as in ``python 3.6``"
+#~ msgstr ""
+

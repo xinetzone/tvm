@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:20003
+msgid "Scan and Recurrent Kernel"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:20004
+msgid "**Author**: [Tianqi Chen](https://tqchen.github.io)"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:20006
+msgid ""
+"This is an introduction material on how to do recurrent computing in TVM."
+" Recurrent computing is a typical pattern in neural networks."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:40002
+msgid ""
+"TVM supports a scan operator to describe symbolic loop. The following "
+"scan op computes cumsum over columns of X."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:40005
+msgid ""
+"The scan is carried over the highest dimension of the tensor. "
+":code:`s_state` is a placeholder that describes the transition state of "
+"the scan. :code:`s_init` describes how we can initialize the first k "
+"timesteps. Here since s_init's first dimension is 1, it describes how we "
+"initialize The state at first timestep."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:40011
+msgid ""
+":code:`s_update` describes how to update the value at timestep t. The "
+"update value can refer back to the values of previous timestep via state "
+"placeholder. Note that while it is invalid to refer to :code:`s_state` at"
+" current or later timestep."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:40015
+msgid ""
+"The scan takes in state placeholder, initial value and update "
+"description. It is also recommended(although not necessary) to list the "
+"inputs to the scan cell. The result of the scan is a tensor, giving the "
+"result of :code:`s_state` after the update over the time domain."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:60002
+msgid "Schedule the Scan Cell"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:60003
+msgid ""
+"We can schedule the body of the scan by scheduling the update and init "
+"part separately. Note that it is invalid to schedule the first iteration "
+"dimension of the update part. To split on the time iteration, user can "
+"schedule on scan_op.scan_axis instead."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:80002
+msgid "Build and Verify"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:80003
+msgid ""
+"We can build the scan kernel like other TVM kernels, here we use numpy to"
+" verify the correctness of the result."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:100002
+msgid "Multi-Stage Scan Cell"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:100003
+msgid ""
+"In the above example we described the scan cell using one Tensor "
+"computation stage in s_update. It is possible to use multiple Tensor "
+"stages in the scan cell."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:100007
+msgid ""
+"The following lines demonstrate a scan with two stage operations in the "
+"scan cell."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:120002
+msgid ""
+"These intermediate tensors can also be scheduled normally. To ensure "
+"correctness, TVM creates a group constraint to forbid the body of scan to"
+" be compute_at locations outside the scan loop."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:140002
+msgid "Multiple States"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:140003
+msgid ""
+"For complicated applications like RNN, we might need more than one "
+"recurrent state. Scan support multiple recurrent states. The following "
+"example demonstrates how we can build recurrence with two states."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:160002
+msgid "Summary"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:160003
+msgid "This tutorial provides a walk through of scan primitive."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:160005
+msgid "Describe scan with init and update."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:160006
+msgid "Schedule the scan cells as normal schedule."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/scan.ipynb:160007
+msgid "For complicated workload, use multiple states and steps in scan cell."
+msgstr ""
+
+#~ msgid ":download:`Download Python source code: scan.py <scan.py>`"
+#~ msgstr ""
+
+#~ msgid ":download:`Download Jupyter notebook: scan.ipynb <scan.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_work_with_schedules_scan.py>` to "
+#~ "download the full example code"
+#~ msgstr ""
+
+#~ msgid "**Author**: `Tianqi Chen <https://tqchen.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can schedule the body of the"
+#~ " scan by scheduling the update and"
+#~ " init part seperately. Note that it"
+#~ " is invalid to schedule the first "
+#~ "iteration dimension of the update part."
+#~ " To split on the time iteration, "
+#~ "user can schedule on scan_op.scan_axis "
+#~ "instead."
+#~ msgstr ""
+

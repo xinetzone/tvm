@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/tutorial/uma.ipynb:10002
+msgid "通过 UMA 使您的硬件加速器 TVM-ready"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:10004
+msgid ""
+"**Authors**: [Michael J. Klaiber](https://github.com/MichaelJKlaiber), "
+"[Christoph Gerum](https://github.com/cgerum), [Paul Palomero "
+"Bernardo](https://github.com/PaulPalomeroBernardo/)"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:10007
+msgid ""
+"这是 **通用模块化加速器接口** （Universal Modular Accelerator Interface，简称 "
+"UMA）的入门教程。UMA 提供简单易用的 API，将新的硬件加速器集成到 TVM 中。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:20002
+msgid "本教程逐步指导您如何使用 UMA，使您的硬件加速器 TVM-ready。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:20004
+msgid "虽然这个问题没有一刀切的解决方案，但 UMA 的目标是提供一个稳定的、仅使用 Python 的 API，将许多硬件加速器类集成到 TVM 中。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:20006
+msgid ""
+"在本教程中，您将了解 UMA API 在三个日益复杂的用例中。在这些用例中，三个模拟加速器 **Vanilla**、**Strawberry** "
+"和 **Chocolate** 被引入并使用 UMA 集成到 TVM 中。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:30002
+msgid "Vanilla"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:30004
+msgid ""
+"**Vanilla** 是由 MAC array 组成，没有内部内存的简单加速器。它只能处理 Conv2D 层，所有其他层都在 CPU "
+"上执行，这也协调了 **Vanilla**。CPU 和 Vanilla 都使用共享内存。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:40002
+msgid "A block diagram of Vanilla"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:50002
+msgid ""
+"**Vanilla** 提供 C 接口 ``vanilla_conv2dnchw(...)`` 用于携带 Conv2D 运算（包括 same-"
+"padding），它接受指向输入 feature map、权重和结果的指针，以及的 `Conv2D` 的维度：`oc`, `iw`, `ih`, "
+"`ic`, `kh`, `kw`。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:60002
+msgid "脚本 `uma_cli` 为新的加速器创建带有 API-calls 的代码骨架。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:60004
+msgid "对于 **Vanilla**，我们使用如下方法： （``--tutorial vanilla`` 添加教程这部分所需的所有附加文件）"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:70002
+msgid "`uma_cli.py` 将在 ``vanilla_accelerator`` 目录中生成这些文件，我们将重新访问这个目录。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:80002
+msgid "Vanilla 后端"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:80004
+msgid "为 vanilla 生成的后端可以在 `vanilla_accelerator/backend.py` 中找到："
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:100002
+msgid "定义卸载模式"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:100004
+msgid ""
+"为了指定将 `Conv2D` 卸载（offloaded）到 **Vanilla**，它在 "
+"`vanilla_accelerator/patterns.py` 中被描述为 Relay "
+"数据流模式([DFPattern](https://tvm.apache.org/docs/reference/langref/relay_pattern.html))"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:120002
+msgid ""
+"为了将 `Conv2D` 运算从 input graph 映射到 **Vanilla** 的低级函数调用 "
+"``vanilla_conv2dnchw(...)``，TIR pass `VanillaAcceleratorConv2DPass` "
+"(将在本教程后面讨论)在 `VanillaAcceleratorBackend` 中注册。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:130002
+msgid "Codegen"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:140002
+msgid ""
+"文件 ``vanilla_accelerator/codegen.py`` 定义了静态 C 代码，它被添加到由 TVM C-Codegen 在 "
+"``gen_includes`` 中生成的 C 代码。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:140004
+msgid "这里添加了 C 代码，以包含 **Vanilla** 的低级库 ``vanilla_conv2dnchw()``。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:150002
+msgid "如上所示，在 `VanillaAcceleratorBackend` 中，它通过 `self._register_codegen` 注册到 UMA"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:160002
+msgid "建立神经网络，并在 Vanilla 上运行"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:160004
+msgid ""
+"为了演示 UMA 的功能，我们将为单个 `Conv2D` 层生成 C 代码，并在 Vanilla 加速器上运行它。文件 "
+"``vanilla_accelerator/run.py`` 提供了一个使用 Vanilla 的 C-API 运行 Conv2D 层的演示。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:170002
+msgid ""
+"通过运行 ``vanilla_accelerator/run.py``，输出文件将以模型库格式（model library format，简称 "
+"MLF）生成。"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:180002
+msgid "Output"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:190002
+msgid "让我们检查一下生成的文件："
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:190004
+msgid "Output:"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:200002
+msgid "要 evaluate 生成的 C 代码，请访问 ``codegen/host/src/default_lib2.c``："
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:210002
+msgid "在 `default_lib2.c` 中，你现在可以看到生成的代码调用了 Vanilla 的 C-API 并执行了 Conv2D 层："
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:220002
+msgid "Strawberry"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:220003
+#: ../../xin/docs/tutorial/uma.ipynb:230003
+msgid "Coming soon ..."
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:230002
+msgid "Chocolate"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:240002
+msgid "Request for Community Input"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:240004
+msgid ""
+"If this tutorial **did not** fit to your accelerator, lease add your "
+"requirements to the UMA thread in the TVM discuss forum: "
+"[Link](https://discuss.tvm.apache.org/t/rfc-uma-universal-modular-"
+"accelerator-interface/12039). We are eager to extend this tutorial to "
+"provide guidance on making further classes of AI hardware accelerators "
+"TVM-ready using the UMA interface."
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:250002
+msgid "References"
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:250003
+msgid ""
+"[UMA-RFC] [UMA: Universal Modular Accelerator "
+"Interface](https://github.com/apache/tvm-"
+"rfcs/blob/main/rfcs/0060_UMA_Unified_Modular_Accelerator_Interface.md), "
+"TVM RFC, June 2022."
+msgstr ""
+
+#: ../../xin/docs/tutorial/uma.ipynb:250006
+msgid ""
+"[DFPattern] [Pattern Matching in "
+"Relay](https://tvm.apache.org/docs/reference/langref/relay_pattern.html)"
+msgstr ""
+

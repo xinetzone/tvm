@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:10002
+msgid "在 Relay 中使用管道执行器"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:10004
+msgid "**原作者**: [Hua Jiang](https://github.com/huajsj)"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:10006
+msgid "这是关于如何在 Relay 中使用“管道执行器”（Pipeline Executor）的简短教程。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:30002
+msgid "创建简单网络，可以是预训练的模型"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:30004
+msgid "创建非常简单的网络进行演示。它由卷积、batch normalization、dense 和 ReLU 激活组成。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:50002
+msgid "将网络分成两个子图"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:50004
+msgid "单元测试中的 'graph_split' 函数只是一个例子。用户可以创建自定义的逻辑来分割计算图。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:70002
+msgid "将网络分成两个子图。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:90002
+msgid "生成的子图应该如下所示。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:110002
+msgid "使用 cutlass target 构建子图"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:130002
+msgid "使用管道执行器在管道中运行两个子图"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:130004
+msgid "在 cmake 中将 `USE_PIPELINE_EXECUTOR` 设置为 `ON`，并将 `USE_CUTLASS` 设置为 `ON`。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:150002
+msgid ""
+"Create subgraph pipeline configuration. Associate a subgraph module with "
+"a target. Use CUTLASS BYOC to build the second subgraph module."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:170002
+msgid "Get the pipeline executor configuration object."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:190002
+msgid "Set the compile target of the subgraph module."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:210002
+msgid "Set the compile target of the second subgraph module as cuda."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:230002
+msgid "The pipeline configuration as below."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:250002
+msgid "Build the pipeline executor."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:270002
+msgid "Export the parameter configuration to a file."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:290002
+msgid "Use the load function to create and initialize PipelineModule."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:310002
+msgid "Run the pipeline executor."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:310003
+msgid "Allocate input data."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:330002
+msgid ""
+"Run the two subgraph in the pipeline mode to get the output "
+"asynchronously or synchronously. In the following example, it is "
+"synchronous."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:350002
+msgid "Use graph_executor for verification."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:350003
+msgid "Run these two subgraphs in sequence with graph_executor to get the output."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_relay/using_pipeline_executor.ipynb:370002
+msgid "Verify the result."
+msgstr ""
+

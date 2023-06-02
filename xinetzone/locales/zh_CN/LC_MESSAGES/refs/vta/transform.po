@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/transform.rst:3
+msgid "``transform``"
+msgstr ""
+
+#: of vta.transform:1
+msgid "Additional Transformation Passes. for VTA"
+msgstr "附加变换 Passes。对 VTA"
+
+#: of vta.transform.AnnotateALUCoProcScope:1
+msgid "Pass to insert ALU instruction."
+msgstr "通过插入 ALU 指令。"
+
+#: of vta.transform.AnnotateALUCoProcScope:5 vta.transform.CPUAccessRewrite:10
+#: vta.transform.FoldUopLoop:10 vta.transform.InjectALUIntrin:5
+#: vta.transform.InjectCoProcSync:5 vta.transform.InjectConv2DTransposeSkip:5
+#: vta.transform.InjectDMAIntrin:5 vta.transform.InjectSkipCopy:5
+#: vta.transform.LiftAllocToScopeBegin:5
+msgid "fpass"
+msgstr ""
+
+#: of
+msgid "tvm.transform.Pass"
+msgstr ""
+
+#: of vta.transform.AnnotateALUCoProcScope:6 vta.transform.CPUAccessRewrite:11
+#: vta.transform.FoldUopLoop:11 vta.transform.InjectALUIntrin:6
+#: vta.transform.InjectCoProcSync:6 vta.transform.InjectConv2DTransposeSkip:6
+#: vta.transform.InjectDMAIntrin:6 vta.transform.InjectSkipCopy:6
+#: vta.transform.LiftAllocToScopeBegin:6
+msgid "The pass"
+msgstr ""
+
+#: of vta.transform.CPUAccessRewrite:1
+msgid "Detect CPU access to VTA buffer and get address correctly."
+msgstr "检测 CPU 对 VTA buffer 的访问并正确获取地址。"
+
+#: of vta.transform.CPUAccessRewrite:3
+msgid ""
+"VTA's buffer is an opaque handle that do not correspond to address in "
+"CPU. This pass detect CPU access and rewrite to use pointer returned "
+"VTABufferCPUPtr for CPU access."
+msgstr ""
+"VTA 的 buffer 是不透明的句柄，不对应于 CPU 中的地址。这通过检测 CPU 访问和重写使用指针返回的 VTABufferCPUPtr"
+" CPU 访问。"
+
+#: of vta.transform.FoldUopLoop:1
+msgid "Detect and fold uop loop."
+msgstr "检测并折叠 uop 循环。"
+
+#: of vta.transform.FoldUopLoop:3
+msgid ""
+"VTA support uop programming model that recognizes loop structure. This "
+"pass detect the loop structure and extract that into uop loop AST."
+msgstr "VTA 支持识别循环结构的 uop 编程模型。此通道检测循环结构并将其提取到 uop 循环 AST 中。"
+
+#: of vta.transform.InjectALUIntrin:1
+msgid "Pass to inject ALU micro-ops."
+msgstr "通过注入 ALU micro-ops。"
+
+#: of vta.transform.InjectCoProcSync:1
+msgid "Pass inject coproc sync"
+msgstr "通过注入 coproc sync"
+
+#: of vta.transform.InjectConv2DTransposeSkip:1
+msgid "Pass to skip 0-weights in conv2d transpose with stride > 1."
+msgstr "在 stride > 1 的 conv2d 转置中传递跳过 0 权重。"
+
+#: of vta.transform.InjectDMAIntrin:1
+msgid "Pass to inject DMA copy intrinsics."
+msgstr "传递以注入 DMA copy intrinsic。"
+
+#: of vta.transform.InjectSkipCopy:1
+msgid "Pass to inject skip copy stmt, used for debug purpose."
+msgstr "传递给注入跳过 copy 的 stmt，用于调试目的。"
+
+#: of vta.transform.LiftAllocToScopeBegin:1
+msgid "Lift allocate to beginning of the current scope."
+msgstr "提升分配到当前作用域的开始。"
+
+#: of vta.transform._match_pragma:1
+msgid "Internal helper to match stmt to pragma stmt."
+msgstr "将 stmt 匹配到 pragma stmt 的内部助手。"
+
+#: of vta.transform._match_pragma:6
+msgid "stmt"
+msgstr ""
+
+#: of
+msgid "Stmt"
+msgstr ""
+
+#: of vta.transform._match_pragma:6
+msgid "The AttrStmt"
+msgstr ""
+
+#: of vta.transform._match_pragma:8
+msgid "key"
+msgstr ""
+
+#: of
+msgid "str"
+msgstr ""
+
+#: of vta.transform._match_pragma:9
+msgid "The pragma key"
+msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+

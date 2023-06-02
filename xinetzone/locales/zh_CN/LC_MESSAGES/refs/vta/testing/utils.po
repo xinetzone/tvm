@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/testing/utils.rst:3
+msgid "``vta.testing.utils``"
+msgstr ""
+
+#: of vta.testing.utils:1
+msgid "Test Utilities"
+msgstr "测试工具"
+
+#: of vta.testing.utils.run:1
+msgid "Run test function on all available env."
+msgstr "在所有可用的环境上运行测试函数。"
+
+#: of vta.testing.utils.run:5
+msgid "run_func : function(env, remote)"
+msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+

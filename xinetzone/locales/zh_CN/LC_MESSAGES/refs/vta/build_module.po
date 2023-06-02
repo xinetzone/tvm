@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/build_module.rst:3
+msgid "``build_module``"
+msgstr ""
+
+#: of vta.build_module:1
+msgid "VTA specific buildin for runtime."
+msgstr "VTA特定的运行时构建。"
+
+#: of vta.build_module.EarlyRewrite:1
+msgid "Try to do storage rewrite in early pass."
+msgstr "尝试在早期进行存储重写。"
+
+#: of vta.build_module.build:1
+msgid "Thin wrapper of tvm.build"
+msgstr "包装 tvm.build"
+
+#: of vta.build_module.build:3 vta.build_module.lower:3
+msgid ""
+"This wrapper automatically applies VTA's build_config if there is no user"
+" specified build_config in context."
+msgstr "如果上下文中没有用户指定的 build_config，这个包装器会自动应用 VTA 的 build_config。"
+
+#: of vta.build_module.build:8
+msgid "tvm.build : The original TVM's build function"
+msgstr "tvm.build : 原始 TVM 的构建函数"
+
+#: of vta.build_module.build_config:1
+msgid "Build a build config for VTA."
+msgstr "为 VTA 创建构建配置。"
+
+#: of vta.build_module.build_config:6
+msgid "debug_flag"
+msgstr ""
+
+#: of
+msgid "int"
+msgstr ""
+
+#: of vta.build_module.build_config:6
+msgid "The dbeug flag to be passed."
+msgstr "要传递的 dbeug 标志。"
+
+#: of vta.build_module.build_config:9
+msgid "kwargs"
+msgstr ""
+
+#: of
+msgid "dict"
+msgstr ""
+
+#: of vta.build_module.build_config:9
+msgid "Additional configurations."
+msgstr "额外的配置。"
+
+#: of vta.build_module.build_config:14
+msgid "build_config: tvm.transform.PassContext"
+msgstr ""
+
+#: of vta.build_module.build_config:14
+msgid "The build config that can be used in TVM."
+msgstr "可以在 TVM 中使用的构建配置。"
+
+#: of vta.build_module.lower:1
+msgid "Thin wrapper of tvm.lower"
+msgstr "包装 tvm.lower"
+
+#: of vta.build_module.lower:8
+msgid "tvm.lower : The original TVM's lower function"
+msgstr "tvm.lower : 原 TVM 的 lower 函数"
+
+#~ msgid "See Also"
+#~ msgstr "也可以参阅"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+
+#~ msgid "Example"
+#~ msgstr "示例"
+

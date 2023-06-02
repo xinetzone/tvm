@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/environment.rst:3
+msgid "``environment``"
+msgstr ""
+
+#: of vta.environment:1
+msgid "Configurable VTA Hareware Environment scope."
+msgstr "可配置的 VTA 硬件 Environment 作用域。"
+
+#: of vta.environment.DevContext:1
+msgid "Internal development context"
+msgstr "内部开发上下文"
+
+#: of vta.environment.DevContext:3
+msgid ""
+"This contains all the non-user facing compiler internal context that is "
+"hold by the Environment."
+msgstr "这包含了由 Environment 保存的所有非面向用户的编译器内部上下文。"
+
+#: of vta.environment.DevContext:9 vta.environment.get_env:5
+msgid "env"
+msgstr ""
+
+#: of
+msgid "Environment"
+msgstr ""
+
+#: of vta.environment.DevContext:9
+msgid "The environment hosting the DevContext"
+msgstr "承载 DevContext 的环境"
+
+#: of vta.environment.DevContext:13
+msgid ""
+"This class is introduced so we have a clear separation of developer "
+"related, and user facing attributes."
+msgstr "引入这个类是为了明确区分与开发人员相关的属性和面向用户的属性。"
+
+#: of vta.environment.DevContext.get_task_qid:1
+msgid "Get transformed queue index."
+msgstr "获取变换队列索引。"
+
+#: of vta.environment.Environment:1
+msgid "Hardware configuration object."
+msgstr "硬件配置对象。"
+
+#: of vta.environment.Environment:3
+msgid ""
+"This object contains all the information needed for compiling to a "
+"specific VTA backend."
+msgstr "此对象包含编译到特定 VTA 后端所需的所有信息。"
+
+#: of vta.environment.Environment:9
+msgid "cfg"
+msgstr ""
+
+#: of
+msgid "dict of str to value."
+msgstr "str 到 value 的字典。"
+
+#: of vta.environment.Environment:9
+msgid "The configuration parameters."
+msgstr "配置参数。"
+
+#: of vta.environment.Environment.alu:1
+msgid "ALU pragma"
+msgstr ""
+
+#: of vta.environment.Environment.dev:1
+msgid "Developer context"
+msgstr "开发者上下文"
+
+#: of vta.environment.Environment.dma_copy:1
+msgid "DMA copy pragma"
+msgstr ""
+
+#: of vta.environment.Environment.gemm:1
+msgid "GEMM intrinsic"
+msgstr ""
+
+#: of vta.environment.Environment.mock:1
+msgid "A mock version of the Environment"
+msgstr "Environment 的模拟版本"
+
+#: of vta.environment.Environment.mock:3
+msgid "The ALU, dma_copy and intrinsics will be mocked to be nop."
+msgstr "ALU、dma_copy 和 intrinsics 将被模拟为 nop。"
+
+#: of vta.environment.Environment.target_host:1
+msgid "The target host"
+msgstr "目标主机"
+
+#: of vta.environment._init_env:1
+msgid "Initialize the default global env"
+msgstr "初始化默认的全局 env"
+
+#: of vta.environment.get_env:1
+msgid "Get the current VTA Environment."
+msgstr "获取当前 VTA 环境。"
+
+#: of vta.environment.get_env:6
+msgid "The current environment."
+msgstr "当前环境"
+
+#: of vta.environment.get_vta_hw_path:1
+msgid "Get the VTA HW path."
+msgstr "获取 VTA HW 路径。"
+
+#: of vta.environment.pkg_config:1
+msgid "Returns PkgConfig pkg config object."
+msgstr "返回 PkgConfig pkg 配置对象。"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Note"
+#~ msgstr "注解"
+
+#~ msgid "Example"
+#~ msgstr "示例"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+

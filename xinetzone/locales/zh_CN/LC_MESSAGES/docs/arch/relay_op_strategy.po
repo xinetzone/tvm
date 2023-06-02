@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10003
+msgid "Relay 算子策略"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10005
+msgid ""
+"为了将 Relay 算子 lower 到 TOPI 库中定义的实现，需要向每个 Relay 算子注册 compute 和 schedule "
+"函数。然而，compute 和 schedule 函数通常是针对每个 target 的，而且，甚至对于同一个 "
+"target，可能有多个算法和实现可用。为了解决问题的复杂性，引入了算子策略，允许开发者为每个算子和目标定义灵活的 lowering 策略。"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10007
+msgid "算子策略设计"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10009
+msgid ""
+"算子策略的基本元素是 ``OpImplementation``。它包括一对计算和调度函数、实现的名称和优先级级别（优先级级别的使用在 [Op "
+"策略中选择实现](Op 策略中选择实现) 中有解释）。"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10011
+msgid ""
+"``OpStrategy`` 包含一组 ``OpSpecialization``。每个 ``OpSpecialization`` 都包含一组与 "
+"``SpecializedCondition`` 相关联的 ``OpImplementation`` （参见 "
+"``include/tvm/te/schedule.h`` 中的定义）。``SpecializedCondition`` 可以为 "
+"null，表示实现是普遍适用的；否则，只在满足特定条件时才考虑实现。 ``SpecializedCondition`` "
+"由一组在合取范式张量表达式（conjunctive normal form，即 CNF）中定义的子句组成，只支持张量 shapes 上的条件。"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10013
+msgid ""
+"最后，策略函数或 ``FTVMStrategy`` 决定给定工作负载应该使用哪一对计算和调度函数，并且需要注册到每个 Relay "
+"算子。``FTVMStrategy`` 是 generic 函数（参见 ``include/tvm/target/generic_func.h``"
+" ），它可以被每个目标覆盖。函数签名为"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10019
+msgid "函数返回给定 op 属性、输入张量、输出类型和要编译的 target 的 ``OpStrategy``。"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10021
+msgid "编写策略函数"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10023
+msgid ""
+"建议开发人员用 Python 编写策略函数，因为大多数 TOPI 计算和调度函数都是用 Python 编写的。在 Python 中，在 "
+"``pyton/tvm/relay/op/op.py`` 中提供 ``OpStrategy`` 类。它只有一个 API，就是向策略中添加实现："
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:10029
+msgid "以 ``topk`` 为例来解释如何编写 ``FTVMStrategy`` 函数："
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30004
+msgid ""
+"In this example, we use ``topi.cuda.topk`` and "
+"``topi.cuda.schedule_topk`` as the compute and schedule function for CUDA"
+" or GPU target, while use TOPI generic compute and schedule for the rest "
+"of targets. Note that we use two wrapper functions that wrap the topi "
+"compute and schedule to conform with the required function signature ( "
+"see ``FTVMCompute`` and ``FTVMSchedule`` in "
+"``include/tvm/relay/op_attr_types.h``). Usually we need to write a "
+"customized compute wrapper function for each operator to get different "
+"fields from op attributes."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30013
+msgid ""
+"The example above shows a very basic strategy function that only adds one"
+" implementation in the strategy. But for many complicated operators, we "
+"may need to add multiple implementations that use different algorithms. "
+"For example, we can use both direct and winograd algorithm to compute a "
+"conv2d op. In order to achieve this, we can write the strategy function "
+"as follows:"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30020
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30047
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30068
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30094
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30109
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30119
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30135
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30153
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30181
+msgid ".. code:: python"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30035
+msgid ""
+"In this example, we add two implementations to the conv2d strategy where "
+"winograd algorithm is only added when ``winograd_condition`` is true. The"
+" implementation ``\"conv2d_nchw_winograd.cuda\"`` will be used to compile"
+" conv2d when ``winograd_condition`` is true as it has higher priority "
+"level (this could be changed if certain implementation is an AutoTVM "
+"template. See `Select Implementation from Op Strategy`_ for more "
+"details). Otherwise, ``\"conv2d_nchw.cuda\"`` is used."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30043
+msgid ""
+"We can extend the example above to third party library implementation. "
+"For example, we can add the implementation that invokes kernel in the "
+"cblas library when cblas is included in the target."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30057
+msgid ""
+"Further, we can add implementation specialized for a certain range of "
+"shapes. The code below shows an example of dense strategy that adds an "
+"implementation that is specialized for ``m`` greater than 16. The main "
+"difference between hardcode python condition like examples above and "
+"specialized condition is that it allows TVM to generate multiple kernels "
+"when the input tensors have symbolic shapes. The compile engine will "
+"generate a dispatch function that invokes the specialized kernel when the"
+" corresponding condition is met; otherwise, invoke the kernel that has no"
+" associated specialized condition (``dense_common`` in this example). "
+"This part is still work in progress. More details will be provided after "
+"it is done."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30088
+msgid "Register Strategy Function to An Operator"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30091
+msgid ""
+"After we define the strategy function for an operator, we can now "
+"register the strategy function to this operator with"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30098
+msgid ""
+"However, it takes much effort to write a strategy function for an "
+"operator. Therefore, we provide two other methods for simpler operators."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30101
+msgid ""
+"First, for operators that have injective, broadcast, or reduction "
+"pattern, we can call ``register_injective_schedule``, "
+"``register_broadcast_schedule``, and ``register_reduce_schedule`` "
+"repsectively. The schedule function for these patterns are already "
+"registered by each target and can be applied to these operators. We "
+"assume the compute function should be the same across all targets, and "
+"``FTVMCompute`` needs to be registered to the op before invoking register"
+" schedule."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30113
+msgid ""
+"Second, for operators that doesn't have these common patterns mentioned "
+"before, but also have the same compute function for all targets, we can "
+"use ``register_schedule`` API. It is easier to write ``FTVMSchedule`` "
+"function as we only need to provide which schedule function to use. The "
+"following code snippet shows ``FTVMSchedule`` function for pooling."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30132
+msgid ""
+"After we created the ``FTVMSchedule`` for an operator, we can register "
+"the strategy using ``register_schedule``:"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30140
+msgid "Register Strategies for A New Target"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30143
+msgid ""
+"There are two ways to register strategies for a new target. The more "
+"straightforward one is adding a new target file in the directory "
+"``python/tvm/relay/op/strategy``. You only need to customize the strategy"
+" for ops that have been implemented for this new target and reuse the "
+"generic strategies for the rest."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30149
+msgid ""
+"Alternatively, you can also register the strategy for the new target "
+"outside the TVM python library. The following code snippet shows an "
+"example how to do so. You can find more examples in "
+"``vta/python/vta/top/op.py``."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30160
+msgid "Op 策略中选择实现"
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30162
+msgid ""
+"During the compilation, Relay compile engine needs to determine which "
+"implementation to use for an operator when there are multiple. The "
+"selection policy works as follows."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30166
+msgid ""
+"When the input tensors to an operator or a fused op all have constant "
+"shapes, the compile engine first finds the best implementation based on "
+"AutoTVM tuning logs. If there is no implementation that is an AutoTVM "
+"template or all AutoTVM templates have fallback configs, the "
+"implementation with highest priority level will then be chosen. "
+"Implementations with same priority level in this case leads to an "
+"undefined behavior, and any of them might be selected."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30173
+msgid ""
+"The selection policy for ops with symbolic input shapes is still work in "
+"progress. Currently, if any input tensor has a symbolic shape, only the "
+"implementation with highest priority level will be used for this "
+"operator. This will be updated after the implementation finishes."
+msgstr ""
+
+#: ../../xin/docs/arch/relay_op_strategy.ipynb:30178
+msgid ""
+"For debug purpose, you can add the following lines before you compile the"
+" Relay model to learn which implementation is used for each operator."
+msgstr ""
+
+#~ msgid "Relay Operator Strategy"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to lower Relay operators "
+#~ "to the implementations defined in TOPI"
+#~ " library, a compute and schedule "
+#~ "function need to be registered to "
+#~ "each Relay operator.  However, compute "
+#~ "and schedule functions are usually "
+#~ "specialized for each target, and "
+#~ "further, even for the same target, "
+#~ "we may have multiple algorithms and "
+#~ "implementations available. To deal with "
+#~ "the complexity, we introduce operator "
+#~ "strategy to allow developers to define"
+#~ " a flexible lowering strategy for "
+#~ "each operator and target."
+#~ msgstr ""
+
+#~ msgid "Operator Strategy Design"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The basic element in operator strategy"
+#~ " is an ``OpImplementation``. It includes"
+#~ " the a pair of compute and "
+#~ "schedule function, the name of the "
+#~ "implementation, and a priority level "
+#~ "(the use of priority level is "
+#~ "explained in `Select Implementation from "
+#~ "Op Strategy`_)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``OpStrategy`` includes a list of"
+#~ " ``OpSpecialization``. Each ``OpSpecialization`` "
+#~ "contains a list of ``OpImplementation`` "
+#~ "associated with a ``SpecializedCondition`` "
+#~ "(see definition in ``include/tvm/te/schedule.h``)."
+#~ "  The ``SpecializedCondition`` can be null,"
+#~ " indicating the implementations are "
+#~ "generally applicable; otherwise, the "
+#~ "implementations are only considered when "
+#~ "the specialized condition is satisfied. "
+#~ "``SpecializedCondition`` consists of a list"
+#~ " of clauses defined in Tensor "
+#~ "Expression in conjunctive normal form "
+#~ "(CNF) and only supports conditions on"
+#~ " tensor shapes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Last, a strategy function, or "
+#~ "``FTVMStrategy``, determines which pair(s) of"
+#~ " compute and schedule functions should "
+#~ "be used given a workload, and "
+#~ "needs to be registered to each "
+#~ "Relay operator.  ``FTVMStrategy`` is a "
+#~ "generic function (see "
+#~ "``include/tvm/target/generic_func.h``), that can be"
+#~ " overwritten for each target. The "
+#~ "function signature is"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "that the function returns an "
+#~ "``OpStrategy`` given the op attributes, "
+#~ "input tensors, output types, and target"
+#~ " to compile to."
+#~ msgstr ""
+
+#~ msgid "Write A Strategy Function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We recommend developers to write "
+#~ "strategy function in Python as most "
+#~ "TOPI compute and schedule functions are"
+#~ " written in Python. In python, we "
+#~ "provide ``OpStrategy`` class in "
+#~ "``pyton/tvm/relay/op/op.py``. It only has one"
+#~ " API, which is to add an "
+#~ "implementation to the strategy:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We now take ``topk`` as an example"
+#~ " to explain how to write the "
+#~ "``FTVMStrategy`` function:"
+#~ msgstr ""
+
+#~ msgid "Select Implementation from Op Strategy"
+#~ msgstr ""
+

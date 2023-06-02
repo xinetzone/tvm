@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# xinetzone <735613050@qq.com>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: xinetzone <735613050@qq.com>, 2022\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/README.md:18
+msgid "TVM Documentation"
+msgstr "TVM 文档"
+
+#: ../../xin/docs/README.md:20
+msgid ""
+"This folder contains the source of TVM's documentation, hosted at "
+"https://tvm.apache.org/docs"
+msgstr "TVM 的文档托管在 https://tvm.apache.org/docs"
+
+#: ../../xin/docs/README.md:22
+msgid "Build Locally"
+msgstr "本地构建"
+
+#: ../../xin/docs/README.md:24
+msgid "With Docker (recommended)"
+msgstr "使用 Docker（推荐）"
+
+#: ../../xin/docs/README.md:26
+#, fuzzy
+msgid ""
+"Build TVM and the docs inside the [tlcpack/ci-gpu "
+"image](https://hub.docker.com/r/tlcpack/ci-gpu) using the "
+"[`ci.py`](../tests/scripts/ci.py) script."
+msgstr ""
+"在 [tlcpack/ci-gpu image](https://hub.docker.com/r/tlcpack/ci-gpu) 内构建 TVM"
+" 和文档"
+
+#: ../../xin/docs/README.md:36
+msgid "Serve the docs and visit http://localhost:8000 in your browser"
+msgstr "服务文档 docs 并可在浏览器 http://localhost:8000 访问"
+
+#: ../../xin/docs/README.md:43
+msgid "Native"
+msgstr "原生应用"
+
+#: ../../xin/docs/README.md:45
+msgid ""
+"[Build TVM](https://tvm.apache.org/docs/install/from_source.html) first "
+"in the repo root folder"
+msgstr ""
+"首先在 repo 根目录下 [建立 "
+"TVM](https://tvm.apache.org/docs/install/from_source.html)"
+
+#: ../../xin/docs/README.md:46
+msgid "Install dependencies"
+msgstr "安装依赖"
+
+#: ../../xin/docs/README.md:56
+msgid "Generate the docs"
+msgstr "生成 docs"
+
+#: ../../xin/docs/README.md:67
+msgid "Run an HTTP server and visit http://localhost:8000 in your browser"
+msgstr "运行 HTTP 服务并可以在浏览器 http://localhost:8000 访问"
+
+#: ../../xin/docs/README.md:73
+msgid "Only Execute Specified Tutorials"
+msgstr "仅执行指定的教程"
+
+#: ../../xin/docs/README.md:75
+msgid ""
+"The document build process will execute all the tutorials in the sphinx "
+"gallery. This will cause failure in some cases when certain machines do "
+"not have necessary environment. You can set `TVM_TUTORIAL_EXEC_PATTERN` "
+"to only execute the path that matches the regular expression pattern."
+msgstr ""
+"文档构建过程将执行 sphinx 库中的所有教程。在某些情况下，如果某些机器没有必要的环境，这将导致失败。你可以设置 "
+"``TVM_TUTORIAL_EXEC_PATTERN``，只执行符合正则表达式的路径。"
+
+#: ../../xin/docs/README.md:80
+msgid "For example, to only build tutorials under `/vta/tutorials`, run"
+msgstr "例如，要想只在 ``/vta/tutorials`` 下构建教程，运行"
+
+#: ../../xin/docs/README.md:86
+msgid "To only build one specific file, do"
+msgstr "要想只建立特定的文件，请执行"
+
+#: ../../xin/docs/README.md:93
+msgid "Helper Scripts"
+msgstr "辅助脚本"
+
+#: ../../xin/docs/README.md:95
+msgid ""
+"You can run the following script to reproduce the CI sphinx pre-check "
+"stage. This script skips the tutorial executions and is useful to quickly"
+" check the content."
+msgstr "你可以运行以下脚本来重现 CI sphinx 的预检查阶段。这个脚本跳过了教程的执行，对快速检查内容很有用。"
+
+#: ../../xin/docs/README.md:102
+msgid ""
+"The following script runs the full build which includes tutorial "
+"executions. You will need a GPU CI environment."
+msgstr "下面的脚本运行完整的构建，包括教程的执行。你将需要一个 GPU CI 环境。"
+
+#: ../../xin/docs/README.md:109
+msgid "Define the Order of Tutorials"
+msgstr "定义教程的顺序"
+
+#: ../../xin/docs/README.md:111
+msgid ""
+"You can define the order of tutorials with `subsection_order` and "
+"`within_subsection_order` in [`conf.py`](conf.py). By default, the "
+"tutorials within one subsection are sorted by filename."
+msgstr ""
+"你可以在 [`conf.py`](conf.py) 中用 ``subsection_order`` 和 "
+"``within_subsection_order`` 来定义教程的顺序。默认情况下，一个小节内的教程是按文件名排序的。"
+
+#: ../../xin/docs/README.md:115
+msgid "Google Colab Integration"
+msgstr ""
+
+#: ../../xin/docs/README.md:117
+msgid ""
+"All the TVM tutorials can be opened and used interactively in Google "
+"Colab by clicking the button at the top of the page. To do this, `sphinx-"
+"gallery` builds `.ipynb` files from each tutorial, which are "
+"automatically deployed to the [apache/tvm-site](https://github.com/apache"
+"/tvm-site/tree/asf-site) repo's `asf-site` branch by [@tvm-"
+"bot](https://github.com/tvm-bot)."
+msgstr ""
+
+#: ../../xin/docs/README.md:123
+msgid ""
+"To make sure your tutorial runs correctly on Colab, any non-Python parts "
+"of the tutorial (e.g. dependency installations) should be prefixed by an "
+"[IPython magic "
+"command](https://ipython.readthedocs.io/en/stable/interactive/magics.html)."
+" These will not be included in the built `HTML` file. For example, to "
+"install Pytorch in your tutorial, add a ReStructured Text block like the "
+"following:"
+msgstr ""
+
+#: ../../xin/docs/README.md:140
+msgid "Interactive Bash Scripts"
+msgstr ""
+
+#: ../../xin/docs/README.md:142
+#, python-format
+msgid ""
+"In stock IPython, the `%%bash` magic command should be used to run shell "
+"commands. However, this command does not give real-time output - the "
+"tutorial's user will not see any output until the entire cell finishes "
+"running. When running commands that take several minutes (e.g. installing"
+" dependencies), this is annoying."
+msgstr ""
+
+#: ../../xin/docs/README.md:148
+#, python-format
+msgid ""
+"Luckily, Google Colab has the `%%shell` magic command that does the same "
+"thing as `%%bash`, but gives output in real time. This command is "
+"specific to Colab, and its [source "
+"code](https://github.com/googlecolab/colabtools) is public. Thus, "
+"`%%shell` should be used instead of `%%bash` when writing TVM tutorials."
+msgstr ""
+

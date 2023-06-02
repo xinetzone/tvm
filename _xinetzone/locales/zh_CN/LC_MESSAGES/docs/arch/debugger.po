@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/arch/debugger.md:1
+msgid "Debugger"
+msgstr "调试器"
+
+#: ../../xin/docs/arch/debugger.md:3
+msgid "TVM 调试器是调试 TVM 计算图执行的接口。它有助于在 TVM 运行时提供对图结构和张量值的访问。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:5
+msgid "调试交换格式"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:7
+msgid "1. 计算图"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:9
+msgid ""
+"通过 json 序列化格式的 Relay 构建的优化图被丢弃了。它包含了关于图的全部信息。UX 可以直接使用这个图，也可以将这个图转换成 UX "
+"可以理解的格式。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:11
+msgid "下面将解释 Graph JSON 格式："
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md
+msgid "nodes"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:16
+msgid "在 json 中，节点是占位符或可计算节点。节点存储为列表。节点包含以下信息："
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:18
+msgid "``op``：运算类型， ``null`` 意味着它是占位符/变量/输入节点，``tvm_op`` 意味着这个节点可以被执行"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:19
+msgid "``name``：节点名字"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:20
+msgid "``inputs``：此运算的 inputs 位置，inputs 是包含 (nodeid, index, version) 的元组列表。(可选)"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:21
+msgid "``attrs``：包含以下信息的节点属性"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:23
+msgid "``flatten_data``：是否需要在执行前将数据扁平化（flattened）"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:24
+msgid "``func_name``：融合函数名，对应于 Relay 编译过程生成的库中的符号。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:25
+msgid "``num_inputs``：此节点的 inputs 个数"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:26
+msgid "``num_outputs``：此节点产生的 outputs 个数"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md
+msgid "arg_nodes"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:29
+msgid "节点的索引列表，它是计算图的占位符/变量/输入节点 或 constant/param。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md
+msgid "heads"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:32
+msgid "作为图的 output 项的列表。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md
+msgid "node_row_ptr"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:35
+msgid "存储 forward 路径的历史，所以您可以跳过在推断任务中构建整个图。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md
+msgid "attrs"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:38
+msgid "可以包含版本号或类似的有用信息。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:40
+msgid "``storage_id``：存储布局中每个节点的内存 slot id。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:41
+msgid "``dtype``：每个节点的数据类型 (enum 值)。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:42
+msgid "``dltype``：每个节点的数据类型按顺序排列。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:43
+msgid "``shape``：每个节点的形状 k 阶。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:44
+msgid "``device_index``：为图中的每个条目分配设备。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:47
+msgid "转储图的示例："
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:86
+#, fuzzy
+msgid "2. Tensor 转储"
+msgstr "2. Tensor 转储"
+
+#: ../../xin/docs/arch/debugger.md:88
+msgid ""
+"执行后收到的张量在 ``tvm.ndarray`` 类型中所有的张量将以二进制字节的序列化格式保存。结果二进制字节可以通过 API "
+"`load_params` 加载。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:90
+msgid "加载参数的示例"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:99
+#, fuzzy
+msgid "如果使用 Debugger？"
+msgstr "调试器"
+
+#: ../../xin/docs/arch/debugger.md:101
+msgid "在 ``config.cmake`` 中设置 ``USE_PROFILER`` 为 ``ON``"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:102
+msgid "执行 `make tvm`，这样它就会生成 ``libtvm_runtime.so``"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:103
+msgid ""
+"在前端脚本中替换 ``from tvm.contrib import graph_executor`` 导入为 ``from "
+"tvm.contrib.debugger.debug_executor import GraphModuleDebug``"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:121
+msgid ""
+"如果 network 之前使用 ``lib.export_library(\"network.so\")`` "
+"像共享对象文件/动态链接库一样导出到外部库，调试运行时的初始化将略有不同"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:134
+msgid "输出被转储到 ``/tmp`` 文件夹中的临时文件夹或创建运行时指定的文件夹。"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:136
+msgid "输出示例"
+msgstr ""
+
+#: ../../xin/docs/arch/debugger.md:138
+msgid "下面是调试器的输出示例："
+msgstr ""
+
+#~ msgid ""
+#~ "In frontend script file instead of "
+#~ "``from tvm.contrib import graph_executor`` "
+#~ "import the ``debug_executor`` ``from "
+#~ "tvm.contrib.debugger import debug_executor as "
+#~ "graph_executor``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If network previously was exported to"
+#~ " external libray using "
+#~ "``lib.export_library(\"network.so\")``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM Debugger is an interface for "
+#~ "debugging TVM's computation graph execution."
+#~ " It helps to provide access to "
+#~ "graph structures and tensor values at"
+#~ " the TVM runtime."
+#~ msgstr "TVM 调试器是调试 TVM 计算图执行的接口。它有助于在 TVM 运行时提供对图结构和张量值的访问。"
+
+#~ msgid "Debug Exchange Format"
+#~ msgstr "调试交换格式"
+
+#~ msgid "1. Computational Graph"
+#~ msgstr "1. 计算图"
+
+#~ msgid ""
+#~ "The optimized graph build by relay "
+#~ "in json serialized format is dumped "
+#~ "as it is. This contains the whole"
+#~ " information about the graph. The UX"
+#~ " can either use this graph directly"
+#~ " or transform this graph to the "
+#~ "format UX can understand."
+#~ msgstr ""
+#~ "通过 relay 以 json "
+#~ "序列化格式构建的优化计算图被转储。它包含了关于图的全部信息。UX 可以直接使用这个图，也可以将这个图转换成 UX"
+#~ " 可以理解的格式。"
+
+#~ msgid "The Graph JSON format is explained below"
+#~ msgstr "下面将解释 Graph JSON 格式"
+
+#~ msgid ""
+#~ "1. ``nodes`` Nodes are either "
+#~ "placeholders or computational nodes in "
+#~ "json. The nodes are stored as a"
+#~ " list. A node contains the below "
+#~ "information"
+#~ msgstr "1. ``nodes`` 在 json 中，节点是占位符或可计算节点。节点存储为列表。节点包含以下信息"
+
+#~ msgid ""
+#~ "``op`` - operation type, ``null`` means"
+#~ " it is a placeholder/variable/input node"
+#~ " and``tvm_op`` means this node can be"
+#~ " executed"
+#~ msgstr "``op``：运算类型， ``null`` 意味着它是占位符/变量/输入节点，``tvm_op`` 意味着这个节点可以被执行"
+
+#~ msgid "``name`` - Name of the node"
+#~ msgstr "``name``：节点名字"
+
+#~ msgid ""
+#~ "``inputs`` - Position of the inputs "
+#~ "for this operation, Inputs is a "
+#~ "list of tuples with (nodeid, index, "
+#~ "version). (Optional)"
+#~ msgstr ""
+#~ "``inputs``：此运算的 inputs 位置，inputs 是包含 (nodeid,"
+#~ " index, version) 的元组列表。(可选)"
+
+#~ msgid ""
+#~ "``attrs`` - Attributes of the node "
+#~ "which contains the following information"
+#~ msgstr "``attrs``：包含以下信息的节点属性"
+
+#~ msgid ""
+#~ "``flatten_data`` - Whether this data "
+#~ "need to be flattened before execution"
+#~ msgstr "``flatten_data``：是否需要在执行前将数据扁平化（flattened）"
+
+#~ msgid ""
+#~ "``func_name`` - Fused function name, "
+#~ "corresponds to the symbol in the "
+#~ "lib generated by relay compilation "
+#~ "process."
+#~ msgstr "``func_name``：融合函数名，对应于 Relay 编译过程生成的库中的符号。"
+
+#~ msgid "``num_inputs`` - Number of inputs for this node"
+#~ msgstr "``num_inputs``：此节点的 inputs 个数"
+
+#~ msgid "``num_outputs`` - Number of outputs this node produces"
+#~ msgstr "``num_outputs``：此节点产生的 outputs 个数"
+
+#~ msgid ""
+#~ "2. ``arg_nodes`` arg_nodes is a list "
+#~ "of indices of nodes which is "
+#~ "placeholder/variable/input or constant/param to "
+#~ "the graph."
+#~ msgstr ""
+#~ "2. ``arg_nodes`` 是节点的索引列表，它是图的 "
+#~ "placeholder/variable/input 或 constant/param。"
+
+#~ msgid "3. ``heads`` heads is a list of entries as the output of the graph."
+#~ msgstr "3. ``heads`` 作为图的 output 项的列表。"
+
+#~ msgid ""
+#~ "4. ``node_row_ptr`` node\\_row\\_ptr stores "
+#~ "the history of forward path, so "
+#~ "you can skip constructing the entire "
+#~ "graph in inference tasks."
+#~ msgstr "4. ``node_row_ptr`` 存储 forward 路径的历史，所以您可以跳过在推断任务中构建整个图。"
+
+#~ msgid ""
+#~ "5. ``attrs`` attrs can contain version"
+#~ " numbers or similar helpful information."
+#~ msgstr "5. ``attrs`` 可以包含版本号或类似的有用信息。"
+
+#~ msgid "``storage_id`` - Memory slot id for each node in the storage layout."
+#~ msgstr "``storage_id``：存储布局中每个节点的内存 slot id。"
+
+#~ msgid "``dtype`` - Datatype of each node (enum value)."
+#~ msgstr "``dtype``：每个节点的数据类型 (enum 值)。"
+
+#~ msgid "``dltype`` - Datatype of each node in order."
+#~ msgstr "``dltype``：每个节点的数据类型按顺序排列。"
+
+#~ msgid "``shape`` - Shape of each node k order."
+#~ msgstr "``shape``：每个节点的形状 k 阶。"
+
+#~ msgid "``device_index`` - Device assignment for each entry in the graph."
+#~ msgstr "``device_index``：为图中的每个条目分配设备。"
+
+#~ msgid "Example of dumped graph:"
+#~ msgstr "转储图的示例："
+
+#~ msgid ""
+#~ "The tensor received after execution is"
+#~ " in ``tvm.ndarray`` type. All the "
+#~ "tensors will be saved as binary "
+#~ "bytes in serialized format.  The result"
+#~ " binary bytes can be loaded by "
+#~ "the API \"load_params\"."
+#~ msgstr ""
+#~ "执行后收到的张量在 ``tvm.ndarray`` "
+#~ "类型中。所有的张量将以二进制字节的序列化格式保存。结果二进制字节可以通过 API \"load_params\""
+#~ " 加载。"
+
+#~ msgid "Example of loading the parameters"
+#~ msgstr "加载参数的示例"
+
+#~ msgid "::"
+#~ msgstr ""
+
+#~ msgid "with open(path_params, \"rb\") as fi:"
+#~ msgstr ""
+
+#~ msgid "loaded_params = bytearray(fi.read())"
+#~ msgstr ""
+
+#~ msgid "module.load_params(loaded_params)"
+#~ msgstr ""
+
+#~ msgid "How to use Debugger?"
+#~ msgstr "如果使用 Debugger？"
+
+#~ msgid "In ``config.cmake`` set the ``USE_PROFILER`` flag to ``ON``"
+#~ msgstr "在 ``config.cmake`` 中设置 ``USE_PROFILER`` 为 ``ON``"
+
+#~ msgid "Do 'make' tvm, so that it will make the ``libtvm_runtime.so``"
+#~ msgstr "执行 'make' tvm，这样它就会生成 ``libtvm_runtime.so``"
+
+#~ msgid ""
+#~ "In frontend script file instead of "
+#~ "``from tvm.contrib import graph_executor`` "
+#~ "import the ``GraphModuleDebug`` ``from "
+#~ "tvm.contrib.debugger.debug_executor import "
+#~ "GraphModuleDebug``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If network previously was exported to"
+#~ " external library using "
+#~ "``lib.export_library(\"network.so\")``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "like shared object file/dynamic linked "
+#~ "library, the initialization of debug "
+#~ "runtime will be slightly different"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The outputs are dumped to a "
+#~ "temporary folder in ``/tmp`` folder or"
+#~ " the folder specified while creating "
+#~ "the runtime."
+#~ msgstr ""
+
+#~ msgid "Sample Output"
+#~ msgstr ""
+
+#~ msgid "The below is the an example output of the debugger."
+#~ msgstr ""
+

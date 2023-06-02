@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/reference/api/python/ir/module.rst:2
+msgid "tvm.ir.module"
+msgstr ""
+
+#: of tvm.ir.module.IRModule:1
+msgid "IRModule that holds functions and type definitions."
+msgstr ""
+
+#: of tvm.ir.module.IRModule:3
+msgid "IRModule is the basic unit for all IR transformations across the stack."
+msgstr ""
+
+#: of tvm.ir.module.IRModule:7
+msgid "functions: Optional[dict]."
+msgstr ""
+
+#: of tvm.ir.module.IRModule:8
+msgid "Map of global var to BaseFunc"
+msgstr ""
+

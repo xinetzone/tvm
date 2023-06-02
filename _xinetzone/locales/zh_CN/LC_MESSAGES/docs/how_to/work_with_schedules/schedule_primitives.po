@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:10002
+msgid "TVM 中的调度原语"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:10004
+msgid "**原作者**: [Ziheng Jiang](https://github.com/ZihengJiang)"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:10006
+msgid "TVM 用于高效构建 kernel 的领域特定语言。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:10008
+msgid "在本教程中，将您展示如何通过 TVM 提供的各种原语调度计算。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:30002
+msgid ""
+"通常有几种方法可以计算相同的结果，但是，不同的方法会导致不同的局部性（locality）和性能。因此 TVM 要求用户提供如何执行名为 "
+"**Schedule** （调度）的计算。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:30004
+msgid "**Schedule** 是一组变换程序中计算循环的计算变换。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:50002
+msgid "调度可以从 ops 列表中创建，默认情况下，调度以 row-major 顺序的串行方式计算张量。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:70002
+msgid ""
+"`lower` 将计算从定义转换为实际的可调用函数。使用 `simple_mode=True` 参数，它将返回可读的 C like "
+"语句，在这里使用它来打印调度结果。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:90002
+msgid "每个调度由多个阶段（Stage）组成，每个阶段表示一个运算的调度。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:90004
+msgid "下面提供各种方法来调度每个阶段。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:100002
+msgid "split"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:100004
+msgid "`split` 可以通过 `factor` 将指定的轴分裂（split）为两个轴。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:120002
+msgid "你也可以通过 `nparts` 分裂轴，它与 `factor` 分割轴相对。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:140002
+msgid "tile"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:140004
+msgid "`tile` 帮助你在两个轴上逐块（tile by tile）执行计算。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:160002
+msgid "fuse"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:160004
+msgid "`fuse` 可以融合一个计算的两个连续轴。"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:180002
+msgid "reorder"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:180003
+msgid ":code:`reorder` can reorder the axes in the specified order."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:200002
+msgid "bind"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:200003
+msgid ""
+":code:`bind` can bind a specified axis with a thread axis, often used in "
+"gpu programming."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:220002
+msgid "compute_at"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:220003
+msgid ""
+"For a schedule that consists of multiple operators, TVM will compute "
+"tensors at the root separately by default."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:240002
+msgid ""
+":code:`compute_at` can move computation of `B` into the first axis of "
+"computation of `C`."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:260002
+msgid "compute_inline"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:260003
+msgid ""
+":code:`compute_inline` can mark one stage as inline, then the body of "
+"computation will be expanded and inserted at the address where the tensor"
+" is required."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:280002
+msgid "compute_root"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:280003
+msgid ":code:`compute_root` can move computation of one stage to the root."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300002
+msgid "Summary"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300003
+msgid ""
+"This tutorial provides an introduction to schedule primitives in tvm, "
+"which permits users schedule the computation easily and flexibly."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300007
+msgid ""
+"In order to get a good performance kernel implementation, the general "
+"workflow often is:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300010
+msgid "Describe your computation via series of operations."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300011
+msgid "Try to schedule the computation with primitives."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300012
+msgid "Compile and run to see the performance difference."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_schedules/schedule_primitives.ipynb:300013
+msgid "Adjust your schedule according the running result."
+msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Python source code: "
+#~ "schedule_primitives.py <schedule_primitives.py>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Jupyter notebook: "
+#~ "schedule_primitives.ipynb <schedule_primitives.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_work_with_schedules_schedule_primitives.py>`"
+#~ " to download the full example code"
+#~ msgstr ""
+
+#~ msgid "Schedule Primitives in TVM"
+#~ msgstr ""
+
+#~ msgid "**Author**: `Ziheng Jiang <https://github.com/ZihengJiang>`_"
+#~ msgstr ""
+
+#~ msgid "TVM is a domain specific language for efficient kernel construction."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this tutorial, we will show you"
+#~ " how to schedule the computation by"
+#~ " various primitives provided by TVM."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There often exist several methods to "
+#~ "compute the same result, however, "
+#~ "different methods will result in "
+#~ "different locality and performance. So "
+#~ "TVM asks user to provide how to"
+#~ " execute the computation called "
+#~ "**Schedule**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A **Schedule** is a set of "
+#~ "transformation of computation that transforms"
+#~ " the loop of computations in the "
+#~ "program."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A schedule can be created from a"
+#~ " list of ops, by default the "
+#~ "schedule computes tensor in a serial "
+#~ "manner in a row-major order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One schedule is composed by multiple "
+#~ "stages, and one **Stage** represents "
+#~ "schedule for one operation. We provide"
+#~ " various methods to schedule every "
+#~ "stage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":code:`split` can split a specified axis"
+#~ " into two axes by :code:`factor`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can also split a axis by "
+#~ ":code:`nparts`, which splits the axis "
+#~ "contrary with :code:`factor`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":code:`tile` help you execute the "
+#~ "computation tile by tile over two "
+#~ "axes."
+#~ msgstr ""
+
+#~ msgid ":code:`fuse` can fuse two consecutive axes of one computation."
+#~ msgstr ""
+

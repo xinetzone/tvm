@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-22 11:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/libinfo.rst:3
+msgid "``libinfo``"
+msgstr ""
+
+#: of vta.libinfo:1
+msgid "Library information."
+msgstr "库信息。"
+
+#: of vta.libinfo._get_lib_name:1
+msgid "Get lib name with extension"
+msgstr "获取带扩展名的库名"
+
+#: of vta.libinfo._get_lib_name:6
+msgid "lib_name_ext"
+msgstr ""
+
+#: of
+msgid "str"
+msgstr ""
+
+#: of vta.libinfo._get_lib_name:6
+msgid "Name of VTA shared library with extension"
+msgstr "带扩展名的 VTA 共享库名称"
+
+#: of vta.libinfo._get_lib_name:10
+msgid "lib_name"
+msgstr ""
+
+#: of vta.libinfo._get_lib_name:11 vta.libinfo.find_libvta:11
+msgid "Name of VTA shared library"
+msgstr "VTA 共享库名称"
+
+#: of vta.libinfo.find_libvta:1
+msgid "Find VTA Chisel-based library"
+msgstr "查找 VTA 基于 Chisel 的库"
+
+#: of vta.libinfo.find_libvta:6
+msgid "lib_found"
+msgstr ""
+
+#: of vta.libinfo.find_libvta:6
+msgid "Library path"
+msgstr "库路径"
+
+#: of vta.libinfo.find_libvta:11
+msgid "lib_vta"
+msgstr ""
+
+#: of vta.libinfo.find_libvta:13
+msgid "optional"
+msgstr ""
+
+#: of
+msgid "bool"
+msgstr ""
+
+#: of vta.libinfo.find_libvta:14
+msgid "Enable error check"
+msgstr "启用错误检查"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+

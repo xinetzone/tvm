@@ -1,0 +1,78 @@
+[tool.pdm]
+
+[tool.pdm.build]
+package-dir = "src"
+# includes = ["src"]
+excludes = ["locales", "vta-test"]
+
+[project]
+name = "tvmx"
+dynamic = ["version"]
+description = ""
+authors = [
+    {name = "xinetzone", email = "xinzone@outlook.com"},
+]
+dependencies = [
+    "synr",
+    "attrs",
+    "decorator",
+    "psutil",
+    "typing_extensions",
+    "scipy>=1.9.3",
+    "importlib-metadata>=4.12",
+    "pytest",
+    "graphviz",
+    "pybind11",
+    "cython",
+    "pythran",
+    "cloudpickle",
+    "black",
+    "plotly",
+    "d2py",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {file = "../LICENSE"}
+
+[project.urls]
+Home = "https://github.com/xinetzone/tvm"
+
+[project.optional-dependencies]
+doc = [
+  "xyzstyle",
+  "sphinx>4",
+  "sphinx_book_theme",
+  "autodocsumm",
+  "sphinx_copybutton",
+  "tlcpack-sphinx-addon",
+  "babel",
+  "cloudpickle",
+  "jupyter-sphinx",
+  "myst-nb",
+  "sphinx-thebe",
+  "sphinx_design",
+  "sphinxext-rediraffe",
+  "pydata-sphinx-theme",
+  "sphinxcontrib-mermaid",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/tvmx/__about__.py"
+
+[tool.hatch.build.force-include]
+"../python/tvm" = "tvm"
+"../build/libtvm.so" = "tvm/libtvm.so"
+"../build/libtvm_runtime.so" = "tvm/libtvm_runtime.so"
+# # VTA 配置
+# "../vta/python/vta" = "vta"
+# "../build/libvta_fsim.so" = "../../3rdparty/vta-hw/build/libvta_fsim.so"
+# "../build/libvta_tsim.so" = "../../3rdparty/vta-hw/build/libvta_tsim.so"
+# "../3rdparty/vta-hw/config/" = "../../3rdparty/vta-hw/config"
+
+# [pypi.extra]
+# url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+# # verify_ssl = false

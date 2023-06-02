@@ -1,0 +1,348 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/arch/benchmark.rst:20
+msgid "基准性能日志格式"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:22
+msgid ""
+"此页面详细介绍了统一基准日志格式的模式 v0.1。该模式（schema）将允许与 frameworks/runs, experiment "
+"reproduction、data for nightly perf regression 以及日志/可视化工作的分离。"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:25
+msgid "Log 格式概述"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:27
+msgid ""
+"为了简单起见，建议对字段 `workload`、 `engine`、 `hardware` `runtime_ms_mean` 和 "
+"`runtime_ms_std` 进行优先级排序。对于更细粒度的日志记录，可以需另外 propagate `*_config` 字段。"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:30
+msgid "header"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:30
+msgid "examples"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:30
+msgid "category"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:30
+msgid "notes/justification"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:32 ../../xin/docs/arch/benchmark.rst:48
+#: ../../xin/docs/arch/benchmark.rst:50
+msgid "workload"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:32
+msgid "resnet-18"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:32
+msgid "name of workload"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:34
+msgid "engine"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:34
+msgid "\"tvm\" / \"onnxruntime\""
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:34 ../../xin/docs/arch/benchmark.rst:52
+#: ../../xin/docs/arch/benchmark.rst:54 ../../xin/docs/arch/benchmark.rst:56
+msgid "compiler"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:36 ../../xin/docs/arch/benchmark.rst:62
+msgid "hardware"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:36
+msgid "\"gcp-c2-standard-16\""
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:36
+msgid "descriptor of target hardware environment"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:38
+msgid "runtime_ms_mean"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:38
+msgid "12.452"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:38 ../../xin/docs/arch/benchmark.rst:40
+#: ../../xin/docs/arch/benchmark.rst:64 ../../xin/docs/arch/benchmark.rst:66
+#: ../../xin/docs/arch/benchmark.rst:68
+msgid "statistics"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:40
+msgid "runtime_ms_std"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:40
+msgid "5.3"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:42
+msgid "timestamp"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:42
+msgid "1572282699.6"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:42 ../../xin/docs/arch/benchmark.rst:44
+#: ../../xin/docs/arch/benchmark.rst:46
+msgid "metadata"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:42
+msgid "indicates when this record is logged"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:44
+msgid "schema\\_version"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:44
+msgid "\"0.1\""
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:44
+msgid "ensure reproducibility as we iterate on this schema"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:46
+msgid "{ \"docker\\_tag\":\"gcr.io/.../0a680\", ... }"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:46
+msgid "``docker_tag`` is optional"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:48
+msgid "workload\\_args"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:48
+msgid ""
+"{“input\\_name”: \"Input3\", “input\\_shape”: [list\\_of\\_shape], "
+"“data\\_layout”: NHCW}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:50
+msgid "workload\\_metadata"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:50
+msgid ""
+"{\"class\": \"vision\",\"doc\\_url\": "
+"\"``https://github.com/.../README.md``\", \"opset\": 7,\"type\": "
+"\"body\\_analysis\",\"url\": \"``https://onnxzoo...ferplus.tar.gz``\", "
+"\"md5\": \"07fc7...\"}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:50
+msgid "source of workload"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:52
+msgid "engine\\_version"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:52
+msgid "\"1.0.5\""
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:52
+msgid "use semvar format"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:54
+msgid "engine\\_config"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:54
+msgid ""
+"{“llvm”: “llvm-8”, “nvcc”: 10.1, \"accelerator\": \"MLAS\", "
+"\"relay_opt_level\": 3, \"tvm_target\":\"llvm -mcpu=cascadelake\"}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:54 ../../xin/docs/arch/benchmark.rst:56
+msgid "fields are optionally specified"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:56
+msgid "compilation\\_config"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:56
+msgid "{\"opt_level\": 3, \"layer_schedules\":[]/ <SHA_to_schedules>}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:58
+msgid "software\\_config"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:58
+msgid ""
+"{\"os\": \"ubuntu:18.04\",\"pip\": { \"docker\": \"4.1.0\", "
+"\"gitpython\": \"3.0.4\", \"numpy\": \"1.17.4\", \"onnx\": \"1.6.0\"}, "
+"“cudnn”: “cudnn-8”, \"cuda_driver”: “480.10.1”}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:58 ../../xin/docs/arch/benchmark.rst:60
+msgid "backend"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:58
+msgid "env dependency list"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:60
+msgid "runtime\\_config"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:60
+msgid "{\"num_cpu_threads\": 3}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:60
+msgid "info on non-hardware, non-software metadata"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:62
+msgid "hardware\\_config"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:62
+msgid ""
+"{\"cpu_count\": 16, \"cloud_machine_type\":\"c2-standard-16\", "
+"\"memory_GB\":64}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:62
+msgid "json descriptor of target hardware environment"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:64
+msgid "execution\\_config"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:64
+msgid "{“number”: 1, “repeat”: 10, “min\\_repeat\\_ms”, 0}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:64
+msgid "workload execution parameters"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:66
+msgid "metrics"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:66
+msgid "{“accuracy”: 48.5,“compilation_ms_mean”: 12}"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:66
+msgid "other metrics"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:68
+msgid "runtime_raw"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:68
+msgid "[{\"runtime_ms\": 12, ...}, {\"runtime_ms\":13,...},...]"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:68
+msgid "optional raw metrics array"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:74
+msgid "Storage 格式"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:76
+msgid ""
+"目前，将基准数据原型化为 JSON 对象，以获得扩展性和便捷性，特别是在该模式的早期版本中。但是，当我们扩展基准聚合和稳定参数时，我们预计会切换到"
+" columnar 格式，如 Arrow 或 Parquet。"
+msgstr ""
+
+#: ../../xin/docs/arch/benchmark.rst:78
+msgid "下面是 JSON 格式的示例数据："
+msgstr ""
+
+#~ msgid "Benchmark Performance Log Format"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This page details schema v0.1 for "
+#~ "a unified benchmark log format. This "
+#~ "schema will allow easier cross-"
+#~ "references with other frameworks/runs, "
+#~ "experiment reproduction, data for nightly "
+#~ "perf regression, and the separation of"
+#~ " logging/visualization efforts."
+#~ msgstr ""
+
+#~ msgid "Log Format Overview"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For simplicity, we suggest prioritizing "
+#~ "the fields `workload`, `engine`, `hardware`"
+#~ " `runtime_ms_mean`, and `runtime_ms_std`. For "
+#~ "finer-grained logging, one may "
+#~ "additionally propagate the `*_config` fields."
+#~ msgstr ""
+
+#~ msgid "Storage format"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Currently we're prototyping benchmark data "
+#~ "as JSON objects for extensibility and"
+#~ " convenience, especially in early versions"
+#~ " of the schema. However, as we "
+#~ "scale up benchmark aggregation and "
+#~ "stabilize parameters, we anticipate switching"
+#~ " to a columnar format, such as "
+#~ "Arrow or Parquet."
+#~ msgstr ""
+
+#~ msgid "Here is sample data encoded as JSON:"
+#~ msgstr ""
+

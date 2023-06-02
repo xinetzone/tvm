@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/contribute/committer_guide.rst:21
+msgid "Committer Guide"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:27
+msgid ""
+"This is an evolving document to provide some helpful tips for committers."
+" Most of them are lessons learned during development. We welcome every "
+"committer to contribute to this document. See the :ref:`community_guide` "
+"for an overview of the committership and the general development process."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:34
+msgid "Community First"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:35
+msgid ""
+"The collective effort of the community moves the project forward and "
+"makes the project awesome for everyone. When we make a decision, it is "
+"always helpful to keep the community in mind. Here are some example "
+"questions that we can ask:"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:40
+msgid "How can I encourage new contributors to get more involved in the project?"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:41
+msgid "Can I help to save my fellow committers' time?"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:42
+msgid ""
+"Have I enabled the rest of the community to participate the design "
+"proposals?"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:47
+msgid "Public Archive Principle"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:48
+msgid ""
+"While private channels such as face to face discussion are useful for "
+"development, they also create barriers for the broader community's "
+"participation. The Apache way of development requires all decisions to be"
+" made in public channels, which are archived and accessible to everyone. "
+"As a result, any contributor can keep up with the development by watching"
+" the archives and join the development anytime."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:55
+msgid ""
+"While this principle applies to every contributor, it is especially "
+"important for committers. Here are some example applications of this "
+"principle:"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:59
+msgid ""
+"When getting a project-related question from a personal channel, "
+"encourage the person to open a public thread in the discuss forum, so "
+"others in the community can benefit from the answer."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:62
+msgid ""
+"After an in-person discussion, send a summary to public channels (as an "
+"RFC or a discuss thread)."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:67
+msgid "Independent Project Management"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:69
+msgid ""
+"Everyone is presumed to be wearing their Apache committer hat when "
+"participating in the project. That is, committers should act - in the "
+"context of the project activities - in the best interests of the project."
+" Separating your hat between committer and any other roles you may have "
+"is important in all aspects."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:73
+msgid ""
+"In the context of project participation, it can be helpful to state which"
+" hat you are wearing in cases where that can cause confusion, especially "
+"in cases where you are not wearing committer hat. Two examples:"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:76
+msgid ""
+"\"Wearing [foo] hat: [message when serving as foo's role and not as "
+"committer]\"."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:77
+msgid "\"Wearing Apache TVM hat: [messages when serving as committer]\"."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:80
+msgid "Shepherd a Pull Request"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:82
+msgid ""
+"Here are some tips to shepherd a pull request. You can also take a look "
+"at the :ref:`code_review_guide`."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:85
+msgid ""
+"Assign the PR to yourself, so that other committers know that the PR has "
+"already been tended to."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:87
+msgid "Make use of the status label to indicate the current status."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:88
+msgid "Check if an RFC needs to be sent."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:89
+msgid ""
+"If the contributor has not requested a reviewer, kindly ask the "
+"contributor to do so. If the PR comes from a new contributor, help the "
+"contributor to request reviewers and ask the contributor to do so next "
+"time."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:94
+msgid "Moderate the reviews, ask reviewers to approve explicitly."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:95
+msgid "Mark the PR as accepted and acknowledge the contributor/reviewers."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:96
+msgid "Merge the PR :)"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:100
+msgid "Time Management"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:101
+msgid ""
+"There are many things that a committer can do, such as moderating "
+"discussions, pull request reviews and code contributions."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:105
+msgid ""
+"Working on an open source project can be rewarding, but also be a bit "
+"overwhelming sometimes. A little bit of time management might be helpful "
+"to alleviate the problem. For example, some committers have a \"community"
+" day\" in a week when they actively manage outstanding PRs, but watch the"
+" community less frequently in the rest of the time."
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:112
+msgid ""
+"Remember that your merit will never go away, so please take your time and"
+" pace when contributing to the project :)"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:117
+msgid "Broad Collaboration"
+msgstr ""
+
+#: ../../xin/docs/contribute/committer_guide.rst:118
+msgid ""
+"Sometimes, we tend to only interact with people we know. However, broad "
+"collaborations are necessary to the success of the project. Try to keep "
+"that in mind, shepherd PRs for, and request code reviews from community "
+"members who you do not interact physically."
+msgstr ""
+
+#~ msgid ""
+#~ "Remember that your merit will never "
+#~ "go away, so please take your time"
+#~ " and pace when contributing to the"
+#~ " project:)"
+#~ msgstr ""
+
