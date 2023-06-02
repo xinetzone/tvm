@@ -43,6 +43,11 @@ jobs:
       - name: 🔧 Build HTML
         run: |
           cd xinetzone
+          pip install invoke
+          invoke init
+          invoke config 
+          invoke make
+          inv update
           pip install .[doc]
           invoke doc
       - name: Setup Pages
