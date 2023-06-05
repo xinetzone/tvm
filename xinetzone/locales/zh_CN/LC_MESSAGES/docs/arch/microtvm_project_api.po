@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../docs/arch/microtvm_project_api.rst:21
 msgid "microTVM Project API"
-msgstr ""
+msgstr "microTVM 项目 API"
 
 #: ../../docs/arch/microtvm_project_api.rst:24
 msgid "About microTVM Project API"
-msgstr ""
+msgstr "关于 microTVM 项目 API"
 
 #: ../../docs/arch/microtvm_project_api.rst:26
 msgid ""
@@ -35,6 +35,8 @@ msgid ""
 "devices accessible from the TVM machine, and communicate with the running"
 " code so that TVM can perform host-driven inference and autotuning."
 msgstr ""
+"microTVM 项目 API 允许 TVM 自动在非常规或嵌入式平台上运行模型。它允许平台定义标准函数，将 TVM 编译器输出与样板特定代码集成，生成可运行的 **Project**。"
+"然后，Project API 进一步定义了构建该项目的函数，程序兼容的设备可以从 TVM 机器中访问，并与运行的代码通信，以便 TVM 可以执行基于主机的推理和自动调优。"
 
 #: ../../docs/arch/microtvm_project_api.rst:34
 msgid ""
@@ -44,6 +46,8 @@ msgid ""
 "there are a couple of use cases when you may want to teach microTVM how "
 "to build firmware using your platform's build tool:"
 msgstr ""
+"有许多情况下，从您平台的构建过程中简单地调用 microTVM 可能是可取的。"
+"实际上，对于普通固件开发人员来说，这可能是他们所需的一切。然而，有几种用例需要您教会 microTVM 如何使用您平台的构建工具构建固件："
 
 #: ../../docs/arch/microtvm_project_api.rst:40
 msgid ""
@@ -51,6 +55,7 @@ msgid ""
 " API implementation allows TVM to tune models for peak performance on "
 "your platform."
 msgstr ""
+"为了在您的平台上启用 AutoTVM 和 AutoScheduling。定义 Project API 实现允许 TVM 对您的平台进行模型调整，以实现最佳性能。"
 
 #: ../../docs/arch/microtvm_project_api.rst:43
 msgid ""
@@ -59,6 +64,7 @@ msgid ""
 "engineers to leverage the standard TVM Python workflows to perform host-"
 "driven inference on your platform."
 msgstr ""
+"为了让没有固件专业知识的工程师在您的平台上实验模型。定义 Project API 实现允许这些工程师利用标准的 TVM Python 工作流，在您的平台上执行主机驱动的推断。"
 
 #: ../../docs/arch/microtvm_project_api.rst:47
 msgid ""
@@ -66,10 +72,11 @@ msgid ""
 "create Continuous Integration Tests which verify model correctness and "
 "performance on your platform."
 msgstr ""
+"集成测试。定义 Project API 实现允许您创建持续集成测试，以验证模型在您的平台上的正确性和性能。"
 
 #: ../../docs/arch/microtvm_project_api.rst:52
 msgid "API Definition"
-msgstr ""
+msgstr "API 定义"
 
 #: ../../docs/arch/microtvm_project_api.rst:54
 msgid ""
@@ -79,10 +86,12 @@ msgid ""
 " Rather than duplicate the documentation here, we simply refer you to "
 "that class."
 msgstr ""
+"完整的 API 是在 `python/tvm/micro/project_api/server.py <https://github.com/apache/tvm/blob/main/python/tvm/micro/project_api/server.py>`_ "
+"中定义的 ``ProjectAPIHandler`` 中的 ``abstractmethod``。我们不会在此重复文档，而是简单地将您引用到该类。"
 
 #: ../../docs/arch/microtvm_project_api.rst:59
 msgid "How TVM uses Project API"
-msgstr ""
+msgstr "TVM 如何使用 Project API"
 
 #: ../../docs/arch/microtvm_project_api.rst:61
 msgid ""
@@ -93,6 +102,8 @@ msgid ""
 "Library Format <model_library_format>` file can be built into a runnable "
 "project."
 msgstr ""
+"本节将解释如何在 TVM 中使用 Project API。Project API 围绕“Project”作为可构建固件的单位进行定义。"
+"TVM 最初希望提供包含“模板项目”的目录，该目录可与 :ref:`Model Library Format <model_library_format>` 文件一起构建为可运行的项目。"
 
 #: ../../docs/arch/microtvm_project_api.rst:67
 msgid ""
@@ -100,14 +111,15 @@ msgid ""
 " the API server. TVM launches this script in a subprocess and sends "
 "commands to the server to perform each of the actions outlined above."
 msgstr ""
+"在“模板目录”中（通常）包含实现 API 服务器的 Python 脚本。TVM 在子进程中启动此脚本，并向服务器发送命令以执行上述每个操作。"
 
 #: ../../docs/arch/microtvm_project_api.rst:71
 msgid "The typical usage flow is as follows:"
-msgstr ""
+msgstr "典型的使用流程如下："
 
 #: ../../docs/arch/microtvm_project_api.rst:73
 msgid "Launch Project API server in Template Project."
-msgstr ""
+msgstr "在模板项目中启动项目 API 服务器。"
 
 #: ../../docs/arch/microtvm_project_api.rst:74
 #: ../../docs/arch/microtvm_project_api.rst:83
@@ -116,6 +128,7 @@ msgid ""
 "properties of the implementation, by sending ``server_info_query`` "
 "command."
 msgstr ""
+"通过发送 ``server_info_query`` 命令，验证 API 服务器与 TVM 的版本兼容性，并读取实现的属性。"
 
 #: ../../docs/arch/microtvm_project_api.rst:76
 msgid ""
@@ -125,20 +138,23 @@ msgid ""
 " project. The Template Project API server should copy itself into the "
 "newly-generated project."
 msgstr ""
+"通过发送 ``generate_project`` 命令来生成新的项目。"
+"该命令的参数是模型库格式和不存在的目录，该目录应该被生成的项目填充。模板项目 API 服务器应该将自己复制到新生成的项目中。"
 
 #: ../../docs/arch/microtvm_project_api.rst:81
 msgid "Terminate the Template Project API server."
-msgstr ""
+msgstr "终止模板项目 API 服务器。"
 
 #: ../../docs/arch/microtvm_project_api.rst:82
 msgid "Launch Project API server in Generated Project."
-msgstr ""
+msgstr "在生成的项目中启动项目 API 服务器。"
 
 #: ../../docs/arch/microtvm_project_api.rst:85
 msgid ""
 "Build and flash the projec by sending commands ``build`` and ``flash`` to"
 " the API server."
 msgstr ""
+"通过向 API 服务器发送 ``build`` 和 ``flash`` 命令来构建和烧录项目。"
 
 #: ../../docs/arch/microtvm_project_api.rst:87
 msgid ""
@@ -147,20 +163,22 @@ msgid ""
 "from e.g. a serial port attached to the target. Upon completion, "
 "``close_transport`` is sent."
 msgstr ""
+"与目标通信。发送命令 ``open_transport``，然后发送 ``write_transport`` 和 ``read_transport`` 命令，以从连接到目标的串行端口中进行读写操作。完成后，发送 ``close_transport`` 命令。"
 
 #: ../../docs/arch/microtvm_project_api.rst:91
 msgid "Terminate Project API server."
-msgstr ""
+msgstr "终止 Project API 服务。"
 
 #: ../../docs/arch/microtvm_project_api.rst:94
 msgid "Disk Layout of the Project"
-msgstr ""
+msgstr "项目的磁盘布局"
 
 #: ../../docs/arch/microtvm_project_api.rst:96
 msgid ""
 "In the root directory of a project (template or generated), one of the "
 "following two files must exist:"
 msgstr ""
+"在项目（模板或生成的）的根目录中，必须存在以下两个文件之一："
 
 #: ../../docs/arch/microtvm_project_api.rst:99
 msgid ""
@@ -169,6 +187,7 @@ msgid ""
 "this script in its own process using the same interpreter used to execute"
 " TVM."
 msgstr ""
+"``microtvm_api_server.py`` - 推荐的方法。将与 python3 兼容的 Python 脚本放置在根目录中。TVM 将使用执行 TVM 的相同解释器在其自己的进程中执行此脚本。"
 
 #: ../../docs/arch/microtvm_project_api.rst:102
 msgid ""
@@ -177,14 +196,16 @@ msgid ""
 "when you want to implement the server in a different language, create "
 "this executable file. TVM will launch this file in a separate process."
 msgstr ""
+"``microtvm_api_server.sh`` （在 Windows 上是 ``microtvm_api_server.bat`` ）- 另一种方法。"
+"当需要使用不同的 Python 解释器，或者当您想要用其他语言实现服务器时，请创建此可执行文件。TVM 将在单独的进程中启动此文件。"
 
 #: ../../docs/arch/microtvm_project_api.rst:107
 msgid "Aside from these two files, no other restrictions are made on the layout."
-msgstr ""
+msgstr "除了这两个文件之外，对布局没有做出任何其他限制。"
 
 #: ../../docs/arch/microtvm_project_api.rst:110
 msgid "Communication between TVM and Project API Server"
-msgstr ""
+msgstr "TVM 和项目 API 服务器之间的通信。"
 
 #: ../../docs/arch/microtvm_project_api.rst:112
 msgid ""
@@ -192,6 +213,7 @@ msgid ""
 "<https://www.jsonrpc.org/specification>`_. TVM always launches API "
 "servers using the following command-line:"
 msgstr ""
+""TVM 使用 `JSON-RPC 2.0 <https://www.jsonrpc.org/specification>`_ 与项目 API 服务器进行通信。TVM 始终使用以下命令行启动 API 服务器：""
 
 #: ../../docs/arch/microtvm_project_api.rst:116
 msgid "``microtvm_api_server.py --read-fd <n> --write-fd <n>``"
@@ -203,10 +225,11 @@ msgid ""
 "by ``--read-fd`` and replies are received by TVM from the server over the"
 " file descriptor given by ``--write-fd``."
 msgstr ""
+"TVM 向服务器发送命令，使用 ``--read-fd`` 给出的文件描述符，从服务器接收回复，使用 ``--write-fd`` 给出的文件描述符。"
 
 #: ../../docs/arch/microtvm_project_api.rst:123
 msgid "Helpers for Implementing the API server in Python"
-msgstr ""
+msgstr "Python 实现 API 服务器的辅助工具"
 
 #: ../../docs/arch/microtvm_project_api.rst:125
 msgid ""
@@ -217,14 +240,17 @@ msgid ""
 "dependencies--and import it there instead). Next, subclass "
 "``ProjectAPIHander``::"
 msgstr ""
+""TVM 提供了辅助工具，使得在 Python 中实现服务器变得容易。"
+"要在 Python 中实现服务器，需要创建 ``microtvm_api_server.py``，并添加 ``from tvm.micro.project_api import server`` "
+"（或者，将此文件复制到您的模板项目中--没有依赖项--并在那里导入它）。接下来，创建 ``ProjectAPIHander`` 的子类:: "
 
 #: ../../docs/arch/microtvm_project_api.rst:140
 msgid "Finally, invoke the helper ``main()``::"
-msgstr ""
+msgstr "最后，调用辅助函数 ``main()``::"
 
 #: ../../docs/arch/microtvm_project_api.rst:146
 msgid "Using Project API from ``tvmc``"
-msgstr ""
+msgstr "从 ``tvmc`` 使用 Project API"
 
 #: ../../docs/arch/microtvm_project_api.rst:148
 msgid ""
@@ -232,4 +258,4 @@ msgid ""
 "sub-command to make debugging interactions simple. Invoke ``tvmc micro "
 "--help`` for more information."
 msgstr ""
-
+"每个重要的 Project API 命令都可以通过 ``tvmc micro`` 子命令来进行调用，以使得调试交互更加简单。调用 ``tvmc micro --help`` 来获取更多信息。"
