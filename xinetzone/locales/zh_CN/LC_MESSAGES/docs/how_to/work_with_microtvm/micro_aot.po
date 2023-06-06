@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:20004
-msgid "microTVM Host-Driven AoT"
+msgid "3. microTVM Ahead-of-Time (AOT) Compilation"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:20005
@@ -31,17 +31,36 @@ msgstr ""
 msgid ""
 "This tutorial is showcasing microTVM host-driven AoT compilation with a "
 "TFLite model. AoTExecutor reduces the overhead of parsing graph at "
-"runtime  compared to GraphExecutor. Also, we can have better memory "
-"management using ahead  of time compilation. This tutorial can be "
-"executed on a x86 CPU using C runtime (CRT) or on Zephyr platform on a "
+"runtime compared to GraphExecutor. Also, we can have better memory "
+"management using ahead of time compilation. This tutorial can be executed"
+" on a x86 CPU using C runtime (CRT) or on Zephyr platform on a "
 "microcontroller/board supported by Zephyr."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:40002
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:30002
+msgid "Install microTVM Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:30004
+msgid ""
+"TVM does not include a package for Python serial communication, so we "
+"must install one before using microTVM. We will also need TFLite to load "
+"models."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:60002
+msgid "Install Zephyr"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:80002
+msgid "Import Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:100002
 msgid "Import a TFLite model"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:40004
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:100004
 msgid ""
 "To begin with, download and import a Keyword Spotting TFLite model. This "
 "model is originally from [MLPerf Tiny "
@@ -51,41 +70,41 @@ msgid ""
 "dataset.html)."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:40008
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:100008
 msgid ""
 "**Note:** By default this tutorial runs on x86 CPU using CRT, if you "
 "would like to run on Zephyr platform you need to export "
 "`TVM_MICRO_USE_HW` environment variable."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:60002
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:120002
 msgid "Defining the target"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:60004
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:120004
 msgid ""
 "Now we need to define the target, runtime and executor. In this tutorial,"
 " we focused on using AOT host driven executor. We use the host micro "
 "target which is for running a model on x86 CPU using CRT runtime or "
 "running a model with Zephyr platform on qemu_x86 simulator board. In the "
 "case of a physical microcontroller, we get the target model for the "
-"physical board (E.g. nucleo_l4r5zi) and pass it to "
-"`tvm.target.target.micro` to create a full micro target."
+"physical board (E.g. nucleo_l4r5zi) and change `BOARD` to supported "
+"Zephyr board."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:80002
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:140002
 msgid "Compile the model"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:80004
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:140004
 msgid "Now, we compile the model for the target:"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:100002
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:160002
 msgid "Create a microTVM project"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:100004
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:160004
 msgid ""
 "Now that we have the compiled model as an IRModule, we need to create a "
 "firmware project to use the compiled model with microTVM. To do this, we "
@@ -93,11 +112,11 @@ msgid ""
 "projects which are used for x86 CPU and Zephyr boards respectively."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:120002
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:180002
 msgid "Build, flash and execute the model"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:120003
+#: ../../xin/docs/how_to/work_with_microtvm/micro_aot.ipynb:180003
 msgid ""
 "Next, we build the microTVM project and flash it. Flash step is specific "
 "to physical microcontrollers and it is skipped if it is simulating a "
@@ -106,4 +125,38 @@ msgid ""
 "and execute the model with a sample with expected value of 6 (label: "
 "left)."
 msgstr ""
+
+#~ msgid "microTVM Host-Driven AoT"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial is showcasing microTVM "
+#~ "host-driven AoT compilation with a "
+#~ "TFLite model. AoTExecutor reduces the "
+#~ "overhead of parsing graph at runtime"
+#~ "  compared to GraphExecutor. Also, we "
+#~ "can have better memory management using"
+#~ " ahead  of time compilation. This "
+#~ "tutorial can be executed on a x86"
+#~ " CPU using C runtime (CRT) or "
+#~ "on Zephyr platform on a "
+#~ "microcontroller/board supported by Zephyr."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now we need to define the target,"
+#~ " runtime and executor. In this "
+#~ "tutorial, we focused on using AOT "
+#~ "host driven executor. We use the "
+#~ "host micro target which is for "
+#~ "running a model on x86 CPU using"
+#~ " CRT runtime or running a model "
+#~ "with Zephyr platform on qemu_x86 "
+#~ "simulator board. In the case of a"
+#~ " physical microcontroller, we get the "
+#~ "target model for the physical board "
+#~ "(E.g. nucleo_l4r5zi) and pass it to "
+#~ "`tvm.target.target.micro` to create a full "
+#~ "micro target."
+#~ msgstr ""
 

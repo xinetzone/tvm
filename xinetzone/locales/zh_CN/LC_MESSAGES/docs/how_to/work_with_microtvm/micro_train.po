@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:20004
-msgid "Training Vision Models for microTVM on Arduino"
+msgid "5. Training Vision Models for microTVM on Arduino"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:20005
@@ -32,11 +32,11 @@ msgid ""
 "TVM."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30008
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30002
 msgid "Motivation"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30009
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30003
 msgid ""
 "When building IOT devices, we often want them to **see and understand** "
 "the world around them. This can take many forms, but often times a device"
@@ -44,7 +44,7 @@ msgid ""
 "vision."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30013
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30007
 msgid ""
 "For example, a security camera might look for **people**, so it can "
 "decide whether to save a video to memory. A traffic light might look for "
@@ -53,7 +53,7 @@ msgid ""
 "large the animal population is."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30018
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30012
 msgid ""
 "To make these devices affordable, we would like them to need only a low-"
 "cost processor like the "
@@ -63,7 +63,7 @@ msgid ""
 "each!)."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30021
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30015
 msgid ""
 "These devices have very little memory (~250 KB RAM), meaning that no "
 "conventional edge AI vision model (like MobileNet or EfficientNet) will "
@@ -72,11 +72,11 @@ msgid ""
 "compile and deploy it for an Arduino that uses one of these processors."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30026
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30020
 msgid "Installing the Prerequisites"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30028
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30022
 msgid ""
 "This tutorial will use TensorFlow to train the model - a widely used "
 "machine learning library created by Google. TensorFlow is a very low-"
@@ -85,7 +85,7 @@ msgid ""
 "our model, as TensorFlow by itself does not support this."
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30033
+#: ../../xin/docs/how_to/work_with_microtvm/micro_train.ipynb:30027
 msgid ""
 "Once we have our generated model, we will use TVM to compile and test it."
 " To avoid having to build from source, we'll install ``tlcpack`` - a "
@@ -646,4 +646,7 @@ msgid ""
 "capabilities](https://tvm.apache.org/docs/how_to/work_with_microtvm/micro_autotune.html)"
 " to dramatically improve the model's performance."
 msgstr ""
+
+#~ msgid "Training Vision Models for microTVM on Arduino"
+#~ msgstr ""
 

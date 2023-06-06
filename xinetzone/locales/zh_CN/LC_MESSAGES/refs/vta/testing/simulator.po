@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,50 @@ msgstr ""
 
 #: ../../xin/refs/vta/testing/simulator.rst:3
 msgid "``vta.testing.simulator``"
+msgstr ""
+
+#: of vta.testing.simulator:1
+msgid "Utilities to start simulator."
+msgstr ""
+
+#: of vta.testing.simulator._load_sw:1
+msgid "Load hardware library for simulator."
+msgstr ""
+
+#: of vta.testing.simulator.clear_stats:1
+msgid "Clear profiler statistics."
+msgstr ""
+
+#: of vta.testing.simulator.debug_mode:1
+msgid "Set debug mode Paramaters ---------- flag : int"
+msgstr ""
+
+#: of vta.testing.simulator.debug_mode:5
+msgid "The debug flag, 0 means clear all flags."
+msgstr ""
+
+#: of vta.testing.simulator.enabled:1
+msgid "Check if simulator is enabled."
+msgstr ""
+
+#: of vta.testing.simulator.stats:1
+msgid "Get profiler statistics"
+msgstr ""
+
+#: of vta.testing.simulator.stats:4
+msgid "Returns"
+msgstr ""
+
+#: of vta.testing.simulator.stats:5
+msgid "stats"
+msgstr ""
+
+#: of vta.testing.simulator.stats:-1
+msgid "dict"
+msgstr ""
+
+#: of vta.testing.simulator.stats:6
+msgid "Current profiler statistics"
 msgstr ""
 
 #~ msgid "Returns"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,57 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:20003
-msgid "Compile YOLO-V2 and YOLO-V3 in DarkNet Models"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:20002
+msgid "编译 DarkNet 中的  YOLO-V2 和 YOLO-V3 模型"
 msgstr ""
 
 #: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:20004
-msgid "**Author**: [Siju Samuel](https://siju-samuel.github.io/)"
+msgid "**作者**: [Siju Samuel](https://siju-samuel.github.io/)"
 msgstr ""
 
 #: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:20006
 msgid ""
-"This article is an introductory tutorial to deploy darknet models with "
-"TVM. All the required models and libraries will be downloaded from the "
-"internet by the script. This script runs the YOLO-V2 and YOLO-V3 Model "
-"with the bounding boxes Darknet parsing have dependancy with CFFI and CV2"
-" library Please install CFFI and CV2 before executing this script"
+"本文是使用 TVM 部署 DarkNet 模型的介绍性教程。所有需要的模型和库将通过脚本从互联网下载。此脚本运行带有边界框的 YOLO-V2 和 "
+"YOLO-V3 模型 Darknet 解析依赖于 CFFI 和 CV2 库请在执行此脚本之前安装它们。"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:40002
-msgid "Choose the model"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:50002
+msgid "选择模型"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:40003
-msgid "Models are: 'yolov2', 'yolov3' or 'yolov3-tiny'"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:50004
+msgid "模型可选：`'yolov2'`，`'yolov3'`，`'yolov3-tiny'`。"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:60002
-msgid "Download required files"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:70002
+msgid "下载必要文件"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:60003
-msgid "Download cfg and weights file if first time."
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:70004
+msgid "首先下载 `cfg` 和权重文件。"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:80002
-msgid "Import the graph to Relay"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:90002
+msgid "加载计算图到 Relay"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:80003
-msgid "compile the model"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:90004
+msgid "编译模型"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:100002
-msgid "Load a test image"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:110002
+msgid "加载测试图片"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:120002
-msgid "Execute on TVM Runtime"
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:130002
+msgid "执行 TVM Runtime"
 msgstr ""
 
-#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:120003
-msgid "The process is no different from other examples."
+#: ../../xin/docs/how_to/compile_models/from_darknet.ipynb:130004
+msgid "这个过程与其他例子没有什么不同。"
 msgstr ""
 
 #~ msgid ""
@@ -92,5 +89,51 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "**Author**: `Siju Samuel <https://siju-samuel.github.io/>`_"
+#~ msgstr ""
+
+#~ msgid "Compile YOLO-V2 and YOLO-V3 in DarkNet Models"
+#~ msgstr ""
+
+#~ msgid "**Author**: [Siju Samuel](https://siju-samuel.github.io/)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This article is an introductory tutorial"
+#~ " to deploy darknet models with TVM."
+#~ " All the required models and "
+#~ "libraries will be downloaded from the"
+#~ " internet by the script. This script"
+#~ " runs the YOLO-V2 and YOLO-V3 Model"
+#~ " with the bounding boxes Darknet "
+#~ "parsing have dependancy with CFFI and"
+#~ " CV2 library Please install CFFI and"
+#~ " CV2 before executing this script"
+#~ msgstr ""
+
+#~ msgid "Choose the model"
+#~ msgstr ""
+
+#~ msgid "Models are: 'yolov2', 'yolov3' or 'yolov3-tiny'"
+#~ msgstr ""
+
+#~ msgid "Download required files"
+#~ msgstr ""
+
+#~ msgid "Download cfg and weights file if first time."
+#~ msgstr ""
+
+#~ msgid "Import the graph to Relay"
+#~ msgstr ""
+
+#~ msgid "compile the model"
+#~ msgstr ""
+
+#~ msgid "Load a test image"
+#~ msgstr ""
+
+#~ msgid "Execute on TVM Runtime"
+#~ msgstr ""
+
+#~ msgid "The process is no different from other examples."
 #~ msgstr ""
 

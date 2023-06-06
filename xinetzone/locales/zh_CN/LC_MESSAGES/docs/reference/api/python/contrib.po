@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,11 +48,11 @@ msgstr ""
 
 #: of tvm.contrib.cblas.batch_matmul:5 tvm.contrib.cblas.matmul:5
 #: tvm.contrib.cc.create_executable:4 tvm.contrib.cc.create_shared:4
-#: tvm.contrib.cc.cross_compiler:8 tvm.contrib.cc.get_target_by_dump_machine:4
-#: tvm.contrib.clang.create_llvm:4 tvm.contrib.clang.find_clang:4
-#: tvm.contrib.cublas.batch_matmul:4 tvm.contrib.cublas.matmul:4
-#: tvm.contrib.dlpack.convert_func:5 tvm.contrib.dlpack.to_pytorch_func:4
-#: tvm.contrib.emcc.create_tvmjs_wasm:4
+#: tvm.contrib.cc.create_staticlib:4 tvm.contrib.cc.cross_compiler:8
+#: tvm.contrib.cc.get_target_by_dump_machine:4 tvm.contrib.clang.create_llvm:4
+#: tvm.contrib.clang.find_clang:4 tvm.contrib.cublas.batch_matmul:4
+#: tvm.contrib.cublas.matmul:4 tvm.contrib.dlpack.convert_func:5
+#: tvm.contrib.dlpack.to_pytorch_func:4 tvm.contrib.emcc.create_tvmjs_wasm:4
 #: tvm.contrib.miopen._get_np_int32_array_handle:4
 #: tvm.contrib.miopen.conv2d_forward:4 tvm.contrib.miopen.log_softmax:4
 #: tvm.contrib.miopen.softmax:4 tvm.contrib.mxnet.to_mxnet_func:6
@@ -62,11 +62,12 @@ msgstr ""
 #: tvm.contrib.nnpack.fully_connected_inference:5
 #: tvm.contrib.nvcc.compile_cuda:4 tvm.contrib.nvcc.get_cuda_version:4
 #: tvm.contrib.nvcc.get_target_compute_version:7 tvm.contrib.nvcc.have_bf16:4
-#: tvm.contrib.nvcc.have_fp16:4 tvm.contrib.nvcc.have_int8:4
-#: tvm.contrib.nvcc.have_tensorcore:4 tvm.contrib.nvcc.parse_compute_version:4
-#: tvm.contrib.pickle_memoize.Cache:4 tvm.contrib.pickle_memoize.memoize:4
-#: tvm.contrib.random.normal:6 tvm.contrib.random.randint:6
-#: tvm.contrib.random.uniform:8 tvm.contrib.relay_viz.RelayVisualizer:4
+#: tvm.contrib.nvcc.have_fp16:4 tvm.contrib.nvcc.have_fp8:4
+#: tvm.contrib.nvcc.have_int8:4 tvm.contrib.nvcc.have_tensorcore:4
+#: tvm.contrib.nvcc.parse_compute_version:4 tvm.contrib.pickle_memoize.Cache:4
+#: tvm.contrib.pickle_memoize.memoize:4 tvm.contrib.random.normal:6
+#: tvm.contrib.random.randint:6 tvm.contrib.random.uniform:8
+#: tvm.contrib.relay_viz.RelayVisualizer:4
 #: tvm.contrib.relay_viz.RelayVisualizer._add_nodes:4
 #: tvm.contrib.relay_viz.dot.DotGraph:6
 #: tvm.contrib.relay_viz.dot.DotGraph.edge:4
@@ -91,6 +92,7 @@ msgstr ""
 #: tvm.contrib.sparse.CSRPlaceholderOp.__init__:4
 #: tvm.contrib.sparse.SparsePlaceholderOp.__init__:4
 #: tvm.contrib.sparse.placeholder:4 tvm.contrib.spirv.optimize:6
+#: tvm.contrib.tar.normalize_file_list_by_unpacking_tars:11
 #: tvm.contrib.tar.tar:4 tvm.contrib.tar.untar:4 tvm.contrib.utils.FileLock:4
 #: tvm.contrib.utils.TempDirectory.relpath:4 tvm.contrib.utils.filelock:4
 #: tvm.contrib.utils.is_source_path:4 tvm.contrib.utils.tempdir:4
@@ -161,6 +163,7 @@ msgstr ""
 #: tvm.contrib.relay_viz.terminal.TermGraph.render:4
 #: tvm.contrib.rocblas.batch_matmul:15 tvm.contrib.rocblas.matmul:15
 #: tvm.contrib.rocm.find_lld:10 tvm.contrib.sparse.placeholder:21
+#: tvm.contrib.tar.normalize_file_list_by_unpacking_tars:19
 #: tvm.contrib.utils.TempDirectory.listdir:4
 #: tvm.contrib.utils.TempDirectory.relpath:9 tvm.contrib.utils.filelock:9
 #: tvm.contrib.utils.is_source_path:9 tvm.contrib.utils.tempdir:11
@@ -196,7 +199,7 @@ msgstr ""
 msgid "Create llvm text ir."
 msgstr ""
 
-#: of tvm.contrib.clang.create_llvm:6
+#: of tvm.contrib.cc.create_staticlib:10 tvm.contrib.clang.create_llvm:6
 msgid "inputs"
 msgstr ""
 
@@ -210,8 +213,9 @@ msgid "List of input files name or code source."
 msgstr ""
 
 #: of tvm.contrib.cc.create_executable:6 tvm.contrib.cc.create_shared:6
-#: tvm.contrib.clang.create_llvm:10 tvm.contrib.emcc.create_tvmjs_wasm:6
-#: tvm.contrib.ndk.create_shared:6 tvm.contrib.nnpack.convolution_inference:25
+#: tvm.contrib.cc.create_staticlib:6 tvm.contrib.clang.create_llvm:10
+#: tvm.contrib.emcc.create_tvmjs_wasm:6 tvm.contrib.ndk.create_shared:6
+#: tvm.contrib.nnpack.convolution_inference:25
 #: tvm.contrib.nnpack.convolution_inference_weight_transform:13
 #: tvm.contrib.nnpack.convolution_inference_without_weight_transform:25
 #: tvm.contrib.tar.tar:6 tvm.contrib.xcode.create_dylib:6
@@ -266,11 +270,12 @@ msgid "code"
 msgstr ""
 
 #: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
-#: tvm.contrib.clang.create_llvm:-1 tvm.contrib.emcc.create_tvmjs_wasm:-1
-#: tvm.contrib.ndk.create_shared:-1 tvm.contrib.nvcc.compile_cuda:-1
-#: tvm.contrib.nvcc.find_cuda_path:-1
+#: tvm.contrib.cc.create_staticlib:-1 tvm.contrib.clang.create_llvm:-1
+#: tvm.contrib.emcc.create_tvmjs_wasm:-1 tvm.contrib.ndk.create_shared:-1
+#: tvm.contrib.nvcc.compile_cuda:-1 tvm.contrib.nvcc.find_cuda_path:-1
 #: tvm.contrib.nvcc.get_target_compute_version:-1 tvm.contrib.nvcc.have_bf16:-1
-#: tvm.contrib.nvcc.have_int8:-1 tvm.contrib.nvcc.parse_compute_version:-1
+#: tvm.contrib.nvcc.have_fp8:-1 tvm.contrib.nvcc.have_int8:-1
+#: tvm.contrib.nvcc.parse_compute_version:-1
 #: tvm.contrib.relay_viz.dot.DotPlotter.create_graph:-1
 #: tvm.contrib.relay_viz.interface.Plotter.create_graph:-1
 #: tvm.contrib.relay_viz.interface.Plotter.render:-1
@@ -350,6 +355,7 @@ msgid "objects"
 msgstr ""
 
 #: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
+#: tvm.contrib.cc.create_staticlib:-1
 msgid "List[str]"
 msgstr ""
 
@@ -360,7 +366,7 @@ msgid "List of object files."
 msgstr ""
 
 #: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
-#: tvm.contrib.cc.cross_compiler:-1
+#: tvm.contrib.cc.create_staticlib:-1 tvm.contrib.cc.cross_compiler:-1
 #: tvm.contrib.cc.get_target_by_dump_machine:-1
 msgid "Optional[str]"
 msgstr ""
@@ -373,10 +379,28 @@ msgstr ""
 msgid "Create shared library."
 msgstr ""
 
-#: of tvm.contrib.cc.create_shared:6 tvm.contrib.emcc.create_tvmjs_wasm:6
-#: tvm.contrib.ndk.create_shared:6 tvm.contrib.tar.tar:6
-#: tvm.contrib.xcode.create_dylib:6
+#: of tvm.contrib.cc.create_shared:6 tvm.contrib.cc.create_staticlib:6
+#: tvm.contrib.emcc.create_tvmjs_wasm:6 tvm.contrib.ndk.create_shared:6
+#: tvm.contrib.tar.tar:6 tvm.contrib.xcode.create_dylib:6
 msgid "The target shared library."
+msgstr ""
+
+#: of tvm.contrib.cc.create_staticlib:1
+msgid "Create static library."
+msgstr ""
+
+#: of tvm.contrib.cc.create_staticlib:9
+msgid ""
+"List of inputs files. Each input file can be a tarball of objects or an "
+"object file."
+msgstr ""
+
+#: of tvm.contrib.cc.create_staticlib:12
+msgid "ar"
+msgstr ""
+
+#: of tvm.contrib.cc.create_staticlib:13
+msgid "Path to the ar command to be used"
 msgstr ""
 
 #: of tvm.contrib.cc.cross_compiler:1
@@ -1121,8 +1145,9 @@ msgid "The compilation target"
 msgstr ""
 
 #: of tvm.contrib.nvcc.get_target_compute_version:13
-#: tvm.contrib.nvcc.have_bf16:5 tvm.contrib.nvcc.have_int8:5
-#: tvm.contrib.nvcc.have_tensorcore:6 tvm.contrib.nvcc.parse_compute_version:6
+#: tvm.contrib.nvcc.have_bf16:5 tvm.contrib.nvcc.have_fp8:5
+#: tvm.contrib.nvcc.have_int8:5 tvm.contrib.nvcc.have_tensorcore:6
+#: tvm.contrib.nvcc.parse_compute_version:6
 msgid "compute_version"
 msgstr ""
 
@@ -1152,6 +1177,14 @@ msgstr ""
 
 #: of tvm.contrib.nvcc.have_fp16:6 tvm.contrib.nvcc.parse_compute_version:6
 msgid "compute capability of a GPU (e.g. \"6.0\")"
+msgstr ""
+
+#: of tvm.contrib.nvcc.have_fp8:1
+msgid "Whether fp8 support is provided in the specified compute capability or not"
+msgstr ""
+
+#: of tvm.contrib.nvcc.have_fp8:6
+msgid "GPU capability"
 msgstr ""
 
 #: of tvm.contrib.nvcc.have_int8:1
@@ -2079,6 +2112,45 @@ msgstr ""
 
 #: of tvm.contrib.tar:1
 msgid "Util to invoke tarball in the system."
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:1
+msgid "Normalize the file list by unpacking tars in list."
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:3
+msgid ""
+"When a filename is a tar, it will untar it into an unique dir in temp and"
+" return the list of files in the tar. When a filename is a normal file, "
+"it will be simply added to the list."
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:7
+msgid "This is useful to untar objects in tar and then turn them into a library."
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:13
+msgid "temp: tvm.contrib.utils.TempDirectory"
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:13
+msgid "A temp dir to hold the untared files."
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:16
+msgid "file_list: List[str]"
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:16
+msgid "List of path"
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:20
+msgid "ret_list: List[str]"
+msgstr ""
+
+#: of tvm.contrib.tar.normalize_file_list_by_unpacking_tars:21
+msgid "An updated list of files"
 msgstr ""
 
 #: of tvm.contrib.tar.tar:1

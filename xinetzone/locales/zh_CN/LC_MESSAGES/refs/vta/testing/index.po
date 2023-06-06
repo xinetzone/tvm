@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 
 #: ../../xin/refs/vta/testing/index.rst:3
 msgid "``vta.testing``"
+msgstr ""
+
+#: of vta.testing:1
+msgid "Testing utilities, this namespace is not imported by default."
 msgstr ""
 
 #~ msgid "Testing utilities, this namespace is not imported by default."

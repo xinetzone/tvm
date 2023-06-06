@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,22 @@ msgstr ""
 
 #: ../../xin/refs/vta/testing/utils.rst:3
 msgid "``vta.testing.utils``"
+msgstr ""
+
+#: of vta.testing.utils:1
+msgid "Test Utilities"
+msgstr ""
+
+#: of vta.testing.utils.run:1
+msgid "Run test function on all available env."
+msgstr ""
+
+#: of vta.testing.utils.run:4
+msgid "Parameters"
+msgstr ""
+
+#: of vta.testing.utils.run:5
+msgid "run_func : function(env, remote)"
 msgstr ""
 
 #~ msgid "Parameters"

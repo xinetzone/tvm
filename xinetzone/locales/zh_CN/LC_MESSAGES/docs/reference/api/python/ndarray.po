@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,8 @@ msgstr "目标不是重新构建另一个数组库。相反，这是最小的数
 msgid "Export the array for consumption by from_dlpack() as a DLPack capsule."
 msgstr "将 from_dlpack() 使用的数组导出为 DLPack capsule。"
 
-#: of tvm.runtime.ndarray.NDArray.__dlpack__:4
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.__init__:4
+#: tvm.runtime.ndarray.NDArray.__dlpack__:4
 #: tvm.runtime.ndarray.NDArray._create_view:16
 #: tvm.runtime.ndarray.NDArray.copyfrom:4 tvm.runtime.ndarray.NDArray.copyto:4
 #: tvm.runtime.ndarray.NDArray.same_as:4 tvm.runtime.ndarray.array:4
@@ -71,7 +72,8 @@ msgstr ""
 "Python 整数，表示指向 stream 的指针。stream 是由 consumer 提供给 producer，以指导 producer "
 "确保对数组的运算能够安全执行。"
 
-#: of tvm.nd.NDArray.to_dlpack:4 tvm.runtime.ndarray.NDArray.__dlpack__:11
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.to_dlpack:4
+#: tvm.runtime.ndarray.NDArray.__dlpack__:11
 #: tvm.runtime.ndarray.NDArray.copyfrom:9 tvm.runtime.ndarray.NDArray.numpy:4
 #: tvm.runtime.ndarray.NDArray.same_as:9 tvm.runtime.ndarray.array:15
 #: tvm.runtime.ndarray.empty:18
@@ -94,9 +96,29 @@ msgstr "数组的 DLPack 容器，包含 DLPackManagedTensor。"
 msgid "Return a tuple of device_type, device_id in DLPack convention"
 msgstr "根据 DLPack convention 返回 device_type 和 device_id 的元组"
 
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.__init__:1
+msgid "Initialize the function with handle"
+msgstr ""
+
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.__init__:5
+msgid "handle"
+msgstr ""
+
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.__init__:-1
+msgid "TVMArrayHandle"
+msgstr ""
+
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.__init__:6
+msgid "the handle to the underlying C++ TVMArray"
+msgstr ""
+
 #: of tvm.runtime.ndarray.NDArray.__setitem__:1
 msgid "Set ndarray value"
 msgstr "设置 ndarray 的值"
+
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase._copyto:1
+msgid "Internal function that implements copy to target ndarray."
+msgstr ""
 
 #: of tvm.runtime.ndarray.NDArray._create_view:1
 msgid "Create a view into an existing array."
@@ -245,15 +267,15 @@ msgstr ""
 msgid "Whether other is same as self."
 msgstr ""
 
-#: ../../../xinetzone/docstring of tvm.nd.NDArray.shape:1
+#: of tvm.nd.NDArray.shape:1
 msgid "Shape of this array"
 msgstr ""
 
-#: of tvm.nd.NDArray.to_dlpack:1
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.to_dlpack:1
 msgid "Produce an array from a DLPack Tensor without copying memory"
 msgstr ""
 
-#: of tvm.nd.NDArray.to_dlpack:5
+#: of tvm._ffi._ctypes.ndarray.NDArrayBase.to_dlpack:5
 msgid "dlpack : DLPack tensor view of the array data"
 msgstr ""
 

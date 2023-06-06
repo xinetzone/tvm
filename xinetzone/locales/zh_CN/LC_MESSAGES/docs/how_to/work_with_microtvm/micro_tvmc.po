@@ -8,206 +8,386 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 12:49+0800\n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.6.0\n"
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:4
-msgid ""
-"Click :ref:`here "
-"<sphx_glr_download_how_to_work_with_microtvm_micro_tvmc.py>` to download "
-"the full example code"
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:20004
+msgid "1. microTVM CLI Tool"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:13
-msgid "Executing a Tiny Model with TVMC Micro"
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:20005
+msgid "**Author**: [Mehrdad Hessar](https://github.com/mehrdadh)"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:14
-msgid "**Author**: `Mehrdad Hessar <https://github.com/mehrdadh>`_"
-msgstr ""
-
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:16
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:20007
 msgid ""
 "This tutorial explains how to compile a tiny model for a micro device, "
 "build a program on Zephyr platform to execute this model, flash the "
-"program and run the model all using `tvmc micro` command."
+"program and run the model all using `tvmc micro` command. You need to "
+"install python and Zephyr dependencies before processing with this "
+"tutorial."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:21
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:30002
+msgid "Install microTVM Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:30004
 msgid ""
-"This tutorial is explaining using TVMC Mirco on Zephyr platform. You need"
-" to install Zephyr dependencies before processing with this tutorial. "
-"Alternatively, you can run this tutorial in one of the following ways "
-"which has Zephyr depencencies already installed."
+"TVM does not include a package for Python serial communication, so we "
+"must install one before using microTVM. We will also need TFLite to load "
+"models."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:25
-msgid ""
-"Use `microTVM Reference Virtual Machines "
-"<https://tvm.apache.org/docs/how_to/work_with_microtvm/micro_reference_vm.html"
-"#sphx-glr-how-to-work-with-microtvm-micro-reference-vm-py>`_."
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:50002
+msgid "Install Zephyr"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:26
-msgid ""
-"Use QEMU docker image provided by TVM. Following these you will download "
-"and login to the docker image:"
-msgstr ""
-
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:35
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:70002
 msgid "Using TVMC Micro"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:37
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:70004
 msgid ""
 "TVMC is a command-line tool which is installed as a part of TVM Python "
-"packages. Accessing this package varies based on your machine setup. In "
-"many cases, you can use the ``tvmc`` command directly. Alternatively, if "
-"you have TVM as a Python module on your ``$PYTHONPATH``, you can access "
-"this driver with ``python -m tvm.driver.tvmc`` command. This tutorial "
-"will use TVMC command as ``tvmc`` for simplicity."
+"packages. Accessing this  package varies based on your machine setup. In "
+"many cases, you can use the ``tvmc`` command directly.  Alternatively, if"
+" you have TVM as a Python module on your ``$PYTHONPATH``, you can access "
+"this  driver with ``python -m tvm.driver.tvmc`` command. This tutorial "
+"will use TVMC command as  ``tvmc`` for simplicity."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:43
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:70010
 msgid "To check if you have TVMC command installed on your machine, you can run:"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:49
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:70015
 msgid ""
 "To compile a model for microtvm we use ``tvmc compile`` subcommand. The "
-"output of this command is used in next steps with ``tvmc micro`` "
+"output of this command  is used in next steps with ``tvmc micro`` "
 "subcommands. You can check the availability of TVMC Micro using:"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:57
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:70021
 msgid ""
 "The main tasks that you can perform using ``tvmc micro`` are ``create``, "
-"``build`` and ``flash``. To read about specific options under a givern "
-"subcommand, use ``tvmc micro <subcommand> --help``. We will use each "
+"``build`` and ``flash``.  To read about specific options under a givern "
+"subcommand, use  ``tvmc micro <subcommand> --help``. We will use each "
 "subcommand in this tutorial."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:63
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:80002
 msgid "Obtain a Tiny Model"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:65
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:80004
 msgid ""
-"For this tutorial, we will use Magic Wand model from tflite micro. Magic "
-"Wand is a Depthwise Convolution Layer model which recognizes gestures "
-"with an accelerometer."
+"For this tutorial, we will use Micro Speech model from tflite micro. "
+"Micro Speech is a  Depthwise Convolution Layer model to recognize "
+"keywords in speech."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:68
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:80007
 msgid "For this tutorial we will be using the model in tflite format."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:76
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:90002
 msgid "Compiling a TFLite model to a Model Library Format"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:78
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:90004
 msgid ""
 "Model Library Format (MLF) is an output format that TVM provides for "
-"micro targets. MLF is a tarball containing a file for each piece of the "
-"TVM compiler output which can be used on micro targets outside TVM "
+"micro targets. MLF is a tarball  containing a file for each piece of the "
+"TVM compiler output which can be used on micro targets outside  TVM "
 "environment. Read more about `Model Library Format "
-"<https://tvm.apache.org/docs//arch/model_library_format.html>`_."
+"<model_library_format>`."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:82
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:90008
 msgid ""
-"Here, we generate a MLF file for ``qemu_x86`` Zephyr board. To generate "
-"MLF output for the ``magic_wand`` tflite model:"
+"Here, we generate a MLF file for ``qemu_x86`` Zephyr board. You can "
+"chooses `aot` or `graph` executor type  to run this tutorial, however, we"
+" recommend to use `aot` for microTVM targets since `aot` uses ahead of "
+"time  compilation with static memory allocation. To generate MLF output "
+"for the ``micro_speech`` tflite model:"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:97
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:90022
 msgid ""
 "This will generate a ``model.tar`` file which contains TVM compiler "
-"output files. To run this command for a different Zephyr device, you need"
-" to update ``target``. For instance, for ``nrf5340dk_nrf5340_cpuapp`` "
-"board the target is ``--target='c -keys=cpu -link-params=0 "
-"-model=nrf5340dk'``."
+"output files. To run this command for  a different Zephyr device, you "
+"need to update ``target``. For instance, for ``nrf5340dk_nrf5340_cpuapp``"
+" board  the target is ``--target='c -keys=cpu -model=nrf5340dk'``."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:103
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:100002
 msgid "Create a Zephyr Project Using Model Library Format"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:105
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:100004
 msgid ""
 "To generate a Zephyr project we use TVM Micro subcommand ``create``. We "
-"pass the MLF format and the path for the project to ``create`` subcommand"
-" along with project options. Project options for each platform "
-"(Zephyr/Arduino) are defined in their Project API server file. To "
-"generate Zephyr project, run:"
+"pass the MLF format and the path  for the project to ``create`` "
+"subcommand along with project options. Project options for each  platform"
+" (Zephyr/Arduino) are defined in their Project API server file. To build"
+"  Zephyr project for a different Zephyr board, change ``zephyr_board`` "
+"project option.  To generate Zephyr project, run:"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:117
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:100017
 msgid ""
 "This will generate a ``Host-Driven`` Zephyr project for ``qemu_x86`` "
-"Zephyr board. In Host-Driven template project, the Graph Executor will "
+"Zephyr board. In Host-Driven template project,  the Graph Executor will "
 "run on host and perform the model execution on Zephyr device by issuing "
-"commands to the device using an RPC mechanism. Read more about `Host-"
-"Driven Execution <https://tvm.apache.org/docs/arch/microtvm_design.html"
-"#host-driven-execution>`_."
+"commands to the  device using an RPC mechanism. Read more about [Host-"
+"Driven Execution](https://tvm.apache.org/docs/arch/microtvm_design.html"
+"#host-driven-execution)."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:121
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:100021
 msgid "To get more information about TVMC Micro ``create`` subcommand:"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:129
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:110002
 msgid "Build and Flash Zephyr Project Using TVMC Micro"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:131
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:110004
 msgid ""
 "Next step is to build the Zephyr project which includes TVM generated "
-"code for running the tiny model, Zephyr template code to run a model in "
+"code for running the tiny model, Zephyr  template code to run a model in "
 "Host-Driven mode and TVM runtime source/header files. To build the "
 "project:"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:141
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:110012
 msgid ""
 "This will build the project in ``project`` directory and generates binary"
-" files under ``project/build``. To build Zephyr project for a different "
-"Zephyr board, change ``zephyr_board`` project option."
+" files under ``project/build``."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:144
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:110014
 msgid ""
 "Next, we flash the Zephyr binary file to Zephyr device. For ``qemu_x86`` "
-"Zephyr board this step does not actually perform any action since QEMU "
+"Zephyr board this step does not  actually perform any action since QEMU "
 "will be used, however you need this step for physical hardware."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:156
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:120002
 msgid "Run Tiny Model on Micro Target"
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:158
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:120004
 msgid ""
 "After flashing the device, the compiled model and TVM RPC server are "
-"programmed on the device. The Zephyr board is waiting for host to open a "
-"communication channel. MicroTVM devices typicall communicate using a "
+"programmed on the device.  The Zephyr board is waiting for host to open a"
+" communication channel. MicroTVM devices typicall communicate  using a "
 "serial communication (UART). To run the flashed model on the device using"
-" TVMC, we use ``tvmc run`` subcommand and pass ``--device micro`` to "
+" TVMC, we use ``tvmc run`` subcommand  and pass ``--device micro`` to "
 "specify the device type. This command will open a communication channel, "
-"set input values using ``Graph Executor`` on host and run full model on "
+"set input  values using ``Graph Executor`` on host and run full model on "
 "the device. Then it gets output from the device."
 msgstr ""
 
-#: ../../../xin/docs/how_to/work_with_microtvm/micro_tvmc.rst:181
+#: ../../xin/docs/how_to/work_with_microtvm/micro_tvmc.ipynb:130002
 msgid ""
 "Specifically, this command sets the input of the model to all ones and "
 "shows the four values of the output with their indices."
 msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_work_with_microtvm_micro_tvmc.py>` to"
+#~ " download the full example code"
+#~ msgstr ""
+
+#~ msgid "Executing a Tiny Model with TVMC Micro"
+#~ msgstr ""
+
+#~ msgid "**Author**: `Mehrdad Hessar <https://github.com/mehrdadh>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial explains how to compile"
+#~ " a tiny model for a micro "
+#~ "device, build a program on Zephyr "
+#~ "platform to execute this model, flash"
+#~ " the program and run the model "
+#~ "all using `tvmc micro` command."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial is explaining using TVMC"
+#~ " Mirco on Zephyr platform. You need"
+#~ " to install Zephyr dependencies before "
+#~ "processing with this tutorial. Alternatively,"
+#~ " you can run this tutorial in "
+#~ "one of the following ways which "
+#~ "has Zephyr depencencies already installed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use `microTVM Reference Virtual Machines "
+#~ "<https://tvm.apache.org/docs/how_to/work_with_microtvm/micro_reference_vm.html"
+#~ "#sphx-glr-how-to-work-with-"
+#~ "microtvm-micro-reference-vm-py>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use QEMU docker image provided by "
+#~ "TVM. Following these you will download"
+#~ " and login to the docker image:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVMC is a command-line tool which"
+#~ " is installed as a part of TVM"
+#~ " Python packages. Accessing this package"
+#~ " varies based on your machine setup."
+#~ " In many cases, you can use the"
+#~ " ``tvmc`` command directly. Alternatively, "
+#~ "if you have TVM as a Python "
+#~ "module on your ``$PYTHONPATH``, you can"
+#~ " access this driver with ``python -m"
+#~ " tvm.driver.tvmc`` command. This tutorial "
+#~ "will use TVMC command as ``tvmc`` "
+#~ "for simplicity."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To compile a model for microtvm we"
+#~ " use ``tvmc compile`` subcommand. The "
+#~ "output of this command is used in"
+#~ " next steps with ``tvmc micro`` "
+#~ "subcommands. You can check the "
+#~ "availability of TVMC Micro using:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The main tasks that you can "
+#~ "perform using ``tvmc micro`` are "
+#~ "``create``, ``build`` and ``flash``. To "
+#~ "read about specific options under a "
+#~ "givern subcommand, use ``tvmc micro "
+#~ "<subcommand> --help``. We will use each"
+#~ " subcommand in this tutorial."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For this tutorial, we will use "
+#~ "Magic Wand model from tflite micro. "
+#~ "Magic Wand is a Depthwise Convolution"
+#~ " Layer model which recognizes gestures "
+#~ "with an accelerometer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Model Library Format (MLF) is an "
+#~ "output format that TVM provides for "
+#~ "micro targets. MLF is a tarball "
+#~ "containing a file for each piece "
+#~ "of the TVM compiler output which "
+#~ "can be used on micro targets "
+#~ "outside TVM environment. Read more about"
+#~ " `Model Library Format "
+#~ "<https://tvm.apache.org/docs//arch/model_library_format.html>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here, we generate a MLF file for"
+#~ " ``qemu_x86`` Zephyr board. To generate "
+#~ "MLF output for the ``magic_wand`` tflite"
+#~ " model:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This will generate a ``model.tar`` file"
+#~ " which contains TVM compiler output "
+#~ "files. To run this command for a"
+#~ " different Zephyr device, you need to"
+#~ " update ``target``. For instance, for "
+#~ "``nrf5340dk_nrf5340_cpuapp`` board the target "
+#~ "is ``--target='c -keys=cpu -link-params=0 "
+#~ "-model=nrf5340dk'``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To generate a Zephyr project we "
+#~ "use TVM Micro subcommand ``create``. We"
+#~ " pass the MLF format and the "
+#~ "path for the project to ``create`` "
+#~ "subcommand along with project options. "
+#~ "Project options for each platform "
+#~ "(Zephyr/Arduino) are defined in their "
+#~ "Project API server file. To generate "
+#~ "Zephyr project, run:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This will generate a ``Host-Driven`` "
+#~ "Zephyr project for ``qemu_x86`` Zephyr "
+#~ "board. In Host-Driven template project,"
+#~ " the Graph Executor will run on "
+#~ "host and perform the model execution "
+#~ "on Zephyr device by issuing commands "
+#~ "to the device using an RPC "
+#~ "mechanism. Read more about `Host-Driven"
+#~ " Execution "
+#~ "<https://tvm.apache.org/docs/arch/microtvm_design.html#host-"
+#~ "driven-execution>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Next step is to build the Zephyr"
+#~ " project which includes TVM generated "
+#~ "code for running the tiny model, "
+#~ "Zephyr template code to run a "
+#~ "model in Host-Driven mode and TVM"
+#~ " runtime source/header files. To build "
+#~ "the project:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This will build the project in "
+#~ "``project`` directory and generates binary "
+#~ "files under ``project/build``. To build "
+#~ "Zephyr project for a different Zephyr"
+#~ " board, change ``zephyr_board`` project "
+#~ "option."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Next, we flash the Zephyr binary "
+#~ "file to Zephyr device. For ``qemu_x86``"
+#~ " Zephyr board this step does not "
+#~ "actually perform any action since QEMU"
+#~ " will be used, however you need "
+#~ "this step for physical hardware."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After flashing the device, the compiled"
+#~ " model and TVM RPC server are "
+#~ "programmed on the device. The Zephyr "
+#~ "board is waiting for host to open"
+#~ " a communication channel. MicroTVM devices"
+#~ " typicall communicate using a serial "
+#~ "communication (UART). To run the flashed"
+#~ " model on the device using TVMC, "
+#~ "we use ``tvmc run`` subcommand and "
+#~ "pass ``--device micro`` to specify the"
+#~ " device type. This command will open"
+#~ " a communication channel, set input "
+#~ "values using ``Graph Executor`` on host"
+#~ " and run full model on the "
+#~ "device. Then it gets output from "
+#~ "the device."
+#~ msgstr ""
 
