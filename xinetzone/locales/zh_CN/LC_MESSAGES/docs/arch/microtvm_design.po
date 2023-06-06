@@ -186,7 +186,7 @@ msgid ""
 "apples-to-apples search results, and to avoid wasting time during the "
 "search by attempting to compile invalid code for a target."
 msgstr ""
-"TVM 的基于搜索的优化方法允许其在实验结果方面避免大部分系统级目标建模。然而，一些建模是必要的，以确保TVM比较苹果和苹果的搜索结果，并避免在搜索期间尝试为目标编译无效代码而浪费时间。"
+"TVM 的基于搜索的优化方法允许其在实验结果方面避免大部分系统级目标建模。然而，一些建模是必要的，以确保 TVM 比较 apples-to-apples 的搜索结果，并避免在搜索期间尝试为目标编译无效代码而浪费时间。"
 
 #: ../../docs/arch/microtvm_design.rst:101
 msgid "microTVM models these parts of the target:"
