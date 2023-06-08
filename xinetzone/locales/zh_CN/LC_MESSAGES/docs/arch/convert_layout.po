@@ -340,6 +340,7 @@ msgid ""
 "into the category of lightly-sensitive operator. The PR shows how to "
 "handle the layout inference for batch norm."
 msgstr ""
+"`Batch Norm 的布局推断 <https://github.com/apache/tvm/pull/4600>`_ - Batch Norm 属于轻度敏感算子的范畴。该 PR 展示了如何处理 Batch Norm 的布局推断。"
 
 #: ../../docs/arch/convert_layout.rst:269
 msgid ""
@@ -348,4 +349,4 @@ msgid ""
 "operators, one might have to do python callback as well. The PR shows how"
 " to define a python callback function for Convolution operator."
 msgstr ""
-
+"`卷积 <https://github.com/apache/tvm/pull/4335>`_ 的 Python 回调 - 对于高度敏感的算子，有时需要进行 Python 回调。该 PR 展示了如何为卷积算子定义 Python 回调函数。"

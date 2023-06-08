@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../docs/arch/frontend/tensorflow.rst:19
 msgid "TensorFlow Frontend"
-msgstr ""
+msgstr "TensorFlow 前端"
 
 #: ../../docs/arch/frontend/tensorflow.rst:21
 msgid "The TensorFlow frontend helps in importing TensorFlow models into TVM."
-msgstr ""
+msgstr "TensorFlow 前端有助于将 TensorFlow 模型导入 TVM。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:23
 msgid "Supported versions:"
-msgstr ""
+msgstr "受支持版本:"
 
 #: ../../docs/arch/frontend/tensorflow.rst:25
 msgid "1.12 and below"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../docs/arch/frontend/tensorflow.rst:27
 msgid "Tested models:"
-msgstr ""
+msgstr "测试模型:"
 
 #: ../../docs/arch/frontend/tensorflow.rst:29
 msgid "Inception (V1/V2/V3/V4)"
@@ -59,11 +59,11 @@ msgstr ""
 
 #: ../../docs/arch/frontend/tensorflow.rst:36
 msgid "Preparing a Model for Inference"
-msgstr ""
+msgstr "为推理准备模型"
 
 #: ../../docs/arch/frontend/tensorflow.rst:39
 msgid "Remove Unneeded Nodes"
-msgstr ""
+msgstr "移除不必要的节点"
 
 #: ../../docs/arch/frontend/tensorflow.rst:41
 msgid ""
@@ -71,10 +71,11 @@ msgid ""
 "inference, but unfortunately will leave some remaining. The nodes that "
 "should be manually removed are:"
 msgstr ""
+"导出过程将删除许多在推理中不需要的节点，但不幸的是会留下一些剩余的节点。应该手动删除的节点有："
 
 #: ../../docs/arch/frontend/tensorflow.rst:43
 msgid "Dropout, including `Dropout`_ and `DropoutWrapper`_"
-msgstr ""
+msgstr "Dropout, 包括 `Dropout`_ 和 `DropoutWrapper`_"
 
 #: ../../docs/arch/frontend/tensorflow.rst:44
 msgid "`Assert`_"
@@ -82,7 +83,7 @@ msgstr ""
 
 #: ../../docs/arch/frontend/tensorflow.rst:51
 msgid "Convert None Dimensions to Constants"
-msgstr ""
+msgstr "将 None 尺寸的值转换为常量。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:53
 msgid ""
@@ -92,10 +93,12 @@ msgid ""
 "shape like ``(1,20)``. The model should be modified accordingly to ensure"
 " that these shapes match throughout the graph."
 msgstr ""
+""TVM 对动态张量形状的支持非常有限。应将 ``None`` 的尺寸替换为常量。"
+"例如，模型可能会接受形状为 ``(None,20)`` 的输入。这应该转换为类似于 ``(1,20)`` 的形状。应相应地修改模型，以确保这些形状在整个图中匹配。""
 
 #: ../../docs/arch/frontend/tensorflow.rst:56
 msgid "Export"
-msgstr ""
+msgstr "导出"
 
 #: ../../docs/arch/frontend/tensorflow.rst:58
 msgid ""
@@ -104,6 +107,8 @@ msgid ""
 "needed by the TensorFlow frontend can be extracted from the active "
 "session, or by using the `TFParser`_ helper class."
 msgstr ""
+"TensorFlow 前端期望冻结的 protobuf（.pb）或 saved_model 的模型作为输入。"
+"它目前不支持 checkpoint（.ckpt）。TensorFlow 前端需要的 graphdef 可以从活动的 sess 中提取，或者使用 `TFParser`_ 辅助类来获取。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:62
 msgid ""
@@ -113,6 +118,8 @@ msgid ""
 "into the graph. Here is one function to export a model as a protobuf "
 "given a session:"
 msgstr ""
+"为了准备模型进行推断，应使用多种转换方式导出模型。"
+"同时，设置 ```add_shapes=True``` 非常重要，因为这会将每个节点的输出形状嵌入到图中。以下是一种导出模型的 protobuf 函数，只需提供会话即可：""
 
 #: ../../docs/arch/frontend/tensorflow.rst:96
 msgid ""
@@ -120,14 +127,16 @@ msgid ""
 "<https://github.com/tensorflow/models/tree/master/research/slim"
 "#exporting-the-inference-graph>`_."
 msgstr ""
+"另一种方法是 `导出并冻结图 <https://github.com/tensorflow/models/tree/master/research/slim"
+"#exporting-the-inference-graph>`_。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:99
 msgid "Import the Model"
-msgstr ""
+msgstr "导入模型"
 
 #: ../../docs/arch/frontend/tensorflow.rst:102
 msgid "Explicit Shape:"
-msgstr ""
+msgstr "明确的形状（Explicit Shape）："
 
 #: ../../docs/arch/frontend/tensorflow.rst:104
 msgid ""
@@ -137,10 +146,11 @@ msgid ""
 "<https://github.com/apache/tvm/blob/main/tests/python/frontend/tensorflow/test_forward.py#L36>`_"
 " for examples."
 msgstr ""
+"为确保形状可以在整个图中被知晓，在调用 ```from_tensorflow``` 时请传递 ```shape``` 参数。该字典将输入名称映射到输入形状。请参考这些测试用例获取示例。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:107
 msgid "Data Layout"
-msgstr ""
+msgstr "数据布局"
 
 #: ../../docs/arch/frontend/tensorflow.rst:109
 msgid ""
@@ -149,26 +159,30 @@ msgid ""
 "can automatically convert the model's data layout by passing the argument"
 " ```layout='NCHW'``` to ```from_tensorflow```."
 msgstr ""
+"大多数 TensorFlow 模型都以 NHWC 布局发布。"
+"NCHW 布局通常可以提供更好的性能，尤其是在 GPU 上。TensorFlow 前端可以通过向 ```from_tensorflow``` 传递参数 ```layout='NCHW'``` 来自动转换模型的数据布局。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:112
 msgid "Best Practices"
-msgstr ""
+msgstr "最佳实践"
 
 #: ../../docs/arch/frontend/tensorflow.rst:114
 msgid ""
 "Use static tensor shapes instead of dynamic shapes (remove ```None``` "
 "dimensions)."
 msgstr ""
+"使用静态张量形状而不是动态形状（移除 ```None``` 维度）。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:115
 msgid ""
 "Use static RNN instead of dynamic RNN, as ```TensorArray``` isn't "
 "supported yet."
 msgstr ""
+"使用静态 RNN 而不是动态 RNN，因为 ```TensorArray``` 目前还不受支持。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:118
 msgid "Supported Ops"
-msgstr ""
+msgstr "受支持算子"
 
 #: ../../docs/arch/frontend/tensorflow.rst:120
 msgid "Abs"
