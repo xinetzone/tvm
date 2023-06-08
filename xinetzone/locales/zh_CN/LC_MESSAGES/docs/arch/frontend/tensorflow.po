@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../docs/arch/frontend/tensorflow.rst:51
 msgid "Convert None Dimensions to Constants"
-msgstr "将 None 尺寸的值转换为常量。"
+msgstr "将 None 尺寸的值转换为常量"
 
 #: ../../docs/arch/frontend/tensorflow.rst:53
 msgid ""
@@ -93,8 +93,8 @@ msgid ""
 "shape like ``(1,20)``. The model should be modified accordingly to ensure"
 " that these shapes match throughout the graph."
 msgstr ""
-""TVM 对动态张量形状的支持非常有限。应将 ``None`` 的尺寸替换为常量。"
-"例如，模型可能会接受形状为 ``(None,20)`` 的输入。这应该转换为类似于 ``(1,20)`` 的形状。应相应地修改模型，以确保这些形状在整个图中匹配。""
+"TVM 对动态张量形状的支持非常有限。应将 ``None`` 的尺寸替换为常量。"
+"例如，模型可能会接受形状为 ``(None,20)`` 的输入。这应该转换为类似于 ``(1,20)`` 的形状。应相应地修改模型，以确保这些形状在整个图中匹配。"
 
 #: ../../docs/arch/frontend/tensorflow.rst:56
 msgid "Export"
