@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/arch/convert_layout.rst:18
 msgid "Convert Layout Pass"
-msgstr ""
+msgstr "转换布局 Pass"
 
 #: ../../docs/arch/convert_layout.rst:19
 msgid "**Author**: `Animesh Jain <https://github.com/anijain2305>`_"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: ../../docs/arch/convert_layout.rst:23
 msgid "1. Background"
-msgstr ""
+msgstr "1. 背景"
 
 #: ../../docs/arch/convert_layout.rst:25
 msgid ""
@@ -41,6 +41,10 @@ msgid ""
 "tiled in 2 dimensions to exploit data locality efficiently. Similarly, "
 "CUDA backend prefers the data layout to be in NCHW format."
 msgstr ""
+"数据布局格式描述了数据在内存中的排列方式。"
+"例如，Tensorflow 框架卷积运算符的默认数据布局为 NHWC，即数据为四维，以行优先格式排列，其中 N 是第一维，C 是最后一维。"
+"数据布局在模型性能中起着重要作用，对空间和时间局部性有着显著影响。"
+"例如，TVM 中的 Intel x86 后端喜欢使用 NCHWc 布局，其中 C 维度在 2 个维度上被铺设(tiled)以有效地利用数据局部性。同样，CUDA 后端喜欢数据布局以 NCHW 格式排列。"
 
 #: ../../docs/arch/convert_layout.rst:27
 msgid ""
@@ -52,16 +56,20 @@ msgid ""
 "Therefore, we developed a new Relay pass - **ConvertLayout** -- to reduce"
 " some of the complications that arise due to layout handling."
 msgstr ""
+"实际上，在编译器工具链中，TVM 必须处理数据布局 - 框架解析器、Relay 布局转换和 TOPI 调度。"
+"随着我们向第三方代码生成集成的发展，可能会有他们自己的数据布局限制，在 TVM 工具链的所有级别处理布局将变得更加具有挑战性。"
+"因此，TVM 开发了新的 Relay pass—— **ConvertLayout** ——以减少由于布局处理而产生的一些复杂性。"
 
 #: ../../docs/arch/convert_layout.rst:29
 msgid ""
 "If you directly want to understand the usage of ConvertLayout Pass, "
 "directly jump to Section 4 - Usage."
 msgstr ""
+"如果您想直接了解 ConvertLayout Pass 的用法，请直接跳到第 4 节 —— 用法。"
 
 #: ../../docs/arch/convert_layout.rst:33
 msgid "2. Motivation and Overview"
-msgstr ""
+msgstr "2. 动机和概述"
 
 #: ../../docs/arch/convert_layout.rst:35
 msgid ""
@@ -75,32 +83,38 @@ msgid ""
 "and can use TOPI schedules. However, this can lead to performance "
 "degradation because of the presence of too many layout transforms."
 msgstr ""
+"让我们看简单的场景，以了解由于不同布局而产生的复杂性——假设我们想要为 ARM 边缘设备编译 Tensorflow NHWC Graph。"
+"但是，假设我们目前在 ARM 上仅支持 NCHW 调度。因此，框架布局与 TOPI 支持的布局之间存在不匹配。"
+"处理此不匹配的一种方法是在每个卷积之前和之后插入布局转换，以便生成的卷积具有 NCHW 输入数据布局并可以使用 TOPI 调度。但是，由于存在过多的布局转换，这可能会导致性能下降。"
 
 #: ../../docs/arch/convert_layout.rst:37
 msgid "We encountered similar problems in other use cases as well"
-msgstr ""
+msgstr "在其他用例中也遇到了类似的问题"
 
 #: ../../docs/arch/convert_layout.rst:39
 msgid ""
 "No way to run TFLite graphs on Nvidia GPUs. TOPI has NCHW-only schedules "
 "for GPUs."
 msgstr ""
+"无法在 Nvidia GPU 上运行 TFLite 图。TOPI 仅为 GPU 提供 NCHW 调度。"
 
 #: ../../docs/arch/convert_layout.rst:40
 msgid ""
 "Ever-complicating logic in AlterOpLayout for convolution to support "
 "different pairs of layout transformations."
 msgstr ""
+"AlterOpLayout中的逻辑越来越复杂，以支持不同的布局转换对。"
 
 #: ../../docs/arch/convert_layout.rst:41
 msgid "Sub-optimal performance for TF graphs due to extra layout transforms."
-msgstr ""
+msgstr "由于额外的布局转换，TF graphs 的性能不够优化。"
 
 #: ../../docs/arch/convert_layout.rst:42
 msgid ""
 "Complication in third-party codegen integrations like TensorRT that "
 "prefers data layout to be in one format."
 msgstr ""
+"第三方代码生成集成（如 TensorRT）中的复杂性，它偏好数据布局为一种格式。"
 
 #: ../../docs/arch/convert_layout.rst:44
 msgid ""
@@ -110,10 +124,12 @@ msgid ""
 "only 2 layout transforms for data, one at the start and one at the end. "
 "An example to show the transformation is below"
 msgstr ""
+"为了解决这些问题，引入了 *ConvertLayout* 传递，建立基础设施以使用最少的数据布局转换改变整个 Graph 的数据布局。"
+"在理想情况下，将只对数据进行两次布局转换，一次在开始时，一次在结束时。下面是一个示例，展示了该转换过程。"
 
 #: ../../docs/arch/convert_layout.rst:73
 msgid "3. Design"
-msgstr ""
+msgstr "3. 设计"
 
 #: ../../docs/arch/convert_layout.rst:75
 msgid ""
@@ -122,12 +138,14 @@ msgid ""
 "categorization will be useful later to understand Convertlayout pass "
 "details."
 msgstr ""
+"在深入了解 ConvertLayout 传递之前，让我们根据算子对其进行分类，分为三类，这种分类将有助于后面理解 ConvertLayout 传递的详细信息。"
 
 #: ../../docs/arch/convert_layout.rst:77
 msgid ""
 "**Layout agnostic** - Relu, pow etc. These operators are not affected, "
 "neither functionality nor performance, by data layouts."
 msgstr ""
+"**布局无关** (Layout agnostic) - Relu、pow 等。这些算子不受数据布局的影响，既不会影响其功能，也不会影响性能。"
 
 #: ../../docs/arch/convert_layout.rst:78
 msgid ""
@@ -137,6 +155,8 @@ msgid ""
 " difference is not significant. For these operators, it is beneficial to "
 "just adapt to the previous operator output data layout."
 msgstr ""
+"**轻度布局敏感** (Lightly-layout sensitive) - pad、concatenate、reduce 等算子。"
+"如果在它们之前进行布局转换，这些算子的某些属性将受到功能影响。然而，就性能而言，差异并不显著。对于这些算子，只需适应前一个算子的输出数据布局即可。"
 
 #: ../../docs/arch/convert_layout.rst:79
 msgid ""
@@ -149,6 +169,8 @@ msgid ""
 "layout governed by the output of these *heavliy-layout sensitive* "
 "operators."
 msgstr ""
+"**重度布局敏感** (Heavily-layout sensitive) - 卷积、conv2d_transpose 等算子。这些算子在功能和性能上都受到数据布局的重大影响，同时它们的算子属性也是数据布局。"
+"通常情况下，对于这些算子，修改输入数据布局是有益的（如果输入数据布局不是有效的），而其余的“布局无关”和“轻度布局敏感”的算子则适应于这些“重度布局敏感”算子所控制的布局。"
 
 #: ../../docs/arch/convert_layout.rst:82
 msgid ""
@@ -164,6 +186,11 @@ msgid ""
 "automatic layout transform insertion module to handle data layouts. So, "
 "the whole process can be broken down into 3 steps:"
 msgstr ""
+"现在让我们来看一下两个相关的 Relay 算子属性。每个 Relay 算子都有属性，比如 InferType，可以由 TVM 开发人员定义。"
+"通常情况下，Relay pass 逐个遍历图中的算子，并读取这些算子的属性。"
+"例如，InferType pass 查看一个算子的 InferType 属性，确定其输出形状和类型，然后将其传递给下一个算子的 InferType 属性。"
+"类似地，在我们的上下文中，我们有两个这样的属性 - *FTVMConvertLayout* 和 *FInferCorrectLayout*。"
+"ConvertLayout pass 遍历整个图，查看这两个属性以及一个自动布局转换插入模块来处理数据布局。因此，整个过程可以分为三个步骤："
 
 #: ../../docs/arch/convert_layout.rst:84
 msgid ""
@@ -173,6 +200,8 @@ msgid ""
 "developer's ease. This is used only for heavily-layout sensitive "
 "operators."
 msgstr ""
+"运行 FTVMConvertLayout 属性 - 这使开发人员可以将原始的 Relay expr 转换为具有新布局的新的 Relay expr，从而允许用户定义布局更改。"
+"开发人员可以使用 Python 回调函数来方便地进行操作。这仅用于对布局敏感的算子。"
 
 #: ../../docs/arch/convert_layout.rst:85
 msgid ""
@@ -183,6 +212,9 @@ msgid ""
 "lightly-layout sensitive operators to adapt its attributes to new data "
 "layouts. Layout inference happens for each operator."
 msgstr ""
+"运行 FTVMInferCorretLayout 属性 - 我们可以将其视为布局推断。"
+"它查看原始输入布局和新输入布局，这些新布局来自于先前的算子或 FTVMConvertLayout 修改后的表达式（如果使用了该属性）。"
+"这可以被轻度布局敏感的算子用来适应新的数据布局。每个算子都进行布局推断。"
 
 #: ../../docs/arch/convert_layout.rst:86
 msgid ""
@@ -192,6 +224,7 @@ msgid ""
 "inserts a layout transform. Therefore, a developer does not need to do "
 "anything for this component."
 msgstr ""
+"自动插入布局转换 - 前面的布局推断步骤为输入表达式设置了新的布局。如果这些布局与原始布局不同，则该组件会自动插入布局转换。因此，开发人员不需要对此组件进行任何操作。"
 
 #: ../../docs/arch/convert_layout.rst:88
 msgid ""
@@ -200,6 +233,7 @@ msgid ""
 "finally resulting in modifying the whole graph operator-by-operator. Now,"
 " let's look at a couple of examples of how to define the two properties."
 msgstr ""
+"这些步骤按顺序逐个算子进行，其中 ConvertLayout 步骤不断将新布局传递给下一个算子的属性，最终逐个算子修改整个图。现在，让我们来看几个定义这两个属性的示例。"
 
 #: ../../docs/arch/convert_layout.rst:90
 msgid ""
@@ -210,6 +244,8 @@ msgid ""
 "needed. One example for convolution operator is as follows where we are "
 "converting to NCHW layout."
 msgstr ""
+"**FTVMConvertLayout** - 用于布局修改的 Python 回调 - 这用于 *极其敏感于布局* 的算子。"
+"例如，可以返回新的卷积算子，其中包括新的数据和核布局。另外两个组件将推断布局并在必要时插入布局转换。卷积算子的示例如下，将其转换为 NCHW 布局。"
 
 #: ../../docs/arch/convert_layout.rst:143
 msgid ""
@@ -225,6 +261,11 @@ msgid ""
 "adapt to the new data layout, preventing insertion of layout transforms. "
 "Let's look at a couple of examples to understand this better."
 msgstr ""
+"**FInferCorrectLayout - 布局推断** - 目前，此属性仅在 C++ 中公开。"
+"该函数接受原始输入布局和新的输入布局（从上一个算子或来自用于布局修改的 python 回调传递），并推断出最终的数据布局。"
+"布局推断对每个算子都进行调用。使用方式可能因不同算子类别而异。对于不考虑布局的算子，我们只需在此函数中返回新的数据布局即可。"
+"对于轻度敏感和极度敏感于布局的算子，我们可以更改算子属性（如 concatenate 的 axis，pad 的 pad_width），以便我们可以适应新的数据布局，避免插入布局转换。"
+"让我们看几个例子来更好地理解这个过程。"
 
 #: ../../docs/arch/convert_layout.rst:145
 msgid ""
@@ -240,10 +281,11 @@ msgid ""
 "go from NHWC to NCHW data layout. (Similar handling also needs to be for "
 "heavily-layout sensitive operators)"
 msgstr ""
+"第一个例子是针对不考虑布局的算子。这些算子没有任何受数据布局影响的算子属性，因此我们只需适应新的布局。"
 
 #: ../../docs/arch/convert_layout.rst:229
 msgid "4. Usage"
-msgstr ""
+msgstr "4. 用法"
 
 #: ../../docs/arch/convert_layout.rst:232
 msgid ""
@@ -251,6 +293,7 @@ msgid ""
 "default relay.build pipeline. The intended usage is to call it between "
 "the framework-to-relay parser and relay.build module call."
 msgstr ""
+"ConvertLayout pass 的使用非常容易。该 pass 不是默认的 relay.build 管道的一部分。其预期的使用方法是在从框架到 relay 的解析器和 relay.build 模块调用之间调用它。"
 
 #: ../../docs/arch/convert_layout.rst:234
 msgid ""
@@ -265,6 +308,10 @@ msgid ""
 "layouts i.e. `{'nn.conv2d': ['NCHW', 'default']} == {'nn.conv2d': "
 "['NCHW', 'OIHW']}`"
 msgstr ""
+"为了指定要转换的布局，我们创建了一个映射，将布局敏感的算子映射到该算子所需的布局列表。"
+"下面的第一个例子指定了数据布局，我们允许内核布局自动转换为 TVM 支持的内核布局（针对特定的数据布局和算子）。"
+"这是通过使用 \"default\" 关键字指定的。第二个示例展示了如何转换为我们选择的特定内核布局。"
+"值得注意的是，以下示例将转换为相同的布局，即 `{'nn.conv2d': ['NCHW', 'default']} == {'nn.conv2d': ['NCHW', 'OIHW']}`。"
 
 #: ../../docs/arch/convert_layout.rst:264
 msgid ""
@@ -273,6 +320,7 @@ msgid ""
 "which should explicitly state the expected layout. In the examples above "
 "it's [data_layout, kernel_layout]."
 msgstr ""
+"布局的顺序由 `register_convert_op_layout(\"OPNAME\")` 的实现定义，您可以参考 docstring，其中应明确说明预期的布局。在上面的例子中，它是 [data_layout, kernel_layout]。"
 
 #: ../../docs/arch/convert_layout.rst:266
 msgid ""
@@ -282,6 +330,8 @@ msgid ""
 " operator whose layouts need special handling as described in Section 3. "
 "Some pull requests that can help in such a situation are"
 msgstr ""
+"当前实现支持几乎所有常用于图像分类模型中的算子。"
+"但是，如果在图中遇到太多的数据布局转换，很可能存在一些需要特殊处理布局的算子，如第 3 节所述。一些 pull requests 可以在这种情况下提供帮助，它们包括："
 
 #: ../../docs/arch/convert_layout.rst:268
 msgid ""
