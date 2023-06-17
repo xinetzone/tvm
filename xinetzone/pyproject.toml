@@ -13,22 +13,7 @@ authors = [
     {name = "xinetzone", email = "xinzone@outlook.com"},
 ]
 dependencies = [
-    "synr",
-    "attrs",
-    "decorator",
-    "psutil",
-    "typing_extensions",
-    "scipy>=1.9.3",
-    # "importlib-metadata>=4.12",
-    "pytest",
-    "graphviz",
-    "pybind11",
-    "cython",
-    "pythran",
-    "cloudpickle",
-    "black",
-    "plotly",
-    "d2py",
+
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -40,7 +25,7 @@ Home = "https://github.com/xinetzone/tvm"
 [project.optional-dependencies]
 doc = [
   "xyzstyle",
-  "sphinx>4",
+  "sphinx>5",
   "sphinx_book_theme",
   "autodocsumm",
   "sphinx_copybutton",
@@ -54,6 +39,22 @@ doc = [
   "sphinxext-rediraffe",
   "pydata-sphinx-theme",
   "sphinxcontrib-mermaid",
+]
+dev = [
+  "scipy>=1.9.3",
+  "plotly",
+  "d2py",
+  "graphviz",
+  "pybind11",
+  "cython",
+  # "pythran",
+  "cloudpickle",
+  "synr",
+  "attrs",
+  "decorator",
+  "psutil",
+  # "typing_extensions",
+  # "black",
 ]
 
 [build-system]
