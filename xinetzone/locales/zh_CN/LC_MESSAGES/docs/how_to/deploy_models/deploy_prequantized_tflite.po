@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-06-25 10:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20003
-msgid "Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20002
+msgid "使用 TVM 部署框架: 预量化模型-第3部分(TFLite)"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20004
@@ -26,176 +26,152 @@ msgid "**Author**: [Siju Samuel](https://github.com/siju-samuel)"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20006
-msgid ""
-"Welcome to part 3 of the Deploy Framework-Prequantized Model with TVM "
-"tutorial. In this part, we will start with a Quantized TFLite graph and "
-"then compile and execute it via TVM."
+msgid "欢迎来到部署框架的第3部分——使用 TVM 预量化模型教程。"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20008
+msgid "在这一部分中，将从量化的 TFLite graph 开始，然后通过 TVM 编译和执行它。"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20010
 msgid ""
-"For more details on quantizing the model using TFLite, readers are "
-"encouraged to go through [Converting Quantized "
-"Models](https://www.tensorflow.org/lite/convert/quantization)."
+"有关使用 TFLite 量化模型的更多细节，建议读者阅读 "
+"[转换量化模型](https://www.tensorflow.org/lite/convert/quantization)。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20013
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20012
 msgid ""
-"The TFLite models can be downloaded from this "
-"[link](https://www.tensorflow.org/lite/guide/hosted_models)."
+"TFLite 模型可以从这个 "
+"[hosted_models](https://www.tensorflow.org/lite/guide/hosted_models) 下载。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20015
-msgid ""
-"To get started, Tensorflow and TFLite package needs to be installed as "
-"prerequisite."
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20014
+msgid "开始之前，需要先安装 Tensorflow 和 TFLite 包。"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:20022
-msgid ""
-"Now please check if TFLite package is installed successfully, ``python -c"
-" \"import tflite\"``"
+msgid "现在请检查 TFLite 包是否安装成功，``python -c \"import tflite\"``"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:40002
-msgid "Necessary imports"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:30002
+msgid "必需的导入"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:60002
-msgid "Download pretrained Quantized TFLite model"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:50002
+msgid "下载预训练的量化 TFLite 模型"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:80002
-msgid "Utils for downloading and extracting zip files"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:70002
+msgid "Utils 用于下载和解压zip文件"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:90002
+msgid "加载测试图片"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:100002
-msgid "Load a test image"
+msgid "获取真实图像进行端到端（e2e）测试"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:110002
-msgid "Get a real image for e2e testing"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:120002
+msgid "加载 tflite 模型"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:130002
-msgid "Load a tflite model"
+msgid "现在我们可以打开 mobilenet_v2_1.0_224.tflite"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:140002
-msgid "Now we can open mobilenet_v2_1.0_224.tflite"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:150002
+msgid "让我们运行 TFLite 预量化模型推断并获得 TFLite 预测。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:160002
-msgid ""
-"Lets run TFLite pre-quantized model inference and get the TFLite "
-"prediction."
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:170002
+msgid "让我们运行 TVM 编译的预量化模型推断并获得 TVM 预测。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:180002
-msgid ""
-"Lets run TVM compiled pre-quantized model inference and get the TVM "
-"prediction."
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:190002
+msgid "TFLite 推理"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:200002
-msgid "TFLite inference"
+msgid "在量化模型上运行 TFLite 推理。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:210002
-msgid "Run TFLite inference on the quantized model."
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:220002
+msgid "TVM 编译和推断"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:230002
-msgid "TVM compilation and inference"
-msgstr ""
-
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:240002
 msgid ""
-"We use the TFLite-Relay parser to convert the TFLite pre-quantized graph "
-"into Relay IR. Note that frontend parser call for a pre-quantized model "
-"is exactly same as frontend parser call for a FP32 model. We encourage "
-"you to remove the comment from print(mod) and inspect the Relay module. "
-"You will see many QNN operators, like, Requantize, Quantize and QNN "
-"Conv2D."
+"我们使用 TFLite-Relay 解析器将 TFLite 预量化图转换为 Relay IR。请注意，预量化模型的前端解析器调用与 FP32 "
+"模型的前端解析器调用完全相同。我们建议你删除 print(mod) 中的注释，并检查 Relay 模块。您将看到许多 QNN 算子，如 "
+"Requantize、Quantize 和 QNN Conv2D。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:260002
-msgid ""
-"Lets now the compile the Relay module. We use the \"llvm\" target here. "
-"Please replace it with the target platform that you are interested in."
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:250002
+msgid "现在让我们编译 Relay 模块。我们在这里使用“llvm”目标。请替换为您感兴趣的目标平台。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:280002
-msgid "Finally, lets call inference on the TVM compiled module."
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:270002
+msgid "最后，让我们在 TVM 编译模块上调用推断。"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:290002
+msgid "Accuracy 对比"
 msgstr ""
 
 #: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:300002
-msgid "Accuracy comparison"
-msgstr ""
-
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:310002
 msgid ""
-"Print the top-5 labels for MXNet and TVM inference. Checking the labels "
-"because the requantize implementation is different between TFLite and "
-"Relay. This cause final output numbers to mismatch. So, testing accuracy "
-"via labels."
+"打印 MXNet 和 TVM 推理的 top-5 标签。检查标签，因为 TFLite 和 Relay "
+"的重量化实现不同。这导致最终输出的数字不匹配。因此，通过标签来测试准确性。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:330002
-msgid "Measure performance"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:320002
+msgid "性能度量"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:330003
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:320004
+msgid "文中给出了如何测量 TVM 编译模型性能的例子。"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340005
 msgid ""
-"Here we give an example of how to measure performance of TVM compiled "
-"models."
+"除非硬件对快速 8 位指令有特殊支持，否则量化模型不会比 FP32 模型更快。如果没有快速的 8 位指令，TVM 在 16 "
+"位中进行量化卷积，即使模型本身是 8 位。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350006
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340007
 msgid ""
-"For x86, the best performance can be achieved on CPUs with AVX512 "
-"instructions set.   In this case, TVM utilizes the fastest available 8 "
-"bit instructions for the given target.   This includes support for the "
-"VNNI 8 bit dot product instruction (CascadeLake or newer).   For EC2 "
-"C5.12x large instance, TVM latency for this tutorial is ~2 ms."
+"对于 x86，在指令集为 AVX512 的 CPU 上可以达到最好的性能。在这种情况下，TVM 为给定目标利用最快的 8 位指令。这包括对 "
+"VNNI 8 位点积指令（CascadeLake 或更新的）的支持。对于 EC2 C5.12x 大型实例，本教程的TVM延迟约为 2 ms。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350011
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340009
 msgid ""
-"Intel conv2d NCHWc schedule on ARM gives better end-to-end latency "
-"compared to ARM NCHW   conv2d spatial pack schedule for many TFLite "
-"networks. ARM winograd performance is higher but   it has a high memory "
-"footprint."
+"在许多 TFLite 网络中，Intel conv2d NCHWc 调度比 ARM NCHW conv2d 空间包调度具有更好的端到端延迟。ARM"
+" winograd 的性能更高，但它占用的内存也更多。"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350015
-msgid "Moreover, the following general tips for CPU performance equally applies:"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340011
+msgid "此外，以下关于 CPU 性能的一般提示同样适用："
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350017
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340012
+msgid "将环境变量 TVM_NUM_THREADS 设置为物理核数"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340013
 msgid ""
-"Set the environment variable TVM_NUM_THREADS to the number of physical "
-"cores"
+"为你的硬件选择最佳的目标，例如 \"llvm -mcpu=cascadelake\" 或 \"llvm -mcpu=skylake-"
+"avx512\" （将来会有更多带有 AVX512 的 CPU）"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350018
-msgid ""
-"Choose the best target for your hardware, such as \"llvm -mcpu=skylake-"
-"avx512\" or \"llvm -mcpu=cascadelake\" (more CPUs with AVX512 would come "
-"in the future)"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340014
+msgid "[执行自动调优](tune_relay_x86)"
 msgstr ""
 
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350020
-msgid ""
-"Perform autotuning - `Auto-tuning a convolution network for x86 CPU "
-"<tune_relay_x86>`."
-msgstr ""
-
-#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:350022
-msgid ""
-"To get best inference performance on ARM CPU, change target argument "
-"according to your device and follow `Auto-tuning a convolution network "
-"for ARM CPU <tune_relay_arm>`.</p></div>"
+#: ../../xin/docs/how_to/deploy_models/deploy_prequantized_tflite.ipynb:340015
+msgid "为了在 ARM CPU 上获得最佳的推理性能，请根据您的设备更改目标参数并遵循 [](tune_relay_arm)"
 msgstr ""
 
 #~ msgid ""
@@ -283,5 +259,186 @@ msgstr ""
 #~ "according to your device and follow "
 #~ ":ref:`Auto-tuning a convolution network "
 #~ "for ARM CPU <tune_relay_arm>`."
+#~ msgstr ""
+
+#~ msgid "Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Welcome to part 3 of the Deploy"
+#~ " Framework-Prequantized Model with TVM "
+#~ "tutorial. In this part, we will "
+#~ "start with a Quantized TFLite graph "
+#~ "and then compile and execute it "
+#~ "via TVM."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For more details on quantizing the "
+#~ "model using TFLite, readers are "
+#~ "encouraged to go through [Converting "
+#~ "Quantized "
+#~ "Models](https://www.tensorflow.org/lite/convert/quantization)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The TFLite models can be downloaded "
+#~ "from this "
+#~ "[link](https://www.tensorflow.org/lite/guide/hosted_models)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To get started, Tensorflow and TFLite"
+#~ " package needs to be installed as "
+#~ "prerequisite."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now please check if TFLite package "
+#~ "is installed successfully, ``python -c "
+#~ "\"import tflite\"``"
+#~ msgstr ""
+
+#~ msgid "Necessary imports"
+#~ msgstr ""
+
+#~ msgid "Download pretrained Quantized TFLite model"
+#~ msgstr ""
+
+#~ msgid "Utils for downloading and extracting zip files"
+#~ msgstr ""
+
+#~ msgid "Load a test image"
+#~ msgstr ""
+
+#~ msgid "Get a real image for e2e testing"
+#~ msgstr ""
+
+#~ msgid "Load a tflite model"
+#~ msgstr ""
+
+#~ msgid "Now we can open mobilenet_v2_1.0_224.tflite"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lets run TFLite pre-quantized model "
+#~ "inference and get the TFLite prediction."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lets run TVM compiled pre-quantized "
+#~ "model inference and get the TVM "
+#~ "prediction."
+#~ msgstr ""
+
+#~ msgid "TFLite inference"
+#~ msgstr ""
+
+#~ msgid "Run TFLite inference on the quantized model."
+#~ msgstr ""
+
+#~ msgid "TVM compilation and inference"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We use the TFLite-Relay parser to"
+#~ " convert the TFLite pre-quantized "
+#~ "graph into Relay IR. Note that "
+#~ "frontend parser call for a pre-"
+#~ "quantized model is exactly same as "
+#~ "frontend parser call for a FP32 "
+#~ "model. We encourage you to remove "
+#~ "the comment from print(mod) and inspect"
+#~ " the Relay module. You will see "
+#~ "many QNN operators, like, Requantize, "
+#~ "Quantize and QNN Conv2D."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lets now the compile the Relay "
+#~ "module. We use the \"llvm\" target "
+#~ "here. Please replace it with the "
+#~ "target platform that you are interested"
+#~ " in."
+#~ msgstr ""
+
+#~ msgid "Finally, lets call inference on the TVM compiled module."
+#~ msgstr ""
+
+#~ msgid "Accuracy comparison"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Print the top-5 labels for MXNet "
+#~ "and TVM inference. Checking the labels"
+#~ " because the requantize implementation is"
+#~ " different between TFLite and Relay. "
+#~ "This cause final output numbers to "
+#~ "mismatch. So, testing accuracy via "
+#~ "labels."
+#~ msgstr ""
+
+#~ msgid "Measure performance"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here we give an example of how "
+#~ "to measure performance of TVM compiled"
+#~ " models."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For x86, the best performance can "
+#~ "be achieved on CPUs with AVX512 "
+#~ "instructions set.   In this case, TVM"
+#~ " utilizes the fastest available 8 bit"
+#~ " instructions for the given target.   "
+#~ "This includes support for the VNNI "
+#~ "8 bit dot product instruction "
+#~ "(CascadeLake or newer).   For EC2 C5.12x"
+#~ " large instance, TVM latency for this"
+#~ " tutorial is ~2 ms."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Intel conv2d NCHWc schedule on ARM "
+#~ "gives better end-to-end latency "
+#~ "compared to ARM NCHW   conv2d spatial"
+#~ " pack schedule for many TFLite "
+#~ "networks. ARM winograd performance is "
+#~ "higher but   it has a high memory"
+#~ " footprint."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Moreover, the following general tips for"
+#~ " CPU performance equally applies:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set the environment variable TVM_NUM_THREADS"
+#~ " to the number of physical cores"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Choose the best target for your "
+#~ "hardware, such as \"llvm -mcpu=skylake-"
+#~ "avx512\" or \"llvm -mcpu=cascadelake\" (more"
+#~ " CPUs with AVX512 would come in "
+#~ "the future)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Perform autotuning - `Auto-tuning a "
+#~ "convolution network for x86 CPU "
+#~ "<tune_relay_x86>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To get best inference performance on "
+#~ "ARM CPU, change target argument "
+#~ "according to your device and follow "
+#~ "`Auto-tuning a convolution network for"
+#~ " ARM CPU <tune_relay_arm>`.</p></div>"
 #~ msgstr ""
 

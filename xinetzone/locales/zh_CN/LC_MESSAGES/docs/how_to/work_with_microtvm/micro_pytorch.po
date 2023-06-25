@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 09:43+0800\n"
+"POT-Creation-Date: 2023-06-25 10:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,104 +17,191 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20004
-msgid "4. microTVM PyTorch Tutorial"
+#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20002
+msgid "4. microTVM PyTorch 教程"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20005
+#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20003
 msgid "**Authors**: [Mehrdad Hessar](https://github.com/mehrdadh)"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20008
+#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20006
 msgid ""
-"This tutorial is showcasing microTVM host-driven AoT compilation with a "
-"PyTorch model. This tutorial can be executed on a x86 CPU using C runtime"
-" (CRT)."
+"本教程展示了使用 PyTorch 模型的 MicroTVM 主机驱动 AoT 编译。此教程可以在使用 C 运行时（CRT）的 x86 CPU "
+"上执行。"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20011
-msgid ""
-"**Note:** This tutorial only runs on x86 CPU using CRT and does not run "
-"on Zephyr since the model would not fit on our current supported Zephyr "
-"boards."
+#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:20009
+msgid "此教程仅在使用 CRT 的 x86 CPU 上运行，无法在 Zephyr 上运行，因为该模型不适合我们当前支持的 Zephyr 开发板。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:30002
-msgid "Install microTVM Python dependencies"
+msgid "安装 microTVM Python 依赖"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:30004
-msgid ""
-"TVM does not include a package for Python serial communication, so we "
-"must install one before using microTVM. We will also need TFLite to load "
-"models."
+msgid "TVM 不包括 Python 串行通信包，因此在使用 microTVM 之前我们必须安装一个。我们还需要 TFLite 来加载模型。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:60002
-msgid "Load a pre-trained PyTorch model"
+msgid "加载预训练 PyTorch 模型"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:60004
-msgid ""
-"To begin with, load pre-trained MobileNetV2 from torchvision. Then, "
-"download a cat image and preprocess it to use as the model input."
+msgid "首先，从 torchvision 中加载预训练的 MobileNetV2。接下来，下载一张猫的图片并对其进行预处理以用作模型输入。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:80002
-msgid "Define Target, Runtime and Executor"
+msgid "定义 Target，Runtime 和 Executor"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:80004
 msgid ""
-"In this tutorial we use AOT host-driven executor. To compile the model "
-"for an emulated embedded environment on an x86 machine we use C runtime "
-"(CRT) and we use `host` micro target. Using this setup, TVM compiles the "
-"model for C runtime which can run on a x86 CPU machine with the same flow"
-" that would run on a physical microcontroller. CRT Uses the main() from "
-"`src/runtime/crt/host/main.cc` To use physical hardware, replace `board` "
-"with another physical micro target, e.g. `nrf5340dk_nrf5340_cpuapp` or "
-"`mps2_an521` and change the platform type to Zephyr. See more target "
-"examples in `Training Vision Models for microTVM on Arduino <tutorial-"
-"micro-train-arduino>` and `microTVM TFLite "
-"Tutorial<tutorial_micro_tflite>`."
+"在本教程中，使用 AOT 主机驱动执行器。为了将模型编译为在 x86 机器上模拟的嵌入式环境，使用 C 运行时（CRT），并使用 `host` "
+"微目标。使用这种设置，TVM 编译了用于 C 运行时的模型，该模型可以在与物理微控制器相同的流程下在 x86 CPU 机器上运行。CRT 使用 "
+"`src/runtime/crt/host/main.cc` 中的 main() 函数。要使用物理硬件，请将 `board` "
+"替换为另一个物理微目标，例如 `nrf5340dk_nrf5340_cpuapp` 或 `mps2_an521`，并将平台类型更改为 "
+"Zephyr。在 [Training Vision Models for microTVM on Arduino](tutorial-micro-"
+"train-arduino) 和 [microTVM TFLite Tutorial](tutorial_micro_tflite) "
+"中可以找到更多目标示例。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:100002
-msgid "Compile the model"
+msgid "编译模型"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:100004
-msgid "Now, we compile the model for the target:"
+msgid "现在，将模型编译为目标平台："
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:120002
-msgid "Create a microTVM project"
+msgid "创建 microTVM project"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:120004
 msgid ""
-"Now that we have the compiled model as an IRModule, we need to create a "
-"firmware project to use the compiled model with microTVM. To do this, we "
-"use Project API."
+"既然将编译后的模型作为 IRModule，需要创建固件（firmware）项目，以便使用 microTVM 来使用编译后的模型。为此，使用 "
+"Project API。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:140002
-msgid "Build, flash and execute the model"
+msgid "构建，烧录并执行模型"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:140003
+#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:140004
 msgid ""
-"Next, we build the microTVM project and flash it. Flash step is specific "
-"to physical microcontroller and it is skipped if it is simulating a "
-"microcontroller via the host `main.cc`` or if a Zephyr emulated board is "
-"selected as the target."
+"接下来，构建 microTVM 项目并将其烧录（flash）。如果是通过主机的 `main.cc` "
+"模拟微控制器（microcontroller），或者选择了 Zephyr 模拟板作为目标，则跳过烧录步骤，因为烧录步骤是针对物理微控制器的。"
 msgstr ""
 
 #: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:160002
-msgid "Look up synset name"
+msgid "查询 synset 名称"
 msgstr ""
 
-#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:160003
-msgid "Look up prediction top 1 index in 1000 class synset."
+#: ../../xin/docs/how_to/work_with_microtvm/micro_pytorch.ipynb:160004
+msgid "查询在 1000 个类别的同义词集中预测的 top 1 索引。"
 msgstr ""
+
+#~ msgid "4. microTVM PyTorch Tutorial"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial is showcasing microTVM "
+#~ "host-driven AoT compilation with a "
+#~ "PyTorch model. This tutorial can be "
+#~ "executed on a x86 CPU using C "
+#~ "runtime (CRT)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Note:** This tutorial only runs on "
+#~ "x86 CPU using CRT and does not "
+#~ "run on Zephyr since the model "
+#~ "would not fit on our current "
+#~ "supported Zephyr boards."
+#~ msgstr ""
+
+#~ msgid "Install microTVM Python dependencies"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM does not include a package for"
+#~ " Python serial communication, so we "
+#~ "must install one before using microTVM."
+#~ " We will also need TFLite to "
+#~ "load models."
+#~ msgstr ""
+
+#~ msgid "Load a pre-trained PyTorch model"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To begin with, load pre-trained "
+#~ "MobileNetV2 from torchvision. Then, download"
+#~ " a cat image and preprocess it "
+#~ "to use as the model input."
+#~ msgstr ""
+
+#~ msgid "Define Target, Runtime and Executor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this tutorial we use AOT "
+#~ "host-driven executor. To compile the "
+#~ "model for an emulated embedded "
+#~ "environment on an x86 machine we "
+#~ "use C runtime (CRT) and we use "
+#~ "`host` micro target. Using this setup,"
+#~ " TVM compiles the model for C "
+#~ "runtime which can run on a x86 "
+#~ "CPU machine with the same flow "
+#~ "that would run on a physical "
+#~ "microcontroller. CRT Uses the main() "
+#~ "from `src/runtime/crt/host/main.cc` To use "
+#~ "physical hardware, replace `board` with "
+#~ "another physical micro target, e.g. "
+#~ "`nrf5340dk_nrf5340_cpuapp` or `mps2_an521` and "
+#~ "change the platform type to Zephyr. "
+#~ "See more target examples in `Training"
+#~ " Vision Models for microTVM on "
+#~ "Arduino <tutorial-micro-train-arduino>` "
+#~ "and `microTVM TFLite "
+#~ "Tutorial<tutorial_micro_tflite>`."
+#~ msgstr ""
+
+#~ msgid "Compile the model"
+#~ msgstr ""
+
+#~ msgid "Now, we compile the model for the target:"
+#~ msgstr ""
+
+#~ msgid "Create a microTVM project"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now that we have the compiled "
+#~ "model as an IRModule, we need to"
+#~ " create a firmware project to use "
+#~ "the compiled model with microTVM. To "
+#~ "do this, we use Project API."
+#~ msgstr ""
+
+#~ msgid "Build, flash and execute the model"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Next, we build the microTVM project "
+#~ "and flash it. Flash step is "
+#~ "specific to physical microcontroller and "
+#~ "it is skipped if it is simulating"
+#~ " a microcontroller via the host "
+#~ "`main.cc`` or if a Zephyr emulated "
+#~ "board is selected as the target."
+#~ msgstr ""
+
+#~ msgid "Look up synset name"
+#~ msgstr ""
+
+#~ msgid "Look up prediction top 1 index in 1000 class synset."
+#~ msgstr ""
 
