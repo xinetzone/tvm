@@ -73,7 +73,3 @@ path = "src/tvmx/__about__.py"
 # "../build/libvta_fsim.so" = "../../3rdparty/vta-hw/build/libvta_fsim.so"
 # "../build/libvta_tsim.so" = "../../3rdparty/vta-hw/build/libvta_tsim.so"
 # "../3rdparty/vta-hw/config/" = "../../3rdparty/vta-hw/config"
-
-# [pypi.extra]
-# url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-# # verify_ssl = false
