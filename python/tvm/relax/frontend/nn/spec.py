@@ -106,7 +106,7 @@ class MethodSpec:
         for arg_name in arg_names:
             arg_spec = spec[arg_name]
             if arg_spec is Int or arg_spec is int:
-                arg_spec = arg_spec()
+                arg_spec = Int()
             elif isinstance(arg_spec, str) and arg_spec == "int":
                 arg_spec = Int()
             elif isinstance(arg_spec, (Int, Tensor)):
@@ -117,9 +117,13 @@ class MethodSpec:
         return MethodSpec(method, arg_names, arg_specs)
 
     @staticmethod
-    def from_torch(torch_args: List[Any], method: Callable) -> "MethodSpec":
+    def from_torch(args: List[Any], method: Callable) -> "MethodSpec":
         """Converts a list of torch tensors to MethodSpec."""
-        raise NotImplementedError
+        from .torch import (  # pylint: disable=import-outside-toplevel
+            _method_spec_from_torch,
+        )
+
+        return _method_spec_from_torch(args, method)
 
     def as_inputs(self) -> List[Union[tir.Var, core.Tensor]]:
         """Convert the MethodSpec to a list of inputs to Module's method."""
