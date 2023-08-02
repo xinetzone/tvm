@@ -160,7 +160,7 @@ def add_partition_function(ref_call, new_args, ctx):
 @register_partition_function("multiply")
 def multiply_partition_function(ref_call, new_args, ctx):
     """Rewrite function for ewise multiply for partition"""
-    return mul_partition_generic(ref_call, new_args, ctx)
+    return add_partition_generic(ref_call, new_args, ctx)
 
 
 # add cast after the relu op to make it run on vta
