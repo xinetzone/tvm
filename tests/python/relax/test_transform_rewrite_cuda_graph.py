@@ -21,6 +21,10 @@ from tvm.script import tir as T, relax as R, ir as I
 import tvm.testing
 
 
+class BaseCompare(tvm.testing.CompareBeforeAfter):
+    transform = relax.transform.RewriteCUDAGraph()
+
+
 def test_rewrite_cuda_graph():
     # fmt: off
     @I.ir_module
@@ -38,7 +42,7 @@ def test_rewrite_cuda_graph():
 
 
         @R.function
-        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((10,), dtype="float32"):
+        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((2,4), dtype="float32"):
             # force_pure is expected because purity checking should be disabled before this pass
             R.func_attr({"relax.force_pure": True})
             cls = Before
@@ -107,7 +111,7 @@ def test_rewrite_cuda_graph():
             return gv
 
         @R.function
-        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((10,), dtype="float32"):
+        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((2,4), dtype="float32"):
             # this comes after RemovePurityChecking, so we expect purity to be forced
             R.func_attr({"relax.force_pure": True})
             cls = Expected
@@ -258,7 +262,7 @@ def test_vm_builtin():
 
 
         @R.function
-        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((10,), dtype="float32"):
+        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((2,4), dtype="float32"):
             # force_pure is expected because purity checking should be disabled before this pass
             R.func_attr({"relax.force_pure": True})
             cls = Before
@@ -314,7 +318,7 @@ def test_vm_builtin():
             return gv
 
         @R.function
-        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((10,), dtype="float32"):
+        def main(x: R.Tensor((2, 4), dtype="float32")) -> R.Tensor((2,4), dtype="float32"):
             R.func_attr({"relax.force_pure": True})
             cls = Expected
             gv: R.Tuple(R.Object, R.Object) = R.call_builtin_with_ctx("vm.builtin.cuda_graph.get_cached_alloc", (cls.cuda_graph_alloc, R.prim_value(0)), sinfo_args=(R.Tuple(R.Object, R.Object),))
@@ -659,6 +663,18 @@ def test_capture_fixed_inputs():
     mod["main"] = mod["main"].with_attr({"num_input": 1})
     after = relax.transform.RewriteCUDAGraph()(mod)
     tvm.ir.assert_structural_equal(after, after)
+
+
+class TestNullValue(BaseCompare):
+    class before:
+        @R.function
+        def main() -> R.Tuple(R.Object):
+            _io: R.Object = R.null_value()
+            lv: R.Tuple(R.Object) = (_io,)
+            gv: R.Tuple(R.Object) = lv
+            return gv
+
+    expected = before
 
 
 if __name__ == "__main__":

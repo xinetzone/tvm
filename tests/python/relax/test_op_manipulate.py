@@ -73,6 +73,9 @@ def test_reshape_infer_struct_info():
     )
     _check_inference(bb, relax.op.reshape(x0, (-1,)), relax.TensorStructInfo((120,), "float32"))
     _check_inference(
+        bb, relax.op.reshape(x0, relax.ShapeExpr([-1])), relax.TensorStructInfo((120,), "float32")
+    )
+    _check_inference(
         bb, relax.op.reshape(x1, (3, 8, 5)), relax.TensorStructInfo((3, 8, 5), "float32")
     )
     _check_inference(
@@ -1201,6 +1204,7 @@ def test_concat_infer_struct_info_with_axis_shape_symbolic():
     c = tir.Var("c", "int64")
     x0 = relax.Var("x", R.Tensor((a0, b0, c), "float32"))
     x1 = relax.Var("x", R.Tensor((a1, b0, c), "float32"))
+    x2 = relax.Var("x", R.Tensor((a0, b0, c), "float32"))
     y = relax.Var("y", R.Tensor((a0, b1, c), "float32"))
     z = relax.Var("z", R.Tensor((a0, b2, c), "float32"))
 
@@ -1221,6 +1225,11 @@ def test_concat_infer_struct_info_with_axis_shape_symbolic():
         bb,
         relax.op.concat(relax.Tuple([x0, y, z]), axis=1),
         relax.TensorStructInfo((a0, b0 + b1 + b2, c), "float32"),
+    )
+    _check_inference(
+        bb,
+        relax.op.concat(relax.Tuple([x0, x2]), axis=1),
+        relax.TensorStructInfo((a0, b0 * 2, c), "float32"),
     )
 
 

@@ -42,8 +42,7 @@ class TorchFXImporter:
         self.create_convert_map()
 
     ########## Utilities ##########
-    @staticmethod
-    def _fetch_attr(model, target: str):
+    def _fetch_attr(self, model, target: str):
         import torch  # type: ignore
 
         target_atoms = target.split(".")
@@ -55,6 +54,10 @@ class TorchFXImporter:
                 )
             attr_itr = getattr(attr_itr, atom)
         if isinstance(attr_itr, torch.Tensor):
+            # Its possible for the resulting tensor to be a parameter.
+            # If so, return the parameter instead.
+            if attr_itr in self.params:
+                return self.params[attr_itr]
             return TorchFXImporter._convert_torch_tensor_to_relax(attr_itr)
         return attr_itr
 
@@ -662,6 +665,13 @@ class TorchFXImporter:
         bias = None if module.bias is None else self.params[module.bias]
         return self.block_builder.emit(relax.op.linear(x, weight, bias, "float32"))
 
+    def _linear_functional(self, node: fx.node.Node) -> relax.Var:
+        args = self.retrieve_args(node)
+        x = args[0]
+        weight = args[1]
+        bias = args[2] if len(args) > 2 else None
+        return self.block_builder.emit(relax.op.linear(x, weight, bias, "float32"))
+
     def _conv1d(self, node: fx.node.Node) -> relax.Var:
         x = self.env[node.args[0]]
         module = self.named_modules[node.target]
@@ -690,13 +700,71 @@ class TorchFXImporter:
 
         return self.block_builder.emit(relax.op.add(conv1d, bias))
 
-    def _conv2d(self, node: fx.node.Node) -> relax.Var:
+    def _conv2d_impl(
+        self,
+        x: relax.Expr,
+        weight: relax.Expr,
+        bias: Optional[relax.Expr],
+        strides: Optional[Tuple],
+        padding: Optional[Tuple],
+        dilation: Optional[Tuple],
+        groups: Optional[Tuple],
+    ):
+        conv2d = self.block_builder.emit(
+            relax.op.nn.conv2d(
+                x,
+                weight,
+                strides=strides,
+                padding=padding,
+                dilation=dilation,
+                groups=groups,
+                data_layout="NCHW",
+                kernel_layout="OIHW",
+                out_dtype="float32",
+            )
+        )
+
+        if bias is None:
+            return conv2d
+        assert len(self.shape_of(bias)) == 1
+        bias = relax.op.reshape(bias, (1, -1, 1, 1))
+        return self.block_builder.emit(relax.op.add(conv2d, bias))
+
+    def _conv1d_transpose(self, node: fx.node.Node) -> relax.Var:
         x = self.env[node.args[0]]
         module = self.named_modules[node.target]
         weight = self.params[module.weight]
 
-        conv2d = self.block_builder.emit(
-            relax.op.nn.conv2d(
+        conv1d_transpose = self.block_builder.emit(
+            relax.op.nn.conv1d_transpose(
+                x,
+                weight,
+                strides=module.stride,
+                padding=module.padding,
+                dilation=module.dilation,
+                groups=module.groups,
+                data_layout="NCW",
+                kernel_layout="OIW",
+                out_dtype="float32",
+            )
+        )
+
+        if module.bias is None:
+            return conv1d_transpose
+
+        bias = self.params[module.bias]
+        assert len(self.shape_of(bias)) == 1
+        bias = relax.op.reshape(bias, (1, -1, 1))
+
+        return self.block_builder.emit(relax.op.add(conv1d_transpose, bias))
+
+    def _conv2d_transpose(self, node: fx.node.Node) -> relax.Var:
+        x = self.env[node.args[0]]
+        module = self.named_modules[node.target]
+        weight = self.params[module.weight]
+
+        conv2d_transpose = self.block_builder.emit(
+            relax.op.nn.conv2d_transpose(
                 x,
                 weight,
                 strides=module.stride,
@@ -710,13 +778,50 @@ class TorchFXImporter:
         )
 
         if module.bias is None:
-            return conv2d
+            return conv2d_transpose
 
         bias = self.params[module.bias]
         assert len(self.shape_of(bias)) == 1
         bias = relax.op.reshape(bias, (1, -1, 1, 1))
 
-        return self.block_builder.emit(relax.op.add(conv2d, bias))
+        return self.block_builder.emit(relax.op.add(conv2d_transpose, bias))
+
+    def _conv2d(self, node: fx.node.Node) -> relax.Var:
+        x = self.env[node.args[0]]
+        module = self.named_modules[node.target]
+        weight = self.params[module.weight]
+        bias = None
+        if module.bias is not None:
+            bias = self.params[module.bias]
+
+        return self._conv2d_impl(
+            x,
+            weight,
+            bias=bias,
+            strides=module.stride,
+            padding=module.padding,
+            dilation=module.dilation,
+            groups=module.groups,
+        )
+
+    def _conv2d_functional(self, node: fx.node.Node) -> relax.Var:
+        args = self.retrieve_args(node)
+        x = args[0]
+        weight = args[1]
+        bias = args[2] if len(args) > 2 else None
+        stride = args[3] if len(args) > 3 else 1
+        padding = args[4] if len(args) > 4 else 0
+        dilation = args[5] if len(args) > 5 else 1
+        groups = args[6] if len(args) > 6 else 1
+        return self._conv2d_impl(
+            x,
+            weight,
+            bias=bias,
+            strides=stride,
+            padding=padding,
+            dilation=dilation,
+            groups=groups,
+        )
 
     def _max_pool2d(self, node: fx.node.Node) -> relax.Var:
         x = self.env[node.args[0]]
@@ -804,6 +909,17 @@ class TorchFXImporter:
             dim = node.args[1] if nargs > 1 else node.kwargs["dim"]
         assert dim is not None
         return self.block_builder.emit(relax.op.nn.softmax(x, dim))
+
+    def _log_softmax(self, node: fx.node.Node) -> relax.Var:
+        x = self.env[node.args[0]]
+        if node.target in self.named_modules:
+            module = self.named_modules[node.target]
+            dim = module.dim
+        else:
+            nargs = len(node.args)
+            dim = node.args[1] if nargs > 1 else node.kwargs["dim"]
+        assert dim is not None
+        return self.block_builder.emit(relax.op.nn.log_softmax(x, dim))
 
     def _leakyrelu(self, node: fx.node.Node) -> relax.Var:
         x = self.env[node.args[0]]
@@ -1150,15 +1266,21 @@ class TorchFXImporter:
             nn.Linear: self._linear,
             nn.Conv1d: self._conv1d,
             nn.Conv2d: self._conv2d,
+            nn.ConvTranspose1d: self._conv1d_transpose,
+            nn.ConvTranspose2d: self._conv2d_transpose,
             nn.MaxPool2d: self._max_pool2d,
             nn.AvgPool2d: self._avg_pool2d,
             nn.AdaptiveAvgPool2d: self._adaptive_avg_pool2d(is_module=True),
             nn.Softmax: self._softmax,
+            nn.LogSoftmax: self._log_softmax,
             nn.ReLU: lambda node: self.block_builder.emit(relax.op.nn.relu(self.env[node.args[0]])),
             nn.LeakyReLU: self._leakyrelu,
             nn.ReLU6: lambda node: self.block_builder.emit(
                 relax.op.clip(self.env[node.args[0]], 0, 6)
             ),
+            nn.GELU: self._gelu,
+            nn.Sigmoid: self._sigmoid,
+            nn.Tanh: lambda node: self.block_builder.emit(relax.op.tanh(self.env[node.args[0]])),
             nn.SiLU: lambda node: self.block_builder.emit(relax.op.nn.silu(self.env[node.args[0]])),
             nn.Flatten: self._flatten,
             nn.BatchNorm2d: self._batch_norm_2d,
@@ -1199,6 +1321,8 @@ class TorchFXImporter:
             "type": self._type,
             "astype": self._type,
             "matmul": self._matmul,
+            "conv2d": self._conv2d_functional,
+            "linear": self._linear_functional,
             "addmm": self._addmm,
             "baddbmm": self._baddbmm,
             "bmm": self._matmul,
@@ -1219,6 +1343,7 @@ class TorchFXImporter:
             "argmax": self._argmax_argmin(relax.op.argmax),
             "argmin": self._argmax_argmin(relax.op.argmin),
             "softmax": self._softmax,
+            "log_softmax": self._log_softmax,
             "dropout": lambda node: self.env[node.args[0]],
             "clamp": self._clamp,
             "relu": lambda node: self.block_builder.emit(relax.op.nn.relu(self.env[node.args[0]])),
@@ -1321,7 +1446,7 @@ class TorchFXImporter:
                             output = self.block_builder.emit_output(args[0])
                         break
                     elif node.op == "get_attr":
-                        self.env[node] = TorchFXImporter._fetch_attr(model, node.target)
+                        self.env[node] = self._fetch_attr(model, node.target)
                     elif node.op == "call_module":
                         module = self.named_modules[node.target]
                         assert (
