@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-08-24 18:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,6 +88,7 @@ msgstr ""
 #: tvm._ffi.runtime_ctypes.Device.device_name:8
 #: tvm._ffi.runtime_ctypes.Device.driver_version:11
 #: tvm._ffi.runtime_ctypes.Device.exist:8
+#: tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:6
 #: tvm._ffi.runtime_ctypes.Device.max_clock_rate:8
 #: tvm._ffi.runtime_ctypes.Device.max_shared_memory_per_block:8
 #: tvm._ffi.runtime_ctypes.Device.max_thread_dimensions:8
@@ -105,6 +106,7 @@ msgid "version"
 msgstr ""
 
 #: of tvm._ffi.runtime_ctypes.Device.api_version:-1
+#: tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:-1
 #: tvm._ffi.runtime_ctypes.Device.max_clock_rate:-1
 #: tvm._ffi.runtime_ctypes.Device.max_shared_memory_per_block:-1
 #: tvm._ffi.runtime_ctypes.Device.max_threads_per_block:-1
@@ -232,6 +234,34 @@ msgstr ""
 
 #: of tvm._ffi.runtime_ctypes.Device.free_raw_stream:6
 msgid "The stream which should to be released."
+msgstr ""
+
+#: of tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:1
+msgid "Return the size of the device L2 cache in bytes"
+msgstr ""
+
+#: of tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:3
+msgid "Supported devices include CUDA/ROCM/OpenCL."
+msgstr ""
+
+#: of tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:9
+msgid "l2_cache_size_bytes"
+msgstr ""
+
+#: of tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:8
+msgid ""
+"The size of the device L2 cache in bytes returned by device runtime API. "
+"Return None if the device does not support this feature."
+msgstr ""
+
+#: of tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:12
+msgid "Note"
+msgstr ""
+
+#: of tvm._ffi.runtime_ctypes.Device.l2_cache_size_bytes:13
+msgid ""
+"The value returned by opencl's API is smaller than actual device L2 cache"
+" size."
 msgstr ""
 
 #: of tvm._ffi.runtime_ctypes.Device.max_clock_rate:1

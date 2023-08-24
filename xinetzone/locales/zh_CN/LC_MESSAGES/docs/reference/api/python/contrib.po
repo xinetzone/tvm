@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 09:43+0800\n"
+"POT-Creation-Date: 2023-08-24 18:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,8 @@ msgstr ""
 #: tvm.contrib.miopen._get_np_int32_array_handle:4
 #: tvm.contrib.miopen.conv2d_forward:4 tvm.contrib.miopen.log_softmax:4
 #: tvm.contrib.miopen.softmax:4 tvm.contrib.mxnet.to_mxnet_func:6
-#: tvm.contrib.ndk.create_shared:4 tvm.contrib.nnpack.convolution_inference:5
+#: tvm.contrib.ndk.create_shared:4 tvm.contrib.ndk.create_staticlib:4
+#: tvm.contrib.nnpack.convolution_inference:5
 #: tvm.contrib.nnpack.convolution_inference_weight_transform:5
 #: tvm.contrib.nnpack.convolution_inference_without_weight_transform:5
 #: tvm.contrib.nnpack.fully_connected_inference:5
@@ -87,7 +88,8 @@ msgstr ""
 #: tvm.contrib.relay_viz.terminal.TermGraph.node:5
 #: tvm.contrib.relay_viz.terminal.TermPlotter.create_graph:4
 #: tvm.contrib.rocblas.batch_matmul:4 tvm.contrib.rocblas.matmul:4
-#: tvm.contrib.rocm.find_lld:4 tvm.contrib.rocm.rocm_link:4
+#: tvm.contrib.rocm.find_lld:4 tvm.contrib.rocm.have_matrixcore:4
+#: tvm.contrib.rocm.parse_compute_version:4 tvm.contrib.rocm.rocm_link:4
 #: tvm.contrib.sparse.CSRNDArray.__init__:4
 #: tvm.contrib.sparse.CSRPlaceholderOp.__init__:4
 #: tvm.contrib.sparse.SparsePlaceholderOp.__init__:4
@@ -162,7 +164,9 @@ msgstr ""
 #: tvm.contrib.relay_viz.interface.VizParser.get_node_edges:15
 #: tvm.contrib.relay_viz.terminal.TermGraph.render:4
 #: tvm.contrib.rocblas.batch_matmul:15 tvm.contrib.rocblas.matmul:15
-#: tvm.contrib.rocm.find_lld:10 tvm.contrib.sparse.placeholder:21
+#: tvm.contrib.rocm.find_lld:10 tvm.contrib.rocm.find_rocm_path:4
+#: tvm.contrib.rocm.have_matrixcore:9 tvm.contrib.rocm.parse_compute_version:9
+#: tvm.contrib.sparse.placeholder:21
 #: tvm.contrib.tar.normalize_file_list_by_unpacking_tars:19
 #: tvm.contrib.utils.TempDirectory.listdir:4
 #: tvm.contrib.utils.TempDirectory.relpath:9 tvm.contrib.utils.filelock:9
@@ -200,6 +204,7 @@ msgid "Create llvm text ir."
 msgstr ""
 
 #: of tvm.contrib.cc.create_staticlib:10 tvm.contrib.clang.create_llvm:6
+#: tvm.contrib.ndk.create_staticlib:8
 msgid "inputs"
 msgstr ""
 
@@ -215,6 +220,7 @@ msgstr ""
 #: of tvm.contrib.cc.create_executable:6 tvm.contrib.cc.create_shared:6
 #: tvm.contrib.cc.create_staticlib:6 tvm.contrib.clang.create_llvm:10
 #: tvm.contrib.emcc.create_tvmjs_wasm:6 tvm.contrib.ndk.create_shared:6
+#: tvm.contrib.ndk.create_staticlib:6
 #: tvm.contrib.nnpack.convolution_inference:25
 #: tvm.contrib.nnpack.convolution_inference_weight_transform:13
 #: tvm.contrib.nnpack.convolution_inference_without_weight_transform:25
@@ -224,8 +230,8 @@ msgstr ""
 
 #: of tvm.contrib.clang.create_llvm:-1 tvm.contrib.emcc.create_tvmjs_wasm:-1
 #: tvm.contrib.nvcc.compile_cuda:-1 tvm.contrib.nvcc.have_tensorcore:-1
-#: tvm.contrib.rocm.rocm_link:-1 tvm.contrib.utils.tempdir:-1
-#: tvm.contrib.xcode.compile_metal:-1
+#: tvm.contrib.rocm.have_matrixcore:-1 tvm.contrib.rocm.rocm_link:-1
+#: tvm.contrib.utils.tempdir:-1 tvm.contrib.xcode.compile_metal:-1
 msgid "str, optional"
 msgstr ""
 
@@ -241,7 +247,8 @@ msgid "options"
 msgstr ""
 
 #: of tvm.contrib.clang.create_llvm:-1 tvm.contrib.emcc.create_tvmjs_wasm:-1
-#: tvm.contrib.ndk.create_shared:-1 tvm.contrib.nnpack.convolution_inference:-1
+#: tvm.contrib.ndk.create_shared:-1 tvm.contrib.ndk.create_staticlib:-1
+#: tvm.contrib.nnpack.convolution_inference:-1
 #: tvm.contrib.nnpack.convolution_inference_without_weight_transform:-1
 #: tvm.contrib.tar.tar:-1 tvm.contrib.utils.TempDirectory.listdir:-1
 #: tvm.contrib.xcode.create_dylib:-1
@@ -272,7 +279,8 @@ msgstr ""
 #: of tvm.contrib.cc.create_executable:-1 tvm.contrib.cc.create_shared:-1
 #: tvm.contrib.cc.create_staticlib:-1 tvm.contrib.clang.create_llvm:-1
 #: tvm.contrib.emcc.create_tvmjs_wasm:-1 tvm.contrib.ndk.create_shared:-1
-#: tvm.contrib.nvcc.compile_cuda:-1 tvm.contrib.nvcc.find_cuda_path:-1
+#: tvm.contrib.ndk.create_staticlib:-1 tvm.contrib.nvcc.compile_cuda:-1
+#: tvm.contrib.nvcc.find_cuda_path:-1
 #: tvm.contrib.nvcc.get_target_compute_version:-1 tvm.contrib.nvcc.have_bf16:-1
 #: tvm.contrib.nvcc.have_fp8:-1 tvm.contrib.nvcc.have_int8:-1
 #: tvm.contrib.nvcc.parse_compute_version:-1
@@ -280,6 +288,7 @@ msgstr ""
 #: tvm.contrib.relay_viz.interface.Plotter.create_graph:-1
 #: tvm.contrib.relay_viz.interface.Plotter.render:-1
 #: tvm.contrib.relay_viz.terminal.TermPlotter.create_graph:-1
+#: tvm.contrib.rocm.find_rocm_path:-1 tvm.contrib.rocm.parse_compute_version:-1
 #: tvm.contrib.rocm.rocm_link:-1 tvm.contrib.tar.tar:-1
 #: tvm.contrib.tar.untar:-1 tvm.contrib.utils.FileLock:-1
 #: tvm.contrib.utils.TempDirectory.relpath:-1 tvm.contrib.utils.filelock:-1
@@ -304,7 +313,8 @@ msgstr ""
 #: of tvm.contrib.clang.find_clang:-1 tvm.contrib.cublas.batch_matmul:-1
 #: tvm.contrib.cublas.matmul:-1 tvm.contrib.rocblas.batch_matmul:-1
 #: tvm.contrib.rocblas.matmul:-1 tvm.contrib.rocm.find_lld:-1
-#: tvm.contrib.utils.is_source_path:-1 tvm.contrib.utils.tempdir:-1
+#: tvm.contrib.rocm.have_matrixcore:-1 tvm.contrib.utils.is_source_path:-1
+#: tvm.contrib.utils.tempdir:-1
 msgid "bool"
 msgstr ""
 
@@ -795,6 +805,7 @@ msgstr ""
 
 #: of tvm.contrib.miopen.log_softmax:-1 tvm.contrib.miopen.softmax:-1
 #: tvm.contrib.nvcc.parse_compute_version:-1 tvm.contrib.random.randint:-1
+#: tvm.contrib.rocm.parse_compute_version:-1
 msgid "int"
 msgstr ""
 
@@ -877,6 +888,18 @@ msgstr ""
 
 #: of tvm.contrib.ndk.create_shared:-1
 msgid "list of str, optional"
+msgstr ""
+
+#: of tvm.contrib.ndk.create_staticlib:1
+msgid "Create static library:"
+msgstr ""
+
+#: of tvm.contrib.ndk.create_staticlib:6
+msgid "The target static library."
+msgstr ""
+
+#: of tvm.contrib.ndk.create_staticlib:9
+msgid "List of object files or tar files"
 msgstr ""
 
 #: ../../xin/docs/reference/api/python/contrib.rst:73
@@ -1082,9 +1105,10 @@ msgstr ""
 msgid "Utility function to find cuda path"
 msgstr ""
 
-#: of tvm.contrib.nvcc.find_cuda_path:5 tvm.contrib.utils.FileLock:7
-#: tvm.contrib.utils.TempDirectory.relpath:10 tvm.contrib.utils.filelock:6
-#: tvm.contrib.utils.is_source_path:6 tvm.contrib.utils.which:10
+#: of tvm.contrib.nvcc.find_cuda_path:5 tvm.contrib.rocm.find_rocm_path:5
+#: tvm.contrib.utils.FileLock:7 tvm.contrib.utils.TempDirectory.relpath:10
+#: tvm.contrib.utils.filelock:6 tvm.contrib.utils.is_source_path:6
+#: tvm.contrib.utils.which:10
 msgid "path"
 msgstr ""
 
@@ -1147,7 +1171,8 @@ msgstr ""
 #: of tvm.contrib.nvcc.get_target_compute_version:13
 #: tvm.contrib.nvcc.have_bf16:5 tvm.contrib.nvcc.have_fp8:5
 #: tvm.contrib.nvcc.have_int8:5 tvm.contrib.nvcc.have_tensorcore:6
-#: tvm.contrib.nvcc.parse_compute_version:6
+#: tvm.contrib.nvcc.parse_compute_version:6 tvm.contrib.rocm.have_matrixcore:6
+#: tvm.contrib.rocm.parse_compute_version:6
 msgid "compute_version"
 msgstr ""
 
@@ -1176,6 +1201,7 @@ msgid "compute_version: str"
 msgstr ""
 
 #: of tvm.contrib.nvcc.have_fp16:6 tvm.contrib.nvcc.parse_compute_version:6
+#: tvm.contrib.rocm.parse_compute_version:6
 msgid "compute capability of a GPU (e.g. \"6.0\")"
 msgstr ""
 
@@ -1199,7 +1225,7 @@ msgstr ""
 msgid "Either TensorCore support is provided in the compute capability or not"
 msgstr ""
 
-#: of tvm.contrib.nvcc.have_tensorcore:6
+#: of tvm.contrib.nvcc.have_tensorcore:6 tvm.contrib.rocm.have_matrixcore:6
 msgid "compute capability of a GPU (e.g. \"7.0\")."
 msgstr ""
 
@@ -1210,22 +1236,27 @@ msgid ""
 msgstr ""
 
 #: of tvm.contrib.nvcc.parse_compute_version:1
+#: tvm.contrib.rocm.parse_compute_version:1
 msgid "Parse compute capability string to divide major and minor version"
 msgstr ""
 
 #: of tvm.contrib.nvcc.parse_compute_version:10
+#: tvm.contrib.rocm.parse_compute_version:10
 msgid "major"
 msgstr ""
 
 #: of tvm.contrib.nvcc.parse_compute_version:11
+#: tvm.contrib.rocm.parse_compute_version:11
 msgid "major version number"
 msgstr ""
 
 #: of tvm.contrib.nvcc.parse_compute_version:12
+#: tvm.contrib.rocm.parse_compute_version:12
 msgid "minor"
 msgstr ""
 
 #: of tvm.contrib.nvcc.parse_compute_version:13
+#: tvm.contrib.rocm.parse_compute_version:13
 msgid "minor version number"
 msgstr ""
 
@@ -1894,6 +1925,26 @@ msgstr ""
 msgid ""
 "This function will first search ld.lld that matches the major llvm "
 "version that built with tvm"
+msgstr ""
+
+#: of tvm.contrib.rocm.find_rocm_path:1
+msgid "Utility function to find ROCm path"
+msgstr ""
+
+#: of tvm.contrib.rocm.find_rocm_path:6
+msgid "Path to ROCm root."
+msgstr ""
+
+#: of tvm.contrib.rocm.have_matrixcore:1
+msgid "Either MatrixCore support is provided in the compute capability or not"
+msgstr ""
+
+#: of tvm.contrib.rocm.have_matrixcore:10
+msgid "have_matrixcore"
+msgstr ""
+
+#: of tvm.contrib.rocm.have_matrixcore:11
+msgid "True if MatrixCore support is provided, False otherwise"
 msgstr ""
 
 #: of tvm.contrib.rocm.rocm_link:1

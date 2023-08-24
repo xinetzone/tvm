@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"POT-Creation-Date: 2023-08-24 18:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1260,8 +1260,8 @@ msgstr ""
 
 #: ../../xin/docs/reference/langref/relay_op.rst:247:<autosummary>:1
 msgid ""
-"Dequantize op This operator takes quantized int8 and unit8 as input and "
-"produces dequantized float32 as output."
+"Dequantize op This operator takes quantized input and produces "
+"dequantized float output."
 msgstr ""
 
 #: ../../xin/docs/reference/langref/relay_op.rst:247:<autosummary>:1
@@ -1278,8 +1278,8 @@ msgstr ""
 
 #: ../../xin/docs/reference/langref/relay_op.rst:247:<autosummary>:1
 msgid ""
-"Quantize op This operator takes float32 as input and produces quantized "
-"int8 or unit8 as output."
+"Quantize op This operator takes float32 input and produces quantized "
+"output."
 msgstr ""
 
 #: ../../xin/docs/reference/langref/relay_op.rst:247:<autosummary>:1
