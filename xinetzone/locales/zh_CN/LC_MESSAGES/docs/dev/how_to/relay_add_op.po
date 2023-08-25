@@ -138,16 +138,20 @@ msgid ""
 "typing rules (namely by inspecting the input types) in addition to "
 "computing the output type."
 msgstr ""
+"为了在 Relay 中实现算子的灵活注册以及更丰富的类型表达和粒度，算子使用输入类型和输出类型之间的关系进行类型化。"
+"这些关系表示为接受输入类型列表和输出类型列表（其中任何一种类型都可以是不完整的）并返回满足关系的输入和输出类型的函数。这包括可以在编译时静态确定的形状信息。"
+"基本上，算子的关系可以除了计算输出类型之外，还可以强制执行所有必要的类型规则（即通过检查输入类型）。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:113
 msgid ""
 "Type relation for the cumulative product and sum operators can be found "
 "in ``src/relay/op/tensor/transform.cc``:"
 msgstr ""
+"累积乘积和累积加法算子运的类型关系可在 ``src/relay/op/tensor/transform.cc`` 中查找："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:150
 msgid "3. Relating the Arity and Attributes to an Operation"
-msgstr ""
+msgstr "3. 将 Arity 和 Attributes 与运算关联起来"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:152
 msgid ""
@@ -156,32 +160,34 @@ msgid ""
 "developer to specify the following information about an operator in "
 "Relay:"
 msgstr ""
+"然后注册新 ops 的名称，并用调用接口进行注解。C++ 中的 ``RELAY_REGISTER_OP`` 宏允许开发人员指定有关 Relay 中算子的以下信息："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:156
 msgid "Arity (number of arguments)"
-msgstr ""
+msgstr "Arity（参数数量）"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:157
 msgid "Names and descriptions for positional arguments"
-msgstr ""
+msgstr "位置参数的名称和描述"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:158
 msgid ""
 "Support level (1 indicates an internal intrinsic; higher numbers indicate"
 " less integral or externally supported operators)"
 msgstr ""
+"支持级别（1 表示内部 intrinsic；较高的数字表示较少 integral 或外部支持的算子）"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:159
 msgid "A type relation for the operator"
-msgstr ""
+msgstr "该算子的类型关系"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:160
 msgid "Other annotations useful when optimizing the operation."
-msgstr ""
+msgstr "当优化运算时，其他注解也很有用。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:162
 msgid "Once again we add this to ``src/relay/op/tensor/transform.cc``:"
-msgstr ""
+msgstr "再次将其添加到 ``src/relay/op/tensor/transform.cc`` 中："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:184
 msgid ""
@@ -190,10 +196,11 @@ msgid ""
 "operators. ``kOpaque`` tells TVM to not bother trying to fuse this "
 "operator."
 msgstr ""
+"在这种情况下，``TOpPattern`` 是向编译器提供的关于算子计算模式的提示，这可能对融合算子有用。``kOpaque`` 告诉 TVM 不要试图融合这个算子。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:188
 msgid "4. Defining the Compute of the Operation"
-msgstr ""
+msgstr "4. 定义运算的计算"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:190
 msgid ""
@@ -201,6 +208,7 @@ msgid ""
 " define how to perform the actual calculations for cumulative sum and "
 "product."
 msgstr ""
+"虽然已经定义了运算的接口，但仍然需要定义如何执行累积加法以及累积乘积的实际计算。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:193
 msgid ""
@@ -216,10 +224,14 @@ msgid ""
 "tir>` which is the representation where tensor expressions and topi will "
 "lower into."
 msgstr ""
+"编写这段代码超出了本教程的范围。现在，假设已经为运算的计算实现了经过良好测试的实现。"
+"更多关于如何做到这一点的细节，我们建议查阅以下教程：:ref:`tensor expressions <tutorial-tensor-expr-get-started>`，"
+"并查看在 `python/tvm/topi/scan.py`_ 中找到的累积求和和乘积实现示例以及在 `python/tvm/topi/cuda/scan.py`_ 中找到的GPU版本。"
+"对于我们的累积求和和乘积运算，直接在 :ref:`TIR <api-python-tir>` 中编写，这是张量表达式和 topi 将7到的表示形式。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:207
 msgid "5. Hooking up Compute and Strategy with Relay"
-msgstr ""
+msgstr "5. 将计算和策略与 Relay 勾连起来"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:209
 msgid ""
@@ -234,6 +246,10 @@ msgid ""
 "``python/tvm/relay/op/strategy/generic.py`` and "
 "``python/tvm/relay/op/strategy/cuda.py`` we add the following strategies:"
 msgstr ""
+"在您实现了计算函数后，我们现在需要将其粘合到我们的 Relay 运算中。在 TVM 中，这不仅仅是定义计算，还包括运算的调度。"
+"策略是一种方法，它选择要使用的计算和调度。例如，对于 2D 卷积，可能会识别出我们正在进行深度卷积，并将调度分派给更高效的计算和调度。"
+"然而，在我们的情况下，除了在 CPU 和 GPU 实现之间进行调度之外，没有这样的需求。"
+"在 ``python/tvm/relay/op/strategy/generic.py`` 和 ``python/tvm/relay/op/strategy/cuda.py`` 中，添加以下策略："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:275
 msgid ""
@@ -242,6 +258,7 @@ msgid ""
 "compute with the defined relay operator in "
 "``python/tvm/relay/op/_transform.py``:"
 msgstr ""
+"在每个策略中，定义了我们在 ``add_implementation()`` 中使用的计算和调度。最后，在 ``python/tvm/relay/op/_transform.py`` 中将策略和计算与定义的 Relay 运算链接起来："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:300
 msgid ""
@@ -249,10 +266,11 @@ msgid ""
 "dynamically shaped tensor. In this case we tell TVM the output shape will"
 " be the same as the input shape."
 msgstr ""
+"形状函数用于确定给定动态形状张量的输出形状。在这种情况下，告诉 TVM 输出形状将与输入形状相同。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:304
 msgid "6. Creating a Relay Call Node and Exposing a Python Hook"
-msgstr ""
+msgstr "6. 创建 Relay Call 节点并公开 Python 钩子"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:305
 msgid ""
@@ -262,6 +280,8 @@ msgid ""
 "a call node to the operator (i.e., the node that should be placed into "
 "the Relay AST where the call to the operator is intended)."
 msgstr ""
+"现在有可以工作的运算，现在只需要通过 Relay Call 节点正确地调用它。"
+"这个步骤需要简单地编写函数，该函数接受算子的参数（作为 Relay 表达式），并返回对算子的调用节点（即应该放入 Relay AST 中的节点，以进行算子的调用）。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:312
 msgid ""
@@ -270,6 +290,7 @@ msgid ""
 "information from the operator registry and pass in the arguments to the "
 "call node, as below. In ``src/relay/op/tensor/transform.cc``:"
 msgstr ""
+"目前，调用属性和类型参数（最后两个字段）不受支持，因此只需使用 ``Op::Get`` 从算子注册表中获取算子的信息，并将参数传递给调用节点即可。在 ``src/relay/op/tensor/transform.cc`` 中，如下所示："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:341
 msgid ""
@@ -277,10 +298,11 @@ msgid ""
 "``MakeCumprod`` functions in Python via ``relay.op._make.cumsum(...)`` "
 "and ``relay.op._make.cumsum(...)``."
 msgstr ""
+"``TVM_REGISTER_GLOBAL`` 通过 ``relay.op._make.cumsum(...)`` 和 ``relay.op._make.cumprod(...)`` 在 Python 中公开了 ``MakeCumsum`` 和 ``MakeCumprod`` 函数。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:345
 msgid "7. Including a Cleaner Python API Hook"
-msgstr ""
+msgstr "7. 包含更干净的 Python API 钩子"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:347
 msgid ""
@@ -289,6 +311,7 @@ msgid ""
 "rather than called directly in Python. For our operators we expose this "
 "cleaner interface in ``python/tvm/relay/op/transform.py``"
 msgstr ""
+"在 Relay 中，通常的约定是，通过 ``TVM_REGISTER_GLOBAL`` 导出的函数应该包装在单独的 Python 函数中，而不是直接在 Python 中调用。对于我们的算子，我们在 ``python/tvm/relay/op/transform.py`` 中公开了这个更干净的接口。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:360
 msgid ""
@@ -299,10 +322,12 @@ msgid ""
 "as arguments and combines them into a tuple before producing the call "
 "node:"
 msgstr ""
+"请注意，这些 Python 包装器也可能会提供更易于算子使用的接口。"
+"例如，``concat`` 算子注册为只接受一个算子，即要连接的张量组成的元组，但是 Python 包装器将张量作为参数，并在产生调用节点之前将它们组合成一个元组："
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:384
 msgid "8. Writing Unit Tests!"
-msgstr ""
+msgstr "8. 编写单元测试！"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:385
 msgid ""
@@ -310,14 +335,15 @@ msgid ""
 "`tests/python/relay/test_op_level3.py`_ for our cumulative sum and "
 "product operators."
 msgstr ""
+"这很容易理解！我们可以在 `tests/python/relay/test_op_level3.py`_ 中找到一些示例单元测试，用于我们的累积和与乘积运算。"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:393
 msgid "Other Topics"
-msgstr ""
+msgstr "其他主题"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:396
 msgid "Gradient Operators"
-msgstr ""
+msgstr "Gradient 算子"
 
 #: ../../../xin/docs/dev/how_to/relay_add_op.rst:398
 msgid ""
