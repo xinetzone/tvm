@@ -19,7 +19,7 @@ import tvm
 import tvm.testing
 from tvm import relax, tir
 from tvm import TVMError
-from tvm.ir import Op
+from tvm.ir import Op, VDevice
 from tvm.script import relax as R
 
 
@@ -32,6 +32,7 @@ def test_op_correctness():
     assert relax.op.nn.softmax(x).op == Op.get("relax.nn.softmax")
     assert relax.op.nn.log_softmax(x).op == Op.get("relax.nn.log_softmax")
     assert relax.op.nn.dropout(x).op == Op.get("relax.nn.dropout")
+    assert relax.op.nn.pad(x, (1, 1, 1, 1)).op == Op.get("relax.nn.pad")
 
     x = relax.Var("x", R.Tensor((2, 3, 32, 32), "float32"))
     gamma = relax.Var("gamma", R.Tensor((3,), "float32"))
@@ -57,14 +58,17 @@ def _check_inference(bb: relax.BlockBuilder, call: relax.Call, expected_sinfo: r
 
 def test_linear_unit_infer_struct_info():
     bb = relax.BlockBuilder()
+    vdev0 = VDevice("llvm")
     x0 = relax.Var("x", R.Tensor((2, 3), "float32"))
     x1 = relax.Var("x", R.Tensor("float32", ndim=3))
     x2 = relax.Var("x", R.Tensor("float32", ndim=-1))
     x3 = relax.Var("x", R.Tensor((2, 3)))
     x4 = relax.Var("x", R.Tensor())
     x5 = relax.Var("x", R.Tensor((3, 4)))
+    x6 = relax.Var("x", R.Tensor((2, 3), "float32", vdev0))
 
     _check_inference(bb, relax.op.nn.relu(x0), relax.TensorStructInfo((2, 3), "float32"))
+    _check_inference(bb, relax.op.nn.relu(x6), relax.TensorStructInfo((2, 3), "float32", vdev0))
     _check_inference(bb, relax.op.nn.silu(x1), relax.TensorStructInfo(dtype="float32", ndim=3))
     _check_inference(bb, relax.op.nn.gelu(x2), relax.TensorStructInfo(dtype="float32"))
     _check_inference(bb, relax.op.nn.relu(x3), relax.TensorStructInfo((2, 3), dtype=""))
@@ -132,13 +136,16 @@ def test_linear_unit_infer_struct_info_wrong_input_type():
 
 def test_softmax_log_softmax_infer_struct_info():
     bb = relax.BlockBuilder()
+    vdev0 = VDevice("llvm")
     x0 = relax.Var("x", R.Tensor((2, 3), "float32"))
     x1 = relax.Var("x", R.Tensor("float32", ndim=3))
     x2 = relax.Var("x", R.Tensor("float32", ndim=-1))
     x3 = relax.Var("x", R.Tensor((2, 3)))
     x4 = relax.Var("x", R.Tensor())
+    x5 = relax.Var("x", R.Tensor((2, 3), "float32", vdev0))
 
     _check_inference(bb, relax.op.nn.softmax(x0), relax.TensorStructInfo((2, 3), "float32"))
+    _check_inference(bb, relax.op.nn.softmax(x5), relax.TensorStructInfo((2, 3), "float32", vdev0))
     _check_inference(
         bb, relax.op.nn.softmax(x1, axis=0), relax.TensorStructInfo(dtype="float32", ndim=3)
     )
@@ -1095,17 +1102,29 @@ def test_group_norm_infer_struct_info_wrong_input_type():
 
 def test_dropout_infer_struct_info():
     bb = relax.BlockBuilder()
+    vdev0 = VDevice("llvm")
     x0 = relax.Var("x", R.Tensor((2, 3), "float32"))
     x1 = relax.Var("x", R.Tensor("float32", ndim=3))
     x2 = relax.Var("x", R.Tensor("float32", ndim=-1))
     x3 = relax.Var("x", R.Tensor((2, 3)))
     x4 = relax.Var("x", R.Tensor())
+    x5 = relax.Var("x", R.Tensor((2, 3), "float32", vdev0))
 
     _check_inference(
         bb,
         relax.op.nn.dropout(x0),
         relax.TupleStructInfo(
             [relax.TensorStructInfo((2, 3), "float32"), relax.TensorStructInfo((2, 3), "float32")]
+        ),
+    )
+    _check_inference(
+        bb,
+        relax.op.nn.dropout(x5),
+        relax.TupleStructInfo(
+            [
+                relax.TensorStructInfo((2, 3), "float32", vdev0),
+                relax.TensorStructInfo((2, 3), "float32", vdev0),
+            ]
         ),
     )
     _check_inference(
@@ -1219,6 +1238,7 @@ def test_dropout_infer_struct_info_wrong_input_type():
 
 def test_cross_entropy_infer_struct_info():
     bb = relax.BlockBuilder()
+    vdev0 = VDevice("llvm")
     x = relax.Var("x", R.Tensor((2, 3), "float32"))
     y0 = relax.Var("y", R.Tensor((2, 3), "float32"))
     y1 = relax.Var("y", R.Tensor("float32", ndim=2))
@@ -1761,6 +1781,31 @@ def test_nll_loss_infer_struct_info_wrong_reduction():
 
     with pytest.raises(TVMError):
         bb.normalize(relax.op.nn.nll_loss(x, y, w, reduction="foo"))
+
+
+def test_pad_infer_struct_info():
+    bb = relax.BlockBuilder()
+    x = relax.Var("x", R.Tensor((2, 3), "float32"))
+    x1 = relax.Var("x", R.Tensor("float32", ndim=2))
+
+    pad_width0 = (0, 0, 0, 0)
+    pad_width1 = (1, 1, 1, 1)
+    pad_width2 = (0, 1, 1, 0)
+
+    _check_inference(bb, relax.op.nn.pad(x, pad_width0), relax.TensorStructInfo((2, 3), "float32"))
+    _check_inference(
+        bb,
+        relax.op.nn.pad(x, pad_width1),
+        relax.TensorStructInfo((4, 5), dtype="float32"),
+    )
+    _check_inference(
+        bb,
+        relax.op.nn.pad(x, pad_width2),
+        relax.TensorStructInfo((3, 4), dtype="float32"),
+    )
+    _check_inference(
+        bb, relax.op.nn.pad(x1, pad_width1), relax.TensorStructInfo(dtype="float32", ndim=2)
+    )
 
 
 if __name__ == "__main__":
