@@ -18,3 +18,6 @@
 
 from .expr import *
 from .info import *
+from .file import *
+from .namespace import *
+from .register import *

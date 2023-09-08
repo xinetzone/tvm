@@ -405,7 +405,7 @@ def AttachGlobalSymbol() -> tvm.ir.transform.Pass:
 
 def BindParams(
     func_name: str,
-    params: Dict[str, Union[tvm.runtime.NDArray, np.ndarray]],
+    params: Dict[Union[str, Var], Union[tvm.runtime.NDArray, np.ndarray]],
 ) -> tvm.ir.transform.Pass:
     """Bind params of function of the module to constant tensors.
 
@@ -415,8 +415,13 @@ def BindParams(
     func_name: str
         The function name to be bound
 
-    params : Dict[str, Union[tvm.runtime.NDArray, np.ndarray]]
-        The map from param name to constant tensors.
+    params : Dict[
+                Union[str,relax.Var],
+                Union[tvm.runtime.NDArray, np.ndarray],
+             ]
+
+        The map from parameter or parameter name name to constant
+        tensors.
 
     Returns
     -------
@@ -718,6 +723,23 @@ def LiftTransformParams() -> tvm.ir.transform.Pass:
         The registered pass for lifting transformation of parameters.
     """
     return _ffi_api.LiftTransformParams()  # type: ignore
+
+
+def BundleModelParams() -> tvm.ir.transform.Pass:
+    """Bundle several model parameters into a single tuple paramters
+
+    For each function, if the function has the attribute "num_input",
+    separate between run-time parameters and compile-time weights.
+    Run-time parameters (e.g. activations) are the first `num_input`
+    parameters, and the remainder are compile-time weights.
+
+    Returns
+    -------
+    ret : tvm.transform.Pass
+        The registered pass for lifting transformation of parameters.
+
+    """
+    return _ffi_api.BundleModelParams()  # type: ignore
 
 
 def LegalizeOps(
