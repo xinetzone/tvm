@@ -60,8 +60,6 @@ class RelaxCodeGen : public PyCodeGen<RelaxCodeGenConfig> {
 
   /*! \brief Get tensor type of the framework*/
   const String TensorType() const final { return "relax.Expr"; }
-
- private:
 };
 
 }  // namespace msc

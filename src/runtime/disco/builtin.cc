@@ -80,12 +80,12 @@ const PackedFunc& GetCCLFunc(const char* name) {
   return *pf;
 }
 
-NDArray AllReduce(NDArray send, ReduceKind reduce_kind) {
-  return GetCCLFunc("allreduce")(send, static_cast<int>(reduce_kind));
+void AllReduce(NDArray send, ReduceKind reduce_kind, NDArray recv) {
+  GetCCLFunc("allreduce")(send, static_cast<int>(reduce_kind), recv);
 }
 
-NDArray BroadcastFromWorker0(NDArray buffer) {
-  return GetCCLFunc("broadcast_from_worker0")(buffer);
+void BroadcastFromWorker0(NDArray send, NDArray recv) {
+  GetCCLFunc("broadcast_from_worker0")(send, recv);
 }
 
 void ScatterFromWorker0(Optional<NDArray> send, NDArray recv) {
@@ -100,15 +100,19 @@ void RecvFromWorker0(NDArray buffer) { GetCCLFunc("recv_from_worker0")(buffer); 
 
 int WorkerId() { return DiscoWorker::ThreadLocal()->worker_id; }
 
-void SyncWorker() { GetCCLFunc("sync_worker")(); }
+void SyncWorker() {
+  if (DiscoWorker::ThreadLocal()->ccl != "") {
+    GetCCLFunc("sync_worker")();
+  }
+}
 
 TVM_REGISTER_GLOBAL("runtime.disco.load_vm_module").set_body_typed(LoadVMModule);
 TVM_REGISTER_GLOBAL("runtime.disco.empty").set_body_typed(DiscoEmptyNDArray);
 TVM_REGISTER_GLOBAL("runtime.disco.allreduce")
-    .set_body_typed([](NDArray send, ShapeTuple reduce_kind) {
+    .set_body_typed([](NDArray send, ShapeTuple reduce_kind, NDArray recv) {
       int kind = IntegerFromShapeTuple(reduce_kind);
       CHECK(0 <= kind && kind <= 4) << "ValueError: Unknown ReduceKind: " << kind;
-      return AllReduce(send, static_cast<ReduceKind>(kind));
+      AllReduce(send, static_cast<ReduceKind>(kind), recv);
     });
 TVM_REGISTER_GLOBAL("runtime.disco.broadcast_from_worker0").set_body_typed(BroadcastFromWorker0);
 TVM_REGISTER_GLOBAL("runtime.disco.scatter_from_worker0").set_body_typed(ScatterFromWorker0);

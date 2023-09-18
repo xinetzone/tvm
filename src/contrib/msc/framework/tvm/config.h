@@ -19,7 +19,7 @@
 
 /*!
  * \file src/contrib/msc/framework/tvm/config.h
- * \brief Relax codegen for MSCJoint.
+ * \brief Relax config for codegen.
  */
 #ifndef TVM_CONTRIB_MSC_FRAMEWORK_TVM_CONFIG_H_
 #define TVM_CONTRIB_MSC_FRAMEWORK_TVM_CONFIG_H_

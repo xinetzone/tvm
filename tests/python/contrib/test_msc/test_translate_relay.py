@@ -62,7 +62,8 @@ def verify_model(torch_model, input_info, opt_config=None, codegen_config=None, 
     # graph from relay
     datas = [np.random.rand(*i[0]).astype(i[1]) for i in input_info]
     torch_datas = [torch.from_numpy(i) for i in datas]
-    scripted_model = torch.jit.trace(torch_model, tuple(torch_datas)).eval()  # type: ignore
+    with torch.no_grad():
+        scripted_model = torch.jit.trace(torch_model, tuple(torch_datas)).eval()  # type: ignore
     shape_list = [("input" + str(idx), i) for idx, i in enumerate(input_info)]
     relay_mod, params = from_pytorch(scripted_model, shape_list)
     graph, weights = translate.from_relay(relay_mod, params, opt_config=opt_config)
@@ -392,6 +393,15 @@ def test_cross_entropy():
         def forward(self, logits, targets):
             return self.loss(logits, targets)
 
+    class CrossEntropy2(Module):
+        def __init__(self):
+            super().__init__()
+            self.weight = torch.nn.Parameter(torch.ones((2,)))
+            self.loss = torch.nn.CrossEntropyLoss(weight=self.weight)
+
+        def forward(self, logits, targets):
+            return self.loss(logits, targets)
+
     class CrossEntropy3(Module):
         def __init__(self):
             super().__init__()
@@ -402,6 +412,7 @@ def test_cross_entropy():
 
     input_info = [([3, 2], "float32"), ([3], "int64")]
     verify_model(CrossEntropy1(), input_info, opt_config={"opt_level": 3}, build_target="llvm")
+    verify_model(CrossEntropy2(), input_info, opt_config={"opt_level": 3}, build_target="llvm")
     verify_model(CrossEntropy3(), input_info, opt_config={"opt_level": 3}, build_target="llvm")
 
 

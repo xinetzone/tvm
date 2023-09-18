@@ -14,7 +14,7 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-"""tvm.contrib.msc.core._ffi_api"""
+"""tvm.contrib.msc.framework.tvm._ffi_api"""
 
 import tvm._ffi
 
