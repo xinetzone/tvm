@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/arch/device_target_interactions.rst:22
 msgid "Device/Target Interactions"
-msgstr ""
+msgstr "设备/目标交互"
 
 #: ../../docs/arch/device_target_interactions.rst:24
 msgid ""
@@ -27,12 +27,14 @@ msgid ""
 "how the TVM framework interacts with specific device APIs, or who may "
 "want to implement support for a new API or new hardware."
 msgstr ""
+"本文档旨在帮助对 TVM 框架如何与特定设备 API 交互感兴趣，或者希望实现对新 API 或新硬件支持的开发人员。"
 
 #: ../../docs/arch/device_target_interactions.rst:28
 msgid ""
 "There are three main aspects that must be implemented for any new runtime"
 " environment."
 msgstr ""
+"为任何新的运行时环境，必须实现三个主要方面。"
 
 #: ../../docs/arch/device_target_interactions.rst:31
 msgid ""
@@ -42,6 +44,8 @@ msgid ""
 "available, number of threads, etc.) and for performing simple actions "
 "(e.g. copying memory from the host, or between buffers on the device)."
 msgstr ""
+":ref:`DeviceAPI <tvm-target-specific-device-api>` 类提供了特定设备的句柄以及用于与其进行交互的 API。"
+"它定义了用于查询设备参数（例如可用内存、线程数等）以及执行简单行为（例如从主机复制内存或在设备上在缓冲区之间复制内存）的通用接口。"
 
 #: ../../docs/arch/device_target_interactions.rst:38
 msgid ""
@@ -49,6 +53,7 @@ msgid ""
 "description of the device on which a function will run.  It is exposed "
 "both to the target code generators and to the optimization passes."
 msgstr ""
+":ref:`Target <tvm-target-specific-target>` 类包含了函数将要运行的设备的说明。它既向目标代码生成器暴露，也向优化 passes 暴露。"
 
 #: ../../docs/arch/device_target_interactions.rst:43
 msgid ""
@@ -56,6 +61,8 @@ msgid ""
 " a :ref:`Module <tvm-runtime-system-module>` consisting of one or more "
 ":ref:`PackedFunc <tvm-runtime-system-packed-func>`, from an IRModule."
 msgstr ""
+":ref:`target code generators <tvm-target-specific-codegen>` 构造来自 IRModule，"
+"由一个或多个 :ref:`PackedFunc <tvm-runtime-system-packed-func>` 组成的 :ref:`Module <tvm-runtime-system-module>`。"
 
 #: ../../docs/arch/device_target_interactions.rst:51
 msgid "DeviceAPI"
@@ -72,6 +79,11 @@ msgid ""
 "API.  (e.g. ``tvm.runtime.device('cuda',0)`` gives access to physical "
 "device ``0``, accessed through the CUDA API.)"
 msgstr ""
+"``DeviceAPI`` 表示对特定硬件设备 API 的句柄。"
+"（例如，``CUDADeviceAPI`` 通过 CUDA 框架处理所有交互。）"
+"大多数 ``DeviceAPI`` 方法接受 ``device_id`` 参数来指定应该访问哪个设备。"
+"在 Python 中，通常使用 :py:func:`tvm.runtime.device` 函数来访问它们，该函数返回通过特定 API 访问的特定设备的句柄。"
+"（例如，``tvm.runtime.device('cuda',0)`` 可以访问物理设备 ``0``，并通过 CUDA API 进行访问。）"
 
 #: ../../docs/arch/device_target_interactions.rst:64
 msgid ""
@@ -83,6 +95,8 @@ msgid ""
 "``kMaxClockRate`` on Vulkan), or if a parameter isn't applicable (e.g. "
 "``kWarpSize`` on CPU), then those queries should return ``nullptr``."
 msgstr ""
+"属性查询 - ``GetAttr`` 允许查询不同的设备特定参数，例如设备名称、线程数等。可以查询的参数在 `device_api.h`_ 中的 ``enum DeviceAttrKind`` 定义。"
+"并非所有可查询的参数都受所有设备支持。如果参数无法查询（例如 Vulkan 上的 ``kMaxClockRate``），或者该参数不适用（例如 CPU 上的 ``kWarpSize``），则这些查询应返回 ``nullptr``。"
 
 #: ../../docs/arch/device_target_interactions.rst:73
 msgid ""
@@ -217,7 +231,7 @@ msgstr ""
 
 #: ../../docs/arch/device_target_interactions.rst:176
 msgid "Target Definition"
-msgstr ""
+msgstr "目标定义"
 
 #: ../../docs/arch/device_target_interactions.rst:178
 msgid ""
@@ -227,6 +241,8 @@ msgid ""
 "While the same ``Target`` class is used for all runtime targets, each "
 "runtime target may need to add target-specific options."
 msgstr ""
+"``Target`` 对象是关于物理设备的属性的查找表，包括其硬件/驱动程序的限制和能力。"
+"``Target`` 在优化和代码生成阶段都可访问。虽然所有运行时目标都使用相同的 ``Target`` 类，但每个运行时目标可能需要添加特定于目标的选项。"
 
 #: ../../docs/arch/device_target_interactions.rst:186
 msgid ""
@@ -240,6 +256,9 @@ msgid ""
 "(e.g. The ``\"llvm\"`` and ``\"c\"`` targets both run on the ``kDLCPU`` "
 "device type.)"
 msgstr ""
+"在 `target_kind.cc`_ 中，添加新的 ``TVM_REGISTER_TARGET_KIND`` 声明，"
+"传递新目标的字符串名称以及该目标应运行的设备上的 ``TVMDeviceExtType`` 或 ``DLDeviceType`` 枚举值。通常，目标名称与设备名称相匹配。"
+"（例如，``\"cuda\"`` 目标运行在 ``kDLCUDA`` 设备上）。也有例外情况，例如同一物理设备上可以运行多个不同的代码生成目标。（例如，``\"llvm\"`` 和 ``\"c\"`` 目标都运行在 ``kDLCPU`` 设备类型上。）"
 
 #: ../../docs/arch/device_target_interactions.rst:196
 msgid ""
@@ -249,6 +268,7 @@ msgid ""
 "parameters that are dynamically based on other parameters or queried from"
 " device properties."
 msgstr ""
+"特定目标类型的所有选项都使用 ``add_attr_option`` 函数添加，并提供可选的默认值。可以使用 ``set_attrs_preprocessor`` 添加预处理器来定义任何基于其他参数或从设备属性查询的动态参数。"
 
 #: ../../docs/arch/device_target_interactions.rst:202
 msgid ""
@@ -260,6 +280,9 @@ msgid ""
 "\"max_num_threads\": 1024}')`` will create a ``cuda`` target, while "
 "overriding the default maximum number of threads."
 msgstr ""
+"这个参数定义定义了一个解析器，可以解包目标的字符串描述。这是在 C++ 中的 ``Target::Target(const String&)`` 构造函数中完成的，"
+"它接受 JSON 格式的字符串，通常使用 :py:class:`tvm.target.Target` Python 对象调用。例如，``tvm.target.Target('{\"kind\": \"cuda\", "
+"\"max_num_threads\": 1024}')`` 将创建 ``cuda`` 目标，同时覆盖默认的最大线程数。"
 
 #: ../../docs/arch/device_target_interactions.rst:210
 msgid ""
@@ -267,10 +290,11 @@ msgid ""
 "``target->GetAttr<T>(param_name)`` in C++, or with the ``target.attrs`` "
 "dictionary in Python."
 msgstr ""
+"在代码生成器中，可以使用 C++ 中的 ``target->GetAttr<T>(param_name)`` 或 Python 中的 ``target.attrs`` 字典来访问目标属性。"
 
 #: ../../docs/arch/device_target_interactions.rst:218
 msgid "Target Code Generators"
-msgstr ""
+msgstr "目标代码生成器"
 
 #: ../../docs/arch/device_target_interactions.rst:220
 msgid ""
@@ -280,6 +304,8 @@ msgid ""
 "function named ``\"target.build.foo\"``, where ``foo`` is the same name "
 "as was used in the ``TVM_REGISTER_TARGET_KIND`` definition above. ::"
 msgstr ""
+"代码生成器将优化过的 ``IRModule`` 转换为可执行表示形式。每个代码生成器都必须注册才能被 TVM 框架使用。"
+"这是通过注册名为 ``\"target.build.foo\"`` 的函数来完成的，其中 ``foo`` 与上面在 ``TVM_REGISTER_TARGET_KIND`` 定义中使用的名称相同。"
 
 #: ../../docs/arch/device_target_interactions.rst:230
 msgid ""
@@ -291,10 +317,12 @@ msgid ""
 "lookups on the device itself, and should instead access parameters stored"
 " in the ``Target``."
 msgstr ""
+"代码生成器接受两个参数。第一个参数是 ``IRModule``，需要编译；第二个参数是描述代码应运行的设备的 ``Target``。"
+"由于执行编译的环境不一定与将执行代码的环境相同，因此代码生成器不应在设备本身上执行任何属性查找，而应访问存储在 ``Target`` 中的参数。"
 
 #: ../../docs/arch/device_target_interactions.rst:238
 msgid ""
 "Each function in the input ``IRModule`` should be accessible by name in "
 "the output ``runtime::Module``."
 msgstr ""
-
+"输入 ``IRModule`` 中的每个函数在输出 ``runtime::Module`` 中都应以名称可访问。"
