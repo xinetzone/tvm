@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-09-26 08:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,10 @@ msgstr ""
 
 #: of tvm._ffi.base.TVMError:3
 msgid "TVMError will be raised if you do not give any error type specification,"
+msgstr ""
+
+#: of tvm._ffi.base._append_traceback_frame:1
+msgid "Append a dummy frame to appear in the Python traceback"
 msgstr ""
 
 #: of tvm._ffi.base._find_error_type:1
@@ -225,6 +229,19 @@ msgstr ""
 
 #: of tvm._ffi.base.py2cerror:1
 msgid "Translate python style error message to C style."
+msgstr ""
+
+#: of tvm._ffi.base.raise_last_ffi_error:1
+msgid "Raise the previous error from FFI"
+msgstr ""
+
+#: of tvm._ffi.base.raise_last_ffi_error:3
+msgid ""
+"This should be used instead of `raise get_last_ffi_error()`, as it handle"
+" propagation of errors across an FFI boundary.  For example, if Python "
+"passes a callback to a C++ function, and the callback raises an "
+"exception, the re-thrown exception should contain the full stack trace, "
+"not just the stack frames that are above the outermost FFI call."
 msgstr ""
 
 #: of tvm._ffi.base.register_error:1
