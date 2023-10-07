@@ -33,7 +33,8 @@ Expr attention(Expr query, Expr key, Expr value, Optional<Expr> bias, Optional<F
   ObjectPtr<AttentionAttrs> attrs = make_object<AttentionAttrs>();
   attrs->scale = scale;
   attrs->causal_mask = causal_mask;
-  if (bias.defined()) {
+
+  if (bias) {
     return Call(Op::Get("relax.nn.attention_bias"),
                 {std::move(query), std::move(key), std::move(value), std::move(bias.value())},
                 Attrs(attrs), {});
@@ -42,7 +43,20 @@ Expr attention(Expr query, Expr key, Expr value, Optional<Expr> bias, Optional<F
               Attrs(attrs), {});
 }
 
+Expr attention_var_len(Expr query, Expr key, Expr value, Expr seqstart_q, Expr seqstart_k,
+                       Expr max_seqlen_q, Expr max_seqlen_k, Optional<FloatImm> scale,
+                       Optional<String> causal_mask) {
+  ObjectPtr<AttentionAttrs> attrs = make_object<AttentionAttrs>();
+  attrs->scale = scale;
+  attrs->causal_mask = causal_mask;
+
+  return Call(Op::Get("relax.nn.attention_var_len"),
+              {query, key, value, seqstart_q, seqstart_k, max_seqlen_q, max_seqlen_k}, Attrs(attrs),
+              {});
+}
+
 TVM_REGISTER_GLOBAL("relax.op.nn.attention").set_body_typed(attention);
+TVM_REGISTER_GLOBAL("relax.op.nn.attention_var_len").set_body_typed(attention_var_len);
 
 StructInfo InferStructInfoAttention(const Call& call, const BlockBuilder& ctx) {
   Array<TensorStructInfo> input_sinfo = GetInputTensorStructInfo(call, ctx);
@@ -77,10 +91,19 @@ StructInfo InferStructInfoAttention(const Call& call, const BlockBuilder& ctx) {
                        << v1 << " while the " << dim << " of " << m2 << " is " << v2);
     }
   };
+  auto multiple_of = [&](PrimExpr v1, PrimExpr v2, String m1, String m2, String dim) {
+    if (analyzer->CanProve(indexmod(v1, v2) != 0)) {
+      ctx->ReportFatal(Diagnostic::Error(call)
+                       << "The " << m1 << " " << dim << " should be a multiple of " << m2 << " "
+                       << dim << ". However, the " << dim << " of " << m1 << " is " << v1
+                       << " while the " << dim << " of " << m2 << " is " << v2);
+    }
+  };
+
   diag_equal(num_batches, k_shape->values[0], "query", "key", "batch size");
   diag_equal(num_batches, v_shape->values[0], "query", "value", "batch size");
-  diag_equal(num_heads, k_shape->values[2], "query", "key", "number of heads");
-  diag_equal(num_heads, v_shape->values[2], "query", "value", "number of heads");
+  multiple_of(num_heads, k_shape->values[2], "query", "key", "number of heads");
+  multiple_of(num_heads, v_shape->values[2], "query", "value", "number of heads");
   diag_equal(num_keys, v_shape->values[1], "key", "value", "sequence length");
   diag_equal(head_dim, k_shape->values[3], "query", "key", "dimension of heads");
 
@@ -137,6 +160,21 @@ TVM_REGISTER_OP("relax.nn.attention_bias")
     .add_argument("key", "Tensor", "The input keys tensor.")
     .add_argument("value", "Tensor", "The input values tensor.")
     .add_argument("bias", "Tensor", "The input bias tensor.")
+    .set_attr<TMixedPrecisionPolicy>("TMixedPrecisionPolicy", MixedPrecisionPolicyKind::kAlways)
+    .set_attr<FInferMixedPrecision>("FInferMixedPrecision", InferMixedPrecisionAttention)
+    .set_attr<FInferStructInfo>("FInferStructInfo", InferStructInfoAttention)
+    .set_attr<Bool>("FPurity", Bool(true));
+
+TVM_REGISTER_OP("relax.nn.attention_var_len")
+    .set_attrs_type<AttentionAttrs>()
+    .set_num_inputs(7)
+    .add_argument("query", "Tensor", "The input queries tensor.")
+    .add_argument("key", "Tensor", "The input keys tensor.")
+    .add_argument("value", "Tensor", "The input values tensor.")
+    .add_argument("seqstart_q", "Tensor", "The cumsum of query sequence lengths, prepended with 0.")
+    .add_argument("seqstart_k", "Tensor", "The cumsum of key sequence lengths, prepended with 0.")
+    .add_argument("max_seqlen_q", "Tensor", "The maximum query sequence length in the batch.")
+    .add_argument("max_seqlen_k", "Tensor", "The maximum key sequence length in the batch.")
     .set_attr<TMixedPrecisionPolicy>("TMixedPrecisionPolicy", MixedPrecisionPolicyKind::kAlways)
     .set_attr<FInferMixedPrecision>("FInferMixedPrecision", InferMixedPrecisionAttention)
     .set_attr<FInferStructInfo>("FInferStructInfo", InferStructInfoAttention)

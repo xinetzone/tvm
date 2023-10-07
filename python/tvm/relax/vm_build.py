@@ -291,6 +291,7 @@ def build(
     -------
 
     .. code-block:: python
+
         class InputModule:
             @R.function
             def foo(x: Tensor((3, 4), "float32"), y: Tensor((3, 4), "float32")):
@@ -304,21 +305,24 @@ def build(
     if isinstance(target, str):
         target = tvm.target.Target(target)
 
-    passes = []
-    passes.append(relax.transform.RewriteDataflowReshape())
-    passes.append(relax.transform.ToNonDataflow())
-    passes.append(relax.transform.RemovePurityChecking())
-    passes.append(relax.transform.CallTIRRewrite())
-    passes.append(relax.transform.StaticPlanBlockMemory())
+    lowering_passes = tvm.transform.Sequential(
+        [
+            relax.transform.RewriteDataflowReshape(),
+            relax.transform.ToNonDataflow(),
+            relax.transform.RemovePurityChecking(),
+            relax.transform.CallTIRRewrite(),
+            relax.transform.StaticPlanBlockMemory(),
+            relax.transform.RewriteCUDAGraph(),
+            relax.transform.LowerAllocTensor(),
+            relax.transform.KillAfterLastUse(),
+            relax.transform.VMBuiltinLower(),
+            relax.transform.VMShapeLower(),
+            relax.transform.AttachGlobalSymbol(),
+        ],
+        name="relax.lower",
+    )
 
-    if tvm.transform.PassContext.current().config.get("relax.backend.use_cuda_graph", False):
-        passes.append(relax.transform.RewriteCUDAGraph())
-
-    passes.append(relax.transform.VMBuiltinLower())
-    passes.append(relax.transform.VMShapeLower())
-    passes.append(relax.transform.AttachGlobalSymbol())
-    seq = tvm.transform.Sequential(passes)
-    new_mod = seq(mod)
+    new_mod = lowering_passes(mod)
 
     # Extract external runtime modules if exist.
     attrs = dict(mod.attrs) if mod.attrs else {}

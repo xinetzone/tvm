@@ -32,6 +32,15 @@ def instantiate_attention_template(attrs):
   p.bias_strideB = ${bias_strideB};
 """
 
+    var_len_template = """
+  p.seqstart_q_ptr = (int32_t*)${seqstart_q}->data;
+  p.seqstart_k_ptr = (int32_t*)${seqstart_k}->data;
+  // TODO(masahi): Pass max_seqlen_q as an integer
+  cudaMemcpy(&p.num_queries, (int32_t*)${max_seqlen_q}->data, sizeof(int32_t),
+             cudaMemcpyDeviceToHost);
+  p.num_batches = ${seqstart_q}->shape[0] - 1;
+"""
+
     qkv_template = {
         "default": """
   p.query_ptr = reinterpret_cast<T *>(${query}->data);
@@ -127,6 +136,7 @@ def instantiate_attention_template(attrs):
 
   ${qkv_template}
   ${bias_template}
+  ${var_len_template}
 
   constexpr auto kernel_fn = attention_kernel_batched_impl<Attention>;
   int smem_bytes = sizeof(typename Attention::SharedStorage);
@@ -155,6 +165,7 @@ def instantiate_attention_template(attrs):
         {
             "qkv_template": qkv_template[attrs["qkv_layout"]],
             "bias_template": bias_template if "bias" in attrs else "",
+            "var_len_template": var_len_template if "seqstart_q" in attrs else "",
         },
     )
 
@@ -169,10 +180,10 @@ def instantiate_flash_attention_template(attrs):
     int k_head_stride = ${head_dim};
     int v_head_stride = ${head_dim};
     int o_head_stride = ${head_dim};
-    int q_row_stride = q_head_stride * ${num_heads};
-    int k_row_stride = k_head_stride * ${num_heads};
-    int v_row_stride = v_head_stride * ${num_heads};
-    int o_row_stride = o_head_stride * ${num_heads};
+    int q_row_stride = q_head_stride * ${num_q_heads};
+    int k_row_stride = k_head_stride * ${num_kv_heads};
+    int v_row_stride = v_head_stride * ${num_kv_heads};
+    int o_row_stride = o_head_stride * ${num_q_heads};
     int q_batch_stride = q_row_stride * ${num_queries};
     int k_batch_stride = k_row_stride * ${num_keys};
     int v_batch_stride = v_row_stride * ${num_keys};
@@ -190,8 +201,8 @@ def instantiate_flash_attention_template(attrs):
     			    ${num_batches},
     			    ${num_queries},
     			    ${num_keys},
-    			    ${num_heads},
-    			    ${num_heads},
+    			    ${num_q_heads},
+    			    ${num_kv_heads},
     			    ${head_dim},
     			    q_batch_stride,
     			    k_batch_stride,
@@ -215,13 +226,13 @@ def instantiate_flash_attention_template(attrs):
     int k_head_stride = ${head_dim};
     int v_head_stride = ${head_dim};
     int o_head_stride = ${head_dim};
-    int row_stride = q_head_stride * ${num_heads} +
-                     k_head_stride * ${num_heads} +
-                     v_head_stride * ${num_heads};
+    int row_stride = q_head_stride * ${num_q_heads} +
+                     k_head_stride * ${num_kv_heads} +
+                     v_head_stride * ${num_kv_heads};
     int q_row_stride = row_stride;
     int k_row_stride = row_stride;
     int v_row_stride = row_stride;
-    int o_row_stride = o_head_stride * ${num_heads};
+    int o_row_stride = o_head_stride * ${num_q_heads};
 
     int q_batch_stride = q_row_stride * ${num_queries};
     int k_batch_stride = k_row_stride * ${num_keys};
@@ -234,14 +245,14 @@ def instantiate_flash_attention_template(attrs):
 
     flash_attn::flash_attention_forward(
                             static_cast<const cutlass::half_t*>(${qkv}->data),
-    			    static_cast<const cutlass::half_t*>(${qkv}->data) + ${head_dim} * ${num_heads},
-    			    static_cast<const cutlass::half_t*>(${qkv}->data) + ${head_dim} * ${num_heads} * 2,
+    			    static_cast<const cutlass::half_t*>(${qkv}->data) + ${head_dim} * ${num_q_heads},
+    			    static_cast<const cutlass::half_t*>(${qkv}->data) + ${head_dim} * (${num_q_heads} + ${num_kv_heads}),
     			    static_cast<cutlass::half_t*>(out0->data),
     			    ${num_batches},
     			    ${num_queries},
     			    ${num_keys},
-    			    ${num_heads},
-    			    ${num_heads},
+    			    ${num_q_heads},
+    			    ${num_kv_heads},
     			    ${head_dim},
     			    q_batch_stride,
     			    k_batch_stride,

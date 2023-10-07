@@ -723,6 +723,7 @@ def instantiate_template(func_name, annotations, func_args):
         return CodegenResult(code, headers)
 
     elif "attention" in func_name:
+        is_var_len = "var_len" in func_name
         data_type = dtype_map[annotations["arg0_dtype"]]
 
         attrs["qkv_layout"] = annotations["qkv_layout"]
@@ -732,20 +733,19 @@ def instantiate_template(func_name, annotations, func_args):
             attrs["value"] = func_args[2]
             attrs["num_queries"] = s = get_dim(annotations["num_queries"], func_args[0], 1)
             attrs["num_keys"] = get_dim(annotations["num_keys"], func_args[1], 1)
-            if len(func_args) > 4:  # +1 for workspace, the last arg
+            if len(func_args) > 4 and not is_var_len:  # +1 for workspace, the last arg
                 attrs["bias"] = func_args[3]
         elif attrs["qkv_layout"] == "qkv_stacked":
             attrs["qkv"] = func_args[0]
             attrs["num_queries"] = s = annotations["num_queries"]
             attrs["num_keys"] = annotations["num_keys"]
-            if len(func_args) > 5:  # +1 for workspace, the last arg
+            if len(func_args) > 5 and not is_var_len:  # +1 for workspace, the last arg
                 attrs["bias"] = func_args[4]
         else:
             raise NotImplementedError()
 
         attrs["data_type"] = DataTypeTag[data_type]
         attrs["num_batches"] = b = annotations["num_batches"]
-        attrs["num_heads"] = n = annotations["num_heads"]
         attrs["head_dim"] = h = annotations["head_dim"]
         attrs["head_dim_value"] = h_v = annotations["head_dim_value"]
         attrs["kMaxK"] = max(int(attrs["head_dim"]), int(attrs["head_dim_value"]))
@@ -753,25 +753,46 @@ def instantiate_template(func_name, annotations, func_args):
             float(1 / math.sqrt(h.value)) if annotations["scale"] is None else annotations["scale"]
         )
 
+        if is_var_len:
+            attrs["seqstart_q"] = func_args[int(annotations["seqstart_q_idx"])]
+            attrs["seqstart_k"] = func_args[int(annotations["seqstart_k_idx"])]
+            attrs["max_seqlen_q"] = func_args[int(annotations["max_seqlen_q_idx"])]
+            attrs["max_seqlen_k"] = func_args[int(annotations["max_seqlen_k_idx"])]
+
+        is_mqa = annotations["num_q_heads"] != annotations["num_kv_heads"]
+
         use_flash = (
             annotations["ret_dtype"] == "float16"
             and "bias" not in attrs
             and int(attrs["head_dim"]) <= 256
             and int(attrs["head_dim"]) % 8 == 0
             and int(attrs["head_dim"]) == int(attrs["head_dim_value"])
-            # We have not thoroughly validated flash with causal mask yet, so for now we support
-            # only non-causal cases.
-            and int(annotations["custom_mask_type"]) == 0
+            # For the causal case (custom mask = "BottomRight"), only use flash for multi-query
+            # attention workloads. Otherwise, CUTLASS fMHA seems faster for causal attention
+            # with a single query.
+            and (
+                int(annotations["custom_mask_type"]) == 0
+                or (int(annotations["custom_mask_type"]) == 2 and is_mqa)
+            )
             # Flash v2 is currently not supported for sm < 80
             and int(annotations["arch"]) >= 80
+            and not is_var_len
         )
 
         if use_flash:
             headers.append("flash.h")
-            attrs["is_causal"] = int(annotations["custom_mask_type"]) > 0
+            attrs["is_causal"] = int(annotations["custom_mask_type"]) == 2
+            attrs["num_q_heads"] = annotations["num_q_heads"]
+            attrs["num_kv_heads"] = annotations["num_kv_heads"]
             code = instantiate_flash_attention_template(attrs)
         else:
             headers.append("kernel_forward.h")
+
+            assert (
+                not is_mqa
+            ), "The number of query and KV heads need to be the same for CUTLASS fMHA."
+
+            attrs["num_heads"] = n = annotations["num_q_heads"]
 
             data_type_size = DataTypeSize[data_type]
             if (data_type_size * h // 8) % 16 == 0 and (data_type_size * h_v // 8) % 16 == 0:

@@ -247,7 +247,7 @@ class FuncStructInfo(StructInfo):
         Parameters
         ----------
         ret: Optional[StructInfo]
-           The struct info of the the function return value.
+           The struct info of the function return value.
 
         derive_func: Optional[EnvFunc]
            The environment function used for derivation

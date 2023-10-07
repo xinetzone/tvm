@@ -746,7 +746,7 @@ def attention_causal(request):
 def test_attention_causal_offload(attention_causal_size, attention_causal):
     b, (s, s_kv), n, (h, h_v), bias_shape = attention_causal_size
     q, k, v, bias, ref = get_numpy_attention_ref(
-        b, s, s_kv, n, h, h_v, bias_shape, "none", attention_causal, "float32"
+        b, s, s_kv, n, h, h_v, bias_shape, "none", attention_causal, "float16"
     )
 
     q_shape = (b, s, n, h)
@@ -757,10 +757,11 @@ def test_attention_causal_offload(attention_causal_size, attention_causal):
         q_shape,
         k_shape,
         v_shape,
-        dtype="float32",
+        dtype="float16",
         bias_shape=bias_shape,
         causal_mask=attention_causal,
     )
+
     if bias is None:
         out = get_result_with_relax_cutlass_offload(mod, q, k, v, num_final_bindings=3)
     else:
@@ -1742,7 +1743,9 @@ def test_rms_norm():
     with tvm.target.Target("cuda"):
         mod = tvm.tir.transform.DefaultGPUSchedule()(mod)
 
-    mod = relax.transform.RunCodegen()(mod)
+    mod = relax.transform.RunCodegen(
+        {"cutlass": {"rms_eps": 1e-6}},
+    )(mod)
 
     inp = np.random.randn(*data_shape).astype(dtype)
     weight = np.random.randn(data_shape[-1]).astype(dtype)
@@ -1943,6 +1946,154 @@ def test_fp16A_int8B_gemm_batched():
     out = vm["main"](*inp).numpy()
     ref = np.dot(x, y.transpose())
     tvm.testing.assert_allclose(out, ref, rtol=1e-2, atol=1e-2)
+
+
+def test_attention_rewrite_multi_query():
+    @I.ir_module
+    class Module:
+        @R.function
+        def main(
+            q: R.Tensor((4, 16, 32, 16), dtype="float16"),
+            k_single: R.Tensor((4, 16, 1, 16), dtype="float16"),
+            v_single: R.Tensor((4, 16, 1, 16), dtype="float16"),
+        ) -> R.Tensor((4, 16, 32, 8), dtype="float16"):
+            with R.dataflow():
+                k = R.repeat(k_single, 32, axis=2)
+                v = R.repeat(v_single, 32, axis=2)
+
+                lv = R.permute_dims(q, axes=[0, 2, 1, 3])
+                lv1 = R.reshape(lv, R.shape([128, 16, 16]))
+                lv2 = R.permute_dims(k, axes=[0, 2, 1, 3])
+                lv3 = R.reshape(lv2, R.shape([128, 16, 16]))
+                lv4 = R.permute_dims(v, axes=[0, 2, 1, 3])
+                lv5 = R.reshape(lv4, R.shape([128, 16, 16]))
+
+                lv6 = R.permute_dims(lv3, axes=[0, 2, 1])
+                lv7 = R.matmul(lv1, lv6, out_dtype="float16")
+                lv3_1 = R.astype(R.const(0.25, "float32"), "float16")
+                lv8 = R.multiply(lv7, lv3_1)
+                lv11 = R.astype(R.nn.softmax(R.astype(lv8, "float32"), axis=2), "float16")
+                lv12 = R.matmul(lv11, lv5, out_dtype="float16")
+                lv13 = R.reshape(lv12, R.shape([4, 32, 16, 16]))
+                lv6_1 = R.permute_dims(lv13, axes=[0, 2, 1, 3])
+                R.output(lv6_1)
+            return lv6_1
+
+    q_np = np.random.randn(4, 16, 32, 16).astype("float16")
+    k_np = np.random.randn(4, 16, 1, 16).astype("float16")
+    v_np = np.random.randn(4, 16, 1, 16).astype("float16")
+    args = [q_np, k_np, v_np]
+    ref = build_and_run(Module, args, "llvm", legalize=True)
+
+    mod = partition_for_cutlass(Module, use_flash_mqa=True)
+    codegen_pass = relax.transform.RunCodegen({"cutlass": {"sm": 80}})
+    mod = codegen_pass(mod)
+
+    out = build_and_run(mod, args, "cuda")
+
+    tvm.testing.assert_allclose(out, ref, rtol=1e-2, atol=1e-2)
+
+
+def test_batched_var_len_attention():
+    if not tvm.get_global_func("tvm.contrib.thrust.sum_scan", True):
+        return
+
+    @I.ir_module
+    class Module:
+        @R.function
+        def main(
+            queries: R.Tensor(("num_tokens", 4096), dtype="float16"),
+            keys: R.Tensor(("num_tokens", 4096), dtype="float16"),
+            values: R.Tensor(("num_tokens", 4096), dtype="float16"),
+            seq_lens: R.Tensor(("num_seq",), dtype="int32"),
+        ) -> R.Tensor(("num_tokens", 4096), dtype="float16"):
+            cls = Module
+            num_tokens = T.int64()
+            num_seq = T.int64()
+
+            with R.dataflow():
+                # TODO(masahi): Workaround for the broken Relax cumsum op on GPU.
+                # https://github.com/apache/tvm/issues/15851
+                cumsum = R.call_dps_packed(
+                    "tvm.contrib.thrust.sum_scan", seq_lens, out_sinfo=seq_lens.struct_info
+                )
+                max_seqlen_q = R.max(seq_lens)
+                seqstart_q = R.concat([R.zeros((1,), "int32"), cumsum])
+                q = R.reshape(queries, R.shape([1, num_tokens, 128, 32]))
+                k = R.reshape(keys, R.shape([1, num_tokens, 128, 32]))
+                v = R.reshape(values, R.shape([1, num_tokens, 128, 32]))
+                attn_out = R.nn.attention_var_len(
+                    q,
+                    k,
+                    v,
+                    seqstart_q,
+                    max_seqlen_q,
+                    causal_mask="BottomRight",
+                )
+                out = R.reshape(attn_out, R.shape([num_tokens, 4096]))
+                R.output(out)
+            return out
+
+    seq_lens = [5, 3, 8]
+    num_head = 128
+    head_size = 32
+    hidden_size = num_head * head_size
+
+    batched_queries = []
+    batched_keys = []
+    batched_values = []
+    batched_refs = []
+
+    for s in seq_lens:
+        q, k, v, _, ref = get_numpy_attention_ref(
+            1, s, s, num_head, head_size, head_size, "none", "none", "BottomRight", "float16"
+        )
+        batched_queries.append(np.reshape(q, [-1, hidden_size]))
+        batched_keys.append(np.reshape(k, [-1, hidden_size]))
+        batched_values.append(np.reshape(v, [-1, hidden_size]))
+        batched_refs.append(np.reshape(ref, [-1, hidden_size]))
+
+    batched_queries = np.vstack(batched_queries)
+    batched_keys = np.vstack(batched_keys)
+    batched_values = np.vstack(batched_values)
+    ref = np.vstack(batched_refs)
+
+    mod = partition_for_cutlass(Module)
+    codegen_pass = relax.transform.RunCodegen({"cutlass": {"sm": 80}})
+    mod = codegen_pass(mod)
+
+    with tvm.target.Target("cuda"):
+        mod = relax.transform.LegalizeOps()(mod)
+        mod = tvm.tir.transform.DefaultGPUSchedule()(mod)
+
+    out = build_and_run(
+        mod,
+        [
+            batched_queries,
+            batched_keys,
+            batched_values,
+            np.array(seq_lens, dtype="int32"),
+        ],
+        "cuda",
+    )
+
+    tvm.testing.assert_allclose(out, ref, rtol=1e-2, atol=1e-2)
+
+    ############# xformer reference for verification #############
+
+    # attn_bias = BlockDiagonalCausalMask.from_seqlens(seq_lens)
+
+    # queries = torch.from_numpy(np.reshape(batched_queries, [1, -1, num_head, head_size])).to("cuda")
+    # keys = torch.from_numpy(np.reshape(batched_keys, [1, -1, num_head, head_size])).to("cuda")
+    # values = torch.from_numpy(np.reshape(batched_values, [1, -1, num_head, head_size])).to("cuda")
+
+    # out = xops.memory_efficient_attention_forward(
+    #     queries, keys, values,
+    #     attn_bias=attn_bias,
+    # ).cpu().numpy()[0]
+    # out = np.reshape(out, [-1, hidden_size])
+
+    # tvm.testing.assert_allclose(out, ref, rtol=1e-2, atol=1e-2)
 
 
 if __name__ == "__main__":

@@ -256,7 +256,7 @@ def matmul(a: Tensor, b: Tensor, out_dtype: Optional[str] = None, name: str = "m
 
     out_dtype: Optional[Union[str, DataType]]
         The data type of the matmul result.
-        When it is not specified, the output dtype will be the the same as input dtype.
+        When it is not specified, the output dtype will be the same as input dtype.
 
     name : str
         Name hint.
@@ -661,6 +661,7 @@ def repeat(x: Tensor, repeats: int, axis: Optional[int] = None, name="repeat") -
     Examples
     --------
     .. code-block:: python
+
         np_x = numpy.array([[1, 2], [3, 4]])
         x = Tensor.from_const(np_x)
         lv1 = repeat(x, repeats=2) # lv1 == [1, 1, 2, 2, 3, 3, 4, 4]

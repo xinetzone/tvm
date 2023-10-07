@@ -165,7 +165,7 @@ def _kill_child_processes(pid):
 
 @register_func("runtime.disco.create_process_pool")
 def _create_process_pool(num_workers: int):
-    """Create a process pool where the workers' are are [1, num_workers)."""
+    """Create a process pool where the workers' are [1, num_workers)."""
     pool = [DiscoPopenWorker(i, num_workers) for i in range(1, num_workers)]
 
     def result_func(worker_id: int):
@@ -173,7 +173,6 @@ def _create_process_pool(num_workers: int):
         if worker_id != 0:
             read_fd, write_fd = pool[worker_id - 1].start()
             return ShapeTuple([read_fd, write_fd])
-        print("Shutting down the process pool")
         del pool
         return None
 
