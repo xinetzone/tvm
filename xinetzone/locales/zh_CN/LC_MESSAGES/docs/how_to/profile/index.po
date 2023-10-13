@@ -19,11 +19,6 @@ msgstr ""
 
 #: ../../notebook/docs/how_to/profile/index.rst:19
 msgid "Profile Models"
-msgstr ""
+msgstr "模型剖析"
 
-#~ msgid "Profile Models"
-#~ msgstr ""
-
-#~ msgid "模型剖析"
-#~ msgstr ""
 

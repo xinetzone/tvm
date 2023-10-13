@@ -42,6 +42,11 @@ doc = [
   "sphinxcontrib.bibtex",
   "autodocsumm",
   "sphinx_automodapi",
+  "sphinx_sitemap",
+  "mdit-py-plugins",
+  "sphinx_plotly_directive",
+  "sphinxcontrib-websupport",
+  "sphinx-comments",
 ]
 dev = [
   "scipy>=1.9.3",
