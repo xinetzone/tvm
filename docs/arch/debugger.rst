@@ -113,11 +113,13 @@ be saved as binary bytes in serialized format.  The result binary bytes can be l
 API "load_params".
 
 Example of loading the parameters
-   ::
-    with open(path_params, "rb") as fi:
-        loaded_params = bytearray(fi.read())
 
-    module.load_params(loaded_params)
+  ::
+
+      with open(path_params, "rb") as fi:
+          loaded_params = bytearray(fi.read())
+
+      module.load_params(loaded_params)
 
 ***************************************
 How to use Debugger?
