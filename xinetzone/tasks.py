@@ -101,7 +101,7 @@ def install(ctx):
         # ctx.run('pdm install -G doc')
 
 def unlink(dst_dir):
-    if dst_dir.exists() and dst_dir.is_symlink():
+    if dst_dir.is_symlink():
         os.unlink(dst_dir)
 
 @task
@@ -112,12 +112,13 @@ def pull(ctx):
     src_doc_dir = ROOT/"docs" # TVM 源文档
     dst_doc_dir = HOME/"notebook/docs"
     src_vta_doc_dir = HOME/"vta/tutorials" # VTA 文档
-    dst_vta_doc_dir = src_doc_dir/"topic/vta/tutorials"
+    dst_vta_doc_dir = dst_doc_dir/"topic/vta/tutorials"
     # 拉取最新 TVM 源文档
     unlink(dst_doc_dir)
     unlink(dst_vta_doc_dir)
-    os.symlink(src_vta_doc_dir, dst_vta_doc_dir)
     os.symlink(src_doc_dir, dst_doc_dir)
+    os.symlink(src_vta_doc_dir, dst_vta_doc_dir)
+    
 
 @task
 def ln_env(ctx,

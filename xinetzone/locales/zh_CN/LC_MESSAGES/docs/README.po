@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../../xin/docs/README.md:115
 msgid "Google Colab Integration"
-msgstr ""
+msgstr "集成 Google Colab"
 
 #: ../../xin/docs/README.md:117
 msgid ""
@@ -138,6 +138,9 @@ msgid ""
 "/tvm-site/tree/asf-site) repo's `asf-site` branch by [@tvm-"
 "bot](https://github.com/tvm-bot)."
 msgstr ""
+"所有 TVM 教程都可以通过点击页面顶部的按钮在 Google Colab 中打开和交互式使用。"
+"为此，`sphinx-gallery` 会从每个教程构建 `.ipynb` 文件，"
+"这些文件会自动部署到 [apache/tvm-site](https://github.com/apache/tvm-site/tree/asf-site) 仓库的 `asf-site` 分支上，这是由 [@tvm-bot](https://github.com/tvm-bot) 完成的。"
 
 #: ../../xin/docs/README.md:123
 msgid ""
@@ -149,10 +152,12 @@ msgid ""
 "install Pytorch in your tutorial, add a ReStructured Text block like the "
 "following:"
 msgstr ""
+"为了确保你的教程在 Colab 上正确运行，教程中的任何非 Python 部分（例如依赖项安装）都应该使用 IPython 魔术命令进行前缀。"
+"这些内容不会被包含在构建的 `HTML` 文件中。例如，要在教程中安装 Pytorch，可以添加 ReStructured Text 块，如下所示："
 
 #: ../../xin/docs/README.md:140
 msgid "Interactive Bash Scripts"
-msgstr ""
+msgstr "交互式 Bash 脚本"
 
 #: ../../xin/docs/README.md:142
 #, python-format
@@ -163,6 +168,8 @@ msgid ""
 "running. When running commands that take several minutes (e.g. installing"
 " dependencies), this is annoying."
 msgstr ""
+"在 IPython 堆栈中，应该使用 `%%bash` 魔术命令来运行 shell 命令。"
+"然而，这个命令并不提供实时输出 - 教程的用户将不会看到任何输出，直到整个单元格运行完毕。当运行需要几分钟（例如安装依赖项）的命令时，这很烦人。"
 
 #: ../../xin/docs/README.md:148
 #, python-format
@@ -173,4 +180,5 @@ msgid ""
 "code](https://github.com/googlecolab/colabtools) is public. Thus, "
 "`%%shell` should be used instead of `%%bash` when writing TVM tutorials."
 msgstr ""
-
+"幸运的是，Google Colab有 `%%shell` 魔术命令，它可以执行与 `%%bash` 相同的操作，但实时输出结果。"
+"该命令是 Colab 特有的，其源代码代码可公开获得。因此，在编写 TVM 教程时，应该使用 `%%shell` 命令代替 `%%bash` 命令。"

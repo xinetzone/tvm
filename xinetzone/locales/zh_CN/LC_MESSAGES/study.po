@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022, xinetzone
-# This file is distributed under the same license as the TVM package.
+# This file is distributed under the same license as the tvm package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: TVM \n"
+"Project-Id-Version: tvm 0.14.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-06 09:21+0800\n"
+"POT-Creation-Date: 2023-10-13 13:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/vta-test/pass-profiler.ipynb:10002
-msgid "pass profiler"
+#: ../../notebook/study.md:3
+msgid "TVM 实践"
+msgstr ""
+
+#: ../../notebook/study.md:1
+msgid "TVM 解读与实践"
 msgstr ""
 

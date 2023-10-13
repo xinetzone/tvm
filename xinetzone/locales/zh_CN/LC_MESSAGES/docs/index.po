@@ -19,31 +19,31 @@ msgstr ""
 
 #: ../../notebook/docs/index.rst:31
 msgid "Getting Started"
-msgstr ""
+msgstr "快速上手"
 
 #: ../../notebook/docs/index.rst:38
 msgid "User Guide"
-msgstr ""
+msgstr "用户指南"
 
 #: ../../notebook/docs/index.rst:45
 msgid "Developer Guide"
-msgstr ""
+msgstr "开发者手册"
 
 #: ../../notebook/docs/index.rst:52
 msgid "Architecture  Guide"
-msgstr ""
+msgstr "架构设计"
 
 #: ../../notebook/docs/index.rst:58
 msgid "Topic Guides"
-msgstr ""
+msgstr "主题手册"
 
 #: ../../notebook/docs/index.rst:65
 msgid "Reference Guide"
-msgstr ""
+msgstr "参考指南"
 
 #: ../../notebook/docs/index.rst:19
 msgid "Apache TVM Documentation"
-msgstr ""
+msgstr "Apache TVM 文档"
 
 #: ../../notebook/docs/index.rst:21
 msgid ""
@@ -57,4 +57,6 @@ msgid ""
 "the reach of their research and development, which in turn raises the "
 "collective performance of all ML, while driving its costs down."
 msgstr ""
-
+"欢迎来到 Apache TVM 的文档，这是一个深度学习编译器，使得每个人都可以在任何地方访问高性能的机器学习。"
+"TVM 的硬件供应商、编译器工程师和机器学习研究人员组成的多样化社区共同努力，构建了一个统一的、可编程的软件堆栈，丰富了整个机器学习技术生态系统，并使其能够被更广泛的机器学习社区所访问。"
+"TVM 赋能用户利用社区驱动的基于机器学习的优化来推动其研究和开发的极限，扩大其影响力，从而提升所有机器学习的总体性能，同时降低成本。"
