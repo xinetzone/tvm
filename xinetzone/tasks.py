@@ -113,12 +113,14 @@ def pull(ctx):
     '''拉取最新 TVM 文档内容'''
     os.chdir(ROOT) # 切换到上级目录
     logging.info(f"进入 {os.getcwd()}，并更新文档内容")
+
     src_doc_dir = ROOT/"docs" # TVM 源文档
     dst_doc_dir = HOME/"notebook/docs"
     src_vta_doc_dir = HOME/"vta/tutorials" # VTA 文档
     dst_vta_doc_dir = src_doc_dir/"topic/vta/tutorials"
     src_tutorials_dir = HOME/"docs/tutorials"
     dst_tutorials_dir = src_doc_dir/"tutorials"
+    
     # 拉取最新 TVM 源文档
     unlink(dst_doc_dir)
     unlink(dst_vta_doc_dir)
@@ -126,6 +128,14 @@ def pull(ctx):
     os.symlink(src_doc_dir, dst_doc_dir)
     os.symlink(src_vta_doc_dir, dst_vta_doc_dir)
     os.symlink(src_tutorials_dir, dst_tutorials_dir)
+
+    src_how_to_dirs = HOME/"docs/how_to"
+    for p in src_how_to_dirs.iterdir():
+        if p.is_dir():
+            dst_how_to_dir = src_doc_dir/f"how_to/{p.name}"
+            unlink(dst_how_to_dir)
+            os.symlink(src_how_to_dirs/p.name, dst_how_to_dir)
+            print(f"how_to/{p.name}")
     
 
 @task

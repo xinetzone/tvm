@@ -1,3 +1,12 @@
 doxygen
 modules
 tutorials
+how_to/compile_models
+how_to/deploy_models
+how_to/extend_tvm
+how_to/optimize_operators
+how_to/tune_with_autoscheduler
+how_to/tune_with_autotvm
+how_to/work_with_microtvm
+how_to/work_with_relay
+how_to/work_with_schedules
