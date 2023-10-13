@@ -33,6 +33,9 @@ msgid ""
 "transformation using the analysis result collected during and/or before "
 "traversal."
 msgstr ""
+"Relay 和 TVM IR 都包含一系列优化传递，这些传递旨在改善模型的性能指标，例如针对特定设备的平均推理、内存占用或功耗。"
+"有一套标准的优化以及机器学习特定的优化，包括常量折叠、死代码消除、算子布局改变、算子融合、缓冲区处理和循环转换等。"
+"每个这些传递都是使用遍历期间和/或之前收集的分析结果构建的 IR-to-IR 转换。"
 
 #: ../../notebook/docs/arch/pass_infra.rst:31
 msgid ""
