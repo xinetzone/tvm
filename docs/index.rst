@@ -39,7 +39,7 @@ driving its costs down.
    :maxdepth: 1
    :caption: User Guide
 
-   tutorial/index
+   tutorials/index
    how_to/index
 
 .. toctree::

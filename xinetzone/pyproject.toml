@@ -41,6 +41,7 @@ doc = [
   "sphinxcontrib-mermaid",
   "sphinxcontrib.bibtex",
   "autodocsumm",
+  "sphinx_automodapi",
 ]
 dev = [
   "scipy>=1.9.3",

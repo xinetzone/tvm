@@ -117,11 +117,15 @@ def pull(ctx):
     dst_doc_dir = HOME/"notebook/docs"
     src_vta_doc_dir = HOME/"vta/tutorials" # VTA 文档
     dst_vta_doc_dir = src_doc_dir/"topic/vta/tutorials"
+    src_tutorials_dir = HOME/"docs/tutorials"
+    dst_tutorials_dir = src_doc_dir/"tutorials"
     # 拉取最新 TVM 源文档
     unlink(dst_doc_dir)
     unlink(dst_vta_doc_dir)
+    unlink(dst_tutorials_dir)
     os.symlink(src_doc_dir, dst_doc_dir)
     os.symlink(src_vta_doc_dir, dst_vta_doc_dir)
+    os.symlink(src_tutorials_dir, dst_tutorials_dir)
     
 
 @task
