@@ -8,20 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-06 15:25+0800\n"
+"POT-Creation-Date: 2023-10-12 19:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.6.0\n"
 
-#: ../../docs/contribute/community.rst:21
+#: ../../xin/docs/contribute/community.rst:21
 msgid "TVM Community Guidelines"
 msgstr "TVM 社区指南"
 
-#: ../../docs/contribute/community.rst:23
+#: ../../xin/docs/contribute/community.rst:28
 msgid ""
 "TVM adopts the Apache style model and governs by merit. We believe that "
 "it is important to create an inclusive community where everyone can use, "
@@ -30,16 +30,16 @@ msgid ""
 "<https://github.com/apache/tvm/blob/main/CONTRIBUTORS.md>`_ for the "
 "current list of contributors."
 msgstr ""
-"TVM 采用 Apache 风格模型，以优点治理。"
-"我们认为，创建包容的社区是很重要的，在这里每个人都可以使用、贡献和影响项目的方向。"
-"查看当前的贡献者列表 `CONTRIBUTORS.md "
+"TVM 采用 Apache "
+"风格模型，以优点治理。我们认为，创建包容的社区是很重要的，在这里每个人都可以使用、贡献和影响项目的方向。查看当前的贡献者列表 "
+"`CONTRIBUTORS.md "
 "<https://github.com/apache/tvm/blob/main/CONTRIBUTORS.md>`_。"
 
-#: ../../docs/contribute/community.rst:28
+#: ../../xin/docs/contribute/community.rst:31
 msgid "General Development Process"
 msgstr "一般开发过程"
 
-#: ../../docs/contribute/community.rst:29
+#: ../../xin/docs/contribute/community.rst:32
 msgid ""
 "Everyone in the community is welcomed to send patches, documents, and "
 "propose new directions to the project. The key guideline here is to "
@@ -50,12 +50,10 @@ msgid ""
 "mailing-list, so that everyone in the community can participate and "
 "review the process later."
 msgstr ""
-"欢迎社区中的每个人发送补丁、文件，并对项目提出新的方向。"
-"这里的关键指导方针是让社区中的每个人都参与到决策和开发中来。"
-"当提出重大变更时，应发送 RFC 以供社区讨论。"
-"鼓励公众讨论、可存档渠道，如问题、讨论论坛和邮件列表，这样社区中的每个人都可以参与和审查过程。"
+"欢迎社区中的每个人发送补丁、文件，并对项目提出新的方向。这里的关键指导方针是让社区中的每个人都参与到决策和开发中来。当提出重大变更时，应发送 "
+"RFC 以供社区讨论。鼓励公众讨论、可存档渠道，如问题、讨论论坛和邮件列表，这样社区中的每个人都可以参与和审查过程。"
 
-#: ../../docs/contribute/community.rst:31
+#: ../../xin/docs/contribute/community.rst:34
 msgid ""
 "Code reviews are one of the key ways to ensure the quality of the code. "
 "High-quality code reviews prevent technical debt for long-term and are "
@@ -70,28 +68,58 @@ msgid ""
 "code contribution, you could get your code quickly reviewed if you do "
 "others the same favor."
 msgstr ""
-"代码评审是确保代码质量的关键方法之一。"
-"高质量的代码审查可以防止长期的技术债务，并且对项目的成功至关重要。"
-"PR 在合并之前需要被审查。具有相应领域专业知识的提交者将协调 PR，并在代码就绪时合并代码。"
-"相应的提交者可以请求多个熟悉代码区域的评审人员。"
-"鼓励贡献者自己要求代码评审，并帮助评审彼此的代码——记住，每个人都是自愿为社区贡献时间的，"
-"高质量的代码评审本身的成本与实际的代码贡献是一样的，如果你帮助其他人，你的代码也可以很快被评审。"
+"代码评审是确保代码质量的关键方法之一。高质量的代码审查可以防止长期的技术债务，并且对项目的成功至关重要。PR "
+"在合并之前需要被审查。具有相应领域专业知识的提交者将协调 "
+"PR，并在代码就绪时合并代码。相应的提交者可以请求多个熟悉代码区域的评审人员。鼓励贡献者自己要求代码评审，并帮助评审彼此的代码——记住，每个人都是自愿为社区贡献时间的，高质量的代码评审本身的成本与实际的代码贡献是一样的，如果你帮助其他人，你的代码也可以很快被评审。"
 
-#: ../../docs/contribute/community.rst:33
+#: ../../xin/docs/contribute/community.rst:36
 msgid ""
 "The community should strive to reach a consensus on technical decisions "
 "through discussion. We expect committers and PMCs to moderate technical "
 "discussions in a diplomatic way, and provide suggestions with clear "
 "technical reasoning when necessary."
-msgstr ""
-"社区应该努力通过讨论就技术决定达成共识。"
-"希望委员会和私营军事委员会以外交方式主持技术讨论，并在必要时提供具有明确技术推理的建议。"
+msgstr "社区应该努力通过讨论就技术决定达成共识。希望委员会和私营军事委员会以外交方式主持技术讨论，并在必要时提供具有明确技术推理的建议。"
 
-#: ../../docs/contribute/community.rst:38
+#: ../../xin/docs/contribute/community.rst:39
+msgid "Strategy Decision Process"
+msgstr ""
+
+#: ../../xin/docs/contribute/community.rst:40
+msgid ""
+"It takes lazy 2/3 majority (at least 3 votes and twice as many +1 votes "
+"as -1 votes) of binding decisions to make the following strategic "
+"decisions in the TVM community:"
+msgstr ""
+
+#: ../../xin/docs/contribute/community.rst:43
+msgid ""
+"Adoption of a guidance-level community strategy to enable new directions "
+"or overall project evolution."
+msgstr ""
+
+#: ../../xin/docs/contribute/community.rst:44
+msgid "Establishment of a new module in the project."
+msgstr ""
+
+#: ../../xin/docs/contribute/community.rst:45
+msgid ""
+"Adoption of a new codebase: When the codebase for an existing, released "
+"product is to be replaced with an alternative codebase. If such a vote "
+"fails to gain approval, the existing code base will continue. This also "
+"covers the creation of new sub-projects within the project."
+msgstr ""
+
+#: ../../xin/docs/contribute/community.rst:48
+msgid ""
+"All these decisions are made after community conversations that get "
+"captured as part of the summary."
+msgstr ""
+
+#: ../../xin/docs/contribute/community.rst:52
 msgid "Committers"
 msgstr ""
 
-#: ../../docs/contribute/community.rst:39
+#: ../../xin/docs/contribute/community.rst:53
 msgid ""
 "Committers are individuals who are granted the write access to the "
 "project. A committer is usually responsible for a certain area or several"
@@ -103,7 +131,7 @@ msgid ""
 "help the community to recognize potential committers:"
 msgstr ""
 
-#: ../../docs/contribute/community.rst:41
+#: ../../xin/docs/contribute/community.rst:55
 msgid ""
 "Sustained contribution to the project, demonstrated by discussion over "
 "RFCs, code reviews and proposals of new features, and other development "
@@ -111,7 +139,7 @@ msgid ""
 "or several areas of the project."
 msgstr ""
 
-#: ../../docs/contribute/community.rst:42
+#: ../../xin/docs/contribute/community.rst:56
 msgid ""
 "Quality of contributions: High-quality, readable code contributions "
 "indicated by pull requests that can be merged without a substantial code "
@@ -120,7 +148,7 @@ msgid ""
 "adhere to a good standard."
 msgstr ""
 
-#: ../../docs/contribute/community.rst:43
+#: ../../xin/docs/contribute/community.rst:57
 msgid ""
 "Community involvement: active participation in the discussion forum, "
 "promote the projects via tutorials, talks and outreach. We encourage "
@@ -128,7 +156,7 @@ msgid ""
 "designs with community members that they do not interact physically."
 msgstr ""
 
-#: ../../docs/contribute/community.rst:45
+#: ../../xin/docs/contribute/community.rst:59
 msgid ""
 "The `Project Management Committee (PMC) "
 "<https://projects.apache.org/committee.html?tvm>`_ consists group of "
@@ -142,11 +170,11 @@ msgid ""
 "of their own organization."
 msgstr ""
 
-#: ../../docs/contribute/community.rst:49
+#: ../../xin/docs/contribute/community.rst:63
 msgid "Reviewers"
 msgstr ""
 
-#: ../../docs/contribute/community.rst:50
+#: ../../xin/docs/contribute/community.rst:64
 msgid ""
 "Reviewers are individuals who actively contributed to the project and are"
 " willing to participate in the code review of new contributions. We "
@@ -156,3 +184,4 @@ msgid ""
 "the project. A pull request to the project has to be reviewed by at least"
 " one reviewer in order to be merged."
 msgstr ""
+

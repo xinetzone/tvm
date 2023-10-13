@@ -83,21 +83,21 @@ def update(ctx):
     '''仅仅适用于 Linux'''
     with ctx.cd(ROOT):
         # ctx.run('ls')
-        ctx.run('rm -rf _xinetzone/xin/docs/')
-        ctx.run('cp -r docs/ _xinetzone/xin/docs/')
-        ctx.run('rm -rf _xinetzone/xin/docs/arch')
-        ctx.run('rm -rf _xinetzone/xin/docs/_build')
-        ctx.run('rm -rf _xinetzone/xin/docs/_staging/')
-        ctx.run('rm -rf _xinetzone/xin/docs/locales/')
-        ctx.run('rm -rf _xinetzone/xin/docs/index.rst _xinetzone/xin/docs/genindex.rst')
-        ctx.run("rm -rf _xinetzone/xin/docs/how_to/profile")
-        ctx.run("rm -rf _xinetzone/xin/vta-test")
-        ctx.run("rm -rf _xinetzone/xin/docs/reference/api/python")
-        ctx.run('cp -r _xinetzone/docs/** _xinetzone/xin/docs/')
-        ctx.run('cp -r _xinetzone/docs/tutorial _xinetzone/xin/docs/')
-        ctx.run('cp -r _xinetzone/docs/how_to _xinetzone/xin/docs/')
-        ctx.run("cp tests/scripts/ci.py _xinetzone/xin/tests/scripts/ci.py")
-        ctx.run('cp -r xinetzone/topic/vta/** _xinetzone/xin/docs/topic/vta')
+        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/')
+        ctx.run('cp -r docs/ xinetzone/_xinetzone/xin/docs/')
+        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/arch')
+        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/_build')
+        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/_staging/')
+        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/locales/')
+        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/index.rst xinetzone/_xinetzone/xin/docs/genindex.rst')
+        ctx.run("rm -rf xinetzone/_xinetzone/xin/docs/how_to/profile")
+        ctx.run("rm -rf xinetzone/_xinetzone/xin/vta-test")
+        ctx.run("rm -rf xinetzone/_xinetzone/xin/docs/reference/api/python")
+        ctx.run('cp -r xinetzone/_xinetzone/docs/** xinetzone/_xinetzone/xin/docs/')
+        ctx.run('cp -r xinetzone/_xinetzone/docs/tutorial xinetzone/_xinetzone/xin/docs/')
+        ctx.run('cp -r xinetzone/_xinetzone/docs/how_to xinetzone/_xinetzone/xin/docs/')
+        ctx.run("cp tests/scripts/ci.py xinetzone/_xinetzone/xin/tests/scripts/ci.py")
+        ctx.run('cp -r xinetzone/topic/vta/** xinetzone/_xinetzone/xin/docs/topic/vta')
 
 @task
 def ln_env(ctx,
@@ -124,7 +124,7 @@ def ln_env(ctx,
 #     else:
 #         ctx.run(f"pdm run invoke doc")
         
-namespace = site(source=f'{ROOT}/_xinetzone/xin', target=f'{ROOT}/_xinetzone/site/html')
+namespace = site(source=f'{ROOT}/xinetzone/_xinetzone/xin', target=f'{ROOT}/xinetzone/_xinetzone/site/html')
 namespace.add_task(init)
 namespace.add_task(config)
 namespace.add_task(make)
