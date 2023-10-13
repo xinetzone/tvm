@@ -48,7 +48,7 @@ jobs:
           invoke config
           invoke make
           inv pull
-          pip install .[doc]
+          pip install .[doc,dev]
           invoke doc
       - name: Setup Pages
         uses: actions/configure-pages@main
