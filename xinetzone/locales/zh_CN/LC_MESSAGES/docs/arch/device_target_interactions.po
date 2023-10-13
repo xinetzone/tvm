@@ -8,35 +8,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-10 21:32+0800\n"
+"POT-Creation-Date: 2023-10-13 11:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.6.0\n"
 
-#: ../../docs/arch/device_target_interactions.rst:22
+#: ../../notebook/docs/arch/device_target_interactions.rst:22
 msgid "Device/Target Interactions"
 msgstr "设备/目标交互"
 
-#: ../../docs/arch/device_target_interactions.rst:24
+#: ../../notebook/docs/arch/device_target_interactions.rst:24
 msgid ""
 "This documented is intended for developers interested in understanding "
 "how the TVM framework interacts with specific device APIs, or who may "
 "want to implement support for a new API or new hardware."
-msgstr ""
-"本文档旨在帮助对 TVM 框架如何与特定设备 API 交互感兴趣，或者希望实现对新 API 或新硬件支持的开发人员。"
+msgstr "本文档旨在帮助对 TVM 框架如何与特定设备 API 交互感兴趣，或者希望实现对新 API 或新硬件支持的开发人员。"
 
-#: ../../docs/arch/device_target_interactions.rst:28
+#: ../../notebook/docs/arch/device_target_interactions.rst:28
 msgid ""
 "There are three main aspects that must be implemented for any new runtime"
 " environment."
-msgstr ""
-"为任何新的运行时环境，必须实现三个主要方面。"
+msgstr "为任何新的运行时环境，必须实现三个主要方面。"
 
-#: ../../docs/arch/device_target_interactions.rst:31
+#: ../../notebook/docs/arch/device_target_interactions.rst:31
 msgid ""
 "The :ref:`DeviceAPI <tvm-target-specific-device-api>` class gives a "
 "handle to a specific device, and the API used to interact with it. It "
@@ -44,31 +42,33 @@ msgid ""
 "available, number of threads, etc.) and for performing simple actions "
 "(e.g. copying memory from the host, or between buffers on the device)."
 msgstr ""
-":ref:`DeviceAPI <tvm-target-specific-device-api>` 类提供了特定设备的句柄以及用于与其进行交互的 API。"
-"它定义了用于查询设备参数（例如可用内存、线程数等）以及执行简单行为（例如从主机复制内存或在设备上在缓冲区之间复制内存）的通用接口。"
+":ref:`DeviceAPI <tvm-target-specific-device-api>` 类提供了特定设备的句柄以及用于与其进行交互的 "
+"API。它定义了用于查询设备参数（例如可用内存、线程数等）以及执行简单行为（例如从主机复制内存或在设备上在缓冲区之间复制内存）的通用接口。"
 
-#: ../../docs/arch/device_target_interactions.rst:38
+#: ../../notebook/docs/arch/device_target_interactions.rst:38
 msgid ""
 "The :ref:`Target <tvm-target-specific-target>` class contains a "
 "description of the device on which a function will run.  It is exposed "
 "both to the target code generators and to the optimization passes."
 msgstr ""
-":ref:`Target <tvm-target-specific-target>` 类包含了函数将要运行的设备的说明。它既向目标代码生成器暴露，也向优化 passes 暴露。"
+":ref:`Target <tvm-target-specific-target>` "
+"类包含了函数将要运行的设备的说明。它既向目标代码生成器暴露，也向优化 passes 暴露。"
 
-#: ../../docs/arch/device_target_interactions.rst:43
+#: ../../notebook/docs/arch/device_target_interactions.rst:43
 msgid ""
 "The :ref:`target code generators <tvm-target-specific-codegen>` construct"
 " a :ref:`Module <tvm-runtime-system-module>` consisting of one or more "
 ":ref:`PackedFunc <tvm-runtime-system-packed-func>`, from an IRModule."
 msgstr ""
-":ref:`target code generators <tvm-target-specific-codegen>` 构造来自 IRModule，"
-"由一个或多个 :ref:`PackedFunc <tvm-runtime-system-packed-func>` 组成的 :ref:`Module <tvm-runtime-system-module>`。"
+":ref:`target code generators <tvm-target-specific-codegen>` 构造来自 "
+"IRModule，由一个或多个 :ref:`PackedFunc <tvm-runtime-system-packed-func>` 组成的 "
+":ref:`Module <tvm-runtime-system-module>`。"
 
-#: ../../docs/arch/device_target_interactions.rst:51
+#: ../../notebook/docs/arch/device_target_interactions.rst:51
 msgid "DeviceAPI"
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:53
+#: ../../notebook/docs/arch/device_target_interactions.rst:53
 msgid ""
 "The ``DeviceAPI`` represents a handle to a specific hardware device API."
 "  (e.g. ``CUDADeviceAPI`` handles all interactions through the CUDA "
@@ -79,13 +79,13 @@ msgid ""
 "API.  (e.g. ``tvm.runtime.device('cuda',0)`` gives access to physical "
 "device ``0``, accessed through the CUDA API.)"
 msgstr ""
-"``DeviceAPI`` 表示对特定硬件设备 API 的句柄。"
-"（例如，``CUDADeviceAPI`` 通过 CUDA 框架处理所有交互。）"
-"大多数 ``DeviceAPI`` 方法接受 ``device_id`` 参数来指定应该访问哪个设备。"
-"在 Python 中，通常使用 :py:func:`tvm.runtime.device` 函数来访问它们，该函数返回通过特定 API 访问的特定设备的句柄。"
-"（例如，``tvm.runtime.device('cuda',0)`` 可以访问物理设备 ``0``，并通过 CUDA API 进行访问。）"
+"``DeviceAPI`` 表示对特定硬件设备 API 的句柄。（例如，``CUDADeviceAPI`` 通过 CUDA "
+"框架处理所有交互。）大多数 ``DeviceAPI`` 方法接受 ``device_id`` 参数来指定应该访问哪个设备。在 Python "
+"中，通常使用 :py:func:`tvm.runtime.device` 函数来访问它们，该函数返回通过特定 API "
+"访问的特定设备的句柄。（例如，``tvm.runtime.device('cuda',0)`` 可以访问物理设备 ``0``，并通过 CUDA "
+"API 进行访问。）"
 
-#: ../../docs/arch/device_target_interactions.rst:64
+#: ../../notebook/docs/arch/device_target_interactions.rst:64
 msgid ""
 "Attribute queries - ``GetAttr`` allows different device-specific "
 "parameters to be queried, such as the device name, number of threads, "
@@ -95,23 +95,25 @@ msgid ""
 "``kMaxClockRate`` on Vulkan), or if a parameter isn't applicable (e.g. "
 "``kWarpSize`` on CPU), then those queries should return ``nullptr``."
 msgstr ""
-"属性查询 - ``GetAttr`` 允许查询不同的设备特定参数，例如设备名称、线程数等。可以查询的参数在 `device_api.h`_ 中的 ``enum DeviceAttrKind`` 定义。"
-"并非所有可查询的参数都受所有设备支持。如果参数无法查询（例如 Vulkan 上的 ``kMaxClockRate``），或者该参数不适用（例如 CPU 上的 ``kWarpSize``），则这些查询应返回 ``nullptr``。"
+"属性查询 - ``GetAttr`` 允许查询不同的设备特定参数，例如设备名称、线程数等。可以查询的参数在 `device_api.h`_ 中的 "
+"``enum DeviceAttrKind`` 定义。并非所有可查询的参数都受所有设备支持。如果参数无法查询（例如 Vulkan 上的 "
+"``kMaxClockRate``），或者该参数不适用（例如 CPU 上的 ``kWarpSize``），则这些查询应返回 "
+"``nullptr``。"
 
-#: ../../docs/arch/device_target_interactions.rst:73
+#: ../../notebook/docs/arch/device_target_interactions.rst:73
 msgid ""
 "Setting active device - ``SetDevice`` should set a particular device as "
 "being active.  If a ``PackedFunc`` generated by the target-specific code "
 "gen requires execution on a device, it should run on the active device."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:78
+#: ../../notebook/docs/arch/device_target_interactions.rst:78
 msgid ""
 "Memory management - Utilities for allocating and deallocating memory on "
 "the device."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:81
+#: ../../notebook/docs/arch/device_target_interactions.rst:81
 msgid ""
 "Allocate data space - ``AllocDataSpace`` and ``FreeDataSpace`` allocate "
 "and free space on the device.  These allocations can be provided as "
@@ -124,7 +126,7 @@ msgid ""
 "to other backend-specific functions, such as ``CopyDataFromTo``."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:92
+#: ../../notebook/docs/arch/device_target_interactions.rst:92
 msgid ""
 "Allocate work space - ``AllocWorkspace`` and ``FreeWorkspace`` allocate "
 "and free space on the device.  Unlike data space, these are used for "
@@ -134,7 +136,7 @@ msgid ""
 "the corresponding ``DataSpace`` functions."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:100
+#: ../../notebook/docs/arch/device_target_interactions.rst:100
 msgid ""
 "Copy data - ``CopyDataFromTo`` should copy data from one location to "
 "another.  The type of copy is determined by the ``dev_from`` and "
@@ -147,27 +149,27 @@ msgid ""
 "``AllocDataSpace`` or ``AllocWorkspace``."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:111
+#: ../../notebook/docs/arch/device_target_interactions.rst:111
 msgid ""
 "These copies are queued to execute on a specific ``TVMStreamHandle``.  "
 "However, implementations should not assume that CPU buffers remains valid"
 " or accessible after the call to ``CopyDataFromTo`` completes."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:117
+#: ../../notebook/docs/arch/device_target_interactions.rst:117
 msgid ""
 "Execution stream management - Utilities for handling ``TVMStreamHandle``,"
 " which represents parallel streams of execution used to execute commands."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:121
+#: ../../notebook/docs/arch/device_target_interactions.rst:121
 msgid ""
 "Create stream - ``CreateStream`` and ``FreeStream`` should allocate/free "
 "a handle to a stream of execution. If a device implements only a single "
 "queue of commands, then ``CreateStream`` should return ``nullptr``."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:126
+#: ../../notebook/docs/arch/device_target_interactions.rst:126
 msgid ""
 "Set active stream - ``SetStream`` should set a stream as being active.  "
 "While active, if a ``PackedFunc`` generated by the target-specific code "
@@ -175,7 +177,7 @@ msgid ""
 "active stream."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:131
+#: ../../notebook/docs/arch/device_target_interactions.rst:131
 msgid ""
 "Synchronize to CPU - ``StreamSync`` should synchronize a stream of "
 "execution to the CPU.  The call to ``StreamSync`` should return once all "
@@ -183,7 +185,7 @@ msgid ""
 "call have completed."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:136
+#: ../../notebook/docs/arch/device_target_interactions.rst:136
 msgid ""
 "Synchronize between streams - ``SyncStreamFromTo`` should introduce a "
 "synchronization barrier between the source and destination stream.  That "
@@ -192,23 +194,23 @@ msgid ""
 "currently queued."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:143
+#: ../../notebook/docs/arch/device_target_interactions.rst:143
 msgid ""
 "In order to be usable by the TVM framework, the new DeviceAPI should then"
 " be registered with the following steps."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:146
+#: ../../notebook/docs/arch/device_target_interactions.rst:146
 msgid ""
 "Create a function that instantiates the new DeviceAPI, and returns a "
 "pointer to it::"
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:154
+#: ../../notebook/docs/arch/device_target_interactions.rst:154
 msgid "Register the function to the tvm registry::"
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:160
+#: ../../notebook/docs/arch/device_target_interactions.rst:160
 msgid ""
 "Add an entry for the new DeviceAPI to the ``TVMDeviceExtType`` enum in "
 "`c_runtime_api.h`_.  The value should be an unused value greater than "
@@ -216,24 +218,24 @@ msgid ""
 "``DeviceAPIManager::kMaxDeviceAPI``."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:165
+#: ../../notebook/docs/arch/device_target_interactions.rst:165
 msgid ""
 "Add a case in ``DeviceName`` in `device_api.h`_ to convert from the enum "
 "value to a string representation.  This string representation should "
 "match the name given to ``TVM_REGISTER_GLOBAL``."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:169
+#: ../../notebook/docs/arch/device_target_interactions.rst:169
 msgid ""
 "Add entries to the ``MASK2STR`` and ``STR2MASK`` dictionaries of "
 ":py:class:`tvm.runtime.Device` for the new enum value."
 msgstr ""
 
-#: ../../docs/arch/device_target_interactions.rst:176
+#: ../../notebook/docs/arch/device_target_interactions.rst:176
 msgid "Target Definition"
 msgstr "目标定义"
 
-#: ../../docs/arch/device_target_interactions.rst:178
+#: ../../notebook/docs/arch/device_target_interactions.rst:178
 msgid ""
 "The ``Target`` object is a lookup table of properties about a physical "
 "device, its hardware/driver limits, and its capabilities.  The ``Target``"
@@ -241,10 +243,10 @@ msgid ""
 "While the same ``Target`` class is used for all runtime targets, each "
 "runtime target may need to add target-specific options."
 msgstr ""
-"``Target`` 对象是关于物理设备的属性的查找表，包括其硬件/驱动程序的限制和能力。"
-"``Target`` 在优化和代码生成阶段都可访问。虽然所有运行时目标都使用相同的 ``Target`` 类，但每个运行时目标可能需要添加特定于目标的选项。"
+"``Target`` 对象是关于物理设备的属性的查找表，包括其硬件/驱动程序的限制和能力。``Target`` "
+"在优化和代码生成阶段都可访问。虽然所有运行时目标都使用相同的 ``Target`` 类，但每个运行时目标可能需要添加特定于目标的选项。"
 
-#: ../../docs/arch/device_target_interactions.rst:186
+#: ../../notebook/docs/arch/device_target_interactions.rst:186
 msgid ""
 "In `target_kind.cc`_, add a new declaration of "
 "``TVM_REGISTER_TARGET_KIND``, passing a string name of the new target, "
@@ -256,21 +258,25 @@ msgid ""
 "(e.g. The ``\"llvm\"`` and ``\"c\"`` targets both run on the ``kDLCPU`` "
 "device type.)"
 msgstr ""
-"在 `target_kind.cc`_ 中，添加新的 ``TVM_REGISTER_TARGET_KIND`` 声明，"
-"传递新目标的字符串名称以及该目标应运行的设备上的 ``TVMDeviceExtType`` 或 ``DLDeviceType`` 枚举值。通常，目标名称与设备名称相匹配。"
-"（例如，``\"cuda\"`` 目标运行在 ``kDLCUDA`` 设备上）。也有例外情况，例如同一物理设备上可以运行多个不同的代码生成目标。（例如，``\"llvm\"`` 和 ``\"c\"`` 目标都运行在 ``kDLCPU`` 设备类型上。）"
+"在 `target_kind.cc`_ 中，添加新的 ``TVM_REGISTER_TARGET_KIND`` "
+"声明，传递新目标的字符串名称以及该目标应运行的设备上的 ``TVMDeviceExtType`` 或 ``DLDeviceType`` "
+"枚举值。通常，目标名称与设备名称相匹配。（例如，``\"cuda\"`` 目标运行在 ``kDLCUDA`` "
+"设备上）。也有例外情况，例如同一物理设备上可以运行多个不同的代码生成目标。（例如，``\"llvm\"`` 和 ``\"c\"`` 目标都运行在 "
+"``kDLCPU`` 设备类型上。）"
 
-#: ../../docs/arch/device_target_interactions.rst:196
+#: ../../notebook/docs/arch/device_target_interactions.rst:196
+#, fuzzy
 msgid ""
 "All options for a specific target kind are added with the "
-"``add_attr_option`` function, with optional default values.  A "
-"preprocessor can be added with ``set_attrs_preprocessor`` to define any "
-"parameters that are dynamically based on other parameters or queried from"
-" device properties."
+"``add_attr_option`` function, with optional default values.  A `Target` "
+"parser can be added with ``set_target_parser`` to process any parameters "
+"that are dynamically based on other parameters or queried from device "
+"properties."
 msgstr ""
-"特定目标类型的所有选项都使用 ``add_attr_option`` 函数添加，并提供可选的默认值。可以使用 ``set_attrs_preprocessor`` 添加预处理器来定义任何基于其他参数或从设备属性查询的动态参数。"
+"特定目标类型的所有选项都使用 ``add_attr_option`` 函数添加，并提供可选的默认值。可以使用 "
+"``set_attrs_preprocessor`` 添加预处理器来定义任何基于其他参数或从设备属性查询的动态参数。"
 
-#: ../../docs/arch/device_target_interactions.rst:202
+#: ../../notebook/docs/arch/device_target_interactions.rst:202
 msgid ""
 "This argument definition defines a parser that can unpack a string "
 "description of a target.  This is done in the ``Target::Target(const "
@@ -280,23 +286,25 @@ msgid ""
 "\"max_num_threads\": 1024}')`` will create a ``cuda`` target, while "
 "overriding the default maximum number of threads."
 msgstr ""
-"这个参数定义定义了一个解析器，可以解包目标的字符串描述。这是在 C++ 中的 ``Target::Target(const String&)`` 构造函数中完成的，"
-"它接受 JSON 格式的字符串，通常使用 :py:class:`tvm.target.Target` Python 对象调用。例如，``tvm.target.Target('{\"kind\": \"cuda\", "
-"\"max_num_threads\": 1024}')`` 将创建 ``cuda`` 目标，同时覆盖默认的最大线程数。"
+"这个参数定义定义了一个解析器，可以解包目标的字符串描述。这是在 C++ 中的 ``Target::Target(const String&)`` "
+"构造函数中完成的，它接受 JSON 格式的字符串，通常使用 :py:class:`tvm.target.Target` Python "
+"对象调用。例如，``tvm.target.Target('{\"kind\": \"cuda\", \"max_num_threads\": "
+"1024}')`` 将创建 ``cuda`` 目标，同时覆盖默认的最大线程数。"
 
-#: ../../docs/arch/device_target_interactions.rst:210
+#: ../../notebook/docs/arch/device_target_interactions.rst:210
 msgid ""
 "In a code generator, the target properties can be accessed using "
 "``target->GetAttr<T>(param_name)`` in C++, or with the ``target.attrs`` "
 "dictionary in Python."
 msgstr ""
-"在代码生成器中，可以使用 C++ 中的 ``target->GetAttr<T>(param_name)`` 或 Python 中的 ``target.attrs`` 字典来访问目标属性。"
+"在代码生成器中，可以使用 C++ 中的 ``target->GetAttr<T>(param_name)`` 或 Python 中的 "
+"``target.attrs`` 字典来访问目标属性。"
 
-#: ../../docs/arch/device_target_interactions.rst:218
+#: ../../notebook/docs/arch/device_target_interactions.rst:218
 msgid "Target Code Generators"
 msgstr "目标代码生成器"
 
-#: ../../docs/arch/device_target_interactions.rst:220
+#: ../../notebook/docs/arch/device_target_interactions.rst:220
 msgid ""
 "The code generators take an optimized ``IRModule`` and converts it into "
 "an executable representation.  Each code generator must be registered in "
@@ -304,10 +312,11 @@ msgid ""
 "function named ``\"target.build.foo\"``, where ``foo`` is the same name "
 "as was used in the ``TVM_REGISTER_TARGET_KIND`` definition above. ::"
 msgstr ""
-"代码生成器将优化过的 ``IRModule`` 转换为可执行表示形式。每个代码生成器都必须注册才能被 TVM 框架使用。"
-"这是通过注册名为 ``\"target.build.foo\"`` 的函数来完成的，其中 ``foo`` 与上面在 ``TVM_REGISTER_TARGET_KIND`` 定义中使用的名称相同。"
+"代码生成器将优化过的 ``IRModule`` 转换为可执行表示形式。每个代码生成器都必须注册才能被 TVM 框架使用。这是通过注册名为 "
+"``\"target.build.foo\"`` 的函数来完成的，其中 ``foo`` 与上面在 "
+"``TVM_REGISTER_TARGET_KIND`` 定义中使用的名称相同。"
 
-#: ../../docs/arch/device_target_interactions.rst:230
+#: ../../notebook/docs/arch/device_target_interactions.rst:230
 msgid ""
 "The code generator takes two arguments.  The first is the ``IRModule`` to"
 " compile, and the second is the ``Target`` that describes the device on "
@@ -317,12 +326,13 @@ msgid ""
 "lookups on the device itself, and should instead access parameters stored"
 " in the ``Target``."
 msgstr ""
-"代码生成器接受两个参数。第一个参数是 ``IRModule``，需要编译；第二个参数是描述代码应运行的设备的 ``Target``。"
-"由于执行编译的环境不一定与将执行代码的环境相同，因此代码生成器不应在设备本身上执行任何属性查找，而应访问存储在 ``Target`` 中的参数。"
+"代码生成器接受两个参数。第一个参数是 ``IRModule``，需要编译；第二个参数是描述代码应运行的设备的 "
+"``Target``。由于执行编译的环境不一定与将执行代码的环境相同，因此代码生成器不应在设备本身上执行任何属性查找，而应访问存储在 "
+"``Target`` 中的参数。"
 
-#: ../../docs/arch/device_target_interactions.rst:238
+#: ../../notebook/docs/arch/device_target_interactions.rst:238
 msgid ""
 "Each function in the input ``IRModule`` should be accessible by name in "
 "the output ``runtime::Module``."
-msgstr ""
-"输入 ``IRModule`` 中的每个函数在输出 ``runtime::Module`` 中都应以名称可访问。"
+msgstr "输入 ``IRModule`` 中的每个函数在输出 ``runtime::Module`` 中都应以名称可访问。"
+

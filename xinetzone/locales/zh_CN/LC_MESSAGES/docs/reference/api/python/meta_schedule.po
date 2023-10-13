@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020 - 2021, Apache Software Foundation
+# Copyright (C) 2022, xinetzone
 # This file is distributed under the same license as the tvm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tvm 0.9.dev282+gf54634c5d\n"
+"Project-Id-Version: tvm 0.0.18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-13 11:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -17,13 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../notebook/docs/how_to/profile/index.rst:19
-msgid "Profile Models"
+#: ../../notebook/docs/reference/api/python/meta_schedule.rst:19
+msgid "tvm.meta_schedule"
 msgstr ""
-
-#~ msgid "Profile Models"
-#~ msgstr ""
-
-#~ msgid "模型剖析"
-#~ msgstr ""
 

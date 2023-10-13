@@ -3,3 +3,5 @@ pdm.lock
 draft/
 tvm-book/
 .pdm-python
+*.log
+_build/

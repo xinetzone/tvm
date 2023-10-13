@@ -1,15 +1,37 @@
 '''暂时仅仅提供 Linux 平台
 '''
+import os
+import logging
+from subprocess import Popen, PIPE
 import inspect
 if not hasattr(inspect, 'getargspec'): # 修复
     inspect.getargspec = inspect.getfullargspec
 from pathlib import Path
 import sys
 from invoke import task
-
 from d2py.tools.write import site
 
-ROOT = str(Path('..').resolve())
+FILE = Path(__file__).resolve() # 当前文件路径
+HOME = FILE.parent # 当前目录
+LOG = HOME/"logs" # 日志目录
+LOG.mkdir(exist_ok=True)
+ROOT = Path("..").resolve() # 获取 TVM 根目录
+
+# 配置日志
+fh = logging.FileHandler(f"{LOG}/{FILE.name.removesuffix(FILE.suffix)}.log", "w")
+fh.setLevel(logging.DEBUG)
+# 创建日志级别更高的控制台处理程序
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO) # 或者logging.ERROR
+# 创建formatter并将其
+fh_formatter = logging.Formatter("%(levelname)s|%(asctime)s|%(name)s| -> %(message)s|%(module)s.%(funcName)s@%(pathname)s")
+ch_formatter = logging.Formatter("%(levelname)s|%(asctime)s -> %(message)s")
+fh.setFormatter(fh_formatter)
+ch.setFormatter(ch_formatter)
+logging.basicConfig(
+    level=logging.DEBUG,
+    handlers=[fh, ch]
+)
 
 
 @task
@@ -78,26 +100,24 @@ def install(ctx):
         ctx.run('pdm install')
         # ctx.run('pdm install -G doc')
 
+def unlink(dst_dir):
+    if dst_dir.exists() and dst_dir.is_symlink():
+        os.unlink(dst_dir)
+
 @task
-def update(ctx):
-    '''仅仅适用于 Linux'''
-    with ctx.cd(ROOT):
-        # ctx.run('ls')
-        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/')
-        ctx.run('cp -r docs/ xinetzone/_xinetzone/xin/docs/')
-        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/arch')
-        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/_build')
-        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/_staging/')
-        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/locales/')
-        ctx.run('rm -rf xinetzone/_xinetzone/xin/docs/index.rst xinetzone/_xinetzone/xin/docs/genindex.rst')
-        ctx.run("rm -rf xinetzone/_xinetzone/xin/docs/how_to/profile")
-        ctx.run("rm -rf xinetzone/_xinetzone/xin/vta-test")
-        ctx.run("rm -rf xinetzone/_xinetzone/xin/docs/reference/api/python")
-        ctx.run('cp -r xinetzone/_xinetzone/docs/** xinetzone/_xinetzone/xin/docs/')
-        ctx.run('cp -r xinetzone/_xinetzone/docs/tutorial xinetzone/_xinetzone/xin/docs/')
-        ctx.run('cp -r xinetzone/_xinetzone/docs/how_to xinetzone/_xinetzone/xin/docs/')
-        ctx.run("cp tests/scripts/ci.py xinetzone/_xinetzone/xin/tests/scripts/ci.py")
-        ctx.run('cp -r xinetzone/topic/vta/** xinetzone/_xinetzone/xin/docs/topic/vta')
+def pull(ctx):
+    '''拉取最新 TVM 文档内容'''
+    os.chdir(ROOT) # 切换到上级目录
+    logging.info(f"进入 {os.getcwd()}，并更新文档内容")
+    src_doc_dir = ROOT/"docs" # TVM 源文档
+    dst_doc_dir = HOME/"notebook/docs"
+    src_vta_doc_dir = HOME/"vta/tutorials" # VTA 文档
+    dst_vta_doc_dir = src_doc_dir/"topic/vta/tutorials"
+    # 拉取最新 TVM 源文档
+    unlink(dst_doc_dir)
+    unlink(dst_vta_doc_dir)
+    os.symlink(src_vta_doc_dir, dst_vta_doc_dir)
+    os.symlink(src_doc_dir, dst_doc_dir)
 
 @task
 def ln_env(ctx,
@@ -124,11 +144,11 @@ def ln_env(ctx,
 #     else:
 #         ctx.run(f"pdm run invoke doc")
         
-namespace = site(source=f'{ROOT}/xinetzone/_xinetzone/xin', target=f'{ROOT}/xinetzone/_xinetzone/site/html')
+namespace = site(source=f"{HOME}/notebook/", target=f'{HOME}/_build/html')
 namespace.add_task(init)
 namespace.add_task(config)
 namespace.add_task(make)
 namespace.add_task(install)
-namespace.add_task(update)
+namespace.add_task(pull)
 namespace.add_task(ln_env)
 # namespace.add_task(pdm_doc) # PDM 管理文档

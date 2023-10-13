@@ -1,9 +1,0 @@
-doxygen
-modules
-gen_modules
-_build/
-docs/
-*.mo
-*.tar
-whatever
-vta-test/

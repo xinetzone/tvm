@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.0.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-13 11:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../notebook/tests/vta/te.ipynb:10002
+msgid "TVM 张量表达式"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:50002
+msgid "矩阵乘法"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:80002
+msgid "默认调度:"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:100002
+msgid "循环分块:"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:120002
+msgid "分割规约轴:"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:140002
+msgid "重排轴顺序:"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:160002
+msgid "向量化:"
+msgstr ""
+
+#: ../../notebook/tests/vta/te.ipynb:180002
+msgid "数组打包:"
+msgstr ""
+

@@ -45,9 +45,9 @@ jobs:
           cd xinetzone
           pip install invoke d2py pdm
           invoke init
-          invoke config 
+          invoke config
           invoke make
-          inv update
+          inv pull
           pip install .[doc]
           invoke doc
       - name: Setup Pages
@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: 'xinetzone/_xinetzone/site/html/'
+          path: 'xinetzone/_build/html/'
       - name: 🚀 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
