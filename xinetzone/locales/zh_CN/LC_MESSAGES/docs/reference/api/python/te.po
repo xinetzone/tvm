@@ -8,21 +8,2969 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 18:33+0800\n"
+"POT-Creation-Date: 2023-10-13 12:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.6.0\n"
 
-#: ../../docs/reference/api/python/te.rst:19
+#: ../../notebook/docs/reference/api/python/te.rst:19
 msgid "tvm.te"
 msgstr ""
 
-#: ../../docs/reference/api/python/te.rst:29
+#: of tvm.te:1
+msgid "Namespace for Tensor Expression Language"
+msgstr ""
+
+#: of tvm.te:1 tvm.te.hybrid:1
+msgid "**Classes:**"
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`ComputeOp <tvm.te.ComputeOp>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1 tvm.te:1:<autosummary>:1
+msgid "Scalar operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`ExternOp <tvm.te.ExternOp>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ExternOp:1 tvm.te:1:<autosummary>:1
+msgid "External operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`HybridOp <tvm.te.HybridOp>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.HybridOp:1 tvm.te:1:<autosummary>:1
+msgid "Hybrid operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`PlaceholderOp <tvm.te.PlaceholderOp>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.PlaceholderOp:1 tvm.te:1:<autosummary>:1
+msgid "Placeholder operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`ScanOp <tvm.te.ScanOp>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ScanOp:1 tvm.te:1:<autosummary>:1
+msgid "Scan operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`Schedule <tvm.te.Schedule>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule:1 tvm.te:1:<autosummary>:1
+msgid "Schedule for all the stages."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ""
+":py:obj:`SpecializedCondition <tvm.te.SpecializedCondition>`\\ "
+"\\(conditions\\)"
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition:1 tvm.te:1:<autosummary>:1
+msgid "Specialized condition to enable op specialization."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`Stage <tvm.te.Stage>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage:1 tvm.te:1:<autosummary>:1
+msgid "A Stage represents schedule for one operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`Tensor <tvm.te.Tensor>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.Tensor:1 tvm.te:1:<autosummary>:1
+msgid "Tensor object, to construct, see function.Tensor"
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`TensorComputeOp <tvm.te.TensorComputeOp>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.TensorComputeOp:1 tvm.te:1:<autosummary>:1
+msgid "Tensor operation."
+msgstr ""
+
+#: of tvm.te:1:<autosummary>:1
+msgid ":py:obj:`TensorSlice <tvm.te.TensorSlice>`\\ \\(tensor\\, indices\\)"
+msgstr ""
+
+#: of tvm.te.tensor.TensorSlice:1 tvm.te:1:<autosummary>:1
+msgid "Auxiliary data structure for enable slicing syntax from tensor."
+msgstr ""
+
+#: of tvm.te:1 tvm.te.hybrid:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`abs <tvm.te.abs>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.abs:1
+msgid "Get absolute value of the input element-wise."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`acos <tvm.te.acos>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.acos:1
+#: tvm.tir.op.acosh:1
+msgid "Take acos of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`acosh <tvm.te.acosh>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`add <tvm.te.add>`\\ \\(lhs\\, rhs\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.generic.add:1
+msgid "Generic add operator."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`all <tvm.te.all>`\\ \\(\\*args\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.all:2
+msgid "Create a new expression of the intersection of all conditions in the"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`any <tvm.te.any>`\\ \\(\\*args\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.any:1
+msgid "Create a new experssion of the union of all conditions in the arguments"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`asin <tvm.te.asin>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.asin:1
+msgid "Take asin of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`asinh <tvm.te.asinh>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.asinh:1
+msgid "Take asinh of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`atan <tvm.te.atan>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.atan:1
+msgid "Take atan of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`atanh <tvm.te.atanh>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.atanh:1
+msgid "Take atanh of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`ceil <tvm.te.ceil>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.ceil:1
+msgid "Take ceil of float input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`comm_reducer <tvm.te.comm_reducer>`\\ \\(fcombine\\, "
+"fidentity\\[\\, name\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.comm_reducer:1
+msgid "Create a commutative reducer for reduction."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`compute <tvm.te.compute>`\\ \\(shape\\, fcompute\\[\\, name\\, "
+"tag\\, attrs\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.compute:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Construct a new tensor by computing over the shape domain."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`const <tvm.te.const>`\\ \\(value\\[\\, dtype\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.const:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Create a new constant with specified value and dtype"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`cos <tvm.te.cos>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.cos:1
+msgid "Take cos of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`cosh <tvm.te.cosh>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.cosh:1
+msgid "Take cosh of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`create_prim_func <tvm.te.create_prim_func>`\\ \\(ops\\[\\, "
+"index\\_dtype\\_override\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:1
+#: tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Create a TensorIR PrimFunc from tensor expression"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`create_schedule <tvm.te.create_schedule>`\\ \\(ops\\)"
+msgstr ""
+
+#: of tvm.te.schedule.create_schedule:1
+#: tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Create a schedule for list of ops"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`decl_tensor_intrin <tvm.te.decl_tensor_intrin>`\\ \\(op\\, "
+"fcompute\\[\\, name\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+#: tvm.te.tensor_intrin.decl_tensor_intrin:1
+msgid "Declare a tensor intrinsic function."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`div <tvm.te.div>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.div:1
+msgid "Compute a / b as in C/C++ semantics."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`erf <tvm.te.erf>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.erf:1
+msgid "Take gauss error function of the input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`exp <tvm.te.exp>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.exp:1
+msgid "Take exponential of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`extern <tvm.te.extern>`\\ \\(shape\\, inputs\\, fcompute\\[\\, "
+"name\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.extern:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Compute several tensors via an extern function."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`extern_primfunc <tvm.te.extern_primfunc>`\\ "
+"\\(input\\_tensors\\, primfunc\\, ...\\)"
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:1
+#: tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Compute tensors via a schedulable TIR PrimFunc"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`floor <tvm.te.floor>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.floor:1
+msgid "Take floor of float input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`floordiv <tvm.te.floordiv>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.floordiv:1
+msgid "Compute the floordiv of two expressions."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`floormod <tvm.te.floormod>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.floormod:1
+msgid "Compute the floormod of two expressions."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`fmod <tvm.te.fmod>`\\ \\(x\\, y\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.fmod:1
+msgid "Return the remainder of x divided by y with the same sign as x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`gradient <tvm.te.gradient>`\\ \\(output\\, inputs\\[\\, "
+"head\\]\\)"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Perform reverse-mode automatic differentiation."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`if_then_else <tvm.te.if_then_else>`\\ \\(cond\\, t\\, f\\[\\, "
+"span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.if_then_else:1
+msgid "Conditional selection expression."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`indexdiv <tvm.te.indexdiv>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.indexdiv:1
+msgid "Compute floor(a / b) where a and b are non-negative."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`indexmod <tvm.te.indexmod>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Compute the remainder of indexdiv."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`isfinite <tvm.te.isfinite>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.isfinite:1
+msgid "Check if input value is finite."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`isinf <tvm.te.isinf>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.isinf:1
+msgid "Check if input value is infinite."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`isnan <tvm.te.isnan>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.isnan:1
+msgid "Check if input value is Nan."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`log <tvm.te.log>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.log:1
+msgid "Take log of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`log10 <tvm.te.log10>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.log10:1
+msgid "Take log10 of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`log2 <tvm.te.log2>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.log2:1
+msgid "Take log2 of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`max <tvm.te.max>`\\ \\(expr\\, axis\\[\\, where\\, init\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+#: tvm.tir.op.comm_reducer.<locals>.reducer:1
+msgid "Create a max expression over axis."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`max_value <tvm.te.max_value>`\\ \\(dtype\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.max_value:1
+msgid "maximum value of dtype"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`min <tvm.te.min>`\\ \\(expr\\, axis\\[\\, where\\, init\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+#: tvm.tir.op.comm_reducer.<locals>.reducer:1
+msgid "Create a min expression over axis."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`min_value <tvm.te.min_value>`\\ \\(dtype\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.min_value:1
+msgid "minimum value of dtype"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`multiply <tvm.te.multiply>`\\ \\(lhs\\, rhs\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.generic.multiply:1
+msgid "Generic multiply operator."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`nearbyint <tvm.te.nearbyint>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.round:1
+msgid "Round elements of the array to the nearest integer."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`placeholder <tvm.te.placeholder>`\\ \\(shape\\[\\, dtype\\, "
+"name\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.placeholder:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Construct an empty tensor object."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`popcount <tvm.te.popcount>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.popcount:1
+msgid "Count the number of set bits in input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`power <tvm.te.power>`\\ \\(x\\, y\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.power:1
+msgid "x power y"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`reduce_axis <tvm.te.reduce_axis>`\\ \\(dom\\[\\, name\\, "
+"thread\\_tag\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Create a new IterVar for reduction."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`round <tvm.te.round>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`rsqrt <tvm.te.rsqrt>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.rsqrt:1
+msgid "Take reciprocal of square root of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`scan <tvm.te.scan>`\\ \\(init\\, update\\, "
+"state\\_placeholder\\[\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.scan:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Construct new tensors by scanning over axis."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`sigmoid <tvm.te.sigmoid>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.sigmoid:1
+msgid "Quick function to get sigmoid"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`sin <tvm.te.sin>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.sin:1
+msgid "Take sin of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`sinh <tvm.te.sinh>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.sinh:1
+msgid "Take sinh of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`size_var <tvm.te.size_var>`\\ \\(\\[name\\, dtype\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.size_var:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+"Create a new variable represents a tensor shape size, which is non-"
+"negative."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`sqrt <tvm.te.sqrt>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.sqrt:1
+msgid "Take square root of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`subtract <tvm.te.subtract>`\\ \\(lhs\\, rhs\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.generic.subtract:1
+msgid "Generic subtract operator."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`sum <tvm.te.sum>`\\ \\(expr\\, axis\\[\\, where\\, init\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+#: tvm.tir.op.comm_reducer.<locals>.reducer:1
+msgid "Create a sum expression over axis."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`tag_scope <tvm.te.tag_scope>`\\ \\(tag\\)"
+msgstr ""
+
+#: of tvm.te.tag.tag_scope:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "The operator tag scope."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`tan <tvm.te.tan>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.tan:1
+msgid "Take tan of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`tanh <tvm.te.tanh>`\\ \\(x\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.tanh:1
+msgid "Take hyperbolic tanh of input x."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ""
+":py:obj:`thread_axis <tvm.te.thread_axis>`\\ \\(\\[dom\\, tag\\, name\\, "
+"span\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Create a new IterVar to represent thread index."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`trace <tvm.te.trace>`\\ \\(args\\[\\, trace\\_action\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.trace:1
+msgid "Trace tensor data at the runtime."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`trunc <tvm.te.trunc>`\\ \\(x\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.trunc:1
+msgid "Get truncated value of the input."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`truncdiv <tvm.te.truncdiv>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.truncdiv:1
+msgid "Compute the truncdiv of two expressions."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`truncmod <tvm.te.truncmod>`\\ \\(a\\, b\\[\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1 tvm.tir.op.truncmod:1
+msgid "Compute the truncmod of two expressions."
+msgstr ""
+
+#: of tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid ":py:obj:`var <tvm.te.var>`\\ \\(\\[name\\, dtype\\, span\\]\\)"
+msgstr ""
+
+#: of tvm.te.operation.var:1 tvm.te.tensor.ComputeOp:1:<autosummary>:1
+msgid "Create a new variable with specified name and dtype"
+msgstr ""
+
+#: of tvm.te.tensor.HybridOp:1 tvm.te.tensor.ScanOp:1 tvm.te.tensor.Tensor:1
+#: tvm.te.tensor.TensorSlice:1
+msgid "**Attributes:**"
+msgstr ""
+
+#: of tvm.te.HybridOp.axis:1:<autosummary>:1
+msgid ":py:obj:`axis <tvm.te.HybridOp.axis>`\\"
+msgstr ""
+
+#: of tvm.te.HybridOp.axis:1 tvm.te.HybridOp.axis:1:<autosummary>:1
+msgid "Represent the IterVar axis, also defined when it is a HybridOp"
+msgstr ""
+
+#: of tvm.te.ScanOp.scan_axis:1:<autosummary>:1
+msgid ":py:obj:`scan_axis <tvm.te.ScanOp.scan_axis>`\\"
+msgstr ""
+
+#: of tvm.te.ScanOp.scan_axis:1 tvm.te.ScanOp.scan_axis:1:<autosummary>:1
+msgid "Represent the scan axis, only defined when it is a ScanOp"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1 tvm.te.schedule.Schedule:1
+#: tvm.te.schedule.SpecializedCondition:1 tvm.te.schedule.Stage:1
+#: tvm.te.tensor.TensorSlice:1
+msgid "**Methods:**"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+msgid ""
+":py:obj:`cache_read <tvm.te.Schedule.cache_read>`\\ \\(tensor\\, scope\\,"
+" readers\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1
+#: tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+msgid "Create a cache read of original tensor for readers."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+msgid ""
+":py:obj:`cache_write <tvm.te.Schedule.cache_write>`\\ \\(tensor\\, "
+"scope\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+#: tvm.te.schedule.Schedule.cache_write:1
+msgid "Create a cache write of original tensor, before storing into tensor."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+msgid ""
+":py:obj:`create_group <tvm.te.Schedule.create_group>`\\ \\(outputs\\, "
+"inputs\\[\\, include\\_inputs\\]\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+#: tvm.te.schedule.Schedule.create_group:1
+msgid "Create stage group by giving output and input boundary."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+msgid ":py:obj:`normalize <tvm.te.Schedule.normalize>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+#: tvm.te.schedule.Schedule.normalize:1
+msgid "Build a normalized schedule from the current schedule."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+msgid ""
+":py:obj:`rfactor <tvm.te.Schedule.rfactor>`\\ \\(tensor\\, axis\\[\\, "
+"factor\\_axis\\]\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:1:<autosummary>:1
+#: tvm.te.schedule.Schedule.rfactor:1
+msgid "Factor a reduction axis in tensor's schedule to be an explicit axis."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:3
+msgid ""
+"This will mutate the body of the readers. A new cache stage will be "
+"created for the tensor. Call this before doing any split/fuse schedule."
+msgstr ""
+
+#: of tvm._ffi.base.decorate:4 tvm.te.autodiff.gradient:4 tvm.te.hybrid.build:4
+#: tvm.te.hybrid.module.HybridModule.__init__:4
+#: tvm.te.hybrid.module.HybridModule.load:4 tvm.te.hybrid.parser.source_to_op:4
+#: tvm.te.operation.compute:6 tvm.te.operation.const:4
+#: tvm.te.operation.create_prim_func:4 tvm.te.operation.extern:4
+#: tvm.te.operation.extern_primfunc:4 tvm.te.operation.placeholder:4
+#: tvm.te.operation.reduce_axis:4 tvm.te.operation.scan:4
+#: tvm.te.operation.size_var:4 tvm.te.operation.thread_axis:4
+#: tvm.te.operation.var:4 tvm.te.schedule.Schedule.cache_read:8
+#: tvm.te.schedule.Schedule.cache_write:15
+#: tvm.te.schedule.Schedule.create_group:7 tvm.te.schedule.Schedule.rfactor:8
+#: tvm.te.schedule.SpecializedCondition.__init__:10
+#: tvm.te.schedule.Stage.bind:4 tvm.te.schedule.Stage.compute_at:4
+#: tvm.te.schedule.Stage.compute_inline:4 tvm.te.schedule.Stage.compute_root:4
+#: tvm.te.schedule.Stage.env_threads:4 tvm.te.schedule.Stage.fuse:7
+#: tvm.te.schedule.Stage.parallel:4 tvm.te.schedule.Stage.pragma:8
+#: tvm.te.schedule.Stage.prefetch:4 tvm.te.schedule.Stage.reorder:4
+#: tvm.te.schedule.Stage.set_scope:4
+#: tvm.te.schedule.Stage.set_store_predicate:7 tvm.te.schedule.Stage.split:4
+#: tvm.te.schedule.Stage.storage_align:10 tvm.te.schedule.Stage.tensorize:4
+#: tvm.te.schedule.Stage.tile:7 tvm.te.schedule.Stage.transform_layout:15
+#: tvm.te.schedule.Stage.unroll:4 tvm.te.schedule.Stage.vectorize:4
+#: tvm.te.schedule.create_schedule:4 tvm.te.tag.tag_scope:4
+#: tvm.te.tensor_intrin.decl_tensor_intrin:4 tvm.tir.generic.add:4
+#: tvm.tir.generic.multiply:4 tvm.tir.generic.subtract:4 tvm.tir.op.abs:4
+#: tvm.tir.op.acos:4 tvm.tir.op.acosh:4 tvm.tir.op.all:5 tvm.tir.op.any:4
+#: tvm.tir.op.asin:4 tvm.tir.op.asinh:4 tvm.tir.op.atan:4 tvm.tir.op.atanh:4
+#: tvm.tir.op.ceil:4 tvm.tir.op.comm_reducer:4
+#: tvm.tir.op.comm_reducer.<locals>.reducer:4 tvm.tir.op.cos:4
+#: tvm.tir.op.cosh:4 tvm.tir.op.div:4 tvm.tir.op.erf:4 tvm.tir.op.exp:4
+#: tvm.tir.op.floor:4 tvm.tir.op.floordiv:4 tvm.tir.op.floormod:4
+#: tvm.tir.op.fmod:4 tvm.tir.op.if_then_else:4 tvm.tir.op.indexdiv:4
+#: tvm.tir.op.indexmod:4 tvm.tir.op.isfinite:4 tvm.tir.op.isinf:4
+#: tvm.tir.op.isnan:4 tvm.tir.op.log:4 tvm.tir.op.log10:4 tvm.tir.op.log2:4
+#: tvm.tir.op.max_value:4 tvm.tir.op.min_value:4 tvm.tir.op.nearbyint:11
+#: tvm.tir.op.popcount:4 tvm.tir.op.power:4 tvm.tir.op.round:4
+#: tvm.tir.op.rsqrt:4 tvm.tir.op.sigmoid:4 tvm.tir.op.sin:4 tvm.tir.op.sinh:4
+#: tvm.tir.op.sqrt:4 tvm.tir.op.tan:4 tvm.tir.op.tanh:4 tvm.tir.op.trace:9
+#: tvm.tir.op.trunc:7 tvm.tir.op.truncdiv:4 tvm.tir.op.truncmod:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:9
+#: tvm.te.schedule.Schedule.cache_write:16 tvm.te.schedule.Schedule.rfactor:9
+#: tvm.te.schedule.Stage.prefetch:5
+msgid "tensor"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:-1 tvm.te.schedule.Schedule.cache_read:-1
+#: tvm.te.schedule.Schedule.cache_write:-1 tvm.te.schedule.Schedule.rfactor:-1
+#: tvm.te.schedule.Stage.prefetch:-1
+msgid "Tensor"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:10
+msgid "The tensor to be cached."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:11
+#: tvm.te.schedule.Schedule.cache_write:19 tvm.te.schedule.Stage.compute_at:8
+#: tvm.te.schedule.Stage.set_scope:5
+msgid "scope"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:-1
+#: tvm.te.hybrid.module.HybridModule.load:-1 tvm.te.operation.const:-1
+#: tvm.te.operation.reduce_axis:-1 tvm.te.operation.size_var:-1
+#: tvm.te.operation.var:-1 tvm.te.schedule.Schedule.cache_read:-1
+#: tvm.te.schedule.Schedule.cache_write:-1 tvm.te.schedule.Stage.pragma:-1
+#: tvm.te.schedule.Stage.set_scope:-1 tvm.tir.op.max_value:-1
+#: tvm.tir.op.min_value:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:12
+#: tvm.te.schedule.Schedule.cache_write:19
+msgid "The scope of cached"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:14
+msgid "readers"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:-1
+msgid "list of Tensor or Operation"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:14
+msgid "The readers to read the cache."
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:18 tvm.te.hybrid.build:15
+#: tvm.te.hybrid.parser.source_to_op:21 tvm.te.hybrid.script:7
+#: tvm.te.operation.compute:27 tvm.te.operation.const:15
+#: tvm.te.operation.create_prim_func:46 tvm.te.operation.extern:46
+#: tvm.te.operation.extern_primfunc:12 tvm.te.operation.placeholder:15
+#: tvm.te.operation.reduce_axis:18 tvm.te.operation.scan:28
+#: tvm.te.operation.size_var:15 tvm.te.operation.thread_axis:19
+#: tvm.te.operation.var:15 tvm.te.schedule.Schedule.cache_read:17
+#: tvm.te.schedule.Schedule.cache_write:22
+#: tvm.te.schedule.Schedule.create_group:18
+#: tvm.te.schedule.Schedule.normalize:7 tvm.te.schedule.Schedule.rfactor:17
+#: tvm.te.schedule.Stage.fuse:12 tvm.te.schedule.Stage.split:15
+#: tvm.te.schedule.Stage.tile:18 tvm.te.schedule.Stage.transform_layout:27
+#: tvm.te.schedule.create_schedule:9 tvm.te.tag.tag_scope:9
+#: tvm.te.tensor_intrin.decl_tensor_intrin:40 tvm.tir.generic.add:13
+#: tvm.tir.generic.multiply:13 tvm.tir.generic.subtract:13 tvm.tir.op.abs:12
+#: tvm.tir.op.acos:9 tvm.tir.op.acosh:9 tvm.tir.op.all:13 tvm.tir.op.any:12
+#: tvm.tir.op.asin:9 tvm.tir.op.asinh:9 tvm.tir.op.atan:9 tvm.tir.op.atanh:9
+#: tvm.tir.op.ceil:12 tvm.tir.op.comm_reducer:12
+#: tvm.tir.op.comm_reducer.<locals>.reducer:12 tvm.tir.op.cos:9
+#: tvm.tir.op.cosh:9 tvm.tir.op.div:15 tvm.tir.op.erf:9 tvm.tir.op.exp:9
+#: tvm.tir.op.floor:12 tvm.tir.op.floordiv:15 tvm.tir.op.floormod:15
+#: tvm.tir.op.fmod:11 tvm.tir.op.if_then_else:18 tvm.tir.op.indexdiv:15
+#: tvm.tir.op.indexmod:15 tvm.tir.op.isfinite:12 tvm.tir.op.isinf:12
+#: tvm.tir.op.isnan:12 tvm.tir.op.log:9 tvm.tir.op.log10:9 tvm.tir.op.log2:9
+#: tvm.tir.op.max_value:12 tvm.tir.op.min_value:12 tvm.tir.op.nearbyint:19
+#: tvm.tir.op.popcount:9 tvm.tir.op.power:15 tvm.tir.op.round:12
+#: tvm.tir.op.rsqrt:9 tvm.tir.op.sigmoid:9 tvm.tir.op.sin:9 tvm.tir.op.sinh:9
+#: tvm.tir.op.sqrt:9 tvm.tir.op.tan:9 tvm.tir.op.tanh:9 tvm.tir.op.trace:17
+#: tvm.tir.op.trunc:15 tvm.tir.op.truncdiv:15 tvm.tir.op.truncmod:15
+msgid "Returns"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:18
+#: tvm.te.schedule.Schedule.cache_write:23
+msgid "cache"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_read:19
+#: tvm.te.schedule.Schedule.cache_write:24
+msgid "The created cache tensor."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_write:3
+msgid ""
+"This will mutate the body of the tensor. A new cache stage will created "
+"before feed into the tensor."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_write:6
+msgid ""
+"This function can be used to support data layout transformation. If there"
+" is a split/fuse/reorder on the data parallel axis of tensor before "
+"cache_write is called. The intermediate cache stores the data in the "
+"layout as the iteration order of leave axis. The data will be transformed"
+" back to the original layout in the original tensor. User can further "
+"call compute_inline to inline the original layout and keep the data "
+"stored in the transformed layout."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_write:-1
+msgid "Tensor, list or tuple"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.cache_write:17
+msgid ""
+"The tensors to be feed to. All the tensors must be produced by one "
+"computeOp"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:3
+msgid ""
+"The operators between outputs and inputs are placed as member of group. "
+"outputs are include in the group, while inputs are not included."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:9
+msgid "outputs"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:-1
+msgid "list of Tensors"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:9
+msgid "The outputs of the group."
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:9 tvm.te.schedule.Schedule.create_group:12
+msgid "inputs"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:12
+msgid "The inputs of the group."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:15
+msgid "include_inputs"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:-1
+msgid "boolean, optional"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:15
+msgid "Whether include input operations in the group if they are used by outputs."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:20
+msgid "group"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:-1
+#: tvm.te.schedule.Stage.compute_at:-1 tvm.te.schedule.Stage.compute_inline:-1
+#: tvm.te.schedule.Stage.compute_root:-1
+msgid "Stage"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.create_group:20
+msgid ""
+"A virtual stage represents the group, user can use compute_at to move the"
+" attachment point of the group."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.normalize:3
+msgid ""
+"Insert necessary rebase to make certain iter var to start from 0. This is"
+" needed before bound inference and followup step."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.normalize:8 tvm.te.schedule.create_schedule:10
+msgid "sch"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.normalize:-1
+msgid "Schedule"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.normalize:9
+msgid "The normalized schedule."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:3
+msgid ""
+"This will create a new stage that generated the new tensor with axis as "
+"the first dimension. The tensor's body will be rewritten as a reduction "
+"over the factored tensor."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:10
+msgid "The tensor to be factored."
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:19 tvm.te.operation.thread_axis:20
+#: tvm.te.schedule.Schedule.rfactor:11 tvm.te.schedule.Stage.storage_align:11
+#: tvm.tir.op.comm_reducer.<locals>.reducer:7
+msgid "axis"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:-1 tvm.te.operation.thread_axis:-1
+#: tvm.te.schedule.Schedule.rfactor:-1 tvm.te.schedule.Stage.bind:-1
+#: tvm.te.schedule.Stage.compute_at:-1 tvm.te.schedule.Stage.fuse:-1
+#: tvm.te.schedule.Stage.parallel:-1 tvm.te.schedule.Stage.pragma:-1
+#: tvm.te.schedule.Stage.prefetch:-1 tvm.te.schedule.Stage.split:-1
+#: tvm.te.schedule.Stage.storage_align:-1 tvm.te.schedule.Stage.tensorize:-1
+#: tvm.te.schedule.Stage.tile:-1 tvm.te.schedule.Stage.unroll:-1
+#: tvm.te.schedule.Stage.vectorize:-1
+#: tvm.tir.op.comm_reducer.<locals>.reducer:-1
+msgid "IterVar"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:12
+msgid "The reduction axis in the schedule to be factored."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:14
+msgid "factor_axis"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:-1
+#: tvm.te.schedule.Stage.storage_align:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:14
+msgid "The position where the new axis is placed."
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:18
+msgid "tfactor"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:-1
+msgid "Tensor or Array of Tensor"
+msgstr ""
+
+#: of tvm.te.schedule.Schedule.rfactor:19
+msgid "The created factored tensor."
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:1:<autosummary>:1
+msgid ""
+":py:obj:`__init__ <tvm.te.SpecializedCondition.__init__>`\\ "
+"\\(conditions\\)"
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:1
+#: tvm.te.schedule.SpecializedCondition.__init__:1:<autosummary>:1
+msgid "Create a specialized condition."
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:1:<autosummary>:1
+msgid ":py:obj:`current <tvm.te.SpecializedCondition.current>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:1:<autosummary>:1
+#: tvm.te.schedule.SpecializedCondition.current:1
+msgid "Returns the current specialized condition"
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:4
+msgid ""
+"Conditions are represented in conjunctive joint form (CNF). Each "
+"condition should be a simple expression, e.g., n > 16, m % 8 == 0, etc., "
+"where n, m are tvm.Var that represents a dimension in the tensor shape."
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:11
+msgid "conditions"
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:-1
+msgid "List of tvm.Expr"
+msgstr ""
+
+#: of tvm.te.schedule.SpecializedCondition.__init__:12
+msgid "List of conditions in conjunctive joint form (CNF)."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`bind <tvm.te.Stage.bind>`\\ \\(ivar\\, thread\\_ivar\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1 tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid "Bind ivar to thread index thread_ivar"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`compute_at <tvm.te.Stage.compute_at>`\\ \\(parent\\, scope\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.compute_at:1
+msgid "Attach the stage at parent's scope"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`compute_inline <tvm.te.Stage.compute_inline>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.compute_inline:1
+msgid "Mark stage as inline"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`compute_root <tvm.te.Stage.compute_root>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.compute_root:1
+msgid "Attach the stage at parent, and mark it as root"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`double_buffer <tvm.te.Stage.double_buffer>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.double_buffer:1
+msgid "Compute the current stage via double buffering."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`env_threads <tvm.te.Stage.env_threads>`\\ \\(threads\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.env_threads:1
+msgid "Mark threads to be launched at the outer scope of composed op."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`fuse <tvm.te.Stage.fuse>`\\ \\(\\*args\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1 tvm.te.schedule.Stage.fuse:1
+msgid ""
+"Fuse multiple consecutive iteration variables into a single iteration "
+"variable."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`parallel <tvm.te.Stage.parallel>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.parallel:1
+msgid "Parallelize the iteration."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`pragma <tvm.te.Stage.pragma>`\\ \\(var\\, pragma\\_type\\[\\, "
+"pragma\\_value\\]\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.pragma:1
+msgid "Annotate the iteration with pragma"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`prefetch <tvm.te.Stage.prefetch>`\\ \\(tensor\\, var\\, offset\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.prefetch:1
+msgid "Prefetch the specified variable"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`reorder <tvm.te.Stage.reorder>`\\ \\(\\*args\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.reorder:1
+msgid "reorder the arguments in the specified order."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`rolling_buffer <tvm.te.Stage.rolling_buffer>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.rolling_buffer:1
+msgid "Compute the current stage via rolling buffering."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`set_scope <tvm.te.Stage.set_scope>`\\ \\(scope\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.set_scope:1
+msgid "Set the thread scope of this stage"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`set_store_predicate <tvm.te.Stage.set_store_predicate>`\\ "
+"\\(predicate\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.set_store_predicate:1
+msgid "Set predicate under which store to the array can be performed."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`split <tvm.te.Stage.split>`\\ \\(parent\\[\\, factor\\, "
+"nparts\\]\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.split:1
+msgid "Split the stage either by factor providing outer scope, or both"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`storage_align <tvm.te.Stage.storage_align>`\\ \\(axis\\, "
+"factor\\, offset\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.storage_align:1
+msgid "Set alignment requirement for specific axis"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`tensorize <tvm.te.Stage.tensorize>`\\ \\(var\\, "
+"tensor\\_intrin\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.tensorize:1
+msgid "Tensorize the computation enclosed by var with tensor_intrin"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`tile <tvm.te.Stage.tile>`\\ \\(x\\_parent\\, y\\_parent\\, "
+"x\\_factor\\, y\\_factor\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1 tvm.te.schedule.Stage.tile:1
+msgid "Perform tiling on two dimensions"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ""
+":py:obj:`transform_layout <tvm.te.Stage.transform_layout>`\\ "
+"\\(mapping\\_function\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.transform_layout:1
+msgid "Defines the layout transformation for the current stage's tensor."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`unroll <tvm.te.Stage.unroll>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.unroll:1
+msgid "Unroll the iteration."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+msgid ":py:obj:`vectorize <tvm.te.Stage.vectorize>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:1:<autosummary>:1
+#: tvm.te.schedule.Stage.vectorize:1
+msgid "Vectorize the iteration."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:6
+msgid "ivar"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:6
+msgid "The iteration to be binded to thread."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:8
+msgid "thread_ivar"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.bind:9
+msgid "The thread to be binded."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.compute_at:6 tvm.te.schedule.Stage.compute_inline:5
+#: tvm.te.schedule.Stage.compute_root:5 tvm.te.schedule.Stage.split:6
+msgid "parent"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.compute_at:6 tvm.te.schedule.Stage.compute_inline:6
+#: tvm.te.schedule.Stage.compute_root:6
+msgid "The parent stage"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.compute_at:9
+msgid "The loop scope t be attached to."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.double_buffer:3
+msgid ""
+"This can only be applied to intermediate stage. This will double the "
+"storage cost of the current stage. Can be useful to hide load latency."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.env_threads:5
+msgid "threads"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.env_threads:-1
+msgid "list of threads"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.env_threads:6
+msgid "The threads to be launched."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.fuse:3
+msgid ""
+"fused = fuse(...fuse(fuse(args[0], args[1]), args[2]),..., args[-1]) The "
+"order is from outer to inner."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:12 tvm.te.schedule.Stage.fuse:9
+#: tvm.te.schedule.Stage.reorder:5 tvm.tir.op.all:7 tvm.tir.op.any:6
+#: tvm.tir.op.trace:11
+msgid "args"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.fuse:-1
+msgid "list of IterVars"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.fuse:9
+msgid "Itervars that proceeds each other"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.fuse:13
+msgid "fused"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.fuse:14
+msgid "The fused variable of iteration."
+msgstr ""
+
+#: of tvm.te.operation.size_var:16 tvm.te.operation.var:16
+#: tvm.te.schedule.Stage.parallel:5 tvm.te.schedule.Stage.pragma:10
+#: tvm.te.schedule.Stage.prefetch:7 tvm.te.schedule.Stage.tensorize:6
+#: tvm.te.schedule.Stage.unroll:5 tvm.te.schedule.Stage.vectorize:5
+msgid "var"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.parallel:6
+msgid "The iteration to be parallelized."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:3
+msgid ""
+"This will translate to a pragma_scope surrounding the corresponding loop "
+"generated. Useful to support experimental features and extensions."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:10
+msgid "The iteration to be anotated"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:13
+msgid "pragma_type"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:13
+msgid "The pragma string to be annotated"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:16
+msgid "pragma_value"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:-1 tvm.te.schedule.Stage.split:-1
+msgid "Expr, optional"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:16
+msgid "The pragma value to pass along the pragma"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:19 tvm.tir.op.div:19
+#: tvm.tir.op.if_then_else:23 tvm.tir.op.indexdiv:20 tvm.tir.op.indexmod:20
+#: tvm.tir.op.truncdiv:20 tvm.tir.op.truncmod:20
+msgid "Note"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:20
+msgid ""
+"Most pragmas are advanced/experimental features and may subject to "
+"change. List of supported pragmas:"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:23
+msgid "**debug_skip_region**"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:25
+msgid ""
+"Force skip the region marked by the axis and turn it into no-op. This is "
+"useful for debug purposes."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:28
+msgid "**parallel_launch_point**"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:30
+msgid ""
+"Specify to launch parallel threads outside the specified iteration loop. "
+"By default the threads launch at the point of parallel construct. This "
+"pragma moves the launching point to even outer scope. The threads are "
+"launched once and reused across multiple parallel constructs as BSP style"
+" program."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:37
+msgid "**parallel_barrier_when_finish**"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:39
+msgid ""
+"Insert a synchronization barrier between working threads after the "
+"specified loop iteration finishes."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:42
+msgid "**parallel_stride_pattern**"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.pragma:44
+msgid ""
+"Hint parallel loop to execute in strided pattern. :code:`for (int i = "
+"task_id; i < end; i += num_task)`"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.prefetch:6
+msgid "The tensor to be prefetched"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.prefetch:8
+msgid "The loop point at which the prefetching is applied"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.prefetch:9 tvm.te.schedule.Stage.storage_align:15
+msgid "offset"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.prefetch:-1
+#: tvm.te.schedule.Stage.set_store_predicate:-1 tvm.te.schedule.Stage.tile:-1
+msgid "Expr"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.prefetch:10
+msgid "The number of iterations to be prefetched before actual execution"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.reorder:-1
+msgid "list of IterVar"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.reorder:6
+msgid "The order to be ordered"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.rolling_buffer:3
+msgid ""
+"This can only be applied to intermediate stage. This will change the "
+"storage cost of the current stage."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.set_scope:6
+msgid "The thread scope of this stage"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.set_store_predicate:3
+msgid ""
+"Use this when there are duplicated threads doing the same store and we "
+"only need one of them to do the store."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.set_store_predicate:8
+msgid "predicate"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.set_store_predicate:9
+msgid "The guard condition fo store."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:6
+msgid "The parent iter var."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:9 tvm.te.schedule.Stage.storage_align:13
+msgid "factor"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:9
+msgid "The splitting factor"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:12
+msgid "nparts"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:12
+msgid "The number of outer parts."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:17
+msgid "outer"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:17
+msgid "The outer variable of iteration."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:19
+msgid "inner"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.split:20
+msgid "The inner variable of iteration."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.storage_align:3
+msgid ""
+"This ensures that stride[axis] == k * factor + offset for some k. This is"
+" useful to set memory layout to for more friendly memory access pattern. "
+"For example, we can set alignment to be factor=2, offset=1 to avoid bank "
+"conflict for thread access on higher dimension in GPU shared memory."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.storage_align:12
+msgid "The axis dimension to be aligned."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.storage_align:14
+msgid "The factor in alignment specification."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.storage_align:16
+msgid "The offset in the alignment specification."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tensorize:6
+msgid "The iteration boundary of tensorization."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tensorize:8
+msgid "tensor_intrin"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tensorize:-1
+msgid "TensorIntrin"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tensorize:9
+msgid "The tensor intrinsic used for computation."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:3
+msgid ""
+"The final loop order from outmost to inner most are [x_outer, y_outer, "
+"x_inner, y_inner]"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:8
+msgid "x_parent"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:9
+msgid "The original x dimension"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:10
+msgid "y_parent"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:11
+msgid "The original y dimension"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:12
+msgid "x_factor"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:13
+msgid "The stride factor on x axis"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:15
+msgid "y_factor"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:15
+msgid "The stride factor on y axis"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:19
+msgid "x_outer"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:20
+msgid "Outer axis of x dimension"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:21
+msgid "y_outer"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:22
+msgid "Outer axis of y dimension"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:23
+msgid "x_inner"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:24
+msgid "Inner axis of x dimension"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:25
+msgid "p_y_inner"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.tile:26
+msgid "Inner axis of y dimension"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:3
+msgid ""
+"The map from initial_indices to final_indices must be an invertible "
+"affine transformation.  This method may be called more than once for a "
+"given tensor, in which case each transformation is applied sequentially."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:8
+msgid ""
+"If the stage is a ComputeOp, then the iteration order of the compute "
+"stage is rewritten to be a row-major traversal of the tensor, and the new"
+" loop iteration variables are returned. For all other stages, the loop "
+"iteration order is unmodified, and the return value is None."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:16
+msgid "mapping_function : Callable[..., List[tvm.tir.PrimExpr]]"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:18
+msgid ""
+"A callable that accepts N arguments of type tvm.tir.Var, and outputs a "
+"list of PrimExpr.  The input arguments represent the location of a value "
+"in the current stage's tensor, using the pre-transformation layout.  The "
+"return value of the function gives the location of that value in the "
+"current stage's tensor, using the post-transformation layout."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:28
+msgid "new_iter_vars : Optional[List[tvm.tir.IterVar]]"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:30
+msgid ""
+"If the stage is a ComputeOp, then the return will be the updated loop "
+"iteration variables over the data array, in the same order as the output "
+"values from the `mapping_function`."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:35
+msgid "Otherwise, the return value is None."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.transform_layout:38
+msgid "Examples"
+msgstr ""
+
+#: of tvm.te.schedule.Stage.unroll:6
+msgid "The iteration to be unrolled."
+msgstr ""
+
+#: of tvm.te.schedule.Stage.vectorize:6
+msgid "The iteration to be vectorize"
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1
+msgid ":py:obj:`axis <tvm.te.Tensor.axis>`\\"
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1 tvm.te.Tensor.axis:1:<autosummary>:1
+msgid "Axis of the tensor."
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1
+msgid ":py:obj:`ndim <tvm.te.Tensor.ndim>`\\"
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1 tvm.te.Tensor.ndim:1
+msgid "Dimension of the tensor."
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1
+msgid ":py:obj:`op <tvm.te.Tensor.op>`\\"
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1 tvm.te.Tensor.op:1
+msgid "The corressponding :py:class:`Operation`."
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1
+msgid ":py:obj:`shape <tvm.te.Tensor.shape>`\\"
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1 tvm.te.Tensor.shape:1
+msgid "The output shape of the tensor."
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1
+msgid ":py:obj:`value_index <tvm.te.Tensor.value_index>`\\"
+msgstr ""
+
+#: of tvm.te.Tensor.axis:1:<autosummary>:1 tvm.te.Tensor.value_index:1
+msgid "The output value index the tensor corresponds to."
+msgstr ""
+
+#: of tvm.te.tensor.TensorSlice:1:<autosummary>:1
+msgid ":py:obj:`asobject <tvm.te.TensorSlice.asobject>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.te.tensor.TensorSlice.asobject:1
+#: tvm.te.tensor.TensorSlice:1:<autosummary>:1
+msgid "Convert slice to object."
+msgstr ""
+
+#: of tvm.te.tensor.TensorSlice.asobject:1:<autosummary>:1
+msgid ":py:obj:`dtype <tvm.te.TensorSlice.dtype>`\\"
+msgstr ""
+
+#: of tvm.te.TensorSlice.dtype:1
+#: tvm.te.tensor.TensorSlice.asobject:1:<autosummary>:1
+msgid "Data content of the tensor."
+msgstr ""
+
+#: of tvm.tir.op.abs:6 tvm.tir.op.acos:6 tvm.tir.op.acosh:6 tvm.tir.op.asin:6
+#: tvm.tir.op.asinh:6 tvm.tir.op.atan:6 tvm.tir.op.atanh:6 tvm.tir.op.ceil:6
+#: tvm.tir.op.cos:6 tvm.tir.op.cosh:6 tvm.tir.op.erf:6 tvm.tir.op.exp:6
+#: tvm.tir.op.floor:6 tvm.tir.op.fmod:5 tvm.tir.op.isfinite:6
+#: tvm.tir.op.isinf:6 tvm.tir.op.isnan:6 tvm.tir.op.log:6 tvm.tir.op.log10:6
+#: tvm.tir.op.log2:6 tvm.tir.op.nearbyint:13 tvm.tir.op.popcount:6
+#: tvm.tir.op.power:6 tvm.tir.op.round:6 tvm.tir.op.rsqrt:6
+#: tvm.tir.op.sigmoid:6 tvm.tir.op.sin:6 tvm.tir.op.sinh:6 tvm.tir.op.sqrt:6
+#: tvm.tir.op.tan:6 tvm.tir.op.tanh:6 tvm.tir.op.trunc:9
+msgid "x"
+msgstr ""
+
+#: of tvm.te.operation.const:-1 tvm.tir.op.abs:-1 tvm.tir.op.acos:-1
+#: tvm.tir.op.acosh:-1 tvm.tir.op.asin:-1 tvm.tir.op.asinh:-1
+#: tvm.tir.op.atan:-1 tvm.tir.op.atanh:-1 tvm.tir.op.ceil:-1
+#: tvm.tir.op.comm_reducer.<locals>.reducer:-1 tvm.tir.op.cos:-1
+#: tvm.tir.op.cosh:-1 tvm.tir.op.div:-1 tvm.tir.op.erf:-1 tvm.tir.op.exp:-1
+#: tvm.tir.op.floor:-1 tvm.tir.op.floordiv:-1 tvm.tir.op.floormod:-1
+#: tvm.tir.op.fmod:-1 tvm.tir.op.if_then_else:-1 tvm.tir.op.indexdiv:-1
+#: tvm.tir.op.indexmod:-1 tvm.tir.op.isfinite:-1 tvm.tir.op.isinf:-1
+#: tvm.tir.op.isnan:-1 tvm.tir.op.log:-1 tvm.tir.op.log10:-1 tvm.tir.op.log2:-1
+#: tvm.tir.op.nearbyint:-1 tvm.tir.op.popcount:-1 tvm.tir.op.power:-1
+#: tvm.tir.op.round:-1 tvm.tir.op.rsqrt:-1 tvm.tir.op.sigmoid:-1
+#: tvm.tir.op.sin:-1 tvm.tir.op.sinh:-1 tvm.tir.op.sqrt:-1 tvm.tir.op.tan:-1
+#: tvm.tir.op.tanh:-1 tvm.tir.op.trace:-1 tvm.tir.op.trunc:-1
+#: tvm.tir.op.truncdiv:-1 tvm.tir.op.truncmod:-1
+msgid "PrimExpr"
+msgstr ""
+
+#: of tvm.tir.op.abs:6 tvm.tir.op.acos:6 tvm.tir.op.acosh:6 tvm.tir.op.asin:6
+#: tvm.tir.op.asinh:6 tvm.tir.op.atan:6 tvm.tir.op.atanh:6 tvm.tir.op.ceil:6
+#: tvm.tir.op.cos:6 tvm.tir.op.cosh:6 tvm.tir.op.erf:6 tvm.tir.op.exp:6
+#: tvm.tir.op.floor:6 tvm.tir.op.fmod:6 tvm.tir.op.fmod:8 tvm.tir.op.isfinite:6
+#: tvm.tir.op.isinf:6 tvm.tir.op.isnan:6 tvm.tir.op.log:6 tvm.tir.op.log10:6
+#: tvm.tir.op.log2:6 tvm.tir.op.nearbyint:13 tvm.tir.op.popcount:6
+#: tvm.tir.op.power:6 tvm.tir.op.round:6 tvm.tir.op.rsqrt:6
+#: tvm.tir.op.sigmoid:6 tvm.tir.op.sin:6 tvm.tir.op.sinh:6 tvm.tir.op.sqrt:6
+#: tvm.tir.op.tan:6 tvm.tir.op.tanh:6 tvm.tir.op.trunc:9
+msgid "Input argument."
+msgstr ""
+
+#: of tvm.te.operation.const:12 tvm.te.operation.reduce_axis:15
+#: tvm.te.operation.size_var:12 tvm.te.operation.thread_axis:16
+#: tvm.te.operation.var:12 tvm.tir.generic.add:10 tvm.tir.generic.multiply:10
+#: tvm.tir.generic.subtract:10 tvm.tir.op.abs:9 tvm.tir.op.all:10
+#: tvm.tir.op.any:9 tvm.tir.op.ceil:9 tvm.tir.op.div:12 tvm.tir.op.floor:9
+#: tvm.tir.op.floordiv:12 tvm.tir.op.floormod:12 tvm.tir.op.if_then_else:15
+#: tvm.tir.op.indexdiv:12 tvm.tir.op.indexmod:12 tvm.tir.op.isfinite:9
+#: tvm.tir.op.isinf:9 tvm.tir.op.isnan:9 tvm.tir.op.max_value:9
+#: tvm.tir.op.min_value:9 tvm.tir.op.nearbyint:16 tvm.tir.op.power:12
+#: tvm.tir.op.round:9 tvm.tir.op.trunc:12 tvm.tir.op.truncdiv:12
+#: tvm.tir.op.truncmod:12
+msgid "span"
+msgstr ""
+
+#: of tvm.te.operation.const:-1 tvm.te.operation.reduce_axis:-1
+#: tvm.te.operation.size_var:-1 tvm.te.operation.thread_axis:-1
+#: tvm.te.operation.var:-1 tvm.tir.generic.add:-1 tvm.tir.generic.multiply:-1
+#: tvm.tir.generic.subtract:-1 tvm.tir.op.abs:-1 tvm.tir.op.all:-1
+#: tvm.tir.op.any:-1 tvm.tir.op.ceil:-1 tvm.tir.op.div:-1 tvm.tir.op.floor:-1
+#: tvm.tir.op.floordiv:-1 tvm.tir.op.floormod:-1 tvm.tir.op.if_then_else:-1
+#: tvm.tir.op.indexdiv:-1 tvm.tir.op.indexmod:-1 tvm.tir.op.isfinite:-1
+#: tvm.tir.op.isinf:-1 tvm.tir.op.isnan:-1 tvm.tir.op.max_value:-1
+#: tvm.tir.op.min_value:-1 tvm.tir.op.nearbyint:-1 tvm.tir.op.power:-1
+#: tvm.tir.op.round:-1 tvm.tir.op.trunc:-1 tvm.tir.op.truncdiv:-1
+#: tvm.tir.op.truncmod:-1
+msgid "Optional[Span]"
+msgstr ""
+
+#: of tvm.tir.op.abs:9 tvm.tir.op.all:10 tvm.tir.op.any:9 tvm.tir.op.ceil:9
+#: tvm.tir.op.floor:9 tvm.tir.op.isfinite:9 tvm.tir.op.isinf:9
+#: tvm.tir.op.isnan:9 tvm.tir.op.max_value:9 tvm.tir.op.min_value:9
+#: tvm.tir.op.nearbyint:16 tvm.tir.op.power:12 tvm.tir.op.round:9
+#: tvm.tir.op.trunc:12
+msgid "The location of this operator in the source code."
+msgstr ""
+
+#: of tvm.tir.op.abs:13 tvm.tir.op.acos:10 tvm.tir.op.acosh:10
+#: tvm.tir.op.asin:10 tvm.tir.op.asinh:10 tvm.tir.op.atan:10
+#: tvm.tir.op.atanh:10 tvm.tir.op.ceil:13 tvm.tir.op.cos:10 tvm.tir.op.cosh:10
+#: tvm.tir.op.erf:10 tvm.tir.op.exp:10 tvm.tir.op.floor:13 tvm.tir.op.fmod:8
+#: tvm.tir.op.isfinite:13 tvm.tir.op.isinf:13 tvm.tir.op.isnan:13
+#: tvm.tir.op.log:10 tvm.tir.op.log10:10 tvm.tir.op.log2:10
+#: tvm.tir.op.nearbyint:20 tvm.tir.op.popcount:10 tvm.tir.op.power:9
+#: tvm.tir.op.round:13 tvm.tir.op.rsqrt:10 tvm.tir.op.sigmoid:10
+#: tvm.tir.op.sin:10 tvm.tir.op.sinh:10 tvm.tir.op.sqrt:10 tvm.tir.op.tan:10
+#: tvm.tir.op.tanh:10 tvm.tir.op.trunc:16
+msgid "y"
+msgstr ""
+
+#: of tvm.tir.op.abs:14 tvm.tir.op.acos:11 tvm.tir.op.acosh:11
+#: tvm.tir.op.asin:11 tvm.tir.op.asinh:11 tvm.tir.op.atan:11
+#: tvm.tir.op.atanh:11 tvm.tir.op.ceil:14 tvm.tir.op.cos:11 tvm.tir.op.cosh:11
+#: tvm.tir.op.erf:11 tvm.tir.op.exp:11 tvm.tir.op.floor:14 tvm.tir.op.fmod:13
+#: tvm.tir.op.isfinite:14 tvm.tir.op.isinf:14 tvm.tir.op.isnan:14
+#: tvm.tir.op.log:11 tvm.tir.op.log10:11 tvm.tir.op.log2:11
+#: tvm.tir.op.nearbyint:21 tvm.tir.op.popcount:11 tvm.tir.op.power:17
+#: tvm.tir.op.round:14 tvm.tir.op.rsqrt:11 tvm.tir.op.sigmoid:11
+#: tvm.tir.op.sin:11 tvm.tir.op.sinh:11 tvm.tir.op.sqrt:11 tvm.tir.op.tan:11
+#: tvm.tir.op.tanh:11 tvm.tir.op.trunc:17
+msgid "The result."
+msgstr ""
+
+#: of tvm.tir.generic.add:5 tvm.tir.generic.multiply:5
+#: tvm.tir.generic.subtract:5
+msgid "lhs"
+msgstr ""
+
+#: of tvm.tir.generic.add:-1 tvm.tir.generic.multiply:-1
+#: tvm.tir.generic.subtract:-1
+msgid "object"
+msgstr ""
+
+#: of tvm.tir.generic.add:6 tvm.tir.generic.multiply:6
+#: tvm.tir.generic.subtract:6
+msgid "The left operand."
+msgstr ""
+
+#: of tvm.tir.generic.add:7 tvm.tir.generic.multiply:7
+#: tvm.tir.generic.subtract:7
+msgid "rhs"
+msgstr ""
+
+#: of tvm.tir.generic.add:8 tvm.tir.generic.multiply:8
+#: tvm.tir.generic.subtract:8
+msgid "The right operand."
+msgstr ""
+
+#: of tvm.tir.generic.add:10 tvm.tir.generic.multiply:10
+#: tvm.tir.generic.subtract:10 tvm.tir.op.div:12 tvm.tir.op.floordiv:12
+#: tvm.tir.op.floormod:12 tvm.tir.op.if_then_else:15 tvm.tir.op.indexdiv:12
+#: tvm.tir.op.indexmod:12 tvm.tir.op.truncdiv:12 tvm.tir.op.truncmod:12
+msgid "The location of this operator in the source."
+msgstr ""
+
+#: of tvm.tir.generic.add:14 tvm.tir.generic.multiply:14
+#: tvm.tir.generic.subtract:14
+msgid "op"
+msgstr ""
+
+#: of tvm.tir.generic.add:-1 tvm.tir.generic.multiply:-1
+#: tvm.tir.generic.subtract:-1 tvm.tir.op.max_value:-1 tvm.tir.op.min_value:-1
+msgid "tvm.Expr"
+msgstr ""
+
+#: of tvm.tir.generic.add:15
+msgid "The result Expr of add operaton."
+msgstr ""
+
+#: of tvm.tir.op.all:2
+msgid "arguments"
+msgstr ""
+
+#: of tvm.tir.op.all:-1 tvm.tir.op.any:-1
+msgid "list"
+msgstr ""
+
+#: of tvm.tir.op.all:7 tvm.tir.op.any:6
+msgid "List of symbolic boolean expressions"
+msgstr ""
+
+#: of tvm.tir.op.all:14 tvm.tir.op.any:13
+msgid "expr: Expr"
+msgstr ""
+
+#: of tvm.tir.op.all:15 tvm.tir.op.any:14
+msgid "Expression"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:6
+msgid "fcombine"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:-1
+msgid "function(Expr -> Expr -> Expr)"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:6
+msgid "A binary function which takes two Expr as input to return a Expr."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:9
+msgid "fidentity"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:-1
+msgid "function(str -> Expr)"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:9
+msgid "A function which takes a type string as input to return a const Expr."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:19
+msgid "reducer"
+msgstr ""
+
+#: of tvm._ffi.base.decorate:-1 tvm.te.hybrid.script:-1
+#: tvm.tir.op.comm_reducer:-1
+msgid "function"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:14
+msgid ""
+"A function which creates a reduce expression over axis. There are two "
+"ways to use it:"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:17
+msgid "accept (expr, axis, where) to produce an Reduce Expr on specified axis;"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:19
+msgid "simply use it with multiple Exprs."
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:23 tvm.te.operation.create_prim_func:9
+#: tvm.te.operation.extern:51 tvm.te.operation.extern_primfunc:17
+#: tvm.te.operation.scan:33 tvm.te.tag.tag_scope:15 tvm.tir.op.comm_reducer:22
+#: tvm.tir.op.comm_reducer.<locals>.reducer:17
+msgid "Example"
+msgstr ""
+
+#: of tvm.te.operation.compute:3
+msgid "The compute rule is result[axis] = fcompute(axis)"
+msgstr ""
+
+#: of tvm.te.operation.compute:8 tvm.te.operation.placeholder:6
+msgid "shape: Tuple of Expr"
+msgstr ""
+
+#: of tvm.te.operation.compute:8 tvm.te.operation.placeholder:6
+msgid "The shape of the tensor"
+msgstr ""
+
+#: of tvm.te.operation.compute:11
+msgid "fcompute: lambda function of indices-> value"
+msgstr ""
+
+#: of tvm.te.operation.compute:11
+msgid "Specifies the input source expression"
+msgstr ""
+
+#: of tvm.te.operation.compute:14 tvm.te.operation.extern:26
+#: tvm.te.operation.placeholder:12 tvm.te.operation.scan:19
+#: tvm.te.tensor_intrin.decl_tensor_intrin:26
+msgid "name: str, optional"
+msgstr ""
+
+#: of tvm.te.operation.compute:14 tvm.te.operation.extern:26
+#: tvm.te.operation.placeholder:12 tvm.te.operation.scan:19
+msgid "The name hint of the tensor"
+msgstr ""
+
+#: of tvm.te.operation.compute:17 tvm.te.operation.extern:40
+#: tvm.te.operation.scan:22
+msgid "tag: str, optional"
+msgstr ""
+
+#: of tvm.te.operation.compute:17
+msgid "Additional tag information about the compute."
+msgstr ""
+
+#: of tvm.te.operation.compute:20 tvm.te.operation.extern:43
+#: tvm.te.operation.scan:25
+msgid "attrs: dict, optional"
+msgstr ""
+
+#: of tvm.te.operation.compute:20 tvm.te.operation.extern:43
+#: tvm.te.operation.scan:25
+msgid "The additional auxiliary attributes about the compute."
+msgstr ""
+
+#: of tvm.te.operation.compute:24
+msgid "varargs_names: list, optional"
+msgstr ""
+
+#: of tvm.te.operation.compute:23
+msgid ""
+"The names to use for each of the varargs. If not supplied, the varargs "
+"will be called i1, i2, ..."
+msgstr ""
+
+#: of tvm.te.operation.compute:28 tvm.te.operation.placeholder:16
+msgid "tensor: Tensor"
+msgstr ""
+
+#: of tvm.te.operation.compute:29 tvm.te.operation.placeholder:17
+msgid "The created tensor"
+msgstr ""
+
+#: of tvm.te.operation.const:6 tvm.tir.op.comm_reducer.<locals>.reducer:14
+#: tvm.tir.op.max_value:13 tvm.tir.op.min_value:13
+msgid "value"
+msgstr ""
+
+#: of tvm.te.operation.const:-1
+msgid "Union[bool, int, float, numpy.ndarray, tvm.nd.NDArray]"
+msgstr ""
+
+#: of tvm.te.operation.const:6
+msgid "The constant value."
+msgstr ""
+
+#: of tvm.te.operation.const:9 tvm.te.operation.size_var:9
+#: tvm.te.operation.var:9 tvm.tir.op.max_value:6 tvm.tir.op.min_value:6
+msgid "dtype"
+msgstr ""
+
+#: of tvm.te.operation.const:9 tvm.te.operation.size_var:9
+#: tvm.te.operation.var:9
+msgid "The data type"
+msgstr ""
+
+#: of tvm.te.operation.const:12 tvm.te.operation.reduce_axis:15
+#: tvm.te.operation.size_var:12 tvm.te.operation.thread_axis:16
+#: tvm.te.operation.var:12
+msgid "The location of this variable in the source."
+msgstr ""
+
+#: of tvm.te.operation.const:16
+msgid "const"
+msgstr ""
+
+#: of tvm.te.operation.const:17
+msgid "The result constant expr."
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:6 tvm.te.schedule.create_schedule:6
+msgid "ops"
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:-1
+msgid "List[Union[_tensor.Tensor, tvm.tir.Var]]"
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:6 tvm.te.schedule.create_schedule:6
+#: tvm.tir.op.comm_reducer.<locals>.reducer:6
+msgid "The source expression."
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:10
+msgid "We define a matmul kernel using following code:"
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:26
+msgid ""
+"If we want to use TensorIR schedule to do transformations on such kernel,"
+" we need to use `create_prim_func([A, B, C])` to create a schedulable "
+"PrimFunc. The generated function looks like:"
+msgstr ""
+
+#: of tvm._ffi.base.decorate:6 tvm.te.operation.create_prim_func:47
+msgid "func"
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:-1
+msgid "tir.PrimFunc"
+msgstr ""
+
+#: of tvm.te.operation.create_prim_func:48
+msgid "The created function."
+msgstr ""
+
+#: of tvm.te.schedule.create_schedule:-1
+msgid "list of Operations"
+msgstr ""
+
+#: of tvm.te.schedule.create_schedule:-1
+msgid "schedule.Schedule"
+msgstr ""
+
+#: of tvm.te.schedule.create_schedule:11
+msgid "The created schedule."
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:6
+msgid "op: Operation"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:6
+msgid "The symbolic description of the intrinsic operation"
+msgstr ""
+
+#: of tvm.te.operation.extern:23 tvm.te.tensor_intrin.decl_tensor_intrin:23
+msgid "fcompute: lambda function of inputs, outputs-> stmt"
+msgstr ""
+
+#: of tvm.te.operation.extern:12 tvm.te.tensor_intrin.decl_tensor_intrin:9
+msgid ""
+"Specifies the IR statement to do the computation. See the following note "
+"for function signature of fcompute"
+msgstr ""
+
+#: of tvm.te.operation.extern:16 tvm.te.tensor_intrin.decl_tensor_intrin:13
+msgid "**Parameters**"
+msgstr ""
+
+#: of tvm.te.operation.extern:18 tvm.te.tensor_intrin.decl_tensor_intrin:15
+msgid "**ins** (list of :any:`tvm.tir.Buffer`) - Placeholder for each inputs"
+msgstr ""
+
+#: of tvm.te.operation.extern:19 tvm.te.tensor_intrin.decl_tensor_intrin:16
+msgid "**outs** (list of :any:`tvm.tir.Buffer`) - Placeholder for each outputs"
+msgstr ""
+
+#: of tvm.te.operation.extern:21 tvm.te.tensor_intrin.decl_tensor_intrin:18
+msgid "**Returns**"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:20
+msgid "**stmt** (:any:`tvm.tir.Stmt`, or tuple of three stmts)"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:21
+msgid "If a single stmt is returned, it represents the body"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:22
+msgid ""
+"If tuple of three stmts are returned they corresponds to body, "
+"reduce_init, reduce_update"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:26
+msgid "The name of the intrinsic."
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:31
+msgid "binds: dict of :any:`Tensor` to :any:`tvm.tir.Buffer`, optional"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:29
+msgid ""
+"Dictionary that maps the Tensor to Buffer which specified the data layout"
+" requirement of the function. By default, a new compact buffer is created"
+" for each tensor in the argument."
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:34
+msgid "scalar_params: a list of variables used by op, whose values will be passed"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:34
+msgid "as scalar_inputs when the tensor intrinsic is called."
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:37
+msgid "default_buffer_params: Optional[dict]"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:37
+msgid "Dictionary of buffer arguments to be passed when constructing a buffer."
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:41
+msgid "intrin: TensorIntrin"
+msgstr ""
+
+#: of tvm.te.tensor_intrin.decl_tensor_intrin:42
+msgid "A TensorIntrin that can be used in tensorize schedule."
+msgstr ""
+
+#: of tvm.tir.op.div:6 tvm.tir.op.floordiv:6 tvm.tir.op.floormod:6
+#: tvm.tir.op.indexdiv:6 tvm.tir.op.indexmod:6 tvm.tir.op.truncdiv:6
+#: tvm.tir.op.truncmod:6
+msgid "a"
+msgstr ""
+
+#: of tvm.tir.op.div:6 tvm.tir.op.indexdiv:6 tvm.tir.op.indexmod:6
+msgid "The left hand operand, known to be non-negative."
+msgstr ""
+
+#: of tvm.tir.op.div:9 tvm.tir.op.floordiv:9 tvm.tir.op.floormod:9
+#: tvm.tir.op.indexdiv:9 tvm.tir.op.indexmod:9 tvm.tir.op.truncdiv:9
+#: tvm.tir.op.truncmod:9
+msgid "b"
+msgstr ""
+
+#: of tvm.tir.op.div:9 tvm.tir.op.indexdiv:9 tvm.tir.op.indexmod:9
+msgid "The right hand operand, known to be non-negative."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:22 tvm.tir.op.div:16
+#: tvm.tir.op.floordiv:16 tvm.tir.op.floormod:16 tvm.tir.op.indexdiv:17
+#: tvm.tir.op.indexmod:17 tvm.tir.op.truncdiv:17 tvm.tir.op.truncmod:17
+msgid "res"
+msgstr ""
+
+#: of tvm.tir.op.div:17 tvm.tir.op.floordiv:17 tvm.tir.op.floormod:17
+#: tvm.tir.op.indexdiv:17 tvm.tir.op.indexmod:17 tvm.tir.op.truncdiv:17
+#: tvm.tir.op.truncmod:17
+msgid "The result expression."
+msgstr ""
+
+#: of tvm.tir.op.div:20
+msgid "When operands are integers, returns truncdiv(a, b, span)."
+msgstr ""
+
+#: of tvm.te.operation.extern:6
+msgid "shape: tuple or list of tuples."
+msgstr ""
+
+#: of tvm.te.operation.extern:6
+msgid "The shape of the outputs."
+msgstr ""
+
+#: of tvm.te.operation.extern:9
+msgid "inputs: list of Tensor"
+msgstr ""
+
+#: of tvm.te.operation.extern:9
+msgid "The inputs"
+msgstr ""
+
+#: of tvm.te.operation.extern:23
+msgid ""
+"**stmt** (:any:`tvm.tir.Stmt`) - The statement that carries out array "
+"computation."
+msgstr ""
+
+#: of tvm.te.operation.extern:30
+msgid "dtype: str or list of str, optional"
+msgstr ""
+
+#: of tvm.te.operation.extern:29
+msgid "The data types of outputs, by default dtype will be same as inputs."
+msgstr ""
+
+#: of tvm.te.operation.extern:33
+msgid "in_buffers: tvm.tir.Buffer or list of tvm.tir.Buffer, optional"
+msgstr ""
+
+#: of tvm.te.operation.extern:33
+msgid "Input buffers."
+msgstr ""
+
+#: of tvm.te.operation.extern:37
+msgid "out_buffers: tvm.tir.Buffer or list of tvm.tir.Buffer, optional"
+msgstr ""
+
+#: of tvm.te.operation.extern:36
+msgid "Output buffers."
+msgstr ""
+
+#: of tvm.te.operation.extern:40 tvm.te.operation.scan:22
+msgid "Additonal tag information about the compute."
+msgstr ""
+
+#: of tvm.te.operation.extern:48 tvm.te.operation.extern_primfunc:14
+#: tvm.te.operation.scan:30
+msgid "tensor: Tensor or list of Tensors"
+msgstr ""
+
+#: of tvm.te.operation.extern:48 tvm.te.operation.scan:30
+msgid "The created tensor or tuple of tensors contains multiple outputs."
+msgstr ""
+
+#: of tvm.te.operation.extern:52
+msgid ""
+"In the code below, C is generated by calling external PackedFunc "
+"`tvm.contrib.cblas.matmul`"
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:6
+msgid "input_tensors: list of Tensor"
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:6
+msgid "Input tensors that map to the corresponding primfunc input params."
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:9
+msgid "primfunc: PrimFunc"
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:9
+msgid "The TIR PrimFunc"
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:14
+msgid "The created tensor or tuple of tensors if it contains multiple outputs."
+msgstr ""
+
+#: of tvm.te.operation.extern_primfunc:18
+msgid ""
+"In the code below, a TVMScript defined TIR PrimFunc is inlined into a TE "
+"ExternOp. Applying te.create_prim_func on this"
+msgstr ""
+
+#: of tvm.tir.op.floordiv:6 tvm.tir.op.floormod:6 tvm.tir.op.truncdiv:6
+#: tvm.tir.op.truncmod:6
+msgid "The left hand operand"
+msgstr ""
+
+#: of tvm.tir.op.floordiv:9 tvm.tir.op.floormod:9 tvm.tir.op.truncdiv:9
+#: tvm.tir.op.truncmod:9
+msgid "The right hand operand"
+msgstr ""
+
+#: of tvm.tir.op.fmod:12 tvm.tir.op.power:16
+msgid "z"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:6
+msgid "output"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:6
+msgid "The tensor to differentiate."
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:-1
+msgid "List[Tensor]"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:9
+msgid "The list of input tensors to be differentiated wrt."
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:15
+msgid "head"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:12
+msgid ""
+"The adjoint of the output, in other words, some tensor, by which the "
+"Jacobians will be multiplied. Its shape must be of the form `prefix + "
+"output.shape`. If `None` is passed, the identity tensor of shape "
+"`output.shape + output.shape` will be used."
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:20
+msgid "tensors: List[Tensor]"
+msgstr ""
+
+#: of tvm.te.autodiff.gradient:20
+msgid "The result gradient, in the same order as the inputs"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:6
+msgid "cond"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:6
+msgid "The condition"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:9
+msgid "t"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:9
+msgid "The result expression if cond is true."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:12
+msgid "f"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:12
+msgid "The result expression if cond is false."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:20
+msgid "result"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:-1
+msgid "Node"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:20
+msgid "The result of conditional expression."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:24
+msgid ""
+"Unlike Select, if_then_else will not execute the branch that does not "
+"satisfy the condition. You can use it to guard against out of bound "
+"access. Unlike Select, if_then_else cannot be vectorized if some lanes in"
+" the vector have different conditions."
+msgstr ""
+
+#: of tvm.tir.op.indexdiv:21 tvm.tir.op.indexmod:21
+msgid ""
+"Use this function to split non-negative indices. This function may take "
+"advantage of operands' non-negativeness."
+msgstr ""
+
+#: of tvm.tir.op.indexmod:1
+msgid "Compute the remainder of indexdiv. a and b are non-negative."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:5
+msgid "expr"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:8
+msgid "The reduction IterVar axis"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:9
+msgid "where"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:-1
+msgid "optional, Expr"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:10
+msgid "Filtering predicate of the reduction."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:14
+msgid "The result value."
+msgstr ""
+
+#: of tvm.tir.op.max_value:6 tvm.tir.op.min_value:6
+msgid "The data type."
+msgstr ""
+
+#: of tvm.tir.op.max_value:14
+msgid "The maximum value of dtype."
+msgstr ""
+
+#: of tvm.tir.op.min_value:14
+msgid "The minimum value of dtype."
+msgstr ""
+
+#: of tvm.tir.generic.multiply:15
+msgid "The result Expr of multiply operaton."
+msgstr ""
+
+#: of tvm.tir.op.nearbyint:1
+msgid ""
+"Round elements of the array to the nearest integer. This intrinsic uses "
+"llvm.nearbyint instead of llvm.round which is faster but will results "
+"different from te.round. Notably nearbyint rounds according to the "
+"rounding mode, whereas te.round (llvm.round) ignores that. For "
+"differences between the two see: "
+"https://en.cppreference.com/w/cpp/numeric/math/round "
+"https://en.cppreference.com/w/cpp/numeric/math/nearbyint"
+msgstr ""
+
+#: of tvm.te.operation.placeholder:9
+msgid "dtype: str, optional"
+msgstr ""
+
+#: of tvm.te.operation.placeholder:9
+msgid "The data type of the tensor"
+msgstr ""
+
+#: of tvm.tir.op.power:9
+msgid "The exponent"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:6 tvm.te.operation.thread_axis:7
+msgid "dom"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:-1
+msgid "Range"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:6
+msgid "The domain of iteration."
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:8
+#: tvm.te.operation.reduce_axis:9 tvm.te.operation.size_var:6
+#: tvm.te.operation.thread_axis:13 tvm.te.operation.var:6
+msgid "name"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:9
+msgid "The name of the variable."
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:12
+msgid "thread_tag"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:12
+msgid "The name of the thread_tag."
+msgstr ""
+
+#: of tvm.te.operation.reduce_axis:20
+msgid "An iteration variable representing the value."
+msgstr ""
+
+#: of tvm.te.operation.scan:6
+msgid "init: Tensor or list of Tensor"
+msgstr ""
+
+#: of tvm.te.operation.scan:6
+msgid "The initial condition of first init.shape[0] timestamps"
+msgstr ""
+
+#: of tvm.te.operation.scan:9
+msgid "update: Tensor or list of Tensor"
+msgstr ""
+
+#: of tvm.te.operation.scan:9
+msgid "The update rule of the scan given by symbolic tensor."
+msgstr ""
+
+#: of tvm.te.operation.scan:12
+msgid "state_placeholder: Tensor or list of Tensor"
+msgstr ""
+
+#: of tvm.te.operation.scan:12
+msgid "The placeholder variables used by update."
+msgstr ""
+
+#: of tvm.te.operation.scan:16
+msgid "inputs: Tensor or list of Tensor, optional"
+msgstr ""
+
+#: of tvm.te.operation.scan:15
+msgid ""
+"The list of inputs to the scan. This is not required, but can be useful "
+"for the compiler to detect scan body faster."
+msgstr ""
+
+#: of tvm.te.operation.size_var:6 tvm.te.operation.var:6
+msgid "The name"
+msgstr ""
+
+#: of tvm.te.operation.size_var:-1
+msgid "SizeVar"
+msgstr ""
+
+#: of tvm.te.operation.size_var:17
+msgid "The result symbolic shape variable."
+msgstr ""
+
+#: of tvm.tir.generic.subtract:15
+msgid "The result Expr of subtract operaton."
+msgstr ""
+
+#: of tvm.te.tag.tag_scope:6
+msgid "tag: str"
+msgstr ""
+
+#: of tvm.te.tag.tag_scope:6
+msgid "The tag name."
+msgstr ""
+
+#: of tvm.te.tag.tag_scope:12
+msgid "tag_scope: TagScope"
+msgstr ""
+
+#: of tvm.te.tag.tag_scope:11
+msgid "The tag scope object, which can be used as decorator or context manger."
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:-1
+msgid "Range or str"
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:6
+msgid ""
+"The domain of iteration When str is passed, dom is set to None and str is"
+" used as tag"
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:10
+msgid "tag"
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:-1
+msgid "str, optional"
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:10
+msgid "The thread tag"
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:13
+msgid "The name of the var."
+msgstr ""
+
+#: of tvm.te.operation.thread_axis:21
+msgid "The thread itervar."
+msgstr ""
+
+#: of tvm.tir.op.trace:3
+msgid ""
+"The trace function allows to trace specific tensor at the runtime. The "
+"tracing value should come as last argument. The trace action should be "
+"specified, by default tvm.default_trace_action is used."
+msgstr ""
+
+#: of tvm.tir.op.trace:-1
+msgid "list of Expr or Buffers."
+msgstr ""
+
+#: of tvm.tir.op.trace:11
+msgid "Positional arguments."
+msgstr ""
+
+#: of tvm.tir.op.trace:14
+msgid "trace_action"
+msgstr ""
+
+#: of tvm.tir.op.trace:-1
+msgid "str."
+msgstr ""
+
+#: of tvm.tir.op.trace:14
+msgid "The name of the trace action."
+msgstr ""
+
+#: of tvm.tir.op.trace:19
+msgid "call"
+msgstr ""
+
+#: of tvm.tir.op.trace:19
+msgid "The call expression."
+msgstr ""
+
+#: of tvm.tir.op.trace:22
+msgid "See Also"
+msgstr ""
+
+#: of tvm.tir.op.trace:23
+msgid "tvm.tir.call_packed : Creates packed function."
+msgstr ""
+
+#: of tvm.tir.op.trunc:3
+msgid ""
+"The truncated value of the scalar x is the nearest integer i which is "
+"closer to zero than x is."
+msgstr ""
+
+#: of tvm.tir.op.truncdiv:21 tvm.tir.op.truncmod:21
+msgid "This is the default integer division behavior in C."
+msgstr ""
+
+#: of tvm.te.operation.var:-1
+msgid "Var"
+msgstr ""
+
+#: of tvm.te.operation.var:17
+msgid "The result symbolic variable."
+msgstr ""
+
+#: ../../notebook/docs/reference/api/python/te.rst:29
 msgid "tvm.te.hybrid"
+msgstr ""
+
+#: of tvm.te.hybrid:1
+msgid "Hybrid Programming APIs of TVM Python Package."
+msgstr ""
+
+#: of tvm.te.hybrid:3
+msgid ""
+"This package maps a subset of python to HalideIR so that: 1. Users can "
+"write some preliminary versions of the computation patterns have not been"
+" supported yet and verify it across the real execution and python "
+"semantic emulation. 2. So far, it is a text format dedicated to HalideIR "
+"Phase 0. Refer tvm.lower for more details. A larger ambition of this "
+"module is to support all levels of HalideIR."
+msgstr ""
+
+#: of tvm.te.hybrid:1:<autosummary>:1
+msgid ""
+":py:obj:`HybridModule <tvm.te.hybrid.HybridModule>`\\ \\(\\[src\\, "
+"name\\]\\)"
+msgstr ""
+
+#: of tvm.te.hybrid:1:<autosummary>:1
+msgid ""
+"The usage of Hybrid Module is very similar to conventional TVM module, "
+"but conventional TVM module requires a function body which is already "
+"fully lowered."
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid ":py:obj:`_pruned_source <tvm.te.hybrid._pruned_source>`\\ \\(func\\)"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+#: tvm.te.hybrid.utils._pruned_source:1
+msgid "Prune source code's extra leading spaces"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid ""
+":py:obj:`build <tvm.te.hybrid.build>`\\ \\(sch\\, inputs\\, outputs\\[\\,"
+" name\\]\\)"
+msgstr ""
+
+#: of tvm.te.hybrid.build:1 tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid "Dump the current schedule to hybrid module"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid ":py:obj:`decorate <tvm.te.hybrid.decorate>`\\ \\(func\\, fwrapped\\)"
+msgstr ""
+
+#: of tvm._ffi.base.decorate:1
+#: tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid "A wrapper call of decorator package, differs to call time"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid ":py:obj:`script <tvm.te.hybrid.script>`\\ \\(pyfunc\\)"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+#: tvm.te.hybrid.script:1
+msgid "Decorate a python function as hybrid script."
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+msgid ""
+":py:obj:`source_to_op <tvm.te.hybrid.source_to_op>`\\ \\(src\\, args\\, "
+"symbols\\, closure\\_vars\\)"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1:<autosummary>:1
+#: tvm.te.hybrid.parser.source_to_op:1
+msgid "Another level of wrapper"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule:1
+msgid ""
+"The usage of Hybrid Module is very similar to conventional TVM module, "
+"but conventional TVM module requires a function body which is already "
+"fully lowered. This contradicts to the fact that Hybrid Module is "
+"originally a text format for Phase 0 HalideIR. Thus, a totally separated "
+"module is defined."
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:1:<autosummary>:1
+msgid ""
+":py:obj:`__init__ <tvm.te.hybrid.HybridModule.__init__>`\\ \\(\\[src\\, "
+"name\\]\\)"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:1
+#: tvm.te.hybrid.module.HybridModule.__init__:1:<autosummary>:1
+msgid "The constructor of this a hybrid module"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:1:<autosummary>:1
+msgid ":py:obj:`load <tvm.te.hybrid.HybridModule.load>`\\ \\(path\\)"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:1:<autosummary>:1
+#: tvm.te.hybrid.module.HybridModule.load:1
+msgid "Load the module from a python file"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:6
+#: tvm.te.hybrid.parser.source_to_op:7
+msgid "src"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:6
+msgid "The source code of this module"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.__init__:9
+msgid "The name of this module"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.load:5
+msgid "path"
+msgstr ""
+
+#: of tvm.te.hybrid.module.HybridModule.load:6
+msgid "Path to the given python file"
+msgstr ""
+
+#: of tvm.te.hybrid.build:6
+msgid "sch: tvm.te.Schedule"
+msgstr ""
+
+#: of tvm.te.hybrid.build:6
+msgid "The schedule to be dumped"
+msgstr ""
+
+#: of tvm.te.hybrid.build:9
+msgid "inputs: An array of Tensors or Vars"
+msgstr ""
+
+#: of tvm.te.hybrid.build:9
+msgid "The inputs of the function body"
+msgstr ""
+
+#: of tvm.te.hybrid.build:12
+msgid "outputs: An array of Tensors"
+msgstr ""
+
+#: of tvm.te.hybrid.build:12
+msgid "The outputs of the function body"
+msgstr ""
+
+#: of tvm.te.hybrid.build:17
+msgid "module: HybridModule"
+msgstr ""
+
+#: of tvm.te.hybrid.build:17
+msgid ""
+"The built results is wrapped in a HybridModule. The usage of HybridModule"
+" is roughly the same as normal TVM-built modules."
+msgstr ""
+
+#: of tvm._ffi.base.decorate:6
+msgid "The original function"
+msgstr ""
+
+#: of tvm._ffi.base.decorate:8
+msgid "fwrapped"
+msgstr ""
+
+#: of tvm._ffi.base.decorate:9
+msgid "The wrapped function"
+msgstr ""
+
+#: of tvm.te.hybrid.script:3
+msgid ""
+"The hybrid function support emulation mode and parsing to the internal "
+"language IR."
+msgstr ""
+
+#: of tvm.te.hybrid.script:8
+msgid "hybrid_func"
+msgstr ""
+
+#: of tvm.te.hybrid.script:9
+msgid "A decorated hybrid script function."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:-1
+msgid "ast.node or str"
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:6
+msgid ""
+"If an ast.node, then directly lower it. If a str, then parse it to ast "
+"and lower it."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:-1
+msgid "list of Tensors or Vars"
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:10
+msgid ""
+"The argument lists to the function. It is NOT encouraged to write a "
+"function without arguments. It is NOT encouraged to write a function with"
+" side effect."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:15
+msgid "symbols"
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:-1
+msgid "list of str"
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:15
+msgid "The symbol list of the global context of the function."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:18
+msgid "closure_vars: dict"
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:18
+msgid "A dict of external name reference captured by this function."
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:-1
+msgid "list of output tensors"
+msgstr ""
+
+#: of tvm.te.hybrid.parser.source_to_op:23
+msgid "The result of output tensors of the formed OpNode."
 msgstr ""
 
 #~ msgid ":py:obj:`ComputeOp <tvm.te.ComputeOp>`\\ \\(\\)"

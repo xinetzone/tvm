@@ -1,6 +1,7 @@
 # TVM 笔记
 
 ```{toctree}
-doc
+docs/README
+docs/index
 tests/index
 ```

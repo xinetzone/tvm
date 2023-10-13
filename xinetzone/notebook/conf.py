@@ -9,12 +9,12 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-import sys
+import sys, os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.extend([str(ROOT/'src')])
-print(ROOT)
+# print(ROOT)
 import tvm
 # 国际化
 # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/i18n.html
@@ -58,6 +58,9 @@ extensions = [
     "sphinx_comments",
     "sphinxcontrib.mermaid",
     "sphinx_plotly_directive",
+    "autodocsumm",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
 ]
 
 # application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
@@ -120,7 +123,7 @@ nb_mime_priority_overrides = [
 
 # -- 国际化输出 ----------------------------------------------------------------
 gettext_compact = False
-locale_dirs = ['locales/']
+locale_dirs = [f'{ROOT}/xinetzone/locales/']
 
 autosummary_generate = True
 # Napoleon 设置

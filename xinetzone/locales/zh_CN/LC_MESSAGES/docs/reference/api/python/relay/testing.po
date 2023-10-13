@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 16:40+0800\n"
+"POT-Creation-Date: 2023-10-13 12:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,556 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../xin/docs/reference/api/python/relay/testing.rst:19
+#: ../../notebook/docs/reference/api/python/relay/testing.rst:19
 msgid "tvm.relay.testing"
+msgstr ""
+
+#: of tvm.relay.testing:1
+msgid "Utilities for testing and benchmarks"
+msgstr ""
+
+#: of tvm.relay.testing:1
+msgid "**Classes:**"
+msgstr ""
+
+#: of tvm.relay.testing:1:<autosummary>:1
+msgid ":py:obj:`Prelude <tvm.relay.testing.Prelude>`\\ \\(\\[mod\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1 tvm.relay.testing:1:<autosummary>:1
+msgid "Contains standard definitions."
+msgstr ""
+
+#: of tvm.relay.testing:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`check_grad <tvm.relay.testing.check_grad>`\\ \\(func\\[\\, "
+"inputs\\, test\\_inputs\\, eps\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.relay.testing.check_grad:1
+msgid "Perform numerical gradient checking given a relay function."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ":py:obj:`count <tvm.relay.testing.count>`\\ \\(prelude\\, n\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+"Takes a ConstructorValue corresponding to a nat ADT and converts it into "
+"a Python integer."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ":py:obj:`count_ops <tvm.relay.testing.count_ops>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1 tvm.relay.testing.count_ops:1
+msgid "count number of times a given op is called in the graph"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`create_workload <tvm.relay.testing.create_workload>`\\ "
+"\\(net\\[\\, initializer\\, seed\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.relay.testing.init.create_workload:1
+msgid "Helper function to create benchmark image classification workload."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ":py:obj:`enabled_targets <tvm.relay.testing.enabled_targets>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.testing.utils.enabled_targets:1
+msgid "Get all enabled targets with associated devices."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`gradient <tvm.relay.testing.gradient>`\\ \\(expr\\[\\, mod\\, "
+"mode\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.relay.transform.transform.gradient:1
+msgid ""
+"Transform the input function, returning a function that calculate the "
+"original result, paired with gradient of the input."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`make_nat_expr <tvm.relay.testing.make_nat_expr>`\\ \\(prelude\\,"
+" n\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.relay.testing.nat.make_nat_expr:1
+msgid ""
+"Given a non-negative Python integer, constructs a Python expression "
+"representing that integer's value as a nat."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`make_nat_value <tvm.relay.testing.make_nat_value>`\\ "
+"\\(prelude\\, n\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.relay.testing.nat.make_nat_value:1
+msgid ""
+"The inverse of count(): Given a non-negative Python integer, constructs a"
+" ConstructorValue representing that value as a nat."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`run_as_python <tvm.relay.testing.run_as_python>`\\ \\(expr\\[\\,"
+" mod\\, target\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+#: tvm.relay.testing.py_converter.run_as_python:1
+msgid "Converts the given Relay expression into a Python script and executes it."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+":py:obj:`to_python <tvm.relay.testing.to_python>`\\ \\(expr\\[\\, mod\\, "
+"target\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1:<autosummary>:1
+msgid ""
+"Converts the given Relay expression into a Python script (as a Python AST"
+" object)."
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude:1
+msgid "**Methods:**"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_ctor <tvm.relay.testing.Prelude.get_ctor>`\\ \\(ty\\_name\\,"
+" canonical\\, dtype\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1
+#: tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+#: tvm.relay.prelude.Prelude.get_ctor_static:1
+#: tvm.relay.prelude.Prelude.get_tensor_ctor_static:1
+msgid "Get constructor corresponding to the canonical name"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_ctor_static <tvm.relay.testing.Prelude.get_ctor_static>`\\ "
+"\\(ty\\_name\\, name\\, dtype\\, shape\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_global_var <tvm.relay.testing.Prelude.get_global_var>`\\ "
+"\\(canonical\\, dtype\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+#: tvm.relay.prelude.Prelude.get_global_var:1
+msgid "Get global var corresponding to the canonical name"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_global_var_static "
+"<tvm.relay.testing.Prelude.get_global_var_static>`\\ \\(canonical\\, "
+"dtype\\, shape\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+#: tvm.relay.prelude.Prelude.get_global_var_static:1
+msgid "Get var corresponding to the canonical name"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_name <tvm.relay.testing.Prelude.get_name>`\\ \\(canonical\\,"
+" dtype\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+#: tvm.relay.prelude.Prelude.get_name:1
+#: tvm.relay.prelude.Prelude.get_name_static:1
+msgid "Get name corresponding to the canonical name"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_name_static <tvm.relay.testing.Prelude.get_name_static>`\\ "
+"\\(canonical\\, dtype\\, shape\\[\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_tensor_ctor_static "
+"<tvm.relay.testing.Prelude.get_tensor_ctor_static>`\\ \\(name\\, dtype\\,"
+" shape\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_type <tvm.relay.testing.Prelude.get_type>`\\ \\(canonical\\,"
+" dtype\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+#: tvm.relay.prelude.Prelude.get_type:1
+#: tvm.relay.prelude.Prelude.get_type_static:1
+msgid "Get type corresponding to the canonical name"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ""
+":py:obj:`get_type_static <tvm.relay.testing.Prelude.get_type_static>`\\ "
+"\\(canonical\\, dtype\\, shape\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+msgid ":py:obj:`load_prelude <tvm.relay.testing.Prelude.load_prelude>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.relay.prelude.Prelude.get_ctor:1:<autosummary>:1
+#: tvm.relay.prelude.Prelude.load_prelude:1
+msgid "Parses the Prelude from Relay's text format into a module."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:3
+msgid ""
+"Compare analytical gradients to numerical gradients derived from two-"
+"sided approximation. Note that this test may fail if your function input "
+"types are not of high enough precision."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:7 tvm.relay.testing.dcgan.get_workload:4
+#: tvm.relay.testing.densenet.get_workload:4
+#: tvm.relay.testing.inception_v3.get_workload:4
+#: tvm.relay.testing.init.create_workload:4
+#: tvm.relay.testing.lstm.get_workload:4 tvm.relay.testing.lstm.lstm_cell:4
+#: tvm.relay.testing.mlp.get_workload:4
+#: tvm.relay.testing.mobilenet.get_workload:4
+#: tvm.relay.testing.resnet.get_workload:4
+#: tvm.relay.testing.resnet.residual_unit:4 tvm.relay.testing.resnet.resnet:4
+#: tvm.relay.testing.squeezenet.get_net:4
+#: tvm.relay.testing.squeezenet.get_workload:4 tvm.relay.testing.vgg.get_net:2
+#: tvm.relay.testing.vgg.get_workload:4
+#: tvm.relay.transform.transform.gradient:6
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:9
+msgid "func"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:-1 tvm.relay.testing.init.create_workload:-1
+#: tvm.relay.testing.lstm.lstm_cell:-1
+msgid "tvm.relay.Function"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:9
+msgid "The relay function to test."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:13
+msgid "inputs: List[np.array]"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:12
+msgid ""
+"Optional user-provided input parameters to use. If not given, will "
+"generate random normal inputs scaled to be close to the chosen epsilon "
+"value to avoid numerical precision loss."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:18
+msgid "test_inputs: List[np.array]"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:16
+msgid ""
+"The inputs to test for gradient matching. Useful in cases where some "
+"inputs are not differentiable, such as symbolic inputs to dynamic ops. If"
+" not given, all inputs are tested."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:21
+msgid "eps: float"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:21
+msgid "The epsilon value to use for computing numerical gradient approximation."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:25
+msgid "atol: float"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:24
+msgid ""
+"The absolute tolerance on difference between numerical and analytical "
+"gradients. Note that this needs to be scaled appropriately relative to "
+"the chosen eps and inputs."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:29
+msgid "rtol: float"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:28
+msgid ""
+"The relative tolerance on difference between numerical and analytical "
+"gradients. Note that this needs to be scaled appropriately relative to "
+"the chosen eps."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:32
+msgid "scale: float"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:32
+msgid "The standard deviation of the inputs."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:35
+msgid "mean: float"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:35
+msgid "The mean of the inputs."
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:38
+msgid ""
+"target_devices: Optional[List[Tuple[tvm.target.Target, "
+"tvm.runtime.Device]]]"
+msgstr ""
+
+#: of tvm.relay.testing.check_grad:38
+msgid ""
+"A list of targets/devices on which the gradient should be tested.  If not"
+" specified, will default to `tvm.testing.enabled_targets()`."
+msgstr ""
+
+#: of tvm.relay.testing.nat.count:1
+msgid ""
+"Takes a ConstructorValue corresponding to a nat ADT and converts it into "
+"a Python integer. This is an example of using an ADT value in Python."
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:17
+#: tvm.relay.testing.init.create_workload:6 tvm.relay.testing.mlp.get_net:17
+msgid "net"
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:6
+msgid "The selected function of the network."
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:9
+msgid "initializer"
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:-1
+msgid "Initializer"
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:9
+msgid "The initializer used"
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:12
+msgid "seed"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.init.create_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.lstm.lstm_cell:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.resnet.residual_unit:-1 tvm.relay.testing.resnet.resnet:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:12
+msgid "The seed used in initialization."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:19
+#: tvm.relay.testing.densenet.get_workload:22
+#: tvm.relay.testing.inception_v3.get_net:16
+#: tvm.relay.testing.inception_v3.get_workload:18
+#: tvm.relay.testing.init.create_workload:15
+#: tvm.relay.testing.lstm.get_workload:14 tvm.relay.testing.lstm.lstm_cell:12
+#: tvm.relay.testing.mlp.get_net:16 tvm.relay.testing.mlp.get_workload:18
+#: tvm.relay.testing.mobilenet.get_workload:22
+#: tvm.relay.testing.resnet.get_workload:27
+#: tvm.relay.testing.squeezenet.get_workload:21
+#: tvm.relay.testing.vgg.get_workload:24
+#: tvm.relay.transform.transform.gradient:19
+#: tvm.testing.utils.enabled_targets:16
+msgid "Returns"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:20
+#: tvm.relay.testing.inception_v3.get_workload:20
+#: tvm.relay.testing.init.create_workload:17
+#: tvm.relay.testing.lstm.get_workload:15 tvm.relay.testing.mlp.get_workload:20
+#: tvm.relay.testing.mobilenet.get_workload:24
+#: tvm.relay.testing.resnet.get_workload:29
+#: tvm.relay.testing.squeezenet.get_workload:23
+#: tvm.relay.testing.vgg.get_workload:26
+msgid "mod"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.init.create_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_workload:-1
+msgid "tvm.IRModule"
+msgstr ""
+
+#: of tvm.relay.testing.init.create_workload:17
+msgid "The created relay module."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:22
+#: tvm.relay.testing.densenet.get_workload:26
+#: tvm.relay.testing.inception_v3.get_workload:22
+#: tvm.relay.testing.init.create_workload:19
+#: tvm.relay.testing.lstm.get_workload:17 tvm.relay.testing.mlp.get_workload:22
+#: tvm.relay.testing.mobilenet.get_workload:26
+#: tvm.relay.testing.resnet.get_workload:31
+#: tvm.relay.testing.squeezenet.get_workload:25
+#: tvm.relay.testing.vgg.get_workload:28
+msgid "params"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.densenet.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.init.create_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_workload:-1
+msgid "dict of str to NDArray"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:23
+#: tvm.relay.testing.inception_v3.get_workload:23
+#: tvm.relay.testing.init.create_workload:20
+#: tvm.relay.testing.lstm.get_workload:18 tvm.relay.testing.mlp.get_workload:23
+#: tvm.relay.testing.mobilenet.get_workload:27
+#: tvm.relay.testing.resnet.get_workload:32
+#: tvm.relay.testing.squeezenet.get_workload:26
+#: tvm.relay.testing.vgg.get_workload:29
+msgid "The parameters."
+msgstr ""
+
+#: of tvm.testing.utils.enabled_targets:3
+msgid ""
+"In most cases, you should use :py:func:`tvm.testing.parametrize_targets` "
+"instead of this function."
+msgstr ""
+
+#: of tvm.testing.utils.enabled_targets:6
+msgid ""
+"In this context, enabled means that TVM was built with support for this "
+"target, the target name appears in the TVM_TEST_TARGETS environment "
+"variable, and a suitable device for running this target exists.  If "
+"TVM_TEST_TARGETS is not set, it defaults to variable DEFAULT_TEST_TARGETS"
+" in this module."
+msgstr ""
+
+#: of tvm.testing.utils.enabled_targets:12
+msgid ""
+"If you use this function in a test, you **must** decorate the test with "
+":py:func:`tvm.testing.uses_gpu` (otherwise it will never be run on the "
+"gpu)."
+msgstr ""
+
+#: of tvm.testing.utils.enabled_targets:17
+msgid "targets: list"
+msgstr ""
+
+#: of tvm.testing.utils.enabled_targets:18
+msgid "A list of pairs of all enabled devices and the associated context"
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:8
+#: tvm.relay.transform.transform.gradient:20
+msgid "expr"
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:-1
+msgid "tvm.relay.Expr"
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:8
+msgid "The input expression, which is a Function or a GlobalVar."
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:10
+msgid "mod : Optional[tvm.IRModule]"
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:16
+msgid "mode"
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:-1
+msgid "Optional[String]"
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:13
+msgid ""
+"The mode of the automatic differentiation algorithm. 'first_order' only "
+"works on first order code, but will not produce reference nor closure. "
+"'higher_order' works on all code using reference and closure."
+msgstr ""
+
+#: of tvm.relay.transform.transform.gradient:21
+msgid "The transformed expression."
+msgstr ""
+
+#: of tvm.relay.testing.py_converter.run_as_python:4
+msgid "Note that closures will be returned as PackedFuncs"
+msgstr ""
+
+#: of tvm.relay.testing.py_converter.to_python:1
+msgid ""
+"Converts the given Relay expression into a Python script (as a Python AST"
+" object). For easiest debugging, import the astor package and use "
+"to_source()."
 msgstr ""
 
 #: of tvm.relay.testing.mlp:1
@@ -41,19 +589,6 @@ msgstr ""
 #: tvm.relay.testing.squeezenet.get_workload:6 tvm.relay.testing.vgg.get_net:4
 #: tvm.relay.testing.vgg.get_workload:6
 msgid "batch_size"
-msgstr ""
-
-#: of tvm.relay.testing.dcgan.get_workload:-1
-#: tvm.relay.testing.inception_v3.get_net:-1
-#: tvm.relay.testing.inception_v3.get_workload:-1
-#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.lstm.lstm_cell:-1
-#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
-#: tvm.relay.testing.resnet.get_workload:-1
-#: tvm.relay.testing.resnet.residual_unit:-1 tvm.relay.testing.resnet.resnet:-1
-#: tvm.relay.testing.squeezenet.get_net:-1
-#: tvm.relay.testing.squeezenet.get_workload:-1
-#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
-msgid "int"
 msgstr ""
 
 #: of tvm.relay.testing.dcgan.get_workload:6
@@ -167,24 +702,6 @@ msgstr ""
 msgid "The data type"
 msgstr ""
 
-#: of tvm.relay.testing.dcgan.get_workload:19
-#: tvm.relay.testing.densenet.get_workload:22
-#: tvm.relay.testing.inception_v3.get_net:16
-#: tvm.relay.testing.inception_v3.get_workload:18
-#: tvm.relay.testing.lstm.get_workload:14 tvm.relay.testing.lstm.lstm_cell:12
-#: tvm.relay.testing.mlp.get_net:16 tvm.relay.testing.mlp.get_workload:18
-#: tvm.relay.testing.mobilenet.get_workload:22
-#: tvm.relay.testing.resnet.get_workload:27
-#: tvm.relay.testing.squeezenet.get_workload:21
-#: tvm.relay.testing.vgg.get_workload:24
-msgid "Returns"
-msgstr ""
-
-#: of tvm.relay.testing.inception_v3.get_net:17
-#: tvm.relay.testing.mlp.get_net:17
-msgid "net"
-msgstr ""
-
 #: of tvm.relay.testing.inception_v3.get_net:-1
 #: tvm.relay.testing.mlp.get_net:-1
 msgid "relay.Function"
@@ -199,74 +716,8 @@ msgstr ""
 msgid "Get benchmark workload for a simple multilayer perceptron."
 msgstr ""
 
-#: of tvm.relay.testing.dcgan.get_workload:4
-#: tvm.relay.testing.densenet.get_workload:4
-#: tvm.relay.testing.inception_v3.get_workload:4
-#: tvm.relay.testing.lstm.get_workload:4 tvm.relay.testing.lstm.lstm_cell:4
-#: tvm.relay.testing.mlp.get_workload:4
-#: tvm.relay.testing.mobilenet.get_workload:4
-#: tvm.relay.testing.resnet.get_workload:4
-#: tvm.relay.testing.resnet.residual_unit:4 tvm.relay.testing.resnet.resnet:4
-#: tvm.relay.testing.squeezenet.get_net:4
-#: tvm.relay.testing.squeezenet.get_workload:4 tvm.relay.testing.vgg.get_net:2
-#: tvm.relay.testing.vgg.get_workload:4
-msgid "Parameters"
-msgstr ""
-
-#: of tvm.relay.testing.dcgan.get_workload:20
-#: tvm.relay.testing.inception_v3.get_workload:20
-#: tvm.relay.testing.lstm.get_workload:15 tvm.relay.testing.mlp.get_workload:20
-#: tvm.relay.testing.mobilenet.get_workload:24
-#: tvm.relay.testing.resnet.get_workload:29
-#: tvm.relay.testing.squeezenet.get_workload:23
-#: tvm.relay.testing.vgg.get_workload:26
-msgid "mod"
-msgstr ""
-
-#: of tvm.relay.testing.dcgan.get_workload:-1
-#: tvm.relay.testing.inception_v3.get_workload:-1
-#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
-#: tvm.relay.testing.mobilenet.get_workload:-1
-#: tvm.relay.testing.resnet.get_workload:-1
-#: tvm.relay.testing.squeezenet.get_workload:-1
-#: tvm.relay.testing.vgg.get_workload:-1
-msgid "tvm.IRModule"
-msgstr ""
-
 #: of tvm.relay.testing.mlp.get_workload:20
 msgid "The relay module that contains a mlp network."
-msgstr ""
-
-#: of tvm.relay.testing.dcgan.get_workload:22
-#: tvm.relay.testing.densenet.get_workload:26
-#: tvm.relay.testing.inception_v3.get_workload:22
-#: tvm.relay.testing.lstm.get_workload:17 tvm.relay.testing.mlp.get_workload:22
-#: tvm.relay.testing.mobilenet.get_workload:26
-#: tvm.relay.testing.resnet.get_workload:31
-#: tvm.relay.testing.squeezenet.get_workload:25
-#: tvm.relay.testing.vgg.get_workload:28
-msgid "params"
-msgstr ""
-
-#: of tvm.relay.testing.dcgan.get_workload:-1
-#: tvm.relay.testing.densenet.get_workload:-1
-#: tvm.relay.testing.inception_v3.get_workload:-1
-#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
-#: tvm.relay.testing.mobilenet.get_workload:-1
-#: tvm.relay.testing.resnet.get_workload:-1
-#: tvm.relay.testing.squeezenet.get_workload:-1
-#: tvm.relay.testing.vgg.get_workload:-1
-msgid "dict of str to NDArray"
-msgstr ""
-
-#: of tvm.relay.testing.dcgan.get_workload:23
-#: tvm.relay.testing.inception_v3.get_workload:23
-#: tvm.relay.testing.lstm.get_workload:18 tvm.relay.testing.mlp.get_workload:23
-#: tvm.relay.testing.mobilenet.get_workload:27
-#: tvm.relay.testing.resnet.get_workload:32
-#: tvm.relay.testing.squeezenet.get_workload:26
-#: tvm.relay.testing.vgg.get_workload:29
-msgid "The parameters."
 msgstr ""
 
 #: of tvm.relay.testing.resnet:1
@@ -634,10 +1085,6 @@ msgstr ""
 
 #: of tvm.relay.testing.lstm.lstm_cell:17
 msgid "result"
-msgstr ""
-
-#: of tvm.relay.testing.lstm.lstm_cell:-1
-msgid "tvm.relay.Function"
 msgstr ""
 
 #: of tvm.relay.testing.lstm.lstm_cell:14

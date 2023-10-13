@@ -39,6 +39,7 @@ doc = [
   "sphinxext-rediraffe",
   "pydata-sphinx-theme",
   "sphinxcontrib-mermaid",
+  "autodocsumm",
 ]
 dev = [
   "scipy>=1.9.3",
