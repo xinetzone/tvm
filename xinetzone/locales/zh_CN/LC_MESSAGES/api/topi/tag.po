@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.14.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-13 15:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../notebook/api/topi/tag.rst:2
+msgid "tvm.topi.tag"
+msgstr ""
+
+#: of tvm.topi.tag:1
+msgid "Namespace of all tag system in tvm"
+msgstr "TVM 中所有 tag 系统的命名空间"
+
+#: of tvm.topi.tag:3
+msgid "Each operator can be tagged by a tag, which indicate its type."
+msgstr "每个算子都可以被标记为标签，表示其类型。"
+
+#: of tvm.topi.tag:5
+msgid "Generic categories"
+msgstr "通用类别"
+
+#: of tvm.topi.tag:7
+msgid "tag.ELEMWISE=\"elemwise\":"
+msgstr ""
+
+#: of tvm.topi.tag:8
+msgid "Elementwise operator, for example :code:`out[i, j] = input[i, j]`"
+msgstr "元素级算子，例如 :code:`out[i, j] = input[i, j]`"
+
+#: of tvm.topi.tag:13
+msgid "tag.BROADCAST=\"broadcast\":"
+msgstr ""
+
+#: of tvm.topi.tag:10
+msgid ""
+"Broadcasting operator, can always map output axis to the input in order. "
+"for example :code:`out[i, ax1, j, ax2] = input[i, j]`. Note that the axis"
+" need to be in order so transpose is not a bcast operator. If an input of"
+" broadcast operator has same shape as output, we can ensure that it is "
+"elementwise relation."
+msgstr ""
+"广播算子，总是可以将输出轴依次映射到输入轴。"
+"例如:code:`out[i, ax1, j, ax2] = input[i, j]`。"
+"请注意，轴需要按顺序排列，因此转置不是广播算子。如果广播算子的输入与输出具有相同的形状，我们可以确保它是元素级关系。"
+
+#: of tvm.topi.tag:17
+msgid "tag.INJECTIVE=\"injective\":"
+msgstr ""
+
+#: of tvm.topi.tag:16
+msgid ""
+"Injective operator, can always injectively map output axis to a single "
+"input axis. All injective operator can still be safely fused similar to "
+"ewise to reduction."
+msgstr ""
+"单射（Injective）算子，总是可以将输出轴映射到单个输入轴。"
+"所有单射算子仍然可以安全地融合类似于 ewise 到 reduction。"
+
+#: of tvm.topi.tag:19
+msgid "tag.COMM_REDUCE=\"comm_reduce\":"
+msgstr ""
+
+#: of tvm.topi.tag:20
+msgid "Communicative reduction operator"
+msgstr "通信规约算子"
+
+#: of tvm.topi.tag:21
+msgid ""
+"If an op does not belong to these generic categories, it should have a "
+"special tag."
+msgstr ""
+"如果算子不属于这些通用类别，则应该有特殊的标签。"
+
+#: of tvm.topi.tag:24
+msgid "Note"
+msgstr "注意"
+
+#: of tvm.topi.tag:25
+msgid ""
+"When we add a new topi operator, the op need to be tagged as generic as "
+"possible. We can also compose tags like \"injective,pad\" to give generic"
+" and specific information. When we use composed tags, we must always put "
+"generic tag in the first location."
+msgstr ""
+"当添加新的 topi 算子时，需要尽可能地给该算子打上通用标签。"
+"也可以组合标签，如 \"injective,pad\" 来提供通用和特定信息。"
+"当我们使用组合标签时，必须始终将通用标签放在首位。"
+
+#: of tvm.topi.tag:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1:<autosummary>:1
+msgid ":py:obj:`is_broadcast <tvm.topi.tag.is_broadcast>`\\ \\(tag\\)"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1 tvm.topi.tag.is_broadcast:1:<autosummary>:1
+msgid "Check if a tag is bcast"
+msgstr "检查标签是否被广播"
+
+#: of tvm.topi.tag.is_broadcast:1:<autosummary>:1
+msgid ":py:obj:`is_injective <tvm.topi.tag.is_injective>`\\ \\(tag\\)"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1:<autosummary>:1 tvm.topi.tag.is_injective:1
+msgid "Check if a tag is injective"
+msgstr "检查标签是否是单射"
+
+#: of tvm.topi.tag.is_broadcast:4 tvm.topi.tag.is_injective:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:6 tvm.topi.tag.is_injective:6
+msgid "tag"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:-1 tvm.topi.tag.is_injective:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:6 tvm.topi.tag.is_injective:6
+msgid "The input tag"
+msgstr "输入 tag"
+
+#: of tvm.topi.tag.is_broadcast:9 tvm.topi.tag.is_injective:9
+msgid "Returns"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:10 tvm.topi.tag.is_injective:10
+msgid "ret"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:-1 tvm.topi.tag.is_injective:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:11
+msgid "Whether a tag is broadcast"
+msgstr ""
+
+#: of tvm.topi.tag.is_injective:11
+msgid "Whether a tag is injective"
+msgstr ""
+

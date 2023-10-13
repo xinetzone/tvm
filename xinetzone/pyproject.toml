@@ -44,6 +44,7 @@ doc = [
 ]
 dev = [
   "scipy>=1.9.3",
+  "matplotlib",
   "plotly",
   "d2py",
   "graphviz",
