@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../xin/docs/README.md:18
 msgid "TVM Documentation"
-msgstr "TVM 文档"
+msgstr "TVM 准备"
 
 #: ../../xin/docs/README.md:20
 msgid ""
