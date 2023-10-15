@@ -1513,6 +1513,7 @@ msgid ""
 "Execute a multiplication between two Q-numbers x and y followed by a "
 "right shift s."
 msgstr ""
+"执行两个 Q-numbers x 和 y 之间的乘法运算，然后进行右移 s 位。数学表达式为（$(x * y) >> s$）"
 
 #: of tvm.tir.expr.Add:1:<autosummary>:1
 msgid ""
@@ -1522,7 +1523,7 @@ msgstr ""
 
 #: of tvm.tir.expr.Add:1:<autosummary>:1 tvm.tir.op.q_multiply_shift_per_axis:1
 msgid "Execute a multiplication between two Q-numbers x and y"
-msgstr ""
+msgstr "执行两个 Q-numbers x 和 y 之间的乘法运算"
 
 #: of tvm.tir.expr.Add:1:<autosummary>:1
 msgid ":py:obj:`reinterpret <tvm.tir.reinterpret>`\\ \\(dtype\\, value\\)"
@@ -1534,7 +1535,7 @@ msgstr ""
 
 #: of tvm.tir.expr.Add:1:<autosummary>:1 tvm.tir.op.ret:1
 msgid "Create a tir return expression"
-msgstr ""
+msgstr "创建 tir 返回表达式"
 
 #: of tvm.tir.expr.Add:1:<autosummary>:1
 msgid ":py:obj:`round <tvm.tir.round>`\\ \\(x\\[\\, span\\]\\)"
@@ -8800,10 +8801,11 @@ msgid ""
 "Execute a multiplication between two Q-numbers x and y followed by a "
 "right shift s. The mathematical expression is:"
 msgstr ""
+"执行两个 Q-numbers x 和 y 之间的乘法运算，然后进行右移 s 位。数学表达式为："
 
 #: of tvm.tir.op.q_multiply_shift:4
 msgid "out = round(x*y*2^-s)"
-msgstr ""
+msgstr ":math:`out = round(x*y*2^{-s})`"
 
 #: of tvm.tir.op.q_multiply_shift:6
 msgid ""
@@ -8812,14 +8814,16 @@ msgid ""
 "the nearest value, rounding half up (i.e., round(x.1) = x and round (x.5)"
 " = x+1)"
 msgstr ""
+"关于 Q-numbers 的更多信息可以在这里找到：https://en.wikipedia.org/wiki/Q_(number_format)。"
+"舍入规则是向最接近的值舍入，半途而上的舍入（也称为银行家舍入法，即 ``round(x.1) = x`` 和 ``round (x.5) = x+1``"
 
 #: of tvm.tir.op.q_multiply_shift:13
 msgid "First Q-number"
-msgstr ""
+msgstr "第一个 Q-number"
 
 #: of tvm.tir.op.q_multiply_shift:15
 msgid "Second Q-number"
-msgstr ""
+msgstr "第二个 Q-number"
 
 #: of tvm.tir.op.q_multiply_shift:16 tvm.tir.op.q_multiply_shift_per_axis:13
 msgid "q"
@@ -8827,7 +8831,7 @@ msgstr ""
 
 #: of tvm.tir.op.q_multiply_shift:17
 msgid "Number of fractional bits in x and y. Needs to be > 0"
-msgstr ""
+msgstr "x 和 y 的分数位数。需要大于 0。"
 
 #: of tvm.tir.op.q_multiply_shift:19
 msgid "s"
@@ -8835,7 +8839,9 @@ msgstr ""
 
 #: of tvm.tir.op.q_multiply_shift:19
 msgid "Integer shift"
-msgstr ""
+msgstr "整数移位，也称为循环移位或循环左移/右移，是一种将二进制数中的位向左或向右移动一定数量的运算。"
+"在整数移位中，最左边的位被丢弃，最右边的位移到最左边，而其他位则按照一定的规则进行移动。"
+"例如，对于 8 位二进制数，向左移位 1 位等于将其乘以 2，向右移位 1 位等于将其除以2。"
 
 #: of tvm.tir.op.q_multiply_shift_per_axis:6
 msgid "First Q-number."
@@ -8871,7 +8877,7 @@ msgstr ""
 
 #: of tvm.tir.op.q_multiply_shift_per_axis:16
 msgid "Whether we need to do left shift or not."
-msgstr ""
+msgstr "是否需要进行左移运算。"
 
 #: of tvm.tir.op.q_multiply_shift_per_axis:18
 msgid "is_rshift_required"
@@ -8879,15 +8885,15 @@ msgstr ""
 
 #: of tvm.tir.op.q_multiply_shift_per_axis:18
 msgid "Whether we need to do right shift or not."
-msgstr ""
+msgstr "是否需要进行右移运算。"
 
 #: of tvm.tir.op.reinterpret:9
 msgid "The input value."
-msgstr ""
+msgstr "输入的值"
 
 #: of tvm.tir.op.reinterpret:17
 msgid "The reinterpret cast value of dtype."
-msgstr ""
+msgstr "reinterpret 转换数据类型为 dtype 的值。"
 
 #: of tvm.tir.op.ret:6
 msgid "val"
@@ -8898,6 +8904,7 @@ msgid ""
 "The returned tir expression, whose data type is int, float or void "
 "pointer."
 msgstr ""
+"返回的 tir 表达式的数据类型为 int、float 或 void 指针。"
 
 #: of tvm.tir.op.ret:10 tvm.tir.op.tvm_throw_last_error:5
 msgid "ret"
