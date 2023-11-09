@@ -68,6 +68,7 @@ def config(ctx, cuda=False):
         content = fp.read()
     with open(target, 'w') as fp:
         content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM ON)')
+        # content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM "llvm-config")')
         # content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM "llvm-config --link-static")')
         content = content.replace('set(USE_VTA_FSIM OFF)', 'set(USE_VTA_FSIM ON)')
         content = content.replace('set(USE_RELAY_DEBUG OFF)', 'set(USE_RELAY_DEBUG ON)')
