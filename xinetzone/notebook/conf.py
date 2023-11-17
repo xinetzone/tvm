@@ -13,9 +13,9 @@ import sys, os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.extend([str(ROOT/'src')])
+# sys.path.extend([str(ROOT/'src')])
 # print(ROOT)
-import tvm
+# import tvm
 # 国际化
 # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/i18n.html
 # from sphinx.locale import get_translation
@@ -30,8 +30,8 @@ copyright = '2022, xinetzone'
 author = 'xinetzone'
 
 # The full version, including alpha/beta/rc tags
-release = tvm.__version__
-
+# release = tvm.__version__
+release = "doc"
 
 # -- General configuration ---------------------------------------------------
 

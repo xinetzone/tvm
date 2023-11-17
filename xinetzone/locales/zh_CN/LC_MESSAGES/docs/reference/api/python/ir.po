@@ -8,3444 +8,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 12:27+0800\n"
+"POT-Creation-Date: 2023-11-17 09:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../notebook/docs/reference/api/python/ir.rst:19
 msgid "tvm.ir"
-msgstr ""
-
-#: of tvm.ir:1
-msgid "Common data structures across all IR variants."
-msgstr ""
-
-#: ../../docstring of tvm.instrument:1 tvm.ir:1 tvm.transform:1
-msgid "**Classes:**"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Array <tvm.ir.Array>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.container.Array:1 tvm.ir:1:<autosummary>:1
-msgid "Array container of TVM."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Attrs <tvm.ir.Attrs>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"Attribute node, which is mainly use for defining attributes of relay "
-"operators."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`BaseExpr <tvm.ir.BaseExpr>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.expr.BaseExpr:1 tvm.ir:1:<autosummary>:1
-msgid "Base class of all the expressions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`BaseFunc <tvm.ir.BaseFunc>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc:1 tvm.ir:1:<autosummary>:1
-msgid "Base class of all functions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`CallingConv <tvm.ir.CallingConv>`\\ \\(value\\)"
-msgstr ""
-
-#: of tvm.ir.function.CallingConv:1 tvm.ir:1:<autosummary>:1
-msgid "Possible kinds of calling conventions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`ConstantMemoryPools <tvm.ir.ConstantMemoryPools>`\\ \\(pools\\)"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantMemoryPools:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"This object contains a list of ConstantPoolInfo objects to be used as "
-"read-only memory in the compilation"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`ConstantPoolInfo <tvm.ir.ConstantPoolInfo>`\\ \\(pool\\_name\\, "
-"targets\\[\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"ConstantPoolInfo object holds information related to RO memory pools "
-"where the statically sized allocate nodes are pooled into."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`Constructor <tvm.ir.Constructor>`\\ \\(name\\_hint\\, inputs\\, "
-"belong\\_to\\)"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:1 tvm.ir:1:<autosummary>:1
-msgid "Relay ADT constructor."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`DictAttrs <tvm.ir.DictAttrs>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.DictAttrs:1 tvm.ir:1:<autosummary>:1
-msgid "Dictionary attributes."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`DummyGlobalInfo <tvm.ir.DummyGlobalInfo>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`EnvFunc <tvm.ir.EnvFunc>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.base.EnvFunc:1 tvm.ir:1:<autosummary>:1
-msgid "Environment function."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`FuncType <tvm.ir.FuncType>`\\ \\(arg\\_types\\, ret\\_type\\[\\,"
-" type\\_params\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:1 tvm.ir:1:<autosummary>:1
-msgid "Function type."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`GlobalInfo <tvm.ir.GlobalInfo>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.global_info.GlobalInfo:1 tvm.ir:1:<autosummary>:1
-msgid "Base node for all global info that can appear in the IR"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`GlobalTypeVar <tvm.ir.GlobalTypeVar>`\\ \\(name\\_hint\\[\\, "
-"kind\\]\\)"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"A global type variable that is used for defining new types or type "
-"aliases."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`GlobalVar <tvm.ir.GlobalVar>`\\ \\(name\\_hint\\[\\, "
-"type\\_annot\\]\\)"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar:1 tvm.ir:1:<autosummary>:1
-msgid "A global variable in the IR."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`IRModule <tvm.ir.IRModule>`\\ \\(\\[functions\\, "
-"type\\_definitions\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule:1 tvm.ir:1:<autosummary>:1
-msgid "IRModule that holds functions and type definitions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`IncompleteType <tvm.ir.IncompleteType>`\\ \\(\\[kind\\]\\)"
-msgstr ""
-
-#: of tvm.ir.type.IncompleteType:1 tvm.ir:1:<autosummary>:1
-msgid "Incomplete type during type inference."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Map <tvm.ir.Map>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.container.Map:1 tvm.ir:1:<autosummary>:1
-msgid "Map container of TVM."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Node <tvm.ir.Node>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.base.Node:1 tvm.ir:1:<autosummary>:1
-msgid "Base class of all IR Nodes."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Op <tvm.ir.Op>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op:1 tvm.ir:1:<autosummary>:1
-msgid "Primitive operator in the IR."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`PointerType <tvm.ir.PointerType>`\\ \\(element\\_type\\[\\, "
-"storage\\_scope\\]\\)"
-msgstr ""
-
-#: of tvm.ir.type.PointerType:1 tvm.ir:1:<autosummary>:1
-msgid "PointerType used in the low-level TIR."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`PoolInfo <tvm.ir.PoolInfo>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"PoolInfo object holds information related to memory pools where the "
-"statically sized allocate nodes will pooled into."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`PoolInfoProperties <tvm.ir.PoolInfoProperties>`\\ "
-"\\(\\[size\\_hint\\_bytes\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`PrimExpr <tvm.ir.PrimExpr>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.expr.PrimExpr:1 tvm.ir:1:<autosummary>:1
-msgid "Base class of all primitive expressions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`PrimType <tvm.ir.PrimType>`\\ \\(dtype\\)"
-msgstr ""
-
-#: of tvm.ir.type.PrimType:1 tvm.ir:1:<autosummary>:1
-msgid "Primitive data type in the low level IR"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Range <tvm.ir.Range>`\\ \\(begin\\[\\, end\\, span\\]\\)"
-msgstr ""
-
-#: of tvm.ir.expr.Range:1 tvm.ir:1:<autosummary>:1
-msgid "Represent a range in TVM."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`RelayExpr <tvm.ir.RelayExpr>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.expr.RelayExpr:1 tvm.ir:1:<autosummary>:1
-msgid "Base class of all non-primitive expressions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`RelayRefType <tvm.ir.RelayRefType>`\\ \\(value\\)"
-msgstr ""
-
-#: of tvm.ir.type.RelayRefType:1 tvm.ir:1:<autosummary>:1
-msgid "Reference Type in relay."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`SequentialSpan <tvm.ir.SequentialSpan>`\\ \\(spans\\)"
-msgstr ""
-
-#: of tvm.ir.base.SequentialSpan:1 tvm.ir:1:<autosummary>:1
-msgid "A sequence of source spans"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`SourceName <tvm.ir.SourceName>`\\ \\(name\\)"
-msgstr ""
-
-#: of tvm.ir.base.SourceName:1 tvm.ir:1:<autosummary>:1
-msgid "A identifier for a source location."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`Span <tvm.ir.Span>`\\ \\(source\\_name\\, line\\, end\\_line\\, "
-"column\\, ...\\)"
-msgstr ""
-
-#: of tvm.ir.base.Span:1 tvm.ir:1:<autosummary>:1
-msgid "Specifies a location in a source program."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`TensorAffineType <tvm.ir.TensorAffineType>`\\ \\(scale\\, "
-"zero\\_point\\, dtype\\[\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:1 tvm.ir:1:<autosummary>:1
-msgid "The quantized type of a tensor, with scale, zero point, and datatype"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TensorType <tvm.ir.TensorType>`\\ \\(shape\\[\\, dtype\\]\\)"
-msgstr ""
-
-#: of tvm.ir.tensor_type.TensorType:1 tvm.ir:1:<autosummary>:1
-msgid "A concrete TensorType in Relay."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TupleAffineType <tvm.ir.TupleAffineType>`\\ \\(types\\)"
-msgstr ""
-
-#: of tvm.ir.affine_type.TupleAffineType:1 tvm.ir:1:<autosummary>:1
-msgid "Affine types of a node with multiple outputs"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TupleType <tvm.ir.TupleType>`\\ \\(fields\\)"
-msgstr ""
-
-#: of tvm.ir.type.TupleType:1 tvm.ir:1:<autosummary>:1
-msgid "The type of tuple values."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`Type <tvm.ir.Type>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.type.Type:1 tvm.ir:1:<autosummary>:1
-msgid "The base class of all types."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TypeCall <tvm.ir.TypeCall>`\\ \\(func\\, args\\)"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:1 tvm.ir:1:<autosummary>:1
-msgid "Type function application."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TypeConstraint <tvm.ir.TypeConstraint>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.type.TypeConstraint:1 tvm.ir:1:<autosummary>:1
-msgid "Abstract class representing a type constraint."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`TypeData <tvm.ir.TypeData>`\\ \\(header\\, type\\_vars\\, "
-"constructors\\)"
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:1 tvm.ir:1:<autosummary>:1
-msgid "Stores the definition for an Algebraic Data Type (ADT) in Relay."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TypeKind <tvm.ir.TypeKind>`\\ \\(value\\)"
-msgstr ""
-
-#: of tvm.ir.type.TypeKind:1 tvm.ir:1:<autosummary>:1
-msgid "Possible kinds of TypeVars."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`TypeRelation <tvm.ir.TypeRelation>`\\ \\(func\\, args\\, "
-"num\\_inputs\\, attrs\\)"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:1 tvm.ir:1:<autosummary>:1
-msgid "User defined type relation, it is an input-output relation on types."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`TypeVar <tvm.ir.TypeVar>`\\ \\(name\\_hint\\[\\, kind\\]\\)"
-msgstr ""
-
-#: of tvm.ir.type.TypeVar:1 tvm.ir:1:<autosummary>:1
-msgid "Type parameter in functions."
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`VDevice <tvm.ir.VDevice>`\\ \\(\\[target\\, vdevice\\_id\\, "
-"memory\\_scope\\]\\)"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ":py:obj:`WorkspaceMemoryPools <tvm.ir.WorkspaceMemoryPools>`\\ \\(pools\\)"
-msgstr ""
-
-#: of tvm.ir.memory_pools.WorkspaceMemoryPools:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"This object contains a list of WorkspacePoolInfo objects to be used as "
-"workspace memory in the compilation"
-msgstr ""
-
-#: of tvm.ir:1:<autosummary>:1
-msgid ""
-":py:obj:`WorkspacePoolInfo <tvm.ir.WorkspacePoolInfo>`\\ "
-"\\(pool\\_name\\, targets\\[\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.memory_pools.WorkspacePoolInfo:1 tvm.ir:1:<autosummary>:1
-msgid ""
-"WorkspacePoolInfo object holds information related to RW memory pools "
-"where the statically sized allocate nodes will pooled into."
-msgstr ""
-
-#: ../../docstring of tvm.instrument:1 tvm.ir:1 tvm.transform:1
-msgid "**Functions:**"
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ""
-":py:obj:`assert_structural_equal <tvm.ir.assert_structural_equal>`\\ "
-"\\(lhs\\, rhs\\[\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:1
-#: tvm.ir.container.Array:1:<autosummary>:1
-msgid "Assert lhs and rhs are structurally equal to each other."
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ":py:obj:`load_json <tvm.ir.load_json>`\\ \\(json\\_str\\)"
-msgstr ""
-
-#: of tvm.ir.base.load_json:1 tvm.ir.container.Array:1:<autosummary>:1
-msgid "Load tvm object from json_str."
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ":py:obj:`make_node <tvm.ir.make_node>`\\ \\(type\\_key\\, \\*\\*kwargs\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:1 tvm.ir.container.Array:1:<autosummary>:1
-msgid "Make a new IR node by its type key and fields"
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ""
-":py:obj:`register_intrin_lowering <tvm.ir.register_intrin_lowering>`\\ "
-"\\(op\\_name\\, target\\, \\*\\)"
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-#: tvm.ir.op.register_intrin_lowering:1
-msgid "Register Op lowering function"
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ""
-":py:obj:`register_op_attr <tvm.ir.register_op_attr>`\\ \\(op\\_name\\, "
-"attr\\_key\\[\\, value\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1 tvm.ir.op.register_op_attr:1
-msgid "Register an operator property of an operator by name."
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ":py:obj:`save_json <tvm.ir.save_json>`\\ \\(node\\)"
-msgstr ""
-
-#: of tvm.ir.base.save_json:1 tvm.ir.container.Array:1:<autosummary>:1
-msgid "Save tvm object as json string."
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ""
-":py:obj:`structural_equal <tvm.ir.structural_equal>`\\ \\(lhs\\, "
-"rhs\\[\\, map\\_free\\_vars\\]\\)"
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:1 tvm.ir.container.Array:1:<autosummary>:1
-msgid "Check structural equality of lhs and rhs."
-msgstr ""
-
-#: of tvm.ir.container.Array:1:<autosummary>:1
-msgid ""
-":py:obj:`structural_hash <tvm.ir.structural_hash>`\\ \\(node\\[\\, "
-"map\\_free\\_vars\\]\\)"
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:1 tvm.ir.container.Array:1:<autosummary>:1
-msgid "Compute structural hash of node"
-msgstr ""
-
-#: of tvm.ir.container.Array:3
-msgid ""
-"You do not need to create Array explicitly. Normally python list and "
-"tuple will be converted automatically to Array during tvm function call. "
-"You may get Array in return values of TVM function call."
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs:3
-msgid ""
-"Used by function registered in python side, such as compute, schedule and"
-" alter_layout. Attrs is passed as the first argument to these functions."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:1 tvm.ir.attrs.Attrs:1 tvm.ir.attrs.DictAttrs:1
-#: tvm.ir.base.EnvFunc:1 tvm.ir.container.Map:1 tvm.ir.expr.GlobalVar:1
-#: tvm.ir.expr.Range:1 tvm.ir.function.BaseFunc:1
-#: tvm.ir.global_info.GlobalInfo:1 tvm.ir.instrument.PassInstrument:1
-#: tvm.ir.instrument.PassTimingInstrument:1 tvm.ir.module.IRModule:1
-#: tvm.ir.op.Op:1 tvm.ir.transform.Pass:1 tvm.ir.transform.PassContext:1
-#: tvm.ir.type.GlobalTypeVar:1 tvm.ir.type.Type:1 tvm.ir.type.TypeVar:1
-msgid "**Methods:**"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-msgid ":py:obj:`get_int <tvm.ir.Attrs.get_int>`\\ \\(key\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1 tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-#: tvm.ir.attrs.Attrs.get_str:1
-msgid "Get a python int value of a key"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-msgid ":py:obj:`get_int_tuple <tvm.ir.Attrs.get_int_tuple>`\\ \\(key\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-#: tvm.ir.attrs.Attrs.get_int_tuple:1
-msgid "Get a python int tuple of a key"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-msgid ":py:obj:`get_str <tvm.ir.Attrs.get_str>`\\ \\(key\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-msgid ":py:obj:`keys <tvm.ir.Attrs.keys>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1 tvm.ir.attrs.Attrs.keys:1
-#: tvm.ir.attrs.DictAttrs._dict:1:<autosummary>:1 tvm.ir.attrs.DictAttrs.keys:1
-msgid "Get list of names in the attribute."
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-msgid ":py:obj:`list_field_info <tvm.ir.Attrs.list_field_info>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:1:<autosummary>:1
-#: tvm.ir.attrs.Attrs.list_field_info:1
-msgid "Get fields information"
-msgstr ""
-
-#: ../../docstring of tvm.ir.adt.Constructor:4
-#: tvm.ir.adt.Constructor.__call__:4 tvm.ir.adt.TypeData:9
-#: tvm.ir.affine_type.TensorAffineType:6 tvm.ir.affine_type.TupleAffineType:4
-#: tvm.ir.attrs.Attrs.get_int:4 tvm.ir.attrs.Attrs.get_int_tuple:4
-#: tvm.ir.attrs.Attrs.get_str:4 tvm.ir.attrs.make_node:4
-#: tvm.ir.base.EnvFunc.get:4 tvm.ir.base.SequentialSpan:7
-#: tvm.ir.base.SourceName:4 tvm.ir.base.Span:4
-#: tvm.ir.base.assert_structural_equal:4 tvm.ir.base.load_json:4
-#: tvm.ir.base.save_json:4 tvm.ir.base.structural_equal:26
-#: tvm.ir.base.structural_hash:21 tvm.ir.container.Map.get:4
-#: tvm.ir.expr.GlobalVar:7 tvm.ir.expr.GlobalVar.__call__:4
-#: tvm.ir.expr.GlobalVar.astext:4 tvm.ir.expr.Range:7
-#: tvm.ir.expr.Range.from_min_extent:6 tvm.ir.function.BaseFunc.with_attr:4
-#: tvm.ir.function.BaseFunc.without_attr:4
-#: tvm.ir.instrument.PassInstrument.run_after_pass:7
-#: tvm.ir.instrument.PassInstrument.run_before_pass:7
-#: tvm.ir.instrument.PassInstrument.should_run:7
-#: tvm.ir.instrument.pass_instrument:4
-#: tvm.ir.memory_pools.ConstantMemoryPools:5
-#: tvm.ir.memory_pools.ConstantPoolInfo:5
-#: tvm.ir.memory_pools.PoolInfoProperties:5
-#: tvm.ir.memory_pools.WorkspaceMemoryPools:5
-#: tvm.ir.memory_pools.WorkspacePoolInfo:5 tvm.ir.module.IRModule:6
-#: tvm.ir.module.IRModule.__getitem__:4 tvm.ir.module.IRModule.__setitem__:4
-#: tvm.ir.module.IRModule.astext:4 tvm.ir.module.IRModule.from_expr:4
-#: tvm.ir.module.IRModule.get_attr:4 tvm.ir.module.IRModule.get_constructor:4
-#: tvm.ir.module.IRModule.get_global_type_var:4
-#: tvm.ir.module.IRModule.get_global_var:4 tvm.ir.module.IRModule.update:4
-#: tvm.ir.module.IRModule.update_func:5
-#: tvm.ir.module.IRModule.update_global_info:4
-#: tvm.ir.module.IRModule.with_attr:4 tvm.ir.op.Op.add_argument:4
-#: tvm.ir.op.Op.add_type_rel:4 tvm.ir.op.Op.astext:4 tvm.ir.op.Op.get:4
-#: tvm.ir.op.Op.get_attr:4 tvm.ir.op.Op.has_attr:4 tvm.ir.op.Op.reset_attr:4
-#: tvm.ir.op.Op.set_attr:4 tvm.ir.op.Op.set_attrs_type_key:4
-#: tvm.ir.op.Op.set_num_inputs:4 tvm.ir.op.Op.set_support_level:4
-#: tvm.ir.op.register_intrin_lowering:4 tvm.ir.op.register_op_attr:4
-#: tvm.ir.tensor_type.TensorType:7 tvm.ir.transform.Pass.__call__:5
-#: tvm.ir.transform.PassInfo:7 tvm.ir.transform.PrintIR:4
-#: tvm.ir.transform.Sequential:9 tvm.ir.transform.module_pass:11
-#: tvm.ir.type.FuncType:12 tvm.ir.type.GlobalTypeVar:4
-#: tvm.ir.type.GlobalTypeVar.__call__:4 tvm.ir.type.PointerType:4
-#: tvm.ir.type.PrimType:4 tvm.ir.type.RelayRefType:4 tvm.ir.type.TupleType:4
-#: tvm.ir.type.TypeVar:8 tvm.ir.type.TypeVar.__call__:4
-#: tvm.ir.type_relation.TypeCall:4 tvm.ir.type_relation.TypeRelation:7
-msgid "Parameters"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:5 tvm.ir.attrs.Attrs.get_int_tuple:5
-#: tvm.ir.attrs.Attrs.get_str:5
-msgid "key: str"
-msgstr ""
-
-#: ../../docstring of tvm.ir.RelayExpr.checked_type:4
-#: tvm.ir.RelayExpr.struct_info:4 tvm.ir.TensorType.concrete_shape:4
-#: tvm.ir.adt.Constructor.__call__:9 tvm.ir.attrs.Attrs.get_int:8
-#: tvm.ir.attrs.Attrs.get_int_tuple:8 tvm.ir.attrs.Attrs.get_str:8
-#: tvm.ir.attrs.Attrs.keys:4 tvm.ir.attrs.Attrs.list_field_info:4
-#: tvm.ir.attrs.DictAttrs.keys:4 tvm.ir.attrs.make_node:12
-#: tvm.ir.base.load_json:9 tvm.ir.base.save_json:9 tvm.ir.container.Map.get:12
-#: tvm.ir.expr.GlobalVar.__call__:9 tvm.ir.expr.GlobalVar.astext:14
-#: tvm.ir.expr.Range.from_min_extent:17 tvm.ir.function.BaseFunc.with_attr:12
-#: tvm.ir.function.BaseFunc.with_attrs:7
-#: tvm.ir.function.BaseFunc.without_attr:10
-#: tvm.ir.instrument.PassInstrument.enter_pass_ctx:4
-#: tvm.ir.instrument.PassInstrument.exit_pass_ctx:4
-#: tvm.ir.instrument.PassInstrument.run_after_pass:17
-#: tvm.ir.instrument.PassInstrument.run_before_pass:17
-#: tvm.ir.instrument.PassInstrument.should_run:17
-#: tvm.ir.module.IRModule.__getitem__:9 tvm.ir.module.IRModule.astext:14
-#: tvm.ir.module.IRModule.from_expr:15 tvm.ir.module.IRModule.get_attr:9
-#: tvm.ir.module.IRModule.get_constructor:9
-#: tvm.ir.module.IRModule.get_global_type_var:9
-#: tvm.ir.module.IRModule.get_global_type_vars:4
-#: tvm.ir.module.IRModule.get_global_var:9
-#: tvm.ir.module.IRModule.get_global_vars:4 tvm.ir.module.IRModule.with_attr:12
-#: tvm.ir.module.IRModule.with_attrs:7 tvm.ir.module.IRModule.without_attr:7
-#: tvm.ir.op.Op.astext:14 tvm.ir.op.Op.get:9 tvm.ir.op.Op.get_attr:9
-#: tvm.ir.op.Op.has_attr:9 tvm.ir.op.Op.list_op_names:4
-#: tvm.ir.op.register_intrin_lowering:18 tvm.ir.op.register_op_attr:18
-#: tvm.ir.transform.Pass.__call__:10
-#: tvm.ir.transform.PassContext.list_configs:4 tvm.ir.transform.PrintIR:12
-#: tvm.ir.transform.module_pass:29 tvm.ir.type.GlobalTypeVar.__call__:9
-#: tvm.ir.type.TypeVar.__call__:9 tvm.ir.type_relation.TypeCall:12
-#: tvm.ir.type_relation.TypeRelation:22
-msgid "Returns"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int:9 tvm.ir.attrs.Attrs.get_str:9
-msgid "value: int"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.get_int_tuple:9
-msgid "value: Tuple of int"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.keys:5 tvm.ir.attrs.DictAttrs.keys:5
-msgid "keys"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.keys:-1 tvm.ir.attrs.DictAttrs.keys:-1
-msgid "list of str"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.keys:6 tvm.ir.attrs.DictAttrs.keys:6
-msgid "List of keys"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.list_field_info:5
-msgid "infos: list of AttrFieldInfo"
-msgstr ""
-
-#: of tvm.ir.attrs.Attrs.list_field_info:6
-msgid "List of field information"
-msgstr ""
-
-#: of tvm.ir.expr.RelayExpr:1 tvm.ir.function.BaseFunc:1
-#: tvm.ir.tensor_type.TensorType:1 tvm.ir.transform.Pass:1
-msgid "**Attributes:**"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc:1:<autosummary>:1
-msgid ":py:obj:`attrs <tvm.ir.BaseFunc.attrs>`\\"
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1 tvm.ir.function.BaseFunc:1:<autosummary>:1
-msgid "Return the attrs member of the function."
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1:<autosummary>:1
-msgid ""
-":py:obj:`with_attr <tvm.ir.BaseFunc.with_attr>`\\ "
-"\\(attr\\_key\\_or\\_dict\\[\\, attr\\_value\\]\\)"
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1:<autosummary>:1
-#: tvm.ir.function.BaseFunc.with_attr:1
-msgid "Create a new copy of the function and update the attribute."
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1:<autosummary>:1
-msgid ":py:obj:`with_attrs <tvm.ir.BaseFunc.with_attrs>`\\ \\(attr\\_map\\)"
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1:<autosummary>:1
-msgid ""
-"Copy the IRModule and add the given attribute map to it. Parameters "
-"---------- attr_map: Union[DictAttrs, Dict[str, Object]]     The "
-"attribute map Returns ------- func : BaseFunc     A new copy of the "
-"function."
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1:<autosummary>:1
-msgid ":py:obj:`without_attr <tvm.ir.BaseFunc.without_attr>`\\ \\(attr\\_key\\)"
-msgstr ""
-
-#: of tvm.ir.BaseFunc.attrs:1:<autosummary>:1
-#: tvm.ir.function.BaseFunc.without_attr:1
-msgid "Create a new copy of the function with an attribute without provided key."
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:6
-msgid "attr_key_or_dict"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:-1
-msgid "Union[str, dict]"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:6
-msgid "The attribute key to use or a dict containing multiple key value pairs."
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:9 tvm.ir.module.IRModule.get_attr:10
-#: tvm.ir.module.IRModule.with_attr:9
-msgid "attr_value"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:-1 tvm.ir.base.load_json:-1
-#: tvm.ir.base.save_json:-1 tvm.ir.base.structural_equal:-1
-#: tvm.ir.base.structural_hash:-1 tvm.ir.function.BaseFunc.with_attr:-1
-#: tvm.ir.module.IRModule.with_attr:-1
-msgid "Object"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:9 tvm.ir.module.IRModule.with_attr:9
-msgid "The new attribute value."
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:13
-#: tvm.ir.function.BaseFunc.with_attrs:8
-#: tvm.ir.function.BaseFunc.without_attr:11 tvm.ir.type_relation.TypeRelation:9
-msgid "func"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:-1
-#: tvm.ir.function.BaseFunc.with_attrs:-1
-#: tvm.ir.function.BaseFunc.without_attr:-1
-msgid "BaseFunc"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attr:14
-#: tvm.ir.function.BaseFunc.with_attrs:9
-#: tvm.ir.function.BaseFunc.without_attr:12
-msgid "A new copy of the function"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attrs:1 tvm.ir.module.IRModule.with_attrs:1
-msgid ""
-"Copy the IRModule and add the given attribute map to it. Parameters "
-"---------- attr_map: Union[DictAttrs, Dict[str, Object]]"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.with_attrs:5 tvm.ir.module.IRModule.with_attrs:5
-msgid "The attribute map"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.without_attr:7 tvm.ir.module.IRModule.get_attr:6
-#: tvm.ir.module.IRModule.with_attr:6 tvm.ir.op.register_op_attr:9
-msgid "attr_key"
-msgstr ""
-
-#: ../../docstring of tvm.ir.adt.Constructor:-1
-#: tvm.ir.affine_type.TensorAffineType:-1 tvm.ir.attrs.make_node:-1
-#: tvm.ir.base.EnvFunc.get:-1 tvm.ir.base.SourceName:-1
-#: tvm.ir.base.load_json:-1 tvm.ir.base.save_json:-1
-#: tvm.ir.expr.GlobalVar.astext:-1 tvm.ir.function.BaseFunc.without_attr:-1
-#: tvm.ir.memory_pools.ConstantPoolInfo:-1
-#: tvm.ir.memory_pools.WorkspacePoolInfo:-1 tvm.ir.module.IRModule.astext:-1
-#: tvm.ir.module.IRModule.get_attr:-1 tvm.ir.module.IRModule.with_attr:-1
-#: tvm.ir.op.Op.add_argument:-1 tvm.ir.op.Op.add_type_rel:-1
-#: tvm.ir.op.Op.astext:-1 tvm.ir.op.Op.get:-1 tvm.ir.op.Op.get_attr:-1
-#: tvm.ir.op.Op.has_attr:-1 tvm.ir.op.Op.reset_attr:-1 tvm.ir.op.Op.set_attr:-1
-#: tvm.ir.op.Op.set_attrs_type_key:-1 tvm.ir.op.register_intrin_lowering:-1
-#: tvm.ir.op.register_op_attr:-1 tvm.ir.transform.PassInfo:-1
-#: tvm.ir.transform.PrintIR:-1 tvm.ir.type.PointerType:-1
-#: tvm.ir.type.PrimType:-1
-msgid "str"
-msgstr ""
-
-#: of tvm.ir.function.BaseFunc.without_attr:6
-msgid "The attribute key to delete from the attrubte pairs."
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantMemoryPools:6
-#: tvm.ir.memory_pools.WorkspaceMemoryPools:6
-msgid "pools"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantMemoryPools:-1
-msgid "List[ConstantPoolInfo]"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantMemoryPools:7
-#: tvm.ir.memory_pools.WorkspaceMemoryPools:7
-msgid "The list of ConstantPoolInfo objects to be used with the compilation"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:7
-#: tvm.ir.memory_pools.WorkspacePoolInfo:7
-msgid "pool_name"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:7
-#: tvm.ir.memory_pools.WorkspacePoolInfo:7
-msgid "The name of the memory pool"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:10
-#: tvm.ir.memory_pools.WorkspacePoolInfo:10
-msgid "targets"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:-1
-#: tvm.ir.memory_pools.WorkspacePoolInfo:-1
-msgid "list[Target]"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:10
-msgid "describes which targets could access the pool"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:12
-#: tvm.ir.memory_pools.WorkspacePoolInfo:12
-msgid "pool_info_properties"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:-1
-#: tvm.ir.memory_pools.WorkspacePoolInfo:-1
-msgid "PoolInfoProperties"
-msgstr ""
-
-#: of tvm.ir.memory_pools.ConstantPoolInfo:13
-#: tvm.ir.memory_pools.WorkspacePoolInfo:13
-msgid "The properties of the pool."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:6
-msgid "name_hint"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:6
-msgid "Name of constructor (only a hint)."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:9
-msgid "inputs"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:-1 tvm.ir.type.TupleType:-1
-msgid "List[Type]"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:9
-msgid "Input types."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:12
-msgid "belong_to"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:-1
-msgid "GlobalTypeVar"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor:12
-msgid "Denotes which ADT the constructor belongs to."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor.__call__:1:<autosummary>:1
-msgid ":py:obj:`__call__ <tvm.ir.Constructor.__call__>`\\ \\(\\*args\\)"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor.__call__:1
-#: tvm.ir.adt.Constructor.__call__:1:<autosummary>:1
-msgid "Call the constructor."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor.__call__:6 tvm.ir.expr.GlobalVar.__call__:6
-msgid "args: List[RelayExpr]"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor.__call__:6
-msgid "The arguments to the constructor."
-msgstr ""
-
-#: of tvm.ir.adt.Constructor.__call__:10
-msgid "call: RelayExpr"
-msgstr ""
-
-#: of tvm.ir.adt.Constructor.__call__:11
-msgid "A call to the constructor."
-msgstr ""
-
-#: of tvm.ir.attrs.DictAttrs._dict:1:<autosummary>:1
-msgid ":py:obj:`_dict <tvm.ir.DictAttrs._dict>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.DictAttrs._dict:1
-#: tvm.ir.attrs.DictAttrs._dict:1:<autosummary>:1
-msgid "Get internal dict"
-msgstr ""
-
-#: of tvm.ir.attrs.DictAttrs._dict:1:<autosummary>:1
-msgid ":py:obj:`items <tvm.ir.DictAttrs.items>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.attrs.DictAttrs._dict:1:<autosummary>:1
-#: tvm.ir.attrs.DictAttrs.items:1
-msgid "Get items from the map."
-msgstr ""
-
-#: of tvm.ir.attrs.DictAttrs._dict:1:<autosummary>:1
-msgid ":py:obj:`keys <tvm.ir.DictAttrs.keys>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.base.EnvFunc:3
-msgid "This is a global function object that can be serialized by its name."
-msgstr ""
-
-#: of tvm.ir.base.EnvFunc.get:1:<autosummary>:1
-msgid ":py:obj:`get <tvm.ir.EnvFunc.get>`\\ \\(name\\)"
-msgstr ""
-
-#: of tvm.ir.base.EnvFunc.get:1 tvm.ir.base.EnvFunc.get:1:<autosummary>:1
-msgid "Get a static env function"
-msgstr ""
-
-#: ../../docstring of tvm.ir.base.EnvFunc.get:5 tvm.ir.base.SourceName:5
-#: tvm.ir.op.Op.add_argument:5 tvm.ir.transform.PassInfo:12
-#: tvm.ir.transform.Sequential:20 tvm.ir.transform.module_pass:20
-msgid "name"
-msgstr ""
-
-#: of tvm.ir.base.EnvFunc.get:6
-msgid "The name of the function."
-msgstr ""
-
-#: of tvm.ir.type.FuncType:3
-msgid ""
-"A function type consists of a list of type parameters to enable the "
-"definition of generic functions, a set of type constraints which we omit "
-"for the time being, a sequence of argument types, and a return type."
-msgstr ""
-
-#: of tvm.ir.type.FuncType:8
-msgid ""
-"We can informally write them as: `forall (type_params), (arg_types) -> "
-"ret_type where type_constraints`"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:14
-msgid "arg_types"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:-1
-msgid "List[tvm.relay.Type]"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:14
-msgid "The argument types"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:17
-msgid "ret_type"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:-1 tvm.ir.type.FuncType:-1
-msgid "tvm.relay.Type"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:17
-msgid "The return type."
-msgstr ""
-
-#: of tvm.ir.type.FuncType:20
-msgid "type_params"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:-1
-msgid "Optional[List[tvm.relay.TypeVar]]"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:20
-msgid "The type parameters"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:22
-msgid "type_constraints"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:-1
-msgid "Optional[List[tvm.relay.TypeConstraint]]"
-msgstr ""
-
-#: of tvm.ir.type.FuncType:23
-msgid "The type constraints."
-msgstr ""
-
-#: of tvm.ir.global_info.GlobalInfo.__eq__:1:<autosummary>:1
-msgid ":py:obj:`__eq__ <tvm.ir.GlobalInfo.__eq__>`\\ \\(other\\)"
-msgstr ""
-
-#: of tvm.ir.global_info.GlobalInfo.__eq__:1
-#: tvm.ir.global_info.GlobalInfo.__eq__:1:<autosummary>:1
-msgid "Compare two struct info for structural equivalence."
-msgstr ""
-
-#: of tvm.ir.global_info.GlobalInfo.__eq__:1:<autosummary>:1
-msgid ":py:obj:`same_as <tvm.ir.GlobalInfo.same_as>`\\ \\(other\\)"
-msgstr ""
-
-#: of tvm.ir.global_info.GlobalInfo.__eq__:1:<autosummary>:1
-#: tvm.ir.global_info.GlobalInfo.same_as:1
-msgid "Overload with structural equality."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar:9 tvm.ir.type.GlobalTypeVar:7
-#: tvm.ir.type.TypeVar:11
-msgid "name_hint: str"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar:6 tvm.ir.type.TypeVar:10
-msgid ""
-"The name of the type variable. This name only acts as a hint, and is not "
-"used for equality."
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar:10 tvm.ir.type.IncompleteType:3
-#: tvm.ir.type.TypeVar:14
-msgid "kind"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar:-1 tvm.ir.type.IncompleteType:-1
-#: tvm.ir.type.TypeVar:-1
-msgid "Optional[TypeKind]"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar:10 tvm.ir.type.TypeVar:14
-msgid "The kind of the type parameter."
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar.__call__:1:<autosummary>:1
-msgid ":py:obj:`__call__ <tvm.ir.GlobalTypeVar.__call__>`\\ \\(\\*args\\)"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar.__call__:1
-#: tvm.ir.type.GlobalTypeVar.__call__:1:<autosummary>:1
-#: tvm.ir.type.TypeVar.__call__:1
-#: tvm.ir.type.TypeVar.__call__:1:<autosummary>:1
-msgid "Create a type call from this type."
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar.__call__:6 tvm.ir.type.TypeVar.__call__:6
-msgid "args: List[Type]"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar.__call__:6 tvm.ir.type.TypeVar.__call__:6
-msgid "The arguments to the type call."
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar.__call__:10 tvm.ir.type.TypeVar.__call__:10
-msgid "call: Type"
-msgstr ""
-
-#: of tvm.ir.type.GlobalTypeVar.__call__:11 tvm.ir.type.TypeVar.__call__:11
-msgid "The result type call."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar:3
-msgid "GlobalVar is used to refer to the global functions stored in the IRModule."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar:9
-msgid "The name of the variable."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:1:<autosummary>:1
-msgid ":py:obj:`__call__ <tvm.ir.GlobalVar.__call__>`\\ \\(\\*args\\)"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:1
-#: tvm.ir.expr.GlobalVar.__call__:1:<autosummary>:1
-msgid "Call the global variable."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:1:<autosummary>:1
-msgid ""
-":py:obj:`astext <tvm.ir.GlobalVar.astext>`\\ \\(\\[show\\_meta\\_data\\, "
-"annotate\\]\\)"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:1:<autosummary>:1
-#: tvm.ir.expr.GlobalVar.astext:1
-#: tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.astext:1 tvm.ir.op.Op.add_argument:1:<autosummary>:1
-#: tvm.ir.op.Op.astext:1
-msgid "Get the text format of the expression."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:6
-msgid "The arguments to the call."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:10
-msgid "call: BaseExpr"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.__call__:11
-msgid "A call taking the variable as a function."
-msgstr ""
-
-#: ../../docstring of tvm.ir.expr.GlobalVar.astext:7
-#: tvm.ir.module.IRModule.astext:7 tvm.ir.op.Op.astext:7
-#: tvm.ir.transform.PrintIR:9
-msgid "show_meta_data"
-msgstr ""
-
-#: ../../docstring of tvm.ir.base.assert_structural_equal:-1
-#: tvm.ir.base.structural_equal:-1 tvm.ir.base.structural_hash:-1
-#: tvm.ir.expr.GlobalVar.astext:-1 tvm.ir.module.IRModule.astext:-1
-#: tvm.ir.op.Op.astext:-1 tvm.ir.op.Op.has_attr:-1 tvm.ir.transform.PrintIR:-1
-msgid "bool"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:6 tvm.ir.module.IRModule.astext:6
-#: tvm.ir.op.Op.astext:6
-msgid "Whether to include meta data section in the text if there is meta data."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:11 tvm.ir.module.IRModule.astext:11
-#: tvm.ir.op.Op.astext:11
-msgid "annotate: Optional[Object->str]"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:10 tvm.ir.module.IRModule.astext:10
-#: tvm.ir.op.Op.astext:10
-msgid ""
-"Optionally annotate function to provide additional information in the "
-"comment block."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:16 tvm.ir.module.IRModule.astext:16
-#: tvm.ir.op.Op.astext:16
-msgid "text"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:16 tvm.ir.module.IRModule.astext:16
-#: tvm.ir.op.Op.astext:16
-msgid "The text format of the expression."
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:19 tvm.ir.module.IRModule.astext:19
-#: tvm.ir.op.Op.astext:19
-msgid "Notes"
-msgstr ""
-
-#: of tvm.ir.expr.GlobalVar.astext:20 tvm.ir.module.IRModule.astext:20
-#: tvm.ir.op.Op.astext:20
-msgid ""
-"The meta data section is necessary to fully parse the text format. "
-"However, it can contain dumps that are big (e.g constant weights), so it "
-"can be helpful to skip printing the meta data section."
-msgstr ""
-
-#: of tvm.ir.module.IRModule:3
-msgid "IRModule is the basic unit for all IR transformations across the stack."
-msgstr ""
-
-#: of tvm.ir.module.IRModule:8
-msgid "functions: Optional[dict]."
-msgstr ""
-
-#: of tvm.ir.module.IRModule:8
-msgid "Map of global var to BaseFunc"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`__getitem__ <tvm.ir.IRModule.__getitem__>`\\ \\(var\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1
-#: tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid "Lookup a global definition by name or by variable."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`__setitem__ <tvm.ir.IRModule.__setitem__>`\\ \\(var\\, val\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.__setitem__:1
-msgid "Add a mapping to the module."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-":py:obj:`astext <tvm.ir.IRModule.astext>`\\ \\(\\[show\\_meta\\_data\\, "
-"annotate\\]\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-":py:obj:`from_expr <tvm.ir.IRModule.from_expr>`\\ \\(expr\\[\\, "
-"functions\\, type\\_defs\\]\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.from_expr:1
-msgid "Construct a module from a standalone expression."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`get_attr <tvm.ir.IRModule.get_attr>`\\ \\(attr\\_key\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.get_attr:1
-msgid "Get the IRModule attribute."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`get_constructor <tvm.ir.IRModule.get_constructor>`\\ \\(tag\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.get_constructor:1
-msgid "Look up an ADT constructor by tag."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-":py:obj:`get_global_type_var <tvm.ir.IRModule.get_global_type_var>`\\ "
-"\\(name\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.get_global_type_var:1
-msgid "Get a global type variable in the function by name."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-":py:obj:`get_global_type_vars <tvm.ir.IRModule.get_global_type_vars>`\\ "
-"\\(\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.get_global_type_vars:1
-msgid "Collect all global type vars defined in this module."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`get_global_var <tvm.ir.IRModule.get_global_var>`\\ \\(name\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.get_global_var:1
-msgid "Get a global variable in the function by name."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`get_global_vars <tvm.ir.IRModule.get_global_vars>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.get_global_vars:1
-msgid "Collect all global vars defined in this module."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`update <tvm.ir.IRModule.update>`\\ \\(other\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.update:1
-msgid "Insert functions in another Module to current one."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`update_func <tvm.ir.IRModule.update_func>`\\ \\(var\\, func\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.update_func:1
-msgid "Update the function corresponding to a global variable in the module."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-":py:obj:`update_global_info <tvm.ir.IRModule.update_global_info>`\\ "
-"\\(name\\, global\\_info\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.update_global_info:1
-msgid "Update global info in the module"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-":py:obj:`with_attr <tvm.ir.IRModule.with_attr>`\\ \\(attr\\_key\\, "
-"attr\\_value\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-#: tvm.ir.module.IRModule.with_attr:1
-msgid "Copy the IRModule and add an attribute to it."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`with_attrs <tvm.ir.IRModule.with_attrs>`\\ \\(attr\\_map\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-"Copy the IRModule and add the given attribute map to it. Parameters "
-"---------- attr_map: Union[DictAttrs, Dict[str, Object]]     The "
-"attribute map Returns ------- mod : IRModule     A new copy of the "
-"IRModule with the attribute."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ":py:obj:`without_attr <tvm.ir.IRModule.without_attr>`\\ \\(attr\\_key\\)"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:1:<autosummary>:1
-msgid ""
-"Copy the IRModule and remove an attribute key and its associated value. "
-"Parameters ---------- attr_key : str     The attribute key. Returns "
-"------- mod : IRModule     A new copy of the IRModule without the "
-"attribute."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:6
-msgid "var: Union[String, GlobalVar, GlobalTypeVar]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:6
-msgid "The name or global variable."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:10
-#: tvm.ir.module.IRModule.__setitem__:8
-msgid "val: Union[Function, Type]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__getitem__:11
-msgid "The definition referenced by :code:`var` (either a function or type)."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__setitem__:6 tvm.ir.module.IRModule.update_func:7
-msgid "var: GlobalVar"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__setitem__:6 tvm.ir.module.IRModule.update_func:7
-msgid "The global variable."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.__setitem__:9
-msgid "The value."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:6
-msgid "expr: RelayExpr"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:6
-msgid "The starting expression"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:9
-msgid "global_funcs: Optional[dict]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:9
-msgid "Map of global vars to function definitions"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:12
-msgid "type_defs: Optional[dict]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:12
-msgid "Map of global type vars to type definitions"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:18
-msgid "mod: Module"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.from_expr:17
-msgid ""
-"A module containing the passed definitions, where expr is set as the "
-"entry point (wrapped in a function if necessary)"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:6 tvm.ir.module.IRModule.get_attr:6
-#: tvm.ir.module.IRModule.with_attr:6 tvm.ir.module.IRModule.without_attr:5
-msgid "The attribute key."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_attr:-1
-msgid "Any"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_attr:11
-msgid "Attribute value"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_constructor:6
-msgid "tag: int"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_constructor:6
-msgid "The tag for a constructor."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_constructor:11
-msgid "constructor: Constructor"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_constructor:11
-msgid "The constructor associated with the given tag,"
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:9 tvm.ir.base.assert_structural_equal:16
-#: tvm.ir.module.IRModule.get_constructor:14
-#: tvm.ir.module.IRModule.get_global_type_var:14
-#: tvm.ir.module.IRModule.get_global_var:14
-msgid "Raises"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_constructor:15
-msgid "tvm.error.TVMError if the corresponding constructor cannot be found."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_var:6
-#: tvm.ir.module.IRModule.get_global_var:6
-#: tvm.ir.module.IRModule.update_global_info:6
-msgid "name: str"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_var:6
-msgid "The name of the global type variable."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_var:11
-msgid "global_type_var: GlobalTypeVar"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_var:11
-#: tvm.ir.module.IRModule.get_global_var:11
-msgid "The global variable mapped to :code:`name`."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_var:15
-msgid "tvm.error.TVMError if we cannot find corresponding global type var."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_vars:5
-msgid "global_type_vars: Array[GlobalTypeVar]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_type_vars:6
-msgid "An array of global type vars."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_var:6
-msgid "The name of the global variable."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_var:11
-msgid "global_var: GlobalVar"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_var:15
-msgid "tvm.error.TVMError if we cannot find corresponding global var."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_vars:5
-msgid "global_vars: Array[GlobalVar]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.get_global_vars:6
-msgid "An array of global vars."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update:5
-msgid "other: IRModule"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update:6
-msgid "The module to merge into the current Module."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update_func:9
-msgid "func: tvm.relay.Function"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update_func:10
-msgid "The function to be inserted."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update_global_info:6
-msgid "The name for the global info."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update_global_info:8
-msgid "global_info: List[GlobalInfo]"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.update_global_info:9
-msgid "The global info to be updated."
-msgstr ""
-
-#: of tvm.ir.module.IRModule.with_attr:13 tvm.ir.module.IRModule.with_attrs:8
-#: tvm.ir.module.IRModule.without_attr:8 tvm.ir.transform.Pass.__call__:7
-#: tvm.ir.transform.Pass.__call__:11
-msgid "mod"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.with_attr:-1 tvm.ir.module.IRModule.with_attrs:-1
-#: tvm.ir.module.IRModule.without_attr:-1
-msgid "IRModule"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.with_attr:14 tvm.ir.module.IRModule.with_attrs:9
-msgid "A new copy of the IRModule with the attribute"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.without_attr:1
-msgid ""
-"Copy the IRModule and remove an attribute key and its associated value. "
-"Parameters ---------- attr_key : str"
-msgstr ""
-
-#: of tvm.ir.module.IRModule.without_attr:9
-msgid "A new copy of the IRModule without the attribute"
-msgstr ""
-
-#: of tvm.ir.type.IncompleteType:4
-msgid "The kind of the incomplete type."
-msgstr ""
-
-#: of tvm.ir.container.Map:3
-msgid ""
-"You do not need to create Map explicitly. Normally python dict will be "
-"converted automatically to Map during tvm function call. You can use "
-"convert to create a dict[Object-> Object] into a Map"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:1:<autosummary>:1
-msgid ":py:obj:`get <tvm.ir.Map.get>`\\ \\(key\\[\\, default\\]\\)"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:1 tvm.ir.container.Map.get:1:<autosummary>:1
-msgid "Get an element with a default value."
-msgstr ""
-
-#: of tvm.ir.container.Map.get:1:<autosummary>:1
-msgid ":py:obj:`items <tvm.ir.Map.items>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:1:<autosummary>:1 tvm.ir.container.Map.items:1
-msgid "Get the items from the map"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:6 tvm.ir.op.Op.set_attrs_type_key:5
-msgid "key"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:-1 tvm.ir.op.Op.get_attr:-1
-#: tvm.ir.op.Op.set_attr:-1
-msgid "object"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:9
-msgid "default"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:9
-msgid "The default object."
-msgstr ""
-
-#: of tvm.ir.container.Map.get:13
-msgid "value: object"
-msgstr ""
-
-#: of tvm.ir.container.Map.get:14
-msgid "The result value."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ""
-":py:obj:`add_argument <tvm.ir.Op.add_argument>`\\ \\(name\\, type\\, "
-"description\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1 tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid "Add arguments information to the function."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ""
-":py:obj:`add_type_rel <tvm.ir.Op.add_type_rel>`\\ \\(rel\\_name\\[\\, "
-"type\\_rel\\_func\\]\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.add_type_rel:1
-msgid "Attach the type function corresponding to the return type."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ""
-":py:obj:`astext <tvm.ir.Op.astext>`\\ \\(\\[show\\_meta\\_data\\, "
-"annotate\\]\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`get <tvm.ir.Op.get>`\\ \\(op\\_name\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.get:1
-msgid "Get the Op for a given name"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`get_attr <tvm.ir.Op.get_attr>`\\ \\(attr\\_name\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.get_attr:1
-msgid "Get additional attribute about the operator."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`has_attr <tvm.ir.Op.has_attr>`\\ \\(attr\\_name\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.has_attr:1
-msgid "Check whether the operator has additional attribute."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`list_op_names <tvm.ir.Op.list_op_names>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.list_op_names:1
-msgid "List all the op names in the op registry."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`reset_attr <tvm.ir.Op.reset_attr>`\\ \\(attr\\_name\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.reset_attr:1
-msgid "Reset attribute about the operator."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ""
-":py:obj:`set_attr <tvm.ir.Op.set_attr>`\\ \\(attr\\_name\\, value\\[\\, "
-"plevel\\]\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.set_attr:1
-msgid "Set attribute about the operator."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`set_attrs_type_key <tvm.ir.Op.set_attrs_type_key>`\\ \\(key\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-#: tvm.ir.op.Op.set_attrs_type_key:1
-msgid "Set the attribute type key of op."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`set_num_inputs <tvm.ir.Op.set_num_inputs>`\\ \\(n\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1 tvm.ir.op.Op.set_num_inputs:1
-#: tvm.ir.op.Op.set_support_level:1
-msgid "Set the support level of op."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:1:<autosummary>:1
-msgid ":py:obj:`set_support_level <tvm.ir.Op.set_support_level>`\\ \\(level\\)"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:6
-msgid "The argument name."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:7
-msgid "type"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:8
-msgid "The argument type."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:9
-msgid "description"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_argument:10
-msgid "The argument description."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:6
-msgid "rel_name"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:6
-msgid "The type relation name to register."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:22
-msgid "type_rel_func"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:-1
-msgid "Optional[function (args: List[Type], attrs: Attrs) -> Type]"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:9
-msgid ""
-"The backing relation function which can solve an arbitrary relation on "
-"variables. Differences with type_rel_func in C++:"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:12
-msgid "When type_rel_func is not None"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:14
-msgid ""
-"OpAddTypeRel on C++ side will adjust type_rel_func with TypeReporter to "
-"calling convention of relay type system."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:17
-msgid ""
-"type_rel_func returns output argument's type, return None means can't "
-"infer output's type."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:20
-msgid ""
-"only support single output operators for now, the last argument is output"
-" tensor."
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:22
-msgid "when type_rel_func is None, will call predefined type_rel_funcs in relay"
-msgstr ""
-
-#: of tvm.ir.op.Op.add_type_rel:23
-msgid "according to ``tvm.relay.type_relation.`` + rel_name."
-msgstr ""
-
-#: of tvm.ir.op.Op.get:6 tvm.ir.op.register_intrin_lowering:6
-#: tvm.ir.op.register_op_attr:6
-msgid "op_name"
-msgstr ""
-
-#: of tvm.ir.op.Op.get:6
-msgid "The operator name"
-msgstr ""
-
-#: of tvm.ir.op.Op.get:10
-msgid "op"
-msgstr ""
-
-#: of tvm.ir.op.Op.get:-1
-msgid "Op"
-msgstr ""
-
-#: of tvm.ir.op.Op.get:11
-msgid "The op of the corresponding name"
-msgstr ""
-
-#: of tvm.ir.op.Op.get_attr:6 tvm.ir.op.Op.has_attr:6 tvm.ir.op.Op.reset_attr:5
-#: tvm.ir.op.Op.set_attr:6
-msgid "attr_name"
-msgstr ""
-
-#: of tvm.ir.op.Op.get_attr:6 tvm.ir.op.Op.has_attr:6
-#: tvm.ir.op.register_op_attr:9
-msgid "The attribute name."
-msgstr ""
-
-#: of tvm.ir.op.Op.get_attr:10 tvm.ir.op.Op.has_attr:10
-#: tvm.ir.op.Op.list_op_names:5 tvm.ir.op.Op.set_attr:9
-#: tvm.ir.op.register_op_attr:12
-msgid "value"
-msgstr ""
-
-#: of tvm.ir.op.Op.get_attr:11 tvm.ir.op.Op.set_attr:9
-msgid "The attribute value"
-msgstr ""
-
-#: of tvm.ir.op.Op.has_attr:11
-msgid "Whether the operator has additional attribute"
-msgstr ""
-
-#: of tvm.ir.op.Op.list_op_names:-1 tvm.ir.transform.PassInfo:-1
-msgid "List[str]"
-msgstr ""
-
-#: of tvm.ir.op.Op.list_op_names:6
-msgid "The registered op names"
-msgstr ""
-
-#: of tvm.ir.op.Op.reset_attr:6 tvm.ir.op.Op.set_attr:6
-msgid "The attribute name"
-msgstr ""
-
-#: of tvm.ir.op.Op.set_attr:11
-msgid "plevel"
-msgstr ""
-
-#: ../../docstring of tvm.ir.affine_type.TensorAffineType:-1
-#: tvm.ir.base.Span:-1 tvm.ir.base.structural_hash:-1 tvm.ir.op.Op.set_attr:-1
-#: tvm.ir.op.Op.set_num_inputs:-1 tvm.ir.op.Op.set_support_level:-1
-#: tvm.ir.op.register_intrin_lowering:-1 tvm.ir.transform.PassInfo:-1
-#: tvm.ir.transform.module_pass:-1 tvm.ir.type_relation.TypeRelation:-1
-msgid "int"
-msgstr ""
-
-#: of tvm.ir.op.Op.set_attr:12 tvm.ir.op.register_intrin_lowering:15
-#: tvm.ir.op.register_op_attr:15
-msgid "The priority level"
-msgstr ""
-
-#: of tvm.ir.op.Op.set_attrs_type_key:6
-msgid "The type key."
-msgstr ""
-
-#: of tvm.ir.op.Op.set_num_inputs:5
-msgid "n"
-msgstr ""
-
-#: of tvm.ir.op.Op.set_num_inputs:6
-msgid "The input number."
-msgstr ""
-
-#: of tvm.ir.op.Op.set_support_level:5 tvm.ir.op.register_intrin_lowering:15
-#: tvm.ir.op.register_op_attr:15
-msgid "level"
-msgstr ""
-
-#: of tvm.ir.op.Op.set_support_level:6
-msgid "The support level."
-msgstr ""
-
-#: of tvm.ir.type.PointerType:6
-msgid "element_type"
-msgstr ""
-
-#: of tvm.ir.type.PointerType:-1
-msgid "tvm.ir.Type"
-msgstr ""
-
-#: of tvm.ir.type.PointerType:6
-msgid "The type of pointer's element."
-msgstr ""
-
-#: of tvm.ir.type.PointerType:8
-msgid "storage_scope"
-msgstr ""
-
-#: of tvm.ir.type.PointerType:9
-msgid "The storage scope into which the pointer addresses."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfo:1
-msgid ""
-"PoolInfo object holds information related to memory pools where the "
-"statically sized allocate nodes will pooled into. This is a base class "
-"for WorkspacePoolInfo and ConstantPoolInfo."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:9
-msgid "size_hint_bytes"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:-1 tvm.ir.transform.PassContext:-1
-#: tvm.ir.transform.Sequential:-1
-msgid "Optional[int]"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:7
-msgid ""
-"The expected size hint to be used by the allocator. The default value "
-"would be -1 which means the pool is not size restricted."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:14
-msgid "clock_frequency_hz"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:12
-msgid ""
-"The clock frequency that the memory pool runs at in Hz. If not "
-"specified/known, this will default to -1 indicating it hasn't been "
-"defined."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:19
-msgid "read_bandwidth_bytes_per_cycle"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:17
-msgid ""
-"The read bandwidth of the memory pool in bytes/cycle. If not "
-"specified/known, this will default to -1 indicating it hasn't been "
-"defined."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:24
-msgid "write_bandwidth_bytes_per_cycle"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:22
-msgid ""
-"The write bandwidth of the memory pool in bytes/cycle. If not "
-"specified/known, this will default to -1 indicating it hasn't been "
-"defined."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:28
-msgid "read_latency_cycles"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:27
-msgid ""
-"The read latency of the memory pool in cycles. If not specified/known, "
-"this will default to 0."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:32
-msgid "write_latency_cycles"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:31
-msgid ""
-"The write latency of the memory pool in cycles. If not specified/known, "
-"this will default to 0."
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:36
-msgid "target_burst_bytes"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:-1
-msgid "Optional[Union[Dict[Target, int], None]]"
-msgstr ""
-
-#: of tvm.ir.memory_pools.PoolInfoProperties:35
-msgid ""
-"The burst length of the memory pool in bytes per target. If not "
-"specified/known for a given target, a burst length of 1 byte will be "
-"assumed."
-msgstr ""
-
-#: of tvm.ir.expr.PrimExpr:3
-msgid "PrimExpr is used in the low-level code optimizations and integer analysis."
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:14 tvm.ir.tensor_type.TensorType:12
-#: tvm.ir.type.PrimType:5
-msgid "dtype"
-msgstr ""
-
-#: of tvm.ir.type.PrimType:6
-msgid "The runtime data type relates to the primtype."
-msgstr ""
-
-#: of tvm.ir.expr.Range:3
-msgid ""
-"You do not need to create a Range explicitly. Python lists and tuples "
-"will be converted automatically to a Range in API functions."
-msgstr ""
-
-#: of tvm.ir.expr.Range:10
-msgid "begin"
-msgstr ""
-
-#: of tvm.ir.expr.Range:-1 tvm.ir.expr.Range.from_min_extent:-1
-msgid "PrimExpr"
-msgstr ""
-
-#: of tvm.ir.expr.Range:9
-msgid ""
-"The begin value of the range when end is None. Otherwise it is the length"
-" of the range."
-msgstr ""
-
-#: of tvm.ir.expr.Range:13
-msgid "end"
-msgstr ""
-
-#: of tvm.ir.expr.Range:-1
-msgid "Optional[PrimExpr]"
-msgstr ""
-
-#: of tvm.ir.expr.Range:13
-msgid "The end value of the range."
-msgstr ""
-
-#: of tvm.ir.expr.Range:16 tvm.ir.expr.Range.from_min_extent:14
-msgid "span"
-msgstr ""
-
-#: of tvm.ir.expr.Range:-1 tvm.ir.expr.Range.from_min_extent:-1
-msgid "Optional[Span]"
-msgstr ""
-
-#: of tvm.ir.expr.Range:16 tvm.ir.expr.Range.from_min_extent:14
-msgid "The location of this itervar in the source code."
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:17 tvm.ir.expr.Range:19
-msgid "Note"
-msgstr ""
-
-#: of tvm.ir.expr.Range:20
-msgid ""
-"The constructor creates the range `[begin, end)` if the end argument is "
-"not None. Otherwise, it creates `[0, begin)`."
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:1:<autosummary>:1
-msgid ""
-":py:obj:`from_min_extent <tvm.ir.Range.from_min_extent>`\\ "
-"\\(min\\_value\\, extent\\[\\, span\\]\\)"
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:1
-#: tvm.ir.expr.Range.from_min_extent:1:<autosummary>:1
-msgid "Construct a Range by min and extent."
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:3
-msgid "This constructs a range in [min_value, min_value + extent)"
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:8
-msgid "min_value"
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:8
-msgid "The minimum value of the range."
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:11
-msgid "extent"
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:11
-msgid "The extent of the range."
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:18
-msgid "rng"
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:-1
-msgid "Range"
-msgstr ""
-
-#: of tvm.ir.expr.Range.from_min_extent:19
-msgid "The constructed range."
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:1:<autosummary>:1
-msgid ":py:obj:`checked_type <tvm.ir.RelayExpr.checked_type>`\\"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:1
-#: tvm.ir.RelayExpr.checked_type:1:<autosummary>:1
-msgid "Get the checked type of tvm.relay.Expr."
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:1:<autosummary>:1
-msgid ":py:obj:`struct_info <tvm.ir.RelayExpr.struct_info>`\\"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:1:<autosummary>:1
-#: tvm.ir.RelayExpr.struct_info:1
-msgid "Get the struct info field"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:5
-msgid "checked_type"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.checked_type:6
-msgid "The checked type."
-msgstr ""
-
-#: of tvm.ir.RelayExpr.struct_info:5
-msgid "struct_info"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.struct_info:-1
-msgid "tvm.relax.StructInfo"
-msgstr ""
-
-#: of tvm.ir.RelayExpr.struct_info:6
-msgid "The struct info if available."
-msgstr ""
-
-#: of tvm.ir.type.RelayRefType:5
-msgid "value: Type"
-msgstr ""
-
-#: of tvm.ir.type.RelayRefType:6
-msgid "The value type."
-msgstr ""
-
-#: of tvm.ir.base.SequentialSpan:3
-msgid ""
-"This span is specific for an expression, which is from multiple "
-"expressions after an IR transform."
-msgstr ""
-
-#: of tvm.ir.base.SequentialSpan:8
-msgid "spans"
-msgstr ""
-
-#: of tvm.ir.base.SequentialSpan:-1
-msgid "Array"
-msgstr ""
-
-#: of tvm.ir.base.SequentialSpan:9
-msgid "The array of spans."
-msgstr ""
-
-#: of tvm.ir.base.SourceName:6
-msgid "The name of the source."
-msgstr ""
-
-#: of tvm.ir.base.Span:6
-msgid "source"
-msgstr ""
-
-#: of tvm.ir.base.Span:-1
-msgid "SourceName"
-msgstr ""
-
-#: of tvm.ir.base.Span:6
-msgid "The source name."
-msgstr ""
-
-#: of tvm.ir.base.Span:9
-msgid "lineno"
-msgstr ""
-
-#: of tvm.ir.base.Span:9
-msgid "The line number."
-msgstr ""
-
-#: of tvm.ir.base.Span:11
-msgid "col_offset"
-msgstr ""
-
-#: of tvm.ir.base.Span:12
-msgid "The column offset of the location."
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:3
-msgid "The real space value is calculated as x = x_q * scale + zero_point"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:8
-msgid "scale: Expr"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:8
-msgid "The scale"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:11
-msgid "zero_point: Expr"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:11
-msgid "The zero_point"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:14 tvm.ir.tensor_type.TensorType:12
-msgid "The content data type."
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:16
-msgid "axis"
-msgstr ""
-
-#: of tvm.ir.affine_type.TensorAffineType:17
-msgid "The axis for per-channel quantization."
-msgstr ""
-
-#: of tvm.ir.tensor_type.TensorType:3
-msgid ""
-"This is the type assigned to tensors with a known dtype and shape. For "
-"example, a tensor of `float32` and `(5, 5)`."
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:6 tvm.ir.tensor_type.TensorType:9
-msgid "shape"
-msgstr ""
-
-#: of tvm.ir.tensor_type.TensorType:-1
-msgid "List[tvm.ir.PrimExpr]"
-msgstr ""
-
-#: of tvm.ir.affine_type.TupleAffineType:6 tvm.ir.tensor_type.TensorType:9
-msgid "The shape of the Tensor"
-msgstr ""
-
-#: ../../docstring of tvm.ir.tensor_type.TensorType:-1
-#: tvm.ir.transform.Sequential:-1 tvm.ir.transform.module_pass:-1
-msgid "Optional[str]"
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:1:<autosummary>:1
-msgid ":py:obj:`concrete_shape <tvm.ir.TensorType.concrete_shape>`\\"
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:1
-#: tvm.ir.TensorType.concrete_shape:1:<autosummary>:1
-msgid "Get shape of the type as concrete tuple of int."
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:-1
-msgid "List[int]"
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:6
-msgid "The concrete shape of the Type."
-msgstr ""
-
-#: of tvm.ir.TensorType.concrete_shape:10
-msgid "TypeError : If the shape is symbolic"
-msgstr ""
-
-#: of tvm.ir.affine_type.TupleAffineType:5
-msgid "types"
-msgstr ""
-
-#: of tvm.ir.affine_type.TupleAffineType:-1
-msgid "List[TensorAffineType]"
-msgstr ""
-
-#: of tvm.ir.type.TupleType:5
-msgid "fields"
-msgstr ""
-
-#: of tvm.ir.type.TupleType:6
-msgid "The fields in the tuple"
-msgstr ""
-
-#: of tvm.ir.type.Type.__eq__:1:<autosummary>:1
-msgid ":py:obj:`__eq__ <tvm.ir.Type.__eq__>`\\ \\(other\\)"
-msgstr ""
-
-#: of tvm.ir.type.Type.__eq__:1 tvm.ir.type.Type.__eq__:1:<autosummary>:1
-msgid "Compare two types for structural equivalence."
-msgstr ""
-
-#: of tvm.ir.type.Type.__eq__:1:<autosummary>:1
-msgid ":py:obj:`same_as <tvm.ir.Type.same_as>`\\ \\(other\\)"
-msgstr ""
-
-#: of tvm.ir.type.Type.__eq__:1:<autosummary>:1 tvm.ir.type.Type.same_as:1
-msgid "Compares two Relay types by referential equality."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:6
-msgid "func: tvm.ir.Type"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:6
-msgid "The function."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:9
-msgid "args: List[tvm.ir.Type]"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:9
-msgid "The arguments."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:13
-msgid "type_call: TypeCall"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeCall:14
-msgid "The type function application."
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:3
-msgid ""
-"Note that ADT definitions are treated as type-level functions because the"
-" type parameters need to be given for an instance of the ADT. Thus, any "
-"global type var that is an ADT header needs to be wrapped in a type call "
-"that passes in the type params."
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:13
-msgid "header: GlobalTypeVar"
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:11
-msgid ""
-"The name of the ADT. ADTs with the same constructors but different names "
-"are treated as different types."
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:16
-msgid "type_vars: List[TypeVar]"
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:16
-msgid "Type variables that appear in constructors."
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:18
-msgid "constructors: List[Constructor]"
-msgstr ""
-
-#: of tvm.ir.adt.TypeData:19
-msgid "The constructors for the ADT."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:4
-msgid "TypeRelation is more generalized than TypeCall as it allows inference"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:4
-msgid "of both inputs and outputs."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:-1
-msgid "EnvFunc"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:9
-msgid "User defined relation function."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:12
-msgid "args"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:-1
-msgid "[tvm.ir.Type]"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:12
-msgid "List of types to the func."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:16
-msgid "num_inputs"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:15
-msgid "Number of input arguments in args, this act as a hint for type inference."
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:19
-msgid "attrs"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:-1
-msgid "Attrs"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:19
-msgid "The attribute attached to the relation information"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:23
-msgid "type_relation"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:-1
-msgid "tvm.ir.TypeRelation"
-msgstr ""
-
-#: of tvm.ir.type_relation.TypeRelation:24
-msgid "The type relation."
-msgstr ""
-
-#: of tvm.ir.type.TypeVar:3
-msgid ""
-"A type variable represents a type placeholder which will be filled in "
-"later on. This allows the user to write functions which are generic over "
-"types."
-msgstr ""
-
-#: of tvm.ir.type.TypeVar.__call__:1:<autosummary>:1
-msgid ":py:obj:`__call__ <tvm.ir.TypeVar.__call__>`\\ \\(\\*args\\)"
-msgstr ""
-
-#: of tvm.ir.memory_pools.WorkspaceMemoryPools:-1
-msgid "List[WorkspacePoolInfo]"
-msgstr ""
-
-#: of tvm.ir.memory_pools.WorkspacePoolInfo:10
-msgid "A list of targets which could access the pool"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:6 tvm.ir.base.structural_equal:28
-msgid "lhs"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:6
-#: tvm.ir.base.assert_structural_equal:9 tvm.ir.base.structural_equal:28
-#: tvm.ir.base.structural_equal:31
-msgid "The left operand."
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:9 tvm.ir.base.structural_equal:31
-msgid "rhs"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:13 tvm.ir.base.structural_equal:35
-#: tvm.ir.base.structural_hash:28
-msgid "map_free_vars"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:12
-msgid ""
-"Whether or not shall we map free vars that does not bound to any "
-"definitions as equal to each other."
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:17
-msgid "ValueError : if assertion does not hold."
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:20 tvm.ir.base.structural_equal:43
-#: tvm.ir.base.structural_hash:36
-msgid "See Also"
-msgstr ""
-
-#: of tvm.ir.base.assert_structural_equal:21
-msgid "structural_equal"
-msgstr ""
-
-#: of tvm.ir.base.load_json:6 tvm.ir.base.save_json:10
-msgid "json_str"
-msgstr ""
-
-#: of tvm.ir.base.load_json:6
-msgid "The json string"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:14 tvm.ir.base.load_json:10
-#: tvm.ir.base.save_json:6 tvm.ir.base.structural_hash:23
-msgid "node"
-msgstr ""
-
-#: of tvm.ir.base.load_json:11
-msgid "The loaded tvm node."
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:6
-msgid "type_key"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:6
-msgid "The type key of the node."
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:9
-msgid "**kwargs"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:-1
-msgid "dict"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:9
-msgid "The fields of the node."
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:-1
-msgid "Node"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:14
-msgid "The corresponding IR Node"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:18
-msgid ""
-"If the created node is instance of AttrsNode, then the creator function "
-"will also run bound checks and default value setup as supported by Attrs."
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:23
-msgid "Example"
-msgstr ""
-
-#: of tvm.ir.attrs.make_node:24
-msgid "The following code constructs a IntImm object"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:6
-msgid "The op name"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:9
-msgid "target"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:9
-msgid "The target string for given intrinsic lowering function"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:12
-msgid "f"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:-1
-msgid "function, optional"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:12
-msgid "The function to be registered."
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:19 tvm.ir.op.register_op_attr:19
-msgid "fregister"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:-1 tvm.ir.op.register_op_attr:-1
-msgid "function"
-msgstr ""
-
-#: of tvm.ir.op.register_intrin_lowering:20
-msgid "Register op lowering function if f is not specified."
-msgstr ""
-
-#: of tvm.ir.op.register_op_attr:6
-msgid "The name of operator"
-msgstr ""
-
-#: of tvm.ir.op.register_op_attr:-1
-msgid "object, optional"
-msgstr ""
-
-#: of tvm.ir.op.register_op_attr:12
-msgid "The value to set"
-msgstr ""
-
-#: of tvm.ir.op.register_op_attr:-1
-msgid "int, optional"
-msgstr ""
-
-#: of tvm.ir.op.register_op_attr:20
-msgid "Register function if value is not specified."
-msgstr ""
-
-#: of tvm.ir.base.save_json:6
-msgid "A TVM object to be saved."
-msgstr ""
-
-#: of tvm.ir.base.save_json:11
-msgid "Saved json string."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:3
-msgid ""
-"The structural equality is recursively defined in the DAG of IRNodes. "
-"There are two kinds of nodes:"
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:6
-msgid ""
-"Graph node: a graph node in lhs can only be mapped as equal to one and "
-"only one graph node in rhs."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:8
-msgid ""
-"Normal node: equality is recursively defined without the restriction of "
-"graph nodes."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:11
-#, python-format
-msgid ""
-"Vars(tir::Var, TypeVar) and non-constant relay expression nodes are graph"
-" nodes. For example, it means that `%1 = %x + %y; %1 + %1` is not "
-"structurally equal to `%1 = %x + %y; %2 = %x + %y; %1 + %2` in relay."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:15
-msgid ""
-"A var-type node(e.g. tir::Var, TypeVar) can be mapped as equal to another"
-" var with the same type if one of the following condition holds:"
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:18
-msgid "They appear in a same definition point(e.g. function argument)."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:19
-msgid "They points to the same VarNode via the same_as relation."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:20
-msgid "They appear in a same usage point, and map_free_vars is set to be True."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:22
-msgid ""
-"The rules for var are used to remap variables occurs in function "
-"arguments and let-bindings."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:34
-msgid ""
-"Whether free variables (i.e. variables without a definition site) should "
-"be mapped as equal to each other."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:38 tvm.ir.base.structural_hash:31
-msgid "Return"
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:40 tvm.ir.base.structural_hash:33
-msgid "result"
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:40
-msgid "The comparison result."
-msgstr ""
-
-#: of tvm.ir.base.structural_equal:44
-msgid "structural_hash assert_strucural_equal"
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:3
-msgid ""
-"The structural hash value is recursively defined in the DAG of IRNodes. "
-"There are two kinds of nodes:"
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:6
-msgid "Normal node: the hash value is defined by its content and type only."
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:7
-msgid ""
-"Graph node: each graph node will be assigned a unique index ordered by "
-"the first occurence during the visit. The hash value of a graph node is "
-"combined from the hash values of its contents and the index."
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:11
-msgid ""
-"structural_hash is made to be concistent with structural_equal. If two "
-"nodes are structurally equal to each other, then their structural hash "
-"(with the same map_free_vars option) should be equal to each other as "
-"well."
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:16
-msgid ""
-"If the structural hash of two nodes equals to each other, then it is "
-"highly likely(except for rare hash value collison cases) that the two "
-"nodes are structurally equal to each other."
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:23
-msgid "The input to be hashed."
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:26
-msgid ""
-"If map_free_vars is set to true, we will hash free variables by the order"
-" of their occurrences. Otherwise, we will hash by their in-memory pointer"
-" address."
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:33
-msgid "The hash result"
-msgstr ""
-
-#: of tvm.ir.base.structural_hash:37
-msgid "structrual_equal"
 msgstr ""
 
 #: ../../notebook/docs/reference/api/python/ir.rst:27
 msgid "tvm.instrument"
 msgstr ""
 
-#: ../../docstring of tvm.instrument:1
-msgid "Common pass instrumentation across IR variants."
-msgstr ""
-
-#: ../../docstring of tvm.instrument:1:<autosummary>:1
-msgid ":py:obj:`PassInstrument <tvm.instrument.PassInstrument>`\\ \\(\\)"
-msgstr ""
-
-#: ../../docstring of tvm.instrument:1:<autosummary>:1
-#: tvm.ir.instrument.PassInstrument:1
-msgid "A pass instrument implementation."
-msgstr ""
-
-#: ../../docstring of tvm.instrument:1:<autosummary>:1
-msgid ""
-":py:obj:`PassTimingInstrument <tvm.instrument.PassTimingInstrument>`\\ "
-"\\(\\)"
-msgstr ""
-
-#: ../../docstring of tvm.instrument:1:<autosummary>:1
-#: tvm.ir.instrument.PassTimingInstrument:1
-msgid "A wrapper to create a passes time instrument that implemented in C++"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument:1:<autosummary>:1
-msgid ""
-":py:obj:`_wrap_class_pass_instrument "
-"<tvm.instrument._wrap_class_pass_instrument>`\\ \\(pi\\_cls\\)"
-msgstr ""
-
-#: ../../docstring of tvm.ir.instrument.PassInstrument:1:<autosummary>:1
-#: tvm.ir.instrument._wrap_class_pass_instrument:1
-msgid "Wrap a python class as pass instrument"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument:1:<autosummary>:1
-msgid ""
-":py:obj:`pass_instrument <tvm.instrument.pass_instrument>`\\ "
-"\\(\\[pi\\_cls\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.ir.instrument.PassInstrument:1:<autosummary>:1
-#: tvm.ir.instrument.pass_instrument:1
-msgid "Decorate a pass instrument."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument:3
-msgid ""
-"To use, a user class can either subclass from PassInstrument directly, or"
-" can apply the :py:func:`pass_instrument` wrapper.  In either case, the "
-"`enter_pass_ctx`, `exit_pass_ctx`, `should_run`, `run_before_pass`, and "
-"`run_after_pass` methods can be defined to adjust the instrument's "
-"behavior.  See the no-op implementations in this class definition for "
-"more information on each."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-msgid ""
-":py:obj:`enter_pass_ctx <tvm.instrument.PassInstrument.enter_pass_ctx>`\\"
-" \\(\\)"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1
-#: tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-msgid "Called when entering the instrumented context."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-msgid ""
-":py:obj:`exit_pass_ctx <tvm.instrument.PassInstrument.exit_pass_ctx>`\\ "
-"\\(\\)"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-#: tvm.ir.instrument.PassInstrument.exit_pass_ctx:1
-msgid "Called when exiting the instrumented context."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-msgid ""
-":py:obj:`run_after_pass <tvm.instrument.PassInstrument.run_after_pass>`\\"
-" \\(mod\\, info\\)"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-#: tvm.ir.instrument.PassInstrument.run_after_pass:1
-msgid "Instrument after the pass runs."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-msgid ""
-":py:obj:`run_before_pass "
-"<tvm.instrument.PassInstrument.run_before_pass>`\\ \\(mod\\, info\\)"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-#: tvm.ir.instrument.PassInstrument.run_before_pass:1
-msgid "Instrument before the pass runs."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-msgid ""
-":py:obj:`should_run <tvm.instrument.PassInstrument.should_run>`\\ "
-"\\(mod\\, info\\)"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1:<autosummary>:1
-#: tvm.ir.instrument.PassInstrument.should_run:1
-msgid "Determine whether to run the pass or not."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:5
-#: tvm.ir.instrument.PassInstrument.exit_pass_ctx:5
-#: tvm.ir.instrument.PassInstrument.run_after_pass:18
-#: tvm.ir.instrument.PassInstrument.run_before_pass:18
-msgid "None"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.run_after_pass:3
-#: tvm.ir.instrument.PassInstrument.run_before_pass:3
-#: tvm.ir.instrument.PassInstrument.should_run:3
-msgid ""
-"Called once for each pass that is run while the instrumented context is "
-"active."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.run_after_pass:8
-#: tvm.ir.instrument.PassInstrument.run_before_pass:8
-#: tvm.ir.instrument.PassInstrument.should_run:8
-msgid "mod : tvm.ir.module.IRModule"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.run_after_pass:10
-#: tvm.ir.instrument.PassInstrument.run_before_pass:10
-#: tvm.ir.instrument.PassInstrument.should_run:10
-msgid "The module on which an optimization pass is being run."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.run_after_pass:12
-#: tvm.ir.instrument.PassInstrument.run_before_pass:12
-#: tvm.ir.instrument.PassInstrument.should_run:12
-msgid "info : tvm.transform.PassInfo"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.run_after_pass:14
-#: tvm.ir.instrument.PassInstrument.run_before_pass:14
-#: tvm.ir.instrument.PassInstrument.should_run:14
-msgid "The pass information."
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.should_run:18
-msgid "should_run : bool"
-msgstr ""
-
-#: of tvm.ir.instrument.PassInstrument.should_run:20
-msgid "True to run the pass, or False to skip the pass."
-msgstr ""
-
-#: of tvm.ir.instrument.PassTimingInstrument.render:1:<autosummary>:1
-msgid ":py:obj:`render <tvm.instrument.PassTimingInstrument.render>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.instrument.PassTimingInstrument.render:1:<autosummary>:1
-msgid ""
-"Retrieve rendered time profile result Returns ------- string : string"
-"     The rendered string result of time profiles"
-msgstr ""
-
-#: of tvm.ir.instrument.PassTimingInstrument.render:1
-msgid "Retrieve rendered time profile result Returns ------- string : string"
-msgstr ""
-
-#: of tvm.ir.instrument.PassTimingInstrument.render:5
-msgid "The rendered string result of time profiles"
-msgstr ""
-
-#: ../../docstring of tvm.ir.instrument.PassTimingInstrument.render:8
-#: tvm.ir.instrument.pass_instrument:9 tvm.ir.transform.module_pass:38
-msgid "Examples"
-msgstr ""
-
-#: ../../docstring of tvm.ir.instrument.pass_instrument:6
-msgid "pi_class"
-msgstr ""
-
-#: ../../docstring of tvm.ir.instrument.pass_instrument:-1
-msgid "class"
-msgstr ""
-
-#: ../../docstring of tvm.ir.instrument.pass_instrument:6
-msgid "Instrument class. See example below."
-msgstr ""
-
 #: ../../notebook/docs/reference/api/python/ir.rst:35
 msgid "tvm.transform"
-msgstr ""
-
-#: ../../docstring of tvm.transform:1
-msgid "Common pass infrastructure across IR variants."
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid ":py:obj:`ModulePass <tvm.transform.ModulePass>`\\ \\(\\)"
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid "A pass that works on tvm.IRModule."
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid ":py:obj:`Pass <tvm.transform.Pass>`\\ \\(\\)"
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid "The base class of all passes."
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid ""
-":py:obj:`PassContext <tvm.transform.PassContext>`\\ \\(\\[opt\\_level\\, "
-"required\\_pass\\, ...\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid "The basis where a Relay optimization/analysis runs on."
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid ""
-":py:obj:`PassInfo <tvm.transform.PassInfo>`\\ \\(opt\\_level\\, "
-"name\\[\\, required\\, traceable\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid "The class contains the meta data required by a pass."
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid ""
-":py:obj:`Sequential <tvm.transform.Sequential>`\\ \\(\\[passes\\, "
-"opt\\_level\\, name\\, ...\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.transform:1:<autosummary>:1
-msgid "A pass that works on a sequence of pass objects."
-msgstr ""
-
-#: of tvm.ir.transform.ModulePass:1:<autosummary>:1
-msgid ""
-":py:obj:`PrintIR <tvm.transform.PrintIR>`\\ \\(\\[header\\, "
-"show\\_meta\\_data\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.ModulePass:1:<autosummary>:1
-#: tvm.ir.transform.PrintIR:1
-msgid "A special trace pass that prints the header and IR."
-msgstr ""
-
-#: of tvm.ir.transform.ModulePass:1:<autosummary>:1
-msgid ""
-":py:obj:`_wrap_class_module_pass "
-"<tvm.transform._wrap_class_module_pass>`\\ \\(pass\\_cls\\, "
-"pass\\_info\\)"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.ModulePass:1:<autosummary>:1
-#: tvm.ir.transform._wrap_class_module_pass:1
-msgid "Wrap a python class as function pass"
-msgstr ""
-
-#: of tvm.ir.transform.ModulePass:1:<autosummary>:1
-msgid ""
-":py:obj:`module_pass <tvm.transform.module_pass>`\\ \\(\\[pass\\_func\\, "
-"opt\\_level\\, name\\, ...\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.ModulePass:1:<autosummary>:1
-#: tvm.ir.transform.module_pass:1
-msgid "Decorate a module pass."
-msgstr ""
-
-#: of tvm.ir.transform.ModulePass:1
-msgid ""
-"A pass that works on tvm.IRModule. Users don't need to interact with this"
-" class directly. Instead, a module pass should be created through "
-"`module_pass`, because the design of the `module_pass` API is flexible "
-"enough to handle the creation of a module pass in different manners. In "
-"addition, all members of a module pass can be accessed from the base "
-"class. The same rule applies to FunctionPass as well."
-msgstr ""
-
-#: of tvm.ir.transform.Pass:1
-msgid ""
-"The base class of all passes. All methods here are just simple wrappers "
-"that are implemented in the backend. They are defined for users to "
-"conveniently interact with the base class."
-msgstr ""
-
-#: of tvm.ir.transform.Pass:1:<autosummary>:1
-msgid ":py:obj:`__call__ <tvm.transform.Pass.__call__>`\\ \\(mod\\)"
-msgstr ""
-
-#: of tvm.ir.transform.Pass:1:<autosummary>:1
-msgid "Execute the pass."
-msgstr ""
-
-#: of tvm.ir.transform.Pass.__call__:1:<autosummary>:1
-msgid ":py:obj:`info <tvm.transform.Pass.info>`\\"
-msgstr ""
-
-#: of tvm.ir.transform.Pass.__call__:1:<autosummary>:1
-#: tvm.transform.Pass.info:1
-msgid "Get the pass meta."
-msgstr ""
-
-#: of tvm.ir.transform.Pass.__call__:1
-msgid ""
-"Execute the pass. Note that for sequential pass, the dependency among "
-"different passes will be resolved in the backend."
-msgstr ""
-
-#: of tvm.ir.transform.Pass.__call__:-1
-msgid "tvm.IRModule"
-msgstr ""
-
-#: of tvm.ir.transform.Pass.__call__:7
-msgid "The module that a certain optimization is performed on."
-msgstr ""
-
-#: of tvm.ir.transform.Pass.__call__:12
-msgid "The updated module after applying this pass."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:1
-msgid ""
-"The basis where a Relay optimization/analysis runs on. Each pass context "
-"contains a number of auxiliary information that is used to help an "
-"optimization pass. Such information includes the error reporter to record"
-" the errors of during the optimization, etc."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.PassContext:7
-#: tvm.ir.transform.PassInfo:9 tvm.ir.transform.Sequential:17
-#: tvm.ir.transform.module_pass:16
-msgid "opt_level"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:7 tvm.ir.transform.PassInfo:9
-msgid "The optimization level of this pass."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:10
-msgid "required_pass"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:-1
-msgid "Optional[Union[List[str], Set[str], Tuple[str]]]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:10 tvm.ir.transform.PassInfo:15
-msgid "The list of passes that are required by a certain pass."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:13
-msgid "disabled_pass"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:13
-msgid "The list of passes that are disabled."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:16
-#: tvm.ir.transform.PassContext.override_instruments:6
-msgid "instruments"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:-1
-msgid "Optional[Sequence[PassInstrument]]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:16
-#: tvm.ir.transform.PassContext.override_instruments:7
-msgid "The list of pass instrument implementations."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:19
-msgid "config"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:-1
-msgid "Optional[Dict[str, Object]]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:19
-msgid "Additional configurations for specific passes."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:22
-msgid "trace: Optional[relax.tuning.Trace]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:22
-msgid "Initial trace for trace mode."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:25
-msgid "trace_stack: Optional[List[relax.tuning_api.Trace]]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:25
-msgid "Initial trace stack for trace mode."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:28
-msgid "make_traceable: Optional[List[str]]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:28
-msgid "List of passes to make traceable."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:31
-msgid "num_evals: int"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:31
-msgid "initial number of evaluations conducted in the pipeline."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext:33
-msgid "tuning_api_database: Optional[relax.tuning_api.JSONDatabase]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ":py:obj:`current <tvm.transform.PassContext.current>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1
-#: tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid "Return the current pass context."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`get_current_trace "
-"<tvm.transform.PassContext.get_current_trace>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.get_current_trace:1
-msgid "Get the trace on the top of the stack."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`get_trace_stack <tvm.transform.PassContext.get_trace_stack>`\\ "
-"\\(\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.get_trace_stack:1
-msgid "Get the current trace stack."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`get_trace_stack_size "
-"<tvm.transform.PassContext.get_trace_stack_size>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.get_trace_stack_size:1
-msgid "Get the size of current stack."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`get_tuning_api_database "
-"<tvm.transform.PassContext.get_tuning_api_database>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.get_tuning_api_database:1
-msgid "Get tuning api database."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`inc_num_evals <tvm.transform.PassContext.inc_num_evals>`\\ "
-"\\(num\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.inc_num_evals:1
-msgid "Increment the number of evaluations conducted in the pipeline."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ":py:obj:`list_configs <tvm.transform.PassContext.list_configs>`\\ \\(\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.list_configs:1
-msgid "List all registered `PassContext` configuration names and metadata."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`override_instruments "
-"<tvm.transform.PassContext.override_instruments>`\\ \\(instruments\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.override_instruments:1
-msgid "Override instruments within this PassContext."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`pop_trace <tvm.transform.PassContext.pop_trace>`\\ "
-"\\(\\[return\\_current\\]\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid "Pop a topmost trace from the stack."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ":py:obj:`push_trace <tvm.transform.PassContext.push_trace>`\\ \\(trace\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.push_trace:1
-msgid "Push a trace into the stack."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-msgid ""
-":py:obj:`set_num_evals <tvm.transform.PassContext.set_num_evals>`\\ "
-"\\(num\\)"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.current:1:<autosummary>:1
-#: tvm.ir.transform.PassContext.set_num_evals:1
-msgid "Set the number of evaluations conducted in the pipeline."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.list_configs:5
-msgid "configs : Dict[str, Dict[str, str]]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.override_instruments:3
-msgid ""
-"If there are existing instruments, their ``exit_pass_ctx`` callbacks are "
-"called. Then switching to new instruments and calling new "
-"``enter_pass_ctx`` callbacks."
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.override_instruments:-1
-msgid "Sequence[PassInstrument]"
-msgstr ""
-
-#: of tvm.ir.transform.PassContext.pop_trace:1
-msgid ""
-"Pop a topmost trace from the stack. Returns ------- Trace : "
-"Optional[relax.tuning.Trace]"
-msgstr ""
-
-#: of tvm.ir.transform.PassInfo:1
-msgid ""
-"The class contains the meta data required by a pass. It is the container "
-"of information needed by running an optimization or analysis. This class "
-"can be extended by adding new members when more meta data is needed."
-msgstr ""
-
-#: of tvm.ir.transform.PassInfo:12
-msgid "The pass name."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.PassInfo:14
-#: tvm.ir.transform.Sequential:22 tvm.ir.transform.module_pass:23
-msgid "required"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.PrintIR:6
-msgid "header"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.PrintIR:6
-msgid "The header to be displayed along with the dump."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.PrintIR:9
-msgid "A boolean flag to indicate if meta data should be printed."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.PrintIR:13
-msgid "The pass"
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:1
-msgid ""
-"A pass that works on a sequence of pass objects. Multiple passes can be "
-"executed sequentially using this class."
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:4
-msgid ""
-"Note that users can also provide a series of passes that they don't want "
-"to apply when running a sequential pass. Pass dependency will be resolved"
-" in the backend as well."
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:11
-msgid "passes"
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:-1
-msgid "Optional[List[Pass]]"
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:11
-msgid "A sequence of passes candidate for optimization."
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:14
-msgid ""
-"The optimization level of this sequential pass. The opt_level of a "
-"default sequential pass is set to 0. Note that some of the passes within "
-"the Sequantial may still not be executed if their opt_level is higher "
-"than the provided opt_level."
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:20
-msgid "The name of the sequential pass."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.Sequential:-1
-#: tvm.ir.transform.module_pass:-1
-msgid "Optional[List[str]]"
-msgstr ""
-
-#: of tvm.ir.transform.Sequential:23
-msgid "The list of passes that the sequential pass is dependent on."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:3
-msgid ""
-"This function returns a callback when pass_func is provided. Otherwise, "
-"it serves a decorator function."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:6
-msgid ""
-"pass_func can also be a class type with a method transform_module. This "
-"function will create a decorated ModulePass using transform_module as the"
-" pass function."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:13
-msgid "pass_func"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:-1
-msgid "Optional[Callable[(Module, PassContext) ->Module]]"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:13
-msgid "The transformation function or class."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:16
-msgid "The optimization level of this module pass."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:19
-msgid ""
-"The name of the module pass. The name could be empty. In this case, the "
-"name of the optimization function will be used as the pass name."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:23
-msgid "The list of passes that the module pass is dependent on."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:26
-msgid "traceable: Boolean"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:26
-msgid "Boolean variable whether the module pass is traceable"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:35
-msgid "create_module_pass"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:-1
-msgid "Union[Callable, ModulePass]"
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:31
-msgid ""
-"A decorator will be returned if pass_func is not provided, otherwise "
-"return the decorated result. The returned decorator has two behaviors "
-"depending on the input: A new ModulePass will be returned when we "
-"decorate a pass function. A new ModulePass class will be returned when we"
-" decorate a class type."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:39
-msgid "The following code block decorates a module pass class."
-msgstr ""
-
-#: ../../docstring of tvm.ir.transform.module_pass:62
-msgid ""
-"The following code creates a module pass by decorating a user defined "
-"transform function."
 msgstr ""
 
 #~ msgid ":py:obj:`Array <tvm.ir.Array>`\\ \\(\\)"
@@ -5137,5 +1718,1310 @@ msgstr ""
 #~ "The following code creates a module "
 #~ "pass by decorating a user defined "
 #~ "transform function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`ConstantMemoryPools <tvm.ir.ConstantMemoryPools>`\\ "
+#~ "\\(pools\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This object contains a list of "
+#~ "ConstantPoolInfo objects to be used as"
+#~ " read-only memory in the compilation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`ConstantPoolInfo <tvm.ir.ConstantPoolInfo>`\\ "
+#~ "\\(pool\\_name\\, targets\\[\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ConstantPoolInfo object holds information "
+#~ "related to RO memory pools where "
+#~ "the statically sized allocate nodes are"
+#~ " pooled into."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`DummyGlobalInfo <tvm.ir.DummyGlobalInfo>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`GlobalInfo <tvm.ir.GlobalInfo>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Base node for all global info that can appear in the IR"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`IRModule <tvm.ir.IRModule>`\\ \\(\\[functions\\,"
+#~ " type\\_definitions\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Base class of all IR Nodes."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`PoolInfo <tvm.ir.PoolInfo>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "PoolInfo object holds information related "
+#~ "to memory pools where the statically "
+#~ "sized allocate nodes will pooled into."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`PoolInfoProperties <tvm.ir.PoolInfoProperties>`\\ "
+#~ "\\(\\[size\\_hint\\_bytes\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`SequentialSpan <tvm.ir.SequentialSpan>`\\ \\(spans\\)"
+#~ msgstr ""
+
+#~ msgid "A sequence of source spans"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`VDevice <tvm.ir.VDevice>`\\ \\(\\[target\\, "
+#~ "vdevice\\_id\\, memory\\_scope\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`WorkspaceMemoryPools <tvm.ir.WorkspaceMemoryPools>`\\"
+#~ " \\(pools\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This object contains a list of "
+#~ "WorkspacePoolInfo objects to be used as"
+#~ " workspace memory in the compilation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`WorkspacePoolInfo <tvm.ir.WorkspacePoolInfo>`\\ "
+#~ "\\(pool\\_name\\, targets\\[\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WorkspacePoolInfo object holds information "
+#~ "related to RW memory pools where "
+#~ "the statically sized allocate nodes will"
+#~ " pooled into."
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "key: str"
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "value: int"
+#~ msgstr ""
+
+#~ msgid "value: Tuple of int"
+#~ msgstr ""
+
+#~ msgid "keys"
+#~ msgstr ""
+
+#~ msgid "list of str"
+#~ msgstr ""
+
+#~ msgid "List of keys"
+#~ msgstr ""
+
+#~ msgid "infos: list of AttrFieldInfo"
+#~ msgstr ""
+
+#~ msgid "List of field information"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`with_attrs <tvm.ir.BaseFunc.with_attrs>`\\ \\(attr\\_map\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy the IRModule and add the "
+#~ "given attribute map to it. Parameters"
+#~ " ---------- attr_map: Union[DictAttrs, Dict[str,"
+#~ " Object]]     The attribute map Returns "
+#~ "------- func : BaseFunc     A new "
+#~ "copy of the function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`without_attr <tvm.ir.BaseFunc.without_attr>`\\ "
+#~ "\\(attr\\_key\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a new copy of the function"
+#~ " with an attribute without provided "
+#~ "key."
+#~ msgstr ""
+
+#~ msgid "attr_key_or_dict"
+#~ msgstr ""
+
+#~ msgid "Union[str, dict]"
+#~ msgstr ""
+
+#~ msgid "attr_value"
+#~ msgstr ""
+
+#~ msgid "Object"
+#~ msgstr ""
+
+#~ msgid "func"
+#~ msgstr ""
+
+#~ msgid "BaseFunc"
+#~ msgstr ""
+
+#~ msgid "A new copy of the function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy the IRModule and add the "
+#~ "given attribute map to it. Parameters"
+#~ " ---------- attr_map: Union[DictAttrs, Dict[str,"
+#~ " Object]]"
+#~ msgstr ""
+
+#~ msgid "The attribute map"
+#~ msgstr ""
+
+#~ msgid "attr_key"
+#~ msgstr ""
+
+#~ msgid "str"
+#~ msgstr ""
+
+#~ msgid "The attribute key to delete from the attrubte pairs."
+#~ msgstr ""
+
+#~ msgid "pools"
+#~ msgstr ""
+
+#~ msgid "List[ConstantPoolInfo]"
+#~ msgstr ""
+
+#~ msgid "The list of ConstantPoolInfo objects to be used with the compilation"
+#~ msgstr ""
+
+#~ msgid "pool_name"
+#~ msgstr ""
+
+#~ msgid "The name of the memory pool"
+#~ msgstr ""
+
+#~ msgid "targets"
+#~ msgstr ""
+
+#~ msgid "list[Target]"
+#~ msgstr ""
+
+#~ msgid "describes which targets could access the pool"
+#~ msgstr ""
+
+#~ msgid "pool_info_properties"
+#~ msgstr ""
+
+#~ msgid "PoolInfoProperties"
+#~ msgstr ""
+
+#~ msgid "The properties of the pool."
+#~ msgstr ""
+
+#~ msgid "name_hint"
+#~ msgstr ""
+
+#~ msgid "inputs"
+#~ msgstr ""
+
+#~ msgid "List[Type]"
+#~ msgstr ""
+
+#~ msgid "belong_to"
+#~ msgstr ""
+
+#~ msgid "GlobalTypeVar"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__call__ <tvm.ir.Constructor.__call__>`\\ \\(\\*args\\)"
+#~ msgstr ""
+
+#~ msgid "Call the constructor."
+#~ msgstr ""
+
+#~ msgid "args: List[RelayExpr]"
+#~ msgstr ""
+
+#~ msgid "The arguments to the constructor."
+#~ msgstr ""
+
+#~ msgid "call: RelayExpr"
+#~ msgstr ""
+
+#~ msgid "A call to the constructor."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`_dict <tvm.ir.DictAttrs._dict>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get internal dict"
+#~ msgstr ""
+
+#~ msgid "name"
+#~ msgstr ""
+
+#~ msgid "arg_types"
+#~ msgstr ""
+
+#~ msgid "List[tvm.relay.Type]"
+#~ msgstr ""
+
+#~ msgid "ret_type"
+#~ msgstr ""
+
+#~ msgid "tvm.relay.Type"
+#~ msgstr ""
+
+#~ msgid "type_params"
+#~ msgstr ""
+
+#~ msgid "Optional[List[tvm.relay.TypeVar]]"
+#~ msgstr ""
+
+#~ msgid "type_constraints"
+#~ msgstr ""
+
+#~ msgid "Optional[List[tvm.relay.TypeConstraint]]"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__eq__ <tvm.ir.GlobalInfo.__eq__>`\\ \\(other\\)"
+#~ msgstr ""
+
+#~ msgid "Compare two struct info for structural equivalence."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`same_as <tvm.ir.GlobalInfo.same_as>`\\ \\(other\\)"
+#~ msgstr ""
+
+#~ msgid "Overload with structural equality."
+#~ msgstr ""
+
+#~ msgid "name_hint: str"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__call__ <tvm.ir.GlobalTypeVar.__call__>`\\ \\(\\*args\\)"
+#~ msgstr ""
+
+#~ msgid "Create a type call from this type."
+#~ msgstr ""
+
+#~ msgid "args: List[Type]"
+#~ msgstr ""
+
+#~ msgid "The arguments to the type call."
+#~ msgstr ""
+
+#~ msgid "call: Type"
+#~ msgstr ""
+
+#~ msgid "The result type call."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__call__ <tvm.ir.GlobalVar.__call__>`\\ \\(\\*args\\)"
+#~ msgstr ""
+
+#~ msgid "Call the global variable."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`astext <tvm.ir.GlobalVar.astext>`\\ "
+#~ "\\(\\[show\\_meta\\_data\\, annotate\\]\\)"
+#~ msgstr ""
+
+#~ msgid "The arguments to the call."
+#~ msgstr ""
+
+#~ msgid "call: BaseExpr"
+#~ msgstr ""
+
+#~ msgid "A call taking the variable as a function."
+#~ msgstr ""
+
+#~ msgid "show_meta_data"
+#~ msgstr ""
+
+#~ msgid "bool"
+#~ msgstr ""
+
+#~ msgid "annotate: Optional[Object->str]"
+#~ msgstr ""
+
+#~ msgid "text"
+#~ msgstr ""
+
+#~ msgid "The text format of the expression."
+#~ msgstr ""
+
+#~ msgid "Notes"
+#~ msgstr ""
+
+#~ msgid "functions: Optional[dict]."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__getitem__ <tvm.ir.IRModule.__getitem__>`\\ \\(var\\)"
+#~ msgstr ""
+
+#~ msgid "Lookup a global definition by name or by variable."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__setitem__ <tvm.ir.IRModule.__setitem__>`\\ \\(var\\, val\\)"
+#~ msgstr ""
+
+#~ msgid "Add a mapping to the module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`astext <tvm.ir.IRModule.astext>`\\ "
+#~ "\\(\\[show\\_meta\\_data\\, annotate\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`update_global_info "
+#~ "<tvm.ir.IRModule.update_global_info>`\\ \\(name\\, "
+#~ "global\\_info\\)"
+#~ msgstr ""
+
+#~ msgid "Update global info in the module"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`with_attrs <tvm.ir.IRModule.with_attrs>`\\ \\(attr\\_map\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy the IRModule and add the "
+#~ "given attribute map to it. Parameters"
+#~ " ---------- attr_map: Union[DictAttrs, Dict[str,"
+#~ " Object]]     The attribute map Returns "
+#~ "------- mod : IRModule     A new "
+#~ "copy of the IRModule with the "
+#~ "attribute."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`without_attr <tvm.ir.IRModule.without_attr>`\\ "
+#~ "\\(attr\\_key\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy the IRModule and remove an "
+#~ "attribute key and its associated value."
+#~ " Parameters ---------- attr_key : str"
+#~ "     The attribute key. Returns ------- "
+#~ "mod : IRModule     A new copy of"
+#~ " the IRModule without the attribute."
+#~ msgstr ""
+
+#~ msgid "var: Union[String, GlobalVar, GlobalTypeVar]"
+#~ msgstr ""
+
+#~ msgid "The name or global variable."
+#~ msgstr ""
+
+#~ msgid "val: Union[Function, Type]"
+#~ msgstr ""
+
+#~ msgid "The definition referenced by :code:`var` (either a function or type)."
+#~ msgstr ""
+
+#~ msgid "var: GlobalVar"
+#~ msgstr ""
+
+#~ msgid "The value."
+#~ msgstr ""
+
+#~ msgid "expr: RelayExpr"
+#~ msgstr ""
+
+#~ msgid "global_funcs: Optional[dict]"
+#~ msgstr ""
+
+#~ msgid "type_defs: Optional[dict]"
+#~ msgstr ""
+
+#~ msgid "mod: Module"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A module containing the passed "
+#~ "definitions, where expr is set as "
+#~ "the entry point (wrapped in a "
+#~ "function if necessary)"
+#~ msgstr ""
+
+#~ msgid "Any"
+#~ msgstr ""
+
+#~ msgid "Attribute value"
+#~ msgstr ""
+
+#~ msgid "tag: int"
+#~ msgstr ""
+
+#~ msgid "constructor: Constructor"
+#~ msgstr ""
+
+#~ msgid "The constructor associated with the given tag,"
+#~ msgstr ""
+
+#~ msgid "Raises"
+#~ msgstr ""
+
+#~ msgid "tvm.error.TVMError if the corresponding constructor cannot be found."
+#~ msgstr ""
+
+#~ msgid "name: str"
+#~ msgstr ""
+
+#~ msgid "global_type_var: GlobalTypeVar"
+#~ msgstr ""
+
+#~ msgid "The global variable mapped to :code:`name`."
+#~ msgstr ""
+
+#~ msgid "tvm.error.TVMError if we cannot find corresponding global type var."
+#~ msgstr ""
+
+#~ msgid "global_type_vars: Array[GlobalTypeVar]"
+#~ msgstr ""
+
+#~ msgid "An array of global type vars."
+#~ msgstr ""
+
+#~ msgid "global_var: GlobalVar"
+#~ msgstr ""
+
+#~ msgid "tvm.error.TVMError if we cannot find corresponding global var."
+#~ msgstr ""
+
+#~ msgid "global_vars: Array[GlobalVar]"
+#~ msgstr ""
+
+#~ msgid "An array of global vars."
+#~ msgstr ""
+
+#~ msgid "other: IRModule"
+#~ msgstr ""
+
+#~ msgid "func: tvm.relay.Function"
+#~ msgstr ""
+
+#~ msgid "The name for the global info."
+#~ msgstr ""
+
+#~ msgid "global_info: List[GlobalInfo]"
+#~ msgstr ""
+
+#~ msgid "The global info to be updated."
+#~ msgstr ""
+
+#~ msgid "mod"
+#~ msgstr ""
+
+#~ msgid "IRModule"
+#~ msgstr ""
+
+#~ msgid "A new copy of the IRModule with the attribute"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy the IRModule and remove an "
+#~ "attribute key and its associated value."
+#~ " Parameters ---------- attr_key : str"
+#~ msgstr ""
+
+#~ msgid "A new copy of the IRModule without the attribute"
+#~ msgstr ""
+
+#~ msgid "key"
+#~ msgstr ""
+
+#~ msgid "object"
+#~ msgstr ""
+
+#~ msgid "default"
+#~ msgstr ""
+
+#~ msgid "value: object"
+#~ msgstr ""
+
+#~ msgid "The result value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`astext <tvm.ir.Op.astext>`\\ "
+#~ "\\(\\[show\\_meta\\_data\\, annotate\\]\\)"
+#~ msgstr ""
+
+#~ msgid "type"
+#~ msgstr ""
+
+#~ msgid "description"
+#~ msgstr ""
+
+#~ msgid "rel_name"
+#~ msgstr ""
+
+#~ msgid "type_rel_func"
+#~ msgstr ""
+
+#~ msgid "Optional[function (args: List[Type], attrs: Attrs) -> Type]"
+#~ msgstr ""
+
+#~ msgid "op_name"
+#~ msgstr ""
+
+#~ msgid "op"
+#~ msgstr ""
+
+#~ msgid "Op"
+#~ msgstr ""
+
+#~ msgid "The op of the corresponding name"
+#~ msgstr ""
+
+#~ msgid "attr_name"
+#~ msgstr ""
+
+#~ msgid "value"
+#~ msgstr ""
+
+#~ msgid "Whether the operator has additional attribute"
+#~ msgstr ""
+
+#~ msgid "List[str]"
+#~ msgstr ""
+
+#~ msgid "The registered op names"
+#~ msgstr ""
+
+#~ msgid "plevel"
+#~ msgstr ""
+
+#~ msgid "int"
+#~ msgstr ""
+
+#~ msgid "n"
+#~ msgstr ""
+
+#~ msgid "level"
+#~ msgstr ""
+
+#~ msgid "element_type"
+#~ msgstr ""
+
+#~ msgid "tvm.ir.Type"
+#~ msgstr ""
+
+#~ msgid "storage_scope"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "PoolInfo object holds information related "
+#~ "to memory pools where the statically "
+#~ "sized allocate nodes will pooled into."
+#~ " This is a base class for "
+#~ "WorkspacePoolInfo and ConstantPoolInfo."
+#~ msgstr ""
+
+#~ msgid "size_hint_bytes"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The expected size hint to be used"
+#~ " by the allocator. The default value"
+#~ " would be -1 which means the "
+#~ "pool is not size restricted."
+#~ msgstr ""
+
+#~ msgid "clock_frequency_hz"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The clock frequency that the memory "
+#~ "pool runs at in Hz. If not "
+#~ "specified/known, this will default to -1"
+#~ " indicating it hasn't been defined."
+#~ msgstr ""
+
+#~ msgid "read_bandwidth_bytes_per_cycle"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The read bandwidth of the memory "
+#~ "pool in bytes/cycle. If not "
+#~ "specified/known, this will default to -1"
+#~ " indicating it hasn't been defined."
+#~ msgstr ""
+
+#~ msgid "write_bandwidth_bytes_per_cycle"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The write bandwidth of the memory "
+#~ "pool in bytes/cycle. If not "
+#~ "specified/known, this will default to -1"
+#~ " indicating it hasn't been defined."
+#~ msgstr ""
+
+#~ msgid "read_latency_cycles"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The read latency of the memory "
+#~ "pool in cycles. If not specified/known,"
+#~ " this will default to 0."
+#~ msgstr ""
+
+#~ msgid "write_latency_cycles"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The write latency of the memory "
+#~ "pool in cycles. If not specified/known,"
+#~ " this will default to 0."
+#~ msgstr ""
+
+#~ msgid "target_burst_bytes"
+#~ msgstr ""
+
+#~ msgid "Optional[Union[Dict[Target, int], None]]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The burst length of the memory "
+#~ "pool in bytes per target. If not"
+#~ " specified/known for a given target, "
+#~ "a burst length of 1 byte will "
+#~ "be assumed."
+#~ msgstr ""
+
+#~ msgid "dtype"
+#~ msgstr ""
+
+#~ msgid "begin"
+#~ msgstr ""
+
+#~ msgid "PrimExpr"
+#~ msgstr ""
+
+#~ msgid "end"
+#~ msgstr ""
+
+#~ msgid "Optional[PrimExpr]"
+#~ msgstr ""
+
+#~ msgid "span"
+#~ msgstr ""
+
+#~ msgid "Optional[Span]"
+#~ msgstr ""
+
+#~ msgid "Note"
+#~ msgstr ""
+
+#~ msgid "min_value"
+#~ msgstr ""
+
+#~ msgid "extent"
+#~ msgstr ""
+
+#~ msgid "rng"
+#~ msgstr ""
+
+#~ msgid "Range"
+#~ msgstr ""
+
+#~ msgid "The constructed range."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`struct_info <tvm.ir.RelayExpr.struct_info>`\\"
+#~ msgstr ""
+
+#~ msgid "Get the struct info field"
+#~ msgstr ""
+
+#~ msgid "checked_type"
+#~ msgstr ""
+
+#~ msgid "The checked type."
+#~ msgstr ""
+
+#~ msgid "struct_info"
+#~ msgstr ""
+
+#~ msgid "tvm.relax.StructInfo"
+#~ msgstr ""
+
+#~ msgid "The struct info if available."
+#~ msgstr ""
+
+#~ msgid "value: Type"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This span is specific for an "
+#~ "expression, which is from multiple "
+#~ "expressions after an IR transform."
+#~ msgstr ""
+
+#~ msgid "spans"
+#~ msgstr ""
+
+#~ msgid "Array"
+#~ msgstr ""
+
+#~ msgid "The array of spans."
+#~ msgstr ""
+
+#~ msgid "source"
+#~ msgstr ""
+
+#~ msgid "SourceName"
+#~ msgstr ""
+
+#~ msgid "lineno"
+#~ msgstr ""
+
+#~ msgid "col_offset"
+#~ msgstr ""
+
+#~ msgid "scale: Expr"
+#~ msgstr ""
+
+#~ msgid "zero_point: Expr"
+#~ msgstr ""
+
+#~ msgid "axis"
+#~ msgstr ""
+
+#~ msgid "shape"
+#~ msgstr ""
+
+#~ msgid "List[tvm.ir.PrimExpr]"
+#~ msgstr ""
+
+#~ msgid "Optional[str]"
+#~ msgstr ""
+
+#~ msgid "List[int]"
+#~ msgstr ""
+
+#~ msgid "The concrete shape of the Type."
+#~ msgstr ""
+
+#~ msgid "TypeError : If the shape is symbolic"
+#~ msgstr ""
+
+#~ msgid "types"
+#~ msgstr ""
+
+#~ msgid "List[TensorAffineType]"
+#~ msgstr ""
+
+#~ msgid "fields"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__eq__ <tvm.ir.Type.__eq__>`\\ \\(other\\)"
+#~ msgstr ""
+
+#~ msgid "Compare two types for structural equivalence."
+#~ msgstr ""
+
+#~ msgid "func: tvm.ir.Type"
+#~ msgstr ""
+
+#~ msgid "args: List[tvm.ir.Type]"
+#~ msgstr ""
+
+#~ msgid "type_call: TypeCall"
+#~ msgstr ""
+
+#~ msgid "The type function application."
+#~ msgstr ""
+
+#~ msgid "header: GlobalTypeVar"
+#~ msgstr ""
+
+#~ msgid "type_vars: List[TypeVar]"
+#~ msgstr ""
+
+#~ msgid "constructors: List[Constructor]"
+#~ msgstr ""
+
+#~ msgid "EnvFunc"
+#~ msgstr ""
+
+#~ msgid "args"
+#~ msgstr ""
+
+#~ msgid "[tvm.ir.Type]"
+#~ msgstr ""
+
+#~ msgid "num_inputs"
+#~ msgstr ""
+
+#~ msgid "attrs"
+#~ msgstr ""
+
+#~ msgid "Attrs"
+#~ msgstr ""
+
+#~ msgid "type_relation"
+#~ msgstr ""
+
+#~ msgid "tvm.ir.TypeRelation"
+#~ msgstr ""
+
+#~ msgid "The type relation."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__call__ <tvm.ir.TypeVar.__call__>`\\ \\(\\*args\\)"
+#~ msgstr ""
+
+#~ msgid "List[WorkspacePoolInfo]"
+#~ msgstr ""
+
+#~ msgid "A list of targets which could access the pool"
+#~ msgstr ""
+
+#~ msgid "lhs"
+#~ msgstr ""
+
+#~ msgid "rhs"
+#~ msgstr ""
+
+#~ msgid "map_free_vars"
+#~ msgstr ""
+
+#~ msgid "ValueError : if assertion does not hold."
+#~ msgstr ""
+
+#~ msgid "See Also"
+#~ msgstr ""
+
+#~ msgid "structural_equal"
+#~ msgstr ""
+
+#~ msgid "json_str"
+#~ msgstr ""
+
+#~ msgid "node"
+#~ msgstr ""
+
+#~ msgid "The loaded tvm node."
+#~ msgstr ""
+
+#~ msgid "type_key"
+#~ msgstr ""
+
+#~ msgid "**kwargs"
+#~ msgstr ""
+
+#~ msgid "dict"
+#~ msgstr ""
+
+#~ msgid "Node"
+#~ msgstr ""
+
+#~ msgid "The corresponding IR Node"
+#~ msgstr ""
+
+#~ msgid "Example"
+#~ msgstr ""
+
+#~ msgid "target"
+#~ msgstr ""
+
+#~ msgid "f"
+#~ msgstr ""
+
+#~ msgid "function, optional"
+#~ msgstr ""
+
+#~ msgid "fregister"
+#~ msgstr ""
+
+#~ msgid "function"
+#~ msgstr ""
+
+#~ msgid "Register op lowering function if f is not specified."
+#~ msgstr ""
+
+#~ msgid "object, optional"
+#~ msgstr ""
+
+#~ msgid "int, optional"
+#~ msgstr ""
+
+#~ msgid "Register function if value is not specified."
+#~ msgstr ""
+
+#~ msgid "Saved json string."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether free variables (i.e. variables "
+#~ "without a definition site) should be "
+#~ "mapped as equal to each other."
+#~ msgstr ""
+
+#~ msgid "Return"
+#~ msgstr ""
+
+#~ msgid "result"
+#~ msgstr ""
+
+#~ msgid "The comparison result."
+#~ msgstr ""
+
+#~ msgid "structural_hash assert_strucural_equal"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If map_free_vars is set to true, "
+#~ "we will hash free variables by the"
+#~ " order of their occurrences. Otherwise, "
+#~ "we will hash by their in-memory"
+#~ " pointer address."
+#~ msgstr ""
+
+#~ msgid "The hash result"
+#~ msgstr ""
+
+#~ msgid "structrual_equal"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`PassInstrument <tvm.instrument.PassInstrument>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`PassTimingInstrument "
+#~ "<tvm.instrument.PassTimingInstrument>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`_wrap_class_pass_instrument "
+#~ "<tvm.instrument._wrap_class_pass_instrument>`\\ \\(pi\\_cls\\)"
+#~ msgstr ""
+
+#~ msgid "Wrap a python class as pass instrument"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`pass_instrument <tvm.instrument.pass_instrument>`\\ "
+#~ "\\(\\[pi\\_cls\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`enter_pass_ctx "
+#~ "<tvm.instrument.PassInstrument.enter_pass_ctx>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`exit_pass_ctx "
+#~ "<tvm.instrument.PassInstrument.exit_pass_ctx>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`run_after_pass "
+#~ "<tvm.instrument.PassInstrument.run_after_pass>`\\ \\(mod\\, "
+#~ "info\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`run_before_pass "
+#~ "<tvm.instrument.PassInstrument.run_before_pass>`\\ \\(mod\\, "
+#~ "info\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`should_run "
+#~ "<tvm.instrument.PassInstrument.should_run>`\\ \\(mod\\, "
+#~ "info\\)"
+#~ msgstr ""
+
+#~ msgid "None"
+#~ msgstr ""
+
+#~ msgid "mod : tvm.ir.module.IRModule"
+#~ msgstr ""
+
+#~ msgid "info : tvm.transform.PassInfo"
+#~ msgstr ""
+
+#~ msgid "should_run : bool"
+#~ msgstr ""
+
+#~ msgid "True to run the pass, or False to skip the pass."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`render <tvm.instrument.PassTimingInstrument.render>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Retrieve rendered time profile result "
+#~ "Returns ------- string : string     The"
+#~ " rendered string result of time "
+#~ "profiles"
+#~ msgstr ""
+
+#~ msgid "Retrieve rendered time profile result Returns ------- string : string"
+#~ msgstr ""
+
+#~ msgid "The rendered string result of time profiles"
+#~ msgstr ""
+
+#~ msgid "Examples"
+#~ msgstr ""
+
+#~ msgid "pi_class"
+#~ msgstr ""
+
+#~ msgid "class"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`ModulePass <tvm.transform.ModulePass>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Pass <tvm.transform.Pass>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`PassContext <tvm.transform.PassContext>`\\ "
+#~ "\\(\\[opt\\_level\\, required\\_pass\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`PassInfo <tvm.transform.PassInfo>`\\ "
+#~ "\\(opt\\_level\\, name\\[\\, required\\, "
+#~ "traceable\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`Sequential <tvm.transform.Sequential>`\\ "
+#~ "\\(\\[passes\\, opt\\_level\\, name\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`PrintIR <tvm.transform.PrintIR>`\\ "
+#~ "\\(\\[header\\, show\\_meta\\_data\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`_wrap_class_module_pass "
+#~ "<tvm.transform._wrap_class_module_pass>`\\ \\(pass\\_cls\\, "
+#~ "pass\\_info\\)"
+#~ msgstr ""
+
+#~ msgid "Wrap a python class as function pass"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`module_pass <tvm.transform.module_pass>`\\ "
+#~ "\\(\\[pass\\_func\\, opt\\_level\\, name\\, "
+#~ "...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`__call__ <tvm.transform.Pass.__call__>`\\ \\(mod\\)"
+#~ msgstr ""
+
+#~ msgid "Execute the pass."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`info <tvm.transform.Pass.info>`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Execute the pass. Note that for "
+#~ "sequential pass, the dependency among "
+#~ "different passes will be resolved in "
+#~ "the backend."
+#~ msgstr ""
+
+#~ msgid "tvm.IRModule"
+#~ msgstr ""
+
+#~ msgid "The module that a certain optimization is performed on."
+#~ msgstr ""
+
+#~ msgid "The updated module after applying this pass."
+#~ msgstr ""
+
+#~ msgid "trace: Optional[relax.tuning.Trace]"
+#~ msgstr ""
+
+#~ msgid "Initial trace for trace mode."
+#~ msgstr ""
+
+#~ msgid "trace_stack: Optional[List[relax.tuning_api.Trace]]"
+#~ msgstr ""
+
+#~ msgid "Initial trace stack for trace mode."
+#~ msgstr ""
+
+#~ msgid "make_traceable: Optional[List[str]]"
+#~ msgstr ""
+
+#~ msgid "List of passes to make traceable."
+#~ msgstr ""
+
+#~ msgid "num_evals: int"
+#~ msgstr ""
+
+#~ msgid "initial number of evaluations conducted in the pipeline."
+#~ msgstr ""
+
+#~ msgid "tuning_api_database: Optional[relax.tuning_api.JSONDatabase]"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`current <tvm.transform.PassContext.current>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`get_current_trace "
+#~ "<tvm.transform.PassContext.get_current_trace>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the trace on the top of the stack."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`get_trace_stack "
+#~ "<tvm.transform.PassContext.get_trace_stack>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the current trace stack."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`get_trace_stack_size "
+#~ "<tvm.transform.PassContext.get_trace_stack_size>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the size of current stack."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`get_tuning_api_database "
+#~ "<tvm.transform.PassContext.get_tuning_api_database>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get tuning api database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`inc_num_evals "
+#~ "<tvm.transform.PassContext.inc_num_evals>`\\ \\(num\\)"
+#~ msgstr ""
+
+#~ msgid "Increment the number of evaluations conducted in the pipeline."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`list_configs "
+#~ "<tvm.transform.PassContext.list_configs>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`override_instruments "
+#~ "<tvm.transform.PassContext.override_instruments>`\\ "
+#~ "\\(instruments\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`pop_trace <tvm.transform.PassContext.pop_trace>`\\ "
+#~ "\\(\\[return\\_current\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Pop a topmost trace from the stack."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`push_trace <tvm.transform.PassContext.push_trace>`\\"
+#~ " \\(trace\\)"
+#~ msgstr ""
+
+#~ msgid "Push a trace into the stack."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`set_num_evals "
+#~ "<tvm.transform.PassContext.set_num_evals>`\\ \\(num\\)"
+#~ msgstr ""
+
+#~ msgid "Set the number of evaluations conducted in the pipeline."
+#~ msgstr ""
+
+#~ msgid "configs : Dict[str, Dict[str, str]]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pop a topmost trace from the "
+#~ "stack. Returns ------- Trace : "
+#~ "Optional[relax.tuning.Trace]"
+#~ msgstr ""
+
+#~ msgid "required"
+#~ msgstr ""
+
+#~ msgid "header"
+#~ msgstr ""
+
+#~ msgid "The pass"
+#~ msgstr ""
+
+#~ msgid "passes"
+#~ msgstr ""
+
+#~ msgid "Optional[List[Pass]]"
+#~ msgstr ""
+
+#~ msgid "Optional[List[str]]"
+#~ msgstr ""
+
+#~ msgid "pass_func"
+#~ msgstr ""
+
+#~ msgid "Optional[Callable[(Module, PassContext) ->Module]]"
+#~ msgstr ""
+
+#~ msgid "traceable: Boolean"
+#~ msgstr ""
+
+#~ msgid "Boolean variable whether the module pass is traceable"
+#~ msgstr ""
+
+#~ msgid "create_module_pass"
+#~ msgstr ""
+
+#~ msgid "Union[Callable, ModulePass]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A decorator will be returned if "
+#~ "pass_func is not provided, otherwise "
+#~ "return the decorated result. The "
+#~ "returned decorator has two behaviors "
+#~ "depending on the input: A new "
+#~ "ModulePass will be returned when we "
+#~ "decorate a pass function. A new "
+#~ "ModulePass class will be returned when"
+#~ " we decorate a class type."
 #~ msgstr ""
 

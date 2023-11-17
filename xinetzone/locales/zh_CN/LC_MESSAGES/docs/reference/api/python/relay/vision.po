@@ -8,881 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 12:27+0800\n"
+"POT-Creation-Date: 2023-11-17 09:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../notebook/docs/reference/api/python/relay/vision.rst:20
 msgid "tvm.relay.vision"
-msgstr ""
-
-#: ../../docstring of tvm.relay.vision:1
-msgid "Vision network related operators."
-msgstr ""
-
-#: ../../docstring of tvm.relay.vision:1
-msgid "**Functions:**"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`all_class_non_max_suppression "
-"<tvm.relay.vision.all_class_non_max_suppression>`\\ \\(boxes\\, scores\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-"Non-maximum suppression operator for object detection, corresponding to "
-"ONNX NonMaxSuppression and TensorFlow combined_non_max_suppression."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`get_valid_counts <tvm.relay.vision.get_valid_counts>`\\ "
-"\\(data\\, score\\_threshold\\[\\, ...\\]\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid "Get valid count of bounding boxes given a score threshold."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`multibox_prior <tvm.relay.vision.multibox_prior>`\\ "
-"\\(data\\[\\, sizes\\, ratios\\, steps\\, ...\\]\\)"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:1
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid "Generate prior(anchor) boxes from data, sizes and ratios."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`multibox_transform_loc "
-"<tvm.relay.vision.multibox_transform_loc>`\\ \\(cls\\_prob\\, "
-"loc\\_pred\\, ...\\)"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:1
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid "Location transformation for multibox detection"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`non_max_suppression <tvm.relay.vision.non_max_suppression>`\\ "
-"\\(data\\, valid\\_count\\, indices\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-#: tvm.relay.op.vision.nms.non_max_suppression:1
-msgid "Non-maximum suppression operator for object detection."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`proposal <tvm.relay.vision.proposal>`\\ \\(cls\\_prob\\, "
-"bbox\\_pred\\, im\\_info\\, ...\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-#: tvm.relay.op.vision.rcnn.proposal:1
-msgid "Proposal operator."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`regular_non_max_suppression "
-"<tvm.relay.vision.regular_non_max_suppression>`\\ \\(boxes\\, scores\\, "
-"...\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-"Regular non-maximum suppression operator for object detection, "
-"corresponding to TFLite's regular NMS."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`roi_align <tvm.relay.vision.roi_align>`\\ \\(data\\, rois\\, "
-"pooled\\_size\\, spatial\\_scale\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-#: tvm.relay.op.vision.rcnn.roi_align:1
-msgid "ROI align operator."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ""
-":py:obj:`roi_pool <tvm.relay.vision.roi_pool>`\\ \\(data\\, rois\\, "
-"pooled\\_size\\, spatial\\_scale\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-#: tvm.relay.op.vision.rcnn.roi_pool:1
-msgid "ROI pool operator."
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid ":py:obj:`yolo_reorg <tvm.relay.vision.yolo_reorg>`\\ \\(data\\, stride\\)"
-msgstr ""
-
-#: ../../docstring of
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:1:<autosummary>:1
-msgid "Yolo reorg operation used in darknet models."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:1
-msgid ""
-"Non-maximum suppression operator for object detection, corresponding to "
-"ONNX NonMaxSuppression and TensorFlow combined_non_max_suppression. NMS "
-"is performed for each class separately."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:4
-#: tvm.relay.op.vision.multibox.multibox_transform_loc:4
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:6
-#: tvm.relay.op.vision.nms.get_valid_counts:5
-#: tvm.relay.op.vision.nms.non_max_suppression:4
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:5
-#: tvm.relay.op.vision.rcnn.proposal:4 tvm.relay.op.vision.rcnn.roi_align:4
-#: tvm.relay.op.vision.rcnn.roi_pool:4 tvm.relay.op.vision.yolo.yolo_reorg:25
-msgid "Parameters"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:8
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:8
-msgid "boxes"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:-1
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:-1
-#: tvm.relay.op.vision.nms.get_valid_counts:-1
-#: tvm.relay.op.vision.nms.non_max_suppression:-1
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:-1
-#: tvm.relay.op.vision.rcnn.proposal:-1 tvm.relay.op.vision.rcnn.roi_align:-1
-#: tvm.relay.op.vision.rcnn.roi_pool:-1 tvm.relay.op.vision.yolo.yolo_reorg:-1
-msgid "relay.Expr"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:8
-msgid "3-D tensor with shape (batch_size, num_boxes, 4)"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:11
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:11
-msgid "scores: relay.Expr"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:11
-msgid "3-D tensor with shape (batch_size, num_classes, num_boxes)"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:14
-msgid "max_output_boxes_per_class"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:-1
-#: tvm.relay.op.vision.nms.non_max_suppression:-1
-msgid "int or relay.Expr, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:14
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:14
-msgid "The maxinum number of output selected boxes per class"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:17
-#: tvm.relay.op.vision.nms.non_max_suppression:29
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:23
-msgid "iou_threshold"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:-1
-msgid "float or relay.Expr, optionaIl"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:17
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:23
-msgid "IoU test threshold"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:20
-#: tvm.relay.op.vision.nms.get_valid_counts:10
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:26
-msgid "score_threshold"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:-1
-#: tvm.relay.op.vision.nms.non_max_suppression:-1
-msgid "float or relay.Expr, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:20
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:26
-msgid "Score threshold to filter out low score boxes early"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:24
-msgid "output_format"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:-1
-msgid "string, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:23
-msgid ""
-"\"onnx\" or \"tensorflow\". Specify by which frontends the outputs are "
-"intented to be consumed."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:24
-#: tvm.relay.op.vision.multibox.multibox_transform_loc:27
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:27
-#: tvm.relay.op.vision.nms.get_valid_counts:19
-#: tvm.relay.op.vision.nms.non_max_suppression:53
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:29
-#: tvm.relay.op.vision.rcnn.proposal:41 tvm.relay.op.vision.rcnn.roi_align:26
-#: tvm.relay.op.vision.rcnn.roi_pool:20 tvm.relay.op.vision.yolo.yolo_reorg:33
-msgid "Returns"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:25
-#: tvm.relay.op.vision.nms.all_class_non_max_suppression:45
-#: tvm.relay.op.vision.nms.non_max_suppression:57
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:34
-msgid "out"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:-1
-#: tvm.relay.op.vision.nms.regular_non_max_suppression:-1
-msgid "relay.Tuple"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:29
-msgid ""
-"If `output_format` is \"onnx\", the output is a relay.Tuple of two "
-"tensors, the first is `indices` of size `(batch_size * num_class* "
-"num_boxes , 3)` and the second is a scalar tensor `num_total_detection` "
-"of shape `(1,)` representing the total number of selected boxes. The "
-"three values in `indices` encode batch, class, and box indices. Rows of "
-"`indices` are ordered such that selected boxes from batch 0, class 0 come"
-" first, in descending of scores, followed by boxes from batch 0, class 1 "
-"etc. Out of `batch_size * num_class* num_boxes` rows of indices,  only "
-"the first `num_total_detection` rows are valid."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.all_class_non_max_suppression:38
-msgid ""
-"If `output_format` is \"tensorflow\", the output is a relay.Tuple of "
-"three tensors, the first is `indices` of size `(batch_size, num_class * "
-"num_boxes , 2)`, the second is `scores` of size `(batch_size, num_class *"
-" num_boxes)`, and the third is `num_total_detection` of size "
-"`(batch_size,)` representing the total number of selected boxes per "
-"batch. The two values in `indices` encode class and box indices. Of "
-"num_class * num_boxes boxes in `indices` at batch b, only the first "
-"`num_total_detection[b]` entries are valid. The second axis of `indices` "
-"and `scores` are sorted within each class by box scores, but not across "
-"classes. So the box indices and scores for the class 0 come first in a "
-"sorted order, followed by the class 1 etc."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:1
-msgid ""
-"Get valid count of bounding boxes given a score threshold. Also moves "
-"valid boxes to the top of input data."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:6
-#: tvm.relay.op.vision.nms.get_valid_counts:7
-#: tvm.relay.op.vision.nms.non_max_suppression:11
-#: tvm.relay.op.vision.rcnn.roi_align:6 tvm.relay.op.vision.rcnn.roi_pool:6
-#: tvm.relay.op.vision.yolo.yolo_reorg:27
-msgid "data"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:7
-msgid "Input data. 3-D tensor with shape [batch_size, num_anchors, 6]."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:-1
-msgid "optional, float"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:10
-msgid "Lower limit of score for valid bounding boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:13
-#: tvm.relay.op.vision.nms.non_max_suppression:44
-msgid "id_index"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:-1
-msgid "optional, int"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:13
-#: tvm.relay.op.vision.nms.non_max_suppression:44
-msgid "index of the class categories, -1 to disable."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:16
-msgid "score_index: optional, int"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:16
-#: tvm.relay.op.vision.nms.non_max_suppression:41
-msgid "Index of the scores/confidence of boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:21
-#: tvm.relay.op.vision.nms.non_max_suppression:15
-msgid "valid_count"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:21
-msgid "1-D tensor for valid number of boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:24
-msgid "out_tensor"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:24
-msgid "Rearranged data tensor."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:26
-msgid "out_indices: relay.Expr"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:27
-msgid "Indices in input data"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:6
-#: tvm.relay.op.vision.yolo.yolo_reorg:27
-msgid "The input data tensor."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:9
-msgid "sizes"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:-1
-msgid "tuple of float, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:9
-msgid "Tuple of sizes for anchor boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:12
-#: tvm.relay.op.vision.rcnn.proposal:19
-msgid "ratios"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:12
-msgid "Tuple of ratios for anchor boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:15
-msgid "steps"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:-1
-#: tvm.relay.op.vision.multibox.multibox_transform_loc:-1
-msgid "Tuple of float, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:15
-msgid "Priorbox step across y and x, -1 for auto calculation."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:18
-msgid "offsets"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:-1
-msgid "tuple of int, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:18
-msgid "Priorbox center offsets, y and x respectively."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:21
-#: tvm.relay.op.vision.multibox.multibox_transform_loc:15
-msgid "clip"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:-1
-#: tvm.relay.op.vision.multibox.multibox_transform_loc:-1
-msgid "boolean, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:21
-#: tvm.relay.op.vision.multibox.multibox_transform_loc:15
-msgid "Whether to clip out-of-boundary boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:26
-msgid "3-D tensor with shape [1, h_in * w_in * (num_sizes + num_ratios - 1), 4]"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:6
-#: tvm.relay.op.vision.rcnn.proposal:6
-msgid "cls_prob"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:-1
-msgid "tvm.relay.Expr"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:6
-msgid "Class probabilities."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:9
-msgid "loc_pred"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:9
-msgid "Location regression predictions."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:12
-msgid "anchor"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:12
-msgid "Prior anchor boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:18
-#: tvm.relay.op.vision.rcnn.proposal:26
-msgid "threshold"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:-1
-msgid "double, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:18
-msgid "Threshold to be a positive prediction."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:21
-msgid "variances"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:21
-msgid "variances to be decoded from box regression output."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:24
-msgid "keep_background"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:24
-msgid "Whether to keep boxes detected as background or not."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:28
-msgid "ret : tuple of tvm.relay.Expr"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:6
-msgid ""
-"3-D tensor with shape [batch_size, num_anchors, 6] or [batch_size, "
-"num_anchors, 5]. The last dimension should be in format of [class_id, "
-"score, box_left, box_top, box_right, box_bottom] or [score, box_left, "
-"box_top, box_right, box_bottom]. It could be the second output out_tensor"
-" of get_valid_counts."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:14
-msgid ""
-"1-D tensor for valid number of boxes. It could be the output valid_count "
-"of get_valid_counts."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:22
-msgid "indices: relay.Expr"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:18
-msgid ""
-"2-D tensor with shape [batch_size, num_anchors], represents the index of "
-"box in original data. It could be the third output out_indices of "
-"get_valid_counts. The values in the second dimension are like the output "
-"of arange(num_anchors) if get_valid_counts is not used before "
-"non_max_suppression."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:26
-msgid "max_output_size"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:25
-msgid ""
-"Max number of output valid boxes for each instance. Return all valid "
-"boxes if the value of max_output_size is less than 0."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:29
-#: tvm.relay.op.vision.rcnn.proposal:26
-msgid "Non-maximum suppression threshold."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:32
-msgid "force_suppress"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:-1
-msgid "bool, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:32
-msgid "Suppress all detections regardless of class_id."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:35
-msgid "top_k"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:-1
-msgid "int, optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:35
-msgid "Keep maximum top k detections before nms, -1 for no limit."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:38
-msgid "coord_start"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:38
-msgid "The starting index of the consecutive 4 coordinates."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:41
-msgid "score_index"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:47
-msgid "return_indices"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:47
-msgid "Whether to return box indices in input data."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:50
-msgid "invalid_to_bottom"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:50
-msgid "Whether to move all valid bounding boxes to the top."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:-1
-msgid "relay.Expr or relay.Tuple"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:55
-msgid ""
-"return relay.Expr if return_indices is disabled, a 3-D tensor with shape "
-"[batch_size, num_anchors, 6] or [batch_size, num_anchors, 5]. If "
-"return_indices is True, return relay.Tuple of two 2-D tensors, with shape"
-" [batch_size, num_anchors] and [batch_size, num_valid_anchors] "
-"respectively."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:6
-msgid "4-D tensor with shape [batch, 2 * num_anchors, height, width]."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:9
-msgid "bbox_pred"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:9
-msgid "4-D tensor with shape [batch, 4 * num_anchors, height, width]."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:13
-msgid "im_info"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:12
-msgid ""
-"2-D tensor with shape [batch, 3]. The last dimension should be in format "
-"of [im_height, im_width, im_scale]"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:16
-msgid "scales"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:-1
-msgid "list/tuple of float"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:16
-msgid "Scales of anchor windows."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:19
-msgid "Ratios of anchor windows."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:23
-msgid "feature_stride"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:-1
-#: tvm.relay.op.vision.rcnn.proposal:-1 tvm.relay.op.vision.rcnn.roi_align:-1
-#: tvm.relay.op.vision.yolo.yolo_reorg:-1
-msgid "int"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:22
-msgid ""
-"The size of the receptive field each unit in the convolution layer of the"
-" rpn, for example the product of all stride's prior to this layer."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:-1
-#: tvm.relay.op.vision.rcnn.proposal:-1 tvm.relay.op.vision.rcnn.roi_align:-1
-#: tvm.relay.op.vision.rcnn.roi_pool:-1
-msgid "float"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:29
-msgid "rpn_pre_nms_top_n"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:29
-msgid "Number of top scoring boxes to apply NMS. -1 to use all boxes."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:32
-msgid "rpn_post_nms_top_n"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:32
-msgid "Number of top scoring boxes to keep after applying NMS to RPN proposals."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:35
-msgid "rpn_min_size"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:35
-msgid "Minimum height or width in proposal."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:38
-msgid "iou_loss"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:-1
-msgid "bool"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:38
-msgid "Usage of IoU loss."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:43
-#: tvm.relay.op.vision.rcnn.roi_align:27 tvm.relay.op.vision.rcnn.roi_pool:21
-msgid "output"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:43
-msgid ""
-"2-D tensor with shape [batch * rpn_post_nms_top_n, 5]. The last dimension"
-" is in format of [batch_index, w_start, h_start, w_end, h_end]."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:1
-msgid ""
-"Regular non-maximum suppression operator for object detection, "
-"corresponding to TFLite's regular NMS. NMS is performed for each class "
-"separately."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:7
-msgid ""
-"3-D tensor with shape (batch_size, num_boxes, 4). The four values in "
-"boxes encode (ymin, xmin, ymax, xmax) coordinates of a box"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:11
-msgid "3-D tensor with shape (batch_size, num_boxes, num_classes_with_background)"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:14
-msgid "max_detections_per_class"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:17
-msgid "max_detections"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:17
-msgid "The maxinum number of output selected boxes"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:20
-msgid "num_classes"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:20
-msgid "The number of classes without background"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.nms.regular_non_max_suppression:31
-msgid ""
-"The output is a relay.Tuple of four tensors. The first is "
-"`detection_boxes` of size `(batch_size, max_detections , 4)`, the second "
-"is `detection_classes` of size `(batch_size, max_detections)`, the third "
-"is `detection_scores` of size `(batch_size, max_detections)`, and the "
-"fourth is `num_detections` of size `(batch_size,)` representing the total"
-" number of selected boxes per batch."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:6
-#: tvm.relay.op.vision.rcnn.roi_pool:6
-msgid "4-D tensor with shape [batch, channel, height, width]"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:10
-#: tvm.relay.op.vision.rcnn.roi_pool:10
-msgid "rois"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:9
-#: tvm.relay.op.vision.rcnn.roi_pool:9
-msgid ""
-"2-D tensor with shape [num_roi, 5]. The last dimension should be in "
-"format of [batch_index, w_start, h_start, w_end, h_end]"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:13
-#: tvm.relay.op.vision.rcnn.roi_pool:13
-msgid "pooled_size"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:-1
-#: tvm.relay.op.vision.rcnn.roi_pool:-1
-msgid "list/tuple of two ints"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:13
-#: tvm.relay.op.vision.rcnn.roi_pool:13
-msgid "output size"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:17
-#: tvm.relay.op.vision.rcnn.roi_pool:17
-msgid "spatial_scale"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:16
-#: tvm.relay.op.vision.rcnn.roi_pool:16
-msgid ""
-"Ratio of input feature map height (or w) to raw image height (or w). "
-"Equals the reciprocal of total stride in convolutional layers, which "
-"should be in range (0.0, 1.0]"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:20
-msgid "sample_ratio"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:20
-msgid "Optional sampling ratio of ROI align, using adaptive size by default."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:23
-msgid "mode"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:-1
-msgid "str, Optional"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:23
-msgid ""
-"The pooling method. Relay supports two methods, 'avg' and 'max'. Default "
-"is 'avg'."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:28
-#: tvm.relay.op.vision.rcnn.roi_pool:22
-msgid "4-D tensor with shape [num_roi, channel, pooled_size, pooled_size]"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:1
-msgid ""
-"Yolo reorg operation used in darknet models. This layer shuffles the "
-"input tensor values based on the stride value. Along with the shuffling, "
-"it does the shape transform. If '(n, c, h, w)' is the data shape and 's' "
-"is stride, output shape is '(n, c*s*s, h/s, w/s)'."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:6
-msgid "Example:"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:22
-msgid "stride=1 has no significance for reorg operation."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:30
-msgid "stride"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:30
-msgid "The stride value for reorganisation."
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:34
-msgid "ret"
-msgstr ""
-
-#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:35
-msgid "The computed result."
 msgstr ""
 
 #~ msgid "Vision network related operators."
@@ -1345,5 +481,350 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "**ret** -- The computed result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`regular_non_max_suppression "
+#~ "<tvm.relay.vision.regular_non_max_suppression>`\\ \\(boxes\\,"
+#~ " scores\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Regular non-maximum suppression operator "
+#~ "for object detection, corresponding to "
+#~ "TFLite's regular NMS."
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "boxes"
+#~ msgstr ""
+
+#~ msgid "relay.Expr"
+#~ msgstr ""
+
+#~ msgid "scores: relay.Expr"
+#~ msgstr ""
+
+#~ msgid "max_output_boxes_per_class"
+#~ msgstr ""
+
+#~ msgid "int or relay.Expr, optional"
+#~ msgstr ""
+
+#~ msgid "iou_threshold"
+#~ msgstr ""
+
+#~ msgid "float or relay.Expr, optionaIl"
+#~ msgstr ""
+
+#~ msgid "score_threshold"
+#~ msgstr ""
+
+#~ msgid "float or relay.Expr, optional"
+#~ msgstr ""
+
+#~ msgid "output_format"
+#~ msgstr ""
+
+#~ msgid "string, optional"
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "out"
+#~ msgstr ""
+
+#~ msgid "relay.Tuple"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `output_format` is \"onnx\", the "
+#~ "output is a relay.Tuple of two "
+#~ "tensors, the first is `indices` of "
+#~ "size `(batch_size * num_class* num_boxes "
+#~ ", 3)` and the second is a "
+#~ "scalar tensor `num_total_detection` of shape"
+#~ " `(1,)` representing the total number "
+#~ "of selected boxes. The three values "
+#~ "in `indices` encode batch, class, and"
+#~ " box indices. Rows of `indices` are"
+#~ " ordered such that selected boxes "
+#~ "from batch 0, class 0 come first,"
+#~ " in descending of scores, followed by"
+#~ " boxes from batch 0, class 1 "
+#~ "etc. Out of `batch_size * num_class* "
+#~ "num_boxes` rows of indices,  only the"
+#~ " first `num_total_detection` rows are "
+#~ "valid."
+#~ msgstr ""
+
+#~ msgid "data"
+#~ msgstr ""
+
+#~ msgid "optional, float"
+#~ msgstr ""
+
+#~ msgid "id_index"
+#~ msgstr ""
+
+#~ msgid "optional, int"
+#~ msgstr ""
+
+#~ msgid "score_index: optional, int"
+#~ msgstr ""
+
+#~ msgid "valid_count"
+#~ msgstr ""
+
+#~ msgid "1-D tensor for valid number of boxes."
+#~ msgstr ""
+
+#~ msgid "out_tensor"
+#~ msgstr ""
+
+#~ msgid "Rearranged data tensor."
+#~ msgstr ""
+
+#~ msgid "out_indices: relay.Expr"
+#~ msgstr ""
+
+#~ msgid "Indices in input data"
+#~ msgstr ""
+
+#~ msgid "sizes"
+#~ msgstr ""
+
+#~ msgid "tuple of float, optional"
+#~ msgstr ""
+
+#~ msgid "ratios"
+#~ msgstr ""
+
+#~ msgid "steps"
+#~ msgstr ""
+
+#~ msgid "Tuple of float, optional"
+#~ msgstr ""
+
+#~ msgid "offsets"
+#~ msgstr ""
+
+#~ msgid "tuple of int, optional"
+#~ msgstr ""
+
+#~ msgid "clip"
+#~ msgstr ""
+
+#~ msgid "boolean, optional"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3-D tensor with shape [1, h_in *"
+#~ " w_in * (num_sizes + num_ratios - "
+#~ "1), 4]"
+#~ msgstr ""
+
+#~ msgid "cls_prob"
+#~ msgstr ""
+
+#~ msgid "tvm.relay.Expr"
+#~ msgstr ""
+
+#~ msgid "loc_pred"
+#~ msgstr ""
+
+#~ msgid "anchor"
+#~ msgstr ""
+
+#~ msgid "threshold"
+#~ msgstr ""
+
+#~ msgid "double, optional"
+#~ msgstr ""
+
+#~ msgid "variances"
+#~ msgstr ""
+
+#~ msgid "keep_background"
+#~ msgstr ""
+
+#~ msgid "Whether to keep boxes detected as background or not."
+#~ msgstr ""
+
+#~ msgid "ret : tuple of tvm.relay.Expr"
+#~ msgstr ""
+
+#~ msgid "indices: relay.Expr"
+#~ msgstr ""
+
+#~ msgid "max_output_size"
+#~ msgstr ""
+
+#~ msgid "force_suppress"
+#~ msgstr ""
+
+#~ msgid "bool, optional"
+#~ msgstr ""
+
+#~ msgid "top_k"
+#~ msgstr ""
+
+#~ msgid "int, optional"
+#~ msgstr ""
+
+#~ msgid "coord_start"
+#~ msgstr ""
+
+#~ msgid "score_index"
+#~ msgstr ""
+
+#~ msgid "return_indices"
+#~ msgstr ""
+
+#~ msgid "invalid_to_bottom"
+#~ msgstr ""
+
+#~ msgid "relay.Expr or relay.Tuple"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "return relay.Expr if return_indices is "
+#~ "disabled, a 3-D tensor with shape "
+#~ "[batch_size, num_anchors, 6] or [batch_size,"
+#~ " num_anchors, 5]. If return_indices is "
+#~ "True, return relay.Tuple of two 2-D "
+#~ "tensors, with shape [batch_size, num_anchors]"
+#~ " and [batch_size, num_valid_anchors] "
+#~ "respectively."
+#~ msgstr ""
+
+#~ msgid "bbox_pred"
+#~ msgstr ""
+
+#~ msgid "im_info"
+#~ msgstr ""
+
+#~ msgid "scales"
+#~ msgstr ""
+
+#~ msgid "list/tuple of float"
+#~ msgstr ""
+
+#~ msgid "feature_stride"
+#~ msgstr ""
+
+#~ msgid "int"
+#~ msgstr ""
+
+#~ msgid "float"
+#~ msgstr ""
+
+#~ msgid "rpn_pre_nms_top_n"
+#~ msgstr ""
+
+#~ msgid "rpn_post_nms_top_n"
+#~ msgstr ""
+
+#~ msgid "rpn_min_size"
+#~ msgstr ""
+
+#~ msgid "iou_loss"
+#~ msgstr ""
+
+#~ msgid "bool"
+#~ msgstr ""
+
+#~ msgid "output"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "2-D tensor with shape [batch * "
+#~ "rpn_post_nms_top_n, 5]. The last dimension "
+#~ "is in format of [batch_index, w_start,"
+#~ " h_start, w_end, h_end]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Regular non-maximum suppression operator "
+#~ "for object detection, corresponding to "
+#~ "TFLite's regular NMS. NMS is performed"
+#~ " for each class separately."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3-D tensor with shape (batch_size, "
+#~ "num_boxes, 4). The four values in "
+#~ "boxes encode (ymin, xmin, ymax, xmax)"
+#~ " coordinates of a box"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3-D tensor with shape (batch_size, "
+#~ "num_boxes, num_classes_with_background)"
+#~ msgstr ""
+
+#~ msgid "max_detections_per_class"
+#~ msgstr ""
+
+#~ msgid "max_detections"
+#~ msgstr ""
+
+#~ msgid "The maxinum number of output selected boxes"
+#~ msgstr ""
+
+#~ msgid "num_classes"
+#~ msgstr ""
+
+#~ msgid "The number of classes without background"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output is a relay.Tuple of "
+#~ "four tensors. The first is "
+#~ "`detection_boxes` of size `(batch_size, "
+#~ "max_detections , 4)`, the second is "
+#~ "`detection_classes` of size `(batch_size, "
+#~ "max_detections)`, the third is "
+#~ "`detection_scores` of size `(batch_size, "
+#~ "max_detections)`, and the fourth is "
+#~ "`num_detections` of size `(batch_size,)` "
+#~ "representing the total number of "
+#~ "selected boxes per batch."
+#~ msgstr ""
+
+#~ msgid "rois"
+#~ msgstr ""
+
+#~ msgid "pooled_size"
+#~ msgstr ""
+
+#~ msgid "list/tuple of two ints"
+#~ msgstr ""
+
+#~ msgid "spatial_scale"
+#~ msgstr ""
+
+#~ msgid "sample_ratio"
+#~ msgstr ""
+
+#~ msgid "mode"
+#~ msgstr ""
+
+#~ msgid "str, Optional"
+#~ msgstr ""
+
+#~ msgid "4-D tensor with shape [num_roi, channel, pooled_size, pooled_size]"
+#~ msgstr ""
+
+#~ msgid "stride"
+#~ msgstr ""
+
+#~ msgid "ret"
+#~ msgstr ""
+
+#~ msgid "The computed result."
 #~ msgstr ""
 

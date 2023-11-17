@@ -8,986 +8,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 12:27+0800\n"
+"POT-Creation-Date: 2023-11-17 09:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../notebook/docs/reference/api/python/relay/frontend.rst:20
 msgid "tvm.relay.frontend"
 msgstr ""
 
-#: of tvm.relay.frontend:1
-msgid "Frontends for constructing Relay programs."
-msgstr ""
-
-#: of tvm.relay.frontend:3
-msgid "Contains the model importers currently defined for Relay."
-msgstr ""
-
-#: of tvm.relay.frontend:1
-msgid "**Classes:**"
-msgstr ""
-
-#: of tvm.relay.frontend:1:<autosummary>:1
-msgid ""
-":py:obj:`ChangeDatatype <tvm.relay.frontend.ChangeDatatype>`\\ \\(src\\, "
-"dst\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1
-#: tvm.relay.frontend:1:<autosummary>:1
-msgid "Mutator for changing the datatype of Relay programs."
-msgstr ""
-
-#: of tvm.relay.frontend:1
-msgid "**Functions:**"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_caffe <tvm.relay.frontend.from_caffe>`\\ \\(init\\_net\\, "
-"predict\\_net\\, ...\\)"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:1
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid "Convert from caffe model into compatible relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_caffe2 <tvm.relay.frontend.from_caffe2>`\\ \\(init\\_net\\,"
-" predict\\_net\\[\\, shape\\, ...\\]\\)"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:1
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-"Load caffe2 graph which contains init_net and predict_net into Relay "
-"Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_coreml <tvm.relay.frontend.from_coreml>`\\ \\(model\\[\\, "
-"shape\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.coreml.from_coreml:1
-msgid "Convert from coreml model into Relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_darknet <tvm.relay.frontend.from_darknet>`\\ \\(net\\[\\, "
-"shape\\, dtype\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.darknet.from_darknet:1
-msgid "Convert from Darknet's model into compatible relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_keras <tvm.relay.frontend.from_keras>`\\ \\(model\\[\\, "
-"shape\\, layout\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.keras.from_keras:1
-msgid "Convert keras model to relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_mxnet <tvm.relay.frontend.from_mxnet>`\\ \\(symbol\\[\\, "
-"shape\\, dtype\\, ...\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.mxnet.from_mxnet:1
-msgid "Convert from MXNet\"s model into compatible relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_oneflow <tvm.relay.frontend.from_oneflow>`\\ \\(graph\\, "
-"model\\_dir\\_path\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.oneflow.from_oneflow:1
-msgid "Convert a OneFlow model into an equivalent Relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_onnx <tvm.relay.frontend.from_onnx>`\\ \\(model\\[\\, "
-"shape\\, dtype\\, opset\\, ...\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.onnx.from_onnx:1
-msgid "Convert a ONNX model into an equivalent Relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_paddle <tvm.relay.frontend.from_paddle>`\\ "
-"\\(program\\_or\\_layer\\[\\, shape\\_dict\\, ...\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid "Convert a PaddlePaddle model into an equivalent Relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_pytorch <tvm.relay.frontend.from_pytorch>`\\ "
-"\\(script\\_module\\, input\\_infos\\[\\, ...\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-"Load PyTorch model in the form of a scripted PyTorch model and convert "
-"into relay."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_tensorflow <tvm.relay.frontend.from_tensorflow>`\\ "
-"\\(graph\\[\\, layout\\, shape\\, ...\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-"Load tensorflow graph which is a python tensorflow graph object into "
-"relay."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`from_tflite <tvm.relay.frontend.from_tflite>`\\ \\(model\\[\\, "
-"shape\\_dict\\, dtype\\_dict\\, ...\\]\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.tflite.from_tflite:1
-msgid "Convert from tflite model into compatible relay Function."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-msgid ""
-":py:obj:`quantize_conv_bias_mkldnn_from_var "
-"<tvm.relay.frontend.quantize_conv_bias_mkldnn_from_var>`\\ "
-"\\(bias\\_var\\, ...\\)"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:1:<autosummary>:1
-#: tvm.relay.frontend.mxnet_qnn_op_utils.quantize_conv_bias_mkldnn_from_var:1
-msgid "Quantized conv2d bias"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:3
-msgid ""
-"This pass should be useful for users of the Bring Your Own Datatypes "
-"framework. TODO(@gussmith23 @hypercubestart) Add link to documentation "
-"when it exists"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:7
-msgid "Example:"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:4
-#: tvm.relay.frontend.caffe2.from_caffe2:4
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:22
-#: tvm.relay.frontend.coreml.from_coreml:4
-#: tvm.relay.frontend.darknet.from_darknet:4
-#: tvm.relay.frontend.keras.from_keras:4 tvm.relay.frontend.mxnet.from_mxnet:4
-#: tvm.relay.frontend.oneflow.from_oneflow:14
-#: tvm.relay.frontend.onnx.from_onnx:18
-#: tvm.relay.frontend.paddlepaddle.from_paddle:6
-#: tvm.relay.frontend.pytorch.from_pytorch:5
-#: tvm.relay.frontend.tensorflow.from_tensorflow:5
-#: tvm.relay.frontend.tflite.from_tflite:4
-msgid "Parameters"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:24
-msgid "src"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:-1
-msgid "String"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:24
-msgid ""
-"The source datatype name, e.g. \"float\" or \"posites2\" (but not "
-"\"float32\" or \"custom[posites2]32\")."
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:27
-msgid "dst"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:27
-msgid "The destination datatype name, in the same format."
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:15
-#: tvm.relay.frontend.caffe2.from_caffe2:18
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:30
-#: tvm.relay.frontend.coreml.from_coreml:12
-#: tvm.relay.frontend.darknet.from_darknet:13
-#: tvm.relay.frontend.keras.from_keras:17
-#: tvm.relay.frontend.mxnet.from_mxnet:21
-#: tvm.relay.frontend.oneflow.from_oneflow:21
-#: tvm.relay.frontend.onnx.from_onnx:52
-#: tvm.relay.frontend.paddlepaddle.from_paddle:17
-#: tvm.relay.frontend.pytorch.from_pytorch:48
-#: tvm.relay.frontend.tensorflow.from_tensorflow:29
-#: tvm.relay.frontend.tflite.from_tflite:15
-msgid "Returns"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:17
-#: tvm.relay.frontend.caffe2.from_caffe2:20
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:32
-#: tvm.relay.frontend.coreml.from_coreml:14
-#: tvm.relay.frontend.darknet.from_darknet:15
-#: tvm.relay.frontend.keras.from_keras:19
-#: tvm.relay.frontend.mxnet.from_mxnet:23
-#: tvm.relay.frontend.oneflow.from_oneflow:22
-#: tvm.relay.frontend.onnx.from_onnx:54
-#: tvm.relay.frontend.paddlepaddle.from_paddle:19
-#: tvm.relay.frontend.pytorch.from_pytorch:50
-#: tvm.relay.frontend.tensorflow.from_tensorflow:31
-#: tvm.relay.frontend.tflite.from_tflite:17
-msgid "mod"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:-1
-#: tvm.relay.frontend.caffe2.from_caffe2:-1
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:-1
-#: tvm.relay.frontend.coreml.from_coreml:-1
-#: tvm.relay.frontend.darknet.from_darknet:-1
-#: tvm.relay.frontend.keras.from_keras:-1
-#: tvm.relay.frontend.mxnet.from_mxnet:-1
-#: tvm.relay.frontend.oneflow.from_oneflow:-1
-#: tvm.relay.frontend.onnx.from_onnx:-1
-#: tvm.relay.frontend.paddlepaddle.from_paddle:-1
-#: tvm.relay.frontend.pytorch.from_pytorch:-1
-#: tvm.relay.frontend.tensorflow.from_tensorflow:-1
-#: tvm.relay.frontend.tflite.from_tflite:-1
-msgid "tvm.IRModule"
-msgstr ""
-
-#: of
-#: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:32
-msgid ""
-"Module where all nodes of dtype `src` have been changed to have dtype "
-"`dst`."
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:5
-#: tvm.relay.frontend.caffe2.from_caffe2:6
-msgid "init_net"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:-1
-msgid "caffe_pb2.NetParameter"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:6
-msgid "caffemodel"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:7
-#: tvm.relay.frontend.caffe2.from_caffe2:9
-msgid "predict_net"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:8
-msgid "caffe prototxt"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:9
-#: tvm.relay.frontend.paddlepaddle.from_paddle:11
-#: tvm.relay.frontend.tflite.from_tflite:9
-msgid "shape_dict"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:-1
-#: tvm.relay.frontend.tflite.from_tflite:-1
-msgid "dict of str to int list/tuple"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:10
-#: tvm.relay.frontend.tflite.from_tflite:9
-msgid "Input shapes of the model."
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:12
-#: tvm.relay.frontend.tflite.from_tflite:12
-msgid "dtype_dict"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:-1
-#: tvm.relay.frontend.tflite.from_tflite:-1
-msgid "dict of str to str"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:12
-#: tvm.relay.frontend.tflite.from_tflite:12
-msgid "Input types of the model."
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:17
-#: tvm.relay.frontend.coreml.from_coreml:14
-#: tvm.relay.frontend.darknet.from_darknet:15
-#: tvm.relay.frontend.keras.from_keras:19
-#: tvm.relay.frontend.tflite.from_tflite:17
-msgid "The relay module for compilation."
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:19
-#: tvm.relay.frontend.caffe2.from_caffe2:22
-#: tvm.relay.frontend.coreml.from_coreml:16
-#: tvm.relay.frontend.darknet.from_darknet:17
-#: tvm.relay.frontend.keras.from_keras:21
-#: tvm.relay.frontend.mxnet.from_mxnet:25
-#: tvm.relay.frontend.oneflow.from_oneflow:24
-#: tvm.relay.frontend.onnx.from_onnx:56
-#: tvm.relay.frontend.pytorch.from_pytorch:52
-#: tvm.relay.frontend.tensorflow.from_tensorflow:33
-#: tvm.relay.frontend.tflite.from_tflite:19
-msgid "params"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:-1
-msgid "dict of str to tvm.NDArray"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe.from_caffe:20
-#: tvm.relay.frontend.darknet.from_darknet:18
-#: tvm.relay.frontend.onnx.from_onnx:57
-#: tvm.relay.frontend.tflite.from_tflite:20
-msgid "The parameter dict to be used by relay"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:-1
-#: tvm.relay.frontend.onnx.from_onnx:-1
-msgid "protobuf object"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:6
-msgid "Caffe2 NetDef containing the weights"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:9
-msgid "Caffe2 NetDef containing the graph"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:12
-#: tvm.relay.frontend.coreml.from_coreml:9
-#: tvm.relay.frontend.darknet.from_darknet:7
-#: tvm.relay.frontend.mxnet.from_mxnet:9 tvm.relay.frontend.onnx.from_onnx:23
-#: tvm.relay.frontend.tensorflow.from_tensorflow:13
-msgid "shape"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:-1
-msgid "dict of str to tuple"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:12
-#: tvm.relay.frontend.darknet.from_darknet:8
-#: tvm.relay.frontend.mxnet.from_mxnet:9 tvm.relay.frontend.onnx.from_onnx:23
-msgid "The input shape to the graph"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:15
-#: tvm.relay.frontend.darknet.from_darknet:10
-#: tvm.relay.frontend.mxnet.from_mxnet:12 tvm.relay.frontend.onnx.from_onnx:26
-msgid "dtype"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:-1
-#: tvm.relay.frontend.darknet.from_darknet:-1
-#: tvm.relay.frontend.mxnet.from_mxnet:-1 tvm.relay.frontend.onnx.from_onnx:-1
-msgid "str or dict of str to str"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:15
-#: tvm.relay.frontend.darknet.from_darknet:10
-#: tvm.relay.frontend.mxnet.from_mxnet:12 tvm.relay.frontend.onnx.from_onnx:26
-msgid "The input types to the graph"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:20
-#: tvm.relay.frontend.pytorch.from_pytorch:50
-#: tvm.relay.frontend.tensorflow.from_tensorflow:31
-msgid "The module that optimizations will be performed on."
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:-1
-#: tvm.relay.frontend.coreml.from_coreml:-1
-#: tvm.relay.frontend.darknet.from_darknet:-1
-#: tvm.relay.frontend.keras.from_keras:-1
-#: tvm.relay.frontend.mxnet.from_mxnet:-1 tvm.relay.frontend.onnx.from_onnx:-1
-#: tvm.relay.frontend.tensorflow.from_tensorflow:-1
-#: tvm.relay.frontend.tflite.from_tflite:-1
-msgid "dict of str to tvm.nd.NDArray"
-msgstr ""
-
-#: of tvm.relay.frontend.caffe2.from_caffe2:23
-#: tvm.relay.frontend.tensorflow.from_tensorflow:34
-msgid "Dict of converted parameters stored in tvm.nd.NDArray format"
-msgstr ""
-
-#: of tvm.relay.frontend.coreml.from_coreml:6
-#: tvm.relay.frontend.tflite.from_tflite:6
-msgid "model:"
-msgstr ""
-
-#: of tvm.relay.frontend.coreml.from_coreml:6
-msgid "coremltools.models.MLModel of a NeuralNetworkClassifier"
-msgstr ""
-
-#: of tvm.relay.frontend.coreml.from_coreml:-1
-msgid "dict of str to int list/tuple, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.coreml.from_coreml:9
-msgid "The input shapes"
-msgstr ""
-
-#: of tvm.relay.frontend.coreml.from_coreml:17
-#: tvm.relay.frontend.keras.from_keras:22
-msgid "The parameter dict to be used by Relay."
-msgstr ""
-
-#: of tvm.relay.frontend.darknet.from_darknet:5
-msgid "net"
-msgstr ""
-
-#: of tvm.relay.frontend.darknet.from_darknet:-1
-msgid "Darknet net parameter"
-msgstr ""
-
-#: of tvm.relay.frontend.darknet.from_darknet:6
-msgid "Darknet net structure."
-msgstr ""
-
-#: of tvm.relay.frontend.darknet.from_darknet:-1
-#: tvm.relay.frontend.mxnet.from_mxnet:-1 tvm.relay.frontend.onnx.from_onnx:-1
-msgid "dict of str to tuple, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:6
-#: tvm.relay.frontend.onnx.from_onnx:20
-msgid "model"
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:-1
-msgid "keras.engine.training.Model or tensorflow.keras.models.Model"
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:6
-msgid "The keras model to be converted."
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:9
-msgid "shape: dict of str to int list/tuple"
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:9
-msgid "Input shapes of the model, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:14
-msgid "layout: str"
-msgstr ""
-
-#: of tvm.relay.frontend.keras.from_keras:12
-msgid ""
-"One of 'NCHW' or 'NHWC', indicates how data should be arranged in the "
-"output model. Default layout is 'NCHW' as it in general performs better "
-"across TVM."
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:6
-msgid "symbol"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:-1
-msgid "mxnet.Symbol or mxnet.gluon.HybridBlock"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:6
-msgid "MXNet symbol."
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:15
-msgid "arg_params"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:-1
-msgid "dict of str to mx.NDArray"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:15
-msgid "The argument parameters in mxnet"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:18
-msgid "aux_params"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:18
-msgid "The auxiliary parameters in mxnet"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:23
-#: tvm.relay.frontend.onnx.from_onnx:54
-#: tvm.relay.frontend.paddlepaddle.from_paddle:19
-msgid "The relay module for compilation"
-msgstr ""
-
-#: of tvm.relay.frontend.mxnet.from_mxnet:26
-msgid "The parameter dict to be used by nnvm"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:3
-msgid ""
-"At present, there are two ways to run models in deep learning framework "
-"Dynamic Graph and Static Graph, which are also called Eager Mode and "
-"Graph Mode in OneFlow."
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:7
-msgid ""
-"In general, dynamic graphs are easier to use and static graphs have "
-"better performance. OneFlow offers nn.Graph, so that users can use the "
-"eager-like programming style to build static graphs and train the models."
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:11
-msgid ""
-"We utilize the intermediate representation of nn.Graph to convert the "
-"OneFlow model to Reley."
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:15
-msgid "nodes"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:-1
-msgid "dict, keys: node.name, value: node"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:16
-msgid "contain the graph"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:18
-msgid "model_dir_path: str"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:18
-msgid "The path of weight"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:23
-msgid "The returned relay module"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:-1
-msgid "dict"
-msgstr ""
-
-#: of tvm.relay.frontend.oneflow.from_oneflow:25
-msgid "A dict of name: tvm.nd.array pairs, used as pretrained weights"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:3
-msgid ""
-"ONNX graphs are represented as Python Protobuf objects. The companion "
-"parameters will be handled automatically. However, the input names from "
-"onnx graph is vague, mixing inputs and network weights/bias such as "
-"\"1\", \"2\"... For convenience, we rename the `real` input names to "
-"\"input_0\", \"input_1\"... And renaming parameters to \"param_0\", "
-"\"param_1\"..."
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:10
-msgid ""
-"By default, ONNX defines models in terms of dynamic shapes. The ONNX "
-"importer retains that dynamism upon import, and the compiler attempts to "
-"convert the model into a static shapes at compile time. If this fails, "
-"there may still be dynamic operations in the model. Not all TVM kernels "
-"currently support dynamic shapes, please file an issue on "
-"discuss.tvm.apache.org if you hit an error with dynamic kernels."
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:20
-msgid "ONNX ModelProto after ONNX v1.1.0"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:30
-msgid "opset"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:-1
-msgid "int, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:29
-msgid "Override to autodetected opset. This can be helpful for some testing."
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:37
-msgid "freeze_params: bool"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:33
-msgid ""
-"If this parameter is true, the importer will take any provided onnx input"
-" values (weights, shapes, etc) and embed them into the relay model as "
-"Constants instead of variables. This allows more aggressive optimizations"
-" at compile time and helps in making models static if certain inputs "
-"represent attributes relay would traditionally consider compile-time "
-"constants."
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:43
-#: tvm.relay.frontend.tensorflow.from_tensorflow:26
-msgid "convert_config"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:-1
-#: tvm.relay.frontend.tensorflow.from_tensorflow:-1
-msgid "Optional[Dict[str, Any]]"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:43
-#: tvm.relay.frontend.tensorflow.from_tensorflow:26
-msgid "Default config:"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:43
-#: tvm.relay.frontend.tensorflow.from_tensorflow:26
-msgid "use_nt_batch_matmul"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:-1
-#: tvm.relay.frontend.tensorflow.from_tensorflow:-1
-msgid "bool = True"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:42
-msgid ""
-"True to convert qualified onnx `matmul` to `nn.batch_matmul` strict to NT"
-" format (transpose_a=False, transpose_b=True)."
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:49
-msgid "export_node_renamed_model_path"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:-1
-#: tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "str, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.onnx.from_onnx:46
-msgid ""
-"Export the node renamed onnx model to the path. Some models do not "
-"contain names in their nodes. During the conversion, if names of nodes "
-"are empty, new names will be assigned based on their op types. The "
-"exported model can be the reference to spans."
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:1
-msgid ""
-"Convert a PaddlePaddle model into an equivalent Relay Function. "
-"PaddlePaddle Program/TranslatedLayer represent the computation graph of "
-"PaddlePaddle model, and PaddlePaddle scope stores all the weights of "
-"PaddlePaddle model."
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:8
-msgid ""
-"program_or_layer : object of `paddle.static.Program` or "
-"`paddle.jit.TranslatedLayer`"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:-1
-msgid "object of"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:8
-msgid "Loaded model by `paddle.static.load_inference_model` or `paddle.jit.load`"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:-1
-msgid "dict of str to tuple/list, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:11
-msgid "The input shape of model"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:14
-msgid "scope : object of `paddle.static.Scope`, optional"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:14
-msgid ""
-"The scope that saves all the weights of model, use "
-"`paddle.static.global_scope` by default"
-msgstr ""
-
-#: of tvm.relay.frontend.paddlepaddle.from_paddle:21
-msgid "params : dict of str to tvm.nd.NDArray"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:1
-msgid ""
-"Load PyTorch model in the form of a scripted PyTorch model and convert "
-"into relay. The companion parameters will be handled automatically."
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:8
-msgid "script_module"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "TopLevelTracedModule object"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:7
-msgid ""
-"TorchScripted PyTorch graph Note: We currently only support traces (ie: "
-"torch.jit.trace(model, input))"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:18
-msgid "input_infos"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "List of tuples"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:11
-msgid ""
-"Can be (input name, input shape) or (input name, (input shape, input "
-"types)) Graph level input shape and type list The same input names need "
-"to be used for deployment, so choose easy to remember names (such as: "
-"input0, input1) e.g. [('input0', (1, 2)), ('input1', (3, 4))] or "
-"[('input0', ((1, 2), 'int')), ('input1', ((3, 4), 'float'))]"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:21
-msgid "custom_convert_map"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "Dictionary of str to Relay op"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:21
-msgid "A custom op conversion map in the same format as _convert_map above"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:24
-msgid "default_type"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "str"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:24
-msgid "The default dtype to use when type information is not provided by PyTorch."
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:30
-msgid "use_parser_friendly_name"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "bool"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:27
-msgid ""
-"When True, replace '.' with `_' in a original parameter name. The Relay "
-"text parser treats a variable name followed by a period as a tuple "
-"element access, so a variable name like \"dense.weight\" cannot be parsed"
-" correctly. Use this option when you want to run the AnnotateSpans pass "
-"on the imported module."
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:40
-msgid "keep_quantized_weight"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:33
-msgid ""
-"Return quantized weights and bias, rather than float ones. PyTorch stores"
-" quantized weights in a custom format, so we cannot directly access 8 bit"
-" weights as Numpy arrays. We use a PyTorch function to unpack quantized "
-"weights into float32 arrays and quantization parameters. By default, we "
-"return float32 weights and rely on the QNN lowering and the Relay "
-"constant folding pass to quantize weights at compile time. In BYOC use "
-"cases, however, we cannot apply the constant folding pass on a QNN graph."
-" If keep_quantized_weight is True, we quantize weights in the frontend "
-"using a function that is equivalent to qnn.op.quantize(...) operating on "
-"Numpy arrays."
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:45
-msgid "export_renamed_c_graph_path"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:43
-msgid ""
-"Export the renamed torch._C.Graph to the path. During the conversion, "
-"variable names in torch._C.Graph will be assigned based on their op "
-"types. The exported text file can be the reference to spans."
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:-1
-msgid "dict of str to tvm.runtime.NDArray"
-msgstr ""
-
-#: of tvm.relay.frontend.pytorch.from_pytorch:53
-msgid "Dict of converted parameters stored in tvm.runtime.ndarray format"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:1
-msgid ""
-"Load tensorflow graph which is a python tensorflow graph object into "
-"relay. The companion parameters will be handled automatically."
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:7
-msgid "graph"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:-1
-msgid "GraphDef object"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:7
-msgid "Tensorflow GraphDef"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:10
-msgid "layout"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:-1
-msgid "target layout to be used (Optional)"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:10
-msgid "NCHW only supported now to enable NHWC models on GPU."
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:-1
-msgid "Dictionary of input dimensions (Optional)"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:13
-msgid "Graph level input shape dictionary."
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:16
-msgid "outputs"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:-1
-msgid "List of output tensor names (Optional)"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:16
-msgid "if not specified then the last node is assumed as graph output."
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:22
-msgid "use_dense"
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:21
-msgid ""
-"Ture to convert `tf.matmul` to `nn.dense`, else to `nn.matmul`. The "
-"`nn.dense` op requires the data tensor to be non-transposed and weight "
-"tensor to be transposed, may insert extra `transpose` to the original "
-"graph."
-msgstr ""
-
-#: of tvm.relay.frontend.tensorflow.from_tensorflow:25
-msgid ""
-"True to convert `tf.batch_matmul` to `nn.batch_matmul` strict to NT "
-"format (transpose_a=False, transpose_b=True)."
-msgstr ""
-
-#: of tvm.relay.frontend.tflite.from_tflite:6
-msgid "tflite.Model or tflite.Model.Model (depending on tflite version)"
-msgstr ""
-
 #~ msgid "Frontends for constructing Relay programs."
-#~ msgstr "用于构建 Relay 程序的前端。"
+#~ msgstr ""
 
 #~ msgid "Contains the model importers currently defined for Relay."
-#~ msgstr "包含当前为 Relay 定义的模型导入器。"
+#~ msgstr ""
 
 #~ msgid "**Classes:**"
-#~ msgstr "**类**："
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`ChangeDatatype <tvm.relay.frontend.ChangeDatatype>`\\"
@@ -995,10 +36,10 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Mutator for changing the datatype of Relay programs."
-#~ msgstr "改变 Relay 程序的数据类型的变体。"
+#~ msgstr ""
 
 #~ msgid "**Functions:**"
-#~ msgstr "**函数**："
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_caffe <tvm.relay.frontend.from_caffe>`\\ "
@@ -1006,7 +47,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert from caffe model into compatible relay Function."
-#~ msgstr "将 caffe 模型转换为兼容的 relay  函数。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_caffe2 <tvm.relay.frontend.from_caffe2>`\\ "
@@ -1018,7 +59,7 @@ msgstr ""
 #~ "Load caffe2 graph which contains "
 #~ "init_net and predict_net into Relay "
 #~ "Function."
-#~ msgstr "将包含 init_net 和 predict_net 的 caffe2 图加载到 Relay Function 中。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_coreml <tvm.relay.frontend.from_coreml>`\\ "
@@ -1026,7 +67,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert from coreml model into Relay Function."
-#~ msgstr "将 coreml 模型转换为 Relay Function。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_darknet <tvm.relay.frontend.from_darknet>`\\ "
@@ -1034,7 +75,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert from Darknet's model into compatible relay Function."
-#~ msgstr "将 Darknet 模型转换为兼容的 Relay  函数。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_keras <tvm.relay.frontend.from_keras>`\\ "
@@ -1042,7 +83,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert keras model to relay Function."
-#~ msgstr "将 keras 模型转换为 Relay Function。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_mxnet <tvm.relay.frontend.from_mxnet>`\\ "
@@ -1050,7 +91,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert from MXNet\"s model into compatible relay Function."
-#~ msgstr "将 MXNet 模型转换为兼容的 Relay  函数。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_onnx <tvm.relay.frontend.from_onnx>`\\ "
@@ -1059,7 +100,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert a ONNX model into an equivalent Relay Function."
-#~ msgstr "将 ONNX 模型转换为等效的 Relay Function。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_paddle <tvm.relay.frontend.from_paddle>`\\ "
@@ -1067,7 +108,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert a PaddlePaddle model into an equivalent Relay Function."
-#~ msgstr "将PaddlePaddle 模型转换成等效的 Relay Function。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_pytorch <tvm.relay.frontend.from_pytorch>`\\ "
@@ -1078,7 +119,7 @@ msgstr ""
 #~ "Load PyTorch model in the form of"
 #~ " a scripted PyTorch model and convert"
 #~ " into relay."
-#~ msgstr "以脚本化 PyTorch 模型的形式加载 PyTorch 模型，并转换为 relay。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_tensorflow <tvm.relay.frontend.from_tensorflow>`\\"
@@ -1089,7 +130,7 @@ msgstr ""
 #~ "Load tensorflow graph which is a "
 #~ "python tensorflow graph object into "
 #~ "relay."
-#~ msgstr "将 python tensorflow 计算图对象加载到 relay 中。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`from_tflite <tvm.relay.frontend.from_tflite>`\\ "
@@ -1098,7 +139,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Convert from tflite model into compatible relay Function."
-#~ msgstr "从 tflite 模型转换成兼容的 relay Function。"
+#~ msgstr ""
 
 #~ msgid ""
 #~ ":py:obj:`quantize_conv_bias_mkldnn_from_var "
@@ -1107,7 +148,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Quantized conv2d bias"
-#~ msgstr "量化 conv2d bias"
+#~ msgstr ""
 
 #~ msgid ""
 #~ "This pass should be useful for "
@@ -1116,11 +157,9 @@ msgstr ""
 #~ "@hypercubestart) Add link to documentation "
 #~ "when it exists"
 #~ msgstr ""
-#~ "此传递对于“带上你自己的数据类型”框架的用户应该很有用。TODO(@gussmith23 @hypercubestart)"
-#~ " 当文档存在时，添加链接到文档"
 
 #~ msgid "Example:"
-#~ msgstr "示例："
+#~ msgstr ""
 
 #~ msgid "参数"
 #~ msgstr ""
@@ -1130,11 +169,9 @@ msgstr ""
 #~ " or \"posites2\" (but not \"float32\" "
 #~ "or \"custom[posites2]32\")."
 #~ msgstr ""
-#~ "源码的数据类型名称，例如 \"float\" 或 \"posites2\" （但不是 "
-#~ "\"float32\" 或 \"custom[posites2]32\"）。"
 
 #~ msgid "The destination datatype name, in the same format."
-#~ msgstr "目标数据的类型名称，格式相同。"
+#~ msgstr ""
 
 #~ msgid "返回"
 #~ msgstr ""
@@ -1533,5 +570,316 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "tflite.Model or tflite.Model.Model (depending on tflite version)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`from_oneflow <tvm.relay.frontend.from_oneflow>`\\ "
+#~ "\\(graph\\, model\\_dir\\_path\\)"
+#~ msgstr ""
+
+#~ msgid "Convert a OneFlow model into an equivalent Relay Function."
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "src"
+#~ msgstr ""
+
+#~ msgid "String"
+#~ msgstr ""
+
+#~ msgid "dst"
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "mod"
+#~ msgstr ""
+
+#~ msgid "tvm.IRModule"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Module where all nodes of dtype "
+#~ "`src` have been changed to have "
+#~ "dtype `dst`."
+#~ msgstr ""
+
+#~ msgid "init_net"
+#~ msgstr ""
+
+#~ msgid "caffe_pb2.NetParameter"
+#~ msgstr ""
+
+#~ msgid "predict_net"
+#~ msgstr ""
+
+#~ msgid "shape_dict"
+#~ msgstr ""
+
+#~ msgid "dict of str to int list/tuple"
+#~ msgstr ""
+
+#~ msgid "dtype_dict"
+#~ msgstr ""
+
+#~ msgid "dict of str to str"
+#~ msgstr ""
+
+#~ msgid "The relay module for compilation."
+#~ msgstr ""
+
+#~ msgid "params"
+#~ msgstr ""
+
+#~ msgid "dict of str to tvm.NDArray"
+#~ msgstr ""
+
+#~ msgid "The parameter dict to be used by relay"
+#~ msgstr ""
+
+#~ msgid "protobuf object"
+#~ msgstr ""
+
+#~ msgid "shape"
+#~ msgstr ""
+
+#~ msgid "dict of str to tuple"
+#~ msgstr ""
+
+#~ msgid "dtype"
+#~ msgstr ""
+
+#~ msgid "str or dict of str to str"
+#~ msgstr ""
+
+#~ msgid "The module that optimizations will be performed on."
+#~ msgstr ""
+
+#~ msgid "dict of str to tvm.nd.NDArray"
+#~ msgstr ""
+
+#~ msgid "Dict of converted parameters stored in tvm.nd.NDArray format"
+#~ msgstr ""
+
+#~ msgid "model:"
+#~ msgstr ""
+
+#~ msgid "dict of str to int list/tuple, optional"
+#~ msgstr ""
+
+#~ msgid "The parameter dict to be used by Relay."
+#~ msgstr ""
+
+#~ msgid "net"
+#~ msgstr ""
+
+#~ msgid "Darknet net parameter"
+#~ msgstr ""
+
+#~ msgid "dict of str to tuple, optional"
+#~ msgstr ""
+
+#~ msgid "model"
+#~ msgstr ""
+
+#~ msgid "keras.engine.training.Model or tensorflow.keras.models.Model"
+#~ msgstr ""
+
+#~ msgid "shape: dict of str to int list/tuple"
+#~ msgstr ""
+
+#~ msgid "layout: str"
+#~ msgstr ""
+
+#~ msgid "symbol"
+#~ msgstr ""
+
+#~ msgid "mxnet.Symbol or mxnet.gluon.HybridBlock"
+#~ msgstr ""
+
+#~ msgid "arg_params"
+#~ msgstr ""
+
+#~ msgid "dict of str to mx.NDArray"
+#~ msgstr ""
+
+#~ msgid "aux_params"
+#~ msgstr ""
+
+#~ msgid "The relay module for compilation"
+#~ msgstr ""
+
+#~ msgid "The parameter dict to be used by nnvm"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "At present, there are two ways to"
+#~ " run models in deep learning "
+#~ "framework Dynamic Graph and Static "
+#~ "Graph, which are also called Eager "
+#~ "Mode and Graph Mode in OneFlow."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In general, dynamic graphs are easier"
+#~ " to use and static graphs have "
+#~ "better performance. OneFlow offers nn.Graph,"
+#~ " so that users can use the "
+#~ "eager-like programming style to build "
+#~ "static graphs and train the models."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We utilize the intermediate representation "
+#~ "of nn.Graph to convert the OneFlow "
+#~ "model to Reley."
+#~ msgstr ""
+
+#~ msgid "nodes"
+#~ msgstr ""
+
+#~ msgid "dict, keys: node.name, value: node"
+#~ msgstr ""
+
+#~ msgid "contain the graph"
+#~ msgstr ""
+
+#~ msgid "model_dir_path: str"
+#~ msgstr ""
+
+#~ msgid "The path of weight"
+#~ msgstr ""
+
+#~ msgid "The returned relay module"
+#~ msgstr ""
+
+#~ msgid "dict"
+#~ msgstr ""
+
+#~ msgid "A dict of name: tvm.nd.array pairs, used as pretrained weights"
+#~ msgstr ""
+
+#~ msgid "opset"
+#~ msgstr ""
+
+#~ msgid "int, optional"
+#~ msgstr ""
+
+#~ msgid "freeze_params: bool"
+#~ msgstr ""
+
+#~ msgid "convert_config"
+#~ msgstr ""
+
+#~ msgid "Optional[Dict[str, Any]]"
+#~ msgstr ""
+
+#~ msgid "export_node_renamed_model_path"
+#~ msgstr ""
+
+#~ msgid "str, optional"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Export the node renamed onnx model "
+#~ "to the path. Some models do not"
+#~ " contain names in their nodes. During"
+#~ " the conversion, if names of nodes"
+#~ " are empty, new names will be "
+#~ "assigned based on their op types. "
+#~ "The exported model can be the "
+#~ "reference to spans."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "program_or_layer : object of "
+#~ "`paddle.static.Program` or `paddle.jit.TranslatedLayer`"
+#~ msgstr ""
+
+#~ msgid "object of"
+#~ msgstr ""
+
+#~ msgid "dict of str to tuple/list, optional"
+#~ msgstr ""
+
+#~ msgid "scope : object of `paddle.static.Scope`, optional"
+#~ msgstr ""
+
+#~ msgid "params : dict of str to tvm.nd.NDArray"
+#~ msgstr ""
+
+#~ msgid "script_module"
+#~ msgstr ""
+
+#~ msgid "TopLevelTracedModule object"
+#~ msgstr ""
+
+#~ msgid "input_infos"
+#~ msgstr ""
+
+#~ msgid "List of tuples"
+#~ msgstr ""
+
+#~ msgid "custom_convert_map"
+#~ msgstr ""
+
+#~ msgid "Dictionary of str to Relay op"
+#~ msgstr ""
+
+#~ msgid "default_type"
+#~ msgstr ""
+
+#~ msgid "str"
+#~ msgstr ""
+
+#~ msgid "use_parser_friendly_name"
+#~ msgstr ""
+
+#~ msgid "bool"
+#~ msgstr ""
+
+#~ msgid "keep_quantized_weight"
+#~ msgstr ""
+
+#~ msgid "export_renamed_c_graph_path"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Export the renamed torch._C.Graph to the"
+#~ " path. During the conversion, variable "
+#~ "names in torch._C.Graph will be assigned"
+#~ " based on their op types. The "
+#~ "exported text file can be the "
+#~ "reference to spans."
+#~ msgstr ""
+
+#~ msgid "dict of str to tvm.runtime.NDArray"
+#~ msgstr ""
+
+#~ msgid "Dict of converted parameters stored in tvm.runtime.ndarray format"
+#~ msgstr ""
+
+#~ msgid "graph"
+#~ msgstr ""
+
+#~ msgid "GraphDef object"
+#~ msgstr ""
+
+#~ msgid "layout"
+#~ msgstr ""
+
+#~ msgid "target layout to be used (Optional)"
+#~ msgstr ""
+
+#~ msgid "Dictionary of input dimensions (Optional)"
+#~ msgstr ""
+
+#~ msgid "outputs"
+#~ msgstr ""
+
+#~ msgid "List of output tensor names (Optional)"
 #~ msgstr ""
 
