@@ -410,6 +410,14 @@ class TVMArgs {
    * \return the ith argument.
    */
   inline TVMArgValue operator[](int i) const;
+  /*!
+   * \brief Get the i-th argument and do proper type checking with detailed error messages.
+   * \tparam T The expected type.
+   * \param i The index
+   * \return The corresponding argument value.
+   */
+  template <typename T>
+  inline T At(int i) const;
 };
 
 /*!
@@ -1163,11 +1171,11 @@ struct PackedFuncValueConverter {
       Helper::Call(rv, self, MemFunc, args, Helper::IndexSeq{});                                  \
     });                                                                                           \
   }
-#define TVM_MODULE_VTABLE_ENTRY_PACKED(Name, Func)                                \
-  if (_name == Name) {                                                            \
-    auto f = (Func);                                                              \
-    using FType = ::tvm::runtime::detail::function_signature<decltype(f)>::FType; \
-    return TypedPackedFunc<FType>(std::move(f)).packed();                         \
+#define TVM_MODULE_VTABLE_ENTRY_PACKED(Name, MemFunc)                  \
+  if (_name == Name) {                                                 \
+    return PackedFunc([_self](TVMArgs args, TVMRetValue* rv) -> void { \
+      (static_cast<SelfPtr>(_self.get())->*(MemFunc))(args, rv);       \
+    });                                                                \
   }
 
 /*!
@@ -1914,6 +1922,19 @@ inline void TypedPackedFunc<R(Args...)>::AssignTypedLambda(FType flambda) {
 template <typename R, typename... Args>
 TVM_ALWAYS_INLINE R TypedPackedFunc<R(Args...)>::operator()(Args... args) const {
   return detail::typed_packed_call_dispatcher<R>::run(packed_, std::forward<Args>(args)...);
+}
+
+template <typename T>
+inline T TVMArgs::At(int i) const {
+  TVMArgValue arg = operator[](i);
+  try {
+    return arg.operator T();
+  } catch (const dmlc::Error& e) {
+    LOG(FATAL) << "Argument " << i << " cannot be converted to type \""
+               << tvm::runtime::detail::type2str::Type2Str<T>::v() << "\". Its type is \""
+               << tvm::runtime::ArgTypeCode2Str(arg.type_code()) << "\".";
+  }
+  throw;
 }
 
 // ObjectRef related conversion handling
