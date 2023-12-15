@@ -54,8 +54,14 @@ class Fallback(ScheduleRule):
             dom_kind = block.dom_kind()
             block = block.block_rv
 
-            if any(
-                [sch.get(loop_rv).thread_binding is not None for loop_rv in sch.get_loops(block)]
+            if (
+                any(
+                    [
+                        sch.get(loop_rv).thread_binding is not None
+                        for loop_rv in sch.get_loops(block)
+                    ]
+                )
+                or len(sch.get_loops(block)) == 0
             ):
                 continue
 
@@ -63,7 +69,7 @@ class Fallback(ScheduleRule):
                 {"S": s_loops, "R": r_loops, "O": o_loops}[iter_type].append(loop)
 
             if not s_loops:
-                s_loops.append(sch.add_unit_loop(block.block))
+                s_loops.append(sch.add_unit_loop(block))
             sch.reorder(*s_loops, *r_loops, *o_loops)
             bx, tx = sch.split(  # pylint: disable=invalid-name
                 sch.fuse(*s_loops),

@@ -22,8 +22,6 @@ import numpy as np
 
 from tvm import relax as rx
 from tvm import tir
-from tvm._ffi import register_func
-from tvm.runtime import NDArray
 
 from . import op
 from .core import Effect, Module, ModuleList, Parameter, Tensor, get_default_dtype
@@ -55,23 +53,6 @@ class IOEffect(Effect):
         result = self.effect
         self.effect = None
         return [result]
-
-    def print_(self, tensor: Tensor) -> None:
-        """Encloses the side effect of NDArray printing"""
-        self.effect = rx.BlockBuilder.current().emit(
-            rx.call_pure_packed(
-                rx.extern("effect.print"),
-                self.effect,
-                tensor._expr,  # pylint: disable=protected-access
-                sinfo_args=[rx.ObjectStructInfo()],
-            ),
-            name_hint=self.effect.name_hint,
-        )
-
-
-@register_func("effect.print")
-def _print(_, array: NDArray) -> None:
-    print(f"effect.print: shape = {array.shape}, dtype = {array.dtype}, data =\n{array}")
 
 
 class ReLU(Module):
@@ -132,7 +113,7 @@ class Linear(Module):
         self.out_dtype = out_dtype
         self.weight = Parameter((out_features, in_features), dtype)
         if bias:
-            self.bias = Parameter((out_features,), dtype)
+            self.bias = Parameter((out_features,), dtype=dtype if out_dtype is None else out_dtype)
         else:
             self.bias = None
 
@@ -159,6 +140,18 @@ class Linear(Module):
             x = x + self.bias
         return x
 
+    def to(self, dtype: Optional[str] = None) -> None:
+        """
+        Override to() such that we do not convert bias if there is `out_dtype`.
+        Otherwise, we might run into dtype mismatch when computing `x + self.bias`
+        since x is of type `out_dtype` and bias becomes `dtype`, potentially different.
+        """
+        self.weight.to(dtype=dtype)
+        if self.bias is not None and self.out_dtype is None:
+            self.bias.to(dtype=dtype)
+        if dtype is not None and isinstance(getattr(self, "dtype", None), str):
+            self.dtype = dtype  # pylint: disable=attribute-defined-outside-init
+
 
 class MultiLinear(Module):
     """A layer that applies multiple linear transformations to the input."""
@@ -180,7 +173,9 @@ class MultiLinear(Module):
         self.out_dtype = out_dtype
         self.weight = Parameter((total_out_features, in_features), dtype)
         if bias:
-            self.bias = Parameter((total_out_features,), dtype)
+            self.bias = Parameter(
+                (total_out_features,), dtype=dtype if out_dtype is None else out_dtype
+            )
         else:
             self.bias = None
 
@@ -208,6 +203,18 @@ class MultiLinear(Module):
             x = x + self.bias
         results = op.split(x, sections, axis=-1)
         return results
+
+    def to(self, dtype: Optional[str] = None) -> None:
+        """
+        Override to() such that we do not convert bias if there is `out_dtype`.
+        Otherwise, we might run into dtype mismatch when computing `x + self.bias`
+        since x is of type `out_dtype` and bias becomes `dtype`, potentially different.
+        """
+        self.weight.to(dtype=dtype)
+        if self.bias is not None and self.out_dtype is None:
+            self.bias.to(dtype=dtype)
+        if dtype is not None and isinstance(getattr(self, "dtype", None), str):
+            self.dtype = dtype  # pylint: disable=attribute-defined-outside-init
 
 
 class Conv1D(Module):
