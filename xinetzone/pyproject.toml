@@ -13,6 +13,8 @@ authors = [
     {name = "xinetzone", email = "xinzone@outlook.com"},
 ]
 dependencies = [
+  "pytest",
+  "scipy>=1.9.3",
   "toml"
 ]
 requires-python = ">=3.10"
@@ -49,7 +51,6 @@ doc = [
   "sphinx-comments",
 ]
 dev = [
-  "scipy>=1.9.3",
   "matplotlib",
   "plotly",
   "d2py",
