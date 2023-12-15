@@ -13,7 +13,7 @@ authors = [
     {name = "xinetzone", email = "xinzone@outlook.com"},
 ]
 dependencies = [
-
+  "toml"
 ]
 requires-python = ">=3.10"
 readme = "README.md"
