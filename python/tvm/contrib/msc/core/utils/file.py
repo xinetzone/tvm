@@ -216,8 +216,13 @@ class MSCDirectory(object):
             shutil.rmtree(f_path)
         return f_path
 
-    def listdir(self) -> List[str]:
+    def listdir(self, as_abs: bool = False) -> List[str]:
         """List contents in the dir.
+
+        Parameters
+        ----------
+        as_abs: bool
+            Whether to show abs path.
 
         Returns
         -------
@@ -227,6 +232,8 @@ class MSCDirectory(object):
 
         if not os.path.isdir(self._path):
             return []
+        if as_abs:
+            return [os.path.join(self._path, f) for f in os.listdir(self._path)]
         return os.listdir(self._path)
 
     def destory(self):
@@ -355,6 +362,7 @@ get_build_dir = partial(get_workspace_subdir, name="Build")
 get_cache_dir = partial(get_workspace_subdir, name="Cache")
 get_config_dir = partial(get_workspace_subdir, name="Config")
 get_dataset_dir = partial(get_workspace_subdir, name="Dataset")
+get_gym_dir = partial(get_workspace_subdir, name="Gym")
 get_output_dir = partial(get_workspace_subdir, name="Output")
 get_visual_dir = partial(get_workspace_subdir, name="Visual")
 get_weights_dir = partial(get_workspace_subdir, name="Weights")
