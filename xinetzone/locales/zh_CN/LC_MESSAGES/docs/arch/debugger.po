@@ -209,15 +209,3 @@ msgstr "输出示例"
 msgid "The below is the an example output of the debugger."
 msgstr "下面是调试器的输出示例："
 
-#~ msgid "::"
-#~ msgstr ""
-
-#~ msgid "with open(path_params, \"rb\") as fi:"
-#~ msgstr ""
-
-#~ msgid "loaded_params = bytearray(fi.read())"
-#~ msgstr ""
-
-#~ msgid "module.load_params(loaded_params)"
-#~ msgstr ""
-
