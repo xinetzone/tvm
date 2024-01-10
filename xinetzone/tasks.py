@@ -11,13 +11,11 @@ from pathlib import Path
 import sys
 from invoke import task
 from d2py.tools.write import site
-
 FILE = Path(__file__).resolve() # 当前文件路径
 HOME = FILE.parent # 当前目录
 LOG = HOME/"logs" # 日志目录
 LOG.mkdir(exist_ok=True)
 ROOT = Path("..").resolve() # 获取 TVM 根目录
-
 # 配置日志
 fh = logging.FileHandler(f"{LOG}/{FILE.name.removesuffix(FILE.suffix)}.log", "w")
 fh.setLevel(logging.DEBUG)
