@@ -34,6 +34,8 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
       - name: Checkout
         uses: actions/checkout@main
+        with:
+          submodules: true
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
