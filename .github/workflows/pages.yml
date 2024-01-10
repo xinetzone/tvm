@@ -50,6 +50,7 @@ jobs:
           invoke config
           invoke make
           inv pull
+          pip install --upgrade distribute
           pip install .[doc,dev]
           invoke doc
       - name: Setup Pages
