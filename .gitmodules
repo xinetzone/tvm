@@ -1,39 +1,33 @@
 [submodule "dmlc-core"]
 	path = 3rdparty/dmlc-core
-	url = git@github.com:dmlc/dmlc-core.git
+	url = https://github.com/dmlc/dmlc-core.git
 [submodule "dlpack"]
 	path = 3rdparty/dlpack
-	url = git@github.com:dmlc/dlpack.git
+	url = https://github.com/dmlc/dlpack.git
 [submodule "3rdparty/rang"]
 	path = 3rdparty/rang
-	url = git@github.com:agauniyal/rang.git
+	url = https://github.com/agauniyal/rang.git
 [submodule "3rdparty/vta-hw"]
 	path = 3rdparty/vta-hw
-	url = git@github.com:apache/tvm-vta.git
+	url = https://github.com/apache/tvm-vta.git
 [submodule "3rdparty/libbacktrace"]
 	path = 3rdparty/libbacktrace
-	url = git@github.com:tlc-pack/libbacktrace.git
+	url = https://github.com/tlc-pack/libbacktrace.git
 [submodule "3rdparty/cutlass"]
 	path = 3rdparty/cutlass
-	url = git@github.com:NVIDIA/cutlass.git
+	url = https://github.com/NVIDIA/cutlass.git
 [submodule "3rdparty/OpenCL-Headers"]
 	path = 3rdparty/OpenCL-Headers
-	url = git@github.com:KhronosGroup/OpenCL-Headers.git
+	url = https://github.com/KhronosGroup/OpenCL-Headers.git
 [submodule "3rdparty/cnpy"]
 	path = 3rdparty/cnpy
-	url = git@github.com:rogersce/cnpy.git
+	url = https://github.com/rogersce/cnpy.git
 [submodule "3rdparty/cutlass_fpA_intB_gemm"]
 	path = 3rdparty/cutlass_fpA_intB_gemm
-	url = git@github.com:tlc-pack/cutlass_fpA_intB_gemm
+	url = https://github.com/tlc-pack/cutlass_fpA_intB_gemm
 [submodule "3rdparty/libflash_attn"]
 	path = 3rdparty/libflash_attn
-	url = git@github.com:tlc-pack/libflash_attn
+	url = https://github.com/tlc-pack/libflash_attn
 [submodule "3rdparty/flashinfer"]
 	path = 3rdparty/flashinfer
-	url = git@github.com:flashinfer-ai/flashinfer.git
-[submodule "3rdparty/dmlc-core"]
-	path = 3rdparty/dmlc-core
-	url = git@github.com:dmlc/dmlc-core.git
-[submodule "3rdparty/dlpack"]
-	path = 3rdparty/dlpack
-	url = git@github.com:dmlc/dlpack.git
+	url = https://github.com/flashinfer-ai/flashinfer.git
