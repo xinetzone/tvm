@@ -80,6 +80,6 @@ path = "src/tvmx/__about__.py"
 "../build/libtvm_runtime.so" = "tvm/libtvm_runtime.so"
 # VTA 配置
 "../vta/python/vta" = "vta"
-"../build/libvta_fsim.so" = "libvta_fsim.so"
-"../3rdparty/vta-hw/config/" = "3rdparty/vta_hw/config"
+# "../build/libvta_fsim.so" = "libvta_fsim.so"
+# "../3rdparty/vta-hw/config/" = "3rdparty/vta_hw/config"
 
