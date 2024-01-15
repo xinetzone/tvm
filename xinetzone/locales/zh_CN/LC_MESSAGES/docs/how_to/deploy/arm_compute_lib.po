@@ -27,7 +27,7 @@ msgstr ""
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:23
 msgid "Introduction"
-msgstr ""
+msgstr "简介"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:25
 msgid ""
@@ -37,10 +37,13 @@ msgid ""
 "library. By offloading select operators from a relay graph to ACL we can "
 "achieve a performance boost on such devices."
 msgstr ""
+"Arm Compute Library (ACL) 开源项目，为 Arm CPU 和 GPU 提供加速内核。"
+"目前，集成将算子卸载到 ACL 以使用库中的手工汇编例程（hand-crafted assembler routines）。"
+"通过将选定的算子从 relay 图卸载到 ACL，可以在这些设备上实现性能提升。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:31
 msgid "Installing Arm Compute Library"
-msgstr ""
+msgstr "安装 Arm Compute Library"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:33
 msgid ""
@@ -49,6 +52,8 @@ msgid ""
 "and look for the \"Model name\" of the CPU. You can then use this to "
 "determine the architecture by looking online."
 msgstr ""
+"在安装 Arm Compute Library 之前，了解要构建的体系结构非常重要。"
+"一种确定方法是使用 `lscpu` 命令并查找 CPU 的 \"Model name\"。然后，您可以使用此信息通过在线查询来确定体系结构。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:37
 msgid ""
@@ -56,6 +61,7 @@ msgid ""
 "there are two recommended ways to build and install the required "
 "libraries:"
 msgstr ""
+"TVM 仅支持 ACL 的单个版本，目前是 v21.08。构建和安装所需库有两种推荐方法："
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:40
 msgid ""
@@ -65,6 +71,8 @@ msgid ""
 "extensions specified in `target_lib`, these will be installed to the "
 "location denoted by `install_path`."
 msgstr ""
+"使用位于 `docker/install/ubuntu_download_arm_compute_lib_binaries.sh` 的脚本。"
+"您可以使用此脚本为 `target_lib` 中指定的体系结构和扩展名下载 ACL 二进制文件，这些将安装到由 `install_path` 表示的位置。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:43
 msgid ""
@@ -73,6 +81,8 @@ msgid ""
 "package, you will need to select the binaries for the architecture and "
 "extensions you require, then make sure they are visible to CMake:"
 msgstr ""
+"或者，您可以从以下位置下载预构建的二进制文件：https://github.com/ARM-software/ComputeLibrary/releases。"
+"使用此软件包时，您需要选择所需的体系结构和扩展名的二进制文件，然后确保它们对 CMake 可见："
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:54
 msgid ""
@@ -82,10 +92,12 @@ msgid ""
 "binaries. See the section below for more information on how to use these "
 "configuration options."
 msgstr ""
+"在这两种情况下，您需要将 USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR 设置为 ACL 软件包所在的位置的路径。"
+"CMake 将在 /path-to-acl/ 和 /path-to-acl/lib 以及 /path-to-acl/build 中查找所需的二进制文件。有关如何使用这些配置选项的更多信息，请参阅下面的部分。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:59
 msgid "Building with ACL support"
-msgstr ""
+msgstr "使用ACL支持进行构建"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:61
 msgid ""
@@ -94,12 +106,14 @@ msgid ""
 "However, we still want to be able compile an ACL runtime module on an x86"
 " machine."
 msgstr ""
+"当前的实现在 CMake 中有两个单独的构建选项。这种分离的原因是 ACL 不能在 x86 机器上使用。但是，我们仍然希望能够在 x86 机器上编译 ACL 运行时模块。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:65
 msgid ""
 "USE_ARM_COMPUTE_LIB=ON/OFF - Enabling this flag will add support for "
 "compiling an ACL runtime module."
 msgstr ""
+"USE_ARM_COMPUTE_LIB=ON/OFF - 启用此标志将为编译ACL运行时模块添加支持。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:66
 msgid ""
@@ -363,7 +377,7 @@ msgstr ""
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:250
 msgid "Adding a new operator"
-msgstr ""
+msgstr "添加新算子"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:251
 msgid ""
@@ -372,10 +386,11 @@ msgid ""
 "not however dive into the complexities for an individual operator. This "
 "is left to the developer."
 msgstr ""
+"添加新算子需要对一系列位置进行更改。本节将提示需要更改的内容和位置，但不会深入探讨单个算子的复杂性。这留给开发人员自行处理。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:255
 msgid "There are a series of files we need to make changes to:"
-msgstr ""
+msgstr "需要对一系列文件进行更改："
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:257
 msgid ""
@@ -383,6 +398,7 @@ msgid ""
 "operators we wish to offload using the `op.register` decorator. This will"
 " mean the annotation pass recognizes this operator as ACL offloadable."
 msgstr ""
+"在 `python/relay/op/contrib/arm_compute_lib.py` 文件中，使用 `op.register` 装饰器定义了希望使用 ACL 卸载的算子。这将意味着注解 pass 将识别此算子为可由 ACL 卸载的。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:259
 msgid ""
@@ -391,6 +407,7 @@ msgid ""
 "operator should be represented by JSON. This will be used to create the "
 "ACL module."
 msgstr ""
+"在 `src/relay/backend/contrib/arm_compute_lib/codegen.cc` 文件中，实现 `Create[OpName]JSONNode` 方法。这是声明算子应该如何由 JSON 表示的地方。这将用于创建 ACL 模块。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:261
 msgid ""
@@ -399,123 +416,12 @@ msgid ""
 "representation can be used to create an ACL function. We simply define "
 "how to translate from the JSON representation to ACL API."
 msgstr ""
+"`src/runtime/contrib/arm_compute_lib/acl_runtime.cc` 实现 `Create[OpName]Layer` 方法。"
+"这是定义 JSON 表示法如何用于创建 ACL 函数的地方。简单地定义了如何将 JSON 表示法转换为 ACL API。"
 
 #: ../../notebook/docs/how_to/deploy/arm_compute_lib.rst:264
 msgid ""
 "`tests/python/contrib/test_arm_compute_lib` Add unit tests for the given "
 "operator."
 msgstr ""
-
-#~ msgid "Relay Arm\\ :sup:`®` Compute Library Integration"
-#~ msgstr ""
-
-#~ msgid "Introduction"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Arm Compute Library (ACL) is an "
-#~ "open source project that provides "
-#~ "accelerated kernels for Arm CPU's and"
-#~ " GPU's. Currently the integration offloads"
-#~ " operators to ACL to use hand-"
-#~ "crafted assembler routines in the "
-#~ "library. By offloading select operators "
-#~ "from a relay graph to ACL we "
-#~ "can achieve a performance boost on "
-#~ "such devices."
-#~ msgstr ""
-
-#~ msgid "Installing Arm Compute Library"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Before installing Arm Compute Library, "
-#~ "it is important to know what "
-#~ "architecture to build for. One way "
-#~ "to determine this is to use "
-#~ "`lscpu` and look for the \"Model "
-#~ "name\" of the CPU. You can then"
-#~ " use this to determine the "
-#~ "architecture by looking online."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TVM only supports a single version "
-#~ "of ACL, currently this is v21.08, "
-#~ "there are two recommended ways to "
-#~ "build and install the required "
-#~ "libraries:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Use the script located at "
-#~ "`docker/install/ubuntu_download_arm_compute_lib_binaries.sh`. "
-#~ "You can use this script for "
-#~ "downloading ACL binaries for the "
-#~ "architecture and extensions specified in "
-#~ "`target_lib`, these will be installed to"
-#~ " the location denoted by `install_path`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Alternatively, you can download the "
-#~ "pre-built binaries from: https://github.com"
-#~ "/ARM-software/ComputeLibrary/releases. When using "
-#~ "this package, you will need to "
-#~ "select the binaries for the architecture"
-#~ " and extensions you require, then "
-#~ "make sure they are visible to "
-#~ "CMake:"
-#~ msgstr ""
-
-#~ msgid "Building with ACL support"
-#~ msgstr ""
-
-#~ msgid "Usage"
-#~ msgstr ""
-
-#~ msgid "集成 Relay Arm\\ :sup:`®` 计算库"
-#~ msgstr ""
-
-#~ msgid "简介"
-#~ msgstr ""
-
-#~ msgid "Arm 计算库（Arm Compute Library，简称 ACL）是为 Arm CPU 和 GPU 提供加速内核的开源项目。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "目前，集成将算子 offload 到 ACL，以便在库中使用手工编写的汇编程序例程。通过将 "
-#~ "select 算子从 relay graph offload 到 "
-#~ "ACL，可以在这些设备上实现性能的提升。"
-#~ msgstr ""
-
-#~ msgid "安装 ACL"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "在安装 ACL 之前，重要的是要知道构建什么架构。确定这一点的一种方法是使用 ``lscpu`` "
-#~ "并查找 CPU 的 \"Model name\"。然后，您可以通过在线查找来确定架构。"
-#~ msgstr ""
-
-#~ msgid "TVM 只支持单个版本的 ACL，目前是 v21.08，有两种推荐的方式来构建和安装所需的库："
-#~ msgstr ""
-
-#~ msgid ""
-#~ "使用位于 "
-#~ "``docker/install/ubuntu_download_arm_compute_lib_binaries.sh`` "
-#~ "中的脚本。您可以使用此脚本下载 ``target_lib`` 中指定的架构和扩展的 ACL "
-#~ "二进制文件，这些文件将被安装到 ``install_path`` 所表示的位置。"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "另外，您也可以从 <https://github.com/ARM-"
-#~ "software/ComputeLibrary/releases> "
-#~ "下载预构建的二进制文件。当使用此包时，您将需要选择所需的架构和扩展的二进制文件，然后确保它们对 CMake 可见："
-#~ msgstr ""
-
-#~ msgid "使用 ACL 支持进行构建"
-#~ msgstr ""
-
-#~ msgid "用法"
-#~ msgstr ""
-
+"`tests/python/contrib/test_arm_compute_lib` 为给定的算子添加单元测试。"
