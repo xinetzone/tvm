@@ -41,7 +41,7 @@ def init(ctx,
     ctx.run('sudo apt-get update')
     package_cmd = ('sudo apt-get install -y git '
                    'gcc g++ libtinfo-dev zlib1g-dev '
-                   'build-essential cmake libedit-dev libxml2-dev')
+                   'build-essential cmake make libedit-dev libxml2-dev')
     ctx.run(package_cmd)
     ctx.run('sudo apt install clang clangd llvm liblldb-dev')
     # Git
