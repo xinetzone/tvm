@@ -94,7 +94,7 @@ html_theme = 'xyzstyle'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = [f'{ROOT}/xinetzone/doc/_static']
 html_css_files = [
-    'custom.css',
+    f'{ROOT}/xinetzone/_static/custom.css',
 ]
 
 # MyST-NB 设置
