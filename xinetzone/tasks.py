@@ -114,26 +114,34 @@ def pull(ctx):
     logging.info(f"进入 {os.getcwd()}，并更新文档内容")
 
     src_doc_dir = ROOT/"docs" # TVM 源文档
-    dst_doc_dir = HOME/"notebook/docs"
+    dst_doc_dir = HOME/"doc/docs"
     src_vta_doc_dir = HOME/"vta/tutorials" # VTA 文档
     dst_vta_doc_dir = src_doc_dir/"topic/vta/tutorials"
     src_tutorials_dir = HOME/"docs/tutorials"
     dst_tutorials_dir = src_doc_dir/"tutorials"
     
     # 拉取最新 TVM 源文档
-    unlink(dst_doc_dir)
-    unlink(dst_vta_doc_dir)
-    unlink(dst_tutorials_dir)
-    os.symlink(src_doc_dir, dst_doc_dir)
-    os.symlink(src_vta_doc_dir, dst_vta_doc_dir)
-    os.symlink(src_tutorials_dir, dst_tutorials_dir)
+    # unlink(dst_vta_doc_dir)
+    # unlink(dst_tutorials_dir)
+    if dst_doc_dir.exists():
+        ctx.run(f"rm -r {dst_doc_dir}")
+    ctx.run(f"cp -r {src_doc_dir} {dst_doc_dir}")
+    if dst_vta_doc_dir.exists():
+        ctx.run(f"rm -r {dst_vta_doc_dir}")
+    ctx.run(f"cp -r {src_vta_doc_dir} {dst_vta_doc_dir}")
+    if dst_tutorials_dir.exists():
+        ctx.run(f"rm -r {dst_tutorials_dir}")
+    ctx.run(f"cp -r {src_tutorials_dir} {dst_tutorials_dir}")
 
     src_how_to_dirs = HOME/"docs/how_to"
     for p in src_how_to_dirs.iterdir():
         if p.is_dir():
             dst_how_to_dir = src_doc_dir/f"how_to/{p.name}"
-            unlink(dst_how_to_dir)
-            os.symlink(src_how_to_dirs/p.name, dst_how_to_dir)
+            # unlink(dst_how_to_dir)
+            if dst_how_to_dir.exists():
+                ctx.run(f"rm -r {dst_how_to_dir}")
+            ctx.run(f"cp -r {src_how_to_dirs/p.name} {dst_how_to_dir}")
+            # os.symlink(src_how_to_dirs/p.name, dst_how_to_dir)
             print(f"how_to/{p.name}")
     
 
@@ -162,7 +170,7 @@ def ln_env(ctx,
 #     else:
 #         ctx.run(f"pdm run invoke doc")
         
-namespace = site(source=f"{HOME}/notebook/", target=f'{HOME}/_build/html')
+namespace = site(source=f"{HOME}/doc/", target=f'{HOME}/_build/html')
 namespace.add_task(init)
 namespace.add_task(config)
 namespace.add_task(make)
