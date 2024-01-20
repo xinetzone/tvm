@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm 0.0.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:59+0800\n"
+"POT-Creation-Date: 2024-01-20 16:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,2572 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../notebook/docs/reference/api/python/meta_schedule.rst:19
+#: ../../doc/docs/reference/api/python/meta_schedule.rst:19
 msgid "tvm.meta_schedule"
+msgstr ""
+
+#: of tvm.meta_schedule:1
+msgid "Package `tvm.meta_schedule`. The meta schedule infrastructure."
+msgstr ""
+
+#: of tvm.meta_schedule:1
+msgid "**Classes:**"
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`Builder <tvm.meta_schedule.Builder>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "The abstract builder interface."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`CostModel <tvm.meta_schedule.CostModel>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Cost model."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`Database <tvm.meta_schedule.Database>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "The abstract database interface."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ""
+":py:obj:`ExtractedTask <tvm.meta_schedule.ExtractedTask>`\\ "
+"\\(task\\_name\\, mod\\, target\\, ...\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "A tuning task extracted from the high-level IR"
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`FeatureExtractor <tvm.meta_schedule.FeatureExtractor>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Extractor for features from measure candidates for use in cost model."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`MeasureCallback <tvm.meta_schedule.MeasureCallback>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Rules to apply after measure results is available."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ""
+":py:obj:`MeasureCandidate <tvm.meta_schedule.MeasureCandidate>`\\ "
+"\\(sch\\, args\\_info\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Measure candidate class."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`Mutator <tvm.meta_schedule.Mutator>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Mutator is designed to mutate the trace to explore the design space."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`Postproc <tvm.meta_schedule.Postproc>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Rules to apply a postprocessor to a schedule."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`Profiler <tvm.meta_schedule.Profiler>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler:1 tvm.meta_schedule:1:<autosummary>:1
+msgid "Tuning time profiler."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`Runner <tvm.meta_schedule.Runner>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "The abstract runner interface"
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`ScheduleRule <tvm.meta_schedule.ScheduleRule>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Rules to modify a block in a schedule."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`SearchStrategy <tvm.meta_schedule.SearchStrategy>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "Search strategy is the class that generates the measure candidates."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`SpaceGenerator <tvm.meta_schedule.SpaceGenerator>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.space_generator.space_generator.SpaceGenerator:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "The abstract design space generator interface."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ":py:obj:`TaskScheduler <tvm.meta_schedule.TaskScheduler>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid "The abstract task scheduler interface."
+msgstr ""
+
+#: of tvm.meta_schedule:1:<autosummary>:1
+msgid ""
+":py:obj:`TuneContext <tvm.meta_schedule.TuneContext>`\\ \\(\\[mod\\, "
+"target\\, space\\_generator\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:1
+#: tvm.meta_schedule:1:<autosummary>:1
+msgid ""
+"The tune context class is designed to contain all resources for a tuning "
+"task."
+msgstr ""
+
+#: of tvm.meta_schedule:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+msgid ":py:obj:`derived_object <tvm.meta_schedule.derived_object>`\\ \\(cls\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+#: tvm.meta_schedule.utils.derived_object:1
+msgid "A decorator to register derived subclasses for TVM objects."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+msgid ""
+":py:obj:`is_meta_schedule_enabled "
+"<tvm.meta_schedule.is_meta_schedule_enabled>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+#: tvm.meta_schedule.relay_integration.is_meta_schedule_enabled:1
+msgid "Return whether the meta-schedule is enabled."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+msgid ""
+":py:obj:`tune_tasks <tvm.meta_schedule.tune_tasks>`\\ \\(\\*\\, tasks\\, "
+"task\\_weights\\, work\\_dir\\, ...\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+msgid "Tune a list of tasks."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+msgid ""
+":py:obj:`tune_tir <tvm.meta_schedule.tune_tir>`\\ \\(mod\\, target\\, "
+"work\\_dir\\, ...\\[\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1:<autosummary>:1
+#: tvm.meta_schedule.tir_integration.tune_tir:1
+msgid "Tune a TIR function or an IRModule of TIR functions."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder:1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel:1
+#: tvm.meta_schedule.database.database.Database:1
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor:1
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback:1
+#: tvm.meta_schedule.mutator.mutator.Mutator:1
+#: tvm.meta_schedule.postproc.postproc.Postproc:1
+#: tvm.meta_schedule.profiler.Profiler:1
+#: tvm.meta_schedule.runner.runner.Runner:1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule:1
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy:1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler:1
+#: tvm.meta_schedule.tune_context.TuneContext:1
+msgid "**Methods:**"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:1:<autosummary>:1
+msgid ":py:obj:`build <tvm.meta_schedule.Builder.build>`\\ \\(build\\_inputs\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:1
+#: tvm.meta_schedule.builder.builder.Builder.build:1:<autosummary>:1
+msgid "Build the given inputs."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.Builder.create>`\\ \\(\\[kind\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:1:<autosummary>:1
+#: tvm.meta_schedule.builder.builder.Builder.create:1
+msgid "Create a Builder."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:4
+#: tvm.meta_schedule.builder.builder.Builder.create:4
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:4
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.load:4
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.predict:4
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.save:4
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:4
+#: tvm.meta_schedule.database.database.Database.commit_tuning_record:4
+#: tvm.meta_schedule.database.database.Database.commit_workload:4
+#: tvm.meta_schedule.database.database.Database.create:4
+#: tvm.meta_schedule.database.database.Database.dump_pruned:4
+#: tvm.meta_schedule.database.database.Database.get_top_k:4
+#: tvm.meta_schedule.database.database.Database.query:4
+#: tvm.meta_schedule.database.database.Database.query_ir_module:4
+#: tvm.meta_schedule.database.database.Database.query_schedule:4
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:4
+#: tvm.meta_schedule.extracted_task.ExtractedTask:4
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:4
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:4
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:4
+#: tvm.meta_schedule.mutator.mutator.Mutator.apply:4
+#: tvm.meta_schedule.mutator.mutator.Mutator.create:4
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:4
+#: tvm.meta_schedule.postproc.postproc.Postproc.apply:4
+#: tvm.meta_schedule.postproc.postproc.Postproc.create:4
+#: tvm.meta_schedule.runner.runner.Runner.run:4
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:4
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:4
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:4
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:4
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:4
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:4
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:4
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:4
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:4
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:4
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:4
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.terminate_task:4
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.touch_task:4
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:4
+#: tvm.meta_schedule.tir_integration.tune_tir:4
+#: tvm.meta_schedule.tune.tune_tasks:4
+#: tvm.meta_schedule.tune_context.TuneContext:4
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:6
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:6
+#: tvm.meta_schedule.utils.derived_object:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:5
+msgid "build_inputs"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:-1
+msgid "List[BuilderInput]"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:6
+msgid "The inputs to be built."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:8
+#: tvm.meta_schedule.builder.builder.Builder.create:9
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:9
+#: tvm.meta_schedule.database.database.Database.__len__:4
+#: tvm.meta_schedule.database.database.Database.commit_workload:9
+#: tvm.meta_schedule.database.database.Database.create:11
+#: tvm.meta_schedule.database.database.Database.get_all_tuning_records:4
+#: tvm.meta_schedule.database.database.Database.get_top_k:11
+#: tvm.meta_schedule.database.database.Database.has_workload:7
+#: tvm.meta_schedule.database.database.Database.query:13
+#: tvm.meta_schedule.database.database.Database.query_ir_module:13
+#: tvm.meta_schedule.database.database.Database.query_schedule:13
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:13
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:11
+#: tvm.meta_schedule.mutator.mutator.Mutator.apply:9
+#: tvm.meta_schedule.mutator.mutator.Mutator.clone:4
+#: tvm.meta_schedule.mutator.mutator.Mutator.create:9
+#: tvm.meta_schedule.postproc.postproc.Postproc.apply:9
+#: tvm.meta_schedule.postproc.postproc.Postproc.clone:4
+#: tvm.meta_schedule.postproc.postproc.Postproc.create:9
+#: tvm.meta_schedule.relay_integration.is_meta_schedule_enabled:4
+#: tvm.meta_schedule.runner.runner.Runner.run:9
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:11
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.clone:4
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:9
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.clone:4
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.generate_measure_candidates:4
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.clone:4
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:9
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:9
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.next_task_id:4
+#: tvm.meta_schedule.tir_integration.tune_tir:43
+#: tvm.meta_schedule.tune.tune_tasks:42
+#: tvm.meta_schedule.tune_context.TuneContext.clone:4
+#: tvm.meta_schedule.tune_context.TuneContext.generate_design_space:6
+#: tvm.meta_schedule.tune_context.TuneContext.generate_measure_candidates:6
+#: tvm.meta_schedule.utils.derived_object:9
+msgid "Returns"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:9
+msgid "build_results"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:-1
+msgid "List[BuilderResult]"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.build:10
+msgid "The results of building the given inputs."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.create:6
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:6
+#: tvm.meta_schedule.database.database.Database.query:10
+#: tvm.meta_schedule.mutator.mutator.Mutator.create:6
+#: tvm.meta_schedule.postproc.postproc.Postproc.create:6
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:6
+msgid "kind"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.create:-1
+msgid "Literal[\"local\"]"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.create:6
+msgid "The kind of the builder. For now, only \"local\" is supported."
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.create:10
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:15
+#: tvm.meta_schedule.tir_integration.tune_tir:17
+#: tvm.meta_schedule.tune.tune_tasks:17
+msgid "builder"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.create:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+msgid "Builder"
+msgstr ""
+
+#: of tvm.meta_schedule.builder.builder.Builder.create:11
+msgid "The builder created."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+msgid ""
+":py:obj:`create <tvm.meta_schedule.CostModel.create>`\\ \\(kind\\, "
+"\\*args\\, \\*\\*kwargs\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.create:1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.create:1
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.create:1:<autosummary>:1
+msgid "Create a CostModel."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+msgid ":py:obj:`load <tvm.meta_schedule.CostModel.load>`\\ \\(path\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.load:1
+msgid "Load the cost model from given file location."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+msgid ""
+":py:obj:`predict <tvm.meta_schedule.CostModel.predict>`\\ \\(context\\, "
+"candidates\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.predict:1
+msgid "Predict normalized score with the cost model."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+msgid ":py:obj:`save <tvm.meta_schedule.CostModel.save>`\\ \\(path\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.save:1
+msgid "Save the cost model to given file location."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+msgid ""
+":py:obj:`update <tvm.meta_schedule.CostModel.update>`\\ \\(context\\, "
+"candidates\\, results\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.create:1:<autosummary>:1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:1
+msgid "Update the cost model given running results."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.create:-1
+msgid "Literal[\"xgb\", \"mlp\", \"random\", \"none\"]"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.create:6
+msgid ""
+"The kind of the cost model. Can be \"xgb\", \"mlp\", \"random\" or "
+"\"none\"."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.create:10
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:13
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:23
+#: tvm.meta_schedule.tir_integration.tune_tir:23
+#: tvm.meta_schedule.tune.tune_tasks:23
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:20
+msgid "cost_model"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.create:-1
+msgid "CostModel"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.create:11
+msgid "The created cost model."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.load:5
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.save:5
+msgid "path"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.load:-1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.save:-1
+#: tvm.meta_schedule.database.database.Database.query_ir_module:-1
+#: tvm.meta_schedule.database.database.Database.query_schedule:-1
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:-1
+#: tvm.meta_schedule.extracted_task.ExtractedTask:-1
+#: tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.load:6
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.save:6
+msgid "The file path."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:5
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:5
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:5
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:5
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:5
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:5
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:5
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:5
+msgid "context"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:-1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:-1
+msgid "TuneContext,"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:6
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:6
+msgid "The tuning context."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:8
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:7
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:8
+msgid "candidates"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:-1
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:-1
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:-1
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:-1
+msgid "List[MeasureCandidate]"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:8
+#: tvm.meta_schedule.cost_model.cost_model.CostModel.update:8
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:10
+msgid "The measure candidates."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:11
+msgid "Return"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:12
+#: tvm.meta_schedule.database.database.Database.has_workload:8
+#: tvm.meta_schedule.database.database.Database.query:14
+#: tvm.meta_schedule.postproc.postproc.Postproc.apply:10
+msgid "result"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:-1
+msgid "np.ndarray"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.predict:13
+msgid "The predicted normalized score."
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.update:9
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:7
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:10
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:9
+msgid "results"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.update:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:-1
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:-1
+msgid "List[RunnerResult]"
+msgstr ""
+
+#: of tvm.meta_schedule.cost_model.cost_model.CostModel.update:10
+msgid "The running results of the measure candidates."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ":py:obj:`__enter__ <tvm.meta_schedule.Database.__enter__>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1
+#: tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.profiler.Profiler.__enter__:1
+#: tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid "Entering the scope of the context manager"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`__exit__ <tvm.meta_schedule.Database.__exit__>`\\ \\(ptype\\, "
+"value\\, trace\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.__exit__:1
+#: tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.profiler.Profiler.__exit__:1
+msgid "Exiting the scope of the context manager"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ":py:obj:`__len__ <tvm.meta_schedule.Database.__len__>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.__len__:1
+msgid "Get the number of records in the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`commit_tuning_record "
+"<tvm.meta_schedule.Database.commit_tuning_record>`\\ \\(record\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.commit_tuning_record:1
+msgid "Commit a tuning record to the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`commit_workload <tvm.meta_schedule.Database.commit_workload>`\\ "
+"\\(mod\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.commit_workload:1
+msgid "Commit a workload to the database if missing."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.Database.create>`\\ \\(\\[kind\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.create:1
+msgid "Create a Database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ":py:obj:`current <tvm.meta_schedule.Database.current>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.current:1
+msgid "Get the current database under scope."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`dump_pruned <tvm.meta_schedule.Database.dump_pruned>`\\ "
+"\\(destination\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.dump_pruned:1
+msgid "Dump the pruned database to files of JSONDatabase format."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`get_all_tuning_records "
+"<tvm.meta_schedule.Database.get_all_tuning_records>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.get_all_tuning_records:1
+msgid "Get all the tuning records from the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`get_top_k <tvm.meta_schedule.Database.get_top_k>`\\ "
+"\\(workload\\, top\\_k\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.get_top_k:1
+msgid "Get the top K valid tuning records of given workload from the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`has_workload <tvm.meta_schedule.Database.has_workload>`\\ "
+"\\(mod\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+"Check if the database has the given workload. Parameters ---------- mod :"
+" IRModule     The IRModule to be searched for. Returns ------- result : "
+"bool     Whether the database has the given workload."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`query <tvm.meta_schedule.Database.query>`\\ \\(mod\\, target\\, "
+"\\*\\[\\, workload\\_name\\, kind\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.query:1
+msgid ""
+"Query the database to retrieve the best optimization outcome of the given"
+" workload."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`query_ir_module <tvm.meta_schedule.Database.query_ir_module>`\\ "
+"\\(mod\\, target\\, workload\\_name\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.query_ir_module:1
+msgid "Query the best IRModule of the given workload from the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`query_schedule <tvm.meta_schedule.Database.query_schedule>`\\ "
+"\\(mod\\, target\\, workload\\_name\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.query_schedule:1
+msgid "Query the best schedule of the given workload from the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`query_tuning_record "
+"<tvm.meta_schedule.Database.query_tuning_record>`\\ \\(mod\\, target\\, "
+"workload\\_name\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:1
+msgid "Query the best record of the given workload from the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__len__:5
+msgid "num_records"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__len__:-1
+#: tvm.meta_schedule.database.database.Database.get_top_k:-1
+#: tvm.meta_schedule.extracted_task.ExtractedTask:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.next_task_id:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.terminate_task:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.touch_task:-1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+#: tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.__len__:6
+msgid "The number of records in the database"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_tuning_record:5
+msgid "record"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_tuning_record:-1
+msgid "TuningRecord"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_tuning_record:6
+msgid "The tuning record to add."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_workload:6
+#: tvm.meta_schedule.database.database.Database.query:5
+#: tvm.meta_schedule.database.database.Database.query_ir_module:5
+#: tvm.meta_schedule.database.database.Database.query_schedule:5
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:5
+#: tvm.meta_schedule.extracted_task.ExtractedTask:7
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:6
+#: tvm.meta_schedule.tir_integration.tune_tir:5
+#: tvm.meta_schedule.tune_context.TuneContext:5
+msgid "mod"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_workload:-1
+#: tvm.meta_schedule.database.database.Database.query:-1
+#: tvm.meta_schedule.database.database.Database.query_ir_module:-1
+#: tvm.meta_schedule.database.database.Database.query_schedule:-1
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:-1
+#: tvm.meta_schedule.extracted_task.ExtractedTask:-1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:-1
+msgid "IRModule"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_workload:6
+msgid "The IRModule to be searched for or added."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_workload:10
+#: tvm.meta_schedule.database.database.Database.get_top_k:5
+msgid "workload"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_workload:-1
+#: tvm.meta_schedule.database.database.Database.get_top_k:-1
+msgid "Workload"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.commit_workload:11
+msgid "The workload corresponding to the given IRModule."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.create:5
+msgid ""
+"kind : str = \"json\" | \"memory\" | \"union\" | \"ordered_union\" | "
+"Callable[[tvm.tir.Schedule], bool]"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.create:7
+msgid ""
+"The kind of the database to be created. The following kinds are "
+"supported: \"json\", \"memory\", \"union\", \"ordered_union\", and a "
+"custom schedule function."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.create:12
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:11
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:21
+#: tvm.meta_schedule.tir_integration.tune_tir:21
+#: tvm.meta_schedule.tir_integration.tune_tir:44
+#: tvm.meta_schedule.tune.tune_tasks:21 tvm.meta_schedule.tune.tune_tasks:43
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:16
+msgid "database"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.create:-1
+#: tvm.meta_schedule.database.database.Database.dump_pruned:-1
+#: tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "Database"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.create:13
+msgid "The created database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.dump_pruned:5
+msgid "destination"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.dump_pruned:6
+msgid "The destination database to be dumped to."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_all_tuning_records:5
+msgid "tuning_records"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_all_tuning_records:-1
+#: tvm.meta_schedule.database.database.Database.get_top_k:-1
+msgid "List[TuningRecord]"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_all_tuning_records:6
+msgid "All tuning records from the database."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_top_k:6
+msgid "The workload to be searched for."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_top_k:8
+msgid "top_k"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_top_k:8
+msgid "The number of top records to get."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_top_k:12
+msgid "top_k_records"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.get_top_k:13
+msgid "The top K records."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.has_workload:1
+msgid ""
+"Check if the database has the given workload. Parameters ---------- mod :"
+" IRModule"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.has_workload:5
+#: tvm.meta_schedule.database.database.Database.query:6
+#: tvm.meta_schedule.database.database.Database.query_ir_module:6
+#: tvm.meta_schedule.database.database.Database.query_schedule:6
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:6
+msgid "The IRModule to be searched for."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.has_workload:-1
+#: tvm.meta_schedule.postproc.postproc.Postproc.apply:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.has_workload:9
+msgid "Whether the database has the given workload."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:7
+#: tvm.meta_schedule.database.database.Database.query_ir_module:7
+#: tvm.meta_schedule.database.database.Database.query_schedule:7
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:7
+#: tvm.meta_schedule.tir_integration.tune_tir:7
+#: tvm.meta_schedule.tune_context.TuneContext:7
+msgid "target"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:-1
+#: tvm.meta_schedule.database.database.Database.query_ir_module:-1
+#: tvm.meta_schedule.database.database.Database.query_schedule:-1
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:-1
+msgid "Target"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:8
+#: tvm.meta_schedule.database.database.Database.query_ir_module:8
+#: tvm.meta_schedule.database.database.Database.query_schedule:8
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:8
+msgid "The target to be searched for."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:-1
+msgid "str = \"schedule\" | \"record\" | \"ir_module\""
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:10
+msgid "The kind of the optimization outcome to be returned."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:-1
+msgid "Union[tvm.tir.Schedule, IRModule, TuningRecord]"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query:15
+msgid "The best optimization outcome of the given workload."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_ir_module:10
+#: tvm.meta_schedule.database.database.Database.query_schedule:10
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:10
+msgid "workload_name"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_ir_module:10
+#: tvm.meta_schedule.database.database.Database.query_schedule:10
+#: tvm.meta_schedule.database.database.Database.query_tuning_record:10
+msgid "The name of the workload to be searched for."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_ir_module:14
+msgid "ir_module"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_ir_module:-1
+msgid "Optional[IRModule]"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_ir_module:15
+msgid "The best IRModule of the given workload; None if not found."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_schedule:14
+msgid "schedule"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_schedule:-1
+msgid "Optional[tvm.tir.Schedule]"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_schedule:15
+msgid "The best schedule of the given workload; None if not found."
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_tuning_record:14
+msgid "tuning_record"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_tuning_record:-1
+msgid "Optional[TuningRecord]"
+msgstr ""
+
+#: of tvm.meta_schedule.database.database.Database.query_tuning_record:15
+msgid "The best record of the given workload; None if not found."
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:5
+#: tvm.meta_schedule.tune_context.TuneContext:14
+msgid "task_name"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:6
+msgid "The name of the task extracted"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:8
+msgid "The high-level IR"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:9
+msgid "target: Target"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:10
+msgid "Target information"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:11
+msgid "dispatched"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:-1
+msgid "List[IRModule]"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:12
+msgid ""
+"A list of low-level IRs that the high-level IR could potentially dispatch"
+" to"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:13
+msgid "weight"
+msgstr ""
+
+#: of tvm.meta_schedule.extracted_task.ExtractedTask:14
+msgid "The weight of the task"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.create:1:<autosummary>:1
+msgid ""
+":py:obj:`create <tvm.meta_schedule.FeatureExtractor.create>`\\ \\(kind\\,"
+" \\*args\\, \\*\\*kwargs\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.create:1:<autosummary>:1
+msgid ""
+":py:obj:`extract_from "
+"<tvm.meta_schedule.FeatureExtractor.extract_from>`\\ \\(context\\, "
+"candidates\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.create:1:<autosummary>:1
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:1
+msgid "Extract features from the given measure candidate."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:-1
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:-1
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:-1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:-1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:-1
+#: tvm.meta_schedule.tune_context.TuneContext.clone:-1
+msgid "TuneContext"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:6
+msgid "The tuning context for feature extraction."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:8
+msgid "The measure candidates to extract features from."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:12
+msgid "features"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:-1
+msgid "List[NDArray]"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.feature_extractor.feature_extractor.FeatureExtractor.extract_from:13
+msgid "The feature tvm ndarray extracted."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:1:<autosummary>:1
+msgid ""
+":py:obj:`apply <tvm.meta_schedule.MeasureCallback.apply>`\\ "
+"\\(task\\_scheduler\\, task\\_id\\, ...\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:1
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:1:<autosummary>:1
+msgid "Apply a measure callback to the given schedule."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.MeasureCallback.create>`\\ \\(kind\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:1:<autosummary>:1
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.create:1
+msgid "Create a list of measure callbacks."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:5
+msgid "task_scheduler: TaskScheduler"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:6
+#: tvm.meta_schedule.tir_integration.tune_tir:28
+#: tvm.meta_schedule.tune.tune_tasks:28
+msgid "The task scheduler."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:7
+msgid "task_id: int"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:8
+msgid "The task id."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:9
+msgid "measure_candidates: List[MeasureCandidate]"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:11
+msgid "builder_results: List[BuilderResult]"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:12
+msgid "The builder results by building the measure candidates."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:13
+msgid "runner_results: List[RunnerResult]"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.measure_callback.measure_callback.MeasureCallback.apply:14
+msgid "The runner results by running the built measure candidates."
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.apply:6
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:5
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:5
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:5
+msgid "sch"
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.apply:-1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:-1
+msgid "tvm.tir.Schedule"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:6
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:6
+msgid "The schedule to be measured."
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:8
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:7
+msgid "args_info"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:-1
+msgid "List[ArgInfo]"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate:8
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:8
+msgid "The argument information."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:1:<autosummary>:1
+msgid ""
+":py:obj:`__init__ <tvm.meta_schedule.MeasureCandidate.__init__>`\\ "
+"\\(sch\\, args\\_info\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:1
+#: tvm.meta_schedule.search_strategy.search_strategy.MeasureCandidate.__init__:1:<autosummary>:1
+msgid "Constructor."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`_initialize_with_tune_context "
+"<tvm.meta_schedule.Mutator._initialize_with_tune_context>`\\ "
+"\\(context\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+msgid "Initialize the mutator with a tune context."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`apply <tvm.meta_schedule.Mutator.apply>`\\ \\(trace\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.mutator.mutator.Mutator.apply:1
+msgid "Apply the mutator function to the given trace."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`clone <tvm.meta_schedule.Mutator.clone>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.mutator.mutator.Mutator.clone:1
+msgid "Clone the mutator."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.Mutator.create>`\\ \\(kind\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.mutator.mutator.Mutator.create:1
+msgid "Create a list of default mutators."
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator._initialize_with_tune_context:6
+msgid "The tuning context for initializing the mutator."
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.apply:6
+#: tvm.meta_schedule.mutator.mutator.Mutator.apply:10
+msgid "trace"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.apply:-1
+msgid "Trace"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.apply:6
+msgid "The given trace for mutation."
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.apply:-1
+msgid "Optional[Trace]"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.apply:11
+msgid "None if mutator failed, otherwise return the mutated trace."
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.clone:5
+msgid "mutator"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.clone:-1
+msgid "Mutator"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.clone:6
+msgid "The cloned mutator."
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.create:-1
+#: tvm.meta_schedule.postproc.postproc.Postproc.create:-1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:-1
+msgid "Literal[\"llvm\", \"cuda\", \"cuda-tensorcore\", \"hexagon\"]"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.create:6
+msgid "The kind of mutators."
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.create:10
+msgid "mutators"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.create:-1
+#: tvm.meta_schedule.postproc.postproc.Postproc.create:-1
+msgid "List[Mutator]"
+msgstr ""
+
+#: of tvm.meta_schedule.mutator.mutator.Mutator.create:11
+msgid "The list of mutators."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`_initialize_with_tune_context "
+"<tvm.meta_schedule.Postproc._initialize_with_tune_context>`\\ "
+"\\(context\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+msgid "Initialize the postprocessor with a tune context."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`apply <tvm.meta_schedule.Postproc.apply>`\\ \\(sch\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.postproc.postproc.Postproc.apply:1
+msgid "Apply a postprocessor to the given schedule."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`clone <tvm.meta_schedule.Postproc.clone>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.postproc.postproc.Postproc.clone:1
+msgid "Clone the postprocessor."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.Postproc.create>`\\ \\(kind\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.postproc.postproc.Postproc.create:1
+msgid "Create a list of default postprocessors."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.postproc.postproc.Postproc._initialize_with_tune_context:6
+msgid "The tuning context for initializing the postprocessor."
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.apply:6
+msgid "The schedule to be post processed."
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.apply:11
+msgid "Whether the postprocessor was successfully applied."
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.clone:5
+msgid "cloned_postproc"
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.clone:-1
+msgid "Postproc"
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.clone:6
+msgid "The cloned postprocessor."
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.create:6
+msgid "The kind of the postprocessors."
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.create:10
+msgid "postprocs"
+msgstr ""
+
+#: of tvm.meta_schedule.postproc.postproc.Postproc.create:11
+msgid "The list of postprocessors."
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid ":py:obj:`__enter__ <tvm.meta_schedule.Profiler.__enter__>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid ""
+":py:obj:`__exit__ <tvm.meta_schedule.Profiler.__exit__>`\\ \\(ptype\\, "
+"value\\, trace\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid ":py:obj:`current <tvm.meta_schedule.Profiler.current>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.profiler.Profiler.current:1
+msgid "Get the current profiler."
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid ":py:obj:`get <tvm.meta_schedule.Profiler.get>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.profiler.Profiler.get:1
+msgid "Get the profiling results in seconds"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid ":py:obj:`table <tvm.meta_schedule.Profiler.table>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.profiler.Profiler.table:1
+msgid "Get the profiling results in a table format"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+msgid ":py:obj:`timeit <tvm.meta_schedule.Profiler.timeit>`\\ \\(name\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.profiler.Profiler.__enter__:1:<autosummary>:1
+#: tvm.meta_schedule.profiler.Profiler.timeit:1
+msgid "Timeit a block of code"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.create:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.Runner.create>`\\ \\(\\[kind\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.create:1
+#: tvm.meta_schedule.runner.runner.Runner.create:1:<autosummary>:1
+msgid "Create a Runner."
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.create:1:<autosummary>:1
+msgid ":py:obj:`run <tvm.meta_schedule.Runner.run>`\\ \\(runner\\_inputs\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.create:1:<autosummary>:1
+#: tvm.meta_schedule.runner.runner.Runner.run:1
+msgid "Run the built artifact and get runner futures."
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.run:6
+msgid "runner_inputs"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.run:-1
+msgid "List[RunnerInput]"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.run:6
+msgid "The inputs to the runner."
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.run:10
+msgid "runner_futures: List[RunnerFuture]"
+msgstr ""
+
+#: of tvm.meta_schedule.runner.runner.Runner.run:11
+msgid "The runner futures."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`_initialize_with_tune_context "
+"<tvm.meta_schedule.ScheduleRule._initialize_with_tune_context>`\\ "
+"\\(context\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+msgid "Initialize the schedule rule with a tune context."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`apply <tvm.meta_schedule.ScheduleRule.apply>`\\ \\(sch\\, "
+"block\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:1
+msgid "Apply a schedule rule to the specific block in the given schedule."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`clone <tvm.meta_schedule.ScheduleRule.clone>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.clone:1
+msgid "Deep clone the schedule rule."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`create <tvm.meta_schedule.ScheduleRule.create>`\\ \\(kind\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:1
+msgid "Create a list of schedule rules for the given kind."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule._initialize_with_tune_context:6
+msgid "The tuning context for initializing the schedule rule."
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:6
+msgid "The schedule to be modified."
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:8
+msgid "block"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:-1
+msgid "BlockRV"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:8
+msgid "The specific block to apply the schedule rule."
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:12
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:9
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:10
+#: tvm.meta_schedule.tune_context.TuneContext.generate_design_space:7
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:12
+msgid "design_spaces"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:-1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:-1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:-1
+#: tvm.meta_schedule.tune_context.TuneContext.generate_design_space:-1
+msgid "List[tvm.tir.Schedule]"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.apply:13
+msgid "The list of schedules generated by applying the schedule rule."
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.clone:5
+msgid "cloned_rule"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.clone:-1
+msgid "ScheduleRule"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.clone:6
+msgid "The cloned schedule rule."
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:6
+msgid "The kind of the schedule rules."
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:10
+msgid "rules"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:-1
+msgid "List[ScheduleRule]"
+msgstr ""
+
+#: of tvm.meta_schedule.schedule_rule.schedule_rule.ScheduleRule.create:11
+msgid "The list of schedule rules."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`_initialize_with_tune_context "
+"<tvm.meta_schedule.SearchStrategy._initialize_with_tune_context>`\\ "
+"\\(context\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid "Initialize the search strategy with tuning context."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`clone <tvm.meta_schedule.SearchStrategy.clone>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.clone:1
+msgid "Clone the search strategy."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`create <tvm.meta_schedule.SearchStrategy.create>`\\ "
+"\\(\\[kind\\]\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.create:1
+msgid "Create a search strategy."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`generate_measure_candidates "
+"<tvm.meta_schedule.SearchStrategy.generate_measure_candidates>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.generate_measure_candidates:1
+msgid "Generate measure candidates from design spaces for measurement."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`notify_runner_results "
+"<tvm.meta_schedule.SearchStrategy.notify_runner_results>`\\ "
+"\\(measure\\_candidates\\, ...\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:1
+msgid "Update the search strategy with profiling results."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`post_tuning <tvm.meta_schedule.SearchStrategy.post_tuning>`\\ "
+"\\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.post_tuning:1
+msgid "Post-tuning for the search strategy."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`pre_tuning <tvm.meta_schedule.SearchStrategy.pre_tuning>`\\ "
+"\\(max\\_trials\\, num\\_trials\\_per\\_iter\\, ...\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:1
+msgid "Pre-tuning for the search strategy."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy._initialize_with_tune_context:6
+msgid "The tuning context for initialization."
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.clone:5
+msgid "cloned"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.clone:-1
+msgid "SearchStrategy"
+msgstr ""
+
+#: of tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.clone:6
+msgid "The cloned search strategy."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.generate_measure_candidates:5
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:5
+#: tvm.meta_schedule.tune_context.TuneContext.generate_measure_candidates:7
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:7
+msgid "measure_candidates"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.generate_measure_candidates:-1
+#: tvm.meta_schedule.tune_context.TuneContext.generate_measure_candidates:-1
+msgid "Optional[List[IRModule]]"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.generate_measure_candidates:6
+msgid "The measure candidates generated, None if finished."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:6
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:8
+msgid "The measure candidates for update."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.notify_runner_results:8
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:10
+msgid "The profiling results from the runner."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:5
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:7
+msgid "max_trials"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:6
+msgid "The maximum number of trials."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:7
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:13
+#: tvm.meta_schedule.tir_integration.tune_tir:15
+#: tvm.meta_schedule.tune.tune_tasks:15
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:9
+msgid "num_trials_per_iter"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:8
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:14
+msgid "The number of trials per iteration."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:10
+msgid "The design spaces used during tuning process."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:-1
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:-1
+msgid "Optional[Database] = None"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:12
+msgid "The database used during tuning process."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:-1
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:-1
+msgid "Optional[CostModel] = None"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.search_strategy.search_strategy.SearchStrategy.pre_tuning:14
+msgid "The cost model used during tuning process."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`_initialize_with_tune_context "
+"<tvm.meta_schedule.SpaceGenerator._initialize_with_tune_context>`\\ "
+"\\(context\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+msgid "Initialize the design space generator with tuning context."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+msgid ":py:obj:`clone <tvm.meta_schedule.SpaceGenerator.clone>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.clone:1
+msgid "Clone the design space generator."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`create <tvm.meta_schedule.SpaceGenerator.create>`\\ "
+"\\(\\[kind\\]\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.create:1
+msgid "Create a design space generator."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+msgid ""
+":py:obj:`generate_design_space "
+"<tvm.meta_schedule.SpaceGenerator.generate_design_space>`\\ \\(mod\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:1:<autosummary>:1
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:1
+#: tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+#: tvm.meta_schedule.tune_context.TuneContext.generate_design_space:1
+msgid "Generate design spaces given a module."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator._initialize_with_tune_context:6
+msgid "The tuning context for initializing the design space generator."
+msgstr ""
+
+#: of tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.clone:5
+msgid "cloned_sg"
+msgstr ""
+
+#: of tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.clone:-1
+msgid "SpaceGenerator"
+msgstr ""
+
+#: of tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.clone:6
+msgid "The cloned design space generator."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:6
+msgid "The module used for design space generation."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.space_generator.space_generator.SpaceGenerator.generate_design_space:11
+#: tvm.meta_schedule.tune_context.TuneContext.generate_design_space:8
+msgid "The generated design spaces, i.e., schedules."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`create <tvm.meta_schedule.TaskScheduler.create>`\\ "
+"\\(\\[kind\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid "Create a task scheduler."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`join_running_task "
+"<tvm.meta_schedule.TaskScheduler.join_running_task>`\\ \\(task\\_id\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:1
+msgid "Wait until the task is finished."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`next_task_id <tvm.meta_schedule.TaskScheduler.next_task_id>`\\ "
+"\\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.next_task_id:1
+msgid "Fetch the next task id."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`print_tuning_statistics "
+"<tvm.meta_schedule.TaskScheduler.print_tuning_statistics>`\\ \\(\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.print_tuning_statistics:1
+msgid "Print out a human-readable format of the tuning statistics."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`terminate_task "
+"<tvm.meta_schedule.TaskScheduler.terminate_task>`\\ \\(task\\_id\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.terminate_task:1
+msgid "Terminate the task"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`touch_task <tvm.meta_schedule.TaskScheduler.touch_task>`\\ "
+"\\(task\\_id\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.touch_task:1
+msgid "Touch the task and update its status"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+msgid ""
+":py:obj:`tune <tvm.meta_schedule.TaskScheduler.tune>`\\ \\(tasks\\, "
+"task\\_weights\\, max\\_trials\\_global\\, ...\\)"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.create:1:<autosummary>:1
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:1
+msgid "Auto-tuning."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:6
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.terminate_task:5
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.touch_task:5
+msgid "task_id"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:6
+msgid "The task id to be joined."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.join_running_task:11
+msgid "The list of results."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.next_task_id:5
+msgid "next_task_id"
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.next_task_id:6
+msgid "The next task id."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.terminate_task:6
+msgid "The task id to be terminated."
+msgstr ""
+
+#: of
+#: tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.touch_task:6
+msgid "The task id to be checked."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:5
+#: tvm.meta_schedule.tune.tune_tasks:5
+msgid "tasks"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "List[TuneContext]"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:6
+msgid "The list of tuning contexts as tasks."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:7
+#: tvm.meta_schedule.tune.tune_tasks:7
+msgid "task_weights"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "List[float]"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:8
+msgid "The list of task weights."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:9
+#: tvm.meta_schedule.tir_integration.tune_tir:11
+#: tvm.meta_schedule.tune.tune_tasks:11
+msgid "max_trials_global"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:10
+msgid "The maximum number of trials globally."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:11
+#: tvm.meta_schedule.tir_integration.tune_tir:13
+#: tvm.meta_schedule.tune.tune_tasks:13
+msgid "max_trials_per_task"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:12
+msgid "The maximum number of trials per task."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:16
+#: tvm.meta_schedule.tir_integration.tune_tir:18
+#: tvm.meta_schedule.tune.tune_tasks:18
+msgid "The builder."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:17
+#: tvm.meta_schedule.tir_integration.tune_tir:19
+#: tvm.meta_schedule.tune.tune_tasks:19
+msgid "runner"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+msgid "Runner"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:18
+#: tvm.meta_schedule.tir_integration.tune_tir:20
+#: tvm.meta_schedule.tune.tune_tasks:20
+msgid "The runner."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:19
+#: tvm.meta_schedule.tir_integration.tune_tir:25
+#: tvm.meta_schedule.tune.tune_tasks:25
+msgid "measure_callbacks"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+msgid "List[MeasureCallback]"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:20
+msgid "The list of measure callbacks."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+msgid "Optional[Database]"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:22
+#: tvm.meta_schedule.tir_integration.tune_tir:22
+#: tvm.meta_schedule.tune.tune_tasks:22
+msgid "The database."
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:-1
+msgid "Optional[CostModel]"
+msgstr ""
+
+#: of tvm.meta_schedule.task_scheduler.task_scheduler.TaskScheduler.tune:24
+#: tvm.meta_schedule.tir_integration.tune_tir:24
+#: tvm.meta_schedule.tune.tune_tasks:24
+msgid "The cost model."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "Optional[IRModule] = None"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:6
+msgid "The workload to be optimized."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "Optional[Target] = None"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:8
+msgid "The target to be optimized for."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:9
+msgid "space_generator"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "Union[None, ScheduleFnType, SpaceGenerator] = None"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:10
+msgid "The design space generator."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:12
+msgid "search_strategy"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "Union[None, SearchStrategy] = None"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:12
+msgid "The search strategy. if None, the strategy is left blank."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "Optional[str] = None"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:15
+msgid "The name of the tuning task."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:16
+msgid "logger"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "logging.Logger"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:17
+msgid "The logger for the tuning task."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:19
+msgid "rand_state"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "int = -1"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:19
+msgid ""
+"The random state. Need to be in integer in [1, 2^31-1], -1 means using "
+"random number."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:22
+msgid "num_threads"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:-1
+msgid "int = None"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext:22
+msgid "The number of threads to be used, None means using the logical cpu count."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid ":py:obj:`clone <tvm.meta_schedule.TuneContext.clone>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1
+#: tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid "Clone the TuneContext."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid ""
+":py:obj:`generate_design_space "
+"<tvm.meta_schedule.TuneContext.generate_design_space>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid ""
+":py:obj:`generate_measure_candidates "
+"<tvm.meta_schedule.TuneContext.generate_measure_candidates>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+#: tvm.meta_schedule.tune_context.TuneContext.generate_measure_candidates:1
+msgid "Generate a batch of measure candidates from design spaces for measurement."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid ""
+":py:obj:`notify_runner_results "
+"<tvm.meta_schedule.TuneContext.notify_runner_results>`\\ "
+"\\(measure\\_candidates\\, ...\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+#: tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:1
+msgid "Update the state in SearchStrategy with profiling results."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid ":py:obj:`post_tuning <tvm.meta_schedule.TuneContext.post_tuning>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+#: tvm.meta_schedule.tune_context.TuneContext.post_tuning:1
+msgid ""
+"A method to be called for SearchStrategy to do necessary cleanup after "
+"tuning."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+msgid ""
+":py:obj:`pre_tuning <tvm.meta_schedule.TuneContext.pre_tuning>`\\ "
+"\\(max\\_trials\\[\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:1:<autosummary>:1
+#: tvm.meta_schedule.tune_context.TuneContext.pre_tuning:1
+msgid ""
+"A method to be called for SearchStrategy to do necessary preparation "
+"before tuning."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:5
+msgid "cloned_context"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.clone:6
+msgid "The cloned TuneContext."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.generate_design_space:3
+msgid "Delegated to self.space_generator.generate_design_space with self.mod"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.generate_measure_candidates:3
+msgid "Delegated to self.search_strategy.generate_measure_candidates."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.generate_measure_candidates:8
+msgid "The measure candidates generated, None if search is finished."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.notify_runner_results:3
+msgid "Delegated to self.search_strategy.notify_runner_results."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.post_tuning:3
+msgid "Delegated to self.search_strategy.post_tuning."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:3
+msgid "Delegated to self.search_strategy.pre_tuning."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:8
+msgid "The maximum number of trials to be executed."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:-1
+msgid "int = 64"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:10
+msgid "The number of trials to be executed per iteration."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:-1
+msgid "Optional[List[tvm.tir.Schedule]]"
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:12
+msgid ""
+"The design spaces used during tuning process. If None, use the outcome of"
+" `self.generate_design_space()`."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:15
+msgid ""
+"The database used during tuning process. If None, and the search strategy"
+" is `EvolutionarySearch`, then use "
+"`tvm.meta_schedule.database.MemoryDatabase`."
+msgstr ""
+
+#: of tvm.meta_schedule.tune_context.TuneContext.pre_tuning:19
+msgid ""
+"The cost model used during tuning process. If None, and the search "
+"strategy is `EvolutionarySearch`, then use "
+"`tvm.meta_schedule.cost_model.RandomModel`."
+msgstr ""
+
+#: of tvm.meta_schedule.utils.derived_object:6
+#: tvm.meta_schedule.utils.derived_object:11
+msgid "cls"
+msgstr ""
+
+#: of tvm.meta_schedule.utils.derived_object:-1
+msgid "type"
+msgstr ""
+
+#: of tvm.meta_schedule.utils.derived_object:6
+msgid "The derived class to be registered."
+msgstr ""
+
+#: of tvm.meta_schedule.utils.derived_object:11
+msgid "The decorated TVM object."
+msgstr ""
+
+#: of tvm.meta_schedule.utils.derived_object:14
+msgid "Example"
+msgstr ""
+
+#: of tvm.meta_schedule.relay_integration.is_meta_schedule_enabled:5
+msgid "enabled: bool"
+msgstr ""
+
+#: of tvm.meta_schedule.relay_integration.is_meta_schedule_enabled:6
+msgid "Whether the meta schedule is enabled"
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:1
+msgid "Tune a list of tasks. Using a task scheduler."
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:6
+msgid "The list of tasks to tune."
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:8
+msgid "The weight of each task."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:9
+#: tvm.meta_schedule.tune.tune_tasks:9
+msgid "work_dir"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:10
+#: tvm.meta_schedule.tune.tune_tasks:10
+msgid "The working directory."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:12
+#: tvm.meta_schedule.tune.tune_tasks:12
+msgid "The maximum number of trials to run globally."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "Optional[int]"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:14
+#: tvm.meta_schedule.tune.tune_tasks:14
+msgid "The maximum number of trials to run per task."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:16
+#: tvm.meta_schedule.tune.tune_tasks:16
+msgid "The number of trials to run per iteration"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "Builder.BuilderType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "Runner.RunnerType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "Database.DatabaseType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "CostModel.CostModelType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "MeasureCallback.CallbackListType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:26
+#: tvm.meta_schedule.tune.tune_tasks:26
+msgid "The measure callbacks."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:27
+#: tvm.meta_schedule.tune.tune_tasks:27
+msgid "task_scheduler"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "TaskScheduler.TaskSchedulerType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:37
+#: tvm.meta_schedule.tune.tune_tasks:39
+msgid "module_equality"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+#: tvm.meta_schedule.tune.tune_tasks:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:30
+msgid ""
+"A string to specify the module equality testing and hashing method. It "
+"must be one of the followings:"
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:33
+msgid "\"structural\": Use StructuralEqual/Hash"
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:34
+msgid ""
+"\"ignore-ndarray\": Same as \"structural\", but ignore ndarray raw data "
+"during equality"
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:35
+msgid "testing and hashing."
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:39
+msgid ""
+"\"anchor-block\": Apply equality testing and hashing on the anchor block "
+"extracted from"
+msgstr ""
+
+#: of tvm.meta_schedule.tune.tune_tasks:37
+msgid ""
+"a given module. The \"ignore-ndarray\" varint is used for the extracted "
+"blocks or in case no anchor block is found. For the definition of the "
+"anchor block, see tir/analysis/analysis.py."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:45
+#: tvm.meta_schedule.tune.tune_tasks:44
+msgid "The database with all tuning records"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+msgid "Union[ir.IRModule, tir.PrimFunc]"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:6
+msgid "The TIR IRModule to tune."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+msgid "Union[str, Target]"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:8
+msgid "The target to tune for."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:29
+msgid "space"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+msgid "SpaceGenerator.SpaceGeneratorType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:30
+msgid "The space generator."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:31
+msgid "strategy"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+msgid "SearchStrategy.SearchStrategyType"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:32
+msgid "The search strategy."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:33
+msgid "num_tuning_cores"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+msgid "Union[Literal[\"physical\", \"logical\"], int]"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:34
+msgid "The number of CPU cores to use during tuning."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:35
+msgid "seed"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:36
+msgid "The seed for the random number generator."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:38
+msgid "A string to specify the module equality testing and hashing method."
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:40
+msgid "special_space"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:-1
+msgid "Optional[Mapping[str, SpaceGenerator.SpaceGeneratorType]]"
+msgstr ""
+
+#: of tvm.meta_schedule.tir_integration.tune_tir:40
+msgid "A mapping from task name to a special space generator for that task."
 msgstr ""
 
 #~ msgid "Package `tvm.meta_schedule`. The meta schedule infrastructure."

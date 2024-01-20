@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:59+0800\n"
+"POT-Creation-Date: 2024-01-20 16:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,214 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../notebook/docs/reference/api/python/driver.rst:19
+#: ../../doc/docs/reference/api/python/driver.rst:19
 msgid "tvm.driver"
+msgstr ""
+
+#: of tvm.driver:1
+msgid "Namespace for driver APIs"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:1
+msgid "Lowering step before build into target."
+msgstr ""
+
+#: of tvm.driver.build_module.build:5 tvm.driver.build_module.lower:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:6
+msgid "inp"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:-1
+msgid "Union[tvm.te.schedule.Schedule, tvm.tir.PrimFunc, IRModule]"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:6
+msgid "The TE schedule or TensorIR PrimFunc/IRModule to be built"
+msgstr ""
+
+#: of tvm.driver.build_module.build:10 tvm.driver.build_module.lower:10
+msgid "args"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1 tvm.driver.build_module.lower:-1
+msgid "Optional[List[Union[tvm.tir.Buffer, tensor.Tensor, Var]]]"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:9
+msgid "The argument lists to the function for TE schedule."
+msgstr ""
+
+#: of tvm.driver.build_module.lower:11
+msgid "It should be None if we want to lower TensorIR."
+msgstr ""
+
+#: of tvm.driver.build_module.build:28 tvm.driver.build_module.lower:13
+msgid "name"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:13
+msgid "The name of the result function."
+msgstr ""
+
+#: of tvm.driver.build_module.build:32 tvm.driver.build_module.lower:18
+msgid "binds"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1 tvm.driver.build_module.lower:-1
+msgid "Optional[Mapping[tensor.Tensor, tvm.tir.Buffer]]"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:16
+msgid ""
+"Dictionary that maps the Tensor to Buffer which specified the data layout"
+" requirement of the function. By default, a new compact buffer is created"
+" for each tensor in the argument."
+msgstr ""
+
+#: of tvm.driver.build_module.lower:22
+msgid "simple_mode"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:21
+msgid ""
+"Whether only output simple and compact statement, this will skip "
+"LoopPartition, api wrapper generation and Unrolling."
+msgstr ""
+
+#: of tvm.driver.build_module.build:35 tvm.driver.build_module.lower:25
+msgid "Returns"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:26
+msgid "m"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:-1
+msgid "IRModule"
+msgstr ""
+
+#: of tvm.driver.build_module.lower:27
+msgid "The result IRModule"
+msgstr ""
+
+#: of tvm.driver.build_module.build:1
+msgid ""
+"Build a function with arguments as signature. Code will be generated for "
+"devices coupled with target information."
+msgstr ""
+
+#: of tvm.driver.build_module.build:7
+msgid "inputs"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1
+msgid ""
+"Union[tvm.te.schedule.Schedule, tvm.tir.PrimFunc, IRModule, Mapping[str, "
+"IRModule]]"
+msgstr ""
+
+#: of tvm.driver.build_module.build:7
+msgid "The input to be built"
+msgstr ""
+
+#: of tvm.driver.build_module.build:10
+msgid "The argument lists to the function."
+msgstr ""
+
+#: of tvm.driver.build_module.build:13
+msgid "target"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1
+msgid "Optional[Union[str, Target]]"
+msgstr ""
+
+#: of tvm.driver.build_module.build:13
+msgid "The target and option of the compilation."
+msgstr ""
+
+#: of tvm.driver.build_module.build:22
+msgid "target_host"
+msgstr ""
+
+#: of tvm.driver.build_module.build:16
+msgid ""
+"Host compilation target, if target is device. When TVM compiles device "
+"specific program such as CUDA, we also need host(CPU) side code to "
+"interact with the driver setup the dimensions and parameters correctly. "
+"target_host is used to specify the host side codegen target. By default, "
+"llvm is used if it is enabled, otherwise a stackvm interpreter is used."
+msgstr ""
+
+#: of tvm.driver.build_module.build:25
+msgid "runtime"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1
+msgid "Optional[Runtime]"
+msgstr ""
+
+#: of tvm.driver.build_module.build:25
+msgid "Runtime to generate artifacts for"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: of tvm.driver.build_module.build:28
+msgid "The name of result function."
+msgstr ""
+
+#: of tvm.driver.build_module.build:31
+msgid ""
+"Dictionary that maps the binding of symbolic buffer to Tensor. By "
+"default, a new buffer is created for each tensor in the argument."
+msgstr ""
+
+#: of tvm.driver.build_module.build:37
+msgid "ret"
+msgstr ""
+
+#: of tvm.driver.build_module.build:-1
+msgid "tvm.module"
+msgstr ""
+
+#: of tvm.driver.build_module.build:37
+msgid "A module that combines both host and device code."
+msgstr ""
+
+#: of tvm.driver.build_module.build:40
+msgid "Examples"
+msgstr ""
+
+#: of tvm.driver.build_module.build:41
+msgid ""
+"There are two typical example uses of this function depending on the type"
+" of the argument `inputs`: 1. it is an IRModule."
+msgstr ""
+
+#: of tvm.driver.build_module.build:55
+msgid "it is a dict of compilation target to IRModule."
+msgstr ""
+
+#: of tvm.driver.build_module.build:71
+msgid "Note"
+msgstr ""
+
+#: of tvm.driver.build_module.build:72
+msgid "See the note on :any:`tvm.target` on target string format."
 msgstr ""
 
 #~ msgid "Union[tvm.te.schedule.Schedule,"

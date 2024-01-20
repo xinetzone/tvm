@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:59+0800\n"
+"POT-Creation-Date: 2024-01-20 16:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,1092 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../notebook/docs/reference/api/python/relay/analysis.rst:19
+#: ../../doc/docs/reference/api/python/relay/analysis.rst:19
 msgid "tvm.relay.analysis"
+msgstr ""
+
+#: of tvm.relay.analysis:1
+msgid "The Relay IR namespace containing the analysis passes."
+msgstr ""
+
+#: of tvm.relay.analysis:1
+msgid "**Classes:**"
+msgstr ""
+
+#: of tvm.relay.analysis:1:<autosummary>:1
+msgid ""
+":py:obj:`AnnotatedRegionSet <tvm.relay.analysis.AnnotatedRegionSet>`\\ "
+"\\(expr\\, region\\_begin\\_op\\, ...\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1
+#: tvm.relay.analysis:1:<autosummary>:1
+msgid "Class to represent a relay expression split into regions."
+msgstr ""
+
+#: of tvm.relay.analysis:1:<autosummary>:1
+msgid ":py:obj:`CallGraph <tvm.relay.analysis.CallGraph>`\\ \\(module\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1
+#: tvm.relay.analysis:1:<autosummary>:1
+msgid "Class to represent a call graph."
+msgstr ""
+
+#: of tvm.relay.analysis:1:<autosummary>:1
+msgid ""
+":py:obj:`Feature <tvm.relay.analysis.Feature>`\\ \\(value\\[\\, names\\, "
+"module\\, qualname\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.feature.Feature:1 tvm.relay.analysis:1:<autosummary>:1
+msgid "The features a program might contain."
+msgstr ""
+
+#: of tvm.relay.analysis:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`all_dtypes <tvm.relay.analysis.all_dtypes>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_dtypes:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Collect set of all data types used in `expr`."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`all_type_vars <tvm.relay.analysis.all_type_vars>`\\ "
+"\\(expr\\[\\, mod\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get all type variables from expression/type e"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`all_vars <tvm.relay.analysis.all_vars>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_vars:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get all vars from expression expr in post-DFS order."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`bound_type_vars <tvm.relay.analysis.bound_type_vars>`\\ "
+"\\(expr\\[\\, mod\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.bound_type_vars:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get bound type variables from expression/type e"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`bound_vars <tvm.relay.analysis.bound_vars>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.bound_vars:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get bound vars from expression expr in post-DFS order."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`check_basic_block_normal_form "
+"<tvm.relay.analysis.check_basic_block_normal_form>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_basic_block_normal_form:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Check whether an expression is in the basic block form"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`check_constant <tvm.relay.analysis.check_constant>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_constant:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Check whether an expression is constant"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`check_kind <tvm.relay.analysis.check_kind>`\\ \\(t\\[\\, "
+"mod\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Check that the type is well kinded and return the kind."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`count_layers <tvm.relay.analysis.count_layers>`\\ \\(expr\\, "
+"valid\\_ops\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Determine the number of layers of specified ops in a graph."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`cpu <tvm.relay.analysis.cpu>`\\ \\(\\[dev\\_id\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+#: tvm.runtime.ndarray.cpu:1
+msgid "Construct a CPU device"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`detect_feature <tvm.relay.analysis.detect_feature>`\\ \\(a\\[\\,"
+" b\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Detect the feature used in a relay program."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`extract_fused_functions "
+"<tvm.relay.analysis.extract_fused_functions>`\\ \\(mod\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_fused_functions:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Pass to extract IRModule of only fused primitive functions."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`extract_intermdeiate_expr "
+"<tvm.relay.analysis.extract_intermdeiate_expr>`\\ \\(mod\\, expr\\_id\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_intermdeiate_expr:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Extract Relay Expr by its expression ID"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`free_type_vars <tvm.relay.analysis.free_type_vars>`\\ "
+"\\(expr\\[\\, mod\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.free_type_vars:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get free type variables from expression/type e"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`free_vars <tvm.relay.analysis.free_vars>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.free_vars:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get free Vars from expression expr in Post DFS order."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`get_calibration_data "
+"<tvm.relay.analysis.get_calibration_data>`\\ \\(mod\\, data\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Get the calibration data of a given relay graph"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`get_total_mac_number "
+"<tvm.relay.analysis.get_total_mac_number>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_total_mac_number:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Count the number of MACs (multiply-accumulate) of a model"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`list_fake_quantized_op_freqs "
+"<tvm.relay.analysis.list_fake_quantized_op_freqs>`\\ \\(mod\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+"Pass to extract fake quantized op names and the frequency that they "
+"appear in fake quantized regions of an IRModule."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`list_op_freqs <tvm.relay.analysis.list_op_freqs>`\\ \\(mod\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+"Pass to extract unique operator names and how frequently they appear in "
+"an IRModule."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`post_order_visit <tvm.relay.analysis.post_order_visit>`\\ "
+"\\(expr\\, fvisit\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Recursively visit the ir in post DFS order node, apply fvisit."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`search_fc_transpose <tvm.relay.analysis.search_fc_transpose>`\\ "
+"\\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.search_fc_transpose:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Search fc weight name in the patten: y = nn.dense(x, transpose(w, [1, 0]))"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ""
+":py:obj:`unmatched_cases <tvm.relay.analysis.unmatched_cases>`\\ "
+"\\(match\\[\\, mod\\]\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Finds cases that the match expression does not catch, if any."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid ":py:obj:`well_formed <tvm.relay.analysis.well_formed>`\\ \\(expr\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.well_formed:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
+msgid "Check that each Var is only bound once (well formed)."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1
+#: tvm.relay.analysis.call_graph.CallGraph:1
+msgid "**Methods:**"
+msgstr ""
+
+#: of
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:1:<autosummary>:1
+msgid ""
+":py:obj:`__init__ <tvm.relay.analysis.AnnotatedRegionSet.__init__>`\\ "
+"\\(expr\\, region\\_begin\\_op\\, region\\_end\\_op\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:1:<autosummary>:1
+msgid "Construct regions from an expression."
+msgstr ""
+
+#: of
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:1:<autosummary>:1
+msgid ""
+":py:obj:`get_region <tvm.relay.analysis.AnnotatedRegionSet.get_region>`\\"
+" \\(expr\\)"
+msgstr ""
+
+#: of
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:1:<autosummary>:1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:1
+msgid "Get the region an expression belongs to."
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:4
+#: tvm.relay.analysis.analysis.all_dtypes:4
+#: tvm.relay.analysis.analysis.all_type_vars:4
+#: tvm.relay.analysis.analysis.all_vars:4
+#: tvm.relay.analysis.analysis.bound_type_vars:4
+#: tvm.relay.analysis.analysis.bound_vars:4
+#: tvm.relay.analysis.analysis.check_basic_block_normal_form:4
+#: tvm.relay.analysis.analysis.check_constant:4
+#: tvm.relay.analysis.analysis.check_kind:6
+#: tvm.relay.analysis.analysis.detect_feature:4
+#: tvm.relay.analysis.analysis.extract_fused_functions:7
+#: tvm.relay.analysis.analysis.extract_intermdeiate_expr:8
+#: tvm.relay.analysis.analysis.free_type_vars:4
+#: tvm.relay.analysis.analysis.free_vars:4
+#: tvm.relay.analysis.analysis.get_calibration_data:15
+#: tvm.relay.analysis.analysis.get_total_mac_number:4
+#: tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:5
+#: tvm.relay.analysis.analysis.list_op_freqs:6
+#: tvm.relay.analysis.analysis.post_order_visit:6
+#: tvm.relay.analysis.analysis.search_fc_transpose:6
+#: tvm.relay.analysis.analysis.unmatched_cases:4
+#: tvm.relay.analysis.analysis.well_formed:4
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:4
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:4
+#: tvm.relay.analysis.call_graph.CallGraph.__init__:4
+#: tvm.relay.analysis.call_graph.CallGraph._get_global_var:4
+#: tvm.relay.analysis.call_graph.CallGraph.global_call_count:4
+#: tvm.relay.analysis.call_graph.CallGraph.is_recursive:5
+#: tvm.relay.analysis.call_graph.CallGraph.print_var:4
+#: tvm.relay.analysis.call_graph.CallGraph.ref_count:4
+#: tvm.relay.analysis.count_layers.count_layers:7 tvm.runtime.ndarray.cpu:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_dtypes:6
+#: tvm.relay.analysis.analysis.all_type_vars:6
+#: tvm.relay.analysis.analysis.all_vars:6
+#: tvm.relay.analysis.analysis.bound_type_vars:6
+#: tvm.relay.analysis.analysis.bound_vars:6
+#: tvm.relay.analysis.analysis.check_basic_block_normal_form:6
+#: tvm.relay.analysis.analysis.check_constant:6
+#: tvm.relay.analysis.analysis.free_type_vars:6
+#: tvm.relay.analysis.analysis.free_vars:6
+#: tvm.relay.analysis.analysis.get_total_mac_number:6
+#: tvm.relay.analysis.analysis.post_order_visit:8
+#: tvm.relay.analysis.analysis.well_formed:6
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:5
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:6
+#: tvm.relay.analysis.count_layers.count_layers:9
+msgid "expr"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_dtypes:-1
+#: tvm.relay.analysis.analysis.all_vars:-1
+#: tvm.relay.analysis.analysis.bound_vars:-1
+#: tvm.relay.analysis.analysis.check_basic_block_normal_form:-1
+#: tvm.relay.analysis.analysis.check_constant:-1
+#: tvm.relay.analysis.analysis.free_vars:-1
+#: tvm.relay.analysis.analysis.get_total_mac_number:-1
+#: tvm.relay.analysis.analysis.post_order_visit:-1
+#: tvm.relay.analysis.analysis.well_formed:-1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:-1
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:-1
+msgid "tvm.relay.Expr"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:6
+msgid "The expression from which to construct the regions."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:7
+msgid "region_begin_op"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:-1
+msgid "tvm.ir.Op"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:8
+msgid "The region begin annotation."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:9
+msgid "region_end_op"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.__init__:10
+msgid "The region end annotation."
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:6
+msgid "The expression."
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:8
+#: tvm.relay.analysis.analysis.all_dtypes:9
+#: tvm.relay.analysis.analysis.all_type_vars:12
+#: tvm.relay.analysis.analysis.all_vars:9
+#: tvm.relay.analysis.analysis.bound_type_vars:12
+#: tvm.relay.analysis.analysis.bound_vars:9
+#: tvm.relay.analysis.analysis.check_basic_block_normal_form:9
+#: tvm.relay.analysis.analysis.check_constant:9
+#: tvm.relay.analysis.analysis.check_kind:14
+#: tvm.relay.analysis.analysis.detect_feature:13
+#: tvm.relay.analysis.analysis.extract_fused_functions:11
+#: tvm.relay.analysis.analysis.extract_intermdeiate_expr:14
+#: tvm.relay.analysis.analysis.free_type_vars:12
+#: tvm.relay.analysis.analysis.free_vars:9
+#: tvm.relay.analysis.analysis.get_calibration_data:23
+#: tvm.relay.analysis.analysis.get_total_mac_number:9
+#: tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:9
+#: tvm.relay.analysis.analysis.list_op_freqs:10
+#: tvm.relay.analysis.analysis.search_fc_transpose:10
+#: tvm.relay.analysis.analysis.unmatched_cases:12
+#: tvm.relay.analysis.analysis.well_formed:9
+#: tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:9
+#: tvm.relay.analysis.call_graph.CallGraph.__init__:9
+#: tvm.relay.analysis.call_graph.CallGraph._get_global_var:8
+#: tvm.relay.analysis.call_graph.CallGraph.global_call_count:8
+#: tvm.relay.analysis.call_graph.CallGraph.is_recursive:9
+#: tvm.relay.analysis.call_graph.CallGraph.print_var:9
+#: tvm.relay.analysis.call_graph.CallGraph.ref_count:8
+#: tvm.relay.analysis.count_layers.count_layers:15 tvm.runtime.ndarray.cpu:9
+msgid "Returns"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:11
+msgid "region"
+msgstr ""
+
+#: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet.get_region:11
+msgid "The region containing the expression. None if not found."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ":py:obj:`__init__ <tvm.relay.analysis.CallGraph.__init__>`\\ \\(module\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__init__:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Construct a call graph."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ":py:obj:`__str__ <tvm.relay.analysis.CallGraph.__str__>`\\ \\(\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__str__:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Print the call graph in the topological order."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ""
+":py:obj:`_get_global_var "
+"<tvm.relay.analysis.CallGraph._get_global_var>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph._get_global_var:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Return the global var using a given name or GlobalVar."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ""
+":py:obj:`global_call_count "
+"<tvm.relay.analysis.CallGraph.global_call_count>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.global_call_count:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Return the number of global function calls from a given global var."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ""
+":py:obj:`is_recursive <tvm.relay.analysis.CallGraph.is_recursive>`\\ "
+"\\(var\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.is_recursive:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Return if the function corresponding to a var is a recursive function."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ":py:obj:`print_var <tvm.relay.analysis.CallGraph.print_var>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.print_var:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Print a call graph of a global function by name or by variable."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid ":py:obj:`ref_count <tvm.relay.analysis.CallGraph.ref_count>`\\ \\(var\\)"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.ref_count:1
+#: tvm.relay.analysis.call_graph.CallGraph:1:<autosummary>:1
+msgid "Return the number of references to the global var"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph:1
+#: tvm.relay.analysis.feature.Feature:1
+msgid "**Attributes:**"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__init__:1:<autosummary>:1
+msgid ":py:obj:`module <tvm.relay.analysis.CallGraph.module>`\\"
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:1
+#: tvm.relay.analysis.call_graph.CallGraph.__init__:1:<autosummary>:1
+msgid "Return the contained Relay IR module."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__init__:6
+msgid "module"
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:-1
+#: tvm.relay.analysis.call_graph.CallGraph.__init__:-1
+msgid "tvm.ir.IRModule"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__init__:6
+msgid "The IR module used to create a call graph"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__init__:10
+msgid "call_graph: CallGraph"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.__init__:11
+msgid "A constructed call graph."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph._get_global_var:5
+#: tvm.relay.analysis.call_graph.CallGraph.global_call_count:5
+#: tvm.relay.analysis.call_graph.CallGraph.is_recursive:6
+#: tvm.relay.analysis.call_graph.CallGraph.ref_count:5
+msgid "var : Union[String, tvm.relay.GlobalVar]"
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:9
+#: tvm.relay.analysis.analysis.all_dtypes:10
+#: tvm.relay.analysis.analysis.extract_fused_functions:12
+#: tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:10
+#: tvm.relay.analysis.analysis.list_op_freqs:11
+#: tvm.relay.analysis.analysis.search_fc_transpose:11
+#: tvm.relay.analysis.call_graph.CallGraph._get_global_var:9
+#: tvm.relay.analysis.call_graph.CallGraph.global_call_count:9
+#: tvm.relay.analysis.call_graph.CallGraph.is_recursive:10
+#: tvm.relay.analysis.call_graph.CallGraph.print_var:10
+#: tvm.relay.analysis.call_graph.CallGraph.ref_count:9
+msgid "ret"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph._get_global_var:-1
+msgid "tvm.relay.GlobalVar"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph._get_global_var:10
+msgid "The global var."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.global_call_count:-1
+#: tvm.relay.analysis.call_graph.CallGraph.ref_count:-1
+#: tvm.relay.analysis.count_layers.count_layers:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.global_call_count:10
+msgid "The number of global function calls from the given var."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.is_recursive:-1
+msgid "Boolean"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.is_recursive:11
+msgid "If the function corresponding to var is recurisve."
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:5
+msgid "None"
+msgstr ""
+
+#: of tvm.relay.analysis.CallGraph.module:10
+msgid "The contained IRModule"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.print_var:6
+msgid "var: Union[String, tvm.relay.GlobalVar]"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.print_var:6
+msgid "The name or global variable."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.print_var:-1
+msgid "String"
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.print_var:11
+msgid "The call graph represented in string."
+msgstr ""
+
+#: of tvm.relay.analysis.call_graph.CallGraph.ref_count:10
+msgid "The number reference to the global var"
+msgstr ""
+
+#: of tvm.relay.analysis.Feature.fGraph:1:<autosummary>:1
+msgid ":py:obj:`fGraph <tvm.relay.analysis.Feature.fGraph>`\\"
+msgstr ""
+
+#: ../../docstring of tvm.relay.analysis.Feature.fGraph:1
+#: tvm.relay.analysis.Feature.fGraph:1:<autosummary>:1
+msgid "Whether there is local fixpoint in the program."
+msgstr ""
+
+#: of tvm.relay.analysis.Feature.fGraph:1:<autosummary>:1
+msgid ":py:obj:`fMatch <tvm.relay.analysis.Feature.fMatch>`\\"
+msgstr ""
+
+#: ../../docstring of tvm.relay.analysis.Feature.fGraph:1:<autosummary>:1
+#: tvm.relay.analysis.Feature.fMatch:1
+msgid ""
+"Whether any non-atom fragment of the program is shared, making the "
+"program a graph."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_dtypes:6
+#: tvm.relay.analysis.analysis.all_vars:6
+#: tvm.relay.analysis.analysis.bound_vars:6
+#: tvm.relay.analysis.analysis.check_basic_block_normal_form:6
+#: tvm.relay.analysis.analysis.check_constant:6
+#: tvm.relay.analysis.analysis.free_vars:6
+#: tvm.relay.analysis.analysis.well_formed:6
+msgid "The input expression"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_dtypes:-1
+msgid "Set[String]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_dtypes:11
+msgid "Set of data types used in the expression (e.g., `{'int8', 'int32'}`)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:-1
+#: tvm.relay.analysis.analysis.bound_type_vars:-1
+#: tvm.relay.analysis.analysis.free_type_vars:-1
+msgid "Union[tvm.relay.Expr,tvm.relay.Type]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:6
+#: tvm.relay.analysis.analysis.bound_type_vars:6
+#: tvm.relay.analysis.analysis.free_type_vars:6
+msgid "The input expression/type"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:9
+#: tvm.relay.analysis.analysis.bound_type_vars:9
+#: tvm.relay.analysis.analysis.check_kind:11
+#: tvm.relay.analysis.analysis.free_type_vars:9
+#: tvm.relay.analysis.analysis.get_calibration_data:17
+#: tvm.relay.analysis.analysis.unmatched_cases:9
+msgid "mod"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:-1
+#: tvm.relay.analysis.analysis.bound_type_vars:-1
+#: tvm.relay.analysis.analysis.check_kind:-1
+#: tvm.relay.analysis.analysis.free_type_vars:-1
+#: tvm.relay.analysis.analysis.unmatched_cases:-1
+msgid "Optional[tvm.IRModule]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:9
+#: tvm.relay.analysis.analysis.bound_type_vars:9
+#: tvm.relay.analysis.analysis.free_type_vars:9
+msgid "The global module"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:13
+#: tvm.relay.analysis.analysis.all_vars:10
+#: tvm.relay.analysis.analysis.bound_type_vars:13
+#: tvm.relay.analysis.analysis.bound_vars:10
+#: tvm.relay.analysis.analysis.free_type_vars:13
+#: tvm.relay.analysis.analysis.free_vars:11
+msgid "free"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:-1
+#: tvm.relay.analysis.analysis.bound_type_vars:-1
+#: tvm.relay.analysis.analysis.free_type_vars:-1
+msgid "List[tvm.relay.TypeVar]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_type_vars:14
+msgid "The list of all type variables in post-DFS order"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_vars:-1
+#: tvm.relay.analysis.analysis.bound_vars:-1
+#: tvm.relay.analysis.analysis.free_vars:-1
+msgid "List[tvm.relay.Var]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.all_vars:11
+msgid "The list of all variables in post-DFS order."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.bound_type_vars:14
+msgid "The list of bound type variables in post-DFS order"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.bound_vars:11
+msgid "The list of bound variables in post-DFS order."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_basic_block_normal_form:10
+#: tvm.relay.analysis.analysis.check_constant:10
+#: tvm.relay.analysis.analysis.get_total_mac_number:10
+msgid "result"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_basic_block_normal_form:-1
+#: tvm.relay.analysis.analysis.check_constant:-1
+#: tvm.relay.analysis.analysis.well_formed:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_basic_block_normal_form:11
+msgid "Whether the expression is in the basic block form."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_constant:11
+msgid "Whether the expression is constant."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:1
+msgid ""
+"Check that the type is well kinded and return the kind. For example, this"
+" mean type cannot has tensor of tensor, or is a tuple type of 2 shapes."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:8
+msgid "t"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:-1
+msgid "tvm.relay.Type"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:8
+msgid "The type to check"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:11
+msgid "The global module."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:16
+msgid "kind"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:-1
+msgid "Kind"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:16
+msgid "the kind of t"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.check_kind:19
+#: tvm.relay.analysis.analysis.extract_intermdeiate_expr:18
+msgid "Examples"
+msgstr ""
+
+#: of tvm.relay.analysis.count_layers.count_layers:1
+msgid ""
+"Determine the number of layers of specified ops in a graph. This pass "
+"computes only the deepest chain of ops rather than the total number of "
+"ops in a graph. Thus, if there are two parallel convolutions (for "
+"example), they would be considered a single layer."
+msgstr ""
+
+#: of tvm.relay.analysis.count_layers.count_layers:-1
+msgid "tvm.relay.Expr, tvm.relay.Function, or tvm.ir.IRModule."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_total_mac_number:6
+#: tvm.relay.analysis.analysis.post_order_visit:8
+#: tvm.relay.analysis.count_layers.count_layers:9
+msgid "The input expression."
+msgstr ""
+
+#: of tvm.relay.analysis.count_layers.count_layers:12
+msgid "valid_ops: List[str]"
+msgstr ""
+
+#: of tvm.relay.analysis.count_layers.count_layers:12
+msgid "A list of the operations that should be included in the count."
+msgstr ""
+
+#: of tvm.relay.analysis.count_layers.count_layers:16
+msgid "layer_count"
+msgstr ""
+
+#: of tvm.relay.analysis.count_layers.count_layers:17
+msgid "The number of layers of the specified operations found in the graph."
+msgstr ""
+
+#: of tvm.runtime.ndarray.cpu:6
+msgid "dev_id"
+msgstr ""
+
+#: of tvm.runtime.ndarray.cpu:-1
+msgid "int, optional"
+msgstr ""
+
+#: of tvm.runtime.ndarray.cpu:6
+msgid "The integer device id"
+msgstr ""
+
+#: of tvm.runtime.ndarray.cpu:10
+msgid "dev"
+msgstr ""
+
+#: of tvm.runtime.ndarray.cpu:-1
+msgid "Device"
+msgstr ""
+
+#: of tvm.runtime.ndarray.cpu:11
+msgid "The created device"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:6
+msgid "a"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:-1
+msgid "Union[tvm.relay.Expr, tvm.IRModule]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:6
+msgid "The input expression or module."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:10
+msgid "b"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:-1
+msgid "Optional[Union[tvm.relay.Expr, tvm.IRModule]]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:9
+msgid ""
+"The input expression or module. The two arguments cannot both be "
+"expression or module."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:14
+msgid "features"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:-1
+msgid "Set[Feature]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.detect_feature:15
+msgid "Features used in the program."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_fused_functions:3
+msgid ""
+"The ExtractFusedFunctions pass invokes SimplifyInference, FuseOps(3), and"
+" ExtractFusedFunctions in that order"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_fused_functions:8
+#: tvm.relay.analysis.analysis.extract_intermdeiate_expr:9
+#: tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:6
+#: tvm.relay.analysis.analysis.list_op_freqs:7
+msgid "mod : tvm.IRModule"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_fused_functions:-1
+msgid "Dict[int, tvm.relay.function.Function]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_fused_functions:13
+msgid "A module containing only fused primitive functions"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_intermdeiate_expr:3
+msgid ""
+"This function is used for extracting Relay Expr by its expression ID of "
+"the main function that we can see in `print(mod[\"main\"])`."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_intermdeiate_expr:11
+msgid "expr_id : the Expr ID that we want to extract"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.extract_intermdeiate_expr:15
+msgid "ret : Extracted IRModule"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.free_type_vars:14
+msgid "The list of free type variables in post-DFS order"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.free_vars:11
+msgid "The list of free variables in post DFS order."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.free_vars:14
+msgid "Note"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.free_vars:15
+msgid ""
+"The fact that Vars are post-DFS ordred are useful in neural networks: "
+"usually this means weights of previous are ordered first."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:3
+msgid ""
+"This pass uses the graph executor to get the calibration data of a "
+"module, which includes the input and output values of each function. The "
+"returned data uses the GlobalVar of each function as a key. Users can "
+"further access the inputs and outputs by using `inputs` or  `outputs` as "
+"the key."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:8
+msgid ""
+"Following are some limitations: 1. The input module (graph) cannot have "
+"control flows. 2. The input arguments of each function cannot be tuples "
+"(outputs can be tuples). 3. We only handle top-level functions (i.e., "
+"nested function is not handled). 4. We only handle functions with "
+"`Compiler` attribute being set."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:-1
+msgid "tvm.IRModule"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:17
+msgid "The input module for collecting the calibration data"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:20
+msgid "data"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:-1
+msgid "Dict[str, NDArray]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:20
+msgid "The input data for running the module"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_calibration_data:24
+msgid "data : Dict[tvm.relay.GlobalVar, Dict[str, NDArray]]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_total_mac_number:-1
+msgid "int64"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.get_total_mac_number:11
+msgid "The number of MACs (multiply-accumulate) of a model"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:-1
+#: tvm.relay.analysis.analysis.list_op_freqs:-1
+msgid "Dict[str, int]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.list_fake_quantized_op_freqs:11
+msgid "Dict of fake quantized operator names to frequency"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.list_op_freqs:1
+msgid ""
+"Pass to extract unique operator names and how frequently they appear in "
+"an IRModule. Fused functions are traversed to count the operators that "
+"compose them."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.list_op_freqs:12
+msgid "Dict of unique operator names to frequency"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.post_order_visit:1
+msgid ""
+"Recursively visit the ir in post DFS order node, apply fvisit. Each node "
+"is guaranteed to be visited only once."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.post_order_visit:10
+msgid "fvisit"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.post_order_visit:-1
+msgid "function"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.post_order_visit:11
+msgid "The visitor function to be applied."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.search_fc_transpose:3
+msgid ""
+"This function is used in the data_dep_optimization.simplify_fc_transpose "
+"method"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.search_fc_transpose:7
+msgid "expr : tvm.relay.Expr"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.search_fc_transpose:-1
+msgid "Array[String]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.search_fc_transpose:12
+msgid ""
+"Array of weight variable name in pattern y = nn.dense(x, transpose(w, [1,"
+" 0]))"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:6
+msgid "match"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:-1
+msgid "tvm.relay.Match"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:6
+msgid "The match expression"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:9
+msgid "The module (defaults to an empty module)"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:13
+msgid "missing_patterns"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:-1
+msgid "[tvm.relay.Pattern]"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.unmatched_cases:14
+msgid "Patterns that the match expression does not catch."
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.well_formed:10
+msgid "well_form"
+msgstr ""
+
+#: of tvm.relay.analysis.analysis.well_formed:11
+msgid "Whether the input expression is well formed"
 msgstr ""
 
 #~ msgid "The Relay IR namespace containing the analysis passes."

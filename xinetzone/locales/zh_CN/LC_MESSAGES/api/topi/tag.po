@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm 0.14.dev0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 09:59+0800\n"
+"POT-Creation-Date: 2024-01-20 16:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,134 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../notebook/api/topi/tag.rst:2
+#: ../../doc/api/topi/tag.rst:2
 msgid "tvm.topi.tag"
+msgstr ""
+
+#: of tvm.topi.tag:1
+msgid "Namespace of all tag system in tvm"
+msgstr ""
+
+#: of tvm.topi.tag:3
+msgid "Each operator can be tagged by a tag, which indicate its type."
+msgstr ""
+
+#: of tvm.topi.tag:5
+msgid "Generic categories"
+msgstr ""
+
+#: of tvm.topi.tag:7
+msgid "tag.ELEMWISE=\"elemwise\":"
+msgstr ""
+
+#: of tvm.topi.tag:8
+msgid "Elementwise operator, for example :code:`out[i, j] = input[i, j]`"
+msgstr ""
+
+#: of tvm.topi.tag:13
+msgid "tag.BROADCAST=\"broadcast\":"
+msgstr ""
+
+#: of tvm.topi.tag:10
+msgid ""
+"Broadcasting operator, can always map output axis to the input in order. "
+"for example :code:`out[i, ax1, j, ax2] = input[i, j]`. Note that the axis"
+" need to be in order so transpose is not a bcast operator. If an input of"
+" broadcast operator has same shape as output, we can ensure that it is "
+"elementwise relation."
+msgstr ""
+
+#: of tvm.topi.tag:17
+msgid "tag.INJECTIVE=\"injective\":"
+msgstr ""
+
+#: of tvm.topi.tag:16
+msgid ""
+"Injective operator, can always injectively map output axis to a single "
+"input axis. All injective operator can still be safely fused similar to "
+"ewise to reduction."
+msgstr ""
+
+#: of tvm.topi.tag:19
+msgid "tag.COMM_REDUCE=\"comm_reduce\":"
+msgstr ""
+
+#: of tvm.topi.tag:20
+msgid "Communicative reduction operator"
+msgstr ""
+
+#: of tvm.topi.tag:21
+msgid ""
+"If an op does not belong to these generic categories, it should have a "
+"special tag."
+msgstr ""
+
+#: of tvm.topi.tag:24
+msgid "Note"
+msgstr ""
+
+#: of tvm.topi.tag:25
+msgid ""
+"When we add a new topi operator, the op need to be tagged as generic as "
+"possible. We can also compose tags like \"injective,pad\" to give generic"
+" and specific information. When we use composed tags, we must always put "
+"generic tag in the first location."
+msgstr ""
+
+#: of tvm.topi.tag:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1:<autosummary>:1
+msgid ":py:obj:`is_broadcast <tvm.topi.tag.is_broadcast>`\\ \\(tag\\)"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1 tvm.topi.tag.is_broadcast:1:<autosummary>:1
+msgid "Check if a tag is bcast"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1:<autosummary>:1
+msgid ":py:obj:`is_injective <tvm.topi.tag.is_injective>`\\ \\(tag\\)"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:1:<autosummary>:1 tvm.topi.tag.is_injective:1
+msgid "Check if a tag is injective"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:4 tvm.topi.tag.is_injective:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:6 tvm.topi.tag.is_injective:6
+msgid "tag"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:-1 tvm.topi.tag.is_injective:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:6 tvm.topi.tag.is_injective:6
+msgid "The input tag"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:9 tvm.topi.tag.is_injective:9
+msgid "Returns"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:10 tvm.topi.tag.is_injective:10
+msgid "ret"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:-1 tvm.topi.tag.is_injective:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.topi.tag.is_broadcast:11
+msgid "Whether a tag is broadcast"
+msgstr ""
+
+#: of tvm.topi.tag.is_injective:11
+msgid "Whether a tag is injective"
 msgstr ""
 
 #~ msgid "Namespace of all tag system in tvm"
