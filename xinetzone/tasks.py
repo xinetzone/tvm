@@ -66,7 +66,8 @@ def config(ctx, cuda=False):
         content = fp.read()
     with open(target, 'w') as fp:
         # content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM ON)')
-        content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM "llvm-config")')
+        # content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM "llvm-config")')
+        content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM "llvm-config-16")')
         # content = content.replace('set(USE_LLVM OFF)', 'set(USE_LLVM "llvm-config --link-static")')
         content = content.replace('set(USE_VTA_FSIM OFF)', 'set(USE_VTA_FSIM ON)')
         content = content.replace('set(USE_RELAY_DEBUG OFF)', 'set(USE_RELAY_DEBUG ON)')
@@ -81,6 +82,9 @@ def config(ctx, cuda=False):
             content = content.replace('set(USE_CUDNN OFF)', 'set(USE_CUDNN ON)')
             # content = content.replace("set(USE_PAPI OFF)", "set(USE_PAPI ON)")
             content = content.replace("set(USE_PROFILER OFF)", "set(USE_PROFILER ON)")
+            # content = content.replace("set(USE_VTA_TSIM OFF)", "set(USE_VTA_TSIM ON)")
+            # content = content.replace("set(USE_METAL OFF)", "set(USE_METAL ON)")
+            content = content.replace("set(USE_VERILATOR OFF)", "set(USE_VERILATOR ON)")
             # content = content.replace('set(USE_NNPACK OFF)', 'set(USE_NNPACK ON)')
         # PyTorch and TVM loading problem due to conflicting LLVM symbols
         # https://github.com/apache/tvm/issues/9362
