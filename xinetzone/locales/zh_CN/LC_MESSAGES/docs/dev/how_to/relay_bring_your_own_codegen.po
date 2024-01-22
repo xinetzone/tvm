@@ -22,7 +22,6 @@ msgid "Bring Your Own Codegen To TVM"
 msgstr "带你自己的 Codegen 到 TVM"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:24
-#, fuzzy
 msgid ""
 "As the number of hardware devices targeted by deep learning workloads "
 "keeps increasing, the required knowledge for users to achieve high "
@@ -40,11 +39,12 @@ msgid ""
 "support widely used operators with extremely high performance, but "
 "fallback unsupported operators to general devices like CPU/GPU."
 msgstr ""
-"随着深度学习工作负载针对的硬件设备数量不断增加，用户在各种设备上实现高性能所需的知识也在不断增加。为了让数据科学家在开发新模型时不再担心性能问题，硬件后端提供商要么提供"
-" DNNL(Intel OneDNN) 或 cuDNN等库，其中包含许多常用的深度学习算子，要么提供 TensorRT "
-"等框架，让用户以某种方式描述他们的模型，以实现高性能。然而，当用户尝试使用新的库或设备时，他们必须学习新的编程接口。因此，对统一编程接口的需求变得越来越重要，1)"
-"让所有用户和硬件后端提供者站在相同页面上，2)提供可行的解决方案，允许专门的硬件或库只支持广泛使用的、具有极高性能的算子，而将不支持的算子退到像"
-" CPU/GPU 这样的通用设备上。"
+"随着深度学习工作负载所针对的硬件设备数量不断增加，用户在各种设备上实现高性能所需的知识也在不断增加。"
+"为了让用户在开发新模型时不必担心性能问题，硬件后端提供商提供了许多常用的深度学习算子库，例如 DNNL（Intel OneDNN）或 cuDNN，"
+"或者提供了 TensorRT 等框架，以让用户以某种方式描述其模型以实现高性能。"
+"然而，当用户尝试使用新的库或设备时，他们必须学习新的编程接口。"
+"因此，对统一编程接口的需求变得越来越重要，以便1）让所有用户和硬件后端提供商站在同一页上，"
+"2）提供可行的解决方案，允许专门的硬件或库仅支持广泛使用的、具有极高性能的算子，但对于不支持的算子则回退到像 CPU/GPU 这样的通用设备。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:26
 msgid ""
@@ -141,12 +141,14 @@ msgid ""
 "**Note 1** is the function implementation for the three nodes in the "
 "subgraph."
 msgstr ""
+"**Note 1** 是子图中三个节点的功能实现。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:136
 msgid ""
 "**Note 2** is a function to execute the subgraph by allocating "
 "intermediate buffers and invoking corresponding functions."
 msgstr ""
+"**Note 2** 是通过分配中间缓冲区和调用相应函数来执行子图的函数。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:138
 msgid ""
@@ -161,6 +163,10 @@ msgid ""
 "with the rest parts of the graph and export a single library for "
 "deployment."
 msgstr ""
+"**Note 3** 是与 TVM 运行时兼容的包装函数。"
+"它接受一个输入张量列表和一个输出张量（最后一个参数），将它们转换为正确的数据类型，并调用在 Note 2 中描述的子图函数。"
+"此外，``TVM_DLL_EXPORT_TYPED_FUNC`` 是 TVM 宏，它生成另一个函数 ``gcc_0``，并通过将所有张量打包到 ``TVMArgs`` 中来统一函数参数。"
+"结果，TVM 运行时可以直接调用 ``gcc_0`` 来执行子图，而无需额外的努力。通过生成上述代码，TVM 能够将其与图的其余部分一起编译，并导出用于部署的单个库。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:140
 msgid ""
@@ -172,12 +178,17 @@ msgid ""
 "<https://github.com/apache/tvm/blob/main/src/relay/backend/contrib/codegen_c/codegen.cc>`_."
 " Feel free to check this file for a complete implementation."
 msgstr ""
+"在本节的其余部分中，将逐步实现代码生成器来生成上述代码。"
+"您自己的代码生成器必须位于 ``src/relay/backend/contrib/<your-codegen-name>/`` 目录下。"
+"在我们的例子中，我们将代码生成器命名为 \"codegen_c\"，并将其放在 `/src/relay/backend/contrib/codegen_c/ "
+"<https://github.com/apache/tvm/blob/main/src/relay/backend/contrib/codegen_c/codegen.cc>`_ 下。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:142
 msgid ""
 "Specifically, we are going to implement two classes in this file and here"
 " is their relationship:"
 msgstr ""
+"具体来说，我们将在此文件中实现两个类，它们之间的关系如下："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:153
 msgid ""
@@ -192,16 +203,23 @@ msgid ""
 "generation implementation. The following sections will implement these "
 "two classes in the bottom-up order."
 msgstr ""
+"当 TVM 后端在 Relay 图中找到带有已注册编译器标签（在这个例子中是 ``ccompiler``）的函数（子图）时，"
+"TVM 后端会调用 ``CSourceCodegen`` 并将子图传递给它。``CSourceCodegen`` 的成员函数 ``CreateCSourceModule`` 将执行以下操作："
+"1) 为子图生成 C 代码；"
+"2) 将生成的 C 代码包装成 C 源代码运行时模块，以便 TVM 后端编译和部署。"
+"特别是，由于 ``CodegenC`` 类提供了许多有用的实用程序来简化代码生成实现，因此 C 代码生成对 ``CodegenC`` 类来说是透明的。"
+"以下部分将按照自底向上的顺序实现这两个类。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:156
 msgid "Implement CodegenC"
-msgstr ""
+msgstr "实现 CodegenC"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:158
 msgid ""
 "In ``src/relay/backend/contrib/codegen_c/codegen.cc``, we first create a "
 "codegen class skeleton under the namespace of ``tvm.relay.contrib``:"
 msgstr ""
+"在 ``src/relay/backend/contrib/codegen_c/codegen.cc`` 中，首先在 ``tvm.relay.contrib`` 命名空间下创建代码生成类骨架："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:204
 msgid ""
@@ -212,10 +230,12 @@ msgid ""
 "``gcc_0`` in the above example. As can be seen, we only need to implement"
 " three functions in this codegen class to make it work."
 msgstr ""
+"``CodegenC`` 类继承了两个类：``ExprVisitor`` 提供了遍历子图并收集所需信息的能力，以及生成子图函数（如 ``gcc_0_``）； "
+"``CodegenCBase`` 提供了生成包装函数的能力，如上述示例中的 ``gcc_0``。如上所示，我们只需要在代码生成类中实现三个函数即可使其正常工作。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:207
 msgid "Code Generation for Operators"
-msgstr ""
+msgstr "算子的代码生成"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:209
 msgid ""
@@ -226,14 +246,17 @@ msgid ""
 "operators in topological order. We implement this function step-by-step "
 "as follows."
 msgstr ""
+"首先实现 ``VisitExpr_(const CallNode* call)``。"
+"这个函数在遍历子图时访问所有的调用节点。每个调用节点都包含希望卸载到您的硬件的算子。"
+"因此，需要以拓扑顺序生成相应的 C 代码，并使用正确的算子。我们分步骤实现这个函数，如下所示。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:211
 msgid "**1. Generate the function declaration**"
-msgstr ""
+msgstr "**1. 生成函数声明**"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:213
 msgid "Example Result: ``GCC_BINARY_OP_2D(gcc_0_0, *, 10, 10);``"
-msgstr ""
+msgstr "示例结果：``GCC_BINARY_OP_2D(gcc_0_0, *, 10, 10);``"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:215
 msgid ""
@@ -242,6 +265,8 @@ msgid ""
 " and 3) the input tensor shape (e.g., ``(10, 10)``). Fortunately, this "
 "information can be obtained easily from ``CallNode``:"
 msgstr ""
+"要生成函数声明，如上所示，我们需要1）函数名（例如 ``gcc_0_0``），2）算子的类型（例如 ``*``），"
+"3）输入张量的形状（例如 ``(10, 10)``）。幸运的是，这些信息可以从 ``CallNode`` 轻松获取："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:248
 msgid ""
@@ -251,14 +276,17 @@ msgid ""
 "we need to do is having them compiled by GCC. The rest implementation of "
 "``VisitExpr_(const CallNode* call)`` also follow this concept."
 msgstr ""
+"如上所示，我们将生成的代码推送到类成员变量 ``func_decl_`` 中。"
+"这意味着在我们完成遍历整个子图之后，我们已经收集了所有必需的函数声明，唯一需要做的是让 GCC 编译它们。"
+" ``VisitExpr_(const CallNode* call)`` 的其余实现也遵循这个概念。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:250
 msgid "**2. Generate the function call**"
-msgstr ""
+msgstr "**2. 生成函数调用**"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:252
 msgid "Example Result: ``gcc_0_0(buf_1, gcc_input3, out);``"
-msgstr ""
+msgstr "示例结果：``gcc_0_0(buf_1, gcc_input3, out);``"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:254
 msgid ""
@@ -266,10 +294,11 @@ msgid ""
 " call with proper inputs and outputs. To know which inputs or buffers we "
 "should put when calling this function, we have to visit its arguments:"
 msgstr ""
+"在生成函数声明之后，我们需要生成具有适当输入和输出的函数调用。要了解调用此函数时应放置哪些输入或缓冲区，我们必须访问其参数："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:272
 msgid "Again, we want to highlight the notes in the above code:"
-msgstr ""
+msgstr "再次强调上述代码中的注释："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:274
 msgid ""
@@ -279,6 +308,8 @@ msgid ""
 "sure every node updates a class variable ``out_`` before leaving the "
 "visitor. Here is an illustration:"
 msgstr ""
+"**Note 1**：``VisitExpr(call->args[i])`` 是对当前函数参数的递归调用。"
+"一个参数可能是另一个节点的输出或输入张量。在我们的示例实现中，我们确保在访问者离开之前每个节点都更新了一个类变量 ``out_``。以下是一个例子："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:285
 msgid ""
@@ -289,6 +320,8 @@ msgid ""
 "at ``out_``. You will find out how we update ``out_`` at the end of this "
 "section as well as the next section."
 msgstr ""
+"我们可以看到上面的图，在访问参数节点之前，类变量 ``out_`` 是空的，并用 ``arg_node`` 的输出缓冲区名称和大小填充。"
+"因此，当我们完成访问参数节点时，我们可以通过查看 ``out_`` 来知道应该放入的正确输入缓冲区。您将在本节末尾以及下一节中找到我们如何更新 ``out_`` 的方法。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:287
 msgid ""
@@ -301,14 +334,18 @@ msgid ""
 "every call node (next step) and copy the result in the very last buffer "
 "to the output tensor."
 msgstr ""
+"**Note 2**：您可能会注意到，在这一步中我们没有关闭函数调用字符串。当前的函数调用字符串看起来像：``gcc_0_0(buf_1, gcc_input3``。"
+"这是因为我们还没有将最后一个参数（即输出）放到这个调用中。"
+"函数调用的输出可能是一个分配的临时缓冲区或子图输出张量。"
+"为了简化，在这个例子中，我们为每个调用节点分配一个输出缓冲区（下一步），并将最后一个缓冲区的结果复制到输出张量中。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:289
 msgid "**3. Generate the output buffer**"
-msgstr ""
+msgstr "**3. 生成输出缓冲区**"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:291
 msgid "Example Result: ``float* buf_0 = (float*)malloc(4 * 100);``"
-msgstr ""
+msgstr "示例结果：``float* buf_0 = (float*)malloc(4 * 100);``"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:293
 msgid ""
@@ -317,6 +354,7 @@ msgid ""
 "results. To generate the buffer, we extract the shape information to "
 "determine the buffer type and size:"
 msgstr ""
+"如前一步所述，除了子图的输入和输出张量之外，我们还可能需要缓冲区来保存中间结果。为了生成缓冲区，我们提取形状信息以确定缓冲区的类型和大小："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:316
 msgid ""
@@ -324,10 +362,11 @@ msgid ""
 "call string and push the generated function call to a class variable "
 "``ext_func_body``."
 msgstr ""
+"在我们分配了输出缓冲区之后，现在可以关闭函数调用字符串，并将生成的函数调用推送到类变量 ``ext_func_body``。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:323
 msgid "**4. Update output buffer**"
-msgstr ""
+msgstr "**4. 更新输出缓存**"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:325
 msgid ""
@@ -335,6 +374,7 @@ msgid ""
 "as its input, know which buffer it should take, we need to update the "
 "class variable ``out_`` before leaving this visit function:"
 msgstr ""
+"为了让下一个节点（它接受当前调用节点的输出作为其输入）知道它应该取哪个缓冲区，我们需要在离开这个访问函数之前更新类变量 ``out_``："
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:332
 msgid ""
@@ -342,10 +382,11 @@ msgid ""
 "class. In the next two sections, we just need to make up some minor "
 "missing parts in this function."
 msgstr ""
+"恭喜！我们已经完成了这个类中最难的函数。在接下来的两节中，我们只需要补充这个函数中的一些小缺失部分。"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:335
 msgid "Code Generation for Input Variables"
-msgstr ""
+msgstr "输入变量的代码生成"
 
 #: ../../xin/docs/dev/how_to/relay_bring_your_own_codegen.rst:337
 msgid ""
