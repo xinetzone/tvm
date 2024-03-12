@@ -109,7 +109,6 @@ def unlink(dst_dir):
         os.unlink(dst_dir)
     if dst_dir.exists():
         shutil.rmtree(dst_dir)
-    
 
 @task
 def pull(ctx):
@@ -120,16 +119,15 @@ def pull(ctx):
     src_doc_dir = ROOT/"docs" # TVM 源文档
     dst_doc_dir = HOME/"doc/docs"
     src_vta_doc_dir = HOME/"vta/tutorials" # VTA 文档
-    dst_vta_doc_dir = src_doc_dir/"topic/vta/tutorials"
+    dst_vta_doc_dir = dst_doc_dir/"topic/vta/tutorials"
     src_tutorials_dir = HOME/"docs/tutorials"
-    dst_tutorials_dir = src_doc_dir/"tutorials"
+    dst_tutorials_dir = dst_doc_dir/"tutorials"
     
     # 拉取最新 TVM 源文档
-    # unlink(dst_vta_doc_dir)
-    # unlink(dst_tutorials_dir)
     if dst_doc_dir.exists():
         ctx.run(f"rm -r {dst_doc_dir}")
     ctx.run(f"cp -r {src_doc_dir} {dst_doc_dir}")
+
     if dst_vta_doc_dir.exists():
         ctx.run(f"rm -r {dst_vta_doc_dir}")
     ctx.run(f"cp -r {src_vta_doc_dir} {dst_vta_doc_dir}")
