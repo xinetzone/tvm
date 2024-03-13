@@ -60,6 +60,7 @@
 #include "src/runtime/relax_vm/executable.cc"
 #include "src/runtime/relax_vm/lm_support.cc"
 #include "src/runtime/relax_vm/ndarray_cache_support.cc"
+#include "src/runtime/relax_vm/paged_kv_cache.cc"
 #include "src/runtime/relax_vm/vm.cc"
 
 // --- Implementations of backend and wasm runtime API. ---
@@ -97,6 +98,11 @@ void LogMessageImpl(const std::string& file, int lineno, int level, const std::s
 
 TVM_REGISTER_GLOBAL("testing.echo").set_body([](TVMArgs args, TVMRetValue* ret) {
   *ret = args[0];
+});
+
+TVM_REGISTER_GLOBAL("testing.call").set_body([](TVMArgs args, TVMRetValue* ret) {
+  (args[0].operator PackedFunc())
+      .CallPacked(TVMArgs(args.values + 1, args.type_codes + 1, args.num_args - 1), ret);
 });
 
 TVM_REGISTER_GLOBAL("testing.ret_string").set_body([](TVMArgs args, TVMRetValue* ret) {

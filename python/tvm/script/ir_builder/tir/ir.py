@@ -1289,7 +1289,7 @@ def buffer_store(
             if lanes == 1:
                 expr_indices.append(index.start)
             else:
-                expr_indices.append(ramp(index.start, step, int(lanes)))
+                expr_indices.append(ramp(index.start, step, lanes))
         else:
             expr_indices.append(index)
     if isinstance(value, bool) and buffer.dtype == "bool":
@@ -1862,6 +1862,7 @@ anylist_getitem = _op_wrapper(_tir_op.anylist_getitem)
 anylist_resetitem = _op_wrapper(_tir_op.anylist_resetitem)
 anylist_setitem_call_packed = _op_wrapper(_tir_op.anylist_setitem_call_packed)
 anylist_setitem_call_cpacked = _op_wrapper(_tir_op.anylist_setitem_call_cpacked)
+vscale = _op_wrapper(_tir_op.vscale)
 
 
 def _dtype_forward(func):
@@ -2199,4 +2200,5 @@ __all__ = [
     "IterVar",
     "CommReducer",
     "Range",
+    "vscale",
 ]

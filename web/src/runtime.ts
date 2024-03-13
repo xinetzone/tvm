@@ -25,15 +25,24 @@ import { Disposable } from "./types";
 import { Memory, CachedCallStack } from "./memory";
 import { assert, StringToUint8Array } from "./support";
 import { Environment } from "./environment";
+import { AsyncifyHandler } from "./asyncify";
 import { FunctionInfo, WebGPUContext } from "./webgpu";
+import { ArtifactCacheTemplate } from "./artifact_cache";
 
 import * as compact from "./compact";
 import * as ctypes from "./ctypes";
 
 /**
- * Type for PackedFunc inthe TVMRuntime.
+ * Type for PackedFunc in the TVMRuntime.
  */
 export type PackedFunc = ((...args: any) => any) &
+  Disposable & { _tvmPackedCell: PackedFuncCell };
+
+/**
+ * Type for AyncPackedFunc in TVMRuntime
+ * possibly may contain stack unwinding through Asynctify
+ */
+export type AsyncPackedFunc = ((...args: any) => Promise<any>) &
   Disposable & { _tvmPackedCell: PackedFuncCell };
 
 /**
@@ -78,7 +87,6 @@ class FFILibrary implements Disposable {
     if (code != 0) {
       const msgPtr = (this.exports
         .TVMGetLastError as ctypes.FTVMGetLastError)();
-      console.log("Here");
       throw new Error("TVMError: " + this.memory.loadCString(msgPtr));
     }
   }
@@ -158,6 +166,7 @@ class RuntimeContext implements Disposable {
   ndarrayCreateView: PackedFunc;
   sampleTopPFromLogits: PackedFunc;
   applyRepetitionPenalty: PackedFunc;
+  applyPresenceAndFrequencyPenalty: PackedFunc;
   applySoftmaxWithTemperature: PackedFunc;
 
   private autoDisposeScope: Array<Array<Disposable | undefined>> = [];
@@ -180,6 +189,7 @@ class RuntimeContext implements Disposable {
     this.ndarrayCreateView = getGlobalFunc("runtime.TVMArrayCreateView");
     this.sampleTopPFromLogits = getGlobalFunc("vm.builtin.sample_top_p_from_logits");
     this.applyRepetitionPenalty = getGlobalFunc("vm.builtin.apply_repetition_penalty");
+    this.applyPresenceAndFrequencyPenalty = getGlobalFunc("vm.builtin.apply_presence_and_frequency_penalty");
     this.applySoftmaxWithTemperature = getGlobalFunc("vm.builtin.apply_softmax_with_temperature");
   }
 
@@ -202,6 +212,7 @@ class RuntimeContext implements Disposable {
     this.ndarrayCreateView.dispose();
     this.sampleTopPFromLogits.dispose();
     this.applyRepetitionPenalty.dispose();
+    this.applyPresenceAndFrequencyPenalty.dispose();
     this.applySoftmaxWithTemperature.dispose();
   }
 
@@ -985,7 +996,7 @@ export type InitProgressCallback = (report: InitProgressReport) => void;
 /**
  * Cache to store model related data.
  */
-export class ArtifactCache {
+export class ArtifactCache implements ArtifactCacheTemplate {
   private scope: string;
   private cache?: Cache;
 
@@ -1018,6 +1029,14 @@ export class ArtifactCache {
       .then(cacheKeys => keys.every(key => cacheKeys.indexOf(key) !== -1))
       .catch(err => false);
   }
+
+  async deleteInCache(url: string) {
+    if (this.cache === undefined) {
+      this.cache = await caches.open(this.scope);
+    }
+    const result = await this.cache.delete(url);
+    return result;
+  }
 }
 
 /**
@@ -1045,6 +1064,7 @@ export class Instance implements Disposable {
   private env: Environment;
   private objFactory: Map<number, FObjectConstructor>;
   private ctx: RuntimeContext;
+  private asyncifyHandler: AsyncifyHandler;
   private initProgressCallback: Array<InitProgressCallback> = [];
 
   /**
@@ -1087,6 +1107,7 @@ export class Instance implements Disposable {
     this.lib = new FFILibrary(wasmInstance, env.imports);
     this.memory = this.lib.memory;
     this.exports = this.lib.exports;
+    this.asyncifyHandler = new AsyncifyHandler(this.exports, this.memory.memory);
     this.objFactory = new Map<number, ObjectConstructor>();
     this.ctx = new RuntimeContext(
       (name: string) => {
@@ -1126,6 +1147,14 @@ export class Instance implements Disposable {
       results.push((tend - tstart) / number);
     }
     return results;
+  }
+
+  /**
+   * Check whether we enabled asyncify mode
+   * @returns The asynctify mode toggle
+   */
+  asyncifyEnabled(): boolean {
+    return this.asyncifyHandler.enabled();
   }
 
   dispose(): void {
@@ -1451,7 +1480,7 @@ export class Instance implements Disposable {
   }
 
   /**
-   * Fetch NDArray cache from url.
+   * Given cacheUrl, search up items to fetch based on cacheUrl/ndarray-cache.json
    *
    * @param ndarrayCacheUrl The cache url.
    * @param device The device to be fetched to.
@@ -1477,6 +1506,7 @@ export class Instance implements Disposable {
     this.cacheMetadata = { ...this.cacheMetadata, ...(list["metadata"] as Record<string, any>) };
   }
 
+
   /**
    * Fetch list of NDArray into the NDArrayCache.
    *
@@ -1489,7 +1519,7 @@ export class Instance implements Disposable {
     ndarrayCacheUrl: string,
     list: Array<NDArrayShardEntry>,
     device: DLDevice,
-    artifactCache: ArtifactCache
+    artifactCache: ArtifactCacheTemplate
   ) {
     const perf = compact.getPerformance();
     const tstart = perf.now();
@@ -1499,6 +1529,7 @@ export class Instance implements Disposable {
       totalBytes += list[i].nbytes;
     }
     let fetchedBytes = 0;
+    let fetchedShards = 0;
     let timeElapsed = 0;
 
     const cacheOnly = await artifactCache.hasAllKeys(list.map(key => new URL(key.dataPath, ndarrayCacheUrl).href))
@@ -1536,10 +1567,9 @@ export class Instance implements Disposable {
       });
     }
 
-    for (let i = 0; i < list.length; ++i) {
-      reportCallback(i);
-      fetchedBytes += list[i].nbytes;
-      const dataUrl = new URL(list[i].dataPath, ndarrayCacheUrl).href;
+    const processShard = async (i: number) => {
+      const shard = list[i];
+      const dataUrl = new URL(shard.dataPath, ndarrayCacheUrl).href;
       let buffer;
       try {
         buffer = await (await artifactCache.fetchWithCache(dataUrl)).arrayBuffer();
@@ -1547,7 +1577,7 @@ export class Instance implements Disposable {
         this.env.logger("Error: Cannot fetch " + dataUrl + " err= " + err);
         throw err;
       }
-      const shardRecords = list[i].records;
+      const shardRecords = shard.records;
       for (let j = 0; j < shardRecords.length; ++j) {
         const rec = shardRecords[j];
         const cpu_arr = this.withNewScope(() => {
@@ -1577,7 +1607,10 @@ export class Instance implements Disposable {
         }
       }
       timeElapsed = Math.ceil((perf.now() - tstart) / 1000);
+      fetchedBytes += shard.nbytes;
+      reportCallback(fetchedShards++);
     }
+    await Promise.all(list.map((_, index) => processShard(index)));
     reportCallback(list.length);
   }
 
@@ -1758,6 +1791,27 @@ export class Instance implements Disposable {
   }
 
   /**
+   * Apply presence and frequency penalty. This is an inplace operation.
+   * @param logits The input logits before penalty.
+   * @param token_ids The appeared token ids.
+   * @param token_freqs The number of times each token has appeared since last PrefillStep.
+   * token_freqs[i] is the frequency of token_ids[i], for all i. And all token_freqs should be >= 1.
+   * @param presence_penalty The penalty factor.
+   * @param frequency_penalty The penalty factor.
+   */
+  applyPresenceAndFrequencyPenalty(
+    logits: NDArray,
+    token_ids: NDArray,
+    token_freqs: NDArray,
+    presence_penalty: number,
+    frequency_penalty: number
+  ) {
+    return this.ctx.applyPresenceAndFrequencyPenalty(
+      logits, token_ids, token_freqs, presence_penalty, frequency_penalty
+    );
+  }
+
+  /**
    * Apply softmax with temperature to the logits.
    * @param logits The input logits before softmax w/ temperature.
    * @param temperature The temperature factor.
@@ -1885,13 +1939,55 @@ export class Instance implements Disposable {
     }
     this.objFactory.set(typeIndex, func);
   }
+
   /**
-   * Register an asyncfunction to be global function in the server.
+   * Wrap a function obtained from tvm runtime as AsyncPackedFunc
+   * through the asyncify mechanism
+   *
+   * You only need to call it if the function may contain callback into async
+   * JS function via asynctify. A common one can be GPU synchronize.
+   *
+   * It is always safe to wrap any function as Asynctify, however you do need
+   * to make sure you use await when calling the funciton.
+   *
+   * @param func The PackedFunc.
+   * @returns The wrapped AsyncPackedFunc
+   */
+  wrapAsyncifyPackedFunc(func: PackedFunc): AsyncPackedFunc {
+    const asyncFunc = this.asyncifyHandler.wrapExport(func) as AsyncPackedFunc;
+    asyncFunc.dispose = func.dispose;
+    asyncFunc._tvmPackedCell = func._tvmPackedCell;
+    return asyncFunc;
+  }
+
+  /**
+   * Register async function as asynctify callable in global environment.
+   *
    * @param name The name of the function.
    * @param func function to be registered.
    * @param override Whether overwrite function in existing registry.
    *
-   * @note The async function will only be used for serving remote calls in the rpc.
+   * @note This function is handled via asynctify mechanism
+   * The wasm needs to be compiled with Asynctify
+   */
+  registerAsyncifyFunc(
+    name: string,
+    func: (...args: Array<any>) => Promise<any>,
+    override = false
+  ): void {
+    const asyncWrapped = this.asyncifyHandler.wrapImport(func);
+    this.registerFunc(name, asyncWrapped, override);
+  }
+
+  /**
+   * Register an asyncfunction to be global function in the server.
+   *
+   * @param name The name of the function.
+   * @param func function to be registered.
+   * @param override Whether overwrite function in existing registry.
+   *
+   * @note The async function will only be used for serving remote calls in the rpc
+   * These functions contains explicit continuation
    */
   registerAsyncServerFunc(
     name: string,
@@ -1999,6 +2095,11 @@ export class Instance implements Disposable {
     this.registerAsyncServerFunc("wasm.WebGPUWaitForTasks", async () => {
       await webGPUContext.sync();
     });
+    if (this.asyncifyHandler.enabled()) {
+      this.registerAsyncifyFunc("__asyncify.WebGPUWaitForTasks", async () => {
+        await webGPUContext.sync();
+      });
+    }
     this.lib.webGPUContext = webGPUContext;
   }
 
@@ -2244,7 +2345,6 @@ export class Instance implements Disposable {
       // normal return path
       // recycle all js object value in function unless we want to retain them.
       this.ctx.endScope();
-
       if (rv !== undefined && rv !== null) {
         const stack = lib.getOrAllocCallStack();
         const valueOffset = stack.allocRawBytes(SizeOf.TVMValue);
@@ -2283,8 +2383,10 @@ export class Instance implements Disposable {
       const rvaluePtr = stack.ptrFromOffset(rvalueOffset);
       const rcodePtr = stack.ptrFromOffset(rcodeOffset);
 
-      // commit to wasm memory, till rvalueOffset (the return value don't need to be committed)
-      stack.commitToWasmMemory(rvalueOffset);
+      // pre-store the rcode to be null, in case caller unwind
+      // and not have chance to reset this rcode.
+      stack.storeI32(rcodeOffset, ArgTypeCode.Null);
+      stack.commitToWasmMemory();
 
       this.lib.checkCall(
         (this.exports.TVMFuncCall as ctypes.FTVMFuncCall)(
@@ -2431,4 +2533,29 @@ export async function hasNDArrayInCache(
   }
   list = list["records"] as Array<NDArrayShardEntry>;
   return await artifactCache.hasAllKeys(list.map(key => new URL(key.dataPath, ndarrayCacheUrl).href));
+}
+
+/**
+ * Given cacheUrl, search up items to delete based on cacheUrl/ndarray-cache.json
+ *
+ * @param cacheUrl
+ * @param cacheScope
+ */
+export async function deleteNDArrayCache(
+  cacheUrl: string,
+  cacheScope = "tvmjs"
+) {
+  const artifactCache = new ArtifactCache(cacheScope);
+  const jsonUrl = new URL("ndarray-cache.json", cacheUrl).href;
+  const result = await artifactCache.fetchWithCache(jsonUrl);
+  let list;
+  if (result instanceof Response){
+    list = await result.json();
+  }
+  const arrayentry = list["records"] as Array<NDArrayShardEntry>;
+  const processShard = async (i: number) => {
+    const dataUrl = new URL(arrayentry[i].dataPath, cacheUrl).href;
+    await artifactCache.deleteInCache(dataUrl);
+  }
+  await Promise.all(arrayentry.map((_, index) => processShard(index)));
 }

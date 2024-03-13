@@ -44,7 +44,10 @@ TVM_STATIC_IR_FUNCTOR(IRDocsifier, vtable)
         "", [](relax::MatchCast n, ObjectPath n_p, IRDocsifier d) -> Doc {
           using relax::StructInfo;
           using relax::MatchStructInfo;
-          Optional<ExprDoc> ann = StructInfoAsAnn(n->var, n_p->Attr("var"), d, n->value);
+          Optional<ExprDoc> ann = NullOpt;
+          if (d->cfg->show_all_struct_info) {
+            ann = StructInfoAsAnn(n->var, n_p->Attr("var"), d, n->value);
+          }
           ExprDoc rhs = Relax(d, "match_cast")
                             ->Call({d->AsDoc<ExprDoc>(n->value, n_p->Attr("value")),
                                     d->AsDoc<ExprDoc>(n->struct_info, n_p->Attr("struct_info_"))});
@@ -66,6 +69,24 @@ TVM_STATIC_IR_FUNCTOR(IRDocsifier, vtable)
             Doc ret = d->AsDoc(n->value, n_p->Attr("value"));
             d->cfg->binding_names.pop_back();
             return ret;
+
+            // Uncommenting this section hides the variable binding
+            // when the StructInfo is void.  For example, printing
+            // `R.assert_op(expr)` instead of `_ = R.assert_op(expr)`.
+            // However, Relax represents void values as an empty
+            // tuple, and a void-type variable may still be used later
+            // in the function.  Hiding bindings of these void-type
+            // variables would result in use of an undefined variable.
+            //
+            // TODO(Lunderberg): Inline void-type variable to use
+            // `R.tuple()` during normalization.  This will avoid the
+            // cases that trigger the undefined variables, and allow
+            // this syntax sugar to be enabled.
+            //
+            // } else if (d->cfg->syntax_sugar && relax::HasVoidStructInfo(n->value) &&
+            //            relax::HasVoidStructInfo(n->var)) {
+            //   ExprDoc rhs = d->AsDoc<ExprDoc>(n->value, n_p->Attr("value"));
+            //   return ExprStmtDoc(rhs);
           } else {
             ExprDoc rhs = d->AsDoc<ExprDoc>(n->value, n_p->Attr("value"));
             Optional<ExprDoc> ann = StructInfoAsAnn(n->var, n_p->Attr("var"), d, n->value);

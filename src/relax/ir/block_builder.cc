@@ -170,13 +170,17 @@ class BlockBuilderImpl : public BlockBuilderNode {
         auto it = shape_var_map.find(shape_var);
         if (it == shape_var_map.end()) {
           shape_var_map.Set(shape_var, shape_expr);
+          // Expose the shape variable as non-negative, for purposes
+          // of shape inference.  In many cases, knowning that the
+          // shape variable is non-negative allows for simpler
+          // expressions for dynamic shapes.
+          analyzer_.MarkGlobalNonNegValue(shape_var);
         } else {
           const PrimExpr& old_shape_expr = (*it).second;
           CHECK(analyzer_.CanProveEqual(old_shape_expr, shape_expr))
               << "Inconsistent shape var " << shape_var << " in scope: " << old_shape_expr << " vs "
               << shape_expr;
         }
-        shape_var_map.Set(shape_var, shape_expr);
       }
     }
     scope_stack_.emplace_back(ScopeFrame({std::move(shape_var_map)}));
@@ -701,7 +705,8 @@ class Normalizer : public BlockBuilderImpl, private ExprFunctor<Expr(const Expr&
     if (!node->struct_info_.defined()) {
       auto opt = MatchStructInfo<TupleStructInfo>(node->tuple);
       ICHECK(opt) << "The struct info of Tuple must be TupleStructInfo, "
-                  << "but expression " << node << " has struct info " << node->struct_info_;
+                  << "but expression " << node->tuple << " has struct info "
+                  << node->tuple->struct_info_;
       UpdateStructInfo(node, opt.value()->fields[node->index]);
     }
 
@@ -1011,8 +1016,8 @@ TVM_REGISTER_GLOBAL("relax.BlockBuilderEmit")
     });
 
 TVM_REGISTER_GLOBAL("relax.BlockBuilderEmitMatchCast")
-    .set_body_typed([](BlockBuilder builder, Expr value, StructInfo struct_info) {
-      return builder->EmitMatchCast(value, struct_info);
+    .set_body_typed([](BlockBuilder builder, Expr value, StructInfo struct_info, String name_hint) {
+      return builder->EmitMatchCast(value, struct_info, name_hint);
     });
 
 TVM_REGISTER_GLOBAL("relax.BlockBuilderEmitOutput")

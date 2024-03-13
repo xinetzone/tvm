@@ -16,14 +16,12 @@
 # under the License.
 """tvm.contrib.msc.framework.tvm.codegen.codegen"""
 
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 
 import tvm
-from tvm.relax.transform import BindParams
 from tvm.contrib.msc.core.ir import MSCGraph
-from tvm.contrib.msc.core.codegen import CodeGen
+from tvm.contrib.msc.core import codegen as msc_codegen
 from tvm.contrib.msc.core import utils as msc_utils
-from tvm.contrib.msc.framework.tvm import _ffi_api
 
 
 def to_relax(
@@ -32,6 +30,7 @@ def to_relax(
     codegen_config: Optional[Dict[str, str]] = None,
     print_config: Optional[Dict[str, str]] = None,
     build_folder: msc_utils.MSCDirectory = None,
+    plugin: Any = None,
 ) -> tvm.IRModule:
     """Change MSCGraph to IRModule.
 
@@ -47,6 +46,8 @@ def to_relax(
         The config for print.
     build_folder: MSCDirectory
         The folder for saving scripts and datas.
+    plugin: PluginManager
+        The plugin manager.
 
     Returns
     -------
@@ -54,6 +55,7 @@ def to_relax(
         The IRModule of relax.
     """
 
+<<<<<<< HEAD
     inputs = [
         tvm.relax.Var(i.alias, tvm.relax.TensorStructInfo(i.get_shape(), i.dtype_name))
         for i in graph.get_inputs()
@@ -82,3 +84,6 @@ def to_relax(
 
     codegen = CodeGen(graph, _ffi_api.GetRelaxSources, codegen_config, print_config, build_folder)
     return codegen.load(inputs, pre_load=_save_weights, post_load=_post_proc)
+=======
+    return msc_codegen.to_relax(graph, weights, codegen_config, print_config, build_folder, plugin)
+>>>>>>> main

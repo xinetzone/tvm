@@ -48,21 +48,21 @@ target = tvm.target.Target(target_str)
 dev = tvm.cuda()
 
 
-def check_executable(exec, dev, inputs, expected):
+def check_executable(exec, dev, inputs, expected, entry_func_name):
     vm = relax.VirtualMachine(exec, dev)
-    out = vm["main"](*inputs)
+    out = vm[entry_func_name](*inputs)
     tvm.testing.assert_allclose(out.numpy(), expected.numpy(), atol=1e-5, rtol=1e-5)
 
 
-def check_roundtrip(exec0, dev, inputs, expected):
+def check_roundtrip(exec0, dev, inputs, expected, entry_func_name="main"):
     exec0.mod.export_library("exec.so")
     exec1 = tvm.runtime.load_module("exec.so")
     os.remove("exec.so")
     assert exec0.stats() == exec1["stats"]()
     assert exec0.as_text() == exec1["as_text"]()
 
-    check_executable(exec0, dev, inputs, expected)
-    check_executable(exec1, dev, inputs, expected)
+    check_executable(exec0, dev, inputs, expected, entry_func_name)
+    check_executable(exec1, dev, inputs, expected, entry_func_name)
 
 
 def gen_ground_truth(mod, target, dev, inputs):
@@ -113,9 +113,16 @@ def setup_test():
     return mod, inputs, expected
 
 
+entry_func_name = tvm.testing.parameter("main", "func")
+
+
 @tvm.testing.requires_gpu
-def test_tensorrt_only():
+def test_tensorrt_only(entry_func_name):
     mod, inputs, expected = setup_test()
+
+    if entry_func_name != "main":
+        mod[entry_func_name] = mod
+        del mod["main"]
 
     # Define patterns that we want to offload to byoc
     # This test will offload entire model
@@ -135,7 +142,7 @@ def test_tensorrt_only():
 
     ex0 = relax.build(new_mod, target, params={})
     # Sanity check for the correctness and roundtrip
-    check_roundtrip(ex0, dev, inputs, expected)
+    check_roundtrip(ex0, dev, inputs, expected, entry_func_name)
 
 
 @tvm.testing.requires_gpu
@@ -248,6 +255,28 @@ def test_multiple_calls_same_extern():
     tvm.ir.assert_structural_equal(mod["main"], Conv2dx2_after["main"])
 
 
+def test_default_entry_func():
+    """The entry function is not necessarily named "main"
+
+    Like `test_multiple_calls_same_extern`, but the main function is
+    named "func".
+    """
+    before_with_main = Conv2dx2
+    after_with_main = relax.transform.RunCodegen()(before_with_main)
+
+    def rename_main(mod):
+        mod = mod.clone()
+        mod["func"] = mod["main"].with_attr("global_symbol", "func")
+        del mod["main"]
+        return mod
+
+    before_with_func = rename_main(before_with_main)
+    expected_with_func = rename_main(after_with_main)
+    after_with_func = relax.transform.RunCodegen()(before_with_func)
+
+    tvm.ir.assert_structural_equal(expected_with_func["func"], after_with_func["func"])
+
+
 def test_dynamic_shape():
     import tvm.relax.backend.contrib.cublas
 
@@ -321,6 +350,35 @@ def test_dynamic_shape():
 
     after = relax.transform.RunCodegen()(Before)
     tvm.ir.assert_structural_equal(after["main"], Expected["main"])
+
+
+def test_no_op_for_call_to_tir():
+    """Calls to PrimFunc are ignored
+
+    RunCodegen should only update calls to Relax functions annotated
+    with the `"Codegen"` attribute.  Calls to any other function type
+    should be ignored.
+
+    This is a regression test.  Previous implementations performed an
+    unconditional cast from `tvm::BaseFunc` to `tvm::relax::Function`,
+    which produced an error.
+    """
+
+    @tvm.script.ir_module
+    class Before:
+        @R.function
+        def main(x: R.Tensor):
+            R.func_attr({"relax.force_pure": True})
+            _ = Before.shape_func(x)
+            return x
+
+        @T.prim_func(private=True)
+        def shape_func(H: T.Buffer(T.int64(4), "int64")):
+            H[T.int64(0)] = H[T.int64(0)] + T.int64(1)
+
+    Expected = Before
+    After = relax.transform.RunCodegen()(Before)
+    tvm.ir.assert_structural_equal(Expected, After)
 
 
 # TODO(@sunggg):  test with more complex patterns (e.g., multiple annots, mixed codegens, different ops, const binding)

@@ -23,7 +23,8 @@ import json
 from typing import List, Union, Dict, Any
 import numpy as np
 
-from .info import load_dict
+from .arguments import load_dict
+from .info import cast_array
 
 
 class BaseDataLoader(object):
@@ -344,6 +345,7 @@ class BaseDataSaver(object):
            The folder that data saved to.
         """
 
+        data = cast_array(data)
         save_name = name.replace("/", "_").replace(":", "_")
         sub_folder = f_path = os.path.join(self._folder, save_name)
         if not os.path.isdir(sub_folder):
@@ -428,11 +430,15 @@ class IODataSaver(BaseDataSaver):
         """Finalize the saver"""
 
         super().finalize()
+        if "inputs" not in self._info:
+            return
         with open(os.path.join(self._folder, "datas_info.txt"), "w") as f:
             for name in self._input_names:
                 info = self._info["inputs"][name]
                 f.write("{} {} {}\n".format(name, info.get("save_name", name), info["bytes"]))
             for name in self._output_names:
+                if name not in self._info["outputs"]:
+                    continue
                 info = self._info["outputs"][name]
                 f.write("{} {} {}\n".format(name, info.get("save_name", name), info["bytes"]))
 
@@ -501,6 +507,8 @@ class IODataSaver(BaseDataSaver):
 def is_io_dataset(folder: str) -> bool:
     """Check if a folder is IO dataset"""
 
+    if not isinstance(folder, str):
+        return False
     if not os.path.isfile(os.path.join(folder, "datas_info.json")):
         return False
     data_info = load_dict(os.path.join(folder, "datas_info.json"))

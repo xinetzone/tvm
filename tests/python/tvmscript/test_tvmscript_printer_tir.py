@@ -17,6 +17,7 @@
 # pylint: disable=missing-docstring
 
 import re
+import pytest
 
 import tvm.testing
 from tvm import ir, tir
@@ -622,25 +623,35 @@ def test_select():
     )
 
 
-def test_ramp():
+@pytest.mark.parametrize(
+    "lanes, scripted_lanes", [(32, "32"), (tvm.tir.vscale() * 8, "T.vscale() * 8")]
+)
+def test_ramp(lanes, scripted_lanes):
     a = tir.Var("a", "int32")
-    obj = tir.Ramp(a, 1, 32)
+    obj = tir.Ramp(a, 1, lanes)
     _assert_print(
         obj,
         """
 a = T.int32()
-T.Ramp(a, 1, 32)
-""",
+T.Ramp(a, 1, {})
+""".format(
+            scripted_lanes
+        ),
     )
 
 
-def test_broadcast():
-    obj = tir.Broadcast(0, 4)
+@pytest.mark.parametrize(
+    "lanes, scripted_lanes", [(4, "4"), (tvm.tir.vscale() * 4, "T.vscale() * 4")]
+)
+def test_broadcast(lanes, scripted_lanes):
+    obj = tir.Broadcast(0, lanes)
     _assert_print(
         obj,
         """
-T.Broadcast(0, 4)
-""",
+T.Broadcast(0, {})
+""".format(
+            scripted_lanes
+        ),
     )
 
 
@@ -887,6 +898,23 @@ def test_variable_with_cpp_address():
         )
 
     assert re.match(expected_regex, script)
+
+
+def test_return_statement():
+    from tvm.script import tir as T
+
+    @T.prim_func
+    def func():
+        T.evaluate(T.ret(5))
+
+    expected_output = """
+# from tvm.script import tir as T
+
+@T.prim_func
+def func():
+    return 5
+    """
+    _assert_print(func, expected_output)
 
 
 if __name__ == "__main__":

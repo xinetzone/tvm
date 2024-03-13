@@ -52,7 +52,7 @@ def Gradient(
     """Reverse-mode automatic differentiation.
 
     This pass will differentiate one function in the IRModule. Now the input function must have only
-    one dataflow block.
+    one dataflow block (ConvertToDataflow may need to be called first).
 
     For a given function specified by `func_name`, it generates a new function with the name
     `func_name + "_adjoint"`. The new function computes the gradient of the **differentiation
@@ -260,6 +260,8 @@ def DataflowUseInplaceCalls() -> tvm.ir.transform.Pass:
     in-place PrimFunc implementations of those operators (which are based on the legalizations of
     those operators).
 
+    Note: ConvertToDataflow may need to be called first to provide dataflow blocks.
+
     Returns
     -------
     ret: tvm.ir.transform.Pass
@@ -281,6 +283,8 @@ def LambdaLift() -> tvm.ir.transform.Pass:
 def ConvertToDataflow(min_size: int = 2) -> tvm.ir.transform.Pass:
     """A pass that converts consecutive dataflow operations
     inside binding blocks into dataflow blocks.
+
+    Note: ConvertToDataflow may need to be called first.
 
     Params
     ------
@@ -394,6 +398,8 @@ def RewriteDataflowReshape() -> tvm.ir.transform.Pass:
     The VM reshape operator calls will be further lowered to a CreateView
     operation at runtime, instead of doing real data copy.
     Here "reshape-like" includes reshape, expand_dims, flatten, etc.
+
+    Note: Operates only in dataflow blocks. ConvertToDataflow may need to be called first.
 
     Returns
     -------
@@ -574,7 +580,8 @@ def RunCodegen(
         The registered pass to remove unused functions.
     """
     if entry_functions is None:
-        entry_functions = ["main"]
+        entry_functions = []
+
     # enable cutlass byoc registries
     # pylint: disable=unused-import,import-outside-toplevel
     from tvm.contrib import cutlass as _cutlass
@@ -583,7 +590,9 @@ def RunCodegen(
 
 
 def FoldConstant() -> tvm.ir.transform.Pass:
-    """Fold constant expressions.
+    """Fold constant expressions within dataflow blocks.
+
+    Note: ConvertToDataflow may need to be called first to provide dataflow blocks.
 
     Returns
     -------
@@ -649,6 +658,8 @@ def FuseOps(fuse_opt_level=-1) -> tvm.ir.transform.Pass:
     the function being manipulated into function calls to the new grouped function.
 
     A follow-up pass named "FuseTIR" will generate a TIR PrimFunc for each grouped function.
+
+    Note: ConvertToDataflow may need to be called first to provide dataflow blocks.
 
     Parameters
     ----------
@@ -763,6 +774,8 @@ def FuseOpsByPattern(
 
     The end result is similar to FuseOps, but fusion is driven completely by the provided patterns.
 
+    Note: Only operates within dataflow blocks. ConvertToDataflow may need to be called first.
+
     Parameters
     ----------
     patterns : List[Union[FusionPattern, Tuple]]
@@ -839,7 +852,7 @@ def LiftTransformParams() -> tvm.ir.transform.Pass:
     return _ffi_api.LiftTransformParams()  # type: ignore
 
 
-def BundleModelParams() -> tvm.ir.transform.Pass:
+def BundleModelParams(param_tuple_name: Optional[str] = None) -> tvm.ir.transform.Pass:
     """Bundle several model parameters into a single tuple paramters
 
     For each function, if the function has the attribute "num_input",
@@ -847,13 +860,20 @@ def BundleModelParams() -> tvm.ir.transform.Pass:
     Run-time parameters (e.g. activations) are the first `num_input`
     parameters, and the remainder are compile-time weights.
 
+    Parameters
+    ----------
+    param_tuple_name: Optional[str]
+
+        The name of the tuple parameter.  If unspecified, defaults to
+        "model_params".
+
     Returns
     -------
     ret : tvm.transform.Pass
         The registered pass for lifting transformation of parameters.
 
     """
-    return _ffi_api.BundleModelParams()  # type: ignore
+    return _ffi_api.BundleModelParams(param_tuple_name)  # type: ignore
 
 
 def LegalizeOps(
@@ -1171,11 +1191,12 @@ def DeadCodeElimination(entry_functions: Optional[List[str]] = None) -> tvm.ir.t
     """Remove dead code in the IRModule.
     Currently it removes:
 
-       1. Unused local VarBindings in a DataflowBlock.
-       2. Unused DataflowBlocks in a function.
-       3. Unused Relax functions in the module.
+       1. Unused local VarBindings
+          (those where the bound var is unused and no impure operation is used).
+       2. Unused Relax functions in the module.
           We detect the call chain from the entry function, and remove all unused functions.
 
+    Any binding blocks that are left empty will be removed by the normalizer.
 
     Notes
     -----
@@ -1201,6 +1222,8 @@ def ToMixedPrecision(
 ) -> tvm.ir.transform.Pass:
     """Automatic mixed precision pass. Currently the pass assumes the input module to be fp32
     only, and will automatically cast fp32 to fp16 for certain ops.
+
+    Note: Mainly operates within dataflow blocks. ConvertToDataflow may need to be called first.
 
     Parameters
     ----------
@@ -1280,6 +1303,61 @@ def AdjustMatmulOrder():
     """
 
     return _ffi_api.AdjustMatmulOrder()  # type: ignore
+
+
+def ExpandMatmulOfSum():
+    """Expand `matmul(x, A+B)` to `matmul(x,A) + matmul(x,B)`
+
+    If either operand can be fully computed at compile-time (only
+    depends on function parameters after kNumInput), this expansion is
+    suppressed.
+
+    Useful for optimizing LoRA computations, where `matmul(x, Base +
+    LoraA*LoraB)` may be expanded to `matmul(x, Base) + matmul(x,
+    LoraA*LoraB)`, allowing it to optimized with  `CombineParallelMatmul`.
+
+    Returns
+    -------
+    ret : tvm.transform.Pass
+        The corresponding pass.
+    """
+
+    return _ffi_api.ExpandMatmulOfSum()  # type: ignore
+
+
+def ReorderPermuteDimsAfterConcat():
+    """Reorder `concat(permute_dims(A), permute_dims(B))` into `permute_dims(concat(A,B))`
+
+    Useful for optimizing computations after `CombineParallelMatmul`.
+    The patterns for optimized `nn.Linear` implementations look for
+    `matmul(activations, permute_dims(weights))`.  After
+    `CombineParallelMatmul`, the `matmul(activations,
+    concat(permute_dims(A), permute_dims(B)))` no longer matches this
+    pattern.  Rearranging into `matmul(activations,
+    permute_dims(concat(A,B)))` restores the pattern match.
+
+    Returns
+    -------
+    ret : tvm.transform.Pass
+        The corresponding pass.
+    """
+
+    return _ffi_api.ReorderPermuteDimsAfterConcat()  # type: ignore
+
+
+def ReorderTakeAfterMatmul():
+    """Reorder `matmul(x, take(weights, indices))` to `take(matmul(x,weights),indices)`
+
+    Useful for optimizing LoRA computations, where several LoRAs may
+    be batched together.
+
+    Returns
+    -------
+    ret : tvm.transform.Pass
+        The corresponding pass.
+    """
+
+    return _ffi_api.ReorderTakeAfterMatmul()  # type: ignore
 
 
 def CombineParallelMatmul(check=None):

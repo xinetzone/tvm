@@ -250,6 +250,28 @@ TVM_DLL bool IsBaseOf(const StructInfo& base, const StructInfo& derived,
                       arith::Analyzer* ana = nullptr);
 
 /*!
+ * \brief Return the condition for which base is a superset of derived
+ *
+ * This function returns finer-grained conditions for kFailL2 than StructInfoBaseCheck
+ *
+ * If the returned expression is true, or simplifies to true, then
+ * base is a superset of derived.  If the returned expression is
+ * false, or simplifies to false, then base is not a superset of
+ * derived.
+ *
+ * If the returned expression is neither true nor false, it is an
+ * expression in terms of the symbolic variables available in `base`
+ * and `derived`.
+ *
+ * \param base The base struct info.
+ * \param derived The derived struct info.
+ * \return Whether base is a base of derived.
+ *
+ * \sa BaseCheckResult
+ */
+TVM_DLL PrimExpr StructInfoBaseCheckPrecondition(const StructInfo& base, const StructInfo& derived);
+
+/*!
  * \brief Unify the two struct info to their least common ancestor.
  *
  * \param lhs The left operand.
@@ -492,6 +514,21 @@ TVM_DLL relay::OpPatternKind AnalyzeOpPatternKind(const tir::PrimFunc& func);
  * property guarantees the safety of this function.
  */
 TVM_DLL bool HasReshapePattern(const tir::PrimFunc& func);
+
+/*!
+ * \brief Check if the given expression (likely a function body) contains any impure calls.
+ * \param expr The expression to be examined. If expr is a function, we check the body.
+ * \param own_name (Optional.) If we are checking a recursive function body,
+ *   the caller can pass the function's name so recursive calls
+ *   can be ignored in the check (must be a Var or GlobalVar).
+ * \return The impure expression, if one exists within the given
+ *   expression.  Otherwise, NullOpt.
+ * \note Relies on StructInfo annotations, so ensure that the module has been normalized first.
+ *   Also, an impure call in a *nested* function does *not* mean that the outer expression contains
+ *   an impure call--it only does if the nested function is *later called*.
+ */
+TVM_DLL Optional<Expr> FindImpureCall(const Expr& expr,
+                                      const Optional<Expr>& own_name = Optional<Expr>(nullptr));
 
 /*!
  * \brief Check if the given expression (likely a function body) contains any impure calls.

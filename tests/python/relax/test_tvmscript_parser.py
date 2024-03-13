@@ -842,6 +842,28 @@ def test_call_packed():
     _check(foo, bb.get()["foo"])
 
 
+def test_call_packed_without_sinfo_args():
+    @R.function
+    def foo(x: R.Object) -> R.Object:
+        z = R.call_packed("test", x)
+        return z
+
+    x = relax.Var("x", R.Object())
+    bb = relax.BlockBuilder()
+    with bb.function("foo", (x)):
+        z = bb.emit(
+            relax.Call(
+                relax.ExternFunc("test"),
+                (x,),
+                None,
+                sinfo_args=[],
+            )
+        )
+        bb.emit_func_output(z)
+
+    _check(foo, bb.get()["foo"])
+
+
 def test_annotation():
     @R.function
     def foo(
@@ -1152,6 +1174,47 @@ def test_if_branch():
     assert w_bind.var.name_hint == "w"
     check_call(w_bind.value, "relax.multiply", [x, x])
     check_call(y_bind.value, "relax.add", [w_bind.var, w_bind.var])
+
+
+def test_if_branch_with_match_cast():
+    """The last branch of a relax::If node may be a MatchCast
+
+    This is a regression test.  In previous implementations, using
+    R.match_cast as the last binding would cause a segfault while
+    parsing.
+    """
+
+    @R.function
+    def func(A: R.Tensor([16, 16]), is_bfloat16: R.Prim("bool")):
+        if is_bfloat16:
+            A = R.match_cast(A, R.Tensor([16, 16], "bfloat16"))
+            B = A.astype("float16")
+        else:
+            B = R.match_cast(A, R.Tensor([16, 16], "float16"))
+        return B
+
+    A, is_bfloat16 = func.params
+    (block,) = func.body.blocks
+    (B_binding,) = block.bindings
+
+    B_var = B_binding.var
+    assert isinstance(B_var, relax.Var)
+    assert B_var.name_hint == "B"
+
+    if_then_else = B_binding.value
+    assert isinstance(if_then_else, relax.If)
+    assert isinstance(if_then_else.true_branch, relax.SeqExpr)
+    assert isinstance(if_then_else.false_branch, relax.SeqExpr)
+
+    else_branch = if_then_else.false_branch
+    (else_block,) = else_branch.blocks
+
+    assert isinstance(else_block.bindings[-1], relax.MatchCast)
+
+    # If the `R.match_cast` were removed, the function would infer the
+    # return value as `R.Tensor([16,16])`, with an unknown dtype.
+    # With the `R.match_cast` retained, the output dtype is known.
+    tvm.ir.assert_structural_equal(func.ret_struct_info, R.Tensor([16, 16], "float16"))
 
 
 def test_if_inside_dataflow():
@@ -1761,6 +1824,77 @@ def test_parse_multiple_pure_and_impure_funcs():
     _check(Mixture)
 
 
+def test_function_with_void_return_type_may_be_used_as_statements():
+    """Void return of calls do not need to be assigned"""
+
+    @I.ir_module
+    class Unsugared:
+        @R.function(pure=False)
+        def print(x: R.Tensor((), "int32")) -> R.Tensor((), "int32"):
+            y = R.print(x, format="x: {}")
+            return x
+
+        @R.function(pure=False)
+        def assert_func(x: R.Tensor((), "int32")) -> R.Tensor((), "int32"):
+            y = R.assert_op(R.const(False, dtype="bool"), x, format="x: {}")
+            return x
+
+    @I.ir_module
+    class Sugared:
+        @R.function(pure=False)
+        def print(x: R.Tensor((), "int32")) -> R.Tensor((), "int32"):
+            R.print(x, format="x: {}")
+            return x
+
+        @R.function(pure=False)
+        def assert_func(x: R.Tensor((), "int32")) -> R.Tensor((), "int32"):
+            R.assert_op(R.const(False, dtype="bool"), x, format="x: {}")
+            return x
+
+    tvm.ir.assert_structural_equal(Unsugared, Sugared)
+
+
+def test_function_with_non_void_return_type_must_be_assigned():
+    """Non-void results must be assigned to a variable"""
+
+    with pytest.raises(tvm.error.DiagnosticError):
+
+        @R.function(pure=False)
+        def func(x: R.Tensor((), "int32")) -> R.Tensor((), "int32"):
+            R.add(x, x)
+            return x
+
+
+def test_function_with_void_return_type_in_if_else():
+    """Last statement in if/else may be a void return"""
+
+    @I.ir_module
+    class Unsugared:
+        @R.function(pure=False)
+        def conditional(
+            x: R.Tensor((), "int32"), condition: R.Tensor((), "bool")
+        ) -> R.Tensor((), "int32"):
+            if condition:
+                y = R.print(x, format="True condition: {}")
+            else:
+                y = R.print(x, format="False condition: {}")
+            return x
+
+    @I.ir_module
+    class Sugared:
+        @R.function(pure=False)
+        def conditional(
+            x: R.Tensor((), "int32"), condition: R.Tensor((), "bool")
+        ) -> R.Tensor((), "int32"):
+            if condition:
+                R.print(x, format="True condition: {}")
+            else:
+                R.print(x, format="False condition: {}")
+            return x
+
+    _check(Sugared, Unsugared)
+
+
 def test_call_pure_packed():
     @R.function
     def foo(x: R.Tensor((32, 32), "float32")) -> R.Tensor:
@@ -1773,6 +1907,20 @@ def test_call_pure_packed():
         z = bb.emit(
             R.call_pure_packed("vm.builtin.copy", x, sinfo_args=[R.Tensor((32, 32), "float32")])
         )
+        bb.emit_func_output(z)
+
+    _check(foo, bb.get()["foo"])
+
+
+def test_call_pure_packed_returning_object():
+    @R.function
+    def foo() -> R.Object:
+        z = R.call_pure_packed("dummy_func", sinfo_args=R.Object)
+        return z
+
+    bb = relax.BlockBuilder()
+    with bb.function("foo", params=[]):
+        z = bb.emit(R.call_pure_packed("dummy_func", sinfo_args=[relax.ObjectStructInfo()]))
         bb.emit_func_output(z)
 
     _check(foo, bb.get()["foo"])
