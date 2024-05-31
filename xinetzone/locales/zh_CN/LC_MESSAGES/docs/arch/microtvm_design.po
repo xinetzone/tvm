@@ -1,0 +1,806 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-10 21:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/arch/microtvm_design.rst:20
+msgid "microTVM Design Document"
+msgstr "microTVM 设计文档"
+
+#: ../../docs/arch/microtvm_design.rst:23
+msgid "Table of Contents"
+msgstr "目录"
+
+#: ../../docs/arch/microtvm_design.rst:26
+msgid "Background"
+msgstr "背景"
+
+#: ../../docs/arch/microtvm_design.rst:28
+msgid ""
+"TVM is a model deployment framework that has demonstrated good "
+"performance across a wide range of models on traditional operating "
+"systems. Given TVM's layered approach to compilation, it is a natural "
+"extension to target bare metal devices. While most of the compilation "
+"flow does not need to change for a proof-of-concept implementation on "
+"such devices, the runtime cannot depend on:"
+msgstr ""
+"TVM 是一个模型部署框架，已经在传统操作系统上展示出良好的性能，适用于各种模型。"
+"鉴于 TVM 的分层编译方法，将其扩展到目标裸机设备是一种自然的选择。"
+"虽然大部分编译流程在这样的设备上不需要改变，但运行时不能依赖于："
+
+#: ../../docs/arch/microtvm_design.rst:33
+msgid ""
+"**Virtual Memory**, and by extension any system-provided ``malloc``. "
+"Additionally, bare metal devices typically have very limited memory "
+"(measured in KB). Because of this, libraries designed for such platforms "
+"typically need to be more judicious in using memory, and need to release "
+"memory when it is not in use."
+msgstr ""
+"**虚拟内存** (Virtual Memory)，以及任何系统提供的 ``malloc`` （动态内存分配）系统。"
+"此外，裸机设备通常具有非常有限的内存（以 KB 为单位）。因此，针对此类平台设计的库通常需要更谨慎地使用内存，并在不使用时释放内存。"
+
+#: ../../docs/arch/microtvm_design.rst:37
+msgid ""
+"Traditional OS abstractions, such as **files**, **libraries**, and "
+"**kernel functions**. Some projects implement support for these, but they"
+" are by no means standard."
+msgstr ""
+"传统的操作系统抽象，例如 **文件**、**库** 和 **内核函数**。一些项目实现了对它们的支持，但它们并不是标准。"
+
+#: ../../docs/arch/microtvm_design.rst:39
+msgid "Support for programming languages other than **C**."
+msgstr "支持除 **C** 以外的编程语言。"
+
+#: ../../docs/arch/microtvm_design.rst:41
+msgid ""
+"Such changes require a different approach from the TVM C++ runtime "
+"typically used on traditional Operating Systems."
+msgstr ""
+"这样的变化需要与传统操作系统上通常使用的 TVM C++ 运行时不同的方法。"
+
+#: ../../docs/arch/microtvm_design.rst:45
+msgid "Typical Use"
+msgstr "典型的使用"
+
+#: ../../docs/arch/microtvm_design.rst:47
+msgid ""
+"This section discusses our vision of the \"typical\" microTVM use case. "
+"Each component used to achieve this typical use case is intended to be "
+"designed for flexibility, but this unifying vision serves to motivate the"
+" inclusion of each part of the design."
+msgstr ""
+"本节讨论了我们对“典型”微型 TVM 使用情况的愿景。"
+"为了达到这种典型的使用情况，使用的每个组件都旨在设计灵活，但是这个统一的愿景有助于激发设计的每个部分的加入。"
+
+#: ../../docs/arch/microtvm_design.rst:55
+msgid "The parts of this process are described below:"
+msgstr "这个过程的各个部分如下所述："
+
+#: ../../docs/arch/microtvm_design.rst:57
+msgid ""
+"**Model Import**. The user imports an existing model or describes a new "
+"model to TVM, producing a *Relay module*."
+msgstr ""
+"**模型导入**。用户导入现有模型或描述新模型到 TVM，生成 **Relay 模块**。"
+
+#: ../../docs/arch/microtvm_design.rst:60
+msgid ""
+"**Model Transformations**. The user can apply transformations, such as "
+"quantization, to the model. After each transformation, the user should "
+"still have a Relay module."
+msgstr ""
+"**模型变换**。用户可以对模型应用量化等变换。每个变换后，用户应该仍然有 Relay 模块。"
+
+#: ../../docs/arch/microtvm_design.rst:63
+msgid ""
+"**Compilation** (Scheduling and Code Generation). TVM implements each "
+"operator into Tensor IR by assigning a schedule and schedule "
+"configuration to each Relay operator. Then, code (C source or compiled "
+"object) is generated for each operator."
+msgstr ""
+"**编译** （调度和代码生成）。TVM 通过为每个 Relay 算子分配调度和调度配置来将每个算子实现为 Tensor IR。然后，为每个算子生成代码（C 源代码或已编译的对象）。"
+
+#: ../../docs/arch/microtvm_design.rst:67
+msgid ""
+"**Integration**. The generated code is integrated along with the TVM C "
+"Runtime library into a user-supplied binary project. In some cases (such "
+"as when the project is standardized across multiple SoC/development "
+"boards), this process is handled automatically."
+msgstr ""
+"**集成**。生成的代码与 TVM C 运行时库一起集成到用户提供的二进制项目中。在某些情况下（例如当该项目在多个 SoC/开发板上标准化时），此过程会自动处理。"
+
+#: ../../docs/arch/microtvm_design.rst:71
+msgid ""
+"**Deployment**. The project is built and the residual firmware binary is "
+"flashed onto the device. Model inference is driven either by TVM using an"
+" on-device RPC server, or on the device using the on-device Graph "
+"Executor."
+msgstr ""
+"**部署**。构建项目并将剩余的固件(firmware)二进制文件刷写到设备上。模型推理由 TVM 使用设备上的 RPC 服务器驱动，或者在设备上使用设备上的 Graph 执行器。"
+
+#: ../../docs/arch/microtvm_design.rst:76
+msgid "Design Goals"
+msgstr "设计目标"
+
+#: ../../docs/arch/microtvm_design.rst:78
+msgid "microTVM aims to achieve these design goals:"
+msgstr "microTVM 旨在实现以下设计目标："
+
+#: ../../docs/arch/microtvm_design.rst:80
+msgid ""
+"**Portable Code**. microTVM can translate any Relay model into C code "
+"that can compile with only a C standard library."
+msgstr ""
+"**可移植代码**。microTVM 可以将任何 Relay 模型翻译为 C 代码，只需使用 C 标准库即可编译。"
+
+#: ../../docs/arch/microtvm_design.rst:82
+msgid ""
+"**Minimal Overhead**. microTVM generates target-specific, highly "
+"optimized code. As much overhead from the runtime should be removed."
+msgstr ""
+"**最小化开销**。microTVM 生成面向目标的高度优化的代码。应尽可能消除来自运行时的开销。"
+
+#: ../../docs/arch/microtvm_design.rst:84
+msgid ""
+"**Accessible Code**. microTVM considers C source code as a first-class "
+"output mechanism so that it is easier for a firmware engineer to "
+"understand and tweak."
+msgstr ""
+"**易于访问的代码**。microTVM 将 C 源代码视为一流的输出机制，以便固件工程师更容易理解和调整。"
+
+#: ../../docs/arch/microtvm_design.rst:88
+msgid "Overview"
+msgstr "概述"
+
+#: ../../docs/arch/microtvm_design.rst:90
+msgid ""
+"microTVM requires changes at all levels of the TVM compiler stack. The "
+"following sub-sections enumerate these changes at a high level, and "
+"follow-on sections discuss the specifics in more detail."
+msgstr ""
+"microTVM 需要对 TVM 编译器堆栈的所有 level 进行更改。以下子部分在高层次上列出了这些更改，后续部分详细讨论了具体内容。"
+
+#: ../../docs/arch/microtvm_design.rst:94
+msgid "Modeling Target Platforms"
+msgstr "建模目标平台"
+
+#: ../../docs/arch/microtvm_design.rst:96
+msgid ""
+"TVM's search-based optimization approach allows it to largely avoid "
+"system-level modeling of targets in favor of experimental results. "
+"However, some modeling is necessary in order to ensure TVM is comparing "
+"apples-to-apples search results, and to avoid wasting time during the "
+"search by attempting to compile invalid code for a target."
+msgstr ""
+"TVM 的基于搜索的优化方法允许其在实验结果方面避免大部分系统级目标建模。然而，一些建模是必要的，以确保 TVM 比较 apples-to-apples 的搜索结果，并避免在搜索期间尝试为目标编译无效代码而浪费时间。"
+
+#: ../../docs/arch/microtvm_design.rst:101
+msgid "microTVM models these parts of the target:"
+msgstr "microTVM 对目标的这些部分进行建模："
+
+#: ../../docs/arch/microtvm_design.rst:103
+msgid "The CPU used, through the ``-mcpu`` and ``-march`` target flags."
+msgstr "通过 ``-mcpu`` 和 ``-march`` 目标标志使用的 CPU。"
+
+#: ../../docs/arch/microtvm_design.rst:104
+msgid ""
+"The presence or absence of accelerators, through the device components of"
+" the target (Currently only the absence of accelerators can be expressed,"
+" but this mechanism should extend well)."
+msgstr ""
+"通过目标设备的组件来判断加速器的有无（目前只能表示缺少加速器，但是这种机制应该会得到很好的扩展）。"
+
+#: ../../docs/arch/microtvm_design.rst:107
+msgid "microTVM aims to model these parts of the target in the future:"
+msgstr "microTVM 旨在未来模拟目标的这些部分："
+
+#: ../../docs/arch/microtvm_design.rst:109
+msgid ""
+"Memory, modeled as a set of disjoint memory spaces, each with a label and"
+" size and prefetch/flush behavior. Some memory may be shared with "
+"accelerators."
+msgstr ""
+"内存，被建模为一组不相交的内存空间，每个空间具有标签（label）、大小（size）和预取/刷新（prefetch/flush）行为。有些内存可能与加速器共享。"
+
+#: ../../docs/arch/microtvm_design.rst:111
+msgid ""
+"Target runtime configuration (i.e. clock tree configuration, clock speed,"
+" etc). This is intended only to contribute to the AutoTVM schedule key "
+"and not for any other use."
+msgstr ""
+"目标运行时配置（即时钟树配置（clock tree configuration）、时钟速度（clock speed）等）。这只是为了提供 AutoTVM 调度键，而不是用于任何其他用途。"
+
+#: ../../docs/arch/microtvm_design.rst:114
+msgid "At this time, TVM does not intend to model:"
+msgstr "目前，TVM 不打算建模："
+
+#: ../../docs/arch/microtvm_design.rst:116
+msgid ""
+"Size, type, or relationship of caches, with the exception of prefetching "
+"or cache flushing."
+msgstr ""
+"缓存的大小、类型或关系，除了预取(prefetching)和缓存刷新(cache flushing)。"
+
+#: ../../docs/arch/microtvm_design.rst:120
+msgid "TVM Targets for microTVM"
+msgstr "TVM microTVM 的目标设备"
+
+#: ../../docs/arch/microtvm_design.rst:122
+msgid ""
+"A central data structure in the compilation process is the "
+"``tvm::target::Target`` class. TVM uses Target to decide which TIR "
+"schedules to enable and how to configure the code generator. The Target "
+"class should also uniquely identify the generated code for a particular "
+"operator, as autotuning logs use it to rank measured performance (but see"
+" Future Work)."
+msgstr ""
+"在编译过程中，一个核心的数据结构是 ``tvm::target::Target`` 类。"
+"TVM 使用 Target 来决定启用哪些 TIR 调度并配置代码生成器。Target 类还应该唯一地标识特定算子的生成代码，因为自动调优日志使用它来排名性能（但请参见未来工作）。"
+
+#: ../../docs/arch/microtvm_design.rst:127
+msgid ""
+"Targets are currently represented as strings structured similarly to "
+"command-line arguments. An example target is shown below:"
+msgstr "目标当前被表示为结构类似于命令行参数的字符串。下面是目标的示例："
+
+#: ../../docs/arch/microtvm_design.rst:130
+msgid "``c -keys=arm_cpu -mcpu=cortex-m7 -model=stm32f746xx``"
+msgstr ""
+
+#: ../../docs/arch/microtvm_design.rst:132
+msgid "The relevant parts to microTVM are:"
+msgstr "对于 microTVM 相关的部分有："
+
+#: ../../docs/arch/microtvm_design.rst:134
+msgid "Code generator (``llvm`` or ``c``)"
+msgstr ""
+
+#: ../../docs/arch/microtvm_design.rst:135
+msgid ""
+"``-mcpu=cortex-m7``: used by TOPI to enable Cortex-M schedules, and, when"
+" the C source code generator is selected, included in the output as a "
+"comment to help identify the code and configure the downstream C "
+"compiler."
+msgstr ""
+"``-mcpu=cortex-m7``：由 TOPI 使用以启用 Cortex-M 调度，并且当选择 C 源代码生成器时，会作为注释包含在输出中，以帮助识别代码并配置下游 C 编译器。"
+
+#: ../../docs/arch/microtvm_design.rst:140
+msgid "Runtime and Executor configuration for microTVM"
+msgstr "microTVM 的运行时和执行器配置"
+
+#: ../../docs/arch/microtvm_design.rst:142
+msgid ""
+"When using microTVM, it's important to use the C Runtime "
+"(``Runtime('crt')``), which is the runtime that works best on micro "
+"devices rather than the more dynamic C++ Runtime. Alongside this, there "
+"are two executors which you could use in combination with the C runtime:"
+msgstr ""
+"在使用 microTVM 时，重要的是要使用 C 运行时（``Runtime('crt')``），这是在微型设备上表现最佳的运行时，而不是更动态的 C++ 运行时。除此之外，还有两个执行器可与 C 运行时结合使用："
+
+#: ../../docs/arch/microtvm_design.rst:144
+msgid ""
+"``Executor(\"aot\")`` - The Ahead of Time (AOT) executor precompiles the "
+"network into a runnable function which you can add directly into your "
+"micro application"
+msgstr ""
+"``Executor(\"aot\")`` - 预先编译（AOT）执行器会将网络预编译为可运行的函数，您可以直接将其添加到您的微应用程序中。"
+
+#: ../../docs/arch/microtvm_design.rst:145
+msgid ""
+"``Executor(\"graph\", {\"link-params\": True})`` - The Graph executor "
+"provides a JSON representation of your network and requires the C "
+"Runtime's system library to be generated to find functions in the "
+"function registry (``Runtime(\"crt\", {\"system-lib\": True})``). "
+"``{\"link-params\":True}`` enables parameters to be linked into the "
+"generated files rather than provided externally."
+msgstr ""
+"``Executor(\"graph\", {\"link-params\": True})`` - Graph 执行器提供了网络的 JSON 表示形式，"
+"并需要生成 C 运行时的系统库以在函数注册表中查找函数（``Runtime(\"crt\", {\"system-lib\": True})``）。``{\"link-params\":True}`` 允许将参数链接到生成的文件中，而不是从外部提供。"
+
+#: ../../docs/arch/microtvm_design.rst:147
+msgid ""
+"These are specified when building a runtime module: ``relay.build(..., "
+"runtime=..., executor=...)``."
+msgstr ""
+"这些是在构建运行时模块时指定的：``relay.build(..., runtime=..., executor=...)``。"
+
+#: ../../docs/arch/microtvm_design.rst:150
+msgid "Writing Schedules for microTVM"
+msgstr "编写 microTVM 的调度策略"
+
+#: ../../docs/arch/microtvm_design.rst:152
+msgid ""
+"For operations scheduled on the CPU, microTVM initially plans to make use"
+" of specialized instructions and extern (i.e. hand-optimized) functions "
+"to achieve good performance. In TVM, this approach is generally "
+"accomplished through tensorization, in which TVM breaks a computation "
+"into small pieces, and a TIR extern function accelerates each small "
+"piece."
+msgstr ""
+"对于在 CPU 上调度的运算，microTVM 最初计划利用专用指令和外部（即手动优化的）函数来实现良好的性能。"
+"在 TVM 中，这种方法通常是通过张量化来实现的，其中 TVM 将计算分解成小块，TIR 外部函数加速每个小块。"
+
+#: ../../docs/arch/microtvm_design.rst:157
+msgid ""
+"TVM currently accommodates both approaches using ``tir.call_extern``. "
+"First, a pragma is attached to the schedule defining the extern function "
+"in portable C."
+msgstr ""
+"目前，TVM 使用 ``tir.call_extern`` 来容纳这两种方法。首先，在调度中附加 pragma，以定义便携式 C 中的 extern 函数。"
+
+#: ../../docs/arch/microtvm_design.rst:160
+msgid ""
+"``sched[output].pragma(n, \"import_c\", \"void call_asm(int32_t* a, "
+"int32_t* b) { /* ... */ }\")``"
+msgstr ""
+
+#: ../../docs/arch/microtvm_design.rst:162
+msgid "Next, ``tensorize`` is used to split the computation."
+msgstr "接下来，使用 ``tensorize`` 来分解计算。"
+
+#: ../../docs/arch/microtvm_design.rst:164
+msgid "``sched[output].tensorize(owi, gemm)``"
+msgstr ""
+
+#: ../../docs/arch/microtvm_design.rst:166
+msgid ""
+"There are a couple of caveats to this approach, all which could be "
+"resolved by linking generated code against external libraries:"
+msgstr ""
+"这种方法有几个注意事项，所有这些注意事项都可以通过将生成的代码链接到外部库来解决："
+
+#: ../../docs/arch/microtvm_design.rst:169
+msgid ""
+"Inline assembly is compiler-specific. While Clang and GCC have "
+"standardized on one syntax, this may not be portable to other compilers. "
+"SDKs solve this by conditionally including a header file depending on the"
+" compiler being used. However, taking this approach means that the "
+"generated code needs additional compiler flags (i.e. "
+"``-Isystempath/to/header``)."
+msgstr ""
+"内联汇编(Inline assembly)是与编译器相关的。虽然 Clang 和 GCC 已经统一了一种语法，但这种语法可能无法适用于其他编译器。"
+"SDK 通过根据使用的编译器条件性地包含头文件来解决这个问题。然而，采用这种方法意味着生成的代码需要额外的编译器标志（即 ``-Isystempath/to/header``）。"
+
+#: ../../docs/arch/microtvm_design.rst:173
+msgid ""
+"It may be helpful to reference helper functions from the generated code "
+"(e.g. to inline common sequences of hand-optimized assembly)."
+msgstr ""
+"从生成的代码中引用帮助函数可能会有所帮助（例如，内联常见的手动优化汇编序列）。"
+
+#: ../../docs/arch/microtvm_design.rst:175
+msgid ""
+"Finally, the extern function invoked may be wholly written in an external"
+" library. If those functions can be wholly inlined, this caveat is the "
+"same as the previous. If not, then additional C code needs to be compiled"
+" and linked against the operator."
+msgstr ""
+"最后，调用的 extern 函数可能完全由外部库编写。如果这些函数可以完全内联，则此警告与之前相同。如果不是，则需要编译额外的 C 代码，并将其链接到算子。"
+
+#: ../../docs/arch/microtvm_design.rst:179
+msgid ""
+"At present, microTVM presumes that all eligible schedules can be "
+"compiled. This means that the user- supplied project (see next section) "
+"must include all libraries that are used by the generated code. When not "
+"using autotuning, TVM randomly chooses a fallback schedule, so all "
+"libraries would need to be supported. When using autotuning, TVM selects "
+"the best-performing schedule, so only that library is needed. There isn't"
+" currently a way to force TVM to pick a particular schedule outside of "
+"autotuning logs, but that would be a good addition."
+msgstr ""
+"目前，microTVM 假定所有合适的调度都可以被编译。这意味着用户提供的项目（请参见下一节）必须包括由生成的代码使用的所有库。"
+"当不使用自动调优时，TVM 会随机选择备用调度，因此需要支持所有库。当使用自动调优时，TVM 选择最佳性能的调度，因此只需要该库。"
+"目前没有办法强制 TVM 在自动调优日志之外选择特定的调度，但这将是很好的补充。"
+
+#: ../../docs/arch/microtvm_design.rst:186
+msgid ""
+"Finally, when using the ``llvm`` backend, the process is similar except "
+"that LLVM bitcode is included in the generated code (with an "
+"``import_llvm`` pragma). LLVM bitcode provides a portable way to call "
+"inline assembly. However, it may be more complex to call external C "
+"functions, and helper functions are of course not easy to use from LLVM "
+"bitcode."
+msgstr ""
+"最后，当使用 ``llvm`` 后端时，该过程类似，只是 LLVM bitcode 包含在生成的代码中（使用 ``import_llvm`` pragma）。"
+"LLVM bitcode 提供了一种调用内联汇编的便携式方法。然而，从 LLVM bitcode 中调用外部 C 函数可能更加复杂，而辅助函数当然不易从 LLVM bitcode 中使用。"
+
+#: ../../docs/arch/microtvm_design.rst:192
+msgid "Executing Models"
+msgstr "执行模型"
+
+#: ../../docs/arch/microtvm_design.rst:194
+msgid "The TVM compiler traditionally outputs three pieces:"
+msgstr "传统上，TVM 编译器输出以下三部分："
+
+#: ../../docs/arch/microtvm_design.rst:196
+msgid "Model operator implementations, as discussed above;"
+msgstr "如上所述，模型算子的实现；"
+
+#: ../../docs/arch/microtvm_design.rst:197
+msgid "A model execution graph, encoded as JSON; and"
+msgstr "编码为 JSON 的模型执行 graph；以及"
+
+#: ../../docs/arch/microtvm_design.rst:198
+msgid "Simplified parameters."
+msgstr "简化的参数。"
+
+#: ../../docs/arch/microtvm_design.rst:200
+msgid ""
+"To correctly execute the model, a Graph Executor needs to reconstruct the"
+" graph in memory, load the parameters, and then invoke the operator "
+"implementations in the correct order."
+msgstr ""
+"为了正确地执行模型，graph 执行器需要在内存中重构计算图，加载参数，然后按正确的顺序调用算子实现。"
+
+#: ../../docs/arch/microtvm_design.rst:203
+msgid "microTVM supports two ways to do this:"
+msgstr "microTVM 支持两种方法来实现这一点："
+
+#: ../../docs/arch/microtvm_design.rst:205
+msgid ""
+"**Host-Driven**. The Graph Executor can run on the host and carry out "
+"execution by issuing commands to the device using an RPC link with a "
+"UART-like transport."
+msgstr ""
+"**主机驱动**。Graph Executor 可以在主机上运行，并通过使用具有类 UART 传输的 RPC 链接向设备发出命令来执行。"
+
+#: ../../docs/arch/microtvm_design.rst:207
+msgid ""
+"**Standalone**. A C Graph Executor is available to be compiled on-device,"
+" but it is not particularly memory efficient. This way enables standalone"
+" execution without any attached host."
+msgstr ""
+"**独立模式**。提供了 C Graph Executor，可以在设备上编译，但它的内存效率并不是特别高。这种方式实现了独立执行而无需连接到任何主机。"
+
+#: ../../docs/arch/microtvm_design.rst:210
+msgid ""
+"Host-Driven is designed for experimenting with models on-device and, like"
+" AutoTVM, uses the RPC server to drive computation on-device. Standalone "
+"is intended for deployment."
+msgstr ""
+"主机驱动模式旨在在设备上进行模型实验，类似于 AutoTVM，使用 RPC 服务器驱动设备上的计算。独立模式则适用于部署。"
+
+#: ../../docs/arch/microtvm_design.rst:214
+msgid "Host-Driven Execution"
+msgstr "主机驱动模式执行。"
+
+#: ../../docs/arch/microtvm_design.rst:216
+msgid "In Host-Driven execution, the firmware binary is the following:"
+msgstr "在主机驱动模式执行中，固件二进制文件如下："
+
+#: ../../docs/arch/microtvm_design.rst:218
+msgid "Generated operator implementations from TVM."
+msgstr "从 TVM 生成的算子实现。"
+
+#: ../../docs/arch/microtvm_design.rst:219
+msgid "The TVM C runtime."
+msgstr "TVM C 运行时。"
+
+#: ../../docs/arch/microtvm_design.rst:220
+msgid "SoC-specific initialization."
+msgstr "特定于 SoC 的初始化。"
+
+#: ../../docs/arch/microtvm_design.rst:221
+msgid "The TVM RPC server."
+msgstr "TVM RPC 服务器。"
+
+#: ../../docs/arch/microtvm_design.rst:222
+msgid "(optional) Simplified Parameters."
+msgstr "（可选）简化参数。"
+
+#: ../../docs/arch/microtvm_design.rst:224
+msgid ""
+"This firmware image is flashed onto the device and a GraphExecutor "
+"instance is created on the host. The GraphExecutor drives execution by "
+"sending RPC commands over a UART:"
+msgstr ""
+"该固件镜像被烧录到设备上，并在主机上创建了 GraphExecutor 实例。GraphExecutor 通过 UART 发送 RPC 命令来驱动执行："
+
+#: ../../docs/arch/microtvm_design.rst:232
+msgid "Standalone Execution"
+msgstr "独立执行"
+
+#: ../../docs/arch/microtvm_design.rst:234
+msgid "In Standalone execution, the GraphExecutor is instantiated on device:"
+msgstr "在独立执行中，GraphExecutor 被实例化在设备上："
+
+#: ../../docs/arch/microtvm_design.rst:241
+msgid "microTVM Firmware"
+msgstr "microTVM 固件"
+
+#: ../../docs/arch/microtvm_design.rst:243
+msgid ""
+"We can now discuss how microTVM firmware should behave. An important task"
+" common to both model execution strategies is configuring the SoC to "
+"match the way it performs in production. microTVM considers this task "
+"project- and SoC-dependent. Whether for AutoTVM, host-driven model "
+"inference, or in standalone deployment, the user is expected to supply a "
+"project whose main() does the following:"
+msgstr ""
+"现在可以讨论 microTVM 固件应该如何表现了。对于模型执行策略来说，重要的任务是配置 SoC 以匹配其在生产中的表现方式。microTVM 认为这是与项目和 SoC 相关的任务。"
+"无论是针对 AutoTVM、主机驱动的模型推理还是独立部署，用户都应该提供一个项目，其 main() 函数应该执行以下操作："
+
+#: ../../docs/arch/microtvm_design.rst:248
+msgid "Configure the SoC to match deployment performance."
+msgstr "将 SoC 配置以匹配部署性能。"
+
+#: ../../docs/arch/microtvm_design.rst:249
+msgid "Initialize the TVM C Runtime."
+msgstr "初始化 TVM C 运行时。"
+
+#: ../../docs/arch/microtvm_design.rst:251
+msgid ""
+"When configuring for host-driven inference or AutoTVM, the remaining "
+"tasks are well-defined:"
+msgstr ""
+"当为主机驱动的推理或 AutoTVM 进行配置时，剩余的任务是明确定义的："
+
+#: ../../docs/arch/microtvm_design.rst:253
+msgid "Initialize a transport (i.e. a UART) for use with the TVM RPC server."
+msgstr "初始化传输（如 UART），以便与 TVM RPC 服务器一起使用。"
+
+#: ../../docs/arch/microtvm_design.rst:254
+msgid "Launch the TVM RPC Server."
+msgstr "启动 TVM RPC 服务器。"
+
+#: ../../docs/arch/microtvm_design.rst:256
+msgid "When configuring for standalone deployment, the firmware needs to:"
+msgstr "在配置为独立部署时，固件需要："
+
+#: ../../docs/arch/microtvm_design.rst:258
+msgid ""
+"Instantiate the system library by calling the ``runtime.SystemLib`` "
+"PackedFunc."
+msgstr ""
+"通过调用 ``runtime.SystemLib`` PackedFunc 来实例化系统库。"
+
+#: ../../docs/arch/microtvm_design.rst:259
+msgid "Instantiate a GraphExecutor passing the system library module."
+msgstr "实例化 GraphExecutor，传递系统库模块。"
+
+#: ../../docs/arch/microtvm_design.rst:260
+msgid "Configure parameters and inputs as needed."
+msgstr "根据需要配置参数和输入。"
+
+#: ../../docs/arch/microtvm_design.rst:261
+msgid "Run the model."
+msgstr "运行模型。"
+
+#: ../../docs/arch/microtvm_design.rst:264
+msgid "Parts of a microTVM Binary"
+msgstr "microTVM 二进制文件的组成部分。"
+
+#: ../../docs/arch/microtvm_design.rst:266
+msgid "To summarize, a microTVM firwmare binary image must contain these parts:"
+msgstr "总之，microTVM 固件二进制文件必须包含以下几个部分："
+
+#: ../../docs/arch/microtvm_design.rst:268
+msgid "Operator implementations, produced by TVM."
+msgstr "由 TVM 生成的算子符实现。"
+
+#: ../../docs/arch/microtvm_design.rst:269
+msgid "The TVM C runtime library, supplied by TVM as a static library."
+msgstr "由 TVM 提供的 TVM C 运行时库，作为静态库供使用。"
+
+#: ../../docs/arch/microtvm_design.rst:270
+msgid "SoC Initialization, supplied by the user."
+msgstr "SoC 初始化，由用户提供。"
+
+#: ../../docs/arch/microtvm_design.rst:272
+msgid "For Host-driven model execution, firmware also needs:"
+msgstr "对于基于主机的模型执行，固件还需要："
+
+#: ../../docs/arch/microtvm_design.rst:274
+msgid "The TVM RPC Server library."
+msgstr "TVM RPC 服务器库。"
+
+#: ../../docs/arch/microtvm_design.rst:276
+msgid "For Standalone model execution, firmware also needs:"
+msgstr "对于独立模型执行，固件还需要："
+
+#: ../../docs/arch/microtvm_design.rst:278
+msgid "The TVM C GraphExecutor library, supplied by TVM as a static library."
+msgstr "由 TVM 作为静态库提供的 TVM C GraphExecutor 库。"
+
+#: ../../docs/arch/microtvm_design.rst:279
+msgid "The remaining compiler outputs (Simplified Parameters and Graph JSON)."
+msgstr "剩余的编译器输出（简化的参数和 Graph JSON）。"
+
+#: ../../docs/arch/microtvm_design.rst:282
+msgid "The Automated Build Flow"
+msgstr "自动化构建流程"
+
+#: ../../docs/arch/microtvm_design.rst:284
+msgid ""
+"Once code generation is complete, ``tvm.relay.build`` returns a "
+"``tvm.runtime.Module`` and the user can save the generated C source or "
+"binary object to a ``.c`` or ``.o`` file. From this point, TVM can "
+"theoretically step back and the user can compile and run the code "
+"separately."
+msgstr ""
+"一旦代码生成完成，``tvm.relay.build`` 将返回 ``tvm.runtime.Module``，用户可以将生成的 C 源代码或二进制对象保存到  ``.c`` 或 ``.o`` 文件中。"
+"从这一点上来说，TVM 理论上可以退后一步，用户可以将代码编译和运行分开进行。"
+
+#: ../../docs/arch/microtvm_design.rst:288
+msgid ""
+"However, for AutoTVM, TVM needs some automated flow to handle the "
+"following tasks:"
+msgstr ""
+"然而，对于 AutoTVM，TVM 需要一些自动化的流程来处理以下任务："
+
+#: ../../docs/arch/microtvm_design.rst:290
+msgid ""
+"Integrate operator implementations, the TVM C Runtime library, and the "
+"TVM RPC Server library into the firmware project containing user-supplied"
+" SoC Initialization."
+msgstr ""
+"将算子实现、TVM C 运行库和 TVM RPC 服务器库集成到包含用户提供的 SoC 初始化的固件项目中。"
+
+#: ../../docs/arch/microtvm_design.rst:292
+msgid "Build the resulting project."
+msgstr "构建生成的项目。"
+
+#: ../../docs/arch/microtvm_design.rst:293
+msgid "Program the built firmware onto a (specific) attached device."
+msgstr "将构建好的固件烧录到（特定的）连接设备上。"
+
+#: ../../docs/arch/microtvm_design.rst:294
+msgid ""
+"Identify the serial port or other transport to be used by TVM to drive "
+"remote execution."
+msgstr ""
+"确定 TVM 用于驱动远程执行的串口或其他传输方式。"
+
+#: ../../docs/arch/microtvm_design.rst:296
+msgid ""
+"At present, TVM expects the user to supply an implementation of the "
+"``tvm.micro.Compiler``, ``tvm.micro.Flasher``, and "
+"``tvm.micro.Transport`` interfaces. TVM then:"
+msgstr ""
+"目前，TVM 希望用户提供 ``tvm.micro.Compiler``、``tvm.micro.Flasher`` 和 ``tvm.micro.Transport`` 接口的实现。TVM 随后："
+
+#: ../../docs/arch/microtvm_design.rst:299
+msgid "Builds each piece separately as a library."
+msgstr "将每个部分分别构建为库。"
+
+#: ../../docs/arch/microtvm_design.rst:300
+msgid "Builds the libraries into a binary firmware image."
+msgstr "将这些库构建成二进制固件映像。"
+
+#: ../../docs/arch/microtvm_design.rst:301
+msgid "Programs the firmware image onto an attached device."
+msgstr "将固件映像烧录到已连接设备上。"
+
+#: ../../docs/arch/microtvm_design.rst:302
+msgid "Opens a serial port to serve as the RPC server transport."
+msgstr "打开串口作为 RPC 服务器传输。"
+
+#: ../../docs/arch/microtvm_design.rst:304
+msgid ""
+"This design was chosen to reduce build times for microTVM (the common "
+"libraries need to be built only once per candidate operator "
+"implemmentation). In practice, these projects are extremely small and "
+"compile relatively quickly. Compared with the added complexity of this "
+"tighter build integration with TVM, the performance gains are likely not "
+"worth it. A future design will consolidate the build tasks into a single "
+"step and narrow the interface to provide a better integration."
+msgstr ""
+"选择这种设计是为了减少 microTVM 的构建时间（只需对候选算子实现构建一次共同的库）。实际上，这些项目非常小，编译相对较快。"
+"与 TVM 更紧密的构建集成相比，这种更紧密的构建集成增加的复杂性可能不值得。未来的设计将把构建任务合并到一个步骤中，并缩小接口以提供更好的集成。"
+
+#: ../../docs/arch/microtvm_design.rst:311
+msgid "Measuring operator performance"
+msgstr "测量算子性能。"
+
+#: ../../docs/arch/microtvm_design.rst:313
+msgid ""
+"The TVM C runtime depends on user-supplied functions to measure time on-"
+"device. Users should implement ``TVMPlatformTimerStart`` and "
+"``TVMPlatformTimerStop``. These functions should measure wall clock time,"
+" so there are some pitfalls in implementing these functions:"
+msgstr ""
+"TVM C 运行时依赖于用户提供的函数在设备上测量时间。"
+"用户应该实现 ``TVMPlatformTimerStart`` 和 ``TVMPlatformTimerStop``。这些函数应该测量 clock 时间，因此在实现这些函数时有一些需要注意的地方："
+
+#: ../../docs/arch/microtvm_design.rst:317
+msgid ""
+"If the CPU could halt or sleep during a computation (i.e. if it is being "
+"done on an accelerator), a cycle counter should likely not be used as "
+"these tend to stop counting while the CPU is asleep."
+msgstr ""
+"如果在计算过程中 CPU 可以停止或休眠（例如在加速器上进行计算），那么不应该使用循环计数器，因为这些计数器在 CPU 休眠时往往停止计数。"
+
+#: ../../docs/arch/microtvm_design.rst:319
+msgid ""
+"The granularity of these functions can be relaxed as needed to extend the"
+" range of the timer device. However, if granularity is too coarse, a sub-"
+"optimal schedule may be used."
+msgstr ""
+"这些函数的粒度可以根据需要进行放宽，以扩展计时器设备的范围。但是，如果粒度太粗，可能会使用次优调度。"
+
+#: ../../docs/arch/microtvm_design.rst:321
+msgid "An error should be raised if the timer overflows."
+msgstr "如果计时器溢出，应该引发异常。"
+
+#: ../../docs/arch/microtvm_design.rst:322
+msgid ""
+"The timer should not interrupt computation unless absolutely necessary. "
+"Doing so may affect the accuracy of the results."
+msgstr ""
+"除非绝对必要，计时器不应中断计算。这样做可能会影响结果的准确性。"
+
+#: ../../docs/arch/microtvm_design.rst:324
+msgid ""
+"Calibrating the output against a wall clock is ideal, but it will likely "
+"be too cumbersome. A future PR could enable some characterization of the "
+"platform timer by, e.g., measuring the internal oscillator against a "
+"reference such as an external crystal."
+msgstr ""
+"将输出校准到 clock 是理想的，但可能太繁琐。未来的 PR 可以通过例如将内部振荡器与外部晶体等参考进行比较，实现对平台计时器的一些特征描述。"
+
+#: ../../docs/arch/microtvm_design.rst:329
+msgid "Future Work"
+msgstr "未来的工作"
+
+#: ../../docs/arch/microtvm_design.rst:332
+msgid "Ahead-of-Time Runtime"
+msgstr "提前运行时（Ahead-of-Time Runtime）"
+
+#: ../../docs/arch/microtvm_design.rst:334
+msgid ""
+"A limitation of the Graph Executor is the amount of memory overhead "
+"required in parsing the JSON. The current implementation contributes "
+"significantly to the dynamic memory usage of microTVM, limiting its "
+"utility. An ahead-of-time runtime can avoid the need for any Graph JSON "
+"parsing and improve inference speed by generating C code to call the "
+"generated operator implementations directly rather than relying on a "
+"data-driven approach with the Graph Executor."
+msgstr ""
+"Graph Executor 的局限性在于解析 JSON 需要大量的内存开销。当前的实现对 microTVM 的动态内存使用量做出了重大贡献，限制了其实用性。"
+"提前运行时可以避免对 Graph JSON 进行任何解析，并通过生成 C 代码直接调用生成的算子实现来提高推理速度，而不是依赖于 Graph Executor 的数据驱动方法。"
+
+#: ../../docs/arch/microtvm_design.rst:341
+msgid "Memory Planning"
+msgstr ""
+
+#: ../../docs/arch/microtvm_design.rst:343
+msgid ""
+"The current memory planner attempts to limit the number of "
+"``TVMBackendDeviceAlloc()`` calls issued for intermediate tensors only. "
+"Because scratchpads can vary widely, and because the planner coalesces "
+"memory allocations within 16x of each other, this strategy typically "
+"results in high peak memory usage."
+msgstr ""
+"目前的内存规划器仅试图限制中间张量的 ``TVMBackendDeviceAlloc()`` 调用次数。"
+"由于临时缓冲区的大小可能会有很大差异，并且规划器会将内存分配合并在彼此的 16 倍范围内，因此这种策略通常会导致高峰值内存使用率。"
+
+#: ../../docs/arch/microtvm_design.rst:349
+msgid "Heterogeneous Execution"
+msgstr "异构执行"
+
+#: ../../docs/arch/microtvm_design.rst:351
+msgid "Newer Cortex-M SoCs can contain multiple CPUs and onboard ML accelerators."
+msgstr "新的 Cortex-M SoC 可以包含多个 CPU 和内置的 ML 加速器。"
+
+#: ../../docs/arch/microtvm_design.rst:355
+msgid "Autotuning Target"
+msgstr "自动调优目标设备"
+
+#: ../../docs/arch/microtvm_design.rst:357
+msgid "As discussed previously,"
+msgstr "如前所述，"
+
