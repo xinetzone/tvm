@@ -22,7 +22,6 @@ config_logging(
     f"{LOG}/{FILE.name.removesuffix(FILE.suffix)}.log", 
     'task',
     filter_mod_names={"invoke", "h5py"}, # 过滤掉不需要记录日志的模块
-    mode="w",
 )
 
 @task
