@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:20004
+msgid "8. Creating Your MLPerfTiny Submission with microTVM"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:20005
+msgid "**Authors**: [Mehrdad Hessar](https://github.com/mehrdadh)"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:20008
+msgid ""
+"This tutorial is showcasing building an MLPerfTiny submission using "
+"microTVM. This tutorial shows the steps to import a TFLite model from "
+"MLPerfTiny benchmark models, compile it with TVM and generate a Zephyr "
+"project which can be flashed to a Zephyr supported board to benchmark the"
+" model using EEMBC runner."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:30002
+msgid "Install microTVM Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:30004
+msgid ""
+"TVM does not include a package for Python serial communication, so we "
+"must install one before using microTVM. We will also need TFLite to load "
+"models."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:60002
+msgid "Install Zephyr"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:80002
+msgid ""
+"**Note:** Install CMSIS-NN only if you are interested to generate this "
+"submission using CMSIS-NN code generator."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:90002
+msgid "Install CMSIS-NN"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:110002
+msgid "Import Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130002
+msgid "Import Visual Wake Word Model"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130004
+msgid ""
+"To begin with, download and import the Visual Wake Word (VWW) TFLite "
+"model from MLPerfTiny. This model is originally from [MLPerf Tiny "
+"repository](https://github.com/mlcommons/tiny). We also capture metadata "
+"information from the TFLite model such as input/output name, quantization"
+" parameters, etc. which will be used in following steps."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130009
+msgid ""
+"We use indexing for various models to build the submission. The indices "
+"are defined as follows: To build another model, you need to update the "
+"model URL, the short name and index number."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130012
+msgid "Keyword Spotting(KWS) 1"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130013
+msgid "Visual Wake Word(VWW) 2"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130014
+msgid "Anomaly Detection(AD) 3"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130015
+msgid "Image Classification(IC) 4"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:130017
+msgid ""
+"If you would like to build the submission with CMSIS-NN, modify USE_CMSIS"
+" environment variable."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:150002
+msgid "Defining Target, Runtime and Executor"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:150004
+msgid ""
+"Now we need to define the target, runtime and executor to compile this "
+"model. In this tutorial, we use Ahead-of-Time (AoT) compilation and we "
+"build a standalone project. This is different than using AoT with host-"
+"driven mode where the target would communicate with host using host-"
+"driven AoT executor to run inference."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:170002
+msgid "Compile the model and export model library format"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:170004
+msgid ""
+"Now, we compile the model for the target. Then, we generate model library"
+" format for the compiled model. We also need to calculate the workspace "
+"size that is required for the compiled model."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:190002
+msgid "Generate input/output header files"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:190004
+msgid ""
+"To create a microTVM standalone project with AoT, we need to generate "
+"input and output header files. These header files are used to connect the"
+" input and output API from generated code to the rest of the standalone "
+"project. For this specific submission, we only need to generate output "
+"header file since the input API call is handled differently."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:210002
+msgid "Create the project, build and prepare the project tar file"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:210004
+msgid ""
+"Now that we have the compiled model as a model library format, we can "
+"generate the full project using Zephyr template project. First, we "
+"prepare the project options, then build the project. Finally, we cleanup "
+"the temporary files and move the submission project to the current "
+"working directory which could be downloaded and used on your development "
+"kit."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:230002
+msgid "Use this project with your board"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:230004
+msgid ""
+"Now that we have the generated project, you can use this project locally "
+"to flash your board and prepare it for EEMBC runner software. To do this "
+"follow these steps:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_mlperftiny.ipynb:230016
+msgid ""
+"Now you can connect your board to EEMBC runner using this "
+"[instructions](https://github.com/eembc/energyrunner) and benchmark this "
+"model on your board."
+msgstr ""
+
