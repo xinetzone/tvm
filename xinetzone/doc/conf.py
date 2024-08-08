@@ -56,7 +56,7 @@ extensions = [
     "sphinx_comments",
     "sphinxcontrib.mermaid",
     "sphinx_plotly_directive",
-    "autodocsumm",
+    # "autodocsumm",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx_automodapi.automodapi",

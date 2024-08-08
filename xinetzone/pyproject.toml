@@ -13,7 +13,6 @@ authors = [
     {name = "xinetzone", email = "xinzone@outlook.com"},
 ]
 dependencies = [
-  "pytest",
   "scipy>=1.9.3",
   "toml",
   # "tvm-book"
@@ -36,7 +35,6 @@ doc = [
   "babel",
   "cloudpickle",
   "jupyter-sphinx",
-  "myst-nb",
   "sphinx-thebe",
   "sphinx_design",
   "sphinxext-rediraffe",
@@ -50,25 +48,28 @@ doc = [
   "sphinx_plotly_directive",
   "sphinxcontrib-websupport",
   "sphinx-comments",
+  "myst-nb",
   "sphinx-autoapi",
 ]
 dev = [
   "invoke",
+  "pytest",
   "matplotlib",
   "plotly",
   "d2py",
   "graphviz",
-  "pybind11",
-  "cython",
-  # "pythran",
   "cloudpickle",
   "synr",
   "attrs",
   "decorator",
   "psutil",
+  "onnx",
+  "xgboost",
   # "typing_extensions",
   # "black",
-  "xgboost",
+  # "pybind11",
+  # "cython",
+  # "pythran",
 ]
 
 [build-system]
