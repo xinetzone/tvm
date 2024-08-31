@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"POT-Creation-Date: 2024-08-31 17:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgid "args"
 msgstr ""
 
 #: of tvm.driver.build_module.build:-1 tvm.driver.build_module.lower:-1
-msgid "Optional[List[Union[tvm.tir.Buffer, tensor.Tensor, Var]]]"
+msgid "Optional[List[Union[tvm.tir.Buffer, tensor.Tensor, tir.Var]]]"
 msgstr ""
 
 #: of tvm.driver.build_module.lower:9
@@ -118,11 +118,11 @@ msgstr ""
 msgid "The result IRModule"
 msgstr ""
 
-#: of tvm.driver.build_module.build tvm.driver.build_module.lower
+#: ../../doc/docs/reference/api/python/driver.rst
 msgid "参数"
 msgstr ""
 
-#: of tvm.driver.build_module.lower
+#: ../../doc/docs/reference/api/python/driver.rst
 msgid "返回类型"
 msgstr ""
 

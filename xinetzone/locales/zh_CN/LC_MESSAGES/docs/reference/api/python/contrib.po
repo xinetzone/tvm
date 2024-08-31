@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"POT-Creation-Date: 2024-08-31 17:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -566,22 +566,12 @@ msgstr ""
 msgid "A map from defined global symbol to their sections"
 msgstr ""
 
-#: of tvm.contrib.cc.get_global_symbol_section_map
-#: tvm.contrib.ndk.get_global_symbol_section_map
-#: tvm.contrib.relay_viz.dot.DotGraph.edge
-#: tvm.contrib.relay_viz.dot.DotGraph.node
+#: ../../doc/docs/reference/api/python/contrib.rst of
+#: tvm.contrib.relay_viz.dot.DotGraph
 #: tvm.contrib.relay_viz.interface.DefaultVizParser._call
 #: tvm.contrib.relay_viz.interface.DefaultVizParser._function
 #: tvm.contrib.relay_viz.interface.DefaultVizParser._var
-#: tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges
-#: tvm.contrib.relay_viz.interface.Plotter.create_graph
-#: tvm.contrib.relay_viz.interface.Plotter.render
-#: tvm.contrib.relay_viz.interface.VizGraph.edge
-#: tvm.contrib.relay_viz.interface.VizGraph.node
-#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges
-#: tvm.contrib.relay_viz.terminal.TermGraph.edge
-#: tvm.contrib.relay_viz.terminal.TermGraph.node
-#: tvm.contrib.relay_viz.terminal.TermGraph.render
+#: tvm.contrib.relay_viz.terminal.TermGraph
 #: tvm.contrib.relay_viz.terminal.TermVizParser.get_node_edges
 msgid "返回类型"
 msgstr ""
@@ -1339,6 +1329,10 @@ msgstr ""
 msgid "Whether save the cache to file when the program exits"
 msgstr ""
 
+#: of tvm.contrib.pickle_memoize.Cache.cache:1
+msgid "Return the cache, initializing on first use."
+msgstr ""
+
 #: of tvm.contrib.pickle_memoize._atexit:1
 msgid "Save handler."
 msgstr ""
@@ -1554,25 +1548,13 @@ msgstr ""
 msgid "relay parameter dictionary."
 msgstr ""
 
-#: of tvm.contrib.relay_viz.RelayVisualizer
-#: tvm.contrib.relay_viz.RelayVisualizer._add_nodes
-#: tvm.contrib.relay_viz.dot.DotGraph tvm.contrib.relay_viz.dot.DotGraph.edge
-#: tvm.contrib.relay_viz.dot.DotGraph.node tvm.contrib.relay_viz.dot.DotPlotter
+#: ../../doc/docs/reference/api/python/contrib.rst of
+#: tvm.contrib.relay_viz.RelayVisualizer tvm.contrib.relay_viz.dot.DotGraph
 #: tvm.contrib.relay_viz.dot.DotPlotter.render
 #: tvm.contrib.relay_viz.interface.DefaultVizParser._call
 #: tvm.contrib.relay_viz.interface.DefaultVizParser._function
 #: tvm.contrib.relay_viz.interface.DefaultVizParser._var
-#: tvm.contrib.relay_viz.interface.DefaultVizParser.get_node_edges
-#: tvm.contrib.relay_viz.interface.Plotter.create_graph
-#: tvm.contrib.relay_viz.interface.Plotter.render
-#: tvm.contrib.relay_viz.interface.VizEdge
-#: tvm.contrib.relay_viz.interface.VizGraph.edge
-#: tvm.contrib.relay_viz.interface.VizGraph.node
-#: tvm.contrib.relay_viz.interface.VizNode
-#: tvm.contrib.relay_viz.interface.VizParser.get_node_edges
 #: tvm.contrib.relay_viz.terminal.TermGraph
-#: tvm.contrib.relay_viz.terminal.TermGraph.edge
-#: tvm.contrib.relay_viz.terminal.TermGraph.node
 #: tvm.contrib.relay_viz.terminal.TermNode
 #: tvm.contrib.relay_viz.terminal.TermVizParser.get_node_edges
 msgid "参数"
