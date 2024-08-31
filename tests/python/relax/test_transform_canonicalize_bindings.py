@@ -253,6 +253,40 @@ def test_replace_symbolic_variable_and_remove_match_cast():
     verify(TestChangeShape, Expected)
 
 
+def test_replace_symbolic_variable_and_remove_match_cast_of_tuple():
+    """Symbolic variables may be defined in R.match_cast of tuple
+
+    This test is similar to
+    `test_replace_symbolic_variable_and_remove_match_cast`, except
+    that the MatchCast is performed on a Relax tuple.
+
+    This is a regression test.  Earlier implementations only inferred
+    TIR variables from `R.match_cast` of tensors, shapes, and prim
+    values, but omitted tuples.
+
+    """
+
+    @I.ir_module
+    class Before:
+        @R.function
+        def main(x: R.Tuple(R.Tensor(("m", "n")))):
+            y = x
+            o, p = T.int64(), T.int64()
+            z = R.match_cast(x, R.Tuple(R.Tensor((o, p))))
+            w = z
+            q = R.add(w[0], y[0])
+            return R.add(q, w[0])
+
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(x: R.Tuple(R.Tensor(("m", "n")))):
+            q = R.add(x[0], x[0])
+            return R.add(q, x[0])
+
+    verify(Before, Expected)
+
+
 def test_unwrap_tuple():
     @I.ir_module
     class Before:
@@ -1258,6 +1292,57 @@ def test_trivial_binding_of_replaced_non_dataflow_var():
     after_names = _get_binding_names(After)
 
     assert after_names == expected_names
+
+
+def test_trace_tuple_through_round_trip():
+    """Canonicalize to the orignal tuple, without unwrap/rewrap."""
+
+    @I.ir_module
+    class Before:
+        @R.function
+        def main(param_tuple: R.Tuple([R.Tensor, R.Tensor, R.Tensor])):
+            with R.dataflow():
+                A = param_tuple[0]
+                B = param_tuple[1]
+                C = param_tuple[2]
+                output = (A, B, C)
+                R.output(output)
+            return output
+
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(param_tuple: R.Tuple([R.Tensor, R.Tensor, R.Tensor])):
+            with R.dataflow():
+                A = param_tuple[0]
+                B = param_tuple[1]
+                C = param_tuple[2]
+                R.output()
+
+            return param_tuple
+
+    After = CanonicalizeBindings()(Before)
+    tvm.ir.assert_structural_equal(After, Expected)
+
+
+def test_trace_partial_tuple_through_round_trip():
+    """Canonicalize to the orignal tuple, without unwrap/rewrap."""
+
+    @I.ir_module
+    class Before:
+        @R.function
+        def main(param_tuple: R.Tuple([R.Tensor, R.Tensor, R.Tensor])):
+            with R.dataflow():
+                A = param_tuple[0]
+                B = param_tuple[1]
+                output = (A, B)
+                R.output(output)
+            return output
+
+    Expected = Before
+
+    After = CanonicalizeBindings()(Before)
+    tvm.ir.assert_structural_equal(After, Expected)
 
 
 if __name__ == "__main__":
