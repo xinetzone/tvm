@@ -1227,6 +1227,7 @@ class TorchFXImporter:
 
     def _layer_norm(self, node: fx.node.Node) -> relax.Var:
         import torch  # type: ignore
+        from torch.fx.immutable_collections import immutable_list
         import numpy as np  # type: ignore
 
         x = self.env[node.args[0]]
@@ -1235,8 +1236,8 @@ class TorchFXImporter:
         if node.target not in self.named_modules:
             # static or symbolic
             arg = node.args[1]
-            if isinstance(arg, tuple):
-                value = arg
+            if isinstance(arg, (immutable_list, tuple)):
+                value = tuple(arg)
             else:
                 try:
                     value = self.env[arg]
@@ -1671,6 +1672,7 @@ class TorchFXImporter:
             "softmax": self._softmax,
             "log_softmax": self._log_softmax,
             "dropout": lambda node: self.env[node.args[0]],
+            "stochastic_depth": lambda node: self.env[node.args[0]],
             "clamp": self._clamp,
             "relu": lambda node: self.block_builder.emit(relax.op.nn.relu(self.env[node.args[0]])),
             "leaky_relu": self._leakyrelu,
