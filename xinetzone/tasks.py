@@ -72,7 +72,7 @@ def config(ctx, cuda=False):
         content = content.replace("set(USE_PROFILER OFF)", "set(USE_PROFILER ON)")
         # content = content.replace("set(USE_LIBTORCH OFF)", f"set(USE_LIBTORCH {torch_dynamic_library_dir})")
         if cuda:
-            # content = content.replace('set(USE_CUDA OFF)', 'set(USE_CUDA ON)')
+            content = content.replace('set(USE_CUDA OFF)', 'set(USE_CUDA ON)')
             # content = content.replace('set(USE_CUDA OFF)', 'set(USE_CUDA /usr/local/cuda-12/lib64)')
             # content = content.replace('set(USE_CUDA OFF)', 'set(USE_CUDA /usr/local/cuda-12.4/lib64)')
             # content = content.replace('set(USE_CUDA OFF)', 'set(USE_CUDA /usr/local/cuda-12.4/targets/x86_64-linux/lib)')
