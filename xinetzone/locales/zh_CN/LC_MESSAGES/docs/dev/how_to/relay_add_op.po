@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 16:06+0800\n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.15.0\n"
 
 #: ../../doc/docs/dev/how_to/relay_add_op.rst:21
 msgid "Adding an Operator to Relay"
@@ -201,6 +201,7 @@ msgid ""
 msgstr "虽然已经定义了运算的接口，但仍然需要定义如何执行累积加法以及累积乘积的实际计算。"
 
 #: ../../doc/docs/dev/how_to/relay_add_op.rst:193
+#, fuzzy
 msgid ""
 "Writing this code is outside the scope of the tutorial. For now, we "
 "assume we have a well tested implementation for the operation's compute. "
@@ -209,10 +210,7 @@ msgid ""
 ":ref:`TVM's operator inventory (topi) <tutorial-topi>` and looking at the"
 " example cumulative sum and product implementations found in "
 "`python/tvm/topi/scan.py`_ and the gpu versions in "
-"`python/tvm/topi/cuda/scan.py`_. In the case of our cumulative sum and "
-"product operations we write things directly in :ref:`TIR <api-python-"
-"tir>` which is the representation where tensor expressions and topi will "
-"lower into."
+"`python/tvm/topi/cuda/scan.py`_."
 msgstr ""
 "编写这段代码超出了本教程的范围。现在，假设已经为运算的计算实现了经过良好测试的实现。更多关于如何做到这一点的细节，我们建议查阅以下教程：:ref:`tensor"
 " expressions <tutorial-tensor-expr-get-started>`，并查看在 "
@@ -220,11 +218,12 @@ msgstr ""
 "`python/tvm/topi/cuda/scan.py`_ 中找到的GPU版本。对于我们的累积求和和乘积运算，直接在 :ref:`TIR "
 "<api-python-tir>` 中编写，这是张量表达式和 topi 将7到的表示形式。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:207
-msgid "5. Hooking up Compute and Strategy with Relay"
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:205
+#, fuzzy
+msgid "1. Hooking up Compute and Strategy with Relay"
 msgstr "5. 将计算和策略与 Relay 勾连起来"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:209
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:207
 msgid ""
 "After you have implemented your compute function we now need to glue it "
 "to our relay operation. Within TVM this means not only defining the "
@@ -243,7 +242,7 @@ msgstr ""
 "实现之间进行调度之外，没有这样的需求。在 ``python/tvm/relay/op/strategy/generic.py`` 和 "
 "``python/tvm/relay/op/strategy/cuda.py`` 中，添加以下策略："
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:275
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:273
 msgid ""
 "Where in each strategy we define the compute we wrote and the schedule to"
 " use within ``add_implementation()``. We finally link the strategy and "
@@ -253,18 +252,18 @@ msgstr ""
 "在每个策略中，定义了我们在 ``add_implementation()`` 中使用的计算和调度。最后，在 "
 "``python/tvm/relay/op/_transform.py`` 中将策略和计算与定义的 Relay 运算链接起来："
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:300
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:298
 msgid ""
 "The shape functions are used for determining output shape given a "
 "dynamically shaped tensor. In this case we tell TVM the output shape will"
 " be the same as the input shape."
 msgstr "形状函数用于确定给定动态形状张量的输出形状。在这种情况下，告诉 TVM 输出形状将与输入形状相同。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:304
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:302
 msgid "6. Creating a Relay Call Node and Exposing a Python Hook"
 msgstr "6. 创建 Relay Call 节点并公开 Python 钩子"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:305
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:303
 msgid ""
 "We now have a working operation and now just need to properly call it via"
 " a Relay Call Node. This step requires simply writing a function that "
@@ -275,7 +274,7 @@ msgstr ""
 "现在有可以工作的运算，现在只需要通过 Relay Call 节点正确地调用它。这个步骤需要简单地编写函数，该函数接受算子的参数（作为 Relay "
 "表达式），并返回对算子的调用节点（即应该放入 Relay AST 中的节点，以进行算子的调用）。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:312
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:310
 msgid ""
 "At present call attributes and type arguments (the last two fields) are "
 "not supported, so it suffices to use ``Op::Get`` to fetch the operator's "
@@ -286,7 +285,7 @@ msgstr ""
 "从算子注册表中获取算子的信息，并将参数传递给调用节点即可。在 ``src/relay/op/tensor/transform.cc`` "
 "中，如下所示："
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:341
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:339
 #, fuzzy
 msgid ""
 "Where ``TVM_REGISTER_GLOBAL`` exposes the ``MakeCumsum`` and "
@@ -297,11 +296,11 @@ msgstr ""
 "``relay.op._make.cumprod(...)`` 在 Python 中公开了 ``MakeCumsum`` 和 "
 "``MakeCumprod`` 函数。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:345
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:343
 msgid "7. Including a Cleaner Python API Hook"
 msgstr "7. 包含更干净的 Python API 钩子"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:347
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:345
 msgid ""
 "It is generally the convention in Relay, that functions exported through "
 "``TVM_REGISTER_GLOBAL`` should be wrapped in a separate Python function "
@@ -312,7 +311,7 @@ msgstr ""
 "函数中，而不是直接在 Python 中调用。对于我们的算子，我们在 ``python/tvm/relay/op/transform.py`` "
 "中公开了这个更干净的接口。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:360
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:358
 msgid ""
 "Note that these Python wrappers might also be good opportunities to "
 "provide an easier interface to the operator. For example, the ``concat`` "
@@ -324,11 +323,11 @@ msgstr ""
 "请注意，这些 Python 包装器也可能会提供更易于算子使用的接口。例如，``concat`` "
 "算子注册为只接受一个算子，即要连接的张量组成的元组，但是 Python 包装器将张量作为参数，并在产生调用节点之前将它们组合成一个元组："
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:384
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:382
 msgid "8. Writing Unit Tests!"
 msgstr "8. 编写单元测试！"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:385
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:383
 msgid ""
 "This is self explanatory! Some example unit tests can be found in "
 "`tests/python/relay/test_op_level3.py`_ for our cumulative sum and "
@@ -337,15 +336,15 @@ msgstr ""
 "这很容易理解！我们可以在 `tests/python/relay/test_op_level3.py`_ "
 "中找到一些示例单元测试，用于我们的累积和与乘积运算。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:393
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:391
 msgid "Other Topics"
 msgstr "其他主题"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:396
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:394
 msgid "Gradient Operators"
 msgstr "Gradient 算子"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:398
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:396
 msgid ""
 "Gradient operators are important for writing differentiable programs in "
 "Relay. While it is the case that Relay's autodiff algorithm can "
@@ -356,17 +355,17 @@ msgstr ""
 "梯度算子在 Relay 中编写可微分程序时非常重要。尽管 Relay 的自动微分算法可以对一等语言构造进行微分，但算子是不透明的。由于 Relay"
 " 无法查看实现细节，因此必须提供明确的微分规则。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:404
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:402
 msgid ""
 "Both Python and C++ can be used to write gradient operators, but we focus"
 " our examples on Python, as it is more commonly used."
 msgstr "Python 和 C++ 都可以用于编写梯度算子，但我们的示例主要集中在 Python 上，因为它更常使用。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:408
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:406
 msgid "Adding a Gradient in Python"
 msgstr "在 Python 中添加梯度"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:410
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:408
 msgid ""
 "A collection of Python gradient operators can be found in "
 "``python/tvm/relay/op/_tensor_grad.py``. We will walk through two "
@@ -375,7 +374,7 @@ msgstr ""
 "可以在 ``python/tvm/relay/op/_tensor_grad.py`` 中找到 Python "
 "梯度算子的集合。我们将通过两个代表性的例子进行说明：``sigmoid`` 和 ``multiply``。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:421
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:419
 msgid ""
 "The inputs here are the original operator ``orig`` and a gradient "
 "``grad`` to accumulate into. What we return is a list, where the element "
@@ -386,7 +385,7 @@ msgstr ""
 "这里的输入是原始算子 ``orig`` 和要累积的梯度 ``grad``。我们返回的是一个列表，其中第 i 个元素的导数是相对于算子的第 i "
 "个输入的算子。一般来说，梯度将返回具有与基础算子相同数量输入的元素的列表。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:427
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:425
 msgid ""
 "Before we further analyze this definition, first we should recall the "
 "derivative of the sigmoid function: :math:`\\frac{\\partial "
@@ -398,7 +397,7 @@ msgstr ""
 "\\sigma}{\\partial x} = \\sigma(x)(1 - "
 "\\sigma(x))`。上述定义看起来与数学定义类似，但有一个重要的添加项，我们将在下面描述。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:433
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:431
 msgid ""
 "The term ``orig * (ones_like(orig) - orig)`` directly matches the "
 "derivative, because ``orig`` here is the sigmoid function, but we're not "
@@ -414,11 +413,11 @@ msgstr ""
 "项的来源。在表达式 ``grad * orig * (ones_like(orig) - orig)`` 中，乘以 ``grad`` "
 "指定了如何将到目前为止的导数与梯度进行组合。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:441
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:439
 msgid "Now, we consider ``multiply``, a slightly more interesting example:"
 msgstr "现在，我们考虑稍微更有趣的例子：``multiply``。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:452
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:450
 msgid ""
 "In this example, there are two elements in the returned list, because "
 "``multiply`` is a binary operator. And to recall, if :math:`f(x, y) = "
@@ -429,7 +428,7 @@ msgstr ""
 "xy`，偏导数为 :math:`\\frac{\\partial f}{\\partial x} = y` 和 "
 ":math:`\\frac{\\partial f}{\\partial y} = x`。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:457
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:455
 msgid ""
 "There is one required step for ``multiply`` that is not required for "
 "``sigmoid``, because ``multiply`` has broadcasting semantics. Since the "
@@ -442,17 +441,17 @@ msgstr ""
 "的形状可能与输入的形状不匹配，我们使用 ``collapse_sum_like`` 来获取 ``grad * <var>`` "
 "项的内容，并使形状与我们正在求导的输入的形状相匹配。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:465
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:463
 msgid "Adding a Gradient in C++"
 msgstr "在 C++ 中添加梯度"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:467
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:465
 msgid ""
 "Adding a gradient in C++ is similar to adding one in Python, but the "
 "interface for registering is slightly different."
 msgstr "在 C++ 中添加梯度与在 Python 中类似，但是注册的接口略有不同。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:470
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:468
 msgid ""
 "First, make sure ``src/relay/transforms/pattern_utils.h`` is included. It"
 " provides helper functions for creating nodes in the Relay AST. Then, "
@@ -461,7 +460,7 @@ msgstr ""
 "首先，确保包含 ``src/relay/transforms/pattern_utils.h``。它提供了在 Relay AST "
 "中创建节点的辅助函数。然后，以与 Python 示例类似的方式定义梯度："
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:482
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:480
 msgid ""
 "Notice that in C++ we can't use the same operator overloading that we "
 "have in Python, and we need to downcast, so the implementation is more "
@@ -471,7 +470,7 @@ msgstr ""
 "请注意，在 C++ 中，我们不能使用与 Python "
 "中相同的算子重载，我们需要进行向下转换，因此实现更为冗长。即便如此，我们可以轻松验证这个定义与之前在 Python 中的示例相呼应。"
 
-#: ../../doc/docs/dev/how_to/relay_add_op.rst:487
+#: ../../doc/docs/dev/how_to/relay_add_op.rst:485
 msgid ""
 "Now, instead of using a Python decorator, we need to tack a ``set_attr`` "
 "call for \"FPrimalGradient\" onto the end of the base operator's "

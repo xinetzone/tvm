@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-31 17:18+0800\n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,14 +19,6 @@ msgstr ""
 
 #: ../../doc/docs/reference/api/python/ir.rst:19
 msgid "tvm.ir"
-msgstr ""
-
-#: ../../doc/docs/reference/api/python/ir.rst:27
-msgid "tvm.instrument"
-msgstr ""
-
-#: ../../doc/docs/reference/api/python/ir.rst:35
-msgid "tvm.transform"
 msgstr ""
 
 #~ msgid ":py:obj:`Array <tvm.ir.Array>`\\ \\(\\)"
@@ -3134,5 +3126,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "The modified IRModule to IRModule pass."
+#~ msgstr ""
+
+#~ msgid "tvm.instrument"
+#~ msgstr ""
+
+#~ msgid "tvm.transform"
 #~ msgstr ""
 

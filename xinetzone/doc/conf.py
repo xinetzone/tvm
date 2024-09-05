@@ -68,6 +68,9 @@ suppress_warnings = [
     "mystnb.unknown_mime_type",  # 禁用 application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json 警告
     "myst.xref_missing", # 禁用 myst 警告
     "autoapi.python_import_resolution", "autoapi.not_readable" # 禁用 autoapi 警告
+    "sphinx_automodapi.automodapi",
+    "autosectionlabel.*", "autosummary", "intersphinx.external",
+    "autodoc", "autodoc.import_object"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
