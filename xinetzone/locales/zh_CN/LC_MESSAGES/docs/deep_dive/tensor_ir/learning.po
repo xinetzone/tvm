@@ -42,7 +42,7 @@ msgid ""
 "steps of tensor computations."
 msgstr ""
 "为了帮助我们的说明，让我们使用以下张量计算序列作为一个激励的例子。"
-"具体来说，对于两个 :math:`128 \\times 128` 矩阵 `A`` 和 ``B``，让我们执行以下两个步骤的张量计算。"
+"具体来说，对于两个 :math:`128 \\times 128` 矩阵 ``A`` 和 ``B``，让我们执行以下两个步骤的张量计算。"
 
 #: ../../doc/docs/deep_dive/tensor_ir/learning.rst:31
 msgid ""
