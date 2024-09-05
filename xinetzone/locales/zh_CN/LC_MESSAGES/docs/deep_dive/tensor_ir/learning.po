@@ -163,7 +163,7 @@ msgid ""
 "They declare the original range intended for ``vi``, ``vj``, ``vk`` (the "
 "128 in ``T.axis.spatial(128, i)``)."
 msgstr ""
-"它们声明了 ``vi``、``vj``、``vk``（在 ``T.axis.spatial(128, i)`` 中的 128）的预期原始范围。"
+"它们声明了 ``vi``、``vj``、``vk`` （在 ``T.axis.spatial(128, i)`` 中的 128）的预期原始范围。"
 
 #: ../../doc/docs/deep_dive/tensor_ir/learning.rst:179
 msgid "They announce the properties of the iterators (spatial, reduce)."
@@ -198,7 +198,7 @@ msgid ""
 "designated as **reduce axes**."
 msgstr ""
 "重要的是，对于固定的 ``vi`` 和 ``vj`` 值，计算块在 ``Y`` 的空间位置（``Y[vi, vj]``）产生一个与其他位置（具有不同的 ``vi`` 和 ``vj`` 值）无关的点值。"
-"我们可以将 ``vi`` 和 ``vj` `称为 **空间轴**（spatial axes），因为它们直接对应于块写入的缓冲区空间区域的开始。参与归约的轴（``vk``）被指定为 **归约轴** （reduce axes）。"
+"我们可以将 ``vi`` 和 ``vj`` 称为 **空间轴** （spatial axes），因为它们直接对应于块写入的缓冲区空间区域的开始。参与归约的轴（``vk``）被指定为 **归约轴** （reduce axes）。"
 
 #: ../../doc/docs/deep_dive/tensor_ir/learning.rst:196
 msgid "Why Extra Information in Block"
