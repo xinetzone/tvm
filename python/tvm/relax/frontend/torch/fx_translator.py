@@ -62,7 +62,7 @@ class TorchFXImporter:
         return attr_itr
 
     @staticmethod
-    def _convert_data_type(input_type, env: Optional[Dict] = None):
+    def _convert_data_type(input_type: Union[str, torch.dtype], env: Optional[Dict] = None):
         """converts the PyTorch scalar type input_type to a TVM dtype."""
         import torch  # type: ignore
 
@@ -1206,9 +1206,8 @@ class TorchFXImporter:
         module = self.named_modules[node.target]
         weight = self.params[module.weight]
         bias = self.params[module.bias]
-        dtype = TorchFXImporter._convert_data_type(str(module.running_mean.dtype))
-        running_mean = relax.const(module.running_mean.cpu().detach().numpy(), dtype)
-        running_var = relax.const(module.running_var.cpu().detach().numpy(), dtype)
+        running_mean = self._convert_torch_tensor_to_relax(module.running_mean)
+        running_var = self._convert_torch_tensor_to_relax(module.running_var)
         eps = module.eps
 
         res_tuple = self.block_builder.emit(
@@ -1465,6 +1464,12 @@ class TorchFXImporter:
 
     ########## Others ##########
 
+    def _sym_size_int(self, node: fx.node.Node) -> relax.Expr:
+        x = self.env[node.args[0]]
+        shape = self.shape_of(x)
+        idx = node.args[1]
+        return self.block_builder.emit(relax.const(shape[idx].value, "int32"))
+
     def _size(self, node: fx.node.Node) -> relax.Expr:
         x = self.env[node.args[0]]
         shape = self.shape_of(x)
@@ -1681,6 +1686,7 @@ class TorchFXImporter:
             "hardsigmoid": self._hardsigmoid,
             "hardswish": self._hardswish,
             "interpolate": self._interpolate,
+            "sym_size.int": self._sym_size_int,
             "size": self._size,
             "getattr": self._getattr,
             "getitem": self._getitem,
@@ -1769,7 +1775,7 @@ class TorchFXImporter:
                     dtype = self._convert_data_type(str(param.data.dtype))
                     if dtype in ("float32", "float16"):
                         if not keep_params_as_input:
-                            self.params[param] = relax.const(param.data.cpu().numpy(), dtype)
+                            self.params[param] = self._convert_torch_tensor_to_relax(param)
                     else:
                         raise ValueError("Unsupported data type for model parameters: %s" % dtype)
                 # Translate the model.

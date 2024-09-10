@@ -14,36 +14,31 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# pylint: disable=invalid-name
-"""tvm.contrib.msc.framework.tensorrt.transform.transform"""
 
-from typing import List
+# pylint: disable=unused-import
+
+"""Common analysis across all IR variants."""
+
+from typing import Dict, List
 
 import tvm
-from tvm.relax.transform import _ffi_api as relax_api
-from tvm.contrib.msc.core.utils import MSCFramework
-from tvm.contrib.msc.core import utils as msc_utils
+from . import _ffi_analysis_api as _ffi
 
 
-def TransformTensorRT(
-    version: List[int] = None, linear_to_conv: bool = False
-) -> tvm.ir.transform.Pass:
-    """Transform the Function to fit TensorRT.
+def collect_call_map(
+    module: "tvm.ir.IRModule",
+) -> Dict["tvm.ir.GlobalVar", List["tvm.ir.GlobalVar"]]:
+    """Collect the call map of a module
 
     Parameters
     ----------
-    version: list<int>
-        The tensorrt version.
-    linear_to_conv: bool
-        Whether to cast linear to conv2d
+    module: tvm.ir.IRModule
+        The module to inspect
 
     Returns
     -------
-    ret: tvm.ir.transform.Pass
-    """
+    call_map: Dict[tvm.ir.GlobalVar, List[tvm.ir.GlobalVar]]
+        A map from functions to the subroutines they call.
 
-    config = {
-        "version": version or msc_utils.get_version(MSCFramework.TENSORRT),
-        "linear_to_conv": linear_to_conv,
-    }
-    return relax_api.TransformTensorRT(msc_utils.dump_dict(config))  # type: ignore
+    """
+    return _ffi.CollectCallMap(module)
