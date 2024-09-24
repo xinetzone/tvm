@@ -15,15 +15,25 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# This data file is read during when Jenkins runs job to determine docker images.
-[jenkins]
-ci_arm: tlcpack/ci-arm:20240917-153130-9f281758
-ci_cortexm: tlcpack/ci-cortexm:20240917-153130-9f281758
-ci_cpu: tlcpack/ci_cpu:20240917-153130-9f281758
-ci_gpu: tlcpack/ci-gpu:20240917-153130-9f281758
-ci_hexagon: tlcpack/ci-hexagon:20240917-153130-9f281758
-ci_i386: tlcpack/ci-i386:20240917-153130-9f281758
-ci_lint: tlcpack/ci-lint:20240917-153130-9f281758
-ci_minimal: tlcpack/ci-minimal:20240917-153130-9f281758
-ci_riscv: tlcpack/ci-riscv:20240917-153130-9f281758
-ci_wasm: tlcpack/ci-wasm:20240917-153130-9f281758
+# NNAPI Codegen
+if(USE_NNAPI_CODEGEN)
+    message(STATUS "Build with NNAPI codegen")
+
+    tvm_file_glob(GLOB COMPILER_NNAPI_SRCS src/relax/backend/contrib/nnapi/*.cc)
+    tvm_file_glob(GLOB RUNTIME_NNAPI_SRCS src/runtime/contrib/nnapi/*.cc)
+    list(APPEND COMPILER_SRCS ${COMPILER_NNAPI_SRCS})
+    if(NOT USE_NNAPI_RUNTIME)
+        list(APPEND COMPILER_SRCS ${RUNTIME_NNAPI_SRCS})
+    endif()
+endif()
+
+# NNAPI Runtime
+if(USE_NNAPI_RUNTIME)
+    message(STATUS "Build with NNAPI runtime")
+
+    tvm_file_glob(GLOB RUNTIME_NNAPI_SRCS src/runtime/contrib/nnapi/*.cc)
+    list(APPEND RUNTIME_SRCS ${RUNTIME_NNAPI_SRCS})
+    list(APPEND TVM_RUNTIME_LINKER_LIBS neuralnetworks log)
+
+    add_definitions(-DTVM_GRAPH_EXECUTOR_NNAPI)
+endif()

@@ -15,15 +15,25 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# This data file is read during when Jenkins runs job to determine docker images.
-[jenkins]
-ci_arm: tlcpack/ci-arm:20240917-153130-9f281758
-ci_cortexm: tlcpack/ci-cortexm:20240917-153130-9f281758
-ci_cpu: tlcpack/ci_cpu:20240917-153130-9f281758
-ci_gpu: tlcpack/ci-gpu:20240917-153130-9f281758
-ci_hexagon: tlcpack/ci-hexagon:20240917-153130-9f281758
-ci_i386: tlcpack/ci-i386:20240917-153130-9f281758
-ci_lint: tlcpack/ci-lint:20240917-153130-9f281758
-ci_minimal: tlcpack/ci-minimal:20240917-153130-9f281758
-ci_riscv: tlcpack/ci-riscv:20240917-153130-9f281758
-ci_wasm: tlcpack/ci-wasm:20240917-153130-9f281758
+import os
+
+import pytest
+
+from tvm import rpc
+
+
+def remote():
+    if (
+        "TVM_TRACKER_HOST" in os.environ
+        and "TVM_TRACKER_PORT" in os.environ
+        and "RPC_DEVICE_KEY" in os.environ
+    ):
+
+        rpc_tracker_host = os.environ["TVM_TRACKER_HOST"]
+        rpc_tracker_port = int(os.environ["TVM_TRACKER_PORT"])
+        rpc_device_key = os.environ["RPC_DEVICE_KEY"]
+        tracker = rpc.connect_tracker(rpc_tracker_host, rpc_tracker_port)
+        remote = tracker.request(rpc_device_key, priority=0, session_timeout=600)
+        return remote, tracker
+    else:
+        return None
