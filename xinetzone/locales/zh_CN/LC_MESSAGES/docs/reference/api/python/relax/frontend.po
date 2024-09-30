@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"POT-Creation-Date: 2024-09-29 15:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -57,6 +57,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.modules.RMSNorm.forward:4
 #: tvm.relax.frontend.nn.op.add:4 tvm.relax.frontend.nn.op.argsort:5
 #: tvm.relax.frontend.nn.op.astype:4 tvm.relax.frontend.nn.op.broadcast_to:4
+#: tvm.relax.frontend.nn.op.ccl_allgather:4
 #: tvm.relax.frontend.nn.op.ccl_allreduce:4
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:4
 #: tvm.relax.frontend.nn.op.chunk:4 tvm.relax.frontend.nn.op.concat:4
@@ -101,19 +102,23 @@ msgstr ""
 #: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:4
 #: tvm.relax.frontend.nn.visitor.Mutator.visit_param:4
 #: tvm.relax.frontend.onnx.onnx_frontend.from_onnx:7
+#: tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:4
 #: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:4
 #: tvm.relax.frontend.torch.dynamo.relax_dynamo:4
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:4
 #: tvm.relax.frontend.torch.fx_translator.from_fx:4
 msgid "Parameters"
 msgstr ""
 
-#: of tvm.relax.frontend.common.detach_params:6 tvm.relax.frontend.nn.op.pad:10
+#: of tvm.relax.frontend.common.detach_params:7 tvm.relax.frontend.nn.op.pad:11
 #: tvm.relax.frontend.onnx.onnx_frontend.from_onnx:25
 msgid "mod"
 msgstr ""
 
 #: of tvm.relax.frontend.common.detach_params:-1
 #: tvm.relax.frontend.onnx.onnx_frontend.from_onnx:-1
+#: tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:-1
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:-1
 #: tvm.relax.frontend.torch.fx_translator.from_fx:-1
 msgid "tvm.IRModule"
 msgstr ""
@@ -145,6 +150,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.modules.RMSNorm.forward:9
 #: tvm.relax.frontend.nn.op.add:15 tvm.relax.frontend.nn.op.argsort:22
 #: tvm.relax.frontend.nn.op.astype:15 tvm.relax.frontend.nn.op.broadcast_to:15
+#: tvm.relax.frontend.nn.op.ccl_allgather:15
 #: tvm.relax.frontend.nn.op.ccl_allreduce:19
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:11
 #: tvm.relax.frontend.nn.op.chunk:15 tvm.relax.frontend.nn.op.concat:13
@@ -189,13 +195,15 @@ msgstr ""
 #: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:12
 #: tvm.relax.frontend.nn.visitor.Mutator.visit_param:12
 #: tvm.relax.frontend.onnx.onnx_frontend.from_onnx:24
+#: tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:12
 #: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:15
 #: tvm.relax.frontend.torch.dynamo.relax_dynamo:9
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:20
 #: tvm.relax.frontend.torch.fx_translator.from_fx:26
 msgid "Returns"
 msgstr ""
 
-#: of tvm.relax.frontend.common.detach_params:11
+#: of tvm.relax.frontend.common.detach_params:12
 msgid "detached_mod"
 msgstr ""
 
@@ -203,7 +211,7 @@ msgstr ""
 msgid "The IRModule after the detachment."
 msgstr ""
 
-#: of tvm.relax.frontend.common.detach_params:14
+#: of tvm.relax.frontend.common.detach_params:15
 msgid "params_dict"
 msgstr ""
 
@@ -311,30 +319,32 @@ msgstr ""
 msgid "Forward method for conv1d layer."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.modules.Conv1D.forward:5
-#: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:5
-#: tvm.relax.frontend.nn.modules.Embedding.forward:5
+#: of tvm.relax.frontend.nn.modules.Conv1D.forward:6
+#: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:6
+#: tvm.relax.frontend.nn.modules.Embedding.forward:6
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:5
-#: tvm.relax.frontend.nn.modules.LayerNorm.forward:5
-#: tvm.relax.frontend.nn.modules.Linear.forward:5
-#: tvm.relax.frontend.nn.modules.RMSNorm.forward:5
-#: tvm.relax.frontend.nn.op.astype:5 tvm.relax.frontend.nn.op.broadcast_to:5
-#: tvm.relax.frontend.nn.op.ccl_allreduce:5
+#: tvm.relax.frontend.nn.modules.LayerNorm.forward:6
+#: tvm.relax.frontend.nn.modules.Linear.forward:6
+#: tvm.relax.frontend.nn.modules.RMSNorm.forward:6
+#: tvm.relax.frontend.nn.op.astype:6 tvm.relax.frontend.nn.op.broadcast_to:6
+#: tvm.relax.frontend.nn.op.ccl_allgather:6
+#: tvm.relax.frontend.nn.op.ccl_allreduce:6
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:5
 #: tvm.relax.frontend.nn.op.chunk:5 tvm.relax.frontend.nn.op.concat:5
-#: tvm.relax.frontend.nn.op.conv1d:28 tvm.relax.frontend.nn.op.conv2d:5
-#: tvm.relax.frontend.nn.op.conv3d:5 tvm.relax.frontend.nn.op.exp:8
-#: tvm.relax.frontend.nn.op.gelu:10
+#: tvm.relax.frontend.nn.op.conv1d:29 tvm.relax.frontend.nn.op.conv2d:6
+#: tvm.relax.frontend.nn.op.conv3d:6 tvm.relax.frontend.nn.op.exp:9
+#: tvm.relax.frontend.nn.op.gelu:11
 #: tvm.relax.frontend.nn.op.get_timestep_embedding:5
-#: tvm.relax.frontend.nn.op.group_norm:9 tvm.relax.frontend.nn.op.interpolate:5
-#: tvm.relax.frontend.nn.op.layer_norm:21 tvm.relax.frontend.nn.op.negative:5
-#: tvm.relax.frontend.nn.op.pad:5 tvm.relax.frontend.nn.op.permute:5
-#: tvm.relax.frontend.nn.op.permute_dims:5 tvm.relax.frontend.nn.op.relu:8
-#: tvm.relax.frontend.nn.op.reshape:15 tvm.relax.frontend.nn.op.sort:6
-#: tvm.relax.frontend.nn.op.sqrt:5 tvm.relax.frontend.nn.op.square:5
-#: tvm.relax.frontend.nn.op.squeeze:5 tvm.relax.frontend.nn.op.sum:5
-#: tvm.relax.frontend.nn.op.take:9 tvm.relax.frontend.nn.op.tanh:8
-#: tvm.relax.frontend.nn.op.triu:5 tvm.relax.frontend.nn.op.unsqueeze:5
+#: tvm.relax.frontend.nn.op.group_norm:10
+#: tvm.relax.frontend.nn.op.interpolate:5
+#: tvm.relax.frontend.nn.op.layer_norm:22 tvm.relax.frontend.nn.op.negative:6
+#: tvm.relax.frontend.nn.op.pad:5 tvm.relax.frontend.nn.op.permute:6
+#: tvm.relax.frontend.nn.op.permute_dims:6 tvm.relax.frontend.nn.op.relu:9
+#: tvm.relax.frontend.nn.op.reshape:16 tvm.relax.frontend.nn.op.sort:7
+#: tvm.relax.frontend.nn.op.sqrt:6 tvm.relax.frontend.nn.op.square:6
+#: tvm.relax.frontend.nn.op.squeeze:6 tvm.relax.frontend.nn.op.sum:6
+#: tvm.relax.frontend.nn.op.take:10 tvm.relax.frontend.nn.op.tanh:9
+#: tvm.relax.frontend.nn.op.triu:7 tvm.relax.frontend.nn.op.unsqueeze:5
 msgid "x"
 msgstr ""
 
@@ -349,6 +359,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.modules.RMSNorm.forward:-1
 #: tvm.relax.frontend.nn.op.add:-1 tvm.relax.frontend.nn.op.argsort:-1
 #: tvm.relax.frontend.nn.op.astype:-1 tvm.relax.frontend.nn.op.broadcast_to:-1
+#: tvm.relax.frontend.nn.op.ccl_allgather:-1
 #: tvm.relax.frontend.nn.op.ccl_allreduce:-1
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:-1
 #: tvm.relax.frontend.nn.op.chunk:-1 tvm.relax.frontend.nn.op.concat:-1
@@ -398,6 +409,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.modules.LayerNorm.forward:6
 #: tvm.relax.frontend.nn.modules.Linear.forward:6
 #: tvm.relax.frontend.nn.modules.RMSNorm.forward:6
+#: tvm.relax.frontend.nn.op.ccl_allgather:6
 #: tvm.relax.frontend.nn.op.ccl_allreduce:6 tvm.relax.frontend.nn.op.repeat:6
 #: tvm.relax.frontend.nn.op.sort:7 tvm.relax.frontend.nn.op.sqrt:6
 #: tvm.relax.frontend.nn.op.square:6
@@ -414,7 +426,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.modules.LayerNorm.forward:10
 #: tvm.relax.frontend.nn.modules.Linear.forward:10
 #: tvm.relax.frontend.nn.modules.RMSNorm.forward:10
-#: tvm.relax.frontend.nn.op.repeat:21 tvm.relax.frontend.nn.op.take:24
+#: tvm.relax.frontend.nn.op.repeat:22 tvm.relax.frontend.nn.op.take:24
 #: tvm.relax.frontend.nn.op.triu:20
 msgid "ret"
 msgstr ""
@@ -516,7 +528,8 @@ msgstr ""
 
 #: of tvm.relax.frontend.nn.Tensor.ndim:-1
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:-1
-#: tvm.relax.frontend.nn.op.argsort:-1 tvm.relax.frontend.nn.op.chunk:-1
+#: tvm.relax.frontend.nn.op.argsort:-1
+#: tvm.relax.frontend.nn.op.ccl_allgather:-1 tvm.relax.frontend.nn.op.chunk:-1
 #: tvm.relax.frontend.nn.op.concat:-1
 #: tvm.relax.frontend.nn.op.conv1d_transpose:-1
 #: tvm.relax.frontend.nn.op.get_timestep_embedding:-1
@@ -531,9 +544,9 @@ msgstr ""
 msgid "Channel axis of the input data."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.modules.GroupNorm.forward:9
-#: tvm.relax.frontend.nn.op.group_norm:27 tvm.relax.frontend.nn.op.permute:8
-#: tvm.relax.frontend.nn.op.permute_dims:8 tvm.relax.frontend.nn.op.rms_norm:18
+#: of tvm.relax.frontend.nn.modules.GroupNorm.forward:11
+#: tvm.relax.frontend.nn.op.group_norm:29 tvm.relax.frontend.nn.op.permute:9
+#: tvm.relax.frontend.nn.op.permute_dims:9 tvm.relax.frontend.nn.op.rms_norm:19
 msgid "axes"
 msgstr ""
 
@@ -580,11 +593,11 @@ msgid ""
 "KVCache effect."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.modules.KVCache.create:5
-#: tvm.relax.frontend.nn.modules.KVCache.emit_init:5
-#: tvm.relax.frontend.nn.op.tensor_expr_op:8
-#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:8
-#: tvm.relax.frontend.nn.op.tensor_ir_op:8
+#: of tvm.relax.frontend.nn.modules.KVCache.create:6
+#: tvm.relax.frontend.nn.modules.KVCache.emit_init:6
+#: tvm.relax.frontend.nn.op.tensor_expr_op:9
+#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:9
+#: tvm.relax.frontend.nn.op.tensor_ir_op:9
 msgid "name_hint"
 msgstr ""
 
@@ -599,6 +612,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.modules.KVCache.emit_init:-1
 #: tvm.relax.frontend.nn.op.add:-1 tvm.relax.frontend.nn.op.argsort:-1
 #: tvm.relax.frontend.nn.op.astype:-1 tvm.relax.frontend.nn.op.broadcast_to:-1
+#: tvm.relax.frontend.nn.op.ccl_allgather:-1
 #: tvm.relax.frontend.nn.op.ccl_allreduce:-1
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:-1
 #: tvm.relax.frontend.nn.op.chunk:-1 tvm.relax.frontend.nn.op.concat:-1
@@ -699,11 +713,11 @@ msgstr ""
 #: tvm.relax.frontend.nn.core.Parameter.__init__:9
 #: tvm.relax.frontend.nn.core.get_default_dtype:5
 #: tvm.relax.frontend.nn.modules.KVCache.to:5
-#: tvm.relax.frontend.nn.op.argsort:15 tvm.relax.frontend.nn.op.cumsum:13
-#: tvm.relax.frontend.nn.op.empty:8 tvm.relax.frontend.nn.op.full:11
-#: tvm.relax.frontend.nn.op.multinomial_from_uniform:29
-#: tvm.relax.frontend.nn.op.ones:8 tvm.relax.frontend.nn.op.topk:26
-#: tvm.relax.frontend.nn.op.zeros:8
+#: tvm.relax.frontend.nn.op.argsort:16 tvm.relax.frontend.nn.op.cumsum:15
+#: tvm.relax.frontend.nn.op.empty:9 tvm.relax.frontend.nn.op.full:13
+#: tvm.relax.frontend.nn.op.multinomial_from_uniform:31
+#: tvm.relax.frontend.nn.op.ones:9 tvm.relax.frontend.nn.op.topk:27
+#: tvm.relax.frontend.nn.op.zeros:9
 msgid "dtype"
 msgstr ""
 
@@ -725,7 +739,7 @@ msgstr ""
 msgid "View the last elements in KVCache."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.modules.KVCache.view:5
+#: of tvm.relax.frontend.nn.modules.KVCache.view:6
 msgid "seq_len"
 msgstr ""
 
@@ -788,7 +802,7 @@ msgstr ""
 msgid "Export the module to TVM IRModule and parameters"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.Module.export_tvm:5
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:6
 msgid "spec"
 msgstr ""
 
@@ -802,7 +816,7 @@ msgid ""
 "inputs shape and dtype."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.Module.export_tvm:8
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:10
 msgid "debug"
 msgstr ""
 
@@ -814,6 +828,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.op.topk:-1
 #: tvm.relax.frontend.onnx.onnx_frontend.from_onnx:-1
 #: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:-1
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:-1
 #: tvm.relax.frontend.torch.fx_translator.from_fx:-1
 msgid "bool"
 msgstr ""
@@ -838,7 +853,7 @@ msgstr ""
 
 #: of tvm.relax.frontend.nn.core.Module.export_tvm:16
 #: tvm.relax.frontend.onnx.onnx_frontend.from_onnx:27
-#: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:8
+#: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:9
 msgid "params"
 msgstr ""
 
@@ -887,7 +902,7 @@ msgstr ""
 msgid "A dictionary containing a whole state of the module"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.Module.load_state_dict:9
+#: of tvm.relax.frontend.nn.core.Module.load_state_dict:11
 msgid "strict"
 msgstr ""
 
@@ -919,7 +934,7 @@ msgid ""
 "the parameter name and its corresponding value."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.Module.named_parameters:6
+#: of tvm.relax.frontend.nn.core.Module.named_parameters:7
 #: tvm.relax.frontend.nn.core.Module.state_dict:5
 msgid "prefix"
 msgstr ""
@@ -954,7 +969,7 @@ msgid ""
 "module."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.Module.state_dict:7
+#: of tvm.relax.frontend.nn.core.Module.state_dict:8
 msgid "destination"
 msgstr ""
 
@@ -1004,47 +1019,48 @@ msgstr ""
 msgid "The base dispatching method for visiting of all nodes."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.wrap_nested:9 tvm.relax.frontend.nn.op.add:11
-#: tvm.relax.frontend.nn.op.argsort:18 tvm.relax.frontend.nn.op.astype:11
-#: tvm.relax.frontend.nn.op.broadcast_to:11
-#: tvm.relax.frontend.nn.op.ccl_allreduce:15
-#: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:7
-#: tvm.relax.frontend.nn.op.chunk:11 tvm.relax.frontend.nn.op.concat:9
-#: tvm.relax.frontend.nn.op.conv1d:52 tvm.relax.frontend.nn.op.conv2d:30
-#: tvm.relax.frontend.nn.op.conv3d:30 tvm.relax.frontend.nn.op.cumsum:21
-#: tvm.relax.frontend.nn.op.debug_func:12 tvm.relax.frontend.nn.op.divide:11
-#: tvm.relax.frontend.nn.op.empty:11 tvm.relax.frontend.nn.op.equal:11
-#: tvm.relax.frontend.nn.op.exp:11 tvm.relax.frontend.nn.op.extern:6
-#: tvm.relax.frontend.nn.op.full:15 tvm.relax.frontend.nn.op.gelu:16
-#: tvm.relax.frontend.nn.op.get_timestep_embedding:17
-#: tvm.relax.frontend.nn.op.greater:11
-#: tvm.relax.frontend.nn.op.greater_equal:11
-#: tvm.relax.frontend.nn.op.group_norm:31
-#: tvm.relax.frontend.nn.op.interpolate:22
-#: tvm.relax.frontend.nn.op.layer_norm:38 tvm.relax.frontend.nn.op.less:11
-#: tvm.relax.frontend.nn.op.less_equal:11 tvm.relax.frontend.nn.op.matmul:18
-#: tvm.relax.frontend.nn.op.maximum:11 tvm.relax.frontend.nn.op.minimum:11
-#: tvm.relax.frontend.nn.op.multiply:11 tvm.relax.frontend.nn.op.negative:8
-#: tvm.relax.frontend.nn.op.not_equal:11 tvm.relax.frontend.nn.op.ones:11
-#: tvm.relax.frontend.nn.op.pad:15 tvm.relax.frontend.nn.op.permute:11
-#: tvm.relax.frontend.nn.op.permute_dims:11 tvm.relax.frontend.nn.op.relu:11
-#: tvm.relax.frontend.nn.op.repeat:16 tvm.relax.frontend.nn.op.reshape:21
-#: tvm.relax.frontend.nn.op.rms_norm:24
+#: of tvm.relax.frontend.nn.core.wrap_nested:10 tvm.relax.frontend.nn.op.add:12
+#: tvm.relax.frontend.nn.op.argsort:19 tvm.relax.frontend.nn.op.astype:12
+#: tvm.relax.frontend.nn.op.broadcast_to:12
+#: tvm.relax.frontend.nn.op.ccl_allgather:12
+#: tvm.relax.frontend.nn.op.ccl_allreduce:16
+#: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:8
+#: tvm.relax.frontend.nn.op.chunk:12 tvm.relax.frontend.nn.op.concat:10
+#: tvm.relax.frontend.nn.op.conv1d:53 tvm.relax.frontend.nn.op.conv2d:31
+#: tvm.relax.frontend.nn.op.conv3d:31 tvm.relax.frontend.nn.op.cumsum:22
+#: tvm.relax.frontend.nn.op.debug_func:13 tvm.relax.frontend.nn.op.divide:12
+#: tvm.relax.frontend.nn.op.empty:12 tvm.relax.frontend.nn.op.equal:12
+#: tvm.relax.frontend.nn.op.exp:12 tvm.relax.frontend.nn.op.extern:7
+#: tvm.relax.frontend.nn.op.full:16 tvm.relax.frontend.nn.op.gelu:17
+#: tvm.relax.frontend.nn.op.get_timestep_embedding:18
+#: tvm.relax.frontend.nn.op.greater:12
+#: tvm.relax.frontend.nn.op.greater_equal:12
+#: tvm.relax.frontend.nn.op.group_norm:32
+#: tvm.relax.frontend.nn.op.interpolate:23
+#: tvm.relax.frontend.nn.op.layer_norm:39 tvm.relax.frontend.nn.op.less:12
+#: tvm.relax.frontend.nn.op.less_equal:12 tvm.relax.frontend.nn.op.matmul:19
+#: tvm.relax.frontend.nn.op.maximum:12 tvm.relax.frontend.nn.op.minimum:12
+#: tvm.relax.frontend.nn.op.multiply:12 tvm.relax.frontend.nn.op.negative:9
+#: tvm.relax.frontend.nn.op.not_equal:12 tvm.relax.frontend.nn.op.ones:12
+#: tvm.relax.frontend.nn.op.pad:16 tvm.relax.frontend.nn.op.permute:12
+#: tvm.relax.frontend.nn.op.permute_dims:12 tvm.relax.frontend.nn.op.relu:12
+#: tvm.relax.frontend.nn.op.repeat:17 tvm.relax.frontend.nn.op.reshape:22
+#: tvm.relax.frontend.nn.op.rms_norm:25
 #: tvm.relax.frontend.nn.op.scaled_dot_product_attention:21
-#: tvm.relax.frontend.nn.op.sigmoid:10 tvm.relax.frontend.nn.op.silu:11
-#: tvm.relax.frontend.nn.op.softmax:15 tvm.relax.frontend.nn.op.sort:16
-#: tvm.relax.frontend.nn.op.split:11 tvm.relax.frontend.nn.op.sqrt:8
-#: tvm.relax.frontend.nn.op.square:8 tvm.relax.frontend.nn.op.squeeze:13
-#: tvm.relax.frontend.nn.op.subtract:11 tvm.relax.frontend.nn.op.sum:18
-#: tvm.relax.frontend.nn.op.take:19 tvm.relax.frontend.nn.op.tanh:11
-#: tvm.relax.frontend.nn.op.topk:29 tvm.relax.frontend.nn.op.triu:15
-#: tvm.relax.frontend.nn.op.unsqueeze:9 tvm.relax.frontend.nn.op.where:22
-#: tvm.relax.frontend.nn.op.zeros:11
-#: tvm.relax.frontend.nn.visitor.Mutator.visit:5
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_effect:5
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_module:5
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:5
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_param:5
+#: tvm.relax.frontend.nn.op.sigmoid:11 tvm.relax.frontend.nn.op.silu:12
+#: tvm.relax.frontend.nn.op.softmax:16 tvm.relax.frontend.nn.op.sort:17
+#: tvm.relax.frontend.nn.op.split:12 tvm.relax.frontend.nn.op.sqrt:9
+#: tvm.relax.frontend.nn.op.square:9 tvm.relax.frontend.nn.op.squeeze:14
+#: tvm.relax.frontend.nn.op.subtract:12 tvm.relax.frontend.nn.op.sum:19
+#: tvm.relax.frontend.nn.op.take:20 tvm.relax.frontend.nn.op.tanh:12
+#: tvm.relax.frontend.nn.op.topk:30 tvm.relax.frontend.nn.op.triu:16
+#: tvm.relax.frontend.nn.op.unsqueeze:10 tvm.relax.frontend.nn.op.where:23
+#: tvm.relax.frontend.nn.op.zeros:12
+#: tvm.relax.frontend.nn.visitor.Mutator.visit:6
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_effect:6
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_module:6
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:6
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_param:6
 msgid "name"
 msgstr ""
 
@@ -1056,11 +1072,11 @@ msgstr ""
 msgid "The name of the current node in parent's attribute."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.visitor.Mutator.visit:8
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_effect:8
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_module:8
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:8
-#: tvm.relax.frontend.nn.visitor.Mutator.visit_param:8
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit:9
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_effect:9
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_module:9
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:9
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_param:9
 msgid "node"
 msgstr ""
 
@@ -1170,10 +1186,10 @@ msgid ""
 msgstr ""
 
 #: of tvm.relax.frontend.nn.Tensor.shape:9
-#: tvm.relax.frontend.nn.core.Parameter.__init__:6
-#: tvm.relax.frontend.nn.op.broadcast_to:8 tvm.relax.frontend.nn.op.empty:5
-#: tvm.relax.frontend.nn.op.full:5 tvm.relax.frontend.nn.op.ones:5
-#: tvm.relax.frontend.nn.op.reshape:18 tvm.relax.frontend.nn.op.zeros:5
+#: tvm.relax.frontend.nn.core.Parameter.__init__:7
+#: tvm.relax.frontend.nn.op.broadcast_to:9 tvm.relax.frontend.nn.op.empty:6
+#: tvm.relax.frontend.nn.op.full:6 tvm.relax.frontend.nn.op.ones:6
+#: tvm.relax.frontend.nn.op.reshape:19 tvm.relax.frontend.nn.op.zeros:6
 msgid "shape"
 msgstr ""
 
@@ -1291,7 +1307,7 @@ msgstr ""
 msgid "Constructs a `nn.SourceModule` from source code."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:5
+#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:7
 msgid "symbols"
 msgstr ""
 
@@ -1305,7 +1321,7 @@ msgid ""
 "shape/dtype inference function."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:9
+#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:10
 msgid "source_code"
 msgstr ""
 
@@ -1317,8 +1333,8 @@ msgstr ""
 msgid "Source code or path to the source code to be compiled."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:12
-#: tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:7
+#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:13
+#: tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:8
 msgid "source_format"
 msgstr ""
 
@@ -1327,7 +1343,7 @@ msgstr ""
 msgid "The source code format. It can be either \"cpp\" or \"cu\"."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:15
+#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:16
 #: tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:16
 msgid "compile_options"
 msgstr ""
@@ -1344,7 +1360,7 @@ msgid ""
 " used."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:18
+#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:20
 msgid "compiler"
 msgstr ""
 
@@ -1354,7 +1370,7 @@ msgid ""
 "Windows, compilation requires `clang` by default."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:22
+#: of tvm.relax.frontend.nn.extern.SourceModule.__init__:24
 msgid "output_format"
 msgstr ""
 
@@ -1378,8 +1394,8 @@ msgid ""
 " configure DMLC-Core, and by default, it uses \"-O3\" and \"-std=c++17\"."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:10
-#: tvm.relax.frontend.nn.extern.SourceModule.get_includes:7
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:12
+#: tvm.relax.frontend.nn.extern.SourceModule.get_includes:9
 msgid "tvm_pkg"
 msgstr ""
 
@@ -1425,7 +1441,7 @@ msgid ""
 "`3rdparty` as direct subdirectories."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.extern.SourceModule.tvm_home:7
+#: of tvm.relax.frontend.nn.extern.SourceModule.tvm_home:8
 msgid "tvm_home"
 msgstr ""
 
@@ -1578,12 +1594,12 @@ msgstr ""
 msgid "Addition with numpy-style broadcasting."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.add:5 tvm.relax.frontend.nn.op.divide:5
-#: tvm.relax.frontend.nn.op.equal:5 tvm.relax.frontend.nn.op.greater:5
-#: tvm.relax.frontend.nn.op.greater_equal:5 tvm.relax.frontend.nn.op.less:5
-#: tvm.relax.frontend.nn.op.less_equal:5 tvm.relax.frontend.nn.op.matmul:8
-#: tvm.relax.frontend.nn.op.multiply:5 tvm.relax.frontend.nn.op.not_equal:5
-#: tvm.relax.frontend.nn.op.subtract:5
+#: of tvm.relax.frontend.nn.op.add:6 tvm.relax.frontend.nn.op.divide:6
+#: tvm.relax.frontend.nn.op.equal:6 tvm.relax.frontend.nn.op.greater:6
+#: tvm.relax.frontend.nn.op.greater_equal:6 tvm.relax.frontend.nn.op.less:6
+#: tvm.relax.frontend.nn.op.less_equal:6 tvm.relax.frontend.nn.op.matmul:9
+#: tvm.relax.frontend.nn.op.multiply:6 tvm.relax.frontend.nn.op.not_equal:6
+#: tvm.relax.frontend.nn.op.subtract:6
 msgid "a"
 msgstr ""
 
@@ -1597,12 +1613,12 @@ msgstr ""
 msgid "The first input tensor."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.add:8 tvm.relax.frontend.nn.op.divide:8
-#: tvm.relax.frontend.nn.op.equal:8 tvm.relax.frontend.nn.op.greater:8
-#: tvm.relax.frontend.nn.op.greater_equal:8 tvm.relax.frontend.nn.op.less:8
-#: tvm.relax.frontend.nn.op.less_equal:8 tvm.relax.frontend.nn.op.matmul:11
-#: tvm.relax.frontend.nn.op.multiply:8 tvm.relax.frontend.nn.op.not_equal:8
-#: tvm.relax.frontend.nn.op.subtract:8
+#: of tvm.relax.frontend.nn.op.add:9 tvm.relax.frontend.nn.op.divide:9
+#: tvm.relax.frontend.nn.op.equal:9 tvm.relax.frontend.nn.op.greater:9
+#: tvm.relax.frontend.nn.op.greater_equal:9 tvm.relax.frontend.nn.op.less:9
+#: tvm.relax.frontend.nn.op.less_equal:9 tvm.relax.frontend.nn.op.matmul:12
+#: tvm.relax.frontend.nn.op.multiply:9 tvm.relax.frontend.nn.op.not_equal:9
+#: tvm.relax.frontend.nn.op.subtract:9
 msgid "b"
 msgstr ""
 
@@ -1647,39 +1663,40 @@ msgstr ""
 msgid "Name hint."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.wrap_nested:14 tvm.relax.frontend.nn.op.add:16
+#: of tvm.relax.frontend.nn.core.wrap_nested:14 tvm.relax.frontend.nn.op.add:17
 #: tvm.relax.frontend.nn.op.astype:16 tvm.relax.frontend.nn.op.broadcast_to:16
+#: tvm.relax.frontend.nn.op.ccl_allgather:16
 #: tvm.relax.frontend.nn.op.ccl_allreduce:20
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:12
 #: tvm.relax.frontend.nn.op.chunk:16 tvm.relax.frontend.nn.op.concat:14
 #: tvm.relax.frontend.nn.op.conv1d:57
 #: tvm.relax.frontend.nn.op.conv1d_transpose:52
 #: tvm.relax.frontend.nn.op.conv2d:35 tvm.relax.frontend.nn.op.conv3d:35
-#: tvm.relax.frontend.nn.op.cumsum:26 tvm.relax.frontend.nn.op.divide:16
+#: tvm.relax.frontend.nn.op.cumsum:28 tvm.relax.frontend.nn.op.divide:17
 #: tvm.relax.frontend.nn.op.empty:16 tvm.relax.frontend.nn.op.equal:16
-#: tvm.relax.frontend.nn.op.exp:16 tvm.relax.frontend.nn.op.extern:17
-#: tvm.relax.frontend.nn.op.full:20 tvm.relax.frontend.nn.op.gelu:21
+#: tvm.relax.frontend.nn.op.exp:17 tvm.relax.frontend.nn.op.extern:17
+#: tvm.relax.frontend.nn.op.full:20 tvm.relax.frontend.nn.op.gelu:22
 #: tvm.relax.frontend.nn.op.get_timestep_embedding:22
 #: tvm.relax.frontend.nn.op.greater:16
 #: tvm.relax.frontend.nn.op.greater_equal:16
 #: tvm.relax.frontend.nn.op.group_norm:36
 #: tvm.relax.frontend.nn.op.interpolate:27
 #: tvm.relax.frontend.nn.op.layer_norm:43 tvm.relax.frontend.nn.op.less:16
-#: tvm.relax.frontend.nn.op.less_equal:16 tvm.relax.frontend.nn.op.matmul:23
-#: tvm.relax.frontend.nn.op.maximum:16 tvm.relax.frontend.nn.op.minimum:16
-#: tvm.relax.frontend.nn.op.multinomial_from_uniform:35
-#: tvm.relax.frontend.nn.op.multiply:16 tvm.relax.frontend.nn.op.negative:13
+#: tvm.relax.frontend.nn.op.less_equal:16 tvm.relax.frontend.nn.op.matmul:24
+#: tvm.relax.frontend.nn.op.maximum:17 tvm.relax.frontend.nn.op.minimum:17
+#: tvm.relax.frontend.nn.op.multinomial_from_uniform:36
+#: tvm.relax.frontend.nn.op.multiply:17 tvm.relax.frontend.nn.op.negative:13
 #: tvm.relax.frontend.nn.op.not_equal:16 tvm.relax.frontend.nn.op.ones:16
 #: tvm.relax.frontend.nn.op.pad:20 tvm.relax.frontend.nn.op.permute:16
 #: tvm.relax.frontend.nn.op.permute_dims:16 tvm.relax.frontend.nn.op.relu:16
 #: tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:25
-#: tvm.relax.frontend.nn.op.reshape:26 tvm.relax.frontend.nn.op.rms_norm:29
-#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:38
-#: tvm.relax.frontend.nn.op.sigmoid:15 tvm.relax.frontend.nn.op.silu:16
-#: tvm.relax.frontend.nn.op.softmax:20 tvm.relax.frontend.nn.op.split:16
+#: tvm.relax.frontend.nn.op.reshape:27 tvm.relax.frontend.nn.op.rms_norm:29
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:39
+#: tvm.relax.frontend.nn.op.sigmoid:16 tvm.relax.frontend.nn.op.silu:17
+#: tvm.relax.frontend.nn.op.softmax:21 tvm.relax.frontend.nn.op.split:16
 #: tvm.relax.frontend.nn.op.sqrt:13 tvm.relax.frontend.nn.op.square:13
-#: tvm.relax.frontend.nn.op.squeeze:18 tvm.relax.frontend.nn.op.subtract:16
-#: tvm.relax.frontend.nn.op.sum:23 tvm.relax.frontend.nn.op.tanh:16
+#: tvm.relax.frontend.nn.op.squeeze:18 tvm.relax.frontend.nn.op.subtract:17
+#: tvm.relax.frontend.nn.op.sum:23 tvm.relax.frontend.nn.op.tanh:17
 #: tvm.relax.frontend.nn.op.tensor_expr_op:19
 #: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:27
 #: tvm.relax.frontend.nn.op.tensor_ir_op:19
@@ -1717,6 +1734,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.op.multiply:20 tvm.relax.frontend.nn.op.repeat:25
 #: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:42
 #: tvm.relax.frontend.nn.op.subtract:20
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:26
 #: tvm.relax.frontend.torch.fx_translator.from_fx:35
 msgid "Examples"
 msgstr ""
@@ -1731,11 +1749,11 @@ msgid ""
 "having same shape as an input array that index data in sorted order."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.argsort:6
-#: tvm.relax.frontend.nn.op.conv1d_transpose:14
-#: tvm.relax.frontend.nn.op.cumsum:6 tvm.relax.frontend.nn.op.repeat:5
-#: tvm.relax.frontend.nn.op.rms_norm:12 tvm.relax.frontend.nn.op.silu:8
-#: tvm.relax.frontend.nn.op.topk:7
+#: of tvm.relax.frontend.nn.op.argsort:7
+#: tvm.relax.frontend.nn.op.conv1d_transpose:15
+#: tvm.relax.frontend.nn.op.cumsum:7 tvm.relax.frontend.nn.op.repeat:6
+#: tvm.relax.frontend.nn.op.rms_norm:13 tvm.relax.frontend.nn.op.silu:9
+#: tvm.relax.frontend.nn.op.topk:8
 msgid "data"
 msgstr ""
 
@@ -1743,10 +1761,10 @@ msgstr ""
 msgid "The input data tensor."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.argsort:9 tvm.relax.frontend.nn.op.cumsum:9
-#: tvm.relax.frontend.nn.op.sort:9 tvm.relax.frontend.nn.op.split:9
-#: tvm.relax.frontend.nn.op.squeeze:8 tvm.relax.frontend.nn.op.sum:8
-#: tvm.relax.frontend.nn.op.take:15 tvm.relax.frontend.nn.op.topk:13
+#: of tvm.relax.frontend.nn.op.argsort:10 tvm.relax.frontend.nn.op.cumsum:11
+#: tvm.relax.frontend.nn.op.sort:11 tvm.relax.frontend.nn.op.split:9
+#: tvm.relax.frontend.nn.op.squeeze:11 tvm.relax.frontend.nn.op.sum:11
+#: tvm.relax.frontend.nn.op.take:17 tvm.relax.frontend.nn.op.topk:14
 msgid "axis"
 msgstr ""
 
@@ -1754,7 +1772,7 @@ msgstr ""
 msgid "Axis long which to sort the input tensor."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.argsort:12 tvm.relax.frontend.nn.op.sort:13
+#: of tvm.relax.frontend.nn.op.argsort:13 tvm.relax.frontend.nn.op.sort:14
 msgid "descending"
 msgstr ""
 
@@ -1766,10 +1784,10 @@ msgstr ""
 msgid "The data type of the output indices."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.argsort:23 tvm.relax.frontend.nn.op.extern:12
+#: of tvm.relax.frontend.nn.op.argsort:23 tvm.relax.frontend.nn.op.extern:13
 #: tvm.relax.frontend.nn.op.sort:21
-#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:22
-#: tvm.relax.frontend.nn.op.tensor_ir_op:14 tvm.relax.frontend.nn.op.topk:34
+#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:23
+#: tvm.relax.frontend.nn.op.tensor_ir_op:15 tvm.relax.frontend.nn.op.topk:34
 msgid "out"
 msgstr ""
 
@@ -1792,7 +1810,7 @@ msgstr ""
 msgid "The input data to the operator."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.astype:8
+#: of tvm.relax.frontend.nn.op.astype:9
 msgid "dtype: str"
 msgstr ""
 
@@ -1823,16 +1841,41 @@ msgstr ""
 msgid "The broadcasted tensor."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.ccl_allreduce:1
-msgid "CCL Allreduce operator"
+#: of tvm.relax.frontend.nn.op.ccl_allgather:1
+msgid "CCL Allgather operator"
 msgstr ""
 
 #: of tvm.relax.frontend.nn.core.wrap_nested:-1
+#: tvm.relax.frontend.nn.op.ccl_allgather:-1
 #: tvm.relax.frontend.nn.op.ccl_allreduce:-1
 msgid "relax.Expr"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.ccl_allreduce:8
+#: of tvm.relax.frontend.nn.op.ccl_allgather:9
+msgid "num_workers"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:9
+msgid "Number of workers."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:12
+#: tvm.relax.frontend.nn.op.ccl_allreduce:16
+#: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:8
+#: tvm.relax.frontend.nn.op.chunk:12 tvm.relax.frontend.nn.op.interpolate:23
+#: tvm.relax.frontend.nn.op.sum:19
+msgid "Name hint for this operation."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:17
+msgid "The result tensor of allgather."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:1
+msgid "CCL Allreduce operator"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:10
 msgid "op_type"
 msgstr ""
 
@@ -1842,19 +1885,12 @@ msgid ""
 "\"sum\", \"prod\", \"min\", \"max\" and \"avg\" are supported."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.ccl_allreduce:12
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:13
 msgid "in_group"
 msgstr ""
 
 #: of tvm.relax.frontend.nn.op.ccl_allreduce:13
 msgid "Whether the reduction operation performs globally or in group as default."
-msgstr ""
-
-#: of tvm.relax.frontend.nn.op.ccl_allreduce:16
-#: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:8
-#: tvm.relax.frontend.nn.op.chunk:12 tvm.relax.frontend.nn.op.interpolate:23
-#: tvm.relax.frontend.nn.op.sum:19
-msgid "Name hint for this operation."
 msgstr ""
 
 #: of tvm.relax.frontend.nn.op.ccl_allreduce:21
@@ -1966,10 +2002,10 @@ msgid ""
 "then convert to the out_layout."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d:31
-#: tvm.relax.frontend.nn.op.conv1d_transpose:17
-#: tvm.relax.frontend.nn.op.conv2d:8 tvm.relax.frontend.nn.op.conv3d:8
-#: tvm.relax.frontend.nn.op.group_norm:15 tvm.relax.frontend.nn.op.rms_norm:15
+#: of tvm.relax.frontend.nn.op.conv1d:32
+#: tvm.relax.frontend.nn.op.conv1d_transpose:18
+#: tvm.relax.frontend.nn.op.conv2d:9 tvm.relax.frontend.nn.op.conv3d:9
+#: tvm.relax.frontend.nn.op.group_norm:16 tvm.relax.frontend.nn.op.rms_norm:16
 msgid "weight"
 msgstr ""
 
@@ -1977,8 +2013,8 @@ msgstr ""
 msgid "The weight expressions."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d:34 tvm.relax.frontend.nn.op.conv2d:11
-#: tvm.relax.frontend.nn.op.conv3d:11 tvm.relax.frontend.nn.op.group_norm:18
+#: of tvm.relax.frontend.nn.op.conv1d:35 tvm.relax.frontend.nn.op.conv2d:12
+#: tvm.relax.frontend.nn.op.conv3d:12 tvm.relax.frontend.nn.op.group_norm:19
 msgid "bias"
 msgstr ""
 
@@ -1995,8 +2031,8 @@ msgstr ""
 msgid "Optional bias tensor of shape [O]."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d:37
-#: tvm.relax.frontend.nn.op.conv1d_transpose:20
+#: of tvm.relax.frontend.nn.op.conv1d:38
+#: tvm.relax.frontend.nn.op.conv1d_transpose:21
 msgid "strides"
 msgstr ""
 
@@ -2010,9 +2046,9 @@ msgstr ""
 msgid "The strides of convolution. It is required to have length 1."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d:40
-#: tvm.relax.frontend.nn.op.conv1d_transpose:23
-#: tvm.relax.frontend.nn.op.conv2d:18 tvm.relax.frontend.nn.op.conv3d:18
+#: of tvm.relax.frontend.nn.op.conv1d:42
+#: tvm.relax.frontend.nn.op.conv1d_transpose:25
+#: tvm.relax.frontend.nn.op.conv2d:19 tvm.relax.frontend.nn.op.conv3d:19
 msgid "padding"
 msgstr ""
 
@@ -2027,9 +2063,9 @@ msgid ""
 " is required to have length either 1 or 2."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d:44
-#: tvm.relax.frontend.nn.op.conv1d_transpose:30
-#: tvm.relax.frontend.nn.op.conv2d:21 tvm.relax.frontend.nn.op.conv3d:21
+#: of tvm.relax.frontend.nn.op.conv1d:46
+#: tvm.relax.frontend.nn.op.conv1d_transpose:32
+#: tvm.relax.frontend.nn.op.conv2d:22 tvm.relax.frontend.nn.op.conv3d:22
 msgid "dilation"
 msgstr ""
 
@@ -2039,9 +2075,9 @@ msgid ""
 "required to have length 1."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d:48
-#: tvm.relax.frontend.nn.op.conv1d_transpose:34
-#: tvm.relax.frontend.nn.op.conv2d:24 tvm.relax.frontend.nn.op.conv3d:24
+#: of tvm.relax.frontend.nn.op.conv1d:50
+#: tvm.relax.frontend.nn.op.conv1d_transpose:36
+#: tvm.relax.frontend.nn.op.conv2d:25 tvm.relax.frontend.nn.op.conv3d:25
 msgid "groups"
 msgstr ""
 
@@ -2095,7 +2131,7 @@ msgstr ""
 msgid "Union[int, Tuple[int, ...]]"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d_transpose:27
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:28
 msgid "output_padding"
 msgstr ""
 
@@ -2113,8 +2149,8 @@ msgid ""
 "required to have length either 1."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d_transpose:38
-#: tvm.relax.frontend.nn.op.conv2d:27 tvm.relax.frontend.nn.op.conv3d:27
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:39
+#: tvm.relax.frontend.nn.op.conv2d:28 tvm.relax.frontend.nn.op.conv3d:28
 #: tvm.relax.frontend.nn.op.interpolate:20
 msgid "data_layout"
 msgstr ""
@@ -2123,7 +2159,7 @@ msgstr ""
 msgid "Layout of the input."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d_transpose:41
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:42
 msgid "kernel_layout"
 msgstr ""
 
@@ -2131,7 +2167,7 @@ msgstr ""
 msgid "Layout of the weight."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d_transpose:44
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:45
 msgid "out_layout"
 msgstr ""
 
@@ -2139,7 +2175,7 @@ msgstr ""
 msgid "Layout of the output. If not specified, it is the same as data_layout"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv1d_transpose:47
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:48
 msgid "out_dtype"
 msgstr ""
 
@@ -2165,7 +2201,7 @@ msgstr ""
 msgid "Filters of shape [O, N/groups, kH, kW]"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.conv2d:14 tvm.relax.frontend.nn.op.conv3d:14
+#: of tvm.relax.frontend.nn.op.conv2d:16 tvm.relax.frontend.nn.op.conv3d:16
 msgid "stride"
 msgstr ""
 
@@ -2253,7 +2289,7 @@ msgid ""
 "are summed. If dtype is not specified, it defaults to the dtype of data."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.cumsum:17
+#: of tvm.relax.frontend.nn.op.cumsum:19
 msgid "exclusive"
 msgstr ""
 
@@ -2361,9 +2397,9 @@ msgstr ""
 msgid "The name of the extern function to call."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.extern:9
-#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:11
-#: tvm.relax.frontend.nn.op.tensor_ir_op:11
+#: of tvm.relax.frontend.nn.op.extern:10
+#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:12
+#: tvm.relax.frontend.nn.op.tensor_ir_op:12
 msgid "args"
 msgstr ""
 
@@ -2393,7 +2429,7 @@ msgstr ""
 msgid "Fill array with scalar value."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.full:8
+#: of tvm.relax.frontend.nn.op.full:9
 msgid "fill_value"
 msgstr ""
 
@@ -2425,7 +2461,7 @@ msgstr ""
 msgid "The input data"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.gelu:13
+#: of tvm.relax.frontend.nn.op.gelu:14
 msgid "approximate"
 msgstr ""
 
@@ -2533,7 +2569,7 @@ msgstr ""
 msgid "Input to which rms_norm will be applied."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.group_norm:12
+#: of tvm.relax.frontend.nn.op.group_norm:13
 msgid "num_groups"
 msgstr ""
 
@@ -2551,8 +2587,8 @@ msgstr ""
 msgid "The beta offset factor."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.group_norm:21
-#: tvm.relax.frontend.nn.op.rms_norm:21
+#: of tvm.relax.frontend.nn.op.group_norm:22
+#: tvm.relax.frontend.nn.op.rms_norm:22
 msgid "epsilon"
 msgstr ""
 
@@ -2561,7 +2597,7 @@ msgstr ""
 msgid "Small float added to square mean to avoid dividing by zero."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.group_norm:24
+#: of tvm.relax.frontend.nn.op.group_norm:25
 msgid "channel_axis: int"
 msgstr ""
 
@@ -2583,7 +2619,7 @@ msgstr ""
 msgid "Input tensor to be resized."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.interpolate:7
+#: of tvm.relax.frontend.nn.op.interpolate:8
 msgid "size"
 msgstr ""
 
@@ -2680,7 +2716,7 @@ msgstr ""
 msgid "Input to which layer_norm will be applied."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.layer_norm:24
+#: of tvm.relax.frontend.nn.op.layer_norm:27
 msgid "normalized_shape: Union[int, List[int]]"
 msgstr ""
 
@@ -2691,15 +2727,15 @@ msgid ""
 "dimension."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.layer_norm:29
+#: of tvm.relax.frontend.nn.op.layer_norm:30
 msgid "weight: Tensor"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.layer_norm:32
+#: of tvm.relax.frontend.nn.op.layer_norm:33
 msgid "bias: Tensor"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.layer_norm:35
+#: of tvm.relax.frontend.nn.op.layer_norm:36
 msgid "eps: float"
 msgstr ""
 
@@ -2728,7 +2764,7 @@ msgid ""
 "api/latest/API_specification/generated/array_api.matmul.html."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.matmul:14
+#: of tvm.relax.frontend.nn.op.matmul:16
 msgid "out_dtype: Optional[Union[str, DataType]]"
 msgstr ""
 
@@ -2742,13 +2778,13 @@ msgstr ""
 msgid "Element-wise maximum"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.maximum:5 tvm.relax.frontend.nn.op.minimum:5
-#: tvm.relax.frontend.nn.op.where:14
+#: of tvm.relax.frontend.nn.op.maximum:6 tvm.relax.frontend.nn.op.minimum:6
+#: tvm.relax.frontend.nn.op.where:16
 msgid "x1"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.maximum:8 tvm.relax.frontend.nn.op.minimum:8
-#: tvm.relax.frontend.nn.op.where:18
+#: of tvm.relax.frontend.nn.op.maximum:9 tvm.relax.frontend.nn.op.minimum:9
+#: tvm.relax.frontend.nn.op.where:20
 msgid "x2"
 msgstr ""
 
@@ -2777,8 +2813,8 @@ msgid ""
 " 1."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:11
-#: tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:10
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:15
+#: tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:11
 msgid "prob"
 msgstr ""
 
@@ -2791,8 +2827,8 @@ msgid ""
 "distribution."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:17
-#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:25
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:19
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:26
 msgid "uniform_sample"
 msgstr ""
 
@@ -2802,8 +2838,8 @@ msgid ""
 " 0 to 1, indicating probabilities sampled uniformly."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:21
-#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:28
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:27
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:34
 msgid "sample_indices"
 msgstr ""
 
@@ -2851,7 +2887,7 @@ msgstr ""
 msgid "Input tensor to be padded."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.pad:7
+#: of tvm.relax.frontend.nn.op.pad:8
 msgid "pad"
 msgstr ""
 
@@ -2872,7 +2908,7 @@ msgid ""
 msgstr ""
 
 #: of tvm.relax.frontend.nn.op.pad:13
-#: tvm.relax.frontend.nn.op.scaled_dot_product_attention:12
+#: tvm.relax.frontend.nn.op.scaled_dot_product_attention:13
 msgid "value"
 msgstr ""
 
@@ -2942,8 +2978,8 @@ msgid ""
 "distributions."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:13
-#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:9
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:14
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:11
 msgid "sorted_prob"
 msgstr ""
 
@@ -2951,8 +2987,8 @@ msgstr ""
 msgid "Probabilities sorted in descending order."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:16
-#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:18
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:17
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:19
 msgid "top_p"
 msgstr ""
 
@@ -2963,8 +2999,8 @@ msgid ""
 "sampling."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:19
-#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:21
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:21
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:23
 msgid "top_k :Tensor"
 msgstr ""
 
@@ -2983,7 +3019,7 @@ msgstr ""
 msgid "Repeats elements of an array."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.repeat:8
+#: of tvm.relax.frontend.nn.op.repeat:9
 msgid "repeats"
 msgstr ""
 
@@ -2991,7 +3027,7 @@ msgstr ""
 msgid "The number of repetitions."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.repeat:11
+#: of tvm.relax.frontend.nn.op.repeat:14
 msgid "axis: Optional[int]"
 msgstr ""
 
@@ -3065,7 +3101,7 @@ msgid ""
 "sorted in descending order."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:13
+#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:16
 msgid "sorted_index: Tensor"
 msgstr ""
 
@@ -3092,7 +3128,7 @@ msgid ""
 " and values. Compliant with the functional torch implementation."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:6
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:7
 msgid "query"
 msgstr ""
 
@@ -3102,7 +3138,7 @@ msgid ""
 "num_heads, head_size]."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:9
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:10
 msgid "key"
 msgstr ""
 
@@ -3156,7 +3192,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.sigmoid:7 tvm.relax.frontend.nn.op.softmax:7
+#: of tvm.relax.frontend.nn.op.sigmoid:8 tvm.relax.frontend.nn.op.softmax:8
 msgid "data: Tensor"
 msgstr ""
 
@@ -3180,7 +3216,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.softmax:10
+#: of tvm.relax.frontend.nn.op.softmax:13
 msgid "axis: int"
 msgstr ""
 
@@ -3292,7 +3328,7 @@ msgid ""
 "supported."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.sum:13
+#: of tvm.relax.frontend.nn.op.sum:16
 msgid "keepdims"
 msgstr ""
 
@@ -3318,7 +3354,7 @@ msgstr ""
 msgid "The source tensor."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.take:12
+#: of tvm.relax.frontend.nn.op.take:13
 msgid "indices"
 msgstr ""
 
@@ -3350,7 +3386,7 @@ msgstr ""
 msgid "Build the given tensor_expr_func with te."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.tensor_expr_op:5
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:6
 msgid "tensor_expr_func"
 msgstr ""
 
@@ -3362,7 +3398,7 @@ msgstr ""
 msgid "A function that returns a te tensor or a list of tensors."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.tensor_expr_op:11
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:12
 msgid "args: List[Union[Tensor, _tir.Var]]"
 msgstr ""
 
@@ -3370,7 +3406,7 @@ msgstr ""
 msgid "Arguments passed to the function."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.tensor_expr_op:14
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:15
 msgid "attrs: Optional[Dict[str, Any]]"
 msgstr ""
 
@@ -3382,8 +3418,8 @@ msgstr ""
 msgid "Create a `call_tir_inplace` binding with given PrimFunc"
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:5
-#: tvm.relax.frontend.nn.op.tensor_ir_op:5
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:6
+#: tvm.relax.frontend.nn.op.tensor_ir_op:6
 msgid "func"
 msgstr ""
 
@@ -3407,7 +3443,7 @@ msgstr ""
 msgid "The arguments to pass to the PrimFunc."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:14
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:20
 msgid "inplace_indices"
 msgstr ""
 
@@ -3445,7 +3481,7 @@ msgid ""
 "\"indices\")."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.topk:10 tvm.relax.frontend.nn.op.triu:9
+#: of tvm.relax.frontend.nn.op.topk:11 tvm.relax.frontend.nn.op.triu:13
 msgid "k"
 msgstr ""
 
@@ -3453,7 +3489,7 @@ msgstr ""
 msgid "Number of top elements to select. Return all elements if k < 1."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.topk:16
+#: of tvm.relax.frontend.nn.op.topk:20
 msgid "ret_type: str"
 msgstr ""
 
@@ -3464,7 +3500,7 @@ msgid ""
 " k indices only."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.topk:22
+#: of tvm.relax.frontend.nn.op.topk:24
 msgid "largest"
 msgstr ""
 
@@ -3524,7 +3560,7 @@ msgid ""
 "otherwise."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.where:9
+#: of tvm.relax.frontend.nn.op.where:12
 msgid "condition"
 msgstr ""
 
@@ -3552,7 +3588,7 @@ msgid ""
 "automatically handle nested cases if the expr represents a Tuple."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.core.wrap_nested:6
+#: of tvm.relax.frontend.nn.core.wrap_nested:7
 msgid "expr"
 msgstr ""
 
@@ -3585,8 +3621,8 @@ msgid ""
 msgstr ""
 
 #: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:8
-#: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:5
-#: tvm.relax.frontend.torch.fx_translator.from_fx:5
+#: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:6
+#: tvm.relax.frontend.torch.fx_translator.from_fx:6
 msgid "model"
 msgstr ""
 
@@ -3622,7 +3658,7 @@ msgstr ""
 msgid "The input types to the graph"
 msgstr ""
 
-#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:14
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:15
 msgid "opset"
 msgstr ""
 
@@ -3634,7 +3670,7 @@ msgstr ""
 msgid "Override to autodetected opset. This can be helpful for some testing."
 msgstr ""
 
-#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:17
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:18
 msgid "keep_params_in_input"
 msgstr ""
 
@@ -3644,7 +3680,7 @@ msgid ""
 "parameters are treated as constant and folded directly into the graph."
 msgstr ""
 
-#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:20
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:21
 msgid "sanitize_input_names"
 msgstr ""
 
@@ -3672,6 +3708,54 @@ msgstr ""
 
 #: ../../doc/docs/reference/api/python/relax/frontend.rst:39
 msgid "tvm.relax.frontend.stablehlo"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo:1
+msgid ""
+"StableHLO Frontends for constructing Relax programs, with the model "
+"importers"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:1
+msgid "Convert a StableHLO Module to a Relax program"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:6
+msgid "stablehlo_module"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:-1
+msgid "Union[str, mlir.ir.Module]"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:6
+msgid "The StableHLO Module to convert."
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:9
+#: tvm.relax.frontend.torch.fx_translator.from_fx:9
+msgid "input_info"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:-1
+#: tvm.relax.frontend.torch.fx_translator.from_fx:-1
+msgid "List[Tuple[Tuple[int], str]]"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:9
+#: tvm.relax.frontend.torch.fx_translator.from_fx:9
+msgid "A list of shapes and data types of input tensors."
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:13
+#: tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:19
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:23
+#: tvm.relax.frontend.torch.fx_translator.from_fx:32
+msgid "output"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:14
+msgid "The result IRModule with entry function \"main\""
 msgstr ""
 
 #: ../../doc/docs/reference/api/python/relax/frontend.rst:45
@@ -3706,8 +3790,9 @@ msgstr ""
 msgid "The parameters of the PyTorch model."
 msgstr ""
 
-#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:11
-#: tvm.relax.frontend.torch.fx_translator.from_fx:11
+#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:12
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:9
+#: tvm.relax.frontend.torch.fx_translator.from_fx:12
 msgid "keep_params_as_input"
 msgstr ""
 
@@ -3715,11 +3800,6 @@ msgstr ""
 msgid ""
 "Whether to keep model parameters as input variables of the captured Relax"
 " functions."
-msgstr ""
-
-#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:16
-#: tvm.relax.frontend.torch.fx_translator.from_fx:27
-msgid "output"
 msgstr ""
 
 #: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:-1
@@ -3734,6 +3814,77 @@ msgid ""
 "weights can be detached by `relax.frontend.detach_params`."
 msgstr ""
 
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:1
+msgid "Convert a PyTorch ExportedProgram to a Relax program"
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:6
+msgid "exported_program"
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:-1
+msgid "torch.export.ExportedProgram"
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:6
+msgid "The PyTorch ExportedProgram to convert."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:9
+#: tvm.relax.frontend.torch.fx_translator.from_fx:12
+msgid "Whether to keep model parameters as input variables."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:13
+#: tvm.relax.frontend.torch.fx_translator.from_fx:16
+msgid "unwrap_unit_return_tuple"
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:12
+#: tvm.relax.frontend.torch.fx_translator.from_fx:15
+msgid ""
+"A boolean flag indicating if to the return value when it is an unit "
+"tuple. When the return value is not a unit tuple, no unwrap will take "
+"place."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:17
+#: tvm.relax.frontend.torch.fx_translator.from_fx:20
+msgid "no_bind_return_tuple"
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:16
+#: tvm.relax.frontend.torch.fx_translator.from_fx:19
+msgid ""
+"A boolean flag indicating whether to bind the return tuple as a relax "
+"var. If the flag is true and the return value is a tuple, it will not "
+"bind it to a var."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:22
+msgid ""
+"The import result IRModule, with the function \"main\" containing the "
+"translated logic."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:27
+msgid ""
+"Users can use the torch.export.export() to extract a "
+"torch.export.ExportedProgram from a PyTorch model. The following codes "
+"show how to convert a PyTorch model to a Relax program."
+msgstr ""
+
 #: of tvm.relax.frontend.torch.fx_translator.from_fx:1
 msgid "Convert a PyTorch FX GraphModule to a Relax program"
 msgstr ""
@@ -3746,45 +3897,7 @@ msgstr ""
 msgid "The PyTorch FX GraphModule to convert."
 msgstr ""
 
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:8
-msgid "input_info"
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:-1
-msgid "List[Tuple[Tuple[int], str]]"
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:9
-msgid "A list of shapes and data types of input tensors."
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:12
-msgid "Whether to keep model parameters as input variables."
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:14
-msgid "unwrap_unit_return_tuple"
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:15
-msgid ""
-"A boolean flag indicating if to the return value when it is an unit "
-"tuple. When the return value is not a unit tuple, no unwrap will take "
-"place."
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:18
-msgid "no_bind_return_tuple"
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:19
-msgid ""
-"A boolean flag indicating whether to bind the return tuple as a relax "
-"var. If the flag is true and the return value is a tuple, it will not "
-"bind it to a var."
-msgstr ""
-
-#: of tvm.relax.frontend.torch.fx_translator.from_fx:22
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:23
 msgid "custom_convert_map"
 msgstr ""
 
@@ -3830,7 +3943,7 @@ msgstr ""
 msgid "A helper function to create a relax backend."
 msgstr ""
 
-#: of tvm.relax.frontend.torch.dynamo.relax_dynamo:5
+#: of tvm.relax.frontend.torch.dynamo.relax_dynamo:6
 msgid "pipeline"
 msgstr ""
 

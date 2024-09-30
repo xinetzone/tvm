@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -56,7 +56,7 @@ msgid ""
 msgstr ""
 
 #: ../../doc/docs/reference/security.rst:38
-msgid "Considerations"
+msgid "Security Model"
 msgstr ""
 
 #: ../../doc/docs/reference/security.rst:39
@@ -66,10 +66,21 @@ msgid ""
 " system library."
 msgstr ""
 
-#: ../../doc/docs/reference/security.rst:42
+#: ../../doc/docs/reference/security.rst:43
+msgid ""
+"TVM RPC server assumes that the user is trusted and needs to be used in a"
+" trusted network environment and encrypted channels. It allows writings "
+"of arbitrary files into the server and provide full remote code execution"
+" capabilities to anyone who can access this API."
+msgstr ""
+
+#: ../../doc/docs/reference/security.rst:48
 msgid ""
 "AutoTVM data exchange between the tracker, server and client are in "
 "plain-text. It is recommended to use them under trusted networking "
 "environment or encrypted channels."
 msgstr ""
+
+#~ msgid "Considerations"
+#~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -24,8 +24,9 @@ msgid "TensorIR"
 msgstr ""
 
 #: ../../doc/docs/deep_dive/tensor_ir/index.rst:22
+#, fuzzy
 msgid ""
-"TensorIR is one of the core abstraction in Apache TVM Unity stack, which "
-"is used to represent and optimize the primitive tensor functions."
-msgstr ""
-"TensorIR 是 Apache TVM Unity 堆栈中的核心抽象之一，用于表示和优化元张量函数。"
+"TensorIR is one of the core abstraction in Apache TVM stack, which is "
+"used to represent and optimize the primitive tensor functions."
+msgstr "TensorIR 是 Apache TVM Unity 堆栈中的核心抽象之一，用于表示和优化元张量函数。"
+

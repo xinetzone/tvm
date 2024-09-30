@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.15.0\n"
 
 #: ../../doc/docs/how_to/dev/index.rst:19
-msgid "Develope Apache TVM"
+msgid "Development Guides"
 msgstr ""
 
 #: ../../doc/docs/how_to/dev/index.rst:20
@@ -28,4 +28,7 @@ msgid ""
 "This section contains a collection of tips about how to work on various "
 "areas of the TVM stack."
 msgstr ""
+
+#~ msgid "Develope Apache TVM"
+#~ msgstr ""
 

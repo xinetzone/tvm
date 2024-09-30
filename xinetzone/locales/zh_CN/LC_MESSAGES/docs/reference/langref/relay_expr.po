@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 16:06+0800\n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.15.0\n"
 
 #: ../../doc/docs/reference/langref/relay_expr.rst:20
 msgid "Expressions in Relay"
@@ -814,30 +814,29 @@ msgstr ""
 "程序中显式地构造数据流图，方法是将表达式（图节点）直接绑定到没有作用域的临时变量。每个对变量的引用对应数据流图中的一条边。它的语义是在变量出现的地方替换表达式，即使图节点只会被编译后的程序计算一次。"
 
 #: ../../doc/docs/reference/langref/relay_expr.rst:540
+#, fuzzy
 msgid ""
 "These bindings allow for a style of programming that corresponds to that "
 "already employed by NNVM and other dataflow graph-based input formats. "
 "The fact that the variables are not scoped offers some flexibility in "
 "evaluation order compared to :code:`let` bindings, though this can also "
-"introduce some ambiguity in programs (the :ref:`developer introduction to"
-" the Relay IR<relay-dev-intro>` includes more detailed discussion of this"
-" nuance)."
+"introduce some ambiguity in programs."
 msgstr ""
 "这些绑定允许一种与 NNVM 和其他基于数据流图的输入格式所采用的编程风格相对应的编程风格。与 :code:`let` "
 "绑定相比，变量没有限定作用域的事实在计算顺序上提供了一些灵活性，尽管这也会在程序中引入一些模糊性（:ref:`开发人员对 Relay IR 的介绍"
 " <relay-dev-intro>` 包含了关于这种细微差别的更详细的讨论）。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:547
+#: ../../doc/docs/reference/langref/relay_expr.rst:545
 msgid "*Note: Graph bindings are not currently parsed by the text format.*"
 msgstr "*注意：Graph 当前未被文本格式解析。*"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:549
+#: ../../doc/docs/reference/langref/relay_expr.rst:547
 msgid ""
 "In Relay's text format, a graph binding can be written as below (note the"
 " lack of a :code:`let` keyword and a semicolon):"
 msgstr "在 Relay 的文本格式中，graph 绑定可以这样写（注意缺少 :code:`let` 关键字和分号）："
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:558
+#: ../../doc/docs/reference/langref/relay_expr.rst:556
 msgid ""
 "Unlike a let binding, a graph binding is not represented as an AST node "
 "in Relay, but rather as a meta-variable referencing its AST node value. "
@@ -851,7 +850,7 @@ msgstr ""
 "variable）。例如，可以在 Relay 的 Python 前端通过设置 *Python 变量* 等于相应的 Relay AST "
 "节点并重复使用变量来构造类似于上面的程序，如下所示（使用相应的 API 绑定的 C++ 程序可以完成相同的事情）："
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:570
+#: ../../doc/docs/reference/langref/relay_expr.rst:568
 msgid ""
 "For development purposes and to enable certain optimizations, Relay "
 "includes passes to convert between dataflow graphs defined using graph "
@@ -865,11 +864,11 @@ msgstr ""
 "passes，它被来自函数式编程社区的许多编译器优化所采用（参见 Matt Might 的 `\"A-Normalization: Why and"
 " How\" <http://matt.might.net/articles/a-normalization/>`__ 了解 A-范式形式）。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:578
+#: ../../doc/docs/reference/langref/relay_expr.rst:576
 msgid "If-Then-Else"
 msgstr ""
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:580
+#: ../../doc/docs/reference/langref/relay_expr.rst:578
 msgid ""
 "Relay has a simple if-then-else expression that allows programs to branch"
 " on a single value of type :code:`bool`, i.e., a zero-rank tensor of "
@@ -878,7 +877,7 @@ msgstr ""
 "Relay 有简单的 if-then-else 表达式，允许程序在 :code:`bool` "
 "类型的单个值上进行分支，即布尔值的零阶张量（:code:`Tensor[(), bool]`）。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:592
+#: ../../doc/docs/reference/langref/relay_expr.rst:590
 msgid ""
 "Since if-then-else branches are expressions, they may appear inline "
 "wherever any other expression may be expected, like invocations of the "
@@ -891,15 +890,15 @@ msgstr ""
 "then-else 表达式在条件值为 :code:`True` 时计算为 \"then\" 分支的值，在条件值为 :code:`False` "
 "时计算为 \"else\" 分支的值。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:599
+#: ../../doc/docs/reference/langref/relay_expr.rst:597
 msgid "See :py:class:`~tvm.relay.expr.If` for its definition and documentation."
 msgstr "阅读 :py:class:`~tvm.relay.expr.If` 了解细节。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:602
+#: ../../doc/docs/reference/langref/relay_expr.rst:600
 msgid "ADT Matching"
 msgstr "ADT 匹配"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:604
+#: ../../doc/docs/reference/langref/relay_expr.rst:602
 msgid ""
 "Instances of algebraic data types (ADTs), as discussed in the :ref:`ADT "
 "overview<adt-overview>`, are containers that store the arguments passed "
@@ -908,7 +907,7 @@ msgstr ""
 "如 :ref:`ADT 概述 <adt-overview>` "
 "中所讨论的，代数数据类型（ADT）的实例是存储传递给用于创建它们的构造函数的参数的容器，由构造函数名称标记（tagged）。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:609
+#: ../../doc/docs/reference/langref/relay_expr.rst:607
 msgid ""
 "Match expressions in Relay allow for retrieving the values stored in an "
 "ADT instance (\"deconstructing\" it) based on their constructor tag. A "
@@ -929,7 +928,7 @@ msgstr ""
 "的列表）可以与外部实例同时分解，而实例的不同字段可以绑定到变量。(请参阅 :ref:`ADT 模式匹配 <adt-pattern>` "
 "的详细描述。）"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:621
+#: ../../doc/docs/reference/langref/relay_expr.rst:619
 msgid ""
 "A match expression is defined using the input value (an expression) and a"
 " list of clauses, each of which consists of a pattern and an expression. "
@@ -940,37 +939,37 @@ msgstr ""
 "match 表达式使用 input "
 "值（表达式）和一列子句定义，每个子句由模式（pattern）和表达式（expression）组成。当执行时，执行第一个模式匹配查询值结构的子句；子句表达式被求值并返回。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:627
+#: ../../doc/docs/reference/langref/relay_expr.rst:625
 msgid "For example, suppose we have an ADT for natural numbers:"
 msgstr "例如，假设有用于自然数的 ADT："
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:636
+#: ../../doc/docs/reference/langref/relay_expr.rst:634
 msgid "Then the following function subtracts one from a passed nat:"
 msgstr "然后下面的函数从传递（passes）的 nat 中减去 1："
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:647
+#: ../../doc/docs/reference/langref/relay_expr.rst:645
 msgid ""
 "The following function subtracts two from its argument if it is at least "
 "two and returns the argument otherwise, using a nested constructor "
 "pattern:"
 msgstr "下面的函数如果参数至少为 2，则从参数中减去 2，否则使用嵌套构造函数模式返回参数："
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:660
+#: ../../doc/docs/reference/langref/relay_expr.rst:658
 msgid ""
 "As aforementioned, the ordering of match clauses is relevant. In the "
 "below example, the first clause will always match so those below it can "
 "never run:"
 msgstr "如上所述，match 子句的排序是相关的。在下面的例子中，第一个子句将始终匹配，因此它下面的子句永远不能运行："
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:675
+#: ../../doc/docs/reference/langref/relay_expr.rst:673
 msgid "See :py:class:`~tvm.relay.adt.Match` for its definition and documentation."
 msgstr "阅读 :py:class:`~tvm.relay.adt.Match` 了解更多细节。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:678
+#: ../../doc/docs/reference/langref/relay_expr.rst:676
 msgid "TempExprs"
 msgstr ""
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:680
+#: ../../doc/docs/reference/langref/relay_expr.rst:678
 msgid ""
 "Program transformations (passes) in Relay may require inserting temporary"
 " state into the program AST to guide further transformations. The "
@@ -986,7 +985,7 @@ msgstr ""
 "pass 中创建的任何 :code:`TempExpr` 都应该在 pass 完成之前被删除，因为 :code:`TempExpr` "
 "只存储内部状态，并且没有自己的语义。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:688
+#: ../../doc/docs/reference/langref/relay_expr.rst:686
 msgid ""
 "For an example of :code:`TempExpr` being used in a pass, see "
 ":code:`src/relay/transforms/fold_scale_axis.cc`, which uses "
@@ -997,7 +996,7 @@ msgstr ""
 ":code:`src/relay/transforms/fold_scale_axis.cc`，它使用 :code:`TempExpr` "
 "节点存储关于 scaling 参数的信息，因为 pass 试图将这些参数折叠到卷积的 weights 中。"
 
-#: ../../doc/docs/reference/langref/relay_expr.rst:693
+#: ../../doc/docs/reference/langref/relay_expr.rst:691
 msgid ""
 "See :py:class:`~tvm.relay.expr.TempExpr` for its definition and "
 "documentation."
