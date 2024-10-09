@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/top/bitpack.rst:3
+msgid "``vta.top.bitpack``"
+msgstr ""
+
+#: of vta.top.bitpack:1
+msgid "Bit packing operators"
+msgstr "Bit packing 算子"
+
+#: of vta.top.bitpack.bitpack:1
+msgid "Packs lowest dimension into format needed by VTA"
+msgstr "将最低维度打包成 VTA 所需的格式"
+
+#: of vta.top.bitpack.bitpack:4
+msgid "Parameters"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:5
+msgid "pack_axis"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:-1
+msgid "int"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:6
+msgid "index of the axis to pack in data"
+msgstr "要打包数据的轴的索引"
+
+#: of vta.top.bitpack.bitpack:8
+msgid "bit_axis"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:8
+msgid "index of axis to place bit axis in resulting packed data"
+msgstr "将位轴放置在结果打包数据中的轴索引"
+
+#: of vta.top.bitpack.bitpack:11
+msgid "Returns"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:12
+msgid "packed"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:-1
+msgid "Tensor"
+msgstr ""
+
+#: of vta.top.bitpack.bitpack:13
+msgid "The packed tensor."
+msgstr "已打包的张量。"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+

@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-15 19:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/top/vta_dense.rst:3
+msgid "``vta.top.vta_dense``"
+msgstr ""
+
+#: of vta.top.vta_dense:1
+msgid "Dense operator declaration and schedule registration for VTA."
+msgstr "Dense 算子声明和 VTA 调度注册。"
+
+#: of vta.top.vta_dense.dense_packed:1
+msgid "Dense function declaration."
+msgstr "Dense 函数声明。"
+
+#: of vta.top.vta_dense.is_packed_layout:1
+msgid "Check if layout is packed layout"
+msgstr "检查布局是否为包装布局"
+
+#: of vta.top.vta_dense.schedule_dense_packed:1
+msgid "Packed dense schedule."
+msgstr "打包 dense 调度。"
+

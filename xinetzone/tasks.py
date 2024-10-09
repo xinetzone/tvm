@@ -117,9 +117,9 @@ def pull(ctx):
     if dst_doc_dir.exists():
         shutil.rmtree(dst_doc_dir)
     ctx.run(f'cp -r {ROOT/"docs"} {dst_doc_dir}')
-    ctx.run(f'cp -r {HOME/"vta/tutorials"} {dst_doc_dir/"topic/vta/tutorials"}')
-    ctx.run(f'cp -r {HOME/"gallery/tutorial"} {dst_doc_dir/"tutorial"}')
-    ctx.run(f'cp -r {HOME/"gallery/how_to/*"} {dst_doc_dir/"how_to"}')
+    # ctx.run(f'cp -r {HOME/"vta/tutorials"} {dst_doc_dir/"topic/vta/tutorials"}')
+    # ctx.run(f'cp -r {HOME/"gallery/tutorial"} {dst_doc_dir/"tutorial"}')
+    # ctx.run(f'cp -r {HOME/"gallery/how_to/*"} {dst_doc_dir/"how_to"}')
 
 @task
 def ln_env(ctx,
