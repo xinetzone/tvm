@@ -35,6 +35,7 @@ from tvm import relax
 from tvm.relax.frontend.onnx import from_onnx
 from tvm.script import relax as R
 from tvm.script import tir as T
+from tvm.script import ir as I
 
 bg = np.random.MT19937(0)
 rg = np.random.Generator(bg)
@@ -543,6 +544,68 @@ def test_gather():
     _verify_gather([3, 3], [[0, 2]], [3, 1, 2], 1)
 
 
+@pytest.mark.parametrize(
+    "data_shape, indices_shape, axis",
+    [
+        ([3, 4, 5], [1, 4, 5], 0),
+        ([3, 4, 5], [3, 2, 5], 1),
+        ([3, 4, 5], [3, 4, 2], 2),
+    ],
+)
+def test_gather_elements(data_shape, indices_shape, axis):
+    gather_elements_node = helper.make_node("GatherElements", ["data", "indices"], ["y"], axis=axis)
+
+    graph = helper.make_graph(
+        [gather_elements_node],
+        "gather_elements_test",
+        inputs=[
+            helper.make_tensor_value_info("data", TensorProto.FLOAT, data_shape),
+            helper.make_tensor_value_info("indices", TensorProto.INT64, indices_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, indices_shape)],
+    )
+
+    model = helper.make_model(graph, producer_name="gather_elements_test")
+    input_values = {
+        "data": np.random.randn(*data_shape).astype("float32"),
+        "indices": np.random.randint(0, data_shape[axis], indices_shape).astype("int64"),
+    }
+    check_correctness(model, inputs=input_values)
+
+
+@pytest.mark.parametrize(
+    "data_shape, indices_shape, batch_dims",
+    [
+        ([2, 2], [2, 2], 0),
+        ([2, 2], [2, 1], 0),
+        ([2, 2, 2], [1], 0),
+        ([2, 2, 2], [2, 2], 0),
+        ([2, 2, 2], [2, 1, 2], 0),
+        ([2, 2, 2], [2, 2], 1),
+        ([2, 2, 2], [2, 1], 1),
+    ],
+)
+def test_gather_nd(data_shape, indices_shape, batch_dims):
+    gather_nd_node = helper.make_node("GatherND", ["data", "indices"], ["y"], batch_dims=batch_dims)
+
+    graph = helper.make_graph(
+        [gather_nd_node],
+        "gather_nd_test",
+        inputs=[
+            helper.make_tensor_value_info("data", TensorProto.FLOAT, data_shape),
+            helper.make_tensor_value_info("indices", TensorProto.INT64, indices_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, None)],
+    )
+
+    model = helper.make_model(graph, producer_name="gather_nd_test")
+    input_values = {
+        "data": np.random.randn(*data_shape).astype("float32"),
+        "indices": np.random.randint(0, 2, indices_shape).astype("int64"),
+    }
+    check_correctness(model, inputs=input_values)
+
+
 @pytest.mark.parametrize("axis", [0, 1, 2])
 @pytest.mark.parametrize(("name", "opset"), [("Scatter", 10), ("ScatterElements", 11)])
 def test_scatter(axis: int, name: str, opset: int):
@@ -598,6 +661,34 @@ def test_scatter_nd(reduction):
     verify_scatter_nd([4, 4, 4], [2, 1], [2, 4, 4])
     verify_scatter_nd([4, 5, 6], [2, 3, 2], [2, 3, 6])
     verify_scatter_nd([10], [5, 1], [5])
+
+
+@pytest.mark.parametrize("tensor_shape", [[32, 32]])
+@pytest.mark.parametrize("condition_shape", [None, [8], [16]])
+@pytest.mark.parametrize("axis", [None, 0, 1])
+def test_compress(
+    tensor_shape: List[int],
+    condition_shape: Optional[List[int]],
+    axis: Optional[int],
+):
+    if condition_shape is None and axis is None:
+        pytest.skip("Either condition_shape or axis must be specified")
+    if condition_shape is None:
+        condition_shape = [tensor_shape[axis]]
+    compress_node = helper.make_node("Compress", ["tensor", "condition"], ["output"], axis=axis)
+    graph = helper.make_graph(
+        [compress_node],
+        "compress_test",
+        inputs=[
+            helper.make_tensor_value_info("tensor", TensorProto.FLOAT, tensor_shape),
+            helper.make_tensor_value_info("condition", TensorProto.BOOL, condition_shape),
+        ],
+        outputs=[
+            helper.make_tensor_value_info("output", TensorProto.FLOAT, [])
+        ],  # shape is unknown
+    )
+    model = helper.make_model(graph, producer_name="compress_test")
+    check_correctness(model, opset=11)
 
 
 def test_size():
@@ -2477,7 +2568,7 @@ def test_unique(axis: Optional[int], sorted: int):
     check_correctness(model)
 
 
-@pytest.mark.parametrize("shape", [(), (1,), (2, 3), (4, 5, 6)])
+@pytest.mark.parametrize("shape", [(), (1,), (2, 3), (4, 5, 6), (7, 8, 9, 10)])
 def test_nonzero(shape):
     verify_unary("NonZero", shape, input_dtype=TensorProto.BOOL, output_dtype=TensorProto.INT64)
 
@@ -2750,6 +2841,208 @@ def test_params_names_start_with_onnx():
     )
     model = helper.make_model(graph, producer_name="test_params_names_start_with_onnx")
     check_correctness(model)
+
+
+def test_shape_dim_string_expression():
+    def _verify(x_shape, example_shape):
+
+        identity_node = helper.make_node("Identity", ["x"], ["y"])
+
+        graph = helper.make_graph(
+            [identity_node],
+            "test_var_shape_dim_containing_expressions_onnx",
+            inputs=[
+                helper.make_tensor_value_info("x", TensorProto.FLOAT, x_shape),
+            ],
+            outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, x_shape)],
+        )
+        model = helper.make_model(
+            graph, producer_name="test_var_shape_dim_containing_expressions_onnx"
+        )
+
+        inputs = {"x": generate_random_value(example_shape, TensorProto.FLOAT)}
+        check_correctness(model, inputs)
+
+    _verify(["A", "B", "A + B"], [3, 9, 12])
+    _verify(["A", "B", "A - B"], [9, 3, 6])
+    _verify(["A", "B", "A * B"], [9, 3, 27])
+    _verify(["A", "B", "A // B"], [9, 3, 3])
+
+
+def test_shape_dim_string_expression_graph_add():
+
+    identity_node = helper.make_node("Identity", ["x"], ["y"])
+
+    x_shape = ["A", "B", "A + B"]
+
+    graph = helper.make_graph(
+        [identity_node],
+        "test_var_shape_dim_containing_expressions_onnx",
+        inputs=[
+            helper.make_tensor_value_info("x", TensorProto.FLOAT, x_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, x_shape)],
+    )
+    model = helper.make_model(graph, producer_name="test_var_shape_dim_containing_expressions_onnx")
+
+    tvm_model = from_onnx(model, opset=14, keep_params_in_input=True)
+
+    # fmt: off
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(x: R.Tensor(("A", "B", "A + B"), dtype="float32")) -> R.Tensor(("A", "B", "A + B"), dtype="float32"):
+            A = T.int64(is_size_var=True)
+            B = T.int64(is_size_var=True)
+            R.func_attr({"num_input": 1})
+            with R.dataflow():
+                gv: R.Tensor((A, B, A + B), dtype="float32") = x
+                R.output(gv)
+            return gv
+    # fmt: on
+
+    tvm.ir.assert_structural_equal(tvm_model, Expected)
+
+
+def test_shape_dim_string_expression_graph_subtract():
+
+    identity_node = helper.make_node("Identity", ["x"], ["y"])
+
+    x_shape = ["A", "B", "A - B"]
+
+    graph = helper.make_graph(
+        [identity_node],
+        "test_var_shape_dim_containing_expressions_onnx",
+        inputs=[
+            helper.make_tensor_value_info("x", TensorProto.FLOAT, x_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, x_shape)],
+    )
+    model = helper.make_model(graph, producer_name="test_var_shape_dim_containing_expressions_onnx")
+
+    tvm_model = from_onnx(model, opset=14, keep_params_in_input=True)
+
+    # fmt: off
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(x: R.Tensor(("A", "B", "A - B"), dtype="float32")) -> R.Tensor(("A", "B", "A - B"), dtype="float32"):
+            A = T.int64(is_size_var=True)
+            B = T.int64(is_size_var=True)
+            R.func_attr({"num_input": 1})
+            with R.dataflow():
+                gv: R.Tensor((A, B, A - B), dtype="float32") = x
+                R.output(gv)
+            return gv
+    # fmt: on
+
+    tvm.ir.assert_structural_equal(tvm_model, Expected)
+
+
+def test_shape_dim_string_expression_graph_mul():
+
+    identity_node = helper.make_node("Identity", ["x"], ["y"])
+
+    x_shape = ["A", "B", "A * B"]
+
+    graph = helper.make_graph(
+        [identity_node],
+        "test_var_shape_dim_containing_expressions_onnx",
+        inputs=[
+            helper.make_tensor_value_info("x", TensorProto.FLOAT, x_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, x_shape)],
+    )
+    model = helper.make_model(graph, producer_name="test_var_shape_dim_containing_expressions_onnx")
+
+    tvm_model = from_onnx(model, opset=14, keep_params_in_input=True)
+
+    # fmt: off
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(x: R.Tensor(("A", "B", "A * B"), dtype="float32")) -> R.Tensor(("A", "B", "A * B"), dtype="float32"):
+            A = T.int64(is_size_var=True)
+            B = T.int64(is_size_var=True)
+            R.func_attr({"num_input": 1})
+            with R.dataflow():
+                gv: R.Tensor((A, B, A * B), dtype="float32") = x
+                R.output(gv)
+            return gv
+    # fmt: on
+
+    tvm.ir.assert_structural_equal(tvm_model, Expected)
+
+
+def test_shape_dim_string_expression_graph_div_1():
+
+    identity_node = helper.make_node("Identity", ["x"], ["y"])
+
+    # this will result in a floordiv despite not using // since the operands are always int
+    x_shape = ["A", "B", "A / B"]
+
+    graph = helper.make_graph(
+        [identity_node],
+        "test_var_shape_dim_containing_expressions_onnx",
+        inputs=[
+            helper.make_tensor_value_info("x", TensorProto.FLOAT, x_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, x_shape)],
+    )
+    model = helper.make_model(graph, producer_name="test_var_shape_dim_containing_expressions_onnx")
+
+    tvm_model = from_onnx(model, opset=14, keep_params_in_input=True)
+
+    # fmt: off
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(x: R.Tensor(("A", "B", "A // B"), dtype="float32")) -> R.Tensor(("A", "B", "A // B"), dtype="float32"):
+            A = T.int64(is_size_var=True)
+            B = T.int64(is_size_var=True)
+            R.func_attr({"num_input": 1})
+            with R.dataflow():
+                gv: R.Tensor((A, B, A // B), dtype="float32") = x
+                R.output(gv)
+            return gv
+    # fmt: on
+
+    tvm.ir.assert_structural_equal(tvm_model, Expected)
+
+
+def test_shape_dim_string_expression_graph_div_2():
+
+    identity_node = helper.make_node("Identity", ["x"], ["y"])
+
+    x_shape = ["A", "B", "A // B"]
+
+    graph = helper.make_graph(
+        [identity_node],
+        "test_var_shape_dim_containing_expressions_onnx",
+        inputs=[
+            helper.make_tensor_value_info("x", TensorProto.FLOAT, x_shape),
+        ],
+        outputs=[helper.make_tensor_value_info("y", TensorProto.FLOAT, x_shape)],
+    )
+    model = helper.make_model(graph, producer_name="test_var_shape_dim_containing_expressions_onnx")
+
+    tvm_model = from_onnx(model, opset=14, keep_params_in_input=True)
+
+    # fmt: off
+    @I.ir_module
+    class Expected:
+        @R.function
+        def main(x: R.Tensor(("A", "B", "A // B"), dtype="float32")) -> R.Tensor(("A", "B", "A // B"), dtype="float32"):
+            A = T.int64(is_size_var=True)
+            B = T.int64(is_size_var=True)
+            R.func_attr({"num_input": 1})
+            with R.dataflow():
+                gv: R.Tensor((A, B, A // B), dtype="float32") = x
+                R.output(gv)
+            return gv
+    # fmt: on
+
+    tvm.ir.assert_structural_equal(tvm_model, Expected)
 
 
 if __name__ == "__main__":
