@@ -3,9 +3,6 @@
 # This file is distributed under the same license as the TVM package.
 # xinetzone <735613050@qq.com>, 2022.
 #
-#, fuzzy
-msgid ""
-msgstr ""
 "Project-Id-Version: TVM \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-10 21:32+0800\n"

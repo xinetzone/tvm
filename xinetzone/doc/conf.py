@@ -61,7 +61,8 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx_automodapi.automodapi",
     "sphinx_automodapi.smart_resolver",
-    'autoapi.extension',
+    # "sphinx_gallery.gen_gallery",
+    # 'autoapi.extension',
 ]
 
 suppress_warnings = [
@@ -170,7 +171,7 @@ extlinks = {
 intersphinx_mapping = {
     'python': ('https://daobook.github.io/cpython/', None),
     'tvm': ('https://xinetzone.github.io/tvm/', None),
-    "sklearn": ("https://scikit-learn.org/stable/", None),
+    # "sklearn": ("https://scikit-learn.org/stable/", None),
 }
 
 # ``pydata-sphinx-theme`` 配置
@@ -305,9 +306,180 @@ autosummary_generate = True
 autodoc_typehints = "description"
 autodoc_member_order = "groupwise"
 
-# -- Options for autoapi -------------------------------------------------------
-autoapi_type = "python"
-autoapi_dirs = [f"{ROOT}/vta/python/vta"]
-autoapi_keep_files = False # 要开始自己编写 API 文档，你可以让 AutoAPI 保留其生成的文件作为基础
-autoapi_root = "api"
-autoapi_member_order = "groupwise"
+# # -- Options for autoapi -------------------------------------------------------
+# autoapi_type = "python"
+# autoapi_dirs = [f"{ROOT}/vta/python/vta"]
+# autoapi_keep_files = False # 要开始自己编写 API 文档，你可以让 AutoAPI 保留其生成的文件作为基础
+# autoapi_root = "api"
+# autoapi_member_order = "groupwise"
+
+# examples_dirs = [
+#     # 在“gallery”文件夹下的遗留教程结构
+#     # f"{ROOT}/gallery/tutorial",
+#     # f"{ROOT}/gallery/how_to/compile_models",
+#     # f"{ROOT}/gallery/how_to/deploy_models",
+#     # f"{ROOT}/gallery/how_to/work_with_relay",
+#     # f"{ROOT}/gallery/how_to/work_with_schedules",
+#     # f"{ROOT}/gallery/how_to/optimize_operators",
+#     # f"{ROOT}/gallery/how_to/tune_with_autotvm",
+#     # f"{ROOT}/gallery/how_to/tune_with_autoscheduler",
+#     # f"{ROOT}/gallery/how_to/work_with_microtvm",
+#     # f"{ROOT}/gallery/how_to/extend_tvm",
+#     # 在文档文件夹下的新教程结构
+#     f"{ROOT}/docs/get_started/tutorials",
+#     f"{ROOT}/docs/how_to/tutorials",
+#     f"{ROOT}/docs/deep_dive/relax/tutorials",
+#     f"{ROOT}/docs/deep_dive/tensor_ir/tutorials",
+# ]
+
+
+# gallery_dirs = [
+#     # # legacy tutorial structure under gallery folder
+#     # "tutorial",
+#     # "how_to/compile_models",
+#     # "how_to/deploy_models",
+#     # "how_to/work_with_relay",
+#     # "how_to/work_with_schedules",
+#     # "how_to/optimize_operators",
+#     # "how_to/tune_with_autotvm",
+#     # "how_to/tune_with_autoscheduler",
+#     # "how_to/work_with_microtvm",
+#     # "how_to/extend_tvm",
+#     # New tutorial structure under docs folder
+#     "get_started/tutorials/",
+#     "how_to/tutorials/",
+#     "deep_dive/relax/tutorials/",
+#     "deep_dive/tensor_ir/tutorials/",
+# ]
+
+# # Explicitly define the order within a subsection.
+# # The listed files are sorted according to the list.
+# # The unlisted files are sorted by filenames.
+# # The unlisted files always appear after listed files.
+# within_subsection_order = {
+#     "tutorial": [
+#         "introduction.py",
+#         "install.py",
+#         "tvmc_command_line_driver.py",
+#         "tvmc_python.py",
+#         "autotvm_relay_x86.py",
+#         "tensor_expr_get_started.py",
+#         "autotvm_matmul_x86.py",
+#         "auto_scheduler_matmul_x86.py",
+#         "tensor_ir_blitz_course.py",
+#         "topi.pi",
+#         "cross_compilation_and_rpc.py",
+#         "relay_quick_start.py",
+#         "uma.py",
+#     ],
+#     "compile_models": [
+#         "from_pytorch.py",
+#         "from_tensorflow.py",
+#         "from_mxnet.py",
+#         "from_onnx.py",
+#         "from_keras.py",
+#         "from_tflite.py",
+#         "from_coreml.py",
+#         "from_darknet.py",
+#         "from_caffe2.py",
+#         "from_paddle.py",
+#     ],
+#     "work_with_schedules": [
+#         "schedule_primitives.py",
+#         "reduction.py",
+#         "scan.py",
+#         "extern_op.py",
+#         "tensorize.py",
+#         "tuple_inputs.py",
+#         "tedd.py",
+#     ],
+#     "optimize_operators": [
+#         "opt_gemm.py",
+#         "opt_conv_cuda.py",
+#         "opt_conv_tensorcore.py",
+#     ],
+#     "tune_with_autotvm": [
+#         "tune_conv2d_cuda.py",
+#         "tune_relay_cuda.py",
+#         "tune_relay_x86.py",
+#         "tune_relay_arm.py",
+#         "tune_relay_mobile_gpu.py",
+#     ],
+#     "tune_with_autoscheduler": [
+#         "tune_matmul_x86.py",
+#         "tune_conv2d_layer_cuda.py",
+#         "tune_network_x86.py",
+#         "tune_network_cuda.py",
+#     ],
+#     "extend_tvm": [
+#         "low_level_custom_pass.py",
+#         "use_pass_infra.py",
+#         "use_pass_instrument.py",
+#         "bring_your_own_datatypes.py",
+#     ],
+#     "work_with_microtvm": [
+#         "micro_tvmc.py",
+#         "micro_tflite.py",
+#         "micro_aot.py",
+#         "micro_pytorch.py",
+#         "micro_train.py",
+#         "micro_autotune.py",
+#         "micro_ethosu.py",
+#         "micro_mlperftiny.py",
+#     ],
+# }
+
+
+# class WithinSubsectionOrder:
+#     def __init__(self, src_dir):
+#         self.src_dir = src_dir.split("/")[-1]
+
+#     def __call__(self, filename):
+#         # If the order is provided, use the provided order
+#         if (
+#             self.src_dir in within_subsection_order
+#             and filename in within_subsection_order[self.src_dir]
+#         ):
+#             index = within_subsection_order[self.src_dir].index(filename)
+#             assert index < 1e10
+#             return "\0%010d" % index
+
+#         # Otherwise, sort by filename
+#         return filename
+
+
+# # Skips certain files to avoid dependency issues
+# filename_pattern_default = "^(?!.*micro_mlperftiny.py).*$"
+
+# sphinx_gallery_conf = {
+#     "backreferences_dir": "gen_modules/backreferences",
+#     "doc_module": ("tvm", "numpy"),
+#     "reference_url": {
+#         "tvm": None,
+#         # "matplotlib": "https://matplotlib.org/",
+#         # "numpy": "https://numpy.org/doc/stable",
+#     },
+#     "examples_dirs": examples_dirs,
+#     "within_subsection_order": WithinSubsectionOrder,
+#     "gallery_dirs": gallery_dirs,
+#     "filename_pattern": os.environ.get("TVM_TUTORIAL_EXEC_PATTERN", filename_pattern_default),
+#     "download_all_examples": False,
+#     "min_reported_time": 60,
+#     "expected_failing_examples": [],
+#     # "reset_modules": ("matplotlib", "seaborn", force_gc),
+#     "promote_jupyter_magic": True,
+#     # "reset_modules": (install_request_hook),
+# }
+
+
+# autodoc_default_options = {
+#     "member-order": "bysource",
+# }
+
+# # Maps the original namespace to list of potential modules
+# # that we can import alias from.
+# tvm_alias_check_map = {
+#     "tvm.te": ["tvm.tir"],
+#     "tvm.tir": ["tvm.ir", "tvm.runtime"],
+#     "tvm.relay": ["tvm.ir", "tvm.tir"],
+# }

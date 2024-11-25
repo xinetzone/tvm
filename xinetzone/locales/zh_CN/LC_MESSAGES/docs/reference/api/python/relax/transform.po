@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"POT-Creation-Date: 2024-11-25 13:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -320,6 +320,7 @@ msgstr ""
 #: tvm.relax.transform.transform.AllocateWorkspace:8
 #: tvm.relax.transform.transform.AlterOpImpl:19
 #: tvm.relax.transform.transform.AnnotateTIROpPattern:4
+#: tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:10
 #: tvm.relax.transform.transform.AttachGlobalSymbol:4
 #: tvm.relax.transform.transform.BindParams:12
 #: tvm.relax.transform.transform.BindSymbolicVars:13
@@ -368,6 +369,7 @@ msgstr ""
 #: tvm.relax.transform.transform.RewriteDataflowReshape:9
 #: tvm.relax.transform.transform.RunCodegen:11
 #: tvm.relax.transform.transform.SplitCallTIRByPattern:15
+#: tvm.relax.transform.transform.SplitLayoutRewritePreproc:5
 #: tvm.relax.transform.transform.StaticPlanBlockMemory:19
 #: tvm.relax.transform.transform.ToMixedPrecision:15
 #: tvm.relax.transform.transform.ToNonDataflow:4
@@ -382,6 +384,7 @@ msgid "Returns"
 msgstr ""
 
 #: of tvm.relax.transform.transform.AdjustMatmulOrder:10
+#: tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:11
 #: tvm.relax.transform.transform.BundleModelParams:17
 #: tvm.relax.transform.transform.CombineParallelMatmul:16
 #: tvm.relax.transform.transform.ConvertLayout:13
@@ -403,6 +406,7 @@ msgstr ""
 #: tvm.relax.transform.transform.ReorderTakeAfterMatmul:8
 #: tvm.relax.transform.transform.RunCodegen:12
 #: tvm.relax.transform.transform.SplitCallTIRByPattern:16
+#: tvm.relax.transform.transform.SplitLayoutRewritePreproc:6
 #: tvm.relax.transform.transform.ToMixedPrecision:16
 #: tvm.relax.transform.transform.UpdateParamStructInfo:18
 #: tvm.relax.transform.transform.UpdateVDevice:12
@@ -410,6 +414,7 @@ msgid "ret"
 msgstr ""
 
 #: of tvm.relax.transform.transform.AdjustMatmulOrder:-1
+#: tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:-1
 #: tvm.relax.transform.transform.BundleModelParams:-1
 #: tvm.relax.transform.transform.CombineParallelMatmul:-1
 #: tvm.relax.transform.transform.ConvertLayout:-1
@@ -430,6 +435,7 @@ msgstr ""
 #: tvm.relax.transform.transform.ReorderTakeAfterMatmul:-1
 #: tvm.relax.transform.transform.RunCodegen:-1
 #: tvm.relax.transform.transform.SplitCallTIRByPattern:-1
+#: tvm.relax.transform.transform.SplitLayoutRewritePreproc:-1
 #: tvm.relax.transform.transform.ToMixedPrecision:-1
 #: tvm.relax.transform.transform.UpdateParamStructInfo:-1
 msgid "tvm.transform.Pass"
@@ -539,6 +545,25 @@ msgstr ""
 
 #: of tvm.relax.transform.transform.AnnotateTIROpPattern:1
 msgid "Annotate Op Pattern Kind for TIR functions"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:1
+msgid "Attach layout free buffers to the tir::PrimFunc."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:3
+msgid ""
+"This pass is used to attach layout free buffers to the tir::PrimFunc "
+"according to the function usage in the relax function. Currently, the "
+"layout free buffers are the model weights and relax constants."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:7
+msgid "Note that we recommend applying CanonicalizeBindings before this pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:12
+msgid "The registered pass for attaching layout free buffers."
 msgstr ""
 
 #: of tvm.relax.transform.transform.AttachGlobalSymbol:1
@@ -1591,6 +1616,16 @@ msgstr ""
 
 #: of tvm.relax.transform.transform.SplitCallTIRByPattern:17
 msgid "The registered pass for splitting call_tir."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitLayoutRewritePreproc:1
+msgid ""
+"Split the TIR layout rewrite into multiple TIR functions. This pass is "
+"used in the prepack weight after meta_schedule tuning."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitLayoutRewritePreproc:7
+msgid "The registered pass for splitting TIR layout rewrite."
 msgstr ""
 
 #: of tvm.relax.transform.transform.StaticPlanBlockMemory:1

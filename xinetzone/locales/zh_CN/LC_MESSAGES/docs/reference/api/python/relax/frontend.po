@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"POT-Creation-Date: 2024-11-25 13:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -44,6 +44,8 @@ msgstr ""
 #: tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:6
 #: tvm.relax.frontend.nn.extern.SourceModule.get_includes:6
 #: tvm.relax.frontend.nn.modules.Conv1D.forward:4
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:4
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:4
 #: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:4
 #: tvm.relax.frontend.nn.modules.Embedding.forward:4
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:4
@@ -139,6 +141,8 @@ msgstr ""
 #: tvm.relax.frontend.nn.extern.SourceModule.get_includes:12
 #: tvm.relax.frontend.nn.extern.SourceModule.tvm_home:6
 #: tvm.relax.frontend.nn.modules.Conv1D.forward:9
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:9
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:9
 #: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:9
 #: tvm.relax.frontend.nn.modules.Embedding.forward:9
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:14
@@ -320,6 +324,8 @@ msgid "Forward method for conv1d layer."
 msgstr ""
 
 #: of tvm.relax.frontend.nn.modules.Conv1D.forward:6
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:6
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:6
 #: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:6
 #: tvm.relax.frontend.nn.modules.Embedding.forward:6
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:5
@@ -349,6 +355,8 @@ msgid "x"
 msgstr ""
 
 #: of tvm.relax.frontend.nn.modules.Conv1D.forward:-1
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:-1
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:-1
 #: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:-1
 #: tvm.relax.frontend.nn.modules.Embedding.forward:-1
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:-1
@@ -403,6 +411,8 @@ msgid "Tensor"
 msgstr ""
 
 #: of tvm.relax.frontend.nn.modules.Conv1D.forward:6
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:6
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:6
 #: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:6
 #: tvm.relax.frontend.nn.modules.Embedding.forward:6
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:6
@@ -417,6 +427,8 @@ msgid "The input tensor."
 msgstr ""
 
 #: of tvm.relax.frontend.nn.modules.Conv1D.forward:10
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:10
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:10
 #: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:10
 #: tvm.relax.frontend.nn.modules.Embedding.forward:10
 #: tvm.relax.frontend.nn.modules.GroupNorm.forward:15
@@ -433,6 +445,30 @@ msgstr ""
 
 #: of tvm.relax.frontend.nn.modules.Conv1D.forward:11
 msgid "The output tensor for the conv1d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv2D:1
+msgid "Module for conv2d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv2D.forward:1
+msgid "Forward method for conv2d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv2D.forward:11
+msgid "The output tensor for the conv2d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv3D:1
+msgid "Module for conv3d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv3D.forward:1
+msgid "Forward method for conv3d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv3D.forward:11
+msgid "The output tensor for the conv3d layer."
 msgstr ""
 
 #: of tvm.relax.frontend.nn.modules.ConvTranspose1D:1

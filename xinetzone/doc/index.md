@@ -1,7 +1,7 @@
 # TVM 手册
 
 ```{toctree}
-:maxdepth: 7
+:hidden:
 
 docs/README
 docs/index

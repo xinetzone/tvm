@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"POT-Creation-Date: 2024-11-25 13:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -42,9 +42,10 @@ msgstr ""
 #: tvm.relax.op.base.shape_of:4 tvm.relax.op.base.to_vdevice:6
 #: tvm.relax.op.binary.add:4 tvm.relax.op.binary.divide:4
 #: tvm.relax.op.binary.equal:4 tvm.relax.op.binary.floor_divide:4
-#: tvm.relax.op.binary.greater:4 tvm.relax.op.binary.greater_equal:4
-#: tvm.relax.op.binary.less:4 tvm.relax.op.binary.less_equal:4
-#: tvm.relax.op.binary.maximum:4 tvm.relax.op.binary.minimum:4
+#: tvm.relax.op.binary.floor_mod:4 tvm.relax.op.binary.greater:4
+#: tvm.relax.op.binary.greater_equal:4 tvm.relax.op.binary.less:4
+#: tvm.relax.op.binary.less_equal:4 tvm.relax.op.binary.maximum:4
+#: tvm.relax.op.binary.minimum:4 tvm.relax.op.binary.mod:4
 #: tvm.relax.op.binary.multiply:4 tvm.relax.op.binary.not_equal:4
 #: tvm.relax.op.binary.power:4 tvm.relax.op.binary.subtract:4
 #: tvm.relax.op.builtin.builtin.alloc_tensor:4
@@ -52,6 +53,7 @@ msgstr ""
 #: tvm.relax.op.ccl.ccl.allgather:4 tvm.relax.op.ccl.ccl.allreduce:4
 #: tvm.relax.op.ccl.ccl.broadcast_from_worker0:4
 #: tvm.relax.op.ccl.ccl.scatter_from_worker0:4 tvm.relax.op.create.arange:4
+#: tvm.relax.op.create.eye:4 tvm.relax.op.create.eye_like:5
 #: tvm.relax.op.create.full:4 tvm.relax.op.create.full_like:6
 #: tvm.relax.op.create.ones:4 tvm.relax.op.create.ones_like:4
 #: tvm.relax.op.create.tril:4 tvm.relax.op.create.triu:4
@@ -74,10 +76,13 @@ msgstr ""
 #: tvm.relax.op.manipulate.collapse_sum_like:6
 #: tvm.relax.op.manipulate.collapse_sum_to:15 tvm.relax.op.manipulate.concat:4
 #: tvm.relax.op.manipulate.expand_dims:4 tvm.relax.op.manipulate.flatten:4
-#: tvm.relax.op.manipulate.flip:4 tvm.relax.op.manipulate.layout_transform:4
+#: tvm.relax.op.manipulate.flip:4 tvm.relax.op.manipulate.gather_elements:4
+#: tvm.relax.op.manipulate.gather_nd:4
+#: tvm.relax.op.manipulate.layout_transform:4 tvm.relax.op.manipulate.one_hot:4
 #: tvm.relax.op.manipulate.permute_dims:4 tvm.relax.op.manipulate.repeat:4
 #: tvm.relax.op.manipulate.reshape:14
-#: tvm.relax.op.manipulate.scatter_elements:22 tvm.relax.op.manipulate.split:11
+#: tvm.relax.op.manipulate.scatter_elements:22
+#: tvm.relax.op.manipulate.scatter_nd:4 tvm.relax.op.manipulate.split:11
 #: tvm.relax.op.manipulate.squeeze:4 tvm.relax.op.manipulate.tile:13
 #: tvm.relax.op.memory.memory.alloc_storage:5
 #: tvm.relax.op.memory.memory.alloc_tensor:4
@@ -104,62 +109,63 @@ msgstr ""
 #: tvm.relax.op.qdq.quantize:8
 #: tvm.relax.op.sampling.multinomial_from_uniform:10
 #: tvm.relax.op.search.argmax:4 tvm.relax.op.search.argmin:4
-#: tvm.relax.op.search.where:8 tvm.relax.op.set.unique:8
-#: tvm.relax.op.sorting.argsort:5 tvm.relax.op.sorting.sort:5
-#: tvm.relax.op.sorting.topk:6 tvm.relax.op.statistical.cumprod:5
-#: tvm.relax.op.statistical.cumsum:5 tvm.relax.op.statistical.max:4
-#: tvm.relax.op.statistical.mean:4 tvm.relax.op.statistical.min:4
-#: tvm.relax.op.statistical.prod:4 tvm.relax.op.statistical.std:4
-#: tvm.relax.op.statistical.sum:4 tvm.relax.op.statistical.variance:4
-#: tvm.relax.op.ternary.ewise_fma:5 tvm.relax.op.unary.abs:4
-#: tvm.relax.op.unary.acos:4 tvm.relax.op.unary.acosh:4
-#: tvm.relax.op.unary.asin:4 tvm.relax.op.unary.asinh:4
-#: tvm.relax.op.unary.atan:4 tvm.relax.op.unary.atanh:4
-#: tvm.relax.op.unary.bitwise_not:4 tvm.relax.op.unary.ceil:4
-#: tvm.relax.op.unary.clip:4 tvm.relax.op.unary.cos:4 tvm.relax.op.unary.cosh:4
-#: tvm.relax.op.unary.erf:4 tvm.relax.op.unary.exp:4 tvm.relax.op.unary.floor:4
-#: tvm.relax.op.unary.isfinite:4 tvm.relax.op.unary.isinf:4
-#: tvm.relax.op.unary.isnan:4 tvm.relax.op.unary.log:4
-#: tvm.relax.op.unary.logical_not:4 tvm.relax.op.unary.negative:4
-#: tvm.relax.op.unary.round:4 tvm.relax.op.unary.rsqrt:8
-#: tvm.relax.op.unary.sigmoid:4 tvm.relax.op.unary.sign:4
-#: tvm.relax.op.unary.sin:4 tvm.relax.op.unary.sinh:4 tvm.relax.op.unary.sqrt:4
-#: tvm.relax.op.unary.square:4 tvm.relax.op.unary.tan:4
-#: tvm.relax.op.unary.tanh:4
+#: tvm.relax.op.search.where:8 tvm.relax.op.set.nonzero:4
+#: tvm.relax.op.set.unique:8 tvm.relax.op.sorting.argsort:5
+#: tvm.relax.op.sorting.sort:5 tvm.relax.op.sorting.topk:6
+#: tvm.relax.op.statistical.cumprod:5 tvm.relax.op.statistical.cumsum:5
+#: tvm.relax.op.statistical.max:4 tvm.relax.op.statistical.mean:4
+#: tvm.relax.op.statistical.min:4 tvm.relax.op.statistical.prod:4
+#: tvm.relax.op.statistical.std:4 tvm.relax.op.statistical.sum:4
+#: tvm.relax.op.statistical.variance:4 tvm.relax.op.ternary.ewise_fma:5
+#: tvm.relax.op.unary.abs:4 tvm.relax.op.unary.acos:4
+#: tvm.relax.op.unary.acosh:4 tvm.relax.op.unary.asin:4
+#: tvm.relax.op.unary.asinh:4 tvm.relax.op.unary.atan:4
+#: tvm.relax.op.unary.atanh:4 tvm.relax.op.unary.bitwise_not:4
+#: tvm.relax.op.unary.ceil:4 tvm.relax.op.unary.clip:4 tvm.relax.op.unary.cos:4
+#: tvm.relax.op.unary.cosh:4 tvm.relax.op.unary.erf:4 tvm.relax.op.unary.exp:4
+#: tvm.relax.op.unary.floor:4 tvm.relax.op.unary.isfinite:4
+#: tvm.relax.op.unary.isinf:4 tvm.relax.op.unary.isnan:4
+#: tvm.relax.op.unary.log:4 tvm.relax.op.unary.logical_not:4
+#: tvm.relax.op.unary.negative:4 tvm.relax.op.unary.round:4
+#: tvm.relax.op.unary.rsqrt:8 tvm.relax.op.unary.sigmoid:4
+#: tvm.relax.op.unary.sign:4 tvm.relax.op.unary.sin:4 tvm.relax.op.unary.sinh:4
+#: tvm.relax.op.unary.sqrt:4 tvm.relax.op.unary.square:4
+#: tvm.relax.op.unary.tan:4 tvm.relax.op.unary.tanh:4
 msgid "Parameters"
 msgstr ""
 
 #: of tvm.relax.op.ccl.ccl.allgather:6 tvm.relax.op.ccl.ccl.allreduce:6
 #: tvm.relax.op.ccl.ccl.broadcast_from_worker0:6
-#: tvm.relax.op.ccl.ccl.scatter_from_worker0:6 tvm.relax.op.create.full_like:9
-#: tvm.relax.op.create.ones_like:7 tvm.relax.op.create.tril:7
-#: tvm.relax.op.create.triu:7 tvm.relax.op.create.zeros_like:7
-#: tvm.relax.op.datatype.astype:6 tvm.relax.op.index.dynamic_strided_slice:6
+#: tvm.relax.op.ccl.ccl.scatter_from_worker0:6 tvm.relax.op.create.eye_like:8
+#: tvm.relax.op.create.full_like:9 tvm.relax.op.create.ones_like:7
+#: tvm.relax.op.create.tril:7 tvm.relax.op.create.triu:7
+#: tvm.relax.op.create.zeros_like:7 tvm.relax.op.datatype.astype:6
+#: tvm.relax.op.index.dynamic_strided_slice:6
 #: tvm.relax.op.index.strided_slice:6 tvm.relax.op.index.take:10
 #: tvm.relax.op.manipulate.broadcast_to:6 tvm.relax.op.manipulate.expand_dims:6
 #: tvm.relax.op.manipulate.flatten:6 tvm.relax.op.manipulate.layout_transform:6
 #: tvm.relax.op.manipulate.permute_dims:6 tvm.relax.op.manipulate.reshape:16
 #: tvm.relax.op.manipulate.split:13 tvm.relax.op.manipulate.squeeze:6
 #: tvm.relax.op.search.argmax:6 tvm.relax.op.search.argmin:6
-#: tvm.relax.op.set.unique:10 tvm.relax.op.sorting.sort:7
-#: tvm.relax.op.statistical.max:6 tvm.relax.op.statistical.mean:6
-#: tvm.relax.op.statistical.min:6 tvm.relax.op.statistical.prod:6
-#: tvm.relax.op.statistical.std:6 tvm.relax.op.statistical.sum:6
-#: tvm.relax.op.statistical.variance:6 tvm.relax.op.unary.abs:6
-#: tvm.relax.op.unary.acos:6 tvm.relax.op.unary.acosh:6
-#: tvm.relax.op.unary.asin:6 tvm.relax.op.unary.asinh:6
-#: tvm.relax.op.unary.atan:6 tvm.relax.op.unary.atanh:6
-#: tvm.relax.op.unary.bitwise_not:6 tvm.relax.op.unary.ceil:6
-#: tvm.relax.op.unary.clip:6 tvm.relax.op.unary.cos:6 tvm.relax.op.unary.cosh:6
-#: tvm.relax.op.unary.erf:6 tvm.relax.op.unary.exp:6 tvm.relax.op.unary.floor:6
-#: tvm.relax.op.unary.isfinite:6 tvm.relax.op.unary.isinf:6
-#: tvm.relax.op.unary.isnan:6 tvm.relax.op.unary.log:6
-#: tvm.relax.op.unary.logical_not:6 tvm.relax.op.unary.negative:6
-#: tvm.relax.op.unary.round:6 tvm.relax.op.unary.rsqrt:10
-#: tvm.relax.op.unary.sigmoid:6 tvm.relax.op.unary.sign:6
-#: tvm.relax.op.unary.sin:6 tvm.relax.op.unary.sinh:6 tvm.relax.op.unary.sqrt:6
-#: tvm.relax.op.unary.square:6 tvm.relax.op.unary.tan:6
-#: tvm.relax.op.unary.tanh:6
+#: tvm.relax.op.set.nonzero:6 tvm.relax.op.set.unique:10
+#: tvm.relax.op.sorting.sort:7 tvm.relax.op.statistical.max:6
+#: tvm.relax.op.statistical.mean:6 tvm.relax.op.statistical.min:6
+#: tvm.relax.op.statistical.prod:6 tvm.relax.op.statistical.std:6
+#: tvm.relax.op.statistical.sum:6 tvm.relax.op.statistical.variance:6
+#: tvm.relax.op.unary.abs:6 tvm.relax.op.unary.acos:6
+#: tvm.relax.op.unary.acosh:6 tvm.relax.op.unary.asin:6
+#: tvm.relax.op.unary.asinh:6 tvm.relax.op.unary.atan:6
+#: tvm.relax.op.unary.atanh:6 tvm.relax.op.unary.bitwise_not:6
+#: tvm.relax.op.unary.ceil:6 tvm.relax.op.unary.clip:6 tvm.relax.op.unary.cos:6
+#: tvm.relax.op.unary.cosh:6 tvm.relax.op.unary.erf:6 tvm.relax.op.unary.exp:6
+#: tvm.relax.op.unary.floor:6 tvm.relax.op.unary.isfinite:6
+#: tvm.relax.op.unary.isinf:6 tvm.relax.op.unary.isnan:6
+#: tvm.relax.op.unary.log:6 tvm.relax.op.unary.logical_not:6
+#: tvm.relax.op.unary.negative:6 tvm.relax.op.unary.round:6
+#: tvm.relax.op.unary.rsqrt:10 tvm.relax.op.unary.sigmoid:6
+#: tvm.relax.op.unary.sign:6 tvm.relax.op.unary.sin:6 tvm.relax.op.unary.sinh:6
+#: tvm.relax.op.unary.sqrt:6 tvm.relax.op.unary.square:6
+#: tvm.relax.op.unary.tan:6 tvm.relax.op.unary.tanh:6
 msgid "x"
 msgstr ""
 
@@ -177,6 +183,7 @@ msgstr ""
 #: tvm.relax.op.ccl.ccl.allgather:-1 tvm.relax.op.ccl.ccl.allreduce:-1
 #: tvm.relax.op.ccl.ccl.broadcast_from_worker0:-1
 #: tvm.relax.op.ccl.ccl.scatter_from_worker0:-1 tvm.relax.op.create.arange:-1
+#: tvm.relax.op.create.eye:-1 tvm.relax.op.create.eye_like:-1
 #: tvm.relax.op.create.full:-1 tvm.relax.op.create.full_like:-1
 #: tvm.relax.op.create.ones:-1 tvm.relax.op.create.ones_like:-1
 #: tvm.relax.op.create.tril:-1 tvm.relax.op.create.triu:-1
@@ -199,10 +206,13 @@ msgstr ""
 #: tvm.relax.op.manipulate.collapse_sum_like:-1
 #: tvm.relax.op.manipulate.collapse_sum_to:-1
 #: tvm.relax.op.manipulate.expand_dims:-1 tvm.relax.op.manipulate.flatten:-1
-#: tvm.relax.op.manipulate.flip:-1 tvm.relax.op.manipulate.layout_transform:-1
-#: tvm.relax.op.manipulate.permute_dims:-1 tvm.relax.op.manipulate.repeat:-1
-#: tvm.relax.op.manipulate.reshape:-1
-#: tvm.relax.op.manipulate.scatter_elements:-1 tvm.relax.op.manipulate.split:-1
+#: tvm.relax.op.manipulate.flip:-1 tvm.relax.op.manipulate.gather_elements:-1
+#: tvm.relax.op.manipulate.gather_nd:-1
+#: tvm.relax.op.manipulate.layout_transform:-1
+#: tvm.relax.op.manipulate.one_hot:-1 tvm.relax.op.manipulate.permute_dims:-1
+#: tvm.relax.op.manipulate.repeat:-1 tvm.relax.op.manipulate.reshape:-1
+#: tvm.relax.op.manipulate.scatter_elements:-1
+#: tvm.relax.op.manipulate.scatter_nd:-1 tvm.relax.op.manipulate.split:-1
 #: tvm.relax.op.manipulate.squeeze:-1 tvm.relax.op.manipulate.tile:-1
 #: tvm.relax.op.mask.masked_fill:-1
 #: tvm.relax.op.memory.view.ensure_zero_offset:-1
@@ -225,29 +235,30 @@ msgstr ""
 #: tvm.relax.op.nn.nn.silu:-1 tvm.relax.op.nn.nn.softmax:-1
 #: tvm.relax.op.sampling.multinomial_from_uniform:-1
 #: tvm.relax.op.search.argmax:-1 tvm.relax.op.search.argmin:-1
-#: tvm.relax.op.search.where:-1 tvm.relax.op.set.unique:-1
-#: tvm.relax.op.sorting.argsort:-1 tvm.relax.op.sorting.sort:-1
-#: tvm.relax.op.sorting.topk:-1 tvm.relax.op.statistical.cumprod:-1
-#: tvm.relax.op.statistical.cumsum:-1 tvm.relax.op.statistical.max:-1
-#: tvm.relax.op.statistical.mean:-1 tvm.relax.op.statistical.min:-1
-#: tvm.relax.op.statistical.prod:-1 tvm.relax.op.statistical.std:-1
-#: tvm.relax.op.statistical.sum:-1 tvm.relax.op.statistical.variance:-1
-#: tvm.relax.op.ternary.ewise_fma:-1 tvm.relax.op.unary.abs:-1
-#: tvm.relax.op.unary.acos:-1 tvm.relax.op.unary.acosh:-1
-#: tvm.relax.op.unary.asin:-1 tvm.relax.op.unary.asinh:-1
-#: tvm.relax.op.unary.atan:-1 tvm.relax.op.unary.atanh:-1
-#: tvm.relax.op.unary.bitwise_not:-1 tvm.relax.op.unary.ceil:-1
-#: tvm.relax.op.unary.clip:-1 tvm.relax.op.unary.cos:-1
-#: tvm.relax.op.unary.cosh:-1 tvm.relax.op.unary.erf:-1
-#: tvm.relax.op.unary.exp:-1 tvm.relax.op.unary.floor:-1
-#: tvm.relax.op.unary.isfinite:-1 tvm.relax.op.unary.isinf:-1
-#: tvm.relax.op.unary.isnan:-1 tvm.relax.op.unary.log:-1
-#: tvm.relax.op.unary.logical_not:-1 tvm.relax.op.unary.negative:-1
-#: tvm.relax.op.unary.round:-1 tvm.relax.op.unary.rsqrt:-1
-#: tvm.relax.op.unary.sigmoid:-1 tvm.relax.op.unary.sign:-1
-#: tvm.relax.op.unary.sin:-1 tvm.relax.op.unary.sinh:-1
-#: tvm.relax.op.unary.sqrt:-1 tvm.relax.op.unary.square:-1
-#: tvm.relax.op.unary.tan:-1 tvm.relax.op.unary.tanh:-1
+#: tvm.relax.op.search.where:-1 tvm.relax.op.set.nonzero:-1
+#: tvm.relax.op.set.unique:-1 tvm.relax.op.sorting.argsort:-1
+#: tvm.relax.op.sorting.sort:-1 tvm.relax.op.sorting.topk:-1
+#: tvm.relax.op.statistical.cumprod:-1 tvm.relax.op.statistical.cumsum:-1
+#: tvm.relax.op.statistical.max:-1 tvm.relax.op.statistical.mean:-1
+#: tvm.relax.op.statistical.min:-1 tvm.relax.op.statistical.prod:-1
+#: tvm.relax.op.statistical.std:-1 tvm.relax.op.statistical.sum:-1
+#: tvm.relax.op.statistical.variance:-1 tvm.relax.op.ternary.ewise_fma:-1
+#: tvm.relax.op.unary.abs:-1 tvm.relax.op.unary.acos:-1
+#: tvm.relax.op.unary.acosh:-1 tvm.relax.op.unary.asin:-1
+#: tvm.relax.op.unary.asinh:-1 tvm.relax.op.unary.atan:-1
+#: tvm.relax.op.unary.atanh:-1 tvm.relax.op.unary.bitwise_not:-1
+#: tvm.relax.op.unary.ceil:-1 tvm.relax.op.unary.clip:-1
+#: tvm.relax.op.unary.cos:-1 tvm.relax.op.unary.cosh:-1
+#: tvm.relax.op.unary.erf:-1 tvm.relax.op.unary.exp:-1
+#: tvm.relax.op.unary.floor:-1 tvm.relax.op.unary.isfinite:-1
+#: tvm.relax.op.unary.isinf:-1 tvm.relax.op.unary.isnan:-1
+#: tvm.relax.op.unary.log:-1 tvm.relax.op.unary.logical_not:-1
+#: tvm.relax.op.unary.negative:-1 tvm.relax.op.unary.round:-1
+#: tvm.relax.op.unary.rsqrt:-1 tvm.relax.op.unary.sigmoid:-1
+#: tvm.relax.op.unary.sign:-1 tvm.relax.op.unary.sin:-1
+#: tvm.relax.op.unary.sinh:-1 tvm.relax.op.unary.sqrt:-1
+#: tvm.relax.op.unary.square:-1 tvm.relax.op.unary.tan:-1
+#: tvm.relax.op.unary.tanh:-1
 msgid "relax.Expr"
 msgstr ""
 
@@ -297,6 +308,7 @@ msgstr ""
 #: tvm.relax.op.ccl.ccl.allgather:15 tvm.relax.op.ccl.ccl.allreduce:16
 #: tvm.relax.op.ccl.ccl.broadcast_from_worker0:9
 #: tvm.relax.op.ccl.ccl.scatter_from_worker0:15 tvm.relax.op.create.arange:19
+#: tvm.relax.op.create.eye:20 tvm.relax.op.create.eye_like:20
 #: tvm.relax.op.create.full:16 tvm.relax.op.create.full_like:19
 #: tvm.relax.op.create.ones:12 tvm.relax.op.create.ones_like:14
 #: tvm.relax.op.create.tril:16 tvm.relax.op.create.triu:16
@@ -320,10 +332,13 @@ msgstr ""
 #: tvm.relax.op.manipulate.collapse_sum_like:14
 #: tvm.relax.op.manipulate.collapse_sum_to:23 tvm.relax.op.manipulate.concat:14
 #: tvm.relax.op.manipulate.expand_dims:14 tvm.relax.op.manipulate.flatten:9
-#: tvm.relax.op.manipulate.flip:12 tvm.relax.op.manipulate.layout_transform:19
-#: tvm.relax.op.manipulate.permute_dims:12 tvm.relax.op.manipulate.repeat:17
-#: tvm.relax.op.manipulate.reshape:22
-#: tvm.relax.op.manipulate.scatter_elements:40 tvm.relax.op.manipulate.split:22
+#: tvm.relax.op.manipulate.flip:12 tvm.relax.op.manipulate.gather_elements:15
+#: tvm.relax.op.manipulate.gather_nd:15
+#: tvm.relax.op.manipulate.layout_transform:19
+#: tvm.relax.op.manipulate.one_hot:21 tvm.relax.op.manipulate.permute_dims:12
+#: tvm.relax.op.manipulate.repeat:17 tvm.relax.op.manipulate.reshape:22
+#: tvm.relax.op.manipulate.scatter_elements:40
+#: tvm.relax.op.manipulate.scatter_nd:19 tvm.relax.op.manipulate.split:22
 #: tvm.relax.op.manipulate.squeeze:14 tvm.relax.op.manipulate.tile:21
 #: tvm.relax.op.mask.masked_fill:11 tvm.relax.op.memory.memory.alloc_storage:20
 #: tvm.relax.op.memory.memory.alloc_tensor:18
@@ -349,28 +364,29 @@ msgstr ""
 #: tvm.relax.op.qdq.dequantize:25 tvm.relax.op.qdq.quantize:25
 #: tvm.relax.op.sampling.multinomial_from_uniform:33
 #: tvm.relax.op.search.argmax:19 tvm.relax.op.search.argmin:19
-#: tvm.relax.op.search.where:23 tvm.relax.op.set.unique:32
-#: tvm.relax.op.sorting.argsort:19 tvm.relax.op.sorting.sort:17
-#: tvm.relax.op.sorting.topk:30 tvm.relax.op.statistical.cumprod:22
-#: tvm.relax.op.statistical.cumsum:22 tvm.relax.op.statistical.max:19
-#: tvm.relax.op.statistical.mean:19 tvm.relax.op.statistical.min:19
-#: tvm.relax.op.statistical.prod:19 tvm.relax.op.statistical.std:19
-#: tvm.relax.op.statistical.sum:19 tvm.relax.op.statistical.variance:19
-#: tvm.relax.op.ternary.ewise_fma:16 tvm.relax.op.unary.abs:9
-#: tvm.relax.op.unary.acos:9 tvm.relax.op.unary.acosh:9
-#: tvm.relax.op.unary.asin:9 tvm.relax.op.unary.asinh:9
-#: tvm.relax.op.unary.atan:9 tvm.relax.op.unary.atanh:9
-#: tvm.relax.op.unary.bitwise_not:9 tvm.relax.op.unary.ceil:9
-#: tvm.relax.op.unary.clip:15 tvm.relax.op.unary.cos:9
-#: tvm.relax.op.unary.cosh:9 tvm.relax.op.unary.erf:9 tvm.relax.op.unary.exp:9
-#: tvm.relax.op.unary.floor:9 tvm.relax.op.unary.isfinite:9
-#: tvm.relax.op.unary.isinf:9 tvm.relax.op.unary.isnan:9
-#: tvm.relax.op.unary.log:9 tvm.relax.op.unary.logical_not:9
-#: tvm.relax.op.unary.negative:9 tvm.relax.op.unary.round:9
-#: tvm.relax.op.unary.rsqrt:13 tvm.relax.op.unary.sigmoid:9
-#: tvm.relax.op.unary.sign:9 tvm.relax.op.unary.sin:9 tvm.relax.op.unary.sinh:9
-#: tvm.relax.op.unary.sqrt:9 tvm.relax.op.unary.square:9
-#: tvm.relax.op.unary.tan:9 tvm.relax.op.unary.tanh:9
+#: tvm.relax.op.search.where:23 tvm.relax.op.set.nonzero:9
+#: tvm.relax.op.set.unique:32 tvm.relax.op.sorting.argsort:19
+#: tvm.relax.op.sorting.sort:17 tvm.relax.op.sorting.topk:30
+#: tvm.relax.op.statistical.cumprod:22 tvm.relax.op.statistical.cumsum:22
+#: tvm.relax.op.statistical.max:19 tvm.relax.op.statistical.mean:19
+#: tvm.relax.op.statistical.min:19 tvm.relax.op.statistical.prod:19
+#: tvm.relax.op.statistical.std:19 tvm.relax.op.statistical.sum:19
+#: tvm.relax.op.statistical.variance:19 tvm.relax.op.ternary.ewise_fma:16
+#: tvm.relax.op.unary.abs:9 tvm.relax.op.unary.acos:9
+#: tvm.relax.op.unary.acosh:9 tvm.relax.op.unary.asin:9
+#: tvm.relax.op.unary.asinh:9 tvm.relax.op.unary.atan:9
+#: tvm.relax.op.unary.atanh:9 tvm.relax.op.unary.bitwise_not:9
+#: tvm.relax.op.unary.ceil:9 tvm.relax.op.unary.clip:15
+#: tvm.relax.op.unary.cos:9 tvm.relax.op.unary.cosh:9 tvm.relax.op.unary.erf:9
+#: tvm.relax.op.unary.exp:9 tvm.relax.op.unary.floor:9
+#: tvm.relax.op.unary.isfinite:9 tvm.relax.op.unary.isinf:9
+#: tvm.relax.op.unary.isnan:9 tvm.relax.op.unary.log:9
+#: tvm.relax.op.unary.logical_not:9 tvm.relax.op.unary.negative:9
+#: tvm.relax.op.unary.round:9 tvm.relax.op.unary.rsqrt:13
+#: tvm.relax.op.unary.sigmoid:9 tvm.relax.op.unary.sign:9
+#: tvm.relax.op.unary.sin:9 tvm.relax.op.unary.sinh:9 tvm.relax.op.unary.sqrt:9
+#: tvm.relax.op.unary.square:9 tvm.relax.op.unary.tan:9
+#: tvm.relax.op.unary.tanh:9
 msgid "Returns"
 msgstr ""
 
@@ -394,6 +410,7 @@ msgstr ""
 #: tvm.relax.op.ccl.ccl.allgather:16 tvm.relax.op.ccl.ccl.allreduce:17
 #: tvm.relax.op.ccl.ccl.broadcast_from_worker0:10
 #: tvm.relax.op.ccl.ccl.scatter_from_worker0:16 tvm.relax.op.create.arange:20
+#: tvm.relax.op.create.eye:21 tvm.relax.op.create.eye_like:21
 #: tvm.relax.op.create.full:17 tvm.relax.op.create.full_like:20
 #: tvm.relax.op.create.ones:13 tvm.relax.op.create.ones_like:15
 #: tvm.relax.op.create.zeros:13 tvm.relax.op.create.zeros_like:15
@@ -414,10 +431,11 @@ msgstr ""
 #: tvm.relax.op.manipulate.collapse_sum_to:24
 #: tvm.relax.op.manipulate.expand_dims:15 tvm.relax.op.manipulate.flatten:10
 #: tvm.relax.op.manipulate.layout_transform:20
-#: tvm.relax.op.manipulate.permute_dims:13 tvm.relax.op.manipulate.reshape:24
+#: tvm.relax.op.manipulate.one_hot:23 tvm.relax.op.manipulate.permute_dims:13
+#: tvm.relax.op.manipulate.reshape:24
 #: tvm.relax.op.manipulate.scatter_elements:42
-#: tvm.relax.op.manipulate.squeeze:15 tvm.relax.op.mask.masked_fill:12
-#: tvm.relax.op.memory.memory.alloc_storage:21
+#: tvm.relax.op.manipulate.scatter_nd:21 tvm.relax.op.manipulate.squeeze:15
+#: tvm.relax.op.mask.masked_fill:12 tvm.relax.op.memory.memory.alloc_storage:21
 #: tvm.relax.op.memory.memory.alloc_tensor:19
 #: tvm.relax.op.memory.memory.kill_storage:10
 #: tvm.relax.op.memory.memory.kill_tensor:10
@@ -442,27 +460,28 @@ msgstr ""
 #: tvm.relax.op.qdq.dequantize:26 tvm.relax.op.qdq.quantize:26
 #: tvm.relax.op.sampling.multinomial_from_uniform:35
 #: tvm.relax.op.search.argmax:20 tvm.relax.op.search.argmin:20
-#: tvm.relax.op.search.where:24 tvm.relax.op.statistical.cumprod:25
-#: tvm.relax.op.statistical.cumsum:25 tvm.relax.op.statistical.max:20
-#: tvm.relax.op.statistical.mean:20 tvm.relax.op.statistical.min:20
-#: tvm.relax.op.statistical.prod:20 tvm.relax.op.statistical.std:20
-#: tvm.relax.op.statistical.sum:20 tvm.relax.op.statistical.variance:20
-#: tvm.relax.op.ternary.ewise_fma:17 tvm.relax.op.unary.abs:10
-#: tvm.relax.op.unary.acos:11 tvm.relax.op.unary.acosh:11
-#: tvm.relax.op.unary.asin:11 tvm.relax.op.unary.asinh:11
-#: tvm.relax.op.unary.atan:11 tvm.relax.op.unary.atanh:11
-#: tvm.relax.op.unary.bitwise_not:10 tvm.relax.op.unary.ceil:10
-#: tvm.relax.op.unary.clip:16 tvm.relax.op.unary.cos:11
-#: tvm.relax.op.unary.cosh:11 tvm.relax.op.unary.erf:10
-#: tvm.relax.op.unary.exp:11 tvm.relax.op.unary.floor:10
-#: tvm.relax.op.unary.isfinite:10 tvm.relax.op.unary.isinf:10
-#: tvm.relax.op.unary.isnan:10 tvm.relax.op.unary.log:11
-#: tvm.relax.op.unary.logical_not:10 tvm.relax.op.unary.negative:10
-#: tvm.relax.op.unary.round:10 tvm.relax.op.unary.rsqrt:15
-#: tvm.relax.op.unary.sigmoid:11 tvm.relax.op.unary.sign:10
-#: tvm.relax.op.unary.sin:11 tvm.relax.op.unary.sinh:11
-#: tvm.relax.op.unary.sqrt:11 tvm.relax.op.unary.square:10
-#: tvm.relax.op.unary.tan:11 tvm.relax.op.unary.tanh:11
+#: tvm.relax.op.search.where:24 tvm.relax.op.set.nonzero:11
+#: tvm.relax.op.statistical.cumprod:25 tvm.relax.op.statistical.cumsum:25
+#: tvm.relax.op.statistical.max:20 tvm.relax.op.statistical.mean:20
+#: tvm.relax.op.statistical.min:20 tvm.relax.op.statistical.prod:20
+#: tvm.relax.op.statistical.std:20 tvm.relax.op.statistical.sum:20
+#: tvm.relax.op.statistical.variance:20 tvm.relax.op.ternary.ewise_fma:17
+#: tvm.relax.op.unary.abs:10 tvm.relax.op.unary.acos:11
+#: tvm.relax.op.unary.acosh:11 tvm.relax.op.unary.asin:11
+#: tvm.relax.op.unary.asinh:11 tvm.relax.op.unary.atan:11
+#: tvm.relax.op.unary.atanh:11 tvm.relax.op.unary.bitwise_not:10
+#: tvm.relax.op.unary.ceil:10 tvm.relax.op.unary.clip:16
+#: tvm.relax.op.unary.cos:11 tvm.relax.op.unary.cosh:11
+#: tvm.relax.op.unary.erf:10 tvm.relax.op.unary.exp:11
+#: tvm.relax.op.unary.floor:10 tvm.relax.op.unary.isfinite:10
+#: tvm.relax.op.unary.isinf:10 tvm.relax.op.unary.isnan:10
+#: tvm.relax.op.unary.log:11 tvm.relax.op.unary.logical_not:10
+#: tvm.relax.op.unary.negative:10 tvm.relax.op.unary.round:10
+#: tvm.relax.op.unary.rsqrt:15 tvm.relax.op.unary.sigmoid:11
+#: tvm.relax.op.unary.sign:10 tvm.relax.op.unary.sin:11
+#: tvm.relax.op.unary.sinh:11 tvm.relax.op.unary.sqrt:11
+#: tvm.relax.op.unary.square:10 tvm.relax.op.unary.tan:11
+#: tvm.relax.op.unary.tanh:11
 msgid "result"
 msgstr ""
 
@@ -478,9 +497,10 @@ msgstr ""
 #: tvm.relax.op.binary.not_equal:13 tvm.relax.op.binary.power:13
 #: tvm.relax.op.binary.right_shift:11 tvm.relax.op.binary.subtract:13
 #: tvm.relax.op.linear_algebra.linear:26 tvm.relax.op.linear_algebra.matmul:21
-#: tvm.relax.op.manipulate.flip:14 tvm.relax.op.manipulate.repeat:19
-#: tvm.relax.op.manipulate.split:24 tvm.relax.op.manipulate.tile:23
-#: tvm.relax.op.nn.nn.adaptive_avg_pool1d:41
+#: tvm.relax.op.manipulate.flip:14 tvm.relax.op.manipulate.gather_elements:17
+#: tvm.relax.op.manipulate.gather_nd:17 tvm.relax.op.manipulate.one_hot:23
+#: tvm.relax.op.manipulate.repeat:19 tvm.relax.op.manipulate.split:24
+#: tvm.relax.op.manipulate.tile:23 tvm.relax.op.nn.nn.adaptive_avg_pool1d:41
 #: tvm.relax.op.nn.nn.adaptive_avg_pool2d:44
 #: tvm.relax.op.nn.nn.adaptive_avg_pool3d:44 tvm.relax.op.nn.nn.avg_pool1d:47
 #: tvm.relax.op.nn.nn.avg_pool2d:55 tvm.relax.op.nn.nn.avg_pool3d:48
@@ -535,15 +555,15 @@ msgstr ""
 #: tvm.relax.op.index.strided_slice:31 tvm.relax.op.manipulate.reshape:27
 #: tvm.relax.op.nn.nn.gelu:19 tvm.relax.op.nn.nn.gelu_tanh:17
 #: tvm.relax.op.nn.nn.silu:17 tvm.relax.op.nn.nn.softmax:21
-#: tvm.relax.op.unary.acos:14 tvm.relax.op.unary.acosh:14
-#: tvm.relax.op.unary.asin:14 tvm.relax.op.unary.asinh:14
-#: tvm.relax.op.unary.atan:14 tvm.relax.op.unary.atanh:14
-#: tvm.relax.op.unary.cos:14 tvm.relax.op.unary.cosh:14
-#: tvm.relax.op.unary.exp:14 tvm.relax.op.unary.log:14
-#: tvm.relax.op.unary.rsqrt:18 tvm.relax.op.unary.sigmoid:14
-#: tvm.relax.op.unary.sin:14 tvm.relax.op.unary.sinh:14
-#: tvm.relax.op.unary.sqrt:14 tvm.relax.op.unary.tan:14
-#: tvm.relax.op.unary.tanh:14
+#: tvm.relax.op.set.nonzero:14 tvm.relax.op.unary.acos:14
+#: tvm.relax.op.unary.acosh:14 tvm.relax.op.unary.asin:14
+#: tvm.relax.op.unary.asinh:14 tvm.relax.op.unary.atan:14
+#: tvm.relax.op.unary.atanh:14 tvm.relax.op.unary.cos:14
+#: tvm.relax.op.unary.cosh:14 tvm.relax.op.unary.exp:14
+#: tvm.relax.op.unary.log:14 tvm.relax.op.unary.rsqrt:18
+#: tvm.relax.op.unary.sigmoid:14 tvm.relax.op.unary.sin:14
+#: tvm.relax.op.unary.sinh:14 tvm.relax.op.unary.sqrt:14
+#: tvm.relax.op.unary.tan:14 tvm.relax.op.unary.tanh:14
 msgid "Note"
 msgstr ""
 
@@ -571,9 +591,10 @@ msgstr ""
 
 #: of tvm.relax.op.binary.add:5 tvm.relax.op.binary.divide:5
 #: tvm.relax.op.binary.equal:5 tvm.relax.op.binary.floor_divide:5
-#: tvm.relax.op.binary.greater:5 tvm.relax.op.binary.greater_equal:5
-#: tvm.relax.op.binary.less:5 tvm.relax.op.binary.less_equal:5
-#: tvm.relax.op.binary.maximum:5 tvm.relax.op.binary.minimum:5
+#: tvm.relax.op.binary.floor_mod:5 tvm.relax.op.binary.greater:5
+#: tvm.relax.op.binary.greater_equal:5 tvm.relax.op.binary.less:5
+#: tvm.relax.op.binary.less_equal:5 tvm.relax.op.binary.maximum:5
+#: tvm.relax.op.binary.minimum:5 tvm.relax.op.binary.mod:5
 #: tvm.relax.op.binary.multiply:5 tvm.relax.op.binary.not_equal:5
 #: tvm.relax.op.binary.power:5 tvm.relax.op.binary.subtract:5
 #: tvm.relax.op.linear_algebra.matmul:9 tvm.relax.op.search.where:16
@@ -591,7 +612,8 @@ msgstr ""
 #: tvm.relax.op.base.make_closure:-1 tvm.relax.op.base.print:-1
 #: tvm.relax.op.base.shape_of:-1 tvm.relax.op.base.shape_to_tensor:-1
 #: tvm.relax.op.base.tensor_to_shape:-1 tvm.relax.op.base.to_vdevice:-1
-#: tvm.relax.op.binary.add:-1 tvm.relax.op.binary.multiply:-1
+#: tvm.relax.op.binary.add:-1 tvm.relax.op.binary.floor_mod:-1
+#: tvm.relax.op.binary.mod:-1 tvm.relax.op.binary.multiply:-1
 #: tvm.relax.op.builtin.builtin.alloc_tensor:-1
 #: tvm.relax.op.distributed.distributed.call_tir_local_view:-1
 #: tvm.relax.op.index.dynamic_strided_slice:-1
@@ -608,11 +630,12 @@ msgstr ""
 #: of tvm.relax.op.binary.add:6 tvm.relax.op.binary.bitwise_and:5
 #: tvm.relax.op.binary.bitwise_or:5 tvm.relax.op.binary.bitwise_xor:5
 #: tvm.relax.op.binary.divide:6 tvm.relax.op.binary.equal:6
-#: tvm.relax.op.binary.floor_divide:6 tvm.relax.op.binary.greater:6
-#: tvm.relax.op.binary.greater_equal:6 tvm.relax.op.binary.less:6
-#: tvm.relax.op.binary.less_equal:6 tvm.relax.op.binary.logical_and:5
-#: tvm.relax.op.binary.logical_or:5 tvm.relax.op.binary.logical_xor:5
-#: tvm.relax.op.binary.maximum:6 tvm.relax.op.binary.minimum:6
+#: tvm.relax.op.binary.floor_divide:6 tvm.relax.op.binary.floor_mod:6
+#: tvm.relax.op.binary.greater:6 tvm.relax.op.binary.greater_equal:6
+#: tvm.relax.op.binary.less:6 tvm.relax.op.binary.less_equal:6
+#: tvm.relax.op.binary.logical_and:5 tvm.relax.op.binary.logical_or:5
+#: tvm.relax.op.binary.logical_xor:5 tvm.relax.op.binary.maximum:6
+#: tvm.relax.op.binary.minimum:6 tvm.relax.op.binary.mod:6
 #: tvm.relax.op.binary.multiply:6 tvm.relax.op.binary.not_equal:6
 #: tvm.relax.op.binary.power:6 tvm.relax.op.binary.subtract:6
 #: tvm.relax.op.linear_algebra.matmul:9
@@ -622,12 +645,13 @@ msgstr ""
 #: of tvm.relax.op.binary.add:8 tvm.relax.op.binary.bitwise_and:6
 #: tvm.relax.op.binary.bitwise_or:6 tvm.relax.op.binary.bitwise_xor:6
 #: tvm.relax.op.binary.divide:8 tvm.relax.op.binary.equal:8
-#: tvm.relax.op.binary.floor_divide:8 tvm.relax.op.binary.greater:8
-#: tvm.relax.op.binary.greater_equal:8 tvm.relax.op.binary.left_shift:6
-#: tvm.relax.op.binary.less:8 tvm.relax.op.binary.less_equal:8
-#: tvm.relax.op.binary.logical_and:6 tvm.relax.op.binary.logical_or:6
-#: tvm.relax.op.binary.logical_xor:6 tvm.relax.op.binary.maximum:8
-#: tvm.relax.op.binary.minimum:8 tvm.relax.op.binary.multiply:8
+#: tvm.relax.op.binary.floor_divide:8 tvm.relax.op.binary.floor_mod:7
+#: tvm.relax.op.binary.greater:8 tvm.relax.op.binary.greater_equal:8
+#: tvm.relax.op.binary.left_shift:6 tvm.relax.op.binary.less:8
+#: tvm.relax.op.binary.less_equal:8 tvm.relax.op.binary.logical_and:6
+#: tvm.relax.op.binary.logical_or:6 tvm.relax.op.binary.logical_xor:6
+#: tvm.relax.op.binary.maximum:8 tvm.relax.op.binary.minimum:8
+#: tvm.relax.op.binary.mod:7 tvm.relax.op.binary.multiply:8
 #: tvm.relax.op.binary.not_equal:8 tvm.relax.op.binary.power:8
 #: tvm.relax.op.binary.right_shift:6 tvm.relax.op.binary.subtract:8
 #: tvm.relax.op.linear_algebra.matmul:12 tvm.relax.op.search.where:20
@@ -638,11 +662,12 @@ msgstr ""
 #: of tvm.relax.op.binary.add:8 tvm.relax.op.binary.bitwise_and:7
 #: tvm.relax.op.binary.bitwise_or:7 tvm.relax.op.binary.bitwise_xor:7
 #: tvm.relax.op.binary.divide:8 tvm.relax.op.binary.equal:8
-#: tvm.relax.op.binary.floor_divide:8 tvm.relax.op.binary.greater:8
-#: tvm.relax.op.binary.greater_equal:8 tvm.relax.op.binary.less:8
-#: tvm.relax.op.binary.less_equal:8 tvm.relax.op.binary.logical_and:7
-#: tvm.relax.op.binary.logical_or:7 tvm.relax.op.binary.logical_xor:7
-#: tvm.relax.op.binary.maximum:8 tvm.relax.op.binary.minimum:8
+#: tvm.relax.op.binary.floor_divide:8 tvm.relax.op.binary.floor_mod:8
+#: tvm.relax.op.binary.greater:8 tvm.relax.op.binary.greater_equal:8
+#: tvm.relax.op.binary.less:8 tvm.relax.op.binary.less_equal:8
+#: tvm.relax.op.binary.logical_and:7 tvm.relax.op.binary.logical_or:7
+#: tvm.relax.op.binary.logical_xor:7 tvm.relax.op.binary.maximum:8
+#: tvm.relax.op.binary.minimum:8 tvm.relax.op.binary.mod:8
 #: tvm.relax.op.binary.multiply:8 tvm.relax.op.binary.not_equal:8
 #: tvm.relax.op.binary.power:8 tvm.relax.op.binary.subtract:8
 #: tvm.relax.op.linear_algebra.matmul:12
@@ -650,10 +675,14 @@ msgid "The second input tensor."
 msgstr ""
 
 #: of tvm.relax.op.binary.add:16 tvm.relax.op.manipulate.flip:17
+#: tvm.relax.op.manipulate.gather_elements:20
+#: tvm.relax.op.manipulate.gather_nd:20 tvm.relax.op.manipulate.one_hot:26
 #: tvm.relax.op.manipulate.repeat:22
-#: tvm.relax.op.manipulate.scatter_elements:45 tvm.relax.op.manipulate.tile:26
+#: tvm.relax.op.manipulate.scatter_elements:45
+#: tvm.relax.op.manipulate.scatter_nd:24 tvm.relax.op.manipulate.tile:26
 #: tvm.relax.op.sampling.multinomial_from_uniform:38
-#: tvm.relax.op.statistical.cumprod:28 tvm.relax.op.statistical.cumsum:28
+#: tvm.relax.op.set.nonzero:18 tvm.relax.op.statistical.cumprod:28
+#: tvm.relax.op.statistical.cumsum:28
 msgid "Examples"
 msgstr ""
 
@@ -697,6 +726,7 @@ msgid "The step size."
 msgstr ""
 
 #: of tvm.relax.op.builtin.builtin.alloc_tensor:9 tvm.relax.op.create.arange:16
+#: tvm.relax.op.create.eye:17 tvm.relax.op.create.eye_like:17
 #: tvm.relax.op.create.full:13 tvm.relax.op.create.full_like:16
 #: tvm.relax.op.create.ones:9 tvm.relax.op.create.ones_like:11
 #: tvm.relax.op.create.zeros:9 tvm.relax.op.create.zeros_like:11
@@ -709,22 +739,23 @@ msgstr ""
 msgid "dtype"
 msgstr ""
 
-#: of tvm.relax.op.create.arange:-1 tvm.relax.op.create.full:-1
-#: tvm.relax.op.create.full_like:-1 tvm.relax.op.create.ones_like:-1
-#: tvm.relax.op.create.zeros_like:-1 tvm.relax.op.image.image.resize2d:-1
-#: tvm.relax.op.nn.nn.conv1d:-1 tvm.relax.op.nn.nn.conv1d_transpose:-1
-#: tvm.relax.op.nn.nn.conv2d:-1 tvm.relax.op.nn.nn.conv2d_transpose:-1
-#: tvm.relax.op.nn.nn.conv3d:-1 tvm.relax.op.statistical.cumprod:-1
-#: tvm.relax.op.statistical.cumsum:-1
+#: of tvm.relax.op.create.arange:-1 tvm.relax.op.create.eye_like:-1
+#: tvm.relax.op.create.full:-1 tvm.relax.op.create.full_like:-1
+#: tvm.relax.op.create.ones_like:-1 tvm.relax.op.create.zeros_like:-1
+#: tvm.relax.op.image.image.resize2d:-1 tvm.relax.op.nn.nn.conv1d:-1
+#: tvm.relax.op.nn.nn.conv1d_transpose:-1 tvm.relax.op.nn.nn.conv2d:-1
+#: tvm.relax.op.nn.nn.conv2d_transpose:-1 tvm.relax.op.nn.nn.conv3d:-1
+#: tvm.relax.op.statistical.cumprod:-1 tvm.relax.op.statistical.cumsum:-1
 msgid "Optional[Union[str, DataType]]"
 msgstr ""
 
-#: of tvm.relax.op.create.arange:16 tvm.relax.op.create.ones:9
-#: tvm.relax.op.create.zeros:9
+#: of tvm.relax.op.create.arange:16 tvm.relax.op.create.eye:17
+#: tvm.relax.op.create.ones:9 tvm.relax.op.create.zeros:9
 msgid "The data type of the created tensor."
 msgstr ""
 
-#: of tvm.relax.op.create.arange:21 tvm.relax.op.create.full:18
+#: of tvm.relax.op.create.arange:21 tvm.relax.op.create.eye:22
+#: tvm.relax.op.create.eye_like:22 tvm.relax.op.create.full:18
 #: tvm.relax.op.create.full_like:21 tvm.relax.op.create.ones:14
 #: tvm.relax.op.create.ones_like:16 tvm.relax.op.create.tril:18
 #: tvm.relax.op.create.triu:18 tvm.relax.op.create.zeros:14
@@ -747,7 +778,9 @@ msgstr ""
 #: of tvm.relax.op.ccl.ccl.scatter_from_worker0:12
 #: tvm.relax.op.distributed.distributed.redistribute_replica_to_shard:16
 #: tvm.relax.op.index.take:17 tvm.relax.op.manipulate.concat:11
-#: tvm.relax.op.manipulate.expand_dims:11 tvm.relax.op.manipulate.split:19
+#: tvm.relax.op.manipulate.expand_dims:11
+#: tvm.relax.op.manipulate.gather_elements:12
+#: tvm.relax.op.manipulate.one_hot:18 tvm.relax.op.manipulate.split:19
 #: tvm.relax.op.manipulate.squeeze:11 tvm.relax.op.nn.nn.batch_norm:73
 #: tvm.relax.op.qdq.dequantize:19 tvm.relax.op.qdq.quantize:19
 #: tvm.relax.op.search.argmax:11 tvm.relax.op.search.argmin:11
@@ -826,8 +859,9 @@ msgstr ""
 #: tvm.relax.op.image.image.resize2d:14 tvm.relax.op.linear_algebra.linear:6
 #: tvm.relax.op.manipulate.collapse_sum_like:8
 #: tvm.relax.op.manipulate.collapse_sum_to:17 tvm.relax.op.manipulate.flip:6
-#: tvm.relax.op.manipulate.repeat:6 tvm.relax.op.manipulate.scatter_elements:24
-#: tvm.relax.op.manipulate.tile:15
+#: tvm.relax.op.manipulate.gather_elements:6
+#: tvm.relax.op.manipulate.gather_nd:6 tvm.relax.op.manipulate.repeat:6
+#: tvm.relax.op.manipulate.scatter_elements:24 tvm.relax.op.manipulate.tile:15
 #: tvm.relax.op.memory.view.ensure_zero_offset:6
 #: tvm.relax.op.nn.nn.adaptive_avg_pool1d:25
 #: tvm.relax.op.nn.nn.adaptive_avg_pool2d:28
@@ -848,7 +882,8 @@ msgstr ""
 msgid "data"
 msgstr ""
 
-#: of tvm.relax.op.sorting.argsort:7 tvm.relax.op.sorting.topk:8
+#: of tvm.relax.op.set.nonzero:6 tvm.relax.op.sorting.argsort:7
+#: tvm.relax.op.sorting.topk:8
 msgid "The input data tensor."
 msgstr ""
 
@@ -856,6 +891,8 @@ msgstr ""
 #: tvm.relax.op.ccl.ccl.scatter_from_worker0:-1 tvm.relax.op.create.tril:-1
 #: tvm.relax.op.create.triu:-1
 #: tvm.relax.op.distributed.distributed.redistribute_replica_to_shard:-1
+#: tvm.relax.op.manipulate.gather_elements:-1
+#: tvm.relax.op.manipulate.gather_nd:-1 tvm.relax.op.manipulate.one_hot:-1
 #: tvm.relax.op.manipulate.repeat:-1 tvm.relax.op.manipulate.split:-1
 #: tvm.relax.op.nn.nn.batch_norm:-1 tvm.relax.op.nn.nn.conv1d:-1
 #: tvm.relax.op.nn.nn.conv1d_transpose:-1 tvm.relax.op.nn.nn.conv2d:-1
@@ -957,7 +994,8 @@ msgstr ""
 #: of tvm.relax.op.datatype.astype:6 tvm.relax.op.datatype.wrap_param:6
 #: tvm.relax.op.image.image.resize2d:14 tvm.relax.op.manipulate.broadcast_to:6
 #: tvm.relax.op.manipulate.expand_dims:6 tvm.relax.op.manipulate.flatten:6
-#: tvm.relax.op.manipulate.flip:6 tvm.relax.op.manipulate.permute_dims:6
+#: tvm.relax.op.manipulate.flip:6 tvm.relax.op.manipulate.gather_elements:6
+#: tvm.relax.op.manipulate.gather_nd:6 tvm.relax.op.manipulate.permute_dims:6
 #: tvm.relax.op.manipulate.reshape:16
 #: tvm.relax.op.manipulate.scatter_elements:24
 #: tvm.relax.op.manipulate.squeeze:6 tvm.relax.op.manipulate.tile:15
@@ -1685,7 +1723,8 @@ msgstr ""
 #: of tvm.relax.op.create.tril:17 tvm.relax.op.create.triu:17
 #: tvm.relax.op.index.dynamic_strided_slice:22
 #: tvm.relax.op.index.strided_slice:28 tvm.relax.op.index.take:21
-#: tvm.relax.op.manipulate.flip:14 tvm.relax.op.manipulate.repeat:19
+#: tvm.relax.op.manipulate.flip:14 tvm.relax.op.manipulate.gather_elements:17
+#: tvm.relax.op.manipulate.gather_nd:17 tvm.relax.op.manipulate.repeat:19
 #: tvm.relax.op.manipulate.split:23 tvm.relax.op.manipulate.tile:23
 #: tvm.relax.op.set.unique:33
 msgid "ret"
@@ -1783,6 +1822,72 @@ msgstr ""
 msgid "The transformed result."
 msgstr ""
 
+#: of tvm.relax.op.create.eye:1
+msgid "Construct a 2-D tensor with ones on the diagonal and zeros elsewhere."
+msgstr ""
+
+#: of tvm.relax.op.create.eye:6
+msgid "n"
+msgstr ""
+
+#: of tvm.relax.op.create.eye:-1 tvm.relax.op.create.eye_like:-1
+msgid "Union[PrimExprLike, PrimValue]"
+msgstr ""
+
+#: of tvm.relax.op.create.eye:6
+msgid "Number of rows in the output."
+msgstr ""
+
+#: of tvm.relax.op.create.eye:9
+msgid "m"
+msgstr ""
+
+#: of tvm.relax.op.create.eye:-1
+msgid "Optional[Union[PrimExprLike, PrimValue]]"
+msgstr ""
+
+#: of tvm.relax.op.create.eye:9
+msgid "Number of columns in the output. If None, defaults to n."
+msgstr ""
+
+#: of tvm.relax.op.create.eye:14 tvm.relax.op.create.eye_like:13
+#: tvm.relax.op.create.tril:13 tvm.relax.op.create.triu:13
+#: tvm.relax.op.sorting.topk:11
+msgid "k"
+msgstr ""
+
+#: of tvm.relax.op.create.eye:12 tvm.relax.op.create.eye_like:11
+msgid ""
+"Index of the diagonal: 0 (the default) refers to the main diagonal, a "
+"positive value refers to an upper diagonal, and a negative value to a "
+"lower diagonal."
+msgstr ""
+
+#: of tvm.relax.op.create.eye:-1 tvm.relax.op.create.ones:-1
+#: tvm.relax.op.create.zeros:-1 tvm.relax.op.datatype.wrap_param:-1
+msgid "Union[str, DataType]"
+msgstr ""
+
+#: of tvm.relax.op.create.eye_like:1
+msgid ""
+"Return a 2-D tensor with ones on the diagonal and zeros elsewhere, with "
+"the same shape as the input tensor."
+msgstr ""
+
+#: of tvm.relax.op.create.eye_like:7 tvm.relax.op.create.full_like:8
+#: tvm.relax.op.create.ones_like:6 tvm.relax.op.create.zeros_like:6
+msgid ""
+"The input tensor, which provides the shape, and dtype when the `dtype` "
+"field is not specified."
+msgstr ""
+
+#: of tvm.relax.op.create.eye_like:16 tvm.relax.op.create.full_like:15
+#: tvm.relax.op.create.ones_like:10 tvm.relax.op.create.zeros_like:10
+msgid ""
+"The data type of the created tensor. If dtype is not given, it will by "
+"default use the dtype of the input tensor."
+msgstr ""
+
 #: of tvm.relax.op.manipulate.flatten:1
 msgid "Flatten all the tensor dimensions into one."
 msgstr ""
@@ -1815,6 +1920,10 @@ msgstr ""
 msgid "Floor division with numpy-style broadcasting."
 msgstr ""
 
+#: of tvm.relax.op.binary.floor_mod:1
+msgid "Floor modulo with numpy-style broadcasting."
+msgstr ""
+
 #: of tvm.relax.op.create.full:1
 msgid "Fill array with scalar value."
 msgstr ""
@@ -1844,18 +1953,34 @@ msgid ""
 "tensor's shape, - its value is filled with the input scalar fill value."
 msgstr ""
 
-#: of tvm.relax.op.create.full_like:8 tvm.relax.op.create.ones_like:6
-#: tvm.relax.op.create.zeros_like:6
-msgid ""
-"The input tensor, which provides the shape, and dtype when the `dtype` "
-"field is not specified."
+#: of tvm.relax.op.manipulate.gather_elements:1
+msgid "Gather elements from data according to indices along the specified axis."
 msgstr ""
 
-#: of tvm.relax.op.create.full_like:15 tvm.relax.op.create.ones_like:10
-#: tvm.relax.op.create.zeros_like:10
-msgid ""
-"The data type of the created tensor. If dtype is not given, it will by "
-"default use the dtype of the input tensor."
+#: of tvm.relax.op.index.take:13 tvm.relax.op.manipulate.gather_elements:9
+#: tvm.relax.op.manipulate.gather_nd:9 tvm.relax.op.manipulate.one_hot:6
+msgid "indices"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.gather_elements:9
+#: tvm.relax.op.manipulate.gather_nd:9
+msgid "The indices tensor, must have integer type."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.gather_elements:12
+msgid "The axis along which to index. Default is 0."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.gather_nd:1
+msgid "Update data at positions defined by indices with values in updates."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.gather_nd:12
+msgid "batch_dims"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.gather_nd:12
+msgid "The number of batch dimensions. Default is 0."
 msgstr ""
 
 #: of tvm.relax.op.binary.greater:1
@@ -2207,6 +2332,10 @@ msgstr ""
 msgid "Element-wise minimum"
 msgstr ""
 
+#: of tvm.relax.op.binary.mod:1
+msgid "Modulo with numpy-style broadcasting."
+msgstr ""
+
 #: of tvm.relax.op.sampling.multinomial_from_uniform:1
 msgid ""
 "Returns a tensor where each row contains the index sampled from the "
@@ -2275,6 +2404,18 @@ msgstr ""
 msgid "The computed result"
 msgstr ""
 
+#: of tvm.relax.op.set.nonzero:1
+msgid "Find the indices of elements of a tensor that are non-zero."
+msgstr ""
+
+#: of tvm.relax.op.set.nonzero:11
+msgid "A 2-D tensor containing indices of non-zero elements."
+msgstr ""
+
+#: of tvm.relax.op.set.nonzero:15
+msgid "This function is equivalent to `onnx.nonzero`."
+msgstr ""
+
 #: of tvm.relax.op.binary.not_equal:1
 msgid "Broadcasted element-wise test for (lhs != rhs)."
 msgstr ""
@@ -2283,13 +2424,52 @@ msgstr ""
 msgid "Create a call node that represents a null value object."
 msgstr ""
 
-#: of tvm.relax.op.create.ones:1
-msgid "Construct a tensor of all ones, with the input shape and dtype."
+#: of tvm.relax.op.manipulate.one_hot:1
+msgid "Returns a one-hot tensor."
 msgstr ""
 
-#: of tvm.relax.op.create.ones:-1 tvm.relax.op.create.zeros:-1
-#: tvm.relax.op.datatype.wrap_param:-1
-msgid "Union[str, DataType]"
+#: of tvm.relax.op.manipulate.one_hot:6
+msgid "The indices to set to `on_value`."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:9
+msgid "on_value"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:-1
+msgid "relax.PrimValue"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:9
+msgid "The value to fill at `indices`."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:12
+msgid "off_value"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:12
+msgid "The value to fill at other locations."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:15
+msgid "depth"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:15
+msgid "The depth of the one-hot dimension."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:-1
+msgid "int, optional"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.one_hot:18
+msgid "The axis to fill. Default is -1 which adds a new dimension at the end."
+msgstr ""
+
+#: of tvm.relax.op.create.ones:1
+msgid "Construct a tensor of all ones, with the input shape and dtype."
 msgstr ""
 
 #: of tvm.relax.op.create.ones_like:1
@@ -2508,18 +2688,22 @@ msgid "Where `f` is update, add, mul, mean, max, min."
 msgstr ""
 
 #: of tvm.relax.op.manipulate.scatter_elements:27
+#: tvm.relax.op.manipulate.scatter_nd:9
 msgid "indices: relax.Expr"
 msgstr ""
 
 #: of tvm.relax.op.manipulate.scatter_elements:27
+#: tvm.relax.op.manipulate.scatter_nd:9
 msgid "The index positions to update in `data`."
 msgstr ""
 
 #: of tvm.relax.op.manipulate.scatter_elements:30
+#: tvm.relax.op.manipulate.scatter_nd:12
 msgid "updates: relax.Expr"
 msgstr ""
 
 #: of tvm.relax.op.manipulate.scatter_elements:30
+#: tvm.relax.op.manipulate.scatter_nd:12
 msgid "Values to replace to."
 msgstr ""
 
@@ -2528,6 +2712,7 @@ msgid "Axis to scatter on."
 msgstr ""
 
 #: of tvm.relax.op.manipulate.scatter_elements:37
+#: tvm.relax.op.manipulate.scatter_nd:16
 msgid "reduction: str"
 msgstr ""
 
@@ -2539,6 +2724,29 @@ msgstr ""
 
 #: of tvm.relax.op.manipulate.scatter_elements:42
 msgid "The result has the same size as data, and the same shape as data"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.scatter_nd:1
+msgid "Scatter updates into an array according to indices."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.scatter_nd:6 tvm.relax.op.nn.nn.log_softmax:13
+#: tvm.relax.op.nn.nn.pad:8 tvm.relax.op.nn.nn.softmax:8
+msgid "data: relax.Expr"
+msgstr ""
+
+#: of tvm.relax.op.manipulate.scatter_nd:6
+msgid "The input data to be updated."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.scatter_nd:15
+msgid ""
+"Type of reduction to apply: update, add, mul, max, min. It is \"update\" "
+"by default."
+msgstr ""
+
+#: of tvm.relax.op.manipulate.scatter_nd:21
+msgid "The result has the same shape as data."
 msgstr ""
 
 #: of tvm.relax.op.base.shape_of:1
@@ -2745,10 +2953,6 @@ msgid "The source tensor."
 msgstr ""
 
 #: of tvm.relax.op.index.take:13
-msgid "indices"
-msgstr ""
-
-#: of tvm.relax.op.index.take:13
 msgid "The indices of the values to extract."
 msgstr ""
 
@@ -2833,11 +3037,6 @@ msgstr ""
 msgid ""
 "ret_type specifies the return type, can be one of (\"both\", \"values\", "
 "\"indices\")."
-msgstr ""
-
-#: of tvm.relax.op.create.tril:13 tvm.relax.op.create.triu:13
-#: tvm.relax.op.sorting.topk:11
-msgid "k"
 msgstr ""
 
 #: of tvm.relax.op.sorting.topk:11
@@ -4297,11 +4496,6 @@ msgstr ""
 msgid ""
 "\\text{log\\_softmax}(x_i) = \\log\\left( \\frac{\\exp(x_i)}{\\sum_j "
 "\\exp(x_j)}\\right)"
-msgstr ""
-
-#: of tvm.relax.op.nn.nn.log_softmax:13 tvm.relax.op.nn.nn.pad:8
-#: tvm.relax.op.nn.nn.softmax:8
-msgid "data: relax.Expr"
 msgstr ""
 
 #: of tvm.relax.op.nn.nn.log_softmax:16

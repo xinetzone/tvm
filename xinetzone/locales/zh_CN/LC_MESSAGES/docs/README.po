@@ -36,14 +36,13 @@ msgid "With Docker (recommended)"
 msgstr "使用 Docker（推荐）"
 
 #: ../../xin/docs/README.md:26
-#, fuzzy
 msgid ""
 "Build TVM and the docs inside the [tlcpack/ci-gpu "
 "image](https://hub.docker.com/r/tlcpack/ci-gpu) using the "
 "[`ci.py`](../tests/scripts/ci.py) script."
 msgstr ""
-"在 [tlcpack/ci-gpu image](https://hub.docker.com/r/tlcpack/ci-gpu) 内构建 TVM"
-" 和文档"
+使用 [`ci.py`](../tests/scripts/ci.py) 脚本，"
+"在 Docker 镜像 [tlcpack/ci-gpu](https://hub.docker.com/r/tlcpack/ci-gpu) 内构建 TVM 及其文档。
 
 #: ../../xin/docs/README.md:36
 msgid "Serve the docs and visit http://localhost:8000 in your browser"

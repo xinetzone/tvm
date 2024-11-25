@@ -21,14 +21,12 @@ msgstr ""
 
 #: ../../doc/docs/how_to/dev/index.rst:19
 msgid "Development Guides"
-msgstr ""
+msgstr "开发指南"
 
 #: ../../doc/docs/how_to/dev/index.rst:20
 msgid ""
 "This section contains a collection of tips about how to work on various "
 "areas of the TVM stack."
 msgstr ""
-
-#~ msgid "Develope Apache TVM"
-#~ msgstr ""
+"此部分汇集了一系列关于如何在不同领域开展 TVM 堆栈工作的建议。"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"POT-Creation-Date: 2024-11-25 13:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -100,6 +100,7 @@ msgstr ""
 #: tvm.tir.schedule.schedule.Schedule.__init__:4
 #: tvm.tir.schedule.schedule.Schedule.add_unit_loop:4
 #: tvm.tir.schedule.schedule.Schedule.annotate:4
+#: tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:4
 #: tvm.tir.schedule.schedule.Schedule.bind:10
 #: tvm.tir.schedule.schedule.Schedule.blockize:4
 #: tvm.tir.schedule.schedule.Schedule.cache_index:5
@@ -453,6 +454,7 @@ msgstr ""
 #: of tvm.tir.schedule.instruction.InstructionKind:-1
 #: tvm.tir.schedule.instruction.InstructionKind.get:-1
 #: tvm.tir.schedule.schedule.Schedule.annotate:-1
+#: tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:-1
 #: tvm.tir.schedule.schedule.Schedule.bind:-1
 #: tvm.tir.schedule.schedule.Schedule.get_block:-1
 #: tvm.tir.schedule.schedule.Schedule.set_scope:-1
@@ -470,6 +472,7 @@ msgstr ""
 
 #: of tvm.tir.schedule.instruction.InstructionKind:18
 #: tvm.tir.schedule.schedule.Schedule.__init__:34
+#: tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:77
 #: tvm.tir.schedule.schedule.Schedule.blockize:67
 #: tvm.tir.schedule.schedule.Schedule.rfactor:124
 #: tvm.tir.schedule.schedule.Schedule.rolling_buffer:95
@@ -705,6 +708,7 @@ msgstr ""
 
 #: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:14
 #: tvm.tir.schedule.schedule.Schedule.annotate:13
+#: tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:20
 #: tvm.tir.schedule.schedule.Schedule.bind:22
 #: tvm.tir.schedule.schedule.Schedule.blockize:16
 #: tvm.tir.schedule.schedule.Schedule.cache_index:23
@@ -803,6 +807,151 @@ msgstr ""
 msgid "After applying annotate, the IR becomes:"
 msgstr ""
 
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:1
+msgid "Annotate the read or write region of a block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:5
+#: tvm.tir.schedule.schedule.Schedule.cache_index:7
+#: tvm.tir.schedule.schedule.Schedule.cache_inplace:8
+#: tvm.tir.schedule.schedule.Schedule.cache_read:10
+#: tvm.tir.schedule.schedule.Schedule.cache_write:10
+#: tvm.tir.schedule.schedule.Schedule.compute_at:21
+#: tvm.tir.schedule.schedule.Schedule.compute_inline:16
+#: tvm.tir.schedule.schedule.Schedule.decompose_padding:19
+#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:19
+#: tvm.tir.schedule.schedule.Schedule.get_block:17
+#: tvm.tir.schedule.schedule.Schedule.get_consumers:6
+#: tvm.tir.schedule.schedule.Schedule.get_loops:6
+#: tvm.tir.schedule.schedule.Schedule.get_producers:6
+#: tvm.tir.schedule.schedule.Schedule.pad_einsum:14
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:14
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:14
+#: tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:5
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:18
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:19
+#: tvm.tir.schedule.schedule.Schedule.rolling_buffer:18
+#: tvm.tir.schedule.schedule.Schedule.sample_compute_location:5
+#: tvm.tir.schedule.schedule.Schedule.set_scope:6
+#: tvm.tir.schedule.schedule.Schedule.storage_align:8
+#: tvm.tir.schedule.schedule.Schedule.transform_block_layout:6
+#: tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:5
+#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:9
+msgid "block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:-1
+#: tvm.tir.schedule.schedule.Schedule.blockize:-1
+#: tvm.tir.schedule.schedule.Schedule.cache_read:-1
+#: tvm.tir.schedule.schedule.Schedule.cache_write:-1
+#: tvm.tir.schedule.schedule.Schedule.decompose_padding:-1
+#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:-1
+#: tvm.tir.schedule.schedule.Schedule.get_block:-1
+#: tvm.tir.schedule.schedule.Schedule.reindex:-1
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:-1
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:-1
+#: tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:-1
+#: tvm.tir.schedule.schedule.Schedule.rfactor:-1
+#: tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:-1
+msgid "BlockRV"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:6
+msgid "The block to be annotated"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:7
+#: tvm.tir.schedule.schedule.Schedule.set_scope:8
+#: tvm.tir.schedule.schedule.Schedule.storage_align:10
+#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:11
+msgid "buffer_index"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:-1
+#: tvm.tir.schedule.schedule.Schedule.fork_seed:-1
+#: tvm.tir.schedule.schedule.Schedule.rfactor:-1
+#: tvm.tir.schedule.schedule.Schedule.rolling_buffer:-1
+#: tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:-1
+#: tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:-1
+#: tvm.tir.schedule.schedule.Schedule.seed:-1
+#: tvm.tir.schedule.schedule.Schedule.set_scope:-1
+#: tvm.tir.schedule.schedule.Schedule.storage_align:-1
+#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:-1
+#: tvm.tir.schedule.state.ScheduleState:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:8
+msgid "The index of the buffer in block's read or write region"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:9
+#: tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:7
+msgid "buf_type"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:10
+msgid "The buffer type: \"read\" or \"write\""
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:17
+msgid "gen_new_ranges"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:-1
+msgid "Callable"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:12
+msgid ""
+"A function that takes the block's iter_vars and returns a "
+"Tuple[Union[PrimExpr, Tuple[PrimExpr, PrimExpr]], ...] which defines the "
+"new read or write region for the buffer. Each element in the tuple can "
+"be: - A single PrimExpr representing the iter_var itself - A tuple of two"
+" PrimExprs representing the range (begin, end)"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:21
+msgid ""
+"Annotate a 2D read region for a buffer. Before annotate_buffer_access, in"
+" TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:41
+msgid "Create the schedule and do annotate_buffer_access:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:51
+msgid "After applying annotate_buffer_access, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:73
+msgid ""
+"This annotates the read region for buffer A (index 0) in block \"B\" to "
+"be [vi-1:vi+1, vj-1:vj+1] for each (vi, vj) in the block's iteration "
+"domain."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:78
+msgid ""
+"This function allows manual specification of read or write regions, which"
+" can be useful in cases where the compiler cannot accurately infer the "
+"access pattern, such as complex data-dependent accesses. It overrides the"
+" automatically inferred region for the specified buffer. The function "
+"adds an annotation to the block, indicating that an explicit region has "
+"been provided for the buffer at the given index. This annotation is used "
+"in the CompactBufferAllocation pass to respect the manually specified "
+"region instead of relying on automatic inference."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:87
+msgid ""
+"Caution should be exercised when using this function, as incorrect "
+"annotations may lead to incorrect code generation or runtime errors. It's"
+" crucial to ensure that the specified region covers all actual reads or "
+"writes performed by the block for the given buffer."
+msgstr ""
+
 #: of tvm.tir.schedule.schedule.Schedule.bind:1
 msgid ""
 "Bind the input loop to the given thread axis. It requires: 1) The scope "
@@ -898,21 +1047,6 @@ msgstr ""
 msgid "result"
 msgstr ""
 
-#: of tvm.tir.schedule.schedule.Schedule.blockize:-1
-#: tvm.tir.schedule.schedule.Schedule.cache_read:-1
-#: tvm.tir.schedule.schedule.Schedule.cache_write:-1
-#: tvm.tir.schedule.schedule.Schedule.decompose_padding:-1
-#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:-1
-#: tvm.tir.schedule.schedule.Schedule.get_block:-1
-#: tvm.tir.schedule.schedule.Schedule.reindex:-1
-#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:-1
-#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:-1
-#: tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:-1
-#: tvm.tir.schedule.schedule.Schedule.rfactor:-1
-#: tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:-1
-msgid "BlockRV"
-msgstr ""
-
 #: of tvm.tir.schedule.schedule.Schedule.blockize:13
 msgid "The new block."
 msgstr ""
@@ -941,34 +1075,6 @@ msgstr ""
 msgid ""
 "Create a block to cache precomputed index for later use. if there is no "
 "index computation, keep unchanged."
-msgstr ""
-
-#: of tvm.tir.schedule.schedule.Schedule.cache_index:7
-#: tvm.tir.schedule.schedule.Schedule.cache_inplace:8
-#: tvm.tir.schedule.schedule.Schedule.cache_read:10
-#: tvm.tir.schedule.schedule.Schedule.cache_write:10
-#: tvm.tir.schedule.schedule.Schedule.compute_at:21
-#: tvm.tir.schedule.schedule.Schedule.compute_inline:16
-#: tvm.tir.schedule.schedule.Schedule.decompose_padding:19
-#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:19
-#: tvm.tir.schedule.schedule.Schedule.get_block:17
-#: tvm.tir.schedule.schedule.Schedule.get_consumers:6
-#: tvm.tir.schedule.schedule.Schedule.get_loops:6
-#: tvm.tir.schedule.schedule.Schedule.get_producers:6
-#: tvm.tir.schedule.schedule.Schedule.pad_einsum:14
-#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:14
-#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:14
-#: tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:5
-#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:18
-#: tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:19
-#: tvm.tir.schedule.schedule.Schedule.rolling_buffer:18
-#: tvm.tir.schedule.schedule.Schedule.sample_compute_location:5
-#: tvm.tir.schedule.schedule.Schedule.set_scope:6
-#: tvm.tir.schedule.schedule.Schedule.storage_align:8
-#: tvm.tir.schedule.schedule.Schedule.transform_block_layout:6
-#: tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:5
-#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:9
-msgid "block"
 msgstr ""
 
 #: of tvm.tir.schedule.schedule.Schedule.cache_index:-1
@@ -1482,19 +1588,6 @@ msgstr ""
 #: of tvm.tir.schedule.schedule.Schedule.fork_seed:5
 #: tvm.tir.schedule.schedule.Schedule.seed:5
 msgid "seed"
-msgstr ""
-
-#: of tvm.tir.schedule.schedule.Schedule.fork_seed:-1
-#: tvm.tir.schedule.schedule.Schedule.rfactor:-1
-#: tvm.tir.schedule.schedule.Schedule.rolling_buffer:-1
-#: tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:-1
-#: tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:-1
-#: tvm.tir.schedule.schedule.Schedule.seed:-1
-#: tvm.tir.schedule.schedule.Schedule.set_scope:-1
-#: tvm.tir.schedule.schedule.Schedule.storage_align:-1
-#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:-1
-#: tvm.tir.schedule.state.ScheduleState:-1
-msgid "int"
 msgstr ""
 
 #: of tvm.tir.schedule.schedule.Schedule.fork_seed:6
@@ -2557,12 +2650,6 @@ msgstr ""
 msgid "The producer block of the buffer"
 msgstr ""
 
-#: of tvm.tir.schedule.schedule.Schedule.set_scope:8
-#: tvm.tir.schedule.schedule.Schedule.storage_align:10
-#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:11
-msgid "buffer_index"
-msgstr ""
-
 #: of tvm.tir.schedule.schedule.Schedule.set_scope:9
 #: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:12
 msgid "The index of the buffer in block's write region"
@@ -2906,10 +2993,6 @@ msgstr ""
 
 #: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:6
 msgid "The block where we hide read access."
-msgstr ""
-
-#: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:7
-msgid "buf_type"
 msgstr ""
 
 #: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:8
