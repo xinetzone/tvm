@@ -49,6 +49,8 @@ from tvm.ir import IRModule
 from tvm.ir.supply import NameSupply
 from tvm.tir.generic import cast
 
+from ..common import autopad
+
 
 def get_type(elem_type: Union[str, int]) -> str:
     """Converts onnx integer datatype to numpy datatype"""
@@ -1208,10 +1210,14 @@ class Conv(OnnxOpConverter):
 
     @classmethod
     def _impl_v11(cls, bb, inputs, attr, params):
+        data = inputs[0]
         if hasattr(inputs[0].struct_info, "ndim"):
             ndim = inputs[0].struct_info.ndim
         else:
             ndim = len(inputs[0].struct_info.shape)
+
+        if "kernel_shape" not in attr:
+            attr["kernel_shape"] = inputs[1].struct_info.shape.values[2:]
 
         if ndim == 3:
             op = relax.op.nn.conv1d
@@ -1228,9 +1234,33 @@ class Conv(OnnxOpConverter):
         else:
             raise NotImplementedError("Ndim > 5 not supported for convolution.")
 
+        if "auto_pad" in attr:
+            attr["auto_pad"] = attr["auto_pad"].decode("utf-8")
+            if attr["auto_pad"] in ("SAME_UPPER", "SAME_LOWER"):
+                data = autopad(
+                    bb,
+                    inputs[0],
+                    attr.get("strides", [1] * (ndim - 2)),
+                    attr["kernel_shape"],
+                    attr.get("dilations", [1] * (ndim - 2)),
+                    mode=attr["auto_pad"],
+                    deconv=False,
+                )
+            elif attr["auto_pad"] == "VALID":
+                attr["pads"] = [0 for _ in range(ndim - 2)]
+            elif attr["auto_pad"] == "NOTSET":
+                pass
+            else:
+                msg = (
+                    f'Value {attr["auto_pad"]} in attribute "auto_pad" of operator Conv '
+                    f"is invalid."
+                )
+                raise tvm.error.OpAttributeInvalid(msg)
+            attr.pop("auto_pad")
+
         conv_out = bb.normalize(
             op(
-                data=inputs[0],
+                data=data,
                 weight=inputs[1],
                 strides=attr.get("strides", 1),
                 padding=attr.get("pads", 0),
@@ -2254,6 +2284,7 @@ class Pool(OnnxOpConverter):
         kernel_shape = attr.get("kernel_shape")
         pads = attr.get("pads", 0)
         strides = attr.get("strides", [1] * (ndim - 2))
+        count_include_pad = attr.get("count_include_pad", False)
 
         assert len(kernel_shape) in [1, 2, 3], "Currently only 1D/2D/3D/ pooling is supported."
 
@@ -2298,7 +2329,7 @@ class Pool(OnnxOpConverter):
             pads = tuple([val for pair in zip(*pads) for val in pair])
 
         op = getattr(relax.op.nn, cls.name + str(len(kernel_shape)) + "d")
-        return op(data, kernel_shape, strides, pads, dilations, ceil_mode)
+        return op(data, kernel_shape, strides, pads, dilations, ceil_mode, count_include_pad)
 
     @classmethod
     def _get_input_spatial_shape(cls, tensor):
@@ -2316,6 +2347,23 @@ class AveragePool(Pool):
     """Converts an onnx MaxPool node into an equivalent Relax expression."""
 
     name = "avg_pool"
+
+
+class LpPool(OnnxOpConverter):
+    """Converts an onnx LpPool node into an equivalent Relax expression."""
+
+    @classmethod
+    def _impl_v1(cls, bb, inputs, attr, params):
+        dtype = inputs[0].struct_info.dtype
+        p = attr.get("p", 2.0)
+        reci_p = relax.const(1.0 / p, dtype=dtype)
+        # emit for get struct_info
+        data = bb.emit(relax.op.power(inputs[0], relax.const(p, dtype=dtype)))
+        attr.update({"count_include_pad": True})
+        avg_pool = AveragePool._impl_v1(bb, [data], attr, params)
+        kernels = attr["kernel_shape"]
+        out = avg_pool * relax.const(_np.prod(kernels).astype(dtype))
+        return relax.op.power(out, reci_p)
 
 
 class GlobalAveragePool(OnnxOpConverter):
@@ -3172,7 +3220,7 @@ def _get_convert_map():
         "Tile": Tile,
         "AveragePool": AveragePool,
         "MaxPool": MaxPool,
-        # "LpPool": LpPool,
+        "LpPool": LpPool,
         "GlobalAveragePool": GlobalAveragePool,
         "GlobalMaxPool": GlobalMaxPool,
         "GlobalLpPool": GlobalLpPool,
