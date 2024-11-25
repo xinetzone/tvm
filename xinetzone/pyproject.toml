@@ -81,11 +81,11 @@ build-backend = "hatchling.build"
 path = "src/tvmx/__about__.py"
 
 [tool.hatch.build.force-include]
-"../python/tvm" = "tvm"
-"../build/libtvm.so" = "tvm/libtvm.so"
-"../build/libtvm_runtime.so" = "tvm/libtvm_runtime.so"
-# VTA 配置
-"../vta/python/vta" = "vta"
-"../build/libvta_fsim.so" = "libvta_fsim.so"
-"../3rdparty/vta-hw/config/" = "3rdparty/vta_hw/config"
+# "../python/tvm" = "tvm"
+# "../build/libtvm.so" = "tvm/libtvm.so"
+# "../build/libtvm_runtime.so" = "tvm/libtvm_runtime.so"
+# # VTA 配置
+# "../vta/python/vta" = "vta"
+# "../build/libvta_fsim.so" = "libvta_fsim.so"
+# "../3rdparty/vta-hw/config/" = "3rdparty/vta_hw/config"
 
