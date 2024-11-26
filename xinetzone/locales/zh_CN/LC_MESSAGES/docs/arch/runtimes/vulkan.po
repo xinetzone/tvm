@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:21
 msgid "Vulkan Runtime"
-msgstr ""
+msgstr "Vulkan 运行时"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:23
 msgid ""
@@ -29,10 +29,12 @@ msgid ""
 "computational kernel is compiled into a SPIR-V shader, which can then be "
 "called using the TVM interface."
 msgstr ""
+"TVM 支持使用 Vulkan 计算着色器(shader)来执行查询。"
+"每个计算 kernel 都被编译成 SPIR-V 着色器，然后可以通过 TVM 接口调用。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:30
 msgid "Vulkan Features, Limits"
-msgstr ""
+msgstr "Vulkan 特性与限制"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:34
 msgid ""
@@ -44,6 +46,9 @@ msgid ""
 "capability is not available, or that a limit is the minimum guaranteed by"
 " the Vulkan spec in the `Required Limits`_ section."
 msgstr ""
+"由于不同的 Vulkan 实现可能启用了不同的可选功能或具有不同的物理限制，代码生成必须知晓哪些功能可用。"
+"这些对应于特定的 Vulkan 能力/限制，如在 :ref:`Vulkan 能力表 <tvm-table-vulkan-capabilities>` 中所示。"
+"如果未指定，TVM 会假设某项功能不可用，或者某项限制是 Vulkan 规范中 `Required Limits`_ 部分所保证的最小值。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:43
 msgid ""
@@ -54,28 +59,31 @@ msgid ""
 "  Any additional parameters explicitly specified will override the "
 "parameters queried from the device."
 msgstr ""
+"这些参数在定义 :ref:`Target <tvm-target-specific-target>` 时可以是明确指定的，或者可以从设备中查询。"
+"要从设备中查询，可以使用特殊的参数 ``-from_device=N`` 来获取设备 ID 为 ``N`` 的所有 Vulkan 设备参数。"
+"任何额外明确指定的参数都将覆盖从设备查询到的参数。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:52
 #: ../../doc/docs/arch/runtimes/vulkan.rst:161
 msgid "Vulkan Capabilities"
-msgstr ""
+msgstr "Vulkan 功能"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:56
 #: ../../doc/docs/arch/runtimes/vulkan.rst:165
 msgid "Target Parameter"
-msgstr ""
+msgstr "Target 参数"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:57
 msgid "Required Vulkan Version/Extension"
-msgstr ""
+msgstr "所需的 Vulkan 版本/扩展"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:58
 msgid "Parameter Queried"
-msgstr ""
+msgstr "参数查询"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:59
 msgid "Default Value"
-msgstr ""
+msgstr "默认值"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:61
 #: ../../doc/docs/arch/runtimes/vulkan.rst:169
@@ -246,10 +254,13 @@ msgid ""
 "generation.  Efforts are also underway to remove these requirements and "
 "support additional Vulkan implementations."
 msgstr ""
+"截至2021年5月，并非所有 Vulkan 实现都得到了支持。"
+"例如，需要对 64 位整数的支持。如果某个 Vulkan 目标不受支持，在 SPIR-V 代码生成期间应发出错误消息。"
+"目前也在努力去除这些要求并支持更多的 Vulkan 实现。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:148
 msgid "SPIR-V Capabilities"
-msgstr ""
+msgstr "SPIR-V 功能"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:150
 msgid ""
@@ -260,20 +271,23 @@ msgid ""
 " and the minimum allowed version of SPIR-V that are needed to execute the"
 " compiled graph."
 msgstr ""
+"一些特定于设备的能力也对应于 SPIR-V 的能力或扩展，这些必须声明在着色器中，或者为了使用某个功能需要指定的最小 SPIR-V 版本。"
+"TVM 生成的着色器将声明执行编译后的图所需的最小一组扩展/能力和允许的最小 SPIR-V 版本。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:157
 msgid ""
 "If the shader generation requires a capability or extension that is not "
 "enabled in the ``Target``, an exception will be raised."
 msgstr ""
+"如果着色器生成需要一种能力或扩展，而这种能力或扩展在 ``Target`` 中并未启用，那么将引发异常。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:166
 msgid "Required SPIR-V Version/Extension"
-msgstr ""
+msgstr "所需SPIR-V版本/扩展"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:167
 msgid "Declared Capability"
-msgstr ""
+msgstr "声明的能力"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:170
 msgid "SPIR-V 1.3+"
@@ -325,7 +339,7 @@ msgstr ""
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:211
 msgid "Vulkan-Specific Environment Variables"
-msgstr ""
+msgstr "Vulkan 特定环境变量"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:213
 msgid ""
@@ -337,6 +351,9 @@ msgid ""
 "variable, the integer zero, or an empty string are all false boolean "
 "flags."
 msgstr ""
+"SPIR-V 代码生成器和 Vulkan 运行时均包含环境变量，这些变量可以调整运行时的某些行为。"
+"它们主要用于调试目的，旨在更便捷地测试特定代码路径，并根据需要输出更多信息。"
+"所有布尔标志在环境变量被设置为非零整数时都为真。未设置的变量、整数零或空字符串都被视为假的布尔标志。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:234
 msgid ""
@@ -346,6 +363,9 @@ msgid ""
 "extensions.  If false, TVM will decide whether to use these extensions "
 "based on their availability."
 msgstr ""
+"``TVM_VULKAN_DISABLE_PUSH_DESCRIPTOR`` - 布尔标志。如果设为真，TVM 将显式分配描述符，"
+"并且不会使用 `VK_KHR_push_descriptor`_ 或 `VK_KHR_descriptor_update_template`_  扩展。"
+"如果设为假，则 TVM 将根据这些扩展的可用性来决定是否使用它们。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:240
 msgid ""
@@ -355,6 +375,9 @@ msgid ""
 " will decide whether memory allocations should be marked as dedicated "
 "based on the `VkMemoryDedicatedRequirements`_ for that buffer."
 msgstr ""
+"``TVM_VULKAN_DISABLE_DEDICATED_ALLOCATION`` - 布尔标志。"
+"如果为真，TVM将不会将内存分配标记为专用分配，并且不会使用 `VK_KHR_dedicated_allocation`_ 扩展。"
+"如果为假，TVM 将根据该缓冲区的 `VkMemoryDedicatedRequirements`_ 决定是否应将内存分配标记为专用。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:247
 msgid ""
@@ -362,6 +385,8 @@ msgid ""
 "will enable `Vulkan validation layers`_ that the device supports.  If "
 "false, no validation layers are enabled."
 msgstr ""
+"``TVM_VULKAN_ENABLE_VALIDATION_LAYERS`` - 布尔标志。"
+"如果为真，TVM 将启用设备支持的 `Vulkan validation layers`_。如果为假，则不启用任何验证层。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:251
 msgid ""
@@ -370,6 +395,9 @@ msgid ""
 "(default), all SPIR-V shaders generated by TVM are validated with "
 "`spvValidate`_."
 msgstr ""
+"``TVM_VULKAN_DISABLE_SHADER_VALIDATION``  布尔标志。"
+"如果设置为真，则跳过使用 `spvValidate`_ 进行的 SPIR-V shader 验证。"
+"如果为假（默认设置），则由 TVM 生成的所有 SPIR-V shaders 都将通过 `spvValidate`_ 进行验证。"
 
 #: ../../doc/docs/arch/runtimes/vulkan.rst:256
 msgid ""
@@ -378,4 +406,5 @@ msgid ""
 "disassembled SPIR-V shaders to this directory, to be used for debugging "
 "purposes."
 msgstr ""
-
+"``TVM_VULKAN_DEBUG_SHADER_SAVEPATH`` - 指向目录的路径。"
+"如果设置为非空字符串，Vulkan 代码生成器将把中间表示（IR）、二进制SPIR-V以及反汇编的SPIR-V着色器保存到这个目录中，用于调试目的。"

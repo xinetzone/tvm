@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../doc/docs/arch/debugger.rst:20
 msgid "Debugger"
-msgstr ""
+msgstr "调试器"
 
 #: ../../doc/docs/arch/debugger.rst:22
 msgid ""
@@ -29,14 +29,15 @@ msgid ""
 "execution. It helps to provide access to graph structures and tensor "
 "values at the TVM runtime."
 msgstr ""
+"TVM 调试器是用于调试 TVM 计算图执行的接口。它有助于在 TVM 运行时访问计算图结构和张量值。"
 
 #: ../../doc/docs/arch/debugger.rst:26
 msgid "Debug Exchange Format"
-msgstr ""
+msgstr "调试交换格式"
 
 #: ../../doc/docs/arch/debugger.rst:29
 msgid "1. Computational Graph"
-msgstr ""
+msgstr "1. 计算图"
 
 #: ../../doc/docs/arch/debugger.rst:30
 msgid ""
@@ -45,10 +46,12 @@ msgid ""
 "either use this graph directly or transform this graph to the format UX "
 "can understand."
 msgstr ""
+"通过 relay 以 JSON 序列化格式构建的优化计算图被转储为它包含有关计算图的所有信息。"
+"UX 可以直接使用这个计算图，或者将此计算图转换为 UX 可以理解的格式。"
 
 #: ../../doc/docs/arch/debugger.rst:35
 msgid "The Graph JSON format is explained below"
-msgstr ""
+msgstr "计算图 JSON 格式的说明如下"
 
 #: ../../doc/docs/arch/debugger.rst:37
 msgid ""

@@ -33,7 +33,7 @@ msgid ""
 " key elements of Relax IR, and how it enables optimization in ML "
 "compilers."
 msgstr ""
-"计算图抽象是机器学习（ML）中一项关键技术，"
+"计算图抽象(graph abstraction)是机器学习（ML）中一项关键技术，"
 "它被编译器用来表示和推理 ML 模型的结构和数据流。"
 "通过将模型抽象成计算图表示，编译器可以执行各种优化以提高性能和效率。"
 "本教程将涵盖计算图抽象的基础知识、其关键元素 Relax IR，以及它如何在 ML 编译器中启用优化。"
@@ -51,10 +51,13 @@ msgid ""
 "analyze the dependencies and relationships between different parts of the"
 " model."
 msgstr ""
+"计算图抽象是将机器学习模型表示为有向图的过程，"
+"其中节点代表计算算子（例如矩阵乘法、卷积），而边则代表这些算子之间数据流的流动。"
+"这种抽象使编译器能够分析模型不同部分之间的依赖关系和相互联系。"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:54
 msgid "Key Features of Relax"
-msgstr ""
+msgstr "Relax的关键特性"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:55
 msgid ""
@@ -62,6 +65,7 @@ msgid ""
 "facilitates end-to-end optimization of ML models through several crucial "
 "features:"
 msgstr ""
+"Relax，Apache TVM 的 Unity 策略中使用的计算图表示法，通过几个关键特性实现了机器学习模型的端到端优化。"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:59
 msgid ""
@@ -69,6 +73,7 @@ msgid ""
 "represent tensor dimensions, enabling global tracking of dynamic shape "
 "relationships across tensor operators and function calls."
 msgstr ""
+"**First-class 符号形状**：Relax 采用符号形状来表示张量的维度，这允许在张量算子和函数调用中全局跟踪动态形状关系。"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:63
 msgid ""
@@ -76,6 +81,7 @@ msgid ""
 "from high-level neural network layers to low-level tensor operations, "
 "enabling optimizations that span different hierarchies within the model."
 msgstr ""
+"**多层次抽象**：Relax 支持跨级别的抽象，从高层的神经网络层到低层的张量算子，使优化能够跨越模型内的不同层次结构。"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:67
 msgid ""
@@ -85,6 +91,8 @@ msgid ""
 "partial specialization, providing flexible customization and optimization"
 " options."
 msgstr ""
+"**可组合变换**：Relax 提供了框架，用于实现可组合的“变换”，这些变换可以有选择地应用于不同的模型组件。"
+"这包括 partial lowering 和 partial specialization 的功能，提供了灵活的定制和优化选项。"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:72
 msgid ""
@@ -92,4 +100,4 @@ msgid ""
 "adaptable approach to ML model optimization within the Apache TVM "
 "ecosystem."
 msgstr ""
-
+"这些特性共同使 Relax 能够在 Apache TVM 生态系统内提供一种强大且灵活的机器学习模型优化方法。"
