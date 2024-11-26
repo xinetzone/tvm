@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:21
 msgid "Graph Abstraction for ML Models"
-msgstr ""
+msgstr "ML 模型的计算图抽象"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:22
 msgid ""
@@ -33,10 +33,14 @@ msgid ""
 " key elements of Relax IR, and how it enables optimization in ML "
 "compilers."
 msgstr ""
+"计算图抽象是机器学习（ML）中一项关键技术，"
+"它被编译器用来表示和推理 ML 模型的结构和数据流。"
+"通过将模型抽象成计算图表示，编译器可以执行各种优化以提高性能和效率。"
+"本教程将涵盖计算图抽象的基础知识、其关键元素 Relax IR，以及它如何在 ML 编译器中启用优化。"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:29
 msgid "What is Graph Abstraction?"
-msgstr ""
+msgstr "什么是计算图抽象？"
 
 #: ../../doc/docs/deep_dive/relax/abstraction.rst:30
 msgid ""

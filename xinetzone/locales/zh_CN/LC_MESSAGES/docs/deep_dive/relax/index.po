@@ -31,4 +31,6 @@ msgid ""
 "optimization. Hence, Relax is usually working closely with TensorIR for "
 "representing and optimizing the whole IRModule"
 msgstr ""
-
+"在 Apache TVM 堆栈中，Relax 是对计算图优化和变换的高级抽象。"
+"此外，Apache TVM 将 Relax 与 TensorIR 结合在一起，作为统一策略进行跨层级优化。"
+"因此，Relax 通常与 TensorIR 紧密合作，用于表示和优化整个 IRModule。"
