@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:21
 msgid "Debugging TVM"
-msgstr ""
+msgstr "调试 TVM"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:23
 msgid ""
@@ -31,6 +31,9 @@ msgid ""
 "debug TVM and to spread awareness to the community. To that end, we may "
 "seek to promote more broadly-used techniques to the top of this doc."
 msgstr ""
+"**注意**: 此页面正在进行中。欢迎大家通过提交 PR 来添加建议和技巧以修改本页面。"
+"此页面的目标是将用于调试 TVM 的常用技术集中起来，并向社区传播这些知识。"
+"为此，可能会寻求将更广泛使用的技术推向本文档的顶部。"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:29
 msgid "VLOGging"
@@ -42,6 +45,8 @@ msgid ""
 "level debugging messages without impacting the binary size or runtime of "
 "TVM in production. You can use VLOG in your code as follows:"
 msgstr ""
+"TVM 提供了详细的日志记录功能，允许你在不影响生产环境中 TVM 的二进制大小或运行时间的情况下提交跟踪级别的调试信息。"
+"你可以在代码中如下使用 VLOG："
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:42
 msgid ""
@@ -52,18 +57,24 @@ msgid ""
 "time to print VLOG statements between ``0`` and some integer ``N``. ``N``"
 " can be set per-file or globally."
 msgstr ""
+"在这个例子中，传递给 ``VLOG()`` 的整数 ``2`` 表示“详细级别”。"
+"级别越高，打印的日志就越多。通常，TVM 的级别从 0 到 2 不等，其中 3 仅用于极端低级别的核心运行时属性。"
+"VLOG 系统在启动时配置为打印介于 ``0`` 和某个整数 ``N`` 之间的 VLOG 语句。``N`` 可以按文件设置或全局设置。"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:47
 msgid ""
 "VLOGs don't print or impact binary size or runtime by default (when "
 "compiled with proper optimization). To enable VLOGging, do the following:"
 msgstr ""
+"VLOGs 默认情况下不会增加二进制文件的大小或影响运行时（当使用适当的优化编译时）。"
+"要启用 VLOG 记录功能，请按照以下步骤操作："
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:50
 msgid ""
 "In ``config/cmake``, ensure you ``set(USE_RELAY_DEBUG ON)``. This flag is"
 " used to enable VLOGging."
 msgstr ""
+"在 ``config/cmake`` 中，确保你 ``set(USE_RELAY_DEBUG ON)``。此标志用于启用 VLOGging"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:52
 msgid ""
@@ -71,16 +82,20 @@ msgid ""
 "comma-separated list of level assignments of the form "
 "``<file_name>=<level>``. Here are some specializations:"
 msgstr ""
+"启动Python时，传递参数 ``TVM_LOG_DEBUG=<spec>``，其中 ``<spec>>`` 是逗号分隔的级别分配列表，形式为 ``<file_name>=<level>``。"
+"这里有一些特例："
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:55
 msgid ""
 "The special filename ``DEFAULT`` sets the VLOG level setting for all "
 "files."
 msgstr ""
+"特殊文件名 ``DEFAULT`` 设置了所有文件的 VLOG 级别设置。"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:56
 msgid "``<level>`` can be set to ``-1`` to disable VLOG in that file."
 msgstr ""
+"``<level>`` 可以设置为 ``-1`` 来禁用该文件中的 VLOG。"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:57
 msgid ""
@@ -89,8 +104,10 @@ msgid ""
 "need to supply ``src/`` when specifying the file path, but if you do, "
 "VLOG will still interpret the path correctly."
 msgstr ""
+"``<file_name>`` 是相对于 TVM 存储库中的 ``src/`` 目录的 c++ 源文件的名称（例如 ``.cc``，而不是 ``.h``）。"
+"当指定文件路径时，你不需要提供 ``src/``，但如果这样做，VLOG 仍然可以正确解释路径。"
 
 #: ../../doc/docs/dev/how_to/debugging_tvm.rst:61
 msgid "Examples:"
 msgstr ""
-
+"示例："
