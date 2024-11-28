@@ -374,7 +374,7 @@ msgid ""
 msgstr ""
 ":py:class:`tvm.runtime.PackedFunc` 是类型擦除的函数接口，适用于生成的函数。"
 "runtime.PackedFunc 可以接受以下类型的参数和返回值：POD 类型（int, float）、"
-"字符串、runtime.PackedFunc、runtime.Module、runtime.NDArray，以及其他 runtime.Object 的子类。""
+"字符串、runtime.PackedFunc、runtime.Module、runtime.NDArray，以及其他 runtime.Object 的子类。"
 
 #: ../../doc/docs/arch/index.rst:147
 msgid ""

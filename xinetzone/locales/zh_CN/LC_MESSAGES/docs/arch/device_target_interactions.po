@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../doc/docs/arch/device_target_interactions.rst:22
 msgid "Device/Target Interactions"
-msgstr ""
+msgstr "Device/Target 交互"
 
 #: ../../doc/docs/arch/device_target_interactions.rst:24
 msgid ""
@@ -29,12 +29,14 @@ msgid ""
 "how the TVM framework interacts with specific device APIs, or who may "
 "want to implement support for a new API or new hardware."
 msgstr ""
+"本文档旨在为对理解 TVM 框架如何与特定设备 API 交互感兴趣的开发者提供指导，或者那些想要实现对新 API 或新硬件支持的开发者。"
 
 #: ../../doc/docs/arch/device_target_interactions.rst:28
 msgid ""
 "There are three main aspects that must be implemented for any new runtime"
 " environment."
 msgstr ""
+"为了构建任何新的运行时环境，必须落实三个主要方面。"
 
 #: ../../doc/docs/arch/device_target_interactions.rst:31
 msgid ""
@@ -44,6 +46,8 @@ msgid ""
 "available, number of threads, etc.) and for performing simple actions "
 "(e.g. copying memory from the host, or between buffers on the device)."
 msgstr ""
+":ref:`DeviceAPI <tvm-target-specific-device-api>` 类提供了特定设备的句柄，以及与之交互的 API。"
+"它定义了通用接口，用于查询设备参数（例如可用内存、线程数等），以及执行简单操作（例如从主机复制内存或在设备上的缓冲区之间复制）。"
 
 #: ../../doc/docs/arch/device_target_interactions.rst:38
 msgid ""
@@ -51,6 +55,7 @@ msgid ""
 "description of the device on which a function will run.  It is exposed "
 "both to the target code generators and to the optimization passes."
 msgstr ""
+":ref:`Target <tvm-target-specific-target>` 类包含了描述函数运行设备的说明。它既对目标代码生成器开放，也对优化过程开放。"
 
 #: ../../doc/docs/arch/device_target_interactions.rst:43
 msgid ""
@@ -58,6 +63,8 @@ msgid ""
 " a :ref:`Module <tvm-runtime-system-module>` consisting of one or more "
 ":ref:`PackedFunc <tvm-runtime-system-packed-func>`, from an IRModule."
 msgstr ""
+":ref:`目标代码生成器 <tvm-target-specific-codegen>` 构建"
+"由一个或多个 :ref:`PackedFunc <tvm-runtime-system-packed-func>` 组成的来自 IRModule 的 :ref:`模块 <tvm-runtime-system-module>`。""
 
 #: ../../doc/docs/arch/device_target_interactions.rst:51
 msgid "DeviceAPI"
