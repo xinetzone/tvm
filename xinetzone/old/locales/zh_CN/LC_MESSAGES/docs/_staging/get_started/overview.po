@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/get_started/overview.rst:19
+msgid "Overview"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:21
+msgid ""
+"Apache TVM is a machine learning compilation framework, following the "
+"principle of **Python-first development** and **universal deployment**. "
+"It takes in pre-trained machine learning models, compiles and generates "
+"deployable modules that can be embedded and run everywhere. Apache TVM "
+"also enables customizing optimization processes to introduce new "
+"optimizations, libraries, codegen and more."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:27
+msgid "Key Principle"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:29
+msgid ""
+"**Python-first**: the optimization process is fully customizable in "
+"Python. It is easy to customize the optimization pipeline without "
+"recompiling the TVM stack."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:31
+msgid ""
+"**Composable**: the optimization process is composable. It is easy to "
+"compose new optimization passes, libraries and codegen to the existing "
+"pipeline."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:35
+msgid "Key Goals"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:37
+msgid "**Optimize** performance of ML workloads, composing libraries and codegen."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:38
+msgid ""
+"**Deploy** ML workloads to a diverse set of new environments, including "
+"new runtime and new hardware."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:39
+msgid ""
+"**Continuously improve and customize** ML deployment pipeline in Python "
+"by quickly customizing library dispatching, bringing in customized "
+"operators and code generation."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:43
+msgid "Key Flow"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:45
+msgid ""
+"Here is a typical flow of using TVM to deploy a machine learning model. "
+"For a runnable example, please refer to :ref:`quick_start`"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:48
+msgid "**Import/construct an ML model**"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:50
+msgid ""
+"TVM supports importing models from various frameworks, such as PyTorch, "
+"TensorFlow for generic ML models. Meanwhile, we can create models "
+"directly using Relax frontend for scenarios of large language models."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:52
+msgid "**Perform composable optimization** transformations via ``pipelines``"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:54
+msgid ""
+"The pipeline encapsulates a collection of transformations to achieve two "
+"goals:"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:56
+msgid "**Graph Optimizations**: such as operator fusion, and layout rewrites."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:57
+msgid ""
+"**Tensor Program Optimization**: Map the operators to low-level "
+"implementations (both library or codegen)"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:61
+msgid ""
+"The two are goals but not the stages of the pipeline. The two "
+"optimizations are performed **at the same level**, or separately in two "
+"stages."
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:64
+msgid "**Build and universal deploy**"
+msgstr ""
+
+#: ../../doc/docs/_staging/get_started/overview.rst:66
+msgid ""
+"Apache TVM aims to provide a universal deployment solution to bring "
+"machine learning everywhere with every language with minimum runtime "
+"support. TVM runtime can work in non-Python environments, so it works on "
+"mobile, edge devices or even bare metal devices. Additionally, TVM "
+"runtime comes with native data structures, and can also have zero copy "
+"exchange with the existing ecosystem (PyTorch, TensorFlow, TensorRT, "
+"etc.) using DLPack support."
+msgstr ""
+

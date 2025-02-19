@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:21
+msgid "Tensor Program Abstraction"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:22
+msgid ""
+"Before we dive into the details of TensorIR, let's first introduce what "
+"is a primitive tensor function. Primitive tensor functions are functions "
+"that correspond to a single \"unit\" of computational operation. For "
+"example, a convolution operation can be a primitive tensor function, and "
+"a fused convolution + relu operation can also be a primitive tensor "
+"function. Usually, a typical abstraction for primitive tensor function "
+"implementation contains the following elements: multi-dimensional "
+"buffers, loop nests that drive the tensor computations, and finally, the "
+"compute statements themselves."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:46
+msgid "Key Elements of Tensor Programs"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:47
+msgid ""
+"The demonstrated primitive tensor function calculates the element-wise "
+"sum of two vectors. The function:"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:50
+msgid ""
+"Accepts three **multi-dimensional buffers** as parameters, and generates "
+"one **multi-dimensional buffer** as output."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:52
+msgid ""
+"Incorporates a solitary **loop nest** ``i`` that facilitates the "
+"computation."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:53
+msgid ""
+"Features a singular **compute statement** that calculates the element-"
+"wise sum of the two vectors."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:57
+msgid "Extra Structure in TensorIR"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:58
+msgid ""
+"Crucially, we are unable to execute arbitrary transformations on the "
+"program, as certain computations rely on the loop's sequence. "
+"Fortunately, the majority of primitive tensor functions we focus on "
+"possess favorable properties, such as independence among loop iterations."
+" For instance, the aforementioned program includes block and iteration "
+"annotations:"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:63
+msgid ""
+"The **block annotation** ``with T.block(\"C\")`` signifies that the block"
+" is the fundamental computation unit designated for scheduling. A block "
+"may encompass a single computation statement, multiple computation "
+"statements with loops, or opaque intrinsics such as Tensor Core "
+"instructions."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:67
+msgid ""
+"The **iteration annotation** ``T.axis.spatial``, indicating that variable"
+" ``vi`` is mapped to ``i``, and all iterations are independent."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/abstraction.rst:70
+msgid ""
+"While this information isn't crucial for *executing* the specific "
+"program, it proves useful when transforming the program. Consequently, we"
+" can confidently parallelize or reorder loops associated with ``vi``, "
+"provided we traverse all the index elements from 0 to 128."
+msgstr ""
+

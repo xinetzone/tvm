@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/install/from_source.rst:21
+msgid "Install from Source"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:22
+msgid ""
+"This page gives instructions on how to build and install the TVM package "
+"from source."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:26
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:31
+msgid "Step 1. Install Dependencies"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:33
+msgid "Apache TVM requires the following dependencies:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:35
+msgid "CMake (>= 3.24.0)"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:36
+msgid "LLVM (recommended >= 15)"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:37
+msgid "Git"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:41
+msgid "A recent C++ compiler supporting C++ 17, at the minimum"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:39
+msgid "GCC 7.1"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:40
+msgid "Clang 5.0"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:41
+msgid "Apple Clang 9.3"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:42
+msgid "Visual Studio 2019 (v16.7)"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:43
+msgid "Python (>= 3.8)"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:44
+msgid "(Optional) Conda (Strongly Recommended)"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:46
+msgid ""
+"To easiest way to manage dependency is via conda, which maintains a set "
+"of toolchains including LLVM across platforms. To create the environment "
+"of those build dependencies, one may simply use:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:65
+msgid "Step 2. Get Source from Github"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:66
+msgid "You can also choose to clone the source repo from github."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:73
+msgid ""
+"It's important to use the ``--recursive`` flag when cloning the TVM "
+"repository, which will automatically clone the submodules. If you forget "
+"to use this flag, you can manually clone the submodules by running ``git "
+"submodule update --init --recursive`` in the root directory of the TVM "
+"repository."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:78
+msgid "Step 3. Configure and Build"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:79
+msgid ""
+"Create a build directory and run CMake to configure the build. The "
+"following example shows how to build"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:88
+msgid ""
+"We want to specifically tweak the following flags by appending them to "
+"the end of the configuration file:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:112
+msgid ""
+"``HIDE_PRIVATE_SYMBOLS`` is a configuration option that enables the "
+"``-fvisibility=hidden`` flag. This flag helps prevent potential symbol "
+"conflicts between TVM and PyTorch. These conflicts arise due to the "
+"frameworks shipping LLVMs of different versions."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:116
+msgid ""
+"`CMAKE_BUILD_TYPE "
+"<https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html>`_ "
+"controls default compilation flag:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:118
+msgid "``Debug`` sets ``-O0 -g``"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:119
+msgid "``RelWithDebInfo`` sets ``-O2 -g -DNDEBUG`` (recommended)"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:120
+msgid "``Release`` sets ``-O3 -DNDEBUG``"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:122
+msgid ""
+"Once ``config.cmake`` is edited accordingly, kick off build with the "
+"commands below:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:129
+msgid ""
+"``nproc`` may not be available on all systems, please replace it with the"
+" number of cores on your system"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:131
+msgid ""
+"A success build should produce ``libtvm`` and ``libtvm_runtime`` under "
+"``build/`` directory."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:133
+msgid ""
+"Leaving the build environment ``tvm-build-venv``, there are two ways to "
+"install the successful build into your environment:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:135
+msgid "Install via environment variable"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:142
+msgid "Install via pip local project"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:152
+msgid "Step 4. Validate Installation"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:154
+msgid ""
+"Using a compiler infrastructure with multiple language bindings could be "
+"error-prone. Therefore, it is highly recommended to validate Apache TVM "
+"installation before use."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:157
+msgid ""
+"**Step 1. Locate TVM Python package.** The following command can help "
+"confirm that TVM is properly installed as a python package and provide "
+"the location of the TVM python package:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:164
+msgid ""
+"**Step 2. Confirm which TVM library is used.** When maintaining multiple "
+"build or installation of TVM, it becomes important to double check if the"
+" python package is using the proper ``libtvm`` with the following "
+"command:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:171
+msgid ""
+"**Step 3. Reflect TVM build option.** Sometimes when downstream "
+"application fails, it could likely be some mistakes with a wrong TVM "
+"commit, or wrong build flags. To find it out, the following commands will"
+" be helpful:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:189
+msgid ""
+"**Step 4. Check device detection.** Sometimes it could be helpful to "
+"understand if TVM could detect your device at all with the following "
+"commands:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:200
+msgid ""
+"Please note that the commands above verify the presence of an actual "
+"device on the local machine for the TVM runtime (not the compiler) to "
+"execute properly. However, TVM compiler can perform compilation tasks "
+"without requiring a physical device. As long as the necessary toolchain, "
+"such as NVCC, is available, TVM supports cross-compilation even in the "
+"absence of an actual device."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:204
+msgid "Step 5. Extra Python Dependencies"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:205
+msgid ""
+"Building from source does not ensure the installation of all necessary "
+"Python dependencies. The following commands can be used to install the "
+"extra Python dependencies:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:208
+msgid "Necessary dependencies:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:214
+msgid "If you want to use RPC Tracker"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:220
+msgid "If you want to use auto-tuning module"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:228
+msgid "Advanced Build Configuration"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:231
+msgid "Ccache"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:232
+msgid ""
+"On supported platforms, the `Ccache compiler wrapper "
+"<https://ccache.dev/>`_ may be helpful for reducing TVM's build time, "
+"especially when building with `cutlass "
+"<https://github.com/NVIDIA/cutlass>`_ or `flashinfer <https://github.com"
+"/flashinfer-ai/flashinfer>`_. There are several ways to enable CCache in "
+"TVM builds:"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:237
+msgid ""
+"Leave ``USE_CCACHE=AUTO`` in ``build/config.cmake``. CCache will be used "
+"if it is found."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:239
+msgid ""
+"Ccache's Masquerade mode. This is typically enabled during the Ccache "
+"installation process. To have TVM use Ccache in masquerade, simply "
+"specify the appropriate C/C++ compiler paths when configuring TVM's build"
+" system.  For example: ``cmake -DCMAKE_CXX_COMPILER=/usr/lib/ccache/c++ "
+"...``."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:244
+msgid ""
+"Ccache as CMake's C++ compiler prefix.  When configuring TVM's build "
+"system, set the CMake variable ``CMAKE_CXX_COMPILER_LAUNCHER`` to an "
+"appropriate value. E.g. ``cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache "
+"...``."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:250
+msgid "Building on Windows"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:251
+msgid ""
+"TVM support build via MSVC using cmake. You will need to obtain a visual "
+"studio compiler. The minimum required VS version is **Visual Studio "
+"Enterprise 2019** (NOTE: we test against GitHub Actions' `Windows 2019 "
+"Runner <https://github.com/actions/virtual-"
+"environments/blob/main/images/win/Windows2019-Readme.md>`_, so see that "
+"page for full details. We recommend following :ref:`install-dependencies`"
+" to obtain necessary dependencies and get an activated tvm-build "
+"environment. Then you can run the following command to build"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:264
+msgid ""
+"The above command generates the solution file under the build directory. "
+"You can then run the following command to build"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:273
+msgid "Building ROCm support"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:275
+msgid ""
+"Currently, ROCm is supported only on linux, so all the instructions are "
+"written with linux in mind."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:277
+msgid "Set ``set(USE_ROCM ON)``, set ROCM_PATH to the correct path."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:278
+msgid ""
+"You need to first install HIP runtime from ROCm. Make sure the "
+"installation system has ROCm installed in it."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:279
+msgid ""
+"Install latest stable version of LLVM (v6.0.1), and LLD, make sure "
+"``ld.lld`` is available via command line."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:284
+msgid "Enable C++ Tests"
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:285
+msgid ""
+"We use `Google Test <https://github.com/google/googletest>`_ to drive the"
+" C++ tests in TVM. The easiest way to install GTest is from source."
+msgstr ""
+
+#: ../../doc/docs/_staging/install/from_source.rst:298
+msgid ""
+"After installing GTest, the C++ tests can be built and started with "
+"``./tests/scripts/task_cpp_unittest.sh`` or just built with ``make "
+"cpptest``."
+msgstr ""
+

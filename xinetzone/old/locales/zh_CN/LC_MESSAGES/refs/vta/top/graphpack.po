@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/top/graphpack.rst:3
+msgid "``vta.top.graphpack``"
+msgstr ""
+
+#: of vta.top.graphpack:1
+msgid "A Relay implementation of graph packing."
+msgstr "一种 Relay 封装的实现。"
+
+#: of vta.top.graphpack.ExprDeviceAnnot:1
+msgid "Visitor to perform graph annotation on an AST."
+msgstr "访问者在 AST 上执行 graph annotation。"
+
+#: of vta.top.graphpack.ExprDeviceAnnot:4 vta.top.graphpack.graph_pack:4
+msgid "Parameters"
+msgstr ""
+
+#: of vta.top.graphpack.ExprDeviceAnnot:5
+msgid "start: int"
+msgstr ""
+
+#: of vta.top.graphpack.ExprDeviceAnnot:6
+msgid "the start location to mark run on vta (inclusive)"
+msgstr "在 vta 上标记运行的开始位置（包括）"
+
+#: of vta.top.graphpack.ExprDeviceAnnot:8
+msgid "end: int"
+msgstr ""
+
+#: of vta.top.graphpack.ExprDeviceAnnot:8
+msgid "the end location to mark run on vta (exclusive)"
+msgstr "在 vta 上标记运行的结束位置（排除）"
+
+#: of vta.top.graphpack.ExprDeviceAnnot:11 vta.top.graphpack.graph_pack:47
+msgid "Returns"
+msgstr ""
+
+#: of vta.top.graphpack.ExprDeviceAnnot:12
+msgid "None"
+msgstr ""
+
+#: of vta.top.graphpack.ExprDeviceAnnot.is_float_op:1
+msgid ""
+"check if this op belongs to a float op in general, float op's odtype is "
+"float; a special case is float->int cast, which follow this op sequence: "
+"multiply(float) -> round(float) -> clip(float) -> cast(int);"
+msgstr ""
+"检查 op 是否属于 float op，float op 的 odtype 为 float；特殊的情况是 float->int，它遵循以下 op "
+"序列：multiply(float) -> round(float) -> clip(float) -> cast(int)；"
+
+#: of vta.top.graphpack.ExprDeviceAnnot.visit_call:1
+#: vta.top.graphpack.ExprLocator.visit_call:1
+#: vta.top.graphpack.ExprPack.visit_call:1
+msgid "Visit the children."
+msgstr "访问子代。"
+
+#: of vta.top.graphpack.ExprLocator:1
+msgid "Visitor to locate op on an AST."
+msgstr "访问者在 AST 上定位 op。"
+
+#: of vta.top.graphpack.ExprPack:1
+msgid "Visitor to perform graph packing on an AST."
+msgstr "访问者在 AST 上执行 graph packing。"
+
+#: of vta.top.graphpack._channel_const_match:1
+msgid "Round the channel const variant if the value not divisible by cfactor_out"
+msgstr "如果该值不能被 cfactor_out 整除，则将通道 const 变量四舍五入"
+
+#: of vta.top.graphpack._const_shape_match:1
+msgid "Pad the constant if the shape[0] not divisible by cfactor_out."
+msgstr "如果 shape[0] 不能被 cfactor_out 整除，则填充常量。"
+
+#: of vta.top.graphpack._get_tensor_shape:1
+msgid "Get node shape."
+msgstr "获取节点形状。"
+
+#: of vta.top.graphpack._get_tensor_type:1
+msgid "Get node type."
+msgstr "获取节点类型。"
+
+#: of vta.top.graphpack._operator_idx_inc:1
+msgid "Increase operator index"
+msgstr "增加算子索引"
+
+#: of vta.top.graphpack._pack_batch_channel:1
+msgid "Pack the data channel dimension."
+msgstr "打包数据通道维度。"
+
+#: of vta.top.graphpack._pack_const:1
+msgid "Pack a constant parameter."
+msgstr "打包常量参数。"
+
+#: of vta.top.graphpack._pack_weight:1
+#: vta.top.graphpack._pack_weight_conv2d_transpose:1
+msgid "Pack the weight into packed format."
+msgstr "将权重包装成打包格式。"
+
+#: of vta.top.graphpack._to_shape:1
+msgid "convert shape into tuple."
+msgstr "将形状转换为元组。"
+
+#: of vta.top.graphpack._unpack_batch_channel:1
+msgid "Unpack the data channel dimension."
+msgstr "解包数据通道维度。"
+
+#: of vta.top.graphpack._weight_shape_match:1
+msgid "Pad the weight if the shape[0] not divisible by cfactor_out."
+msgstr "如果 shape[0] 不能被 cfactor_out 整除，则填充权重。"
+
+#: of vta.top.graphpack._weight_shape_match_transpose:1
+msgid "Pad the weight if the shape[1] not divisible by cfactor_out."
+msgstr "如果 shape[1] 不能被 cfactor_out 整除，则填充权重。"
+
+#: of vta.top.graphpack.get_subgraph:1
+msgid ""
+"We assume stop_name only appears once for simplicity. This constraint "
+"will be lifted in the future. bitpack_start and bitpack_end are both "
+"inclusive."
+msgstr "为了简单起见，假设 stop_name 只出现一次。这一限制将在未来解除。bitpack_start 和 bitpack_end 都包含在内。"
+
+#: of vta.top.graphpack.graph_pack:1
+msgid "Pack the graph into batch&channel packed format."
+msgstr "将 graph 打包成 batch&channel 打包格式。"
+
+#: of vta.top.graphpack.graph_pack:6 vta.top.graphpack.graph_pack:48
+msgid "expr"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:-1
+msgid "relay.Expr"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:6
+msgid "The input program."
+msgstr "输入程序。"
+
+#: of vta.top.graphpack.graph_pack:9
+msgid "bfactor"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:-1
+msgid "int"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:9
+msgid "The packing factor in batch"
+msgstr "batch 打包因子"
+
+#: of vta.top.graphpack.graph_pack:12
+msgid "cfactor"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:12
+msgid "The packing factor in channel"
+msgstr "channel 中的打包因子"
+
+#: of vta.top.graphpack.graph_pack:15
+msgid "weight_bits: int"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:15
+msgid "The bit-width of the weights."
+msgstr "权重的位宽。"
+
+#: of vta.top.graphpack.graph_pack:18
+msgid "start_name: str, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:18
+msgid "Start packing from certain known node when start_name_idx is None."
+msgstr "当 start_name_idx 为 None 时，从某个已知节点开始打包。"
+
+#: of vta.top.graphpack.graph_pack:21
+msgid "stop_name: str, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:21
+msgid "Stop packing from certain known node when stop_name_idx is None."
+msgstr "当 stop_name_idx 为 None 时，停止从某个已知节点打包。"
+
+#: of vta.top.graphpack.graph_pack:25
+msgid "start_name_idx: int, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:24
+msgid ""
+"When start_name_idx not None, start packing only when node name equal "
+"start_name and node idx equals start_name_idx."
+msgstr ""
+"当 start_name_idx 不为 None 时，只有当节点名称等于 start_name 且节点 idx 等于 start_name_idx"
+" 时才开始打包。"
+
+#: of vta.top.graphpack.graph_pack:29
+msgid "stop_name_idx: int, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:28
+msgid ""
+"When stop_name_idx not None, stop packing only when node name equal "
+"stop_name and node index equals stop_name_idx."
+msgstr "当 stop_name_idx 不为 None 时，当节点名称等于 stop_name 且节点索引等于 stop_name_idx 时，才停止打包。"
+
+#: of vta.top.graphpack.graph_pack:35
+msgid "count_meta:boolean, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:32
+msgid ""
+"When count_meta is False, the operator increase logic would not count the"
+" meta that have the type 'relay.expr.Constant', start_name_idx and "
+"stop_name_idx follow the index from 'expr.astext(show_meta_data=False)'. "
+"When count_meta is True, the operator increase logic would count the "
+"meta."
+msgstr ""
+"当 count_meta 为 False 时，算子增加逻辑将不会计数类型为 'relay.expr.Constant' "
+"的元数据，start_name_idx 和 stop_name_idx 跟在 "
+"'expr.astext(show_meta_data=False)' 的索引后面。当 count_meta 为 True "
+"时，算子增加逻辑将计数元数据。"
+
+#: of vta.top.graphpack.graph_pack:38
+msgid "device_annot: boolean, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:38
+msgid "if we want to annoate the device_type"
+msgstr "如果想注解 device_type"
+
+#: of vta.top.graphpack.graph_pack:41
+msgid "annot_start_name: str, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:41
+msgid "device annotation start node, from which we mark the nodes as `ext_dev`"
+msgstr "设备注解开始节点，从中将节点标记为 `ext_dev`"
+
+#: of vta.top.graphpack.graph_pack:44
+msgid "annot_end_name: str, optional"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:44
+msgid "device annotation end node, after which we mark the nodes as 'cpu'"
+msgstr "设备注解结束节点，之后将节点标记为 'cpu'"
+
+#: of vta.top.graphpack.graph_pack:-1
+msgid "Expr"
+msgstr ""
+
+#: of vta.top.graphpack.graph_pack:49
+msgid "The transformed expression."
+msgstr "变换后的表达式。"
+
+#: of vta.top.graphpack.run_opt_pass:1
+msgid "Exectue a relay pass."
+msgstr "执行 relay 传递。"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+

@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/testing/utils/index.rst:2
+msgid "vta.testing.utils"
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:8
+msgid "Test Utilities"
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:19:<autosummary>:1
+msgid ":py:obj:`run <vta.testing.utils.run>`\\ \\(run\\_func\\)"
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:25
+#: ../../doc/api/vta/testing/utils/index.rst:19:<autosummary>:1
+msgid "Run test function on all available env."
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:21
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:28
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/testing/utils/index.rst:29
+msgid "run_func : function(env, remote)"
+msgstr ""
+
