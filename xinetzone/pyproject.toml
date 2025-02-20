@@ -62,7 +62,6 @@ dev = [
   "decorator",
   "psutil",
   "onnx",
-  "setuptools",
 ]
 
 [build-system]

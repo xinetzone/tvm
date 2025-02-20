@@ -44,7 +44,7 @@ jobs:
       - name: 🔧 Build HTML
         run: |
           cd xinetzone
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pip setuptools
           pip install taolib[flows]
           invoke init
           invoke config
