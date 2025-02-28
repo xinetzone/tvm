@@ -1,0 +1,4795 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/tir.rst:19
+msgid "tvm.tir"
+msgstr ""
+
+#: of tvm.tir:1
+msgid "Namespace for Tensor-level IR"
+msgstr ""
+
+#: of tvm.tir.expr.Add:1
+msgid "Add node."
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:4
+#: tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:4
+#: tvm.tir.buffer.Buffer.access_ptr:7 tvm.tir.buffer.Buffer.offset_of:4
+#: tvm.tir.buffer.Buffer.vload:4 tvm.tir.buffer.Buffer.vstore:4
+#: tvm.tir.buffer.decl_buffer:9 tvm.tir.data_layout.BijectiveLayout:8
+#: tvm.tir.data_layout.BijectiveLayout.backward_index:4
+#: tvm.tir.data_layout.BijectiveLayout.backward_shape:4
+#: tvm.tir.data_layout.BijectiveLayout.forward_index:4
+#: tvm.tir.data_layout.BijectiveLayout.forward_shape:4
+#: tvm.tir.data_layout.Layout.factor_of:4 tvm.tir.data_layout.Layout.index_of:4
+#: tvm.tir.data_layout.bijective_layout:4 tvm.tir.data_layout.layout:4
+#: tvm.tir.expr.Add:4 tvm.tir.expr.And:4 tvm.tir.expr.Broadcast:4
+#: tvm.tir.expr.BufferLoad:4 tvm.tir.expr.Call:4 tvm.tir.expr.Cast:4
+#: tvm.tir.expr.CommReducer:4 tvm.tir.expr.Div:4 tvm.tir.expr.EQ:4
+#: tvm.tir.expr.FloatImm:4 tvm.tir.expr.FloorDiv:4 tvm.tir.expr.FloorMod:4
+#: tvm.tir.expr.GE:4 tvm.tir.expr.GT:4 tvm.tir.expr.IntImm:4
+#: tvm.tir.expr.IterVar:6 tvm.tir.expr.LE:4 tvm.tir.expr.LT:4
+#: tvm.tir.expr.Let:4 tvm.tir.expr.Max:4 tvm.tir.expr.Min:4 tvm.tir.expr.Mod:4
+#: tvm.tir.expr.Mul:4 tvm.tir.expr.NE:4 tvm.tir.expr.Not:4 tvm.tir.expr.Or:4
+#: tvm.tir.expr.ProducerLoad:4 tvm.tir.expr.Ramp:4 tvm.tir.expr.Reduce:4
+#: tvm.tir.expr.Select:11 tvm.tir.expr.Shuffle:4 tvm.tir.expr.SizeVar:5
+#: tvm.tir.expr.StringImm:4 tvm.tir.expr.Sub:4 tvm.tir.expr.Var:4
+#: tvm.tir.function.IndexMap:4 tvm.tir.function.IndexMap.from_func:4
+#: tvm.tir.function.IndexMap.from_func_with_separators:4
+#: tvm.tir.function.IndexMap.inverse:6
+#: tvm.tir.function.IndexMap.is_equivalent_to:4
+#: tvm.tir.function.IndexMap.map_indices:4
+#: tvm.tir.function.IndexMap.map_ndarray:4
+#: tvm.tir.function.IndexMap.map_shape:4
+#: tvm.tir.function.IndexMap.non_surjective_inverse:6
+#: tvm.tir.function.PrimFunc:4 tvm.tir.function.PrimFunc.specialize:4
+#: tvm.tir.function.PrimFunc.with_body:4 tvm.tir.function.TensorIntrin:4
+#: tvm.tir.function.TensorIntrin.get:4 tvm.tir.function.TensorIntrin.register:4
+#: tvm.tir.generic.add:4 tvm.tir.generic.multiply:4 tvm.tir.generic.subtract:4
+#: tvm.tir.op.TVMBackendAllocWorkspace:4 tvm.tir.op.TVMBackendFreeWorkspace:4
+#: tvm.tir.op.abs:4 tvm.tir.op.acos:4 tvm.tir.op.acosh:4
+#: tvm.tir.op.address_of:4 tvm.tir.op.all:5 tvm.tir.op.any:4 tvm.tir.op.asin:4
+#: tvm.tir.op.asinh:4 tvm.tir.op.assume:4 tvm.tir.op.atan:4 tvm.tir.op.atan2:4
+#: tvm.tir.op.atanh:4 tvm.tir.op.bitwise_and:4 tvm.tir.op.bitwise_not:4
+#: tvm.tir.op.bitwise_or:4 tvm.tir.op.bitwise_xor:4 tvm.tir.op.call_cpacked:7
+#: tvm.tir.op.call_cpacked_lowered:6 tvm.tir.op.call_extern:4
+#: tvm.tir.op.call_intrin:7 tvm.tir.op.call_llvm_intrin:4
+#: tvm.tir.op.call_llvm_pure_intrin:4 tvm.tir.op.call_packed:11
+#: tvm.tir.op.call_packed_lowered:9 tvm.tir.op.call_pure_extern:4
+#: tvm.tir.op.ceil:4 tvm.tir.op.ceildiv:4 tvm.tir.op.clz:4
+#: tvm.tir.op.comm_reducer:4 tvm.tir.op.comm_reducer.<locals>.reducer:4
+#: tvm.tir.op.copysign:4 tvm.tir.op.cos:4 tvm.tir.op.cosh:4
+#: tvm.tir.op.create_barriers:4 tvm.tir.op.div:4 tvm.tir.op.dp4a:4
+#: tvm.tir.op.erf:4 tvm.tir.op.exp:4 tvm.tir.op.exp10:4 tvm.tir.op.exp2:4
+#: tvm.tir.op.floor:4 tvm.tir.op.floordiv:4 tvm.tir.op.floormod:4
+#: tvm.tir.op.fmod:4 tvm.tir.op.get_active_lane_mask:7
+#: tvm.tir.op.get_vscale_expr:4 tvm.tir.op.hypot:4 tvm.tir.op.if_then_else:4
+#: tvm.tir.op.indexdiv:4 tvm.tir.op.indexmod:4 tvm.tir.op.infinity:4
+#: tvm.tir.op.isfinite:4 tvm.tir.op.isinf:4 tvm.tir.op.isnan:4
+#: tvm.tir.op.isnullptr:4 tvm.tir.op.ldexp:4 tvm.tir.op.likely:4
+#: tvm.tir.op.log:4 tvm.tir.op.log10:4 tvm.tir.op.log1p:4 tvm.tir.op.log2:4
+#: tvm.tir.op.lookup_param:4 tvm.tir.op.make_filled_simdgroup_matrix:4
+#: tvm.tir.op.max_value:4 tvm.tir.op.min_value:4 tvm.tir.op.mma_fill:4
+#: tvm.tir.op.mma_store:4 tvm.tir.op.nearbyint:11 tvm.tir.op.nextafter:4
+#: tvm.tir.op.popcount:4 tvm.tir.op.pow:4 tvm.tir.op.power:4
+#: tvm.tir.op.ptx_arrive_barrier:5 tvm.tir.op.ptx_arrive_barrier_expect_tx:6
+#: tvm.tir.op.ptx_cp_async:5 tvm.tir.op.ptx_cp_async_barrier:5
+#: tvm.tir.op.ptx_cp_async_bulk:5 tvm.tir.op.ptx_init_barrier_thread_count:5
+#: tvm.tir.op.ptx_ldmatrix:5 tvm.tir.op.ptx_mma:5 tvm.tir.op.ptx_mma_sp:5
+#: tvm.tir.op.ptx_wait_barrier:5 tvm.tir.op.ptx_wait_group:5
+#: tvm.tir.op.q_multiply_shift:11 tvm.tir.op.q_multiply_shift_per_axis:4
+#: tvm.tir.op.reinterpret:4 tvm.tir.op.ret:4 tvm.tir.op.round:4
+#: tvm.tir.op.rsqrt:4 tvm.tir.op.shift_left:4 tvm.tir.op.shift_right:4
+#: tvm.tir.op.sigmoid:4 tvm.tir.op.simdgroup_load:4
+#: tvm.tir.op.simdgroup_multiply_accumulate:5 tvm.tir.op.simdgroup_store:4
+#: tvm.tir.op.sin:4 tvm.tir.op.sinh:4 tvm.tir.op.sqrt:4 tvm.tir.op.tan:4
+#: tvm.tir.op.tanh:4 tvm.tir.op.trace:9 tvm.tir.op.trunc:7
+#: tvm.tir.op.truncdiv:4 tvm.tir.op.truncmod:4 tvm.tir.op.tvm_access_ptr:4
+#: tvm.tir.op.tvm_bmma_sync:4 tvm.tir.op.tvm_fill_fragment:4
+#: tvm.tir.op.tvm_load_matrix_sync:4 tvm.tir.op.tvm_mma_sync:4
+#: tvm.tir.op.tvm_stack_alloca:4 tvm.tir.op.tvm_stack_make_array:4
+#: tvm.tir.op.tvm_stack_make_shape:4 tvm.tir.op.tvm_store_matrix_sync:4
+#: tvm.tir.op.tvm_struct_get:4 tvm.tir.op.tvm_struct_set:4
+#: tvm.tir.op.tvm_thread_allreduce:4 tvm.tir.op.tvm_tuple:4
+#: tvm.tir.op.type_annotation:4 tvm.tir.op.vectorcombine:4
+#: tvm.tir.op.vectorhigh:4 tvm.tir.op.vectorlow:4 tvm.tir.stmt.Allocate:4
+#: tvm.tir.stmt.AllocateConst:4 tvm.tir.stmt.AssertStmt:4
+#: tvm.tir.stmt.AttrStmt:4 tvm.tir.stmt.Block:4 tvm.tir.stmt.BlockRealize:4
+#: tvm.tir.stmt.BufferRealize:4 tvm.tir.stmt.BufferRegion:4
+#: tvm.tir.stmt.BufferStore:4 tvm.tir.stmt.DeclBuffer:4 tvm.tir.stmt.Evaluate:4
+#: tvm.tir.stmt.For:4 tvm.tir.stmt.IfThenElse:4 tvm.tir.stmt.LetStmt:4
+#: tvm.tir.stmt.MatchBufferRegion:4 tvm.tir.stmt.Prefetch:4
+#: tvm.tir.stmt.ProducerRealize:4 tvm.tir.stmt.ProducerStore:4
+#: tvm.tir.stmt.SeqStmt:4 tvm.tir.stmt.While:4 tvm.tir.stmt.stmt_list:4
+#: tvm.tir.stmt.stmt_seq:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.tir.expr.Add:5 tvm.tir.expr.And:5 tvm.tir.expr.Div:5
+#: tvm.tir.expr.EQ:5 tvm.tir.expr.FloorDiv:5 tvm.tir.expr.FloorMod:5
+#: tvm.tir.expr.GE:5 tvm.tir.expr.GT:5 tvm.tir.expr.LE:5 tvm.tir.expr.LT:5
+#: tvm.tir.expr.Max:5 tvm.tir.expr.Min:5 tvm.tir.expr.Mod:5 tvm.tir.expr.Mul:5
+#: tvm.tir.expr.NE:5 tvm.tir.expr.Not:5 tvm.tir.expr.Or:5 tvm.tir.expr.Sub:5
+#: tvm.tir.op.div:5 tvm.tir.op.floordiv:5 tvm.tir.op.floormod:5
+#: tvm.tir.op.indexdiv:5 tvm.tir.op.indexmod:5
+#: tvm.tir.op.simdgroup_multiply_accumulate:12 tvm.tir.op.truncdiv:5
+#: tvm.tir.op.truncmod:5
+msgid "a"
+msgstr ""
+
+#: of tvm.tir.expr.Add:-1 tvm.tir.expr.And:-1 tvm.tir.expr.Broadcast:-1
+#: tvm.tir.expr.Cast:-1 tvm.tir.expr.Div:-1 tvm.tir.expr.EQ:-1
+#: tvm.tir.expr.FloorDiv:-1 tvm.tir.expr.FloorMod:-1 tvm.tir.expr.GE:-1
+#: tvm.tir.expr.GT:-1 tvm.tir.expr.LE:-1 tvm.tir.expr.LT:-1 tvm.tir.expr.Let:-1
+#: tvm.tir.expr.Max:-1 tvm.tir.expr.Min:-1 tvm.tir.expr.Mod:-1
+#: tvm.tir.expr.Mul:-1 tvm.tir.expr.NE:-1 tvm.tir.expr.Not:-1
+#: tvm.tir.expr.Or:-1 tvm.tir.expr.Ramp:-1 tvm.tir.expr.Reduce:-1
+#: tvm.tir.expr.Select:-1 tvm.tir.expr.Sub:-1
+#: tvm.tir.op.TVMBackendAllocWorkspace:-1 tvm.tir.op.TVMBackendFreeWorkspace:-1
+#: tvm.tir.op.abs:-1 tvm.tir.op.acos:-1 tvm.tir.op.acosh:-1
+#: tvm.tir.op.address_of:-1 tvm.tir.op.asin:-1 tvm.tir.op.asinh:-1
+#: tvm.tir.op.assume:-1 tvm.tir.op.atan:-1 tvm.tir.op.atan2:-1
+#: tvm.tir.op.atanh:-1 tvm.tir.op.bitwise_and:-1 tvm.tir.op.bitwise_not:-1
+#: tvm.tir.op.bitwise_or:-1 tvm.tir.op.bitwise_xor:-1
+#: tvm.tir.op.call_cpacked:-1 tvm.tir.op.call_cpacked_lowered:-1
+#: tvm.tir.op.call_extern:-1 tvm.tir.op.call_intrin:-1
+#: tvm.tir.op.call_llvm_intrin:-1 tvm.tir.op.call_llvm_pure_intrin:-1
+#: tvm.tir.op.call_packed:-1 tvm.tir.op.call_packed_lowered:-1
+#: tvm.tir.op.call_pure_extern:-1 tvm.tir.op.call_tir:-1 tvm.tir.op.ceil:-1
+#: tvm.tir.op.clz:-1 tvm.tir.op.comm_reducer.<locals>.reducer:-1
+#: tvm.tir.op.copysign:-1 tvm.tir.op.cos:-1 tvm.tir.op.cosh:-1
+#: tvm.tir.op.create_barriers:-1 tvm.tir.op.div:-1 tvm.tir.op.dp4a:-1
+#: tvm.tir.op.end_profile_intrinsic:-1 tvm.tir.op.erf:-1 tvm.tir.op.exp:-1
+#: tvm.tir.op.exp10:-1 tvm.tir.op.exp2:-1 tvm.tir.op.floor:-1
+#: tvm.tir.op.floordiv:-1 tvm.tir.op.floormod:-1 tvm.tir.op.fmod:-1
+#: tvm.tir.op.get_active_lane_mask:-1 tvm.tir.op.hypot:-1
+#: tvm.tir.op.if_then_else:-1 tvm.tir.op.indexdiv:-1 tvm.tir.op.indexmod:-1
+#: tvm.tir.op.isfinite:-1 tvm.tir.op.isinf:-1 tvm.tir.op.isnan:-1
+#: tvm.tir.op.isnullptr:-1 tvm.tir.op.ldexp:-1 tvm.tir.op.likely:-1
+#: tvm.tir.op.log:-1 tvm.tir.op.log10:-1 tvm.tir.op.log1p:-1 tvm.tir.op.log2:-1
+#: tvm.tir.op.lookup_param:-1 tvm.tir.op.make_filled_simdgroup_matrix:-1
+#: tvm.tir.op.mma_fill:-1 tvm.tir.op.mma_store:-1 tvm.tir.op.nearbyint:-1
+#: tvm.tir.op.nextafter:-1 tvm.tir.op.popcount:-1 tvm.tir.op.pow:-1
+#: tvm.tir.op.power:-1 tvm.tir.op.ptx_arrive_barrier:-1
+#: tvm.tir.op.ptx_arrive_barrier_expect_tx:-1 tvm.tir.op.ptx_commit_group:-1
+#: tvm.tir.op.ptx_cp_async:-1 tvm.tir.op.ptx_cp_async_barrier:-1
+#: tvm.tir.op.ptx_cp_async_bulk:-1 tvm.tir.op.ptx_init_barrier_thread_count:-1
+#: tvm.tir.op.ptx_ldmatrix:-1 tvm.tir.op.ptx_mma:-1 tvm.tir.op.ptx_mma_sp:-1
+#: tvm.tir.op.ptx_wait_barrier:-1 tvm.tir.op.ptx_wait_group:-1
+#: tvm.tir.op.q_multiply_shift:-1 tvm.tir.op.q_multiply_shift_per_axis:-1
+#: tvm.tir.op.reinterpret:-1 tvm.tir.op.ret:-1 tvm.tir.op.round:-1
+#: tvm.tir.op.rsqrt:-1 tvm.tir.op.shift_left:-1 tvm.tir.op.shift_right:-1
+#: tvm.tir.op.sigmoid:-1 tvm.tir.op.simdgroup_load:-1
+#: tvm.tir.op.simdgroup_multiply_accumulate:-1 tvm.tir.op.simdgroup_store:-1
+#: tvm.tir.op.sin:-1 tvm.tir.op.sinh:-1 tvm.tir.op.sqrt:-1
+#: tvm.tir.op.start_profile_intrinsic:-1 tvm.tir.op.tan:-1 tvm.tir.op.tanh:-1
+#: tvm.tir.op.trace:-1 tvm.tir.op.trunc:-1 tvm.tir.op.truncdiv:-1
+#: tvm.tir.op.truncmod:-1 tvm.tir.op.tvm_access_ptr:-1
+#: tvm.tir.op.tvm_bmma_sync:-1 tvm.tir.op.tvm_check_return:-1
+#: tvm.tir.op.tvm_fill_fragment:-1 tvm.tir.op.tvm_load_matrix_sync:-1
+#: tvm.tir.op.tvm_mma_sync:-1 tvm.tir.op.tvm_stack_alloca:-1
+#: tvm.tir.op.tvm_stack_make_array:-1 tvm.tir.op.tvm_stack_make_shape:-1
+#: tvm.tir.op.tvm_store_matrix_sync:-1 tvm.tir.op.tvm_struct_get:-1
+#: tvm.tir.op.tvm_struct_set:-1 tvm.tir.op.tvm_thread_allreduce:-1
+#: tvm.tir.op.tvm_throw_last_error:-1 tvm.tir.op.tvm_tuple:-1
+#: tvm.tir.op.type_annotation:-1 tvm.tir.op.undef:-1
+#: tvm.tir.op.vectorcombine:-1 tvm.tir.op.vectorhigh:-1 tvm.tir.op.vectorlow:-1
+#: tvm.tir.stmt.Allocate:-1 tvm.tir.stmt.AssertStmt:-1 tvm.tir.stmt.AttrStmt:-1
+#: tvm.tir.stmt.BufferRealize:-1 tvm.tir.stmt.BufferStore:-1
+#: tvm.tir.stmt.Evaluate:-1 tvm.tir.stmt.For:-1 tvm.tir.stmt.IfThenElse:-1
+#: tvm.tir.stmt.LetStmt:-1 tvm.tir.stmt.ProducerRealize:-1
+#: tvm.tir.stmt.ProducerStore:-1 tvm.tir.stmt.While:-1
+msgid "PrimExpr"
+msgstr ""
+
+#: of tvm.tir.expr.Add:6 tvm.tir.expr.And:6 tvm.tir.expr.Div:6
+#: tvm.tir.expr.EQ:6 tvm.tir.expr.FloorDiv:6 tvm.tir.expr.FloorMod:6
+#: tvm.tir.expr.GE:6 tvm.tir.expr.GT:6 tvm.tir.expr.LE:6 tvm.tir.expr.LT:6
+#: tvm.tir.expr.Max:6 tvm.tir.expr.Min:6 tvm.tir.expr.Mod:6 tvm.tir.expr.Mul:6
+#: tvm.tir.expr.NE:6 tvm.tir.expr.Or:6 tvm.tir.expr.Sub:6
+msgid "The left hand operand."
+msgstr ""
+
+#: of tvm.tir.expr.Add:8 tvm.tir.expr.And:8 tvm.tir.expr.Div:8
+#: tvm.tir.expr.EQ:8 tvm.tir.expr.FloorDiv:8 tvm.tir.expr.FloorMod:8
+#: tvm.tir.expr.GE:8 tvm.tir.expr.GT:8 tvm.tir.expr.LE:8 tvm.tir.expr.LT:8
+#: tvm.tir.expr.Max:8 tvm.tir.expr.Min:8 tvm.tir.expr.Mod:8 tvm.tir.expr.Mul:8
+#: tvm.tir.expr.NE:8 tvm.tir.expr.Or:8 tvm.tir.expr.Sub:8 tvm.tir.op.div:8
+#: tvm.tir.op.floordiv:8 tvm.tir.op.floormod:8 tvm.tir.op.indexdiv:8
+#: tvm.tir.op.indexmod:8 tvm.tir.op.simdgroup_multiply_accumulate:18
+#: tvm.tir.op.truncdiv:8 tvm.tir.op.truncmod:8
+msgid "b"
+msgstr ""
+
+#: of tvm.tir.expr.Add:9 tvm.tir.expr.And:9 tvm.tir.expr.Div:9
+#: tvm.tir.expr.EQ:9 tvm.tir.expr.FloorDiv:9 tvm.tir.expr.FloorMod:9
+#: tvm.tir.expr.GE:9 tvm.tir.expr.GT:9 tvm.tir.expr.LE:9 tvm.tir.expr.LT:9
+#: tvm.tir.expr.Max:9 tvm.tir.expr.Min:9 tvm.tir.expr.Mod:9 tvm.tir.expr.Mul:9
+#: tvm.tir.expr.NE:9 tvm.tir.expr.Or:9 tvm.tir.expr.Sub:9
+msgid "The right hand operand."
+msgstr ""
+
+#: of tvm.tir.expr.Add:11 tvm.tir.expr.And:11 tvm.tir.expr.Any:3
+#: tvm.tir.expr.Broadcast:11 tvm.tir.expr.BufferLoad:11 tvm.tir.expr.Call:15
+#: tvm.tir.expr.Cast:11 tvm.tir.expr.CommReducer:17 tvm.tir.expr.Div:11
+#: tvm.tir.expr.EQ:11 tvm.tir.expr.FloatImm:11 tvm.tir.expr.FloorDiv:11
+#: tvm.tir.expr.FloorMod:11 tvm.tir.expr.GE:11 tvm.tir.expr.GT:11
+#: tvm.tir.expr.IntImm:11 tvm.tir.expr.IterVar:19 tvm.tir.expr.LE:11
+#: tvm.tir.expr.LT:11 tvm.tir.expr.Let:14 tvm.tir.expr.Max:11
+#: tvm.tir.expr.Min:11 tvm.tir.expr.Mod:11 tvm.tir.expr.Mul:11
+#: tvm.tir.expr.NE:11 tvm.tir.expr.Not:8 tvm.tir.expr.Or:11
+#: tvm.tir.expr.ProducerLoad:11 tvm.tir.expr.Ramp:14 tvm.tir.expr.Reduce:23
+#: tvm.tir.expr.Select:21 tvm.tir.expr.Shuffle:11 tvm.tir.expr.SizeVar:12
+#: tvm.tir.expr.StringImm:8 tvm.tir.expr.Sub:11 tvm.tir.expr.Var:11
+#: tvm.tir.function.PrimFunc:20 tvm.tir.function.PrimFunc.with_body:8
+#: tvm.tir.generic.add:9 tvm.tir.generic.multiply:9 tvm.tir.generic.subtract:9
+#: tvm.tir.op.abs:8 tvm.tir.op.address_of:8 tvm.tir.op.all:9 tvm.tir.op.any:8
+#: tvm.tir.op.bitwise_and:11 tvm.tir.op.bitwise_not:8 tvm.tir.op.bitwise_or:11
+#: tvm.tir.op.bitwise_xor:11 tvm.tir.op.call_cpacked:11
+#: tvm.tir.op.call_cpacked_lowered:10 tvm.tir.op.call_extern:14
+#: tvm.tir.op.call_intrin:17 tvm.tir.op.call_llvm_intrin:14
+#: tvm.tir.op.call_llvm_pure_intrin:14 tvm.tir.op.call_packed:15
+#: tvm.tir.op.call_packed_lowered:13 tvm.tir.op.call_pure_extern:14
+#: tvm.tir.op.ceil:8 tvm.tir.op.ceildiv:9 tvm.tir.op.div:11 tvm.tir.op.floor:8
+#: tvm.tir.op.floordiv:11 tvm.tir.op.floormod:11 tvm.tir.op.if_then_else:14
+#: tvm.tir.op.indexdiv:11 tvm.tir.op.indexmod:11 tvm.tir.op.infinity:8
+#: tvm.tir.op.isfinite:8 tvm.tir.op.isinf:8 tvm.tir.op.isnan:8
+#: tvm.tir.op.isnullptr:8 tvm.tir.op.likely:9 tvm.tir.op.lookup_param:8
+#: tvm.tir.op.max_value:8 tvm.tir.op.min_value:8 tvm.tir.op.nearbyint:15
+#: tvm.tir.op.pow:11 tvm.tir.op.power:11 tvm.tir.op.reinterpret:11
+#: tvm.tir.op.ret:8 tvm.tir.op.round:8 tvm.tir.op.trunc:11
+#: tvm.tir.op.truncdiv:11 tvm.tir.op.truncmod:11 tvm.tir.stmt.Allocate:23
+#: tvm.tir.stmt.AllocateConst:26 tvm.tir.stmt.AssertStmt:14
+#: tvm.tir.stmt.AttrStmt:17 tvm.tir.stmt.Block:32 tvm.tir.stmt.BlockRealize:14
+#: tvm.tir.stmt.BufferRealize:17 tvm.tir.stmt.BufferStore:19
+#: tvm.tir.stmt.Evaluate:8 tvm.tir.stmt.For:27 tvm.tir.stmt.IfThenElse:14
+#: tvm.tir.stmt.LetStmt:14 tvm.tir.stmt.Prefetch:11
+#: tvm.tir.stmt.ProducerRealize:20 tvm.tir.stmt.ProducerStore:14
+#: tvm.tir.stmt.SeqStmt:8 tvm.tir.stmt.While:11
+msgid "span"
+msgstr ""
+
+#: of tvm.tir.expr.Add:-1 tvm.tir.expr.And:-1 tvm.tir.expr.Any:-1
+#: tvm.tir.expr.Broadcast:-1 tvm.tir.expr.BufferLoad:-1 tvm.tir.expr.Call:-1
+#: tvm.tir.expr.Cast:-1 tvm.tir.expr.CommReducer:-1 tvm.tir.expr.Div:-1
+#: tvm.tir.expr.EQ:-1 tvm.tir.expr.FloatImm:-1 tvm.tir.expr.FloorDiv:-1
+#: tvm.tir.expr.FloorMod:-1 tvm.tir.expr.GE:-1 tvm.tir.expr.GT:-1
+#: tvm.tir.expr.IntImm:-1 tvm.tir.expr.IterVar:-1 tvm.tir.expr.LE:-1
+#: tvm.tir.expr.LT:-1 tvm.tir.expr.Let:-1 tvm.tir.expr.Max:-1
+#: tvm.tir.expr.Min:-1 tvm.tir.expr.Mod:-1 tvm.tir.expr.Mul:-1
+#: tvm.tir.expr.NE:-1 tvm.tir.expr.Not:-1 tvm.tir.expr.Or:-1
+#: tvm.tir.expr.ProducerLoad:-1 tvm.tir.expr.Ramp:-1 tvm.tir.expr.Reduce:-1
+#: tvm.tir.expr.Select:-1 tvm.tir.expr.Shuffle:-1 tvm.tir.expr.SizeVar:-1
+#: tvm.tir.expr.StringImm:-1 tvm.tir.expr.Sub:-1 tvm.tir.expr.Var:-1
+#: tvm.tir.function.PrimFunc:-1 tvm.tir.function.PrimFunc.with_body:-1
+#: tvm.tir.generic.add:-1 tvm.tir.generic.multiply:-1
+#: tvm.tir.generic.subtract:-1 tvm.tir.op.abs:-1 tvm.tir.op.address_of:-1
+#: tvm.tir.op.all:-1 tvm.tir.op.any:-1 tvm.tir.op.bitwise_and:-1
+#: tvm.tir.op.bitwise_not:-1 tvm.tir.op.bitwise_or:-1 tvm.tir.op.bitwise_xor:-1
+#: tvm.tir.op.call_cpacked:-1 tvm.tir.op.call_cpacked_lowered:-1
+#: tvm.tir.op.call_extern:-1 tvm.tir.op.call_intrin:-1
+#: tvm.tir.op.call_llvm_intrin:-1 tvm.tir.op.call_llvm_pure_intrin:-1
+#: tvm.tir.op.call_packed:-1 tvm.tir.op.call_packed_lowered:-1
+#: tvm.tir.op.call_pure_extern:-1 tvm.tir.op.ceil:-1 tvm.tir.op.ceildiv:-1
+#: tvm.tir.op.div:-1 tvm.tir.op.floor:-1 tvm.tir.op.floordiv:-1
+#: tvm.tir.op.floormod:-1 tvm.tir.op.if_then_else:-1 tvm.tir.op.indexdiv:-1
+#: tvm.tir.op.indexmod:-1 tvm.tir.op.infinity:-1 tvm.tir.op.isfinite:-1
+#: tvm.tir.op.isinf:-1 tvm.tir.op.isnan:-1 tvm.tir.op.isnullptr:-1
+#: tvm.tir.op.likely:-1 tvm.tir.op.lookup_param:-1 tvm.tir.op.max_value:-1
+#: tvm.tir.op.min_value:-1 tvm.tir.op.nearbyint:-1 tvm.tir.op.pow:-1
+#: tvm.tir.op.power:-1 tvm.tir.op.reinterpret:-1 tvm.tir.op.ret:-1
+#: tvm.tir.op.round:-1 tvm.tir.op.trunc:-1 tvm.tir.op.truncdiv:-1
+#: tvm.tir.op.truncmod:-1 tvm.tir.stmt.Allocate:-1
+#: tvm.tir.stmt.AllocateConst:-1 tvm.tir.stmt.AssertStmt:-1
+#: tvm.tir.stmt.AttrStmt:-1 tvm.tir.stmt.Block:-1 tvm.tir.stmt.BlockRealize:-1
+#: tvm.tir.stmt.BufferRealize:-1 tvm.tir.stmt.BufferStore:-1
+#: tvm.tir.stmt.Evaluate:-1 tvm.tir.stmt.For:-1 tvm.tir.stmt.IfThenElse:-1
+#: tvm.tir.stmt.LetStmt:-1 tvm.tir.stmt.Prefetch:-1
+#: tvm.tir.stmt.ProducerRealize:-1 tvm.tir.stmt.ProducerStore:-1
+#: tvm.tir.stmt.SeqStmt:-1 tvm.tir.stmt.While:-1
+msgid "Optional[Span]"
+msgstr ""
+
+#: of tvm.tir.expr.Add:12 tvm.tir.expr.And:12 tvm.tir.expr.Any:4
+#: tvm.tir.expr.Broadcast:12 tvm.tir.expr.BufferLoad:12 tvm.tir.expr.Call:16
+#: tvm.tir.expr.Cast:12 tvm.tir.expr.CommReducer:18 tvm.tir.expr.Div:12
+#: tvm.tir.expr.EQ:12 tvm.tir.expr.FloatImm:12 tvm.tir.expr.FloorDiv:12
+#: tvm.tir.expr.FloorMod:12 tvm.tir.expr.GE:12 tvm.tir.expr.GT:12
+#: tvm.tir.expr.IntImm:12 tvm.tir.expr.IterVar:20 tvm.tir.expr.LE:12
+#: tvm.tir.expr.LT:12 tvm.tir.expr.Let:15 tvm.tir.expr.Max:12
+#: tvm.tir.expr.Min:12 tvm.tir.expr.Mod:12 tvm.tir.expr.Mul:12
+#: tvm.tir.expr.NE:12 tvm.tir.expr.Not:9 tvm.tir.expr.Or:12
+#: tvm.tir.expr.ProducerLoad:12 tvm.tir.expr.Ramp:15 tvm.tir.expr.Reduce:24
+#: tvm.tir.expr.Select:22 tvm.tir.expr.Shuffle:12 tvm.tir.expr.SizeVar:13
+#: tvm.tir.expr.StringImm:9 tvm.tir.expr.Sub:12 tvm.tir.expr.Var:12
+msgid "The location of this expression in the source code."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/tir.rst of tvm.tir.function.IndexMap
+#: tvm.tir.function.PrimFunc tvm.tir.function.TensorIntrin
+msgid "参数"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:1
+msgid "Allocate node."
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:5 tvm.tir.stmt.AllocateConst:5
+msgid "buffer_var"
+msgstr ""
+
+#: of tvm.tir.expr.Let:-1 tvm.tir.op.TVMBackendFreeWorkspace:-1
+#: tvm.tir.op.mma_fill:-1 tvm.tir.op.mma_store:-1 tvm.tir.op.ptx_cp_async:-1
+#: tvm.tir.op.ptx_cp_async_bulk:-1 tvm.tir.op.ptx_ldmatrix:-1
+#: tvm.tir.op.ptx_mma:-1 tvm.tir.op.ptx_mma_sp:-1
+#: tvm.tir.op.simdgroup_multiply_accumulate:-1 tvm.tir.op.tvm_bmma_sync:-1
+#: tvm.tir.op.tvm_fill_fragment:-1 tvm.tir.op.tvm_load_matrix_sync:-1
+#: tvm.tir.op.tvm_mma_sync:-1 tvm.tir.op.tvm_store_matrix_sync:-1
+#: tvm.tir.stmt.Allocate:-1 tvm.tir.stmt.AllocateConst:-1 tvm.tir.stmt.For:-1
+#: tvm.tir.stmt.LetStmt:-1
+msgid "Var"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:6 tvm.tir.stmt.AllocateConst:6
+msgid "The buffer variable."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:8 tvm.tir.buffer.decl_buffer:13
+#: tvm.tir.data_layout.layout:14 tvm.tir.expr.Call:5 tvm.tir.expr.Cast:5
+#: tvm.tir.expr.FloatImm:5 tvm.tir.expr.IntImm:5 tvm.tir.expr.SizeVar:9
+#: tvm.tir.expr.Var:8 tvm.tir.op.call_extern:5 tvm.tir.op.call_intrin:8
+#: tvm.tir.op.call_llvm_intrin:5 tvm.tir.op.call_llvm_pure_intrin:5
+#: tvm.tir.op.call_pure_extern:5 tvm.tir.op.get_active_lane_mask:8
+#: tvm.tir.op.get_vscale_expr:5 tvm.tir.op.infinity:5 tvm.tir.op.max_value:5
+#: tvm.tir.op.min_value:5 tvm.tir.op.mma_fill:5 tvm.tir.op.mma_store:5
+#: tvm.tir.op.ptx_cp_async:6 tvm.tir.op.ptx_cp_async_bulk:6
+#: tvm.tir.op.ptx_ldmatrix:6 tvm.tir.op.ptx_mma:6 tvm.tir.op.ptx_mma_sp:6
+#: tvm.tir.op.reinterpret:5 tvm.tir.op.tvm_struct_get:5
+#: tvm.tir.op.type_annotation:5 tvm.tir.op.vectorhigh:5 tvm.tir.op.vectorlow:5
+#: tvm.tir.stmt.Allocate:8 tvm.tir.stmt.AllocateConst:8
+msgid "dtype"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:-1 tvm.tir.data_layout.Layout.factor_of:-1
+#: tvm.tir.data_layout.Layout.index_of:-1 tvm.tir.data_layout.layout:-1
+#: tvm.tir.expr.Call:-1 tvm.tir.expr.Cast:-1 tvm.tir.expr.FloatImm:-1
+#: tvm.tir.expr.IntImm:-1 tvm.tir.expr.IterVar:-1 tvm.tir.expr.SizeVar:-1
+#: tvm.tir.expr.StringImm:-1 tvm.tir.expr.Var:-1
+#: tvm.tir.function.IndexMap.from_func_with_separators:-1
+#: tvm.tir.function.TensorIntrin.get:-1
+#: tvm.tir.function.TensorIntrin.register:-1 tvm.tir.op.call_extern:-1
+#: tvm.tir.op.call_intrin:-1 tvm.tir.op.call_llvm_intrin:-1
+#: tvm.tir.op.call_llvm_pure_intrin:-1 tvm.tir.op.call_pure_extern:-1
+#: tvm.tir.op.get_active_lane_mask:-1 tvm.tir.op.infinity:-1
+#: tvm.tir.op.lookup_param:-1 tvm.tir.op.max_value:-1 tvm.tir.op.min_value:-1
+#: tvm.tir.op.mma_fill:-1 tvm.tir.op.mma_store:-1 tvm.tir.op.ptx_cp_async:-1
+#: tvm.tir.op.ptx_cp_async_bulk:-1 tvm.tir.op.ptx_ldmatrix:-1
+#: tvm.tir.op.ptx_mma:-1 tvm.tir.op.ptx_mma_sp:-1 tvm.tir.op.reinterpret:-1
+#: tvm.tir.op.tvm_stack_alloca:-1 tvm.tir.op.tvm_struct_get:-1
+#: tvm.tir.op.vectorhigh:-1 tvm.tir.op.vectorlow:-1 tvm.tir.stmt.Allocate:-1
+#: tvm.tir.stmt.AllocateConst:-1 tvm.tir.stmt.AttrStmt:-1
+#: tvm.tir.stmt.ProducerRealize:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:14 tvm.tir.stmt.Allocate:9
+#: tvm.tir.stmt.AllocateConst:9
+msgid "The data type of the buffer."
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:11 tvm.tir.stmt.AllocateConst:11
+msgid "extents"
+msgstr ""
+
+#: of tvm.tir.expr.Call:-1 tvm.tir.expr.Reduce:-1 tvm.tir.stmt.Allocate:-1
+#: tvm.tir.stmt.AllocateConst:-1 tvm.tir.stmt.ProducerStore:-1
+msgid "list of Expr"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:12 tvm.tir.stmt.AllocateConst:12
+msgid "The extents of the allocate"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:14 tvm.tir.expr.Select:12 tvm.tir.stmt.Allocate:14
+#: tvm.tir.stmt.AssertStmt:5 tvm.tir.stmt.BufferRealize:11
+#: tvm.tir.stmt.IfThenElse:5 tvm.tir.stmt.ProducerRealize:11
+#: tvm.tir.stmt.While:5
+msgid "condition"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:15
+msgid "The condition."
+msgstr ""
+
+#: of tvm.tir.expr.Let:11 tvm.tir.stmt.Allocate:17
+#: tvm.tir.stmt.AllocateConst:20 tvm.tir.stmt.AssertStmt:11
+#: tvm.tir.stmt.AttrStmt:14 tvm.tir.stmt.BufferRealize:14 tvm.tir.stmt.For:17
+#: tvm.tir.stmt.LetStmt:11 tvm.tir.stmt.ProducerRealize:14 tvm.tir.stmt.While:8
+msgid "body"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:-1 tvm.tir.function.PrimFunc.with_body:-1
+#: tvm.tir.stmt.Allocate:-1 tvm.tir.stmt.AllocateConst:-1
+#: tvm.tir.stmt.AttrStmt:-1 tvm.tir.stmt.BufferRealize:-1 tvm.tir.stmt.For:-1
+#: tvm.tir.stmt.IfThenElse:-1 tvm.tir.stmt.LetStmt:-1
+#: tvm.tir.stmt.ProducerRealize:-1 tvm.tir.stmt.While:-1
+#: tvm.tir.stmt.stmt_list:-1 tvm.tir.stmt.stmt_seq:-1
+msgid "Stmt"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:18 tvm.tir.stmt.AllocateConst:21
+#: tvm.tir.stmt.AssertStmt:12 tvm.tir.stmt.AttrStmt:15 tvm.tir.stmt.For:18
+#: tvm.tir.stmt.LetStmt:12 tvm.tir.stmt.While:9
+msgid "The body statement."
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:20 tvm.tir.stmt.Block:29 tvm.tir.stmt.For:24
+msgid "annotations: Optional[Mapping[str, Object]]"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:21
+msgid "Additional annotation hints"
+msgstr ""
+
+#: of tvm.tir.stmt.Allocate:24 tvm.tir.stmt.AllocateConst:27
+#: tvm.tir.stmt.AssertStmt:15 tvm.tir.stmt.AttrStmt:18
+#: tvm.tir.stmt.BufferRealize:18 tvm.tir.stmt.BufferStore:20
+#: tvm.tir.stmt.Evaluate:9 tvm.tir.stmt.For:28 tvm.tir.stmt.IfThenElse:15
+#: tvm.tir.stmt.LetStmt:15 tvm.tir.stmt.Prefetch:12
+#: tvm.tir.stmt.ProducerRealize:21 tvm.tir.stmt.ProducerStore:15
+#: tvm.tir.stmt.SeqStmt:9 tvm.tir.stmt.While:12
+msgid "The location of the stmt in the source code."
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:1
+msgid "Allocate constant node."
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:14
+msgid "data_or_idx"
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:-1
+msgid "Union[NDArray, int]"
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:15
+msgid ""
+"If an NDArray, this is the const data associated with the constant.  If "
+"an integer, this is the index into the \"constants\" attribute of the "
+"`IRModule` that contains the `AllocateConst`."
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:23
+msgid "annotations"
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:-1
+msgid "Optional[Mapping[str, Object]]"
+msgstr ""
+
+#: of tvm.tir.stmt.AllocateConst:24
+msgid "Additional annotations about the allocation."
+msgstr ""
+
+#: of tvm.tir.expr.And:1
+msgid "And node."
+msgstr ""
+
+#: of tvm.tir.expr.Any:1
+msgid "Any node."
+msgstr ""
+
+#: of tvm.tir.stmt.AssertStmt:1
+msgid "AssertStmt node."
+msgstr ""
+
+#: of tvm.tir.stmt.AssertStmt:6
+msgid "The assert condition."
+msgstr ""
+
+#: of tvm.tir.stmt.AssertStmt:8
+msgid "message"
+msgstr ""
+
+#: of tvm.tir.stmt.AssertStmt:9
+msgid "The error message."
+msgstr ""
+
+#: of tvm.tir.stmt.AssertStmt:-1
+msgid "tvm.tir.Stmt"
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:1
+msgid "AttrStmt node."
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:5
+msgid "node"
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:-1
+msgid "Object"
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:6
+msgid "The node to annotate the attribute"
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:8
+msgid "attr_key"
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:9
+msgid "Attribute type key."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:8 tvm.tir.expr.Broadcast:5
+#: tvm.tir.expr.Cast:8 tvm.tir.expr.FloatImm:8 tvm.tir.expr.IntImm:8
+#: tvm.tir.expr.Let:8 tvm.tir.expr.StringImm:5
+#: tvm.tir.op.comm_reducer.<locals>.reducer:13 tvm.tir.op.infinity:13
+#: tvm.tir.op.make_filled_simdgroup_matrix:11 tvm.tir.op.max_value:13
+#: tvm.tir.op.min_value:13 tvm.tir.op.reinterpret:8 tvm.tir.op.reinterpret:16
+#: tvm.tir.op.tvm_fill_fragment:20 tvm.tir.op.tvm_struct_set:14
+#: tvm.tir.op.tvm_tuple:5 tvm.tir.stmt.AttrStmt:11 tvm.tir.stmt.BufferStore:8
+#: tvm.tir.stmt.Evaluate:5 tvm.tir.stmt.LetStmt:8 tvm.tir.stmt.ProducerStore:8
+msgid "value"
+msgstr ""
+
+#: of tvm.tir.stmt.AttrStmt:12
+msgid "The value of the attribute"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:1
+msgid ""
+"Bijective mapping for two layouts (src-layout and dst-layout). It "
+"provides shape and index conversion between each other."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:4
+msgid ""
+"Do not construct directly, use :any:`bijective_layout` instead. See the "
+"documentation of :any:`bijective_layout` for more details."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:9
+#: tvm.tir.data_layout.bijective_layout:5
+msgid "src_layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:-1
+#: tvm.tir.data_layout.bijective_layout:-1
+msgid "str or Layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:10
+#: tvm.tir.data_layout.bijective_layout:6
+msgid "source layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:12
+#: tvm.tir.data_layout.bijective_layout:8
+msgid "dst_layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:13
+#: tvm.tir.data_layout.bijective_layout:9
+msgid "destination layout."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer:10 tvm.tir.data_layout.BijectiveLayout:16
+#: tvm.tir.data_layout.Layout:9 tvm.tir.expr.IterVar:23
+#: tvm.tir.op.call_cpacked:20 tvm.tir.op.call_cpacked_lowered:19
+#: tvm.tir.op.call_packed:24 tvm.tir.op.call_packed_lowered:22
+#: tvm.tir.op.trace:22
+msgid "See Also"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout:17
+msgid "bijective_layout : Declare a layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_index:1
+msgid "Given the indices of the dst-layout, infer the src index."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_index:5
+#: tvm.tir.data_layout.BijectiveLayout.forward_index:5
+msgid "index: Array of Expr"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_index:6
+msgid "The indices in dst-layout."
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:9
+#: tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:9
+#: tvm.tir.buffer.Buffer.get_flattened_buffer:4
+#: tvm.tir.buffer.Buffer.offset_of:10 tvm.tir.buffer.Buffer.vload:17
+#: tvm.tir.buffer.Buffer.vstore:17 tvm.tir.buffer.decl_buffer:57
+#: tvm.tir.data_layout.BijectiveLayout.backward_index:9
+#: tvm.tir.data_layout.BijectiveLayout.backward_shape:9
+#: tvm.tir.data_layout.BijectiveLayout.forward_index:9
+#: tvm.tir.data_layout.BijectiveLayout.forward_shape:9
+#: tvm.tir.data_layout.Layout.factor_of:9 tvm.tir.data_layout.Layout.index_of:9
+#: tvm.tir.data_layout.bijective_layout:12 tvm.tir.data_layout.layout:19
+#: tvm.tir.function.IndexMap.from_func:29
+#: tvm.tir.function.IndexMap.from_func_with_separators:34
+#: tvm.tir.function.IndexMap.inverse:14
+#: tvm.tir.function.IndexMap.is_equivalent_to:10
+#: tvm.tir.function.IndexMap.map_indices:9
+#: tvm.tir.function.IndexMap.map_ndarray:9
+#: tvm.tir.function.IndexMap.map_shape:9
+#: tvm.tir.function.IndexMap.non_surjective_inverse:13
+#: tvm.tir.function.PrimFunc.specialize:49
+#: tvm.tir.function.PrimFunc.with_body:12 tvm.tir.function.TensorIntrin.get:13
+#: tvm.tir.generic.add:13 tvm.tir.generic.multiply:13
+#: tvm.tir.generic.subtract:13 tvm.tir.op.TVMBackendAllocWorkspace:21
+#: tvm.tir.op.TVMBackendFreeWorkspace:15 tvm.tir.op.abs:12 tvm.tir.op.acos:9
+#: tvm.tir.op.acosh:9 tvm.tir.op.address_of:12 tvm.tir.op.all:13
+#: tvm.tir.op.any:12 tvm.tir.op.asin:9 tvm.tir.op.asinh:9 tvm.tir.op.assume:9
+#: tvm.tir.op.atan:9 tvm.tir.op.atan2:12 tvm.tir.op.atanh:9
+#: tvm.tir.op.bitwise_and:15 tvm.tir.op.bitwise_not:12 tvm.tir.op.bitwise_or:15
+#: tvm.tir.op.bitwise_xor:15 tvm.tir.op.call_cpacked:15
+#: tvm.tir.op.call_cpacked_lowered:14 tvm.tir.op.call_extern:18
+#: tvm.tir.op.call_intrin:21 tvm.tir.op.call_llvm_intrin:18
+#: tvm.tir.op.call_llvm_pure_intrin:18 tvm.tir.op.call_packed:19
+#: tvm.tir.op.call_packed_lowered:17 tvm.tir.op.call_pure_extern:18
+#: tvm.tir.op.call_tir:4 tvm.tir.op.ceil:12 tvm.tir.op.ceildiv:13
+#: tvm.tir.op.clz:10 tvm.tir.op.comm_reducer:12
+#: tvm.tir.op.comm_reducer.<locals>.reducer:12 tvm.tir.op.copysign:12
+#: tvm.tir.op.cos:9 tvm.tir.op.cosh:9 tvm.tir.op.create_barriers:9
+#: tvm.tir.op.div:15 tvm.tir.op.dp4a:15 tvm.tir.op.end_profile_intrinsic:7
+#: tvm.tir.op.erf:9 tvm.tir.op.exp:9 tvm.tir.op.exp10:9 tvm.tir.op.exp2:9
+#: tvm.tir.op.floor:12 tvm.tir.op.floordiv:15 tvm.tir.op.floormod:15
+#: tvm.tir.op.fmod:11 tvm.tir.op.hypot:12 tvm.tir.op.if_then_else:18
+#: tvm.tir.op.indexdiv:15 tvm.tir.op.indexmod:15 tvm.tir.op.infinity:12
+#: tvm.tir.op.isfinite:12 tvm.tir.op.isinf:12 tvm.tir.op.isnan:12
+#: tvm.tir.op.isnullptr:12 tvm.tir.op.ldexp:12 tvm.tir.op.likely:13
+#: tvm.tir.op.log:9 tvm.tir.op.log10:9 tvm.tir.op.log1p:9 tvm.tir.op.log2:9
+#: tvm.tir.op.lookup_param:12 tvm.tir.op.make_filled_simdgroup_matrix:21
+#: tvm.tir.op.max_value:12 tvm.tir.op.min_value:12 tvm.tir.op.mma_fill:18
+#: tvm.tir.op.mma_store:27 tvm.tir.op.nearbyint:19 tvm.tir.op.nextafter:12
+#: tvm.tir.op.popcount:9 tvm.tir.op.pow:15 tvm.tir.op.power:15
+#: tvm.tir.op.ptx_arrive_barrier:10 tvm.tir.op.ptx_arrive_barrier_expect_tx:15
+#: tvm.tir.op.ptx_commit_group:5 tvm.tir.op.ptx_cp_async:25
+#: tvm.tir.op.ptx_cp_async_barrier:10 tvm.tir.op.ptx_cp_async_bulk:28
+#: tvm.tir.op.ptx_init_barrier_thread_count:13 tvm.tir.op.ptx_ldmatrix:31
+#: tvm.tir.op.ptx_mma:52 tvm.tir.op.ptx_mma_sp:58
+#: tvm.tir.op.ptx_wait_barrier:10 tvm.tir.op.ptx_wait_group:10
+#: tvm.tir.op.q_multiply_shift:22 tvm.tir.op.q_multiply_shift_per_axis:21
+#: tvm.tir.op.reinterpret:15 tvm.tir.op.ret:12 tvm.tir.op.round:12
+#: tvm.tir.op.rsqrt:9 tvm.tir.op.shift_left:12 tvm.tir.op.shift_right:12
+#: tvm.tir.op.sigmoid:9 tvm.tir.op.simdgroup_load:27
+#: tvm.tir.op.simdgroup_multiply_accumulate:31 tvm.tir.op.simdgroup_store:28
+#: tvm.tir.op.sin:9 tvm.tir.op.sinh:9 tvm.tir.op.sqrt:9
+#: tvm.tir.op.start_profile_intrinsic:7 tvm.tir.op.tan:9 tvm.tir.op.tanh:9
+#: tvm.tir.op.trace:17 tvm.tir.op.trunc:15 tvm.tir.op.truncdiv:15
+#: tvm.tir.op.truncmod:15 tvm.tir.op.tvm_access_ptr:21
+#: tvm.tir.op.tvm_bmma_sync:30 tvm.tir.op.tvm_check_return:11
+#: tvm.tir.op.tvm_fill_fragment:24 tvm.tir.op.tvm_load_matrix_sync:30
+#: tvm.tir.op.tvm_mma_sync:30 tvm.tir.op.tvm_stack_alloca:12
+#: tvm.tir.op.tvm_stack_make_array:24 tvm.tir.op.tvm_stack_make_shape:9
+#: tvm.tir.op.tvm_store_matrix_sync:30 tvm.tir.op.tvm_struct_get:18
+#: tvm.tir.op.tvm_struct_set:18 tvm.tir.op.tvm_thread_allreduce:9
+#: tvm.tir.op.tvm_throw_last_error:4 tvm.tir.op.tvm_tuple:9
+#: tvm.tir.op.type_annotation:9 tvm.tir.op.undef:4 tvm.tir.op.vectorcombine:12
+#: tvm.tir.op.vectorhigh:12 tvm.tir.op.vectorlow:12 tvm.tir.stmt.stmt_list:9
+#: tvm.tir.stmt.stmt_seq:9
+msgid "Returns"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_index:10
+msgid "src_index: Array of Expr"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_index:11
+msgid "The inferred indices in src-layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_shape:1
+msgid "Given the shape of the dst-layout, infer the src shape."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_shape:5
+#: tvm.tir.data_layout.BijectiveLayout.forward_shape:5
+msgid "shape: Array of Expr"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_shape:6
+msgid "The shape in dst-layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_shape:10
+msgid "src_shape: Array of Expr"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.backward_shape:11
+msgid "The inferred shape in src-layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_index:1
+msgid "Given the indices of the src-layout, infer the dst index."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_index:6
+msgid "The indices in src-layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_index:10
+msgid "dst_index: Array of Expr"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_index:11
+msgid "The inferred indices in dst-layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_shape:1
+msgid "Given the shape of the src-layout, infer the dst shape."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_shape:6
+msgid "The shape in src-layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_shape:10
+msgid "dst_shape: Array of Expr"
+msgstr ""
+
+#: of tvm.tir.data_layout.BijectiveLayout.forward_shape:11
+msgid "The inferred shape in dst-layout."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:1
+msgid "Block node."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:5
+msgid "iter_vars"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:-1
+msgid "List[IterVar]"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:6
+msgid "The block Variable."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:8
+msgid "reads"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:-1
+msgid "List[BufferRegion]"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:9
+msgid "The read buffer regions of the block."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:11
+msgid "writes: List[BufferRegion]"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:12
+msgid "The write buffer regions of the block."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:14
+msgid "name_hint: str"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:15
+msgid "the name_hint of the block."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:17 tvm.tir.stmt.DeclBuffer:8
+msgid "body: Stmt"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:18
+msgid "The body of the block."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:20
+msgid "init: Optional[Stmt]"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:21
+msgid "The init block of the reduction block"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:23
+msgid "alloc_buffers: Optional[list[Buffer]]"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:24
+msgid "The buffer allocations"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:26
+msgid "match_buffers: Optional[List[MatchBufferRegion]]"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:27
+msgid "The subregion buffer match"
+msgstr ""
+
+#: of tvm.tir.stmt.Block:30 tvm.tir.stmt.For:25
+msgid "Additional annotation hints."
+msgstr ""
+
+#: of tvm.tir.stmt.Block:33
+msgid "The location of this block in the source code."
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo:1
+msgid ""
+"An object that helps build and query block level dependences using the 2 "
+"core objects BlockScope and StmtSRef"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo:4
+msgid ""
+"The data structures exposed are: 1) sref2scope: Mapping from the srefs to"
+" its corresponding BlockScope 2) stmt2ref: Mapping from blocks to "
+"corresponding StmtSRefs"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo:8
+msgid ""
+"Note that this object does not store SRefs to loops as the purpose is "
+"only to expose block level dependences. This provides the advantage that "
+"the scope block (parent block) for a given block sref can be directly "
+"accessed as sref->parent"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:1
+msgid "Get the BlockScope correpsonding to the block sref"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:5
+msgid "block_sref"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:-1
+#: tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:-1
+msgid "StmtSRef"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:6
+msgid "The block sref to be retrieved"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:10
+msgid "scope"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_block_scope:11
+msgid "The corresponding BlockScope"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/tir.rst of tvm.tir.function.IndexMap
+#: tvm.tir.function.TensorIntrin
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:1
+msgid "Return the corresponding sref that points to the block"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:5
+#: tvm.tir.stmt.stmt_list:5 tvm.tir.stmt.stmt_seq:10
+msgid "stmt"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:-1
+#: tvm.tir.stmt.BlockRealize:-1
+msgid "Block"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:6
+msgid "The block for which the sref is to be retrived"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:10
+msgid "sref"
+msgstr ""
+
+#: of tvm.tir.block_dependence_info.BlockDependenceInfo.get_sref:11
+msgid "The corresponding sref"
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:1
+msgid "BlockRealize node."
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:5
+msgid "iter_values"
+msgstr ""
+
+#: of tvm.tir.expr.BufferLoad:-1 tvm.tir.expr.CommReducer:-1
+#: tvm.tir.expr.ProducerLoad:-1 tvm.tir.expr.Shuffle:-1
+#: tvm.tir.function.IndexMap:-1 tvm.tir.function.IndexMap.map_indices:-1
+#: tvm.tir.function.IndexMap.map_shape:-1 tvm.tir.stmt.BlockRealize:-1
+#: tvm.tir.stmt.BufferStore:-1
+msgid "List[PrimExpr]"
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:6
+msgid "The binding values of the block var."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:12 tvm.tir.buffer.Buffer.vstore:11
+#: tvm.tir.expr.BufferLoad:14 tvm.tir.stmt.BlockRealize:8
+#: tvm.tir.stmt.BufferStore:14
+msgid "predicate"
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:-1
+msgid "Union[PrimExpr, bool]"
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:9
+msgid "The predicate of the block."
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:11
+msgid "block"
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:12
+msgid "The block to realize"
+msgstr ""
+
+#: of tvm.tir.stmt.BlockRealize:15
+msgid "The location of this block_realize in the source code."
+msgstr ""
+
+#: of tvm.tir.expr.Broadcast:1
+msgid "Broadcast node."
+msgstr ""
+
+#: of tvm.tir.expr.Broadcast:6
+msgid "The value of the expression."
+msgstr ""
+
+#: of tvm.tir.expr.Broadcast:8 tvm.tir.expr.Ramp:11
+msgid "lanes"
+msgstr ""
+
+#: of tvm.tir.expr.Broadcast:9 tvm.tir.expr.Ramp:12
+msgid "The lanes of the expression."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer:1
+msgid "Symbolic data buffer in TVM."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer:3
+msgid ""
+"Buffer provide a way to represent data layout specialization of data "
+"structure in TVM."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer:6
+msgid ""
+"Do not construct directly, use :py:func:`~decl_buffer` instead. See the "
+"documentation of :py:func:`decl_buffer` for more details."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer:11
+msgid "decl_buffer : Declare a buffer"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:1
+msgid "Get an access pointer to the head of buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:3
+msgid ""
+"This is the recommended method to get buffer data ptress when interacting"
+" with external functions."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:8
+msgid "access_mask"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:-1
+#: tvm.tir.data_layout.Layout.factor_of:-1
+#: tvm.tir.data_layout.Layout.index_of:-1 tvm.tir.expr.IntImm:-1
+#: tvm.tir.expr.IterVar:-1 tvm.tir.expr.Reduce:-1
+#: tvm.tir.op.TVMBackendAllocWorkspace:-1 tvm.tir.op.TVMBackendFreeWorkspace:-1
+#: tvm.tir.op.create_barriers:-1 tvm.tir.op.get_vscale_expr:-1
+#: tvm.tir.op.make_filled_simdgroup_matrix:-1 tvm.tir.op.ptx_arrive_barrier:-1
+#: tvm.tir.op.ptx_arrive_barrier_expect_tx:-1 tvm.tir.op.ptx_cp_async:-1
+#: tvm.tir.op.ptx_cp_async_barrier:-1 tvm.tir.op.ptx_cp_async_bulk:-1
+#: tvm.tir.op.ptx_init_barrier_thread_count:-1 tvm.tir.op.ptx_wait_barrier:-1
+#: tvm.tir.op.ptx_wait_group:-1 tvm.tir.op.simdgroup_load:-1
+#: tvm.tir.op.simdgroup_store:-1 tvm.tir.op.tvm_access_ptr:-1
+#: tvm.tir.op.tvm_check_return:-1 tvm.tir.op.tvm_stack_alloca:-1
+#: tvm.tir.op.tvm_stack_make_shape:-1 tvm.tir.op.tvm_struct_get:-1
+#: tvm.tir.op.tvm_struct_set:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:9
+msgid ""
+"The access pattern MASK. Indicate whether the access will read or write "
+"to the data content."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:12
+msgid "ptr_type"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:-1 tvm.tir.buffer.decl_buffer:-1
+msgid "str, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:13
+msgid ""
+"The data type of the result pointer. Do not specify unless we want to "
+"cast pointer to specific type."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:16
+msgid "content_lanes: int, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:17
+msgid ""
+"The number of lanes for the data type. This value is greater than one for"
+" vector types."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:20
+msgid "offset: Expr, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:21
+msgid ""
+"The offset of pointer. We can use it to offset by the number of elements "
+"from the address of ptr."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:24
+msgid "extent: Expr, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:25 tvm.tir.op.tvm_access_ptr:15
+msgid "The extent of pointer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.access_ptr:28
+#: tvm.tir.function.IndexMap.non_surjective_inverse:20
+#: tvm.tir.function.PrimFunc.specialize:10
+msgid "Examples"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.get_flattened_buffer:1
+msgid "Generate a Buffer that is a flattened version of this buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.get_flattened_buffer:5
+msgid "flattened"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.get_flattened_buffer:-1 tvm.tir.expr.BufferLoad:-1
+#: tvm.tir.stmt.BufferRealize:-1 tvm.tir.stmt.BufferRegion:-1
+#: tvm.tir.stmt.BufferStore:-1 tvm.tir.stmt.MatchBufferRegion:-1
+#: tvm.tir.stmt.Prefetch:-1
+msgid "Buffer"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.get_flattened_buffer:6
+msgid "The corresponding flat buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.offset_of:1
+msgid "Determine the offset of the provided indices in the flattened buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.offset_of:5
+msgid "indices : Union[PrimExpr, List[PrimExpr]]"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.offset_of:7
+msgid "The indices of the element in the original buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.offset_of:11
+msgid "flattened_indices: List[PrimExpr]"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.offset_of:13
+msgid "The offset indices of the element in the flattened buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.scope:1
+msgid ""
+"Return the storage scope associated with this buffer. Returns ------- "
+"scope : str"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.scope:5
+msgid "The storage scope associated with this buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:1
+msgid "Generate an Expr that loads dtype from begin index."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:5 tvm.tir.buffer.Buffer.vstore:5
+msgid "begin"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:-1 tvm.tir.buffer.Buffer.vstore:-1
+msgid "Array of Expr"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:6 tvm.tir.buffer.Buffer.vstore:6
+msgid "The beginning index in unit of Buffer.dtype"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:9
+msgid ""
+"The data type to be loaded, can be vector type which have lanes that is "
+"multiple of Buffer.dtype"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:-1 tvm.tir.buffer.Buffer.vstore:-1
+#: tvm.tir.expr.BufferLoad:-1 tvm.tir.stmt.BufferStore:-1
+msgid "Optional[PrimExpr]"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:13 tvm.tir.expr.BufferLoad:15
+msgid ""
+"A vector mask of boolean values indicating which lanes of a vector are to"
+" be loaded. The number lanes of the mask must be equal to the number of "
+"lanes being loaded."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:18
+msgid "load"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:-1 tvm.tir.buffer.Buffer.vstore:-1
+#: tvm.tir.op.assume:-1 tvm.tir.op.mma_fill:-1 tvm.tir.op.mma_store:-1
+#: tvm.tir.op.ptx_cp_async:-1 tvm.tir.op.ptx_cp_async_bulk:-1
+#: tvm.tir.op.ptx_ldmatrix:-1 tvm.tir.op.ptx_mma:-1 tvm.tir.op.ptx_mma_sp:-1
+#: tvm.tir.op.ret:-1 tvm.tir.op.tvm_access_ptr:-1 tvm.tir.op.tvm_bmma_sync:-1
+#: tvm.tir.op.tvm_fill_fragment:-1 tvm.tir.op.tvm_load_matrix_sync:-1
+#: tvm.tir.op.tvm_mma_sync:-1 tvm.tir.op.tvm_stack_make_array:-1
+#: tvm.tir.op.tvm_store_matrix_sync:-1 tvm.tir.op.tvm_struct_set:-1
+#: tvm.tir.op.tvm_thread_allreduce:-1 tvm.tir.op.tvm_tuple:-1
+#: tvm.tir.op.type_annotation:-1
+msgid "Expr"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vload:19
+msgid "The corresponding load expression."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:1
+msgid "Generate a Stmt that store value into begin index."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:9 tvm.tir.stmt.ProducerStore:9
+msgid "The value to be stored."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:12 tvm.tir.stmt.BufferStore:15
+msgid ""
+"A vector mask of boolean values indicating which lanes of a vector are to"
+" be stored. The number lanes of the mask must be equal to the number of "
+"lanes in value."
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:18
+msgid "store"
+msgstr ""
+
+#: of tvm.tir.buffer.Buffer.vstore:19
+msgid "The corresponding store stmt."
+msgstr ""
+
+#: of tvm.tir.expr.BufferLoad:1
+msgid "Buffer load node."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:58 tvm.tir.expr.BufferLoad:5
+#: tvm.tir.stmt.BufferRealize:5 tvm.tir.stmt.BufferRegion:5
+#: tvm.tir.stmt.BufferStore:5 tvm.tir.stmt.MatchBufferRegion:5
+#: tvm.tir.stmt.Prefetch:5
+msgid "buffer"
+msgstr ""
+
+#: of tvm.tir.expr.BufferLoad:6 tvm.tir.expr.ProducerLoad:6
+msgid "The buffer to be loaded."
+msgstr ""
+
+#: of tvm.tir.expr.BufferLoad:8 tvm.tir.expr.ProducerLoad:8
+#: tvm.tir.expr.Shuffle:8 tvm.tir.function.IndexMap.map_indices:5
+#: tvm.tir.stmt.BufferStore:11 tvm.tir.stmt.ProducerStore:11
+msgid "indices"
+msgstr ""
+
+#: of tvm.tir.expr.BufferLoad:9
+msgid "The buffer indices to load values from."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:1
+msgid "Buffer realize node."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:6 tvm.tir.stmt.BufferStore:6
+msgid "The buffer."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:8 tvm.tir.stmt.Prefetch:8
+#: tvm.tir.stmt.ProducerRealize:8
+msgid "bounds"
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:-1 tvm.tir.stmt.BufferRegion:-1
+#: tvm.tir.stmt.Prefetch:-1 tvm.tir.stmt.ProducerRealize:-1
+msgid "List[Range]"
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:9 tvm.tir.stmt.BufferStore:9
+msgid "The value we to be stored."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:12 tvm.tir.stmt.ProducerRealize:12
+msgid "The realize condition."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRealize:15
+msgid "The body of the statement."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRegion:1
+msgid "BufferRegion node."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRegion:6
+msgid "The buffer of the buffer region"
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRegion:8
+msgid "region"
+msgstr ""
+
+#: of tvm.tir.stmt.BufferRegion:9
+msgid "The region array of the buffer region"
+msgstr ""
+
+#: of tvm.tir.stmt.BufferStore:1
+msgid "Buffer store node."
+msgstr ""
+
+#: of tvm.tir.stmt.BufferStore:12
+msgid "The indices location to be stored."
+msgstr ""
+
+#: of tvm.tir.expr.Call:1
+msgid "Call node."
+msgstr ""
+
+#: of tvm.tir.expr.Call:6
+msgid "The return data type"
+msgstr ""
+
+#: of tvm.tir.expr.Call:8 tvm.tir.generic.add:14 tvm.tir.generic.multiply:14
+#: tvm.tir.generic.subtract:14 tvm.tir.op.ceildiv:14
+msgid "op"
+msgstr ""
+
+#: of tvm.tir.expr.Call:-1
+msgid "Union[Op, str]"
+msgstr ""
+
+#: of tvm.tir.expr.Call:9
+msgid "The function to be called, or the name to the global tvm.Op"
+msgstr ""
+
+#: of tvm.tir.expr.Call:12 tvm.tir.op.all:6 tvm.tir.op.any:5
+#: tvm.tir.op.call_cpacked:8 tvm.tir.op.call_cpacked_lowered:7
+#: tvm.tir.op.call_extern:11 tvm.tir.op.call_intrin:14
+#: tvm.tir.op.call_llvm_intrin:11 tvm.tir.op.call_llvm_pure_intrin:11
+#: tvm.tir.op.call_packed:12 tvm.tir.op.call_packed_lowered:10
+#: tvm.tir.op.call_pure_extern:11 tvm.tir.op.trace:10
+#: tvm.tir.op.tvm_stack_make_shape:5
+msgid "args"
+msgstr ""
+
+#: of tvm.tir.expr.Call:13
+msgid "The input arguments to the call"
+msgstr ""
+
+#: of tvm.tir.expr.CallEffectKind:1
+msgid "Possible kinds of Call effects."
+msgstr ""
+
+#: of tvm.tir.expr.Cast:1
+msgid "Cast expression."
+msgstr ""
+
+#: of tvm.tir.expr.Cast:6 tvm.tir.expr.FloatImm:6 tvm.tir.expr.IntImm:6
+#: tvm.tir.expr.SizeVar:10 tvm.tir.expr.Var:9
+msgid "The data type"
+msgstr ""
+
+#: of tvm.tir.expr.Cast:9 tvm.tir.expr.StringImm:6
+msgid "The value of the function."
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:1
+msgid "Commutative reduce operator"
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:5 tvm.tir.generic.add:5
+#: tvm.tir.generic.multiply:5 tvm.tir.generic.subtract:5 tvm.tir.op.ceildiv:5
+msgid "lhs"
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:-1 tvm.tir.function.IndexMap:-1
+msgid "List[Var]"
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:6
+msgid "The left arguments of the reducer."
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:8 tvm.tir.generic.add:7
+#: tvm.tir.generic.multiply:7 tvm.tir.generic.subtract:7 tvm.tir.op.ceildiv:7
+msgid "rhs"
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:9
+msgid "The right arguments of the reducer."
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:11 tvm.tir.function.IndexMap.map_indices:10
+#: tvm.tir.function.IndexMap.map_shape:10 tvm.tir.function.TensorIntrin.get:14
+#: tvm.tir.op.if_then_else:19
+msgid "result"
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:12
+msgid "The reduction results."
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:14
+msgid "identity_element"
+msgstr ""
+
+#: of tvm.tir.expr.CommReducer:15
+msgid "The identity elements."
+msgstr ""
+
+#: of tvm.tir.stmt.DeclBuffer:1
+msgid "DeclBuffer node."
+msgstr ""
+
+#: of tvm.tir.stmt.DeclBuffer:5
+msgid "buffer: Buffer"
+msgstr ""
+
+#: of tvm.tir.stmt.DeclBuffer:6
+msgid "The buffer being declared."
+msgstr ""
+
+#: of tvm.tir.stmt.DeclBuffer:9
+msgid "The body statement to be executed."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:53 tvm.tir.stmt.DeclBuffer:11
+msgid "span: Optional[Span]"
+msgstr ""
+
+#: of tvm.tir.stmt.DeclBuffer:12
+msgid "The location of this DeclBuffer in the source code."
+msgstr ""
+
+#: of tvm.tir.expr.Div:1
+msgid "Div node."
+msgstr ""
+
+#: of tvm.tir.expr.EQ:1
+msgid "EQ node."
+msgstr ""
+
+#: of tvm.tir.stmt.Evaluate:1
+msgid "Evaluate node."
+msgstr ""
+
+#: of tvm.tir.stmt.Evaluate:6
+msgid "The expression to be evaluated."
+msgstr ""
+
+#: of tvm.tir.expr.FloatImm:1
+msgid "Float constant."
+msgstr ""
+
+#: of tvm.tir.expr.FloatImm:-1
+msgid "float"
+msgstr ""
+
+#: of tvm.tir.expr.FloatImm:9 tvm.tir.expr.IntImm:9
+msgid "The constant value."
+msgstr ""
+
+#: of tvm.tir.expr.FloorDiv:1
+msgid "FloorDiv node."
+msgstr ""
+
+#: of tvm.tir.expr.FloorMod:1
+msgid "FloorMod node."
+msgstr ""
+
+#: of tvm.tir.stmt.For:1
+msgid "For node."
+msgstr ""
+
+#: of tvm.tir.stmt.For:5
+msgid "loop_var"
+msgstr ""
+
+#: of tvm.tir.stmt.For:6
+msgid "The loop variable."
+msgstr ""
+
+#: of tvm.tir.stmt.For:8
+msgid "min"
+msgstr ""
+
+#: of tvm.tir.stmt.For:9
+msgid "The beginning value."
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:14 tvm.tir.stmt.For:11
+msgid "extent"
+msgstr ""
+
+#: of tvm.tir.stmt.For:12
+msgid "The length of the loop."
+msgstr ""
+
+#: of tvm.tir.stmt.For:14
+msgid "kind"
+msgstr ""
+
+#: of tvm.tir.stmt.For:-1
+msgid "ForKind"
+msgstr ""
+
+#: of tvm.tir.stmt.For:15
+msgid "The type of the for."
+msgstr ""
+
+#: of tvm.tir.stmt.For:20
+msgid "thread_binding: Optional[tir.IterVar]"
+msgstr ""
+
+#: of tvm.tir.stmt.For:21
+msgid "The thread this loop binds to. Only valid if kind is ThreadBinding"
+msgstr ""
+
+#: of tvm.tir.stmt.ForKind:1
+msgid "The kind of the for loop."
+msgstr ""
+
+#: of tvm.tir.stmt.ForKind:4
+msgid "note"
+msgstr ""
+
+#: of tvm.tir.stmt.ForKind:5
+msgid ""
+"ForKind can change the control flow semantics of the loop and need to be "
+"considered in all TIR passes."
+msgstr ""
+
+#: of tvm.tir.expr.GE:1
+msgid "GE node."
+msgstr ""
+
+#: of tvm.tir.expr.GT:1
+msgid "GT node."
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:1
+msgid "IfThenElse node."
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:6
+msgid "The expression"
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:8
+msgid "then_case"
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:9
+msgid "The statement to execute if condition is true."
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:11
+msgid "else_case"
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:-1
+msgid "Optional[Stmt]"
+msgstr ""
+
+#: of tvm.tir.stmt.IfThenElse:12
+msgid "The statement to execute if condition is false."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:1
+msgid ""
+"A mapping from multi-dimensional indices to another set of multi-"
+"dimensional indices"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:5
+msgid "initial_indices"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:6
+msgid "Variables representing the indices prior to remapping."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:7
+msgid "final_indices"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:8
+msgid "Expressions defining the indices after remapping."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:9 tvm.tir.function.IndexMap.from_func:21
+#: tvm.tir.function.IndexMap.from_func_with_separators:23
+msgid "inverse_index_map"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:-1 tvm.tir.function.IndexMap.from_func:-1
+#: tvm.tir.function.IndexMap.from_func_with_separators:-1
+msgid "Union[Callable, Optional[IndexMap]]"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap:10 tvm.tir.function.IndexMap.from_func:22
+#: tvm.tir.function.IndexMap.from_func_with_separators:24
+msgid ""
+"The optional pre-defined inverse index map. When this is defined, "
+"IndexMap::Inverse will return the pre-defined inverse index map. "
+"Otherwise, the inverse index map will be computed on the fly. It is the "
+"user's responsibility to ensure the correctness of the pre-defined "
+"inverse index map."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:1
+#: tvm.tir.function.IndexMap.from_func_with_separators:1
+msgid "Create an index map from a function"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:5
+#: tvm.tir.function.IndexMap.from_func_with_separators:5
+msgid "mapping_function : Callable"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:7
+msgid ""
+"The function to map from source indices to target indices. The function "
+"should accept `tir.Var` parameters and return a either a `tir.PrimExpr`, "
+"or a list of `tir.PrimExpr`. Returning a `tir.PrimExpr` is equivalent to "
+"returning a list of length 1 containing that `tir.PrimExpr`."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:13
+#: tvm.tir.function.IndexMap.from_func_with_separators:15
+msgid "ndim: Optional[int]"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:15
+msgid ""
+"The dimensionality of the buffer to which this transformation should be "
+"applied.  If mapping_function uses variadic argument `*args`, `ndim` must"
+" be specified.  If mapping_function does not use variadic arguments, ndim"
+" is optional."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:30
+msgid "index_map: IndexMap"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func:32
+msgid "Returns an IndexMap representing the `mapping_function`."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func_with_separators:7
+msgid ""
+"The function to map from source indices to target indices. The function "
+"should accept tir.Var parameters and return either a `tir.PrimExpr` or a "
+"list.  Each element of the returned list should be either a "
+"`tir.PrimExpr` or the object `IndexMap.AXIS_SEPARATOR`.  Returning a "
+"`tir.PrimExpr` is equivalent to returning a list of length 1 containing "
+"that `tir.PrimExpr`."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func_with_separators:17
+msgid ""
+"The dimensionality of the buffer to which this transformation should be "
+"applied.  If mapping_function uses variadic argument `*args`, ndim must "
+"be specified.  If mapping_function does not use variadic arguments, ndim "
+"is optional."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func_with_separators:30
+msgid "index_dtype"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func_with_separators:31
+msgid "The default index dtype to use for input iters in the mapping function."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func_with_separators:35
+msgid "ret: Tuple[IndexMap, List[int]]"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.from_func_with_separators:37
+msgid ""
+"Returns a tuple whose first element is an IndexMap representing the "
+"`mapping_function`, and whose second index is a list of indices at which "
+"`IndexMap.AXIS_SEPARATOR` occurred."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.inverse:1
+#: tvm.tir.function.IndexMap.non_surjective_inverse:1
+msgid "Return the inverse of the map"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.inverse:3
+msgid "Throws an error if the function is not bijective."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.inverse:7
+#: tvm.tir.function.IndexMap.non_surjective_inverse:7
+msgid "shape: List[Union[Range,PrimExpr]]"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.inverse:9
+msgid ""
+"The region over which the inverse should be determined. Used for "
+"validating that the mapping is bijective over this range."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.inverse:15
+msgid "inverse : IndexMap"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.inverse:17
+msgid "The inverse"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.is_equivalent_to:1
+msgid "Return if the index maps are equivalent."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.is_equivalent_to:5
+msgid "other_map: IndexMap"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.is_equivalent_to:7
+msgid "The IndexMap to which the comparison should be made."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.is_equivalent_to:11
+msgid "is_equivalent: bool"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.is_equivalent_to:13
+msgid ""
+"True if the two mappings represent the same transformation, otherwise "
+"False"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_indices:1
+msgid "Apply the index map to a set of indices"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_indices:6
+msgid "The indices to be mapped"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_indices:11
+msgid "The mapped indices"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_ndarray:1
+msgid "Apply thie index map to transform the layout of the input NDArray"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_ndarray:5
+msgid "arr_src"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_ndarray:-1
+msgid "runtime.NDArray"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_ndarray:6
+msgid "The NDArray to be transformed"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_ndarray:10
+msgid "arr_dst"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_ndarray:11
+msgid "The transformed NDArray"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_shape:1
+msgid "Apply the index map to a buffer shape"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:10 tvm.tir.function.IndexMap.map_shape:5
+#: tvm.tir.op.ptx_mma:9 tvm.tir.op.ptx_mma_sp:9
+#: tvm.tir.op.tvm_stack_make_array:8
+msgid "shape"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_shape:6
+msgid "The buffer shape to be mapped"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.map_shape:11
+msgid "The mapped shape"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.non_surjective_inverse:3
+msgid "Can be applied to transformations that introduce padding."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.non_surjective_inverse:9
+msgid ""
+"The region over which the inverse should be determined. Used for "
+"determining the predicate."
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.non_surjective_inverse:14
+msgid "result : Tuple[IndexMap, PrimExpr]"
+msgstr ""
+
+#: of tvm.tir.function.IndexMap.non_surjective_inverse:16
+msgid ""
+"The inverse, and a predicate for which the inverse maps to a valid index "
+"in the input range."
+msgstr ""
+
+#: of tvm.tir.expr.IntImm:1
+msgid "Int constant."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:1
+msgid "Represent iteration variable."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:3
+msgid "IterVar represents axis iterations in the computation."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:7
+msgid "dom"
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:-1
+msgid "Range"
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:8
+msgid "The domain of the iteration."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:10 tvm.tir.expr.Let:5
+#: tvm.tir.op.make_filled_simdgroup_matrix:-1 tvm.tir.op.simdgroup_load:-1
+#: tvm.tir.stmt.LetStmt:5
+msgid "var"
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:-1
+msgid "Union[Var, str]"
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:11
+msgid "The internal variable that is used for iteration."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:13
+msgid "iter_type"
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:14
+msgid "The iteration type."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:16
+msgid "thread_tag"
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:17
+msgid "The thread type tag."
+msgstr ""
+
+#: of tvm.tir.expr.IterVar:24
+msgid ""
+"te.thread_axis: Create thread axis IterVar. te.reduce_axis: Create reduce"
+" axis IterVar."
+msgstr ""
+
+#: of tvm.tir.expr.LE:1
+msgid "LE node."
+msgstr ""
+
+#: of tvm.tir.expr.LT:1
+msgid "LT node."
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout:1
+msgid ""
+"Layout is composed of upper cases, lower cases and numbers, where upper "
+"case indicates a primal axis and the corresponding lower case with factor"
+" size indicates the subordinate axis. For example, NCHW16c can describe a"
+" 5-D tensor of [batch_size, channel, height, width, channel_block]. Here "
+"subordinate axis channel_block=16 is the factor size of the primal axis C"
+" (channel)."
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout:10
+msgid "layout : Declare a layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.factor_of:1
+msgid "Get the factor size of the subordinate axis."
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.factor_of:5
+#: tvm.tir.data_layout.Layout.index_of:5
+#: tvm.tir.op.comm_reducer.<locals>.reducer:7
+msgid "axis"
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.factor_of:6
+#: tvm.tir.data_layout.Layout.index_of:6
+msgid "The axis name, need to be [a-z,A-Z]"
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.factor_of:10
+msgid "factor"
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.factor_of:11
+msgid ""
+"the size of the subordinate-axis of axis (if axis is a primal-axis), or "
+"the size of axis itself (if axis is a subordinate-axis). Return -1 if "
+"axis is not in the layout."
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.index_of:1
+msgid "Get the index of an axis"
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.index_of:10
+#: tvm.tir.op.make_filled_simdgroup_matrix:8 tvm.tir.op.simdgroup_load:8
+#: tvm.tir.op.simdgroup_store:8 tvm.tir.op.tvm_fill_fragment:17
+#: tvm.tir.op.tvm_load_matrix_sync:17 tvm.tir.op.tvm_store_matrix_sync:17
+#: tvm.tir.op.tvm_struct_get:11 tvm.tir.op.tvm_struct_set:8
+msgid "index"
+msgstr ""
+
+#: of tvm.tir.data_layout.Layout.index_of:11
+msgid "The index of the axis, -1 if not found."
+msgstr ""
+
+#: of tvm.tir.expr.Let:1
+msgid "Let node."
+msgstr ""
+
+#: of tvm.tir.expr.Let:6 tvm.tir.stmt.LetStmt:6
+msgid "The variable in the binding."
+msgstr ""
+
+#: of tvm.tir.expr.Let:9 tvm.tir.stmt.LetStmt:9
+msgid "The value in to be bound."
+msgstr ""
+
+#: of tvm.tir.expr.Let:12
+msgid "The body expression."
+msgstr ""
+
+#: of tvm.tir.stmt.LetStmt:1
+msgid "LetStmt node."
+msgstr ""
+
+#: of tvm.tir.stmt.MatchBufferRegion:1
+msgid "MatchBufferRegion node."
+msgstr ""
+
+#: of tvm.tir.stmt.MatchBufferRegion:6
+msgid "The target buffer"
+msgstr ""
+
+#: of tvm.tir.stmt.MatchBufferRegion:8
+msgid "source"
+msgstr ""
+
+#: of tvm.tir.stmt.MatchBufferRegion:-1
+msgid "BufferRegion"
+msgstr ""
+
+#: of tvm.tir.stmt.MatchBufferRegion:9
+msgid "The region of source buffer"
+msgstr ""
+
+#: of tvm.tir.expr.Max:1
+msgid "Max node."
+msgstr ""
+
+#: of tvm.tir.expr.Min:1
+msgid "Min node."
+msgstr ""
+
+#: of tvm.tir.expr.Mod:1
+msgid "Mod node."
+msgstr ""
+
+#: of tvm.tir.expr.Mul:1
+msgid "Mul node."
+msgstr ""
+
+#: of tvm.tir.expr.NE:1
+msgid "NE node."
+msgstr ""
+
+#: of tvm.tir.expr.Not:1
+msgid "Not node."
+msgstr ""
+
+#: of tvm.tir.expr.Not:6
+msgid "The input value"
+msgstr ""
+
+#: of tvm.tir.expr.Or:1
+msgid "Or node."
+msgstr ""
+
+#: of tvm.tir.stmt.Prefetch:1
+msgid "Prefetch node."
+msgstr ""
+
+#: of tvm.tir.stmt.Prefetch:6
+msgid "The buffer to be prefetched."
+msgstr ""
+
+#: of tvm.tir.stmt.Prefetch:9
+msgid "The bounds to be prefetched."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:1
+msgid "A function declaration expression."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:5
+msgid "params: List[Union[tvm.tir.Var, tvm.tir.Buffer]]"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:6
+msgid "List of input parameters to the function."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:8
+msgid "body: tvm.tir.Stmt"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:9
+msgid "The body of the function."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:11
+msgid "ret_type: tvm.ir.Type"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:12
+msgid "The return type annotation of the function."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:14
+msgid "buffer_map"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:-1
+msgid "Map[tvm.tir.Var, tvm.tir.Buffer]"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:15
+msgid "The buffer binding map."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:17
+msgid "attrs: Optional[tvm.Attrs]"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:18
+msgid "Attributes of the function, can be None"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc:21 tvm.tir.function.PrimFunc.with_body:9
+msgid "The location of this itervar in the source code."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:1
+msgid "Specialize parameters of PrimFunc"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:6
+msgid "param_map"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:-1
+msgid "Mapping[Var, Union[PrimExpr, Buffer]]"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:7
+msgid "The mapping from function params to the instance"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:11
+msgid "We can define a Meta TIR function with symbolic shape:"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:25
+msgid "Then we can make it specialized with given shapes or buffers."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:34
+msgid "The specialized function:"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:50
+msgid "func"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:-1
+#: tvm.tir.function.PrimFunc.with_body:-1 tvm.tir.function.TensorIntrin:-1
+#: tvm.tir.function.TensorIntrin.register:-1
+msgid "PrimFunc"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.specialize:51
+msgid "The new function with parameter specialized"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.with_body:1
+msgid "Create a new PrimFunc with the same set signatures but a new body."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.with_body:5
+msgid "new_body"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.with_body:6
+msgid "The new body."
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.with_body:13
+msgid "new_func"
+msgstr ""
+
+#: of tvm.tir.function.PrimFunc.with_body:14
+msgid "The created new function."
+msgstr ""
+
+#: of tvm.tir.expr.ProducerLoad:1
+msgid "Producer load node."
+msgstr ""
+
+#: of tvm.tir.expr.ProducerLoad:5 tvm.tir.stmt.ProducerRealize:5
+#: tvm.tir.stmt.ProducerStore:5
+msgid "producer"
+msgstr ""
+
+#: of tvm.tir.expr.ProducerLoad:-1 tvm.tir.stmt.ProducerRealize:-1
+#: tvm.tir.stmt.ProducerStore:-1
+msgid "DataProducer"
+msgstr ""
+
+#: of tvm.tir.expr.ProducerLoad:9
+msgid "The buffer indices."
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerRealize:1
+msgid "ProducerRealize node."
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerRealize:6 tvm.tir.stmt.ProducerStore:6
+msgid "The data producer."
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerRealize:9
+msgid "The bound of realize"
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerRealize:15
+msgid "The realize body"
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerRealize:17
+msgid "storage_scope"
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerRealize:18
+msgid "The storage scope associated with this realization"
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerStore:1
+msgid "ProducerStore node."
+msgstr ""
+
+#: of tvm.tir.stmt.ProducerStore:12
+msgid "The index arguments of the store."
+msgstr ""
+
+#: of tvm.tir.expr.Ramp:1
+msgid "Ramp node."
+msgstr ""
+
+#: of tvm.tir.expr.Ramp:5 tvm.tir.op.get_active_lane_mask:11
+msgid "base"
+msgstr ""
+
+#: of tvm.tir.expr.Ramp:6
+msgid "The base expression."
+msgstr ""
+
+#: of tvm.tir.expr.Ramp:8 tvm.tir.op.simdgroup_load:14
+#: tvm.tir.op.simdgroup_store:14 tvm.tir.op.tvm_load_matrix_sync:23
+#: tvm.tir.op.tvm_store_matrix_sync:23
+msgid "stride"
+msgstr ""
+
+#: of tvm.tir.expr.Ramp:9
+msgid "The stride of the ramp."
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:1
+msgid "Reduce node."
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:5
+msgid "combiner"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:-1
+msgid "CommReducer"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:6
+msgid "The combiner."
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:8
+msgid "src"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:9 tvm.tir.op.comm_reducer.<locals>.reducer:6
+msgid "The source expression."
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:11
+msgid "rdom"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:-1
+msgid "list of IterVar"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:12
+msgid "The iteration domain"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:15
+msgid "The reduce condition."
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:17
+msgid "value_index"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:18
+msgid "The value index."
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:20
+msgid "init"
+msgstr ""
+
+#: of tvm.tir.expr.Reduce:21
+msgid "The initial value for output. This can be an int, float or ProducerLoad"
+msgstr ""
+
+#: of tvm.tir.expr.Select:1
+msgid "Select node."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:85 tvm.tir.expr.Select:4 tvm.tir.op.div:19
+#: tvm.tir.op.if_then_else:23 tvm.tir.op.indexdiv:20 tvm.tir.op.indexmod:20
+#: tvm.tir.op.truncdiv:20 tvm.tir.op.truncmod:20
+msgid "Note"
+msgstr ""
+
+#: of tvm.tir.expr.Select:5
+msgid ""
+"Select may compute both true_value and false_value. Use "
+":py:class:`tvm.tir.if_then_else` instead if you want to get a conditional"
+" expression that only evaluates the correct branch."
+msgstr ""
+
+#: of tvm.tir.expr.Select:13
+msgid "The condition expression."
+msgstr ""
+
+#: of tvm.tir.expr.Select:15
+msgid "true_value"
+msgstr ""
+
+#: of tvm.tir.expr.Select:16
+msgid "The value to take when condition is true."
+msgstr ""
+
+#: of tvm.tir.expr.Select:18
+msgid "false_value"
+msgstr ""
+
+#: of tvm.tir.expr.Select:19
+msgid "The value to take when condition is false."
+msgstr ""
+
+#: of tvm.tir.stmt.SeqStmt:1
+msgid "Sequence of statements."
+msgstr ""
+
+#: of tvm.tir.stmt.SeqStmt:5
+msgid "seq"
+msgstr ""
+
+#: of tvm.tir.stmt.SeqStmt:-1 tvm.tir.stmt.stmt_list:-1
+msgid "List[Stmt]"
+msgstr ""
+
+#: of tvm.tir.stmt.SeqStmt:6
+msgid "The statements"
+msgstr ""
+
+#: of tvm.tir.expr.Shuffle:1
+msgid "Shuffle node."
+msgstr ""
+
+#: of tvm.tir.expr.Shuffle:5
+msgid "vectors"
+msgstr ""
+
+#: of tvm.tir.expr.Shuffle:6
+msgid "The vectors"
+msgstr ""
+
+#: of tvm.tir.expr.Shuffle:9
+msgid "The indices"
+msgstr ""
+
+#: of tvm.tir.expr.SizeVar:1
+msgid "Symbolic variable to represent a tensor index size"
+msgstr ""
+
+#: of tvm.tir.expr.SizeVar:2
+msgid "which is greater or equal to zero."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:16 tvm.tir.expr.SizeVar:6 tvm.tir.expr.Var:5
+#: tvm.tir.function.TensorIntrin.get:5 tvm.tir.function.TensorIntrin.register:5
+#: tvm.tir.op.call_llvm_intrin:8 tvm.tir.op.call_llvm_pure_intrin:8
+msgid "name"
+msgstr ""
+
+#: of tvm.tir.expr.SizeVar:7 tvm.tir.expr.Var:6
+msgid "The name"
+msgstr ""
+
+#: of tvm.tir.expr.SizeVar:-1 tvm.tir.expr.Var:-1
+msgid "Union[str, ir.Type]"
+msgstr ""
+
+#: of tvm.tir.stmt.Stmt:1
+msgid "Base class of all the statements."
+msgstr ""
+
+#: of tvm.tir.expr.StringImm:1
+msgid "String constant."
+msgstr ""
+
+#: of tvm.tir.expr.Sub:1
+msgid "Sub node."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin:1
+msgid "A tensor intrinsic."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin:5 tvm.tir.function.TensorIntrin.register:7
+msgid "desc"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin:6 tvm.tir.function.TensorIntrin.register:8
+msgid "The function to describe the computation."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin:8 tvm.tir.function.TensorIntrin.register:9
+msgid "impl"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin:9 tvm.tir.function.TensorIntrin.register:10
+msgid "The function of the implementation for the execution."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:1
+msgid "Look up a tensor intrinsic by its name."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:6
+msgid "The name of the TensorIntrin to look up."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:8
+msgid "allow_missing"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:-1 tvm.tir.op.ptx_ldmatrix:-1
+#: tvm.tir.op.ptx_mma:-1 tvm.tir.op.ptx_mma_sp:-1 tvm.tir.op.simdgroup_load:-1
+#: tvm.tir.op.simdgroup_store:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:9
+msgid ""
+"Whether to allow missing tensor intrin. If False, raise an error if the "
+"tensor intrin"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:10
+msgid "doesn't exist."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:-1
+msgid "Optional[TensorIntrin]"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.get:15
+msgid "The TensorIntrin with the specified name, or None if not found."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.register:1
+msgid "Register a tensor intrinsic with its name."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.register:6
+msgid "The name of the TensorIntrin to register."
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.register:11
+msgid "override: bool"
+msgstr ""
+
+#: of tvm.tir.function.TensorIntrin.register:12
+msgid "Whether override existing intrinsic."
+msgstr ""
+
+#: of tvm.tir.expr.Var:1
+msgid "Symbolic variable."
+msgstr ""
+
+#: of tvm.tir.stmt.While:1
+msgid "While node."
+msgstr ""
+
+#: of tvm.tir.stmt.While:6
+msgid "The termination condition."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:1
+msgid "Backend function to allocate temporal workspace"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:5
+#: tvm.tir.op.TVMBackendFreeWorkspace:5
+msgid "device_type"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:6
+#: tvm.tir.op.TVMBackendFreeWorkspace:6
+msgid "The device type which the space will be allocated."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:8
+#: tvm.tir.op.TVMBackendFreeWorkspace:8
+msgid "device_id"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:9
+#: tvm.tir.op.TVMBackendFreeWorkspace:9
+msgid "The device id which the space will be allocated."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:11
+msgid "nbytes"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:12
+msgid "The size of the space requested."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:14
+msgid "dtype_code_hint"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:15
+msgid ""
+"The type code of the array elements. Only used in certain backends such "
+"as OpenGL."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:17
+msgid "dtype_bits_hint"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:18
+msgid ""
+"The type bits of the array elements. Only used in certain backends such "
+"as OpenGL."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:22
+#: tvm.tir.op.TVMBackendFreeWorkspace:16 tvm.tir.op.address_of:13
+#: tvm.tir.op.assume:10 tvm.tir.op.call_cpacked:16
+#: tvm.tir.op.call_cpacked_lowered:15 tvm.tir.op.call_extern:19
+#: tvm.tir.op.call_intrin:22 tvm.tir.op.call_llvm_intrin:19
+#: tvm.tir.op.call_llvm_pure_intrin:19 tvm.tir.op.call_packed:20
+#: tvm.tir.op.call_packed_lowered:18 tvm.tir.op.call_pure_extern:19
+#: tvm.tir.op.call_tir:5 tvm.tir.op.create_barriers:10 tvm.tir.op.dp4a:16
+#: tvm.tir.op.end_profile_intrinsic:8 tvm.tir.op.lookup_param:13
+#: tvm.tir.op.make_filled_simdgroup_matrix:22 tvm.tir.op.mma_fill:19
+#: tvm.tir.op.mma_store:28 tvm.tir.op.ptx_arrive_barrier:11
+#: tvm.tir.op.ptx_arrive_barrier_expect_tx:16 tvm.tir.op.ptx_commit_group:6
+#: tvm.tir.op.ptx_cp_async:26 tvm.tir.op.ptx_cp_async_barrier:11
+#: tvm.tir.op.ptx_cp_async_bulk:29 tvm.tir.op.ptx_init_barrier_thread_count:14
+#: tvm.tir.op.ptx_ldmatrix:32 tvm.tir.op.ptx_mma:53 tvm.tir.op.ptx_mma_sp:59
+#: tvm.tir.op.ptx_wait_barrier:11 tvm.tir.op.ptx_wait_group:11
+#: tvm.tir.op.simdgroup_load:28 tvm.tir.op.simdgroup_multiply_accumulate:32
+#: tvm.tir.op.simdgroup_store:29 tvm.tir.op.start_profile_intrinsic:8
+#: tvm.tir.op.trace:18 tvm.tir.op.tvm_access_ptr:22 tvm.tir.op.tvm_bmma_sync:31
+#: tvm.tir.op.tvm_check_return:12 tvm.tir.op.tvm_fill_fragment:25
+#: tvm.tir.op.tvm_load_matrix_sync:31 tvm.tir.op.tvm_mma_sync:31
+#: tvm.tir.op.tvm_stack_alloca:13 tvm.tir.op.tvm_stack_make_array:25
+#: tvm.tir.op.tvm_stack_make_shape:10 tvm.tir.op.tvm_store_matrix_sync:31
+#: tvm.tir.op.tvm_struct_get:19 tvm.tir.op.tvm_struct_set:19
+#: tvm.tir.op.tvm_thread_allreduce:10 tvm.tir.op.tvm_tuple:10
+#: tvm.tir.op.type_annotation:10 tvm.tir.op.undef:5 tvm.tir.op.vectorcombine:13
+#: tvm.tir.op.vectorhigh:13 tvm.tir.op.vectorlow:13
+msgid "call"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendAllocWorkspace:23
+#: tvm.tir.op.TVMBackendFreeWorkspace:17 tvm.tir.op.address_of:14
+#: tvm.tir.op.assume:11 tvm.tir.op.call_cpacked:17
+#: tvm.tir.op.call_cpacked_lowered:16 tvm.tir.op.call_extern:20
+#: tvm.tir.op.call_intrin:23 tvm.tir.op.call_llvm_intrin:20
+#: tvm.tir.op.call_llvm_pure_intrin:20 tvm.tir.op.call_packed:21
+#: tvm.tir.op.call_packed_lowered:19 tvm.tir.op.call_pure_extern:20
+#: tvm.tir.op.call_tir:6 tvm.tir.op.create_barriers:11 tvm.tir.op.dp4a:17
+#: tvm.tir.op.end_profile_intrinsic:9 tvm.tir.op.lookup_param:14
+#: tvm.tir.op.make_filled_simdgroup_matrix:23 tvm.tir.op.mma_fill:20
+#: tvm.tir.op.mma_store:29 tvm.tir.op.ptx_arrive_barrier:12
+#: tvm.tir.op.ptx_arrive_barrier_expect_tx:17 tvm.tir.op.ptx_commit_group:7
+#: tvm.tir.op.ptx_cp_async:27 tvm.tir.op.ptx_cp_async_barrier:12
+#: tvm.tir.op.ptx_cp_async_bulk:30 tvm.tir.op.ptx_init_barrier_thread_count:15
+#: tvm.tir.op.ptx_ldmatrix:33 tvm.tir.op.ptx_mma:54 tvm.tir.op.ptx_mma_sp:60
+#: tvm.tir.op.ptx_wait_barrier:12 tvm.tir.op.ptx_wait_group:12
+#: tvm.tir.op.simdgroup_load:29 tvm.tir.op.simdgroup_multiply_accumulate:33
+#: tvm.tir.op.simdgroup_store:30 tvm.tir.op.start_profile_intrinsic:9
+#: tvm.tir.op.trace:19 tvm.tir.op.tvm_access_ptr:23 tvm.tir.op.tvm_bmma_sync:32
+#: tvm.tir.op.tvm_check_return:13 tvm.tir.op.tvm_fill_fragment:26
+#: tvm.tir.op.tvm_load_matrix_sync:32 tvm.tir.op.tvm_mma_sync:32
+#: tvm.tir.op.tvm_stack_alloca:14 tvm.tir.op.tvm_stack_make_array:26
+#: tvm.tir.op.tvm_stack_make_shape:11 tvm.tir.op.tvm_store_matrix_sync:32
+#: tvm.tir.op.tvm_struct_get:20 tvm.tir.op.tvm_struct_set:20
+#: tvm.tir.op.tvm_thread_allreduce:11 tvm.tir.op.tvm_tuple:11
+#: tvm.tir.op.type_annotation:11 tvm.tir.op.undef:6 tvm.tir.op.vectorcombine:14
+#: tvm.tir.op.vectorhigh:14 tvm.tir.op.vectorlow:14
+msgid "The call expression."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendFreeWorkspace:1
+msgid "Backend function to free temporal workspace."
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendFreeWorkspace:11 tvm.tir.op.simdgroup_load:11
+#: tvm.tir.op.simdgroup_store:11
+msgid "ptr"
+msgstr ""
+
+#: of tvm.tir.op.TVMBackendFreeWorkspace:12
+msgid "The result allocated space pointer."
+msgstr ""
+
+#: of tvm.tir.op.abs:1
+msgid "Get absolute value of the input element-wise."
+msgstr ""
+
+#: of tvm.tir.op.abs:5 tvm.tir.op.acos:5 tvm.tir.op.acosh:5 tvm.tir.op.asin:5
+#: tvm.tir.op.asinh:5 tvm.tir.op.atan:5 tvm.tir.op.atanh:5
+#: tvm.tir.op.bitwise_and:5 tvm.tir.op.bitwise_not:5 tvm.tir.op.bitwise_or:5
+#: tvm.tir.op.bitwise_xor:5 tvm.tir.op.ceil:5 tvm.tir.op.clz:5 tvm.tir.op.cos:5
+#: tvm.tir.op.cosh:5 tvm.tir.op.erf:5 tvm.tir.op.exp:5 tvm.tir.op.exp10:5
+#: tvm.tir.op.exp2:5 tvm.tir.op.floor:5 tvm.tir.op.fmod:5 tvm.tir.op.isfinite:5
+#: tvm.tir.op.isinf:5 tvm.tir.op.isnan:5 tvm.tir.op.isnullptr:5
+#: tvm.tir.op.log:5 tvm.tir.op.log10:5 tvm.tir.op.log1p:5 tvm.tir.op.log2:5
+#: tvm.tir.op.nearbyint:12 tvm.tir.op.popcount:5 tvm.tir.op.pow:5
+#: tvm.tir.op.power:5 tvm.tir.op.q_multiply_shift:12
+#: tvm.tir.op.q_multiply_shift_per_axis:5 tvm.tir.op.round:5 tvm.tir.op.rsqrt:5
+#: tvm.tir.op.shift_left:5 tvm.tir.op.shift_right:5 tvm.tir.op.sigmoid:5
+#: tvm.tir.op.sin:5 tvm.tir.op.sinh:5 tvm.tir.op.sqrt:5 tvm.tir.op.tan:5
+#: tvm.tir.op.tanh:5 tvm.tir.op.trunc:8
+msgid "x"
+msgstr ""
+
+#: of tvm.tir.op.abs:6 tvm.tir.op.acos:6 tvm.tir.op.acosh:6 tvm.tir.op.asin:6
+#: tvm.tir.op.asinh:6 tvm.tir.op.atan:6 tvm.tir.op.atan2:6 tvm.tir.op.atan2:9
+#: tvm.tir.op.atanh:6 tvm.tir.op.ceil:6 tvm.tir.op.copysign:6
+#: tvm.tir.op.copysign:9 tvm.tir.op.cos:6 tvm.tir.op.cosh:6 tvm.tir.op.erf:6
+#: tvm.tir.op.exp:6 tvm.tir.op.exp10:6 tvm.tir.op.exp2:6 tvm.tir.op.floor:6
+#: tvm.tir.op.fmod:6 tvm.tir.op.fmod:8 tvm.tir.op.hypot:6 tvm.tir.op.hypot:9
+#: tvm.tir.op.isfinite:6 tvm.tir.op.isinf:6 tvm.tir.op.isnan:6
+#: tvm.tir.op.isnullptr:6 tvm.tir.op.ldexp:6 tvm.tir.op.ldexp:9
+#: tvm.tir.op.likely:7 tvm.tir.op.log:6 tvm.tir.op.log10:6 tvm.tir.op.log1p:6
+#: tvm.tir.op.log2:6 tvm.tir.op.nearbyint:13 tvm.tir.op.nextafter:6
+#: tvm.tir.op.nextafter:9 tvm.tir.op.popcount:6 tvm.tir.op.pow:6
+#: tvm.tir.op.power:6 tvm.tir.op.round:6 tvm.tir.op.rsqrt:6
+#: tvm.tir.op.shift_left:6 tvm.tir.op.shift_left:9 tvm.tir.op.shift_right:6
+#: tvm.tir.op.shift_right:9 tvm.tir.op.sigmoid:6 tvm.tir.op.sin:6
+#: tvm.tir.op.sinh:6 tvm.tir.op.sqrt:6 tvm.tir.op.tan:6 tvm.tir.op.tanh:6
+#: tvm.tir.op.trunc:9
+msgid "Input argument."
+msgstr ""
+
+#: of tvm.tir.op.abs:9 tvm.tir.op.address_of:9 tvm.tir.op.all:10
+#: tvm.tir.op.any:9 tvm.tir.op.bitwise_and:12 tvm.tir.op.bitwise_not:9
+#: tvm.tir.op.bitwise_or:12 tvm.tir.op.bitwise_xor:12
+#: tvm.tir.op.call_cpacked:12 tvm.tir.op.call_cpacked_lowered:11
+#: tvm.tir.op.call_extern:15 tvm.tir.op.call_intrin:18
+#: tvm.tir.op.call_llvm_intrin:15 tvm.tir.op.call_llvm_pure_intrin:15
+#: tvm.tir.op.call_packed:16 tvm.tir.op.call_packed_lowered:14
+#: tvm.tir.op.call_pure_extern:15 tvm.tir.op.ceil:9 tvm.tir.op.floor:9
+#: tvm.tir.op.infinity:9 tvm.tir.op.isfinite:9 tvm.tir.op.isinf:9
+#: tvm.tir.op.isnan:9 tvm.tir.op.isnullptr:9 tvm.tir.op.likely:10
+#: tvm.tir.op.lookup_param:9 tvm.tir.op.max_value:9 tvm.tir.op.min_value:9
+#: tvm.tir.op.nearbyint:16 tvm.tir.op.pow:12 tvm.tir.op.power:12
+#: tvm.tir.op.reinterpret:12 tvm.tir.op.ret:9 tvm.tir.op.round:9
+#: tvm.tir.op.trunc:12
+msgid "The location of this operator in the source code."
+msgstr ""
+
+#: of tvm.tir.op.abs:13 tvm.tir.op.acos:10 tvm.tir.op.acosh:10
+#: tvm.tir.op.asin:10 tvm.tir.op.asinh:10 tvm.tir.op.atan:10
+#: tvm.tir.op.atan2:13 tvm.tir.op.atanh:10 tvm.tir.op.bitwise_and:8
+#: tvm.tir.op.bitwise_or:8 tvm.tir.op.bitwise_xor:8 tvm.tir.op.ceil:13
+#: tvm.tir.op.clz:11 tvm.tir.op.copysign:13 tvm.tir.op.cos:10
+#: tvm.tir.op.cosh:10 tvm.tir.op.erf:10 tvm.tir.op.exp:10 tvm.tir.op.exp10:10
+#: tvm.tir.op.exp2:10 tvm.tir.op.floor:13 tvm.tir.op.fmod:7 tvm.tir.op.hypot:13
+#: tvm.tir.op.isfinite:13 tvm.tir.op.isinf:13 tvm.tir.op.isnan:13
+#: tvm.tir.op.isnullptr:13 tvm.tir.op.ldexp:13 tvm.tir.op.likely:14
+#: tvm.tir.op.log:10 tvm.tir.op.log10:10 tvm.tir.op.log1p:10 tvm.tir.op.log2:10
+#: tvm.tir.op.nearbyint:20 tvm.tir.op.nextafter:13 tvm.tir.op.popcount:10
+#: tvm.tir.op.pow:8 tvm.tir.op.power:8 tvm.tir.op.q_multiply_shift:14
+#: tvm.tir.op.q_multiply_shift:23 tvm.tir.op.q_multiply_shift_per_axis:7
+#: tvm.tir.op.round:13 tvm.tir.op.rsqrt:10 tvm.tir.op.shift_left:8
+#: tvm.tir.op.shift_right:8 tvm.tir.op.sigmoid:10 tvm.tir.op.sin:10
+#: tvm.tir.op.sinh:10 tvm.tir.op.sqrt:10 tvm.tir.op.tan:10 tvm.tir.op.tanh:10
+#: tvm.tir.op.trunc:16
+msgid "y"
+msgstr ""
+
+#: of tvm.tir.op.abs:14 tvm.tir.op.acos:11 tvm.tir.op.acosh:11
+#: tvm.tir.op.asin:11 tvm.tir.op.asinh:11 tvm.tir.op.atan:11
+#: tvm.tir.op.atan2:14 tvm.tir.op.atanh:11 tvm.tir.op.bitwise_and:17
+#: tvm.tir.op.bitwise_not:14 tvm.tir.op.bitwise_or:17 tvm.tir.op.bitwise_xor:17
+#: tvm.tir.op.ceil:14 tvm.tir.op.clz:12 tvm.tir.op.copysign:14
+#: tvm.tir.op.cos:11 tvm.tir.op.cosh:11 tvm.tir.op.erf:11 tvm.tir.op.exp:11
+#: tvm.tir.op.exp10:11 tvm.tir.op.exp2:11 tvm.tir.op.floor:14
+#: tvm.tir.op.fmod:13 tvm.tir.op.hypot:14 tvm.tir.op.isfinite:14
+#: tvm.tir.op.isinf:14 tvm.tir.op.isnan:14 tvm.tir.op.isnullptr:14
+#: tvm.tir.op.ldexp:14 tvm.tir.op.log:11 tvm.tir.op.log10:11
+#: tvm.tir.op.log1p:11 tvm.tir.op.log2:11 tvm.tir.op.nearbyint:21
+#: tvm.tir.op.nextafter:14 tvm.tir.op.popcount:11 tvm.tir.op.pow:17
+#: tvm.tir.op.power:17 tvm.tir.op.q_multiply_shift:24
+#: tvm.tir.op.q_multiply_shift_per_axis:23 tvm.tir.op.round:14
+#: tvm.tir.op.rsqrt:11 tvm.tir.op.shift_left:14 tvm.tir.op.shift_right:14
+#: tvm.tir.op.sigmoid:11 tvm.tir.op.sin:11 tvm.tir.op.sinh:11
+#: tvm.tir.op.sqrt:11 tvm.tir.op.tan:11 tvm.tir.op.tanh:11 tvm.tir.op.trunc:17
+msgid "The result."
+msgstr ""
+
+#: of tvm.tir.op.acos:1 tvm.tir.op.acosh:1
+msgid "Take acos of input x."
+msgstr ""
+
+#: of tvm.tir.generic.add:1
+msgid "Generic add operator."
+msgstr ""
+
+#: of tvm.tir.generic.add:-1 tvm.tir.generic.multiply:-1
+#: tvm.tir.generic.subtract:-1 tvm.tir.op.ceildiv:-1
+msgid "object"
+msgstr ""
+
+#: of tvm.tir.generic.add:6 tvm.tir.generic.multiply:6
+#: tvm.tir.generic.subtract:6 tvm.tir.op.ceildiv:6
+msgid "The left operand."
+msgstr ""
+
+#: of tvm.tir.generic.add:8 tvm.tir.generic.multiply:8
+#: tvm.tir.generic.subtract:8 tvm.tir.op.ceildiv:8
+msgid "The right operand."
+msgstr ""
+
+#: of tvm.tir.generic.add:10 tvm.tir.generic.multiply:10
+#: tvm.tir.generic.subtract:10 tvm.tir.op.ceildiv:10 tvm.tir.op.div:12
+#: tvm.tir.op.floordiv:12 tvm.tir.op.floormod:12 tvm.tir.op.if_then_else:15
+#: tvm.tir.op.indexdiv:12 tvm.tir.op.indexmod:12 tvm.tir.op.truncdiv:12
+#: tvm.tir.op.truncmod:12
+msgid "The location of this operator in the source."
+msgstr ""
+
+#: of tvm.tir.generic.add:-1 tvm.tir.generic.multiply:-1
+#: tvm.tir.generic.subtract:-1 tvm.tir.op.ceildiv:-1 tvm.tir.op.infinity:-1
+#: tvm.tir.op.max_value:-1 tvm.tir.op.min_value:-1 tvm.tir.op.reinterpret:-1
+msgid "tvm.Expr"
+msgstr ""
+
+#: of tvm.tir.generic.add:15
+msgid "The result Expr of add operaton."
+msgstr ""
+
+#: of tvm.tir.op.address_of:1
+msgid "Returns the address of an element in the buffer"
+msgstr ""
+
+#: of tvm.tir.op.address_of:5
+msgid "buffer_load: BufferLoad"
+msgstr ""
+
+#: of tvm.tir.op.address_of:6
+msgid "The buffer load."
+msgstr ""
+
+#: of tvm.tir.op.all:1
+msgid "Create a new expression of the intersection of all conditions in the"
+msgstr ""
+
+#: of tvm.tir.op.all:2
+msgid "arguments"
+msgstr ""
+
+#: of tvm.tir.op.all:-1 tvm.tir.op.any:-1 tvm.tir.op.call_extern:-1
+#: tvm.tir.op.call_intrin:-1 tvm.tir.op.call_llvm_intrin:-1
+#: tvm.tir.op.call_llvm_pure_intrin:-1 tvm.tir.op.call_pure_extern:-1
+#: tvm.tir.op.vectorcombine:-1 tvm.tir.op.vectorhigh:-1 tvm.tir.op.vectorlow:-1
+msgid "list"
+msgstr ""
+
+#: of tvm.tir.op.all:7 tvm.tir.op.any:6
+msgid "List of symbolic boolean expressions"
+msgstr ""
+
+#: of tvm.tir.op.all:14 tvm.tir.op.any:13
+msgid "expr: Expr"
+msgstr ""
+
+#: of tvm.tir.op.all:15 tvm.tir.op.any:14
+msgid "Expression"
+msgstr ""
+
+#: of tvm.tir.op.any:1
+msgid "Create a new experssion of the union of all conditions in the arguments"
+msgstr ""
+
+#: of tvm.tir.op.asin:1
+msgid "Take asin of input x."
+msgstr ""
+
+#: of tvm.tir.op.asinh:1
+msgid "Take asinh of input x."
+msgstr ""
+
+#: of tvm.tir.op.assume:1
+msgid "Provide a true statement that can be used for simplifications"
+msgstr ""
+
+#: of tvm.tir.op.assume:5 tvm.tir.op.if_then_else:5 tvm.tir.op.likely:6
+msgid "cond"
+msgstr ""
+
+#: of tvm.tir.op.assume:6
+msgid "The constraint condition."
+msgstr ""
+
+#: of tvm.tir.op.atan:1
+msgid "Take atan of input x."
+msgstr ""
+
+#: of tvm.tir.op.atan2:1
+msgid "Take arctan2(x1, x2)."
+msgstr ""
+
+#: of tvm.tir.op.atan2:5 tvm.tir.op.copysign:5 tvm.tir.op.hypot:5
+#: tvm.tir.op.ldexp:5 tvm.tir.op.nextafter:5
+msgid "x1"
+msgstr ""
+
+#: of tvm.tir.op.atan2:8 tvm.tir.op.copysign:8 tvm.tir.op.hypot:8
+#: tvm.tir.op.ldexp:8 tvm.tir.op.nextafter:8
+msgid "x2"
+msgstr ""
+
+#: of tvm.tir.op.atanh:1
+msgid "Take atanh of input x."
+msgstr ""
+
+#: of tvm.tir.data_layout.bijective_layout:1
+msgid "Create a bijective layout mapping."
+msgstr ""
+
+#: of tvm.tir.data_layout.bijective_layout:13
+msgid "bijective_layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.bijective_layout:-1
+msgid "BijectiveLayout"
+msgstr ""
+
+#: of tvm.tir.data_layout.bijective_layout:14
+msgid "The created bijective layout"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_and:1
+msgid "Take bitwise and of two values"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_and:6 tvm.tir.op.bitwise_or:6 tvm.tir.op.bitwise_xor:6
+msgid "Left operand"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_and:9 tvm.tir.op.bitwise_or:9 tvm.tir.op.bitwise_xor:9
+msgid "Right operand"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_and:16 tvm.tir.op.bitwise_not:13
+#: tvm.tir.op.bitwise_or:16 tvm.tir.op.bitwise_xor:16 tvm.tir.op.div:16
+#: tvm.tir.op.floordiv:16 tvm.tir.op.floormod:16 tvm.tir.op.indexdiv:16
+#: tvm.tir.op.indexmod:16 tvm.tir.op.truncdiv:16 tvm.tir.op.truncmod:16
+msgid "res"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_not:1
+msgid "Take bitwise not of input value"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_not:6
+msgid "Input operand"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_or:1
+msgid "Take bitwise or of two values"
+msgstr ""
+
+#: of tvm.tir.op.bitwise_xor:1
+msgid "Take bitwise xor of two values"
+msgstr ""
+
+#: of tvm.tir.op.call_cpacked:1 tvm.tir.op.call_packed:1
+msgid "Build expression by call an external packed function."
+msgstr ""
+
+#: of tvm.tir.op.call_cpacked:3
+msgid ""
+"Same as call_packed, except that the first argument is the function name "
+"(as in call_extern), and the last argument is the resource handle."
+msgstr ""
+
+#: of tvm.tir.op.call_cpacked:-1 tvm.tir.op.call_cpacked_lowered:-1
+#: tvm.tir.op.call_packed:-1 tvm.tir.op.call_packed_lowered:-1
+msgid "list of Expr or Buffer."
+msgstr ""
+
+#: of tvm.tir.op.call_cpacked:9 tvm.tir.op.call_cpacked_lowered:8
+#: tvm.tir.op.call_extern:12 tvm.tir.op.call_intrin:15
+#: tvm.tir.op.call_llvm_intrin:12 tvm.tir.op.call_llvm_pure_intrin:12
+#: tvm.tir.op.call_packed:13 tvm.tir.op.call_packed_lowered:11
+#: tvm.tir.op.call_pure_extern:12 tvm.tir.op.trace:11
+msgid "Positional arguments."
+msgstr ""
+
+#: of tvm.tir.op.call_cpacked:21 tvm.tir.op.call_cpacked_lowered:20
+#: tvm.tir.op.call_packed:25 tvm.tir.op.call_packed_lowered:23
+msgid "te.extern : Create tensor with extern function call."
+msgstr ""
+
+#: of tvm.tir.op.call_cpacked_lowered:1
+msgid ""
+"Lowered version of call c-packed. Same as call_packed, except that the "
+"first argument is the function name (as in call_extern), and the last "
+"argument is the resource handle."
+msgstr ""
+
+#: of tvm.tir.op.call_extern:1
+msgid "Build expression by calling a extern function."
+msgstr ""
+
+#: of tvm.tir.op.call_extern:6 tvm.tir.op.call_intrin:9
+#: tvm.tir.op.call_llvm_intrin:6 tvm.tir.op.call_llvm_pure_intrin:6
+#: tvm.tir.op.call_pure_extern:6 tvm.tir.op.get_active_lane_mask:9
+#: tvm.tir.op.mma_fill:6 tvm.tir.op.mma_store:6 tvm.tir.op.ptx_cp_async:7
+#: tvm.tir.op.ptx_cp_async_bulk:7 tvm.tir.op.ptx_ldmatrix:7
+#: tvm.tir.op.ptx_mma:7 tvm.tir.op.ptx_mma_sp:7 tvm.tir.op.vectorhigh:6
+#: tvm.tir.op.vectorlow:6
+msgid "The data type of the result."
+msgstr ""
+
+#: of tvm.tir.op.call_extern:8 tvm.tir.op.call_intrin:11
+#: tvm.tir.op.call_pure_extern:8
+msgid "func_name: str"
+msgstr ""
+
+#: of tvm.tir.op.call_extern:9 tvm.tir.op.call_pure_extern:9
+msgid "The extern function name."
+msgstr ""
+
+#: of tvm.tir.op.call_intrin:1
+msgid "Build expression by calling an intrinsic function."
+msgstr ""
+
+#: of tvm.tir.op.call_intrin:3
+msgid ""
+"Intrinsics can be overloaded with multiple data types via the intrinsic "
+"translation rule."
+msgstr ""
+
+#: of tvm.tir.op.call_intrin:12
+msgid "The intrinsic function name."
+msgstr ""
+
+#: of tvm.tir.op.call_llvm_intrin:1
+msgid "Build expression by calling a llvm intrinsic function"
+msgstr ""
+
+#: of tvm.tir.op.call_llvm_intrin:9 tvm.tir.op.call_llvm_pure_intrin:9
+msgid "The name of the llvm intrinsic function."
+msgstr ""
+
+#: of tvm.tir.op.call_llvm_pure_intrin:1
+msgid "Build expression by calling a pure llvm intrinsic function"
+msgstr ""
+
+#: of tvm.tir.op.call_packed:3
+msgid ""
+"The argument to packed function can be Expr or Buffer. The argument is "
+"the corresponding POD type when Expr is presented."
+msgstr ""
+
+#: of tvm.tir.op.call_packed:6
+msgid ""
+"When the argument is Buffer, the corresponding PackedFunc will receive an"
+" TVMArrayHandle whose content is valid during the callback period. If the"
+" PackedFunc is a python callback, then the corresponding argument is "
+"NDArray."
+msgstr ""
+
+#: of tvm.tir.op.call_packed_lowered:1
+msgid ""
+"Lowered version of call packed. The argument to packed function can be "
+"Expr or Buffer. The argument is the corresponding POD type when Expr is "
+"presented. When the argument is Buffer, the corresponding PackedFunc will"
+" recieve an TVMArrayHandle whose content is valid during the callback "
+"period. If the PackedFunc is a python callback, then the corresponding "
+"argument is NDArray."
+msgstr ""
+
+#: of tvm.tir.op.call_pure_extern:1
+msgid "Build expression by calling a pure extern function."
+msgstr ""
+
+#: of tvm.tir.op.call_tir:1
+msgid "Performs a call into another PrimFunc in the same IRModule"
+msgstr ""
+
+#: of tvm.tir.op.ceil:1
+msgid "Take ceil of float input x."
+msgstr ""
+
+#: of tvm.tir.op.ceildiv:1
+msgid "Generic ceildiv operator."
+msgstr ""
+
+#: of tvm.tir.op.ceildiv:15
+msgid "The result Expr of ceildiv operaton."
+msgstr ""
+
+#: of tvm.tir.op.clz:1
+msgid "Count leading zero bits of an integer x."
+msgstr ""
+
+#: of tvm.tir.op.clz:6
+msgid "Input 32 or 64 bit integer. The result is undefined if the input is 0."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:1
+msgid "Create a commutative reducer for reduction."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:5
+msgid "fcombine"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:-1
+msgid "function(Expr -> Expr -> Expr)"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:6
+msgid "A binary function which takes two Expr as input to return a Expr."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:8
+msgid "fidentity"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:-1
+msgid "function(str -> Expr)"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:9
+msgid "A function which takes a type string as input to return a const Expr."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:13
+msgid "reducer"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:-1
+msgid "function"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:14
+msgid ""
+"A function which creates a reduce expression over axis. There are two "
+"ways to use it:"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:17
+msgid "accept (expr, axis, where) to produce an Reduce Expr on specified axis;"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer:19
+msgid "simply use it with multiple Exprs."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:62 tvm.tir.op.comm_reducer:22
+#: tvm.tir.op.comm_reducer.<locals>.reducer:17
+msgid "Example"
+msgstr ""
+
+#: of tvm.tir.op.copysign:1
+msgid "Change the sign of x1 to that of x2, element-wise."
+msgstr ""
+
+#: of tvm.tir.op.cos:1
+msgid "Take cos of input x."
+msgstr ""
+
+#: of tvm.tir.op.cosh:1
+msgid "Take cosh of input x."
+msgstr ""
+
+#: of tvm.tir.op.create_barriers:1
+msgid "TVM intrinsic to create N barriers"
+msgstr ""
+
+#: of tvm.tir.op.create_barriers:5
+msgid "barrier_count"
+msgstr ""
+
+#: of tvm.tir.op.create_barriers:6
+msgid "The number of barriers to create."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:1
+msgid "Declare a new symbolic buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:3
+msgid ""
+"Normally buffer is created automatically during lower and build. This is "
+"only needed if user want to specify their own buffer layout."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:6
+msgid "See the note below for detailed discussion on usage of buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:-1
+msgid "tuple of Expr"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:11
+msgid "The shape of the buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:17
+msgid "The name of the buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:19 tvm.tir.op.tvm_access_ptr:8
+#: tvm.tir.op.tvm_stack_make_array:5
+msgid "data"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:-1
+msgid "tir.Var, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:20
+msgid "The data pointer in the buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:22
+msgid "strides: array of Expr"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:23
+msgid "The stride of the buffer."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:25
+msgid "elem_offset: Expr, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:26
+msgid ""
+"The beginning offset of the array to data. In terms of number of elements"
+" of dtype."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:29
+msgid "scope: str, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:30
+msgid ""
+"The storage scope of the buffer, if not global. If scope equals empty "
+"string, it means it is global memory."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:33
+msgid "data_alignment: int, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:34
+msgid ""
+"The alignment of data pointer in bytes. If -1 is passed, the alignment "
+"will be set to TVM's internal default."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:37
+msgid "offset_factor: int, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:38
+msgid ""
+"The factor of elem_offset field, when set, elem_offset is required to be "
+"multiple of offset_factor. If 0 is pssed, the alignment will be set to 1."
+" if non-zero is passed, we will created a Var for elem_offset if "
+"elem_offset is not None."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:43
+msgid "buffer_type: str, optional, {\"\", \"auto_broadcast\"}"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:44
+msgid ""
+"auto_broadcast buffer allows one to implement broadcast computation "
+"without considering whether dimension size equals to one. TVM maps "
+"buffer[i][j][k] -> buffer[i][0][k] if dimension j's shape equals 1."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:48
+msgid "axis_separators"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:-1
+msgid "list of int, optional"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:49
+msgid ""
+"If passed, a list of separators between groups of axes, each of which is "
+"flattened to an output axis.  For flat memory spaces, should either be "
+"None, or an empty list."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:54
+msgid "The location of the decl_buffer creation in the source."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:-1
+msgid "tvm.tir.Buffer"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:59
+msgid "The created buffer"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:63
+msgid ""
+"Here's an example of how broadcast buffer can be used to define a "
+"symbolic broadcast operation,"
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:86
+msgid ""
+"Buffer data structure reflects the DLTensor structure in dlpack. While "
+"DLTensor data structure is very general, it is usually helpful to create "
+"function that only handles specific case of data structure and make "
+"compiled function benefit from it."
+msgstr ""
+
+#: of tvm.tir.buffer.decl_buffer:91
+msgid ""
+"If user pass strides and elem_offset is passed as None when constructing "
+"the function, then the function will be specialized for the DLTensor that"
+" is compact and aligned. If user pass a fully generic symbolic array to "
+"the strides, then the resulting function becomes fully generic."
+msgstr ""
+
+#: of tvm.tir.op.div:1
+msgid "Compute a / b as in C/C++ semantics."
+msgstr ""
+
+#: of tvm.tir.op.div:6 tvm.tir.op.indexdiv:6 tvm.tir.op.indexmod:6
+msgid "The left hand operand, known to be non-negative."
+msgstr ""
+
+#: of tvm.tir.op.div:9 tvm.tir.op.indexdiv:9 tvm.tir.op.indexmod:9
+msgid "The right hand operand, known to be non-negative."
+msgstr ""
+
+#: of tvm.tir.op.div:17 tvm.tir.op.floordiv:17 tvm.tir.op.floormod:17
+#: tvm.tir.op.indexdiv:17 tvm.tir.op.indexmod:17 tvm.tir.op.truncdiv:17
+#: tvm.tir.op.truncmod:17
+msgid "The result expression."
+msgstr ""
+
+#: of tvm.tir.op.div:20
+msgid "When operands are integers, returns truncdiv(a, b, span)."
+msgstr ""
+
+#: of tvm.tir.op.dp4a:1
+msgid "Dot product of two int8x4 vectors and add an optional accumulator"
+msgstr ""
+
+#: of tvm.tir.op.dp4a:5 tvm.tir.op.vectorcombine:5
+msgid "vec1"
+msgstr ""
+
+#: of tvm.tir.op.dp4a:-1
+msgid "int8x4"
+msgstr ""
+
+#: of tvm.tir.op.dp4a:6 tvm.tir.op.dp4a:9 tvm.tir.op.vectorcombine:6
+#: tvm.tir.op.vectorcombine:9 tvm.tir.op.vectorhigh:9 tvm.tir.op.vectorlow:9
+msgid "The input vector."
+msgstr ""
+
+#: of tvm.tir.op.dp4a:8 tvm.tir.op.vectorcombine:8
+msgid "vec2"
+msgstr ""
+
+#: of tvm.tir.op.dp4a:11
+msgid "acc"
+msgstr ""
+
+#: of tvm.tir.op.dp4a:-1
+msgid "int32"
+msgstr ""
+
+#: of tvm.tir.op.dp4a:12
+msgid "The accumulator."
+msgstr ""
+
+#: of tvm.tir.op.end_profile_intrinsic:1
+msgid "End profile intrinsic. Parameters ---------- id : int"
+msgstr ""
+
+#: of tvm.tir.op.end_profile_intrinsic:5 tvm.tir.op.start_profile_intrinsic:5
+msgid "The intrinsic id."
+msgstr ""
+
+#: of tvm.tir.op.erf:1
+msgid "Take gauss error function of the input x."
+msgstr ""
+
+#: of tvm.tir.op.exp:1
+msgid "Take exponential of input x."
+msgstr ""
+
+#: of tvm.tir.op.exp10:1
+msgid "Calculate 10**x"
+msgstr ""
+
+#: of tvm.tir.op.exp2:1
+msgid "Calculate 2**x"
+msgstr ""
+
+#: of tvm.tir.op.floor:1
+msgid "Take floor of float input x."
+msgstr ""
+
+#: of tvm.tir.op.floordiv:1
+msgid "Compute the floordiv of two expressions."
+msgstr ""
+
+#: of tvm.tir.op.floordiv:6 tvm.tir.op.floormod:6 tvm.tir.op.truncdiv:6
+#: tvm.tir.op.truncmod:6
+msgid "The left hand operand"
+msgstr ""
+
+#: of tvm.tir.op.floordiv:9 tvm.tir.op.floormod:9 tvm.tir.op.truncdiv:9
+#: tvm.tir.op.truncmod:9
+msgid "The right hand operand"
+msgstr ""
+
+#: of tvm.tir.op.floormod:1
+msgid "Compute the floormod of two expressions."
+msgstr ""
+
+#: of tvm.tir.op.fmod:1
+msgid "Return the remainder of x divided by y with the same sign as x."
+msgstr ""
+
+#: of tvm.tir.op.fmod:12 tvm.tir.op.pow:16 tvm.tir.op.power:16
+#: tvm.tir.op.q_multiply_shift_per_axis:22 tvm.tir.op.shift_left:13
+#: tvm.tir.op.shift_right:13
+msgid "z"
+msgstr ""
+
+#: of tvm.tir.op.get_active_lane_mask:1
+msgid ""
+"Calculate a predicate mask given an upper bound (limit) and a current "
+"value (base)."
+msgstr ""
+
+#: of tvm.tir.op.get_active_lane_mask:3
+msgid ""
+"It will be lowered to the llvm.get.active.lane.mask intrinsic. "
+"(https://llvm.org/docs/LangRef.html#llvm-get-active-lane-mask-intrinsics)"
+msgstr ""
+
+#: of tvm.tir.op.get_active_lane_mask:12
+msgid "An expression reprsenting the base."
+msgstr ""
+
+#: of tvm.tir.op.get_active_lane_mask:14
+msgid "limit"
+msgstr ""
+
+#: of tvm.tir.op.get_active_lane_mask:15
+msgid "An expression representing the limit."
+msgstr ""
+
+#: of tvm.tir.op.get_vscale_expr:1
+msgid "Create a datatype dependent scalable expression."
+msgstr ""
+
+#: of tvm.tir.op.get_vscale_expr:-1
+msgid "Union[str, tvm.DataType]"
+msgstr ""
+
+#: of tvm.tir.op.get_vscale_expr:6
+msgid "Element data type."
+msgstr ""
+
+#: of tvm.tir.op.get_vscale_expr:7
+msgid "min_size"
+msgstr ""
+
+#: of tvm.tir.op.get_vscale_expr:8
+msgid "The minimum size of the scalable vector in bits."
+msgstr ""
+
+#: of tvm.tir.op.hypot:1
+msgid "Equivalent to sqrt(x1**2 + x2**2), element-wise."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:1
+msgid "Conditional selection expression."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:6
+msgid "The condition"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:8
+msgid "t"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:9
+msgid "The result expression if cond is true."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:11
+msgid "f"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:12
+msgid "The result expression if cond is false."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:-1
+msgid "Node"
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:20
+msgid "The result of conditional expression."
+msgstr ""
+
+#: of tvm.tir.op.if_then_else:24
+msgid ""
+"Unlike Select, if_then_else will not execute the branch that does not "
+"satisfy the condition. You can use it to guard against out of bound "
+"access. Unlike Select, if_then_else cannot be vectorized if some lanes in"
+" the vector have different conditions."
+msgstr ""
+
+#: of tvm.tir.op.indexdiv:1
+msgid "Compute floor(a / b) where a and b are non-negative."
+msgstr ""
+
+#: of tvm.tir.op.indexdiv:21 tvm.tir.op.indexmod:21
+msgid ""
+"Use this function to split non-negative indices. This function may take "
+"advantage of operands' non-negativeness."
+msgstr ""
+
+#: of tvm.tir.op.indexmod:1
+msgid "Compute the remainder of indexdiv. a and b are non-negative."
+msgstr ""
+
+#: of tvm.tir.op.infinity:1 tvm.tir.op.reinterpret:1
+msgid "infinity value of dtype"
+msgstr ""
+
+#: of tvm.tir.op.infinity:6 tvm.tir.op.max_value:6 tvm.tir.op.min_value:6
+#: tvm.tir.op.reinterpret:6 tvm.tir.op.type_annotation:6
+msgid "The data type."
+msgstr ""
+
+#: of tvm.tir.op.infinity:14
+msgid "The infinity value of dtype."
+msgstr ""
+
+#: of tvm.tir.op.isfinite:1
+msgid "Check if input value is finite."
+msgstr ""
+
+#: of tvm.tir.op.isinf:1
+msgid "Check if input value is infinite."
+msgstr ""
+
+#: of tvm.tir.op.isnan:1
+msgid "Check if input value is Nan."
+msgstr ""
+
+#: of tvm.tir.op.isnullptr:1
+msgid "Check if input value is nullptr."
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:1
+msgid "Create a layout node from a string."
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:5
+msgid "layout_str"
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:6
+msgid ""
+"A layout representation is composed of upper cases, lower cases and "
+"numbers, where upper case indicates a primal axis and the corresponding "
+"lower case with factor size indicates the subordinate axis. For example, "
+"NCHW16c can describe a 5-D tensor of [batch_size, channel, height, width,"
+" channel_block]. Here subordinate axis channel_block=16 is the factor "
+"size of the primal axis C (channel)."
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:15
+msgid ""
+"The dtype of generated axes vars in the returned layout. It is required "
+"to be integer type."
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:20 tvm.tir.op.tvm_load_matrix_sync:26
+#: tvm.tir.op.tvm_store_matrix_sync:26
+msgid "layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:-1
+msgid "Layout"
+msgstr ""
+
+#: of tvm.tir.data_layout.layout:21
+msgid "The created layout"
+msgstr ""
+
+#: of tvm.tir.op.ldexp:1
+msgid "Returns x1 * (2 ** x2)."
+msgstr ""
+
+#: of tvm.tir.op.likely:1
+msgid "Mark condition as likely."
+msgstr ""
+
+#: of tvm.tir.op.likely:15
+msgid "The marked expression."
+msgstr ""
+
+#: of tvm.tir.op.log:1
+msgid "Take log of input x."
+msgstr ""
+
+#: of tvm.tir.op.log10:1
+msgid "Take log10 of input x."
+msgstr ""
+
+#: of tvm.tir.op.log1p:1
+msgid "Take log(x + 1) with respect to input x."
+msgstr ""
+
+#: of tvm.tir.op.log2:1
+msgid "Take log2 of input x."
+msgstr ""
+
+#: of tvm.tir.op.lookup_param:1
+msgid "Returns the param by name"
+msgstr ""
+
+#: of tvm.tir.op.lookup_param:5
+msgid "param_name"
+msgstr ""
+
+#: of tvm.tir.op.lookup_param:6
+msgid "The name of param."
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:1
+msgid "Create a filled SIMDGroup matrix"
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:5 tvm.tir.op.simdgroup_load:5
+#: tvm.tir.op.simdgroup_multiply_accumulate:6 tvm.tir.op.simdgroup_store:5
+msgid "d"
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:6 tvm.tir.op.simdgroup_load:6
+msgid "The simdgroup var"
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:9 tvm.tir.op.simdgroup_load:9
+#: tvm.tir.op.simdgroup_store:9
+msgid "The index of the matrix."
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:12
+msgid "The value to fill."
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:14 tvm.tir.op.simdgroup_load:17
+#: tvm.tir.op.simdgroup_store:17
+msgid "col"
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:15 tvm.tir.op.simdgroup_load:18
+#: tvm.tir.op.simdgroup_store:18
+msgid "The number of columns."
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:17 tvm.tir.op.simdgroup_load:20
+#: tvm.tir.op.simdgroup_store:20
+msgid "row"
+msgstr ""
+
+#: of tvm.tir.op.make_filled_simdgroup_matrix:18 tvm.tir.op.simdgroup_load:21
+#: tvm.tir.op.simdgroup_store:21
+msgid "The number of rows."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:1
+msgid "Create a max expression over axis."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:5
+msgid "expr"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:-1
+msgid "IterVar"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:8
+msgid "The reduction IterVar axis"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:9
+msgid "where"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:-1
+msgid "optional, Expr"
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:10
+msgid "Filtering predicate of the reduction."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:14
+msgid "The result value."
+msgstr ""
+
+#: of tvm.tir.op.max_value:1
+msgid "maximum value of dtype"
+msgstr ""
+
+#: of tvm.tir.op.max_value:14
+msgid "The maximum value of dtype."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:1
+msgid "Create a min expression over axis."
+msgstr ""
+
+#: of tvm.tir.op.min_value:1
+msgid "minimum value of dtype"
+msgstr ""
+
+#: of tvm.tir.op.min_value:14
+msgid "The minimum value of dtype."
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:1
+msgid "TVM intrinsic for zero-initalizing an MMA accumulation registor"
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:8
+msgid "local_size"
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:-1 tvm.tir.op.mma_store:-1 tvm.tir.op.ptx_ldmatrix:-1
+#: tvm.tir.op.q_multiply_shift_per_axis:-1
+msgid "IntImm"
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:9
+msgid "The number of elements."
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:11 tvm.tir.op.ptx_ldmatrix:18
+msgid "local_ptr"
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:12 tvm.tir.op.mma_store:15
+msgid "The destination pointer variable."
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:14 tvm.tir.op.tvm_access_ptr:11
+msgid "offset"
+msgstr ""
+
+#: of tvm.tir.op.mma_fill:15
+msgid "The destination offset."
+msgstr ""
+
+#: of tvm.tir.op.mma_store:1
+msgid "TVM intrinsic for storing the result of PTX MMA into a destination pointer"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:8 tvm.tir.op.tvm_fill_fragment:8
+#: tvm.tir.op.tvm_load_matrix_sync:8 tvm.tir.op.tvm_store_matrix_sync:8
+msgid "m"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:9 tvm.tir.op.mma_store:12 tvm.tir.op.ptx_mma:10
+#: tvm.tir.op.ptx_mma_sp:10
+msgid "The shape of mma fragment."
+msgstr ""
+
+#: of tvm.tir.op.mma_store:11 tvm.tir.op.tvm_fill_fragment:11
+#: tvm.tir.op.tvm_load_matrix_sync:11 tvm.tir.op.tvm_store_matrix_sync:11
+msgid "n"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:14
+msgid "dst_ptr"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:17
+msgid "src_ptr"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:18
+msgid "The source pointer variable."
+msgstr ""
+
+#: of tvm.tir.op.mma_store:20
+msgid "src_offset"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:21
+msgid "The source offset."
+msgstr ""
+
+#: of tvm.tir.op.mma_store:23
+msgid "dst_stride"
+msgstr ""
+
+#: of tvm.tir.op.mma_store:24
+msgid "The destination stride."
+msgstr ""
+
+#: of tvm.tir.generic.multiply:1
+msgid "Generic multiply operator."
+msgstr ""
+
+#: of tvm.tir.generic.multiply:15
+msgid "The result Expr of multiply operaton."
+msgstr ""
+
+#: of tvm.tir.op.nearbyint:1
+msgid ""
+"Round elements of the array to the nearest integer. This intrinsic uses "
+"llvm.nearbyint instead of llvm.round which is faster but will results "
+"different from te.round. Notably nearbyint rounds according to the "
+"rounding mode, whereas te.round (llvm.round) ignores that. For "
+"differences between the two see: "
+"https://en.cppreference.com/w/cpp/numeric/math/round "
+"https://en.cppreference.com/w/cpp/numeric/math/nearbyint"
+msgstr ""
+
+#: of tvm.tir.op.nextafter:1
+msgid "Return the next floating-point value after x1 towards x2."
+msgstr ""
+
+#: of tvm.tir.op.popcount:1
+msgid "Count the number of set bits in input x."
+msgstr ""
+
+#: of tvm.tir.op.pow:1 tvm.tir.op.power:1
+msgid "x power y"
+msgstr ""
+
+#: of tvm.tir.op.pow:9 tvm.tir.op.power:9
+msgid "The exponent"
+msgstr ""
+
+#: of tvm.tir.op.ptx_arrive_barrier:1
+msgid ""
+"TVM intrinsic for ptx barrier arrival using mbarrier.arrive "
+"https://docs.nvidia.com/cuda/parallel-thread-execution/index.html"
+"#parallel-synchronization-and-communication-instructions-mbarrier-arrive"
+msgstr ""
+
+#: of tvm.tir.op.ptx_arrive_barrier:6 tvm.tir.op.ptx_arrive_barrier_expect_tx:7
+#: tvm.tir.op.ptx_cp_async_barrier:6 tvm.tir.op.ptx_cp_async_bulk:24
+#: tvm.tir.op.ptx_init_barrier_thread_count:6 tvm.tir.op.ptx_wait_barrier:6
+msgid "barrier_id"
+msgstr ""
+
+#: of tvm.tir.op.ptx_arrive_barrier:7 tvm.tir.op.ptx_arrive_barrier_expect_tx:8
+#: tvm.tir.op.ptx_cp_async_barrier:7 tvm.tir.op.ptx_cp_async_bulk:25
+#: tvm.tir.op.ptx_init_barrier_thread_count:7 tvm.tir.op.ptx_wait_barrier:7
+msgid "The ID of the barrier shared memory pointer."
+msgstr ""
+
+#: of tvm.tir.op.ptx_arrive_barrier_expect_tx:1
+msgid ""
+"TVM intrinsic for ptx barrier arrival with expect tx using "
+"mbarrier.arrive.expect_tx https://docs.nvidia.com/cuda/parallel-thread-"
+"execution/index.html#parallel-synchronization-and-communication-"
+"instructions-mbarrier-arrive https://docs.nvidia.com/cuda/parallel-"
+"thread-execution/index.html#parallel-synchronization-and-communication-"
+"instructions-mbarrier-expect-tx-operation"
+msgstr ""
+
+#: of tvm.tir.op.ptx_arrive_barrier_expect_tx:10
+msgid "byte_count"
+msgstr ""
+
+#: of tvm.tir.op.ptx_arrive_barrier_expect_tx:11
+msgid ""
+"Increases the tx count of the mbarrier object to track completion of "
+"addtional async transactions."
+msgstr ""
+
+#: of tvm.tir.op.ptx_commit_group:1
+msgid ""
+"TVM intrinsic for ptx async copy commit https://docs.nvidia.com/cuda"
+"/parallel-thread-execution/index.html#data-movement-and-conversion-"
+"instructions-cp-async-commit-group"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:1
+msgid ""
+"TVM intrinsic for ptx async copy from global to shared memory using "
+"cp.async https://docs.nvidia.com/cuda/parallel-thread-"
+"execution/index.html#data-movement-and-conversion-instructions-cp-async"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:9 tvm.tir.op.ptx_cp_async_bulk:9
+msgid "shared_ptr"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:10 tvm.tir.op.ptx_cp_async_bulk:10
+#: tvm.tir.op.ptx_ldmatrix:25
+msgid "The shared memory pointer variable."
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:12 tvm.tir.op.ptx_cp_async_bulk:12
+msgid "shared_offset"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:13 tvm.tir.op.ptx_cp_async_bulk:13
+msgid "The offset of shared memory pointer."
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:15 tvm.tir.op.ptx_cp_async_bulk:15
+msgid "global_ptr"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:16 tvm.tir.op.ptx_cp_async_bulk:16
+msgid "The global memory pointer variable."
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:18 tvm.tir.op.ptx_cp_async_bulk:18
+msgid "global_offset"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:19 tvm.tir.op.ptx_cp_async_bulk:19
+msgid "The offset of global memory pointer."
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:21 tvm.tir.op.ptx_cp_async_bulk:21
+msgid "bytes"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async:22 tvm.tir.op.ptx_cp_async_bulk:22
+msgid "The data size to copy."
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async_barrier:1
+msgid ""
+"TVM intrinsic for ptx async copy barrier using cp.async.mbarrier.arrive "
+"https://docs.nvidia.com/cuda/parallel-thread-execution/index.html"
+"#parallel-synchronization-and-communication-instructions-cp-async-"
+"mbarrier-arrive"
+msgstr ""
+
+#: of tvm.tir.op.ptx_cp_async_bulk:1
+msgid ""
+"TVM intrinsic for ptx async copy from global to shared memory using "
+"cp.async.bulk https://docs.nvidia.com/cuda/parallel-thread-"
+"execution/index.html#data-movement-and-conversion-instructions-cp-async-"
+"bulk"
+msgstr ""
+
+#: of tvm.tir.op.ptx_init_barrier_thread_count:1
+msgid ""
+"TVM intrinsic for ptx barrier initialization of thread count using "
+"mbarrier.init https://docs.nvidia.com/cuda/parallel-thread-"
+"execution/index.html#parallel-synchronization-and-communication-"
+"instructions-mbarrier-init"
+msgstr ""
+
+#: of tvm.tir.op.ptx_init_barrier_thread_count:9
+msgid "thread_count"
+msgstr ""
+
+#: of tvm.tir.op.ptx_init_barrier_thread_count:10
+msgid "Number of threads expected to arrive at the barrier."
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:1
+msgid ""
+"TVM intrinsic for ptx load matrix from shared memory "
+"https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#warp-"
+"level-matrix-instructions-ldmatrix"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:9
+msgid "trans"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:10
+msgid "The matrix is loaded in column-major format."
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:12 tvm.tir.op.ptx_wait_group:6
+#: tvm.tir.op.tvm_stack_alloca:8
+msgid "num"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:13
+msgid "The number of matrices."
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:15
+msgid "type"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:-1
+msgid "Literal[\".b16\"]"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:16
+msgid "The data type of the matrices."
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:19
+msgid "The local pointer variable."
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:21
+msgid "local_offset"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:22
+msgid "The offset of local pointer."
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:24
+msgid "smem_ptr"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:27
+msgid "smem_offset"
+msgstr ""
+
+#: of tvm.tir.op.ptx_ldmatrix:28
+msgid "The offset of shared memort pointer."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:1
+msgid ""
+"TVM intrinsic for ptx tensor core mma instructions "
+"https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#warp-"
+"level-matrix-instructions-for-mma"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:12 tvm.tir.op.ptx_mma_sp:12
+msgid "A_layout"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:-1 tvm.tir.op.ptx_mma_sp:-1
+msgid "Literal[\"row\", \"col\"]"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:13 tvm.tir.op.ptx_mma_sp:13
+msgid "The layout of multiplicand fragment A."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:15 tvm.tir.op.ptx_mma_sp:15
+msgid "B_layout"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:16 tvm.tir.op.ptx_mma_sp:16
+msgid "The layout of multiplicand fragment B."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:18 tvm.tir.op.ptx_mma_sp:18
+msgid "A_dtype"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:19 tvm.tir.op.ptx_mma_sp:19
+msgid "The data type of multiplicand fragment A."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:21 tvm.tir.op.ptx_mma_sp:21
+msgid "B_dtype"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:22 tvm.tir.op.ptx_mma_sp:22
+msgid "The data type of multiplicand fragment B."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:24 tvm.tir.op.ptx_mma_sp:24
+msgid "C_dtype"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:25
+msgid "The data type of accumulator fragment C."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:27 tvm.tir.op.ptx_mma_sp:27
+msgid "multiplicand_a"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:28 tvm.tir.op.ptx_mma_sp:28
+msgid "The multiplicand fragment A variable."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:30 tvm.tir.op.ptx_mma_sp:30
+msgid "a_index"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:31 tvm.tir.op.ptx_mma:37 tvm.tir.op.ptx_mma_sp:31
+msgid "The index of multiplicand fragment A."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:33 tvm.tir.op.ptx_mma_sp:33
+msgid "multiplicand_b"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:34 tvm.tir.op.ptx_mma_sp:34
+msgid "The multiplicand fragment B variable."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:36 tvm.tir.op.ptx_mma_sp:36
+msgid "b_index"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:39 tvm.tir.op.ptx_mma_sp:39
+msgid "accumulator"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:40 tvm.tir.op.ptx_mma_sp:40
+msgid "The accumulator fragment C variable."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:42 tvm.tir.op.ptx_mma_sp:42
+msgid "c_index"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:43 tvm.tir.op.ptx_mma_sp:43
+msgid "The index of accumulator fragment C."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:45 tvm.tir.op.ptx_mma_sp:54
+msgid "saturate"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:46 tvm.tir.op.ptx_mma_sp:55
+msgid "The optional saturation at the output."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:48
+msgid "operator"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:-1
+msgid "Optional[Literal[\"xor\", \"and\"]]"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma:49
+msgid "The 1-bit operator."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:1
+msgid ""
+"TVM intrinsic for sparse tensor core ptx instructions "
+"https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#warp-"
+"level-matrix-instructions-for-sparse-mma"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:25
+msgid "The data type of multiplicand fragment C."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:37
+msgid "The index of multiplicand fragment B."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:45
+msgid "metadata"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:46
+msgid "The metadata of operand."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:48
+msgid "meta_index"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:49
+msgid "The metadata index of operand."
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:51
+msgid "sparse_selector"
+msgstr ""
+
+#: of tvm.tir.op.ptx_mma_sp:52
+msgid "The sparse selector indicating the thread that stores the metadata."
+msgstr ""
+
+#: of tvm.tir.op.ptx_wait_barrier:1
+msgid ""
+"TVM intrinsic for ptx barrier wait using mbarrier.try_wait "
+"https://docs.nvidia.com/cuda/parallel-thread-execution/index.html"
+"#parallel-synchronization-and-communication-instructions-mbarrier-test-"
+"wait-mbarrier-try-wait"
+msgstr ""
+
+#: of tvm.tir.op.ptx_wait_group:1
+msgid ""
+"TVM intrinsic for ptx async copy wait https://docs.nvidia.com/cuda"
+"/parallel-thread-execution/index.html#data-movement-and-conversion-"
+"instructions-cp-async-wait-group"
+msgstr ""
+
+#: of tvm.tir.op.ptx_wait_group:7
+msgid "The number of the most recent uncommitted pending cp.async groups to wait."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:1
+msgid ""
+"Execute a multiplication between two Q-numbers x and y followed by a "
+"right shift s. The mathematical expression is:"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:4
+msgid "out = round(x*y*2^-s)"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:6
+msgid ""
+"More about Q-numbers here: "
+"https://en.wikipedia.org/wiki/Q_(number_format) The rounding rule is to "
+"the nearest value, rounding half up (i.e., round(x.1) = x and round (x.5)"
+" = x+1)"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:13
+msgid "First Q-number"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:15
+msgid "Second Q-number"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:16 tvm.tir.op.q_multiply_shift_per_axis:13
+msgid "q"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:17
+msgid "Number of fractional bits in x and y. Needs to be > 0"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:18
+msgid "s"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift:19
+msgid "Integer shift"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:1
+msgid "Execute a multiplication between two Q-numbers x and y"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:6
+msgid "First Q-number."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:8
+msgid "Second Q-number."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:9
+msgid "ls"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:10
+msgid "Integer left shift."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:11
+msgid "rs"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:12
+msgid "Integer right shift."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:14
+msgid "Number of fractional bits in x and y. Needs to be > 0."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:15
+msgid "is_lshift_required"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:16
+msgid "Whether we need to do left shift or not."
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:17
+msgid "is_rshift_required"
+msgstr ""
+
+#: of tvm.tir.op.q_multiply_shift_per_axis:18
+msgid "Whether we need to do right shift or not."
+msgstr ""
+
+#: of tvm.tir.op.reinterpret:9
+msgid "The input value."
+msgstr ""
+
+#: of tvm.tir.op.reinterpret:17
+msgid "The reinterpret cast value of dtype."
+msgstr ""
+
+#: of tvm.tir.op.ret:1
+msgid "Create a tir return expression"
+msgstr ""
+
+#: of tvm.tir.op.ret:5
+msgid "val"
+msgstr ""
+
+#: of tvm.tir.op.ret:6
+msgid ""
+"The returned tir expression, whose data type is int, float or void "
+"pointer."
+msgstr ""
+
+#: of tvm.tir.op.ret:13 tvm.tir.op.tvm_throw_last_error:5
+msgid "ret"
+msgstr ""
+
+#: of tvm.tir.op.ret:14 tvm.tir.op.tvm_throw_last_error:6
+msgid "The return expression"
+msgstr ""
+
+#: of tvm.tir.op.round:1
+msgid "Round elements of the array to the nearest integer."
+msgstr ""
+
+#: of tvm.tir.op.rsqrt:1
+msgid "Take reciprocal of square root of input x."
+msgstr ""
+
+#: of tvm.tir.op.shift_left:1
+msgid "Return the result of x left shifted by y bits."
+msgstr ""
+
+#: of tvm.tir.op.shift_right:1
+msgid "Return the result of x right shifted by y bits."
+msgstr ""
+
+#: of tvm.tir.op.sigmoid:1
+msgid "Quick function to get sigmoid"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_load:1
+msgid "Load data from device memory or threadgroup memory to simdgroup"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_load:12 tvm.tir.op.simdgroup_store:12
+msgid "The pointer."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_load:15 tvm.tir.op.simdgroup_store:15
+msgid "The stride."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_load:23 tvm.tir.op.simdgroup_store:24
+msgid "transpose_matrix"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_load:24 tvm.tir.op.simdgroup_store:25
+msgid "Whether to transpose the matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:1
+msgid "Multiply and accumulate two matrices in simdgroup i.e. d = a * b + c"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:7
+msgid "The destination matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:9 tvm.tir.op.tvm_bmma_sync:8
+#: tvm.tir.op.tvm_mma_sync:8
+msgid "index_d"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:10
+msgid "The index of the destination matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:13
+msgid "The first matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:15 tvm.tir.op.tvm_bmma_sync:14
+#: tvm.tir.op.tvm_mma_sync:14
+msgid "index_a"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:16
+msgid "The index of the first matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:19
+msgid "The second matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:21 tvm.tir.op.tvm_bmma_sync:20
+#: tvm.tir.op.tvm_mma_sync:20
+msgid "index_b"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:22
+msgid "The index of the second matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:24
+msgid "c"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:25
+msgid "The third matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:27 tvm.tir.op.tvm_bmma_sync:26
+#: tvm.tir.op.tvm_mma_sync:26
+msgid "index_c"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_multiply_accumulate:28
+msgid "The index of the third matrix."
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_store:1
+msgid "Store data from simdgroup to device memory or threadgroup memory"
+msgstr ""
+
+#: of tvm.tir.op.simdgroup_store:6
+msgid "The SIMDGroup."
+msgstr ""
+
+#: of tvm.tir.op.sin:1
+msgid "Take sin of input x."
+msgstr ""
+
+#: of tvm.tir.op.sinh:1
+msgid "Take sinh of input x."
+msgstr ""
+
+#: of tvm.tir.op.sqrt:1
+msgid "Take square root of input x."
+msgstr ""
+
+#: of tvm.tir.op.start_profile_intrinsic:1
+msgid "Start profile intrinsic. Parameters ---------- id : int"
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_list:1
+msgid "Make list of stmt from blocks."
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_list:6
+msgid "The input statement."
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_list:10
+msgid "stmt_list"
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_list:11
+msgid "The unpacked list of statements"
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_seq:1
+msgid "Make sequence of statements"
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_seq:5
+msgid "*args"
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_seq:-1
+msgid "Union[PrimExpr, Stmt]"
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_seq:6
+msgid "List of statements to be combined as sequence."
+msgstr ""
+
+#: of tvm.tir.stmt.stmt_seq:11
+msgid "The combined statement."
+msgstr ""
+
+#: of tvm.tir.generic.subtract:1
+msgid "Generic subtract operator."
+msgstr ""
+
+#: of tvm.tir.generic.subtract:15
+msgid "The result Expr of subtract operaton."
+msgstr ""
+
+#: of tvm.tir.op.comm_reducer.<locals>.reducer:1
+msgid "Create a sum expression over axis."
+msgstr ""
+
+#: of tvm.tir.op.tan:1
+msgid "Take tan of input x."
+msgstr ""
+
+#: of tvm.tir.op.tanh:1
+msgid "Take hyperbolic tanh of input x."
+msgstr ""
+
+#: of tvm.tir.op.trace:1
+msgid "Trace tensor data at the runtime."
+msgstr ""
+
+#: of tvm.tir.op.trace:3
+msgid ""
+"The trace function allows to trace specific tensor at the runtime. The "
+"tracing value should come as last argument. The trace action should be "
+"specified, by default tvm.default_trace_action is used."
+msgstr ""
+
+#: of tvm.tir.op.trace:-1
+msgid "list of Expr or Buffers."
+msgstr ""
+
+#: of tvm.tir.op.trace:13
+msgid "trace_action"
+msgstr ""
+
+#: of tvm.tir.op.trace:-1
+msgid "str."
+msgstr ""
+
+#: of tvm.tir.op.trace:14
+msgid "The name of the trace action."
+msgstr ""
+
+#: of tvm.tir.op.trace:23
+msgid "tvm.tir.call_packed : Creates packed function."
+msgstr ""
+
+#: of tvm.tir.op.trunc:1
+msgid "Get truncated value of the input."
+msgstr ""
+
+#: of tvm.tir.op.trunc:3
+msgid ""
+"The truncated value of the scalar x is the nearest integer i which is "
+"closer to zero than x is."
+msgstr ""
+
+#: of tvm.tir.op.truncdiv:1
+msgid "Compute the truncdiv of two expressions."
+msgstr ""
+
+#: of tvm.tir.op.truncdiv:21 tvm.tir.op.truncmod:21
+msgid "This is the default integer division behavior in C."
+msgstr ""
+
+#: of tvm.tir.op.truncmod:1
+msgid "Compute the truncmod of two expressions."
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:1
+msgid "Get head access address with memory access pattern info"
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:5
+msgid "ptype"
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:6
+msgid "The data type of pointer."
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:-1
+msgid "DType*"
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:9
+msgid "The data of pointer."
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:12
+msgid "The offset of pointer."
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:17
+msgid "rw_mask"
+msgstr ""
+
+#: of tvm.tir.op.tvm_access_ptr:18
+msgid "The read write mask."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:1
+msgid "TVM intrinsic for tensor core bmma_sync operators"
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:5 tvm.tir.op.tvm_mma_sync:5
+msgid "fragment_d"
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:6
+msgid "The bwmma fragment_d."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:9 tvm.tir.op.tvm_mma_sync:9
+msgid "The fragment_d index."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:11 tvm.tir.op.tvm_mma_sync:11
+msgid "fragment_a"
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:12
+msgid "The bwmma fragment_a."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:15 tvm.tir.op.tvm_mma_sync:15
+msgid "The fragment_a index."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:17 tvm.tir.op.tvm_mma_sync:17
+msgid "fragment_b"
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:18
+msgid "The bwmma fragment_b."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:21 tvm.tir.op.tvm_mma_sync:21
+msgid "The fragment_b index."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:23 tvm.tir.op.tvm_mma_sync:23
+msgid "fragment_c"
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:24
+msgid "The bwmma fragment_c."
+msgstr ""
+
+#: of tvm.tir.op.tvm_bmma_sync:27 tvm.tir.op.tvm_mma_sync:27
+msgid "The fragment_c index."
+msgstr ""
+
+#: of tvm.tir.op.tvm_check_return:1
+msgid "Return new on stack dtype[num] Parameters ---------- expected : int"
+msgstr ""
+
+#: of tvm.tir.op.tvm_check_return:5
+msgid "The expected return code."
+msgstr ""
+
+#: of tvm.tir.op.tvm_check_return:6
+msgid "return_unexpected"
+msgstr ""
+
+#: of tvm.tir.op.tvm_check_return:7
+msgid "The unexpected return code."
+msgstr ""
+
+#: of tvm.tir.op.tvm_check_return:8
+msgid "nested_call"
+msgstr ""
+
+#: of tvm.tir.op.tvm_check_return:9
+msgid "The call expression to check return."
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:1
+msgid "TVM intrinsic for tensor core fill_fragment operators"
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:5 tvm.tir.op.tvm_load_matrix_sync:5
+#: tvm.tir.op.tvm_store_matrix_sync:5
+msgid "fragment"
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:6
+msgid "The wmma fragment"
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:-1 tvm.tir.op.tvm_load_matrix_sync:-1
+#: tvm.tir.op.tvm_store_matrix_sync:-1
+msgid "UIntImm"
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:9 tvm.tir.op.tvm_fill_fragment:12
+#: tvm.tir.op.tvm_fill_fragment:15 tvm.tir.op.tvm_load_matrix_sync:9
+#: tvm.tir.op.tvm_load_matrix_sync:12 tvm.tir.op.tvm_load_matrix_sync:15
+#: tvm.tir.op.tvm_store_matrix_sync:9 tvm.tir.op.tvm_store_matrix_sync:12
+#: tvm.tir.op.tvm_store_matrix_sync:15
+msgid "The shape of wmma fragment."
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:14 tvm.tir.op.tvm_load_matrix_sync:14
+#: tvm.tir.op.tvm_store_matrix_sync:14
+msgid "k"
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:18 tvm.tir.op.tvm_load_matrix_sync:18
+#: tvm.tir.op.tvm_store_matrix_sync:18
+msgid "The fragment index."
+msgstr ""
+
+#: of tvm.tir.op.tvm_fill_fragment:21
+msgid "The value to be filled in fragment."
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:1
+msgid "TVM intrinsic for tensor core load operators"
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:6 tvm.tir.op.tvm_store_matrix_sync:6
+msgid "The wmma fragment."
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:20 tvm.tir.op.tvm_store_matrix_sync:20
+msgid "buffer_ptr"
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:21 tvm.tir.op.tvm_store_matrix_sync:21
+msgid "The fragment buffer pointer."
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:24 tvm.tir.op.tvm_store_matrix_sync:24
+msgid "The fragment stride."
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:-1 tvm.tir.op.tvm_store_matrix_sync:-1
+msgid "Literal[\"row_major\", \"column_major\"]"
+msgstr ""
+
+#: of tvm.tir.op.tvm_load_matrix_sync:27 tvm.tir.op.tvm_store_matrix_sync:27
+msgid "The fragment layout."
+msgstr ""
+
+#: of tvm.tir.op.tvm_mma_sync:1
+msgid "TVM intrinsic for tensor core mma_sync operators"
+msgstr ""
+
+#: of tvm.tir.op.tvm_mma_sync:6
+msgid "The wmma fragment_d."
+msgstr ""
+
+#: of tvm.tir.op.tvm_mma_sync:12
+msgid "The wmma fragment_a."
+msgstr ""
+
+#: of tvm.tir.op.tvm_mma_sync:18
+msgid "The wmma fragment_b."
+msgstr ""
+
+#: of tvm.tir.op.tvm_mma_sync:24
+msgid "The wmma fragment_c."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_alloca:1
+msgid "Return new on stack dtype[num]"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_alloca:5
+msgid "dtype_str"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_alloca:6 tvm.tir.op.tvm_stack_make_array:18
+msgid "The data type of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_alloca:9
+msgid "The size of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:1
+msgid "Allocate a NDArray(DLTensor) on stack, return the handle"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:6
+msgid "The data of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:9
+msgid "The shape of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:11
+msgid "strides"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:12
+msgid "The strides of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:14
+msgid "ndim"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:15
+msgid "The dimensions of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:17
+msgid "arr_dtype"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:20
+msgid "elem_offse"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_array:21
+msgid "The element offset of array."
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_shape:1
+msgid "Allocate a shape tuple on stack, return the handle"
+msgstr ""
+
+#: of tvm.tir.op.tvm_stack_make_shape:6
+msgid "The tuple shape."
+msgstr ""
+
+#: of tvm.tir.op.tvm_store_matrix_sync:1
+msgid "TVM intrinsic for tensor core store operators"
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:1
+msgid "Get struct field value in array"
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:6
+msgid "The date type of the result."
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:8 tvm.tir.op.tvm_struct_set:5
+msgid "arr"
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:-1 tvm.tir.op.tvm_struct_set:-1
+msgid "StructType*"
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:9 tvm.tir.op.tvm_struct_set:6
+msgid "The array of struct."
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:12 tvm.tir.op.tvm_struct_set:9
+msgid "The index of struct."
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:14 tvm.tir.op.tvm_struct_set:11
+msgid "field"
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_get:15 tvm.tir.op.tvm_struct_set:12
+msgid "The field of struct."
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_set:1
+msgid "Set value in struct field in array"
+msgstr ""
+
+#: of tvm.tir.op.tvm_struct_set:15
+msgid "The value to be set in field."
+msgstr ""
+
+#: of tvm.tir.op.tvm_thread_allreduce:1
+msgid "Perform allreduce inside threadblock."
+msgstr ""
+
+#: of tvm.tir.op.tvm_thread_allreduce:5
+msgid "freduce_args"
+msgstr ""
+
+#: of tvm.tir.op.tvm_thread_allreduce:6
+msgid "The args."
+msgstr ""
+
+#: of tvm.tir.op.tvm_throw_last_error:1
+msgid "Throw TVMGetLastError()"
+msgstr ""
+
+#: of tvm.tir.op.tvm_tuple:1
+msgid "Create a tuple structure in value field of AttrStmt"
+msgstr ""
+
+#: of tvm.tir.op.tvm_tuple:6
+msgid "The value in tuple."
+msgstr ""
+
+#: of tvm.tir.op.type_annotation:1
+msgid "Create a type annotation expression"
+msgstr ""
+
+#: of tvm.tir.op.undef:1
+msgid "Returns an initialized but arbitrary value"
+msgstr ""
+
+#: of tvm.tir.op.vectorcombine:1
+msgid "Concat two vectors"
+msgstr ""
+
+#: of tvm.tir.op.vectorhigh:1
+msgid "Get the high level half of the vector"
+msgstr ""
+
+#: of tvm.tir.op.vectorhigh:8 tvm.tir.op.vectorlow:8
+msgid "vec"
+msgstr ""
+
+#: of tvm.tir.op.vectorlow:1
+msgid "Get the low level half of the vector"
+msgstr ""
+
+#: of tvm.tir.op.vscale:1
+msgid ""
+"Get the target's vscale value. It will be lowered to llvm.vscale "
+"intrinsic (https://llvm.org/docs/LangRef.html#llvm-vscale-intrinsic) "
+"Returns ------- call : PrimExpr"
+msgstr ""
+
+#: of tvm.tir.op.vscale:6
+msgid "Call to the vscale intrinsic"
+msgstr ""
+

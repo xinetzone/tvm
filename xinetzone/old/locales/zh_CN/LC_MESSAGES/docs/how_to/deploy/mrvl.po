@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:20
+msgid "Marvell Machine Learning Integration"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:23
+msgid "1. Introduction"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:24
+msgid ""
+"Marvell(R) supports a family of high performance Data Processing Units "
+"(DPUs) with integrated compute, high speed I/O and workload accelerators."
+" These workload accelerators includes Marvell's Machine Learning "
+"Inference Processor (MLIP), a highly optimized, integrated inference "
+"engine."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:30
+msgid ""
+"TVM supports Marvell's MLIP using the \"mrvl\" library. This partitions "
+"and compiles supported operations for accelerated execution on MLIP, or "
+"LLVM for general compute."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:34
+msgid ""
+"For runtime, the library supports native execution on MLIP hardware as "
+"well as Marvell's ML simulator (mrvl-mlsim)."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:37
+msgid ""
+"The library supports Marvell's Octeon family of processors with ML "
+"accelarators."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:39
+msgid ""
+"This guide demonstrates building TVM with codegen and runtime enabled. It"
+" also provides example code to compile and run models using 'mrvl' "
+"runtime."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:44
+msgid "2. Building TVM with mrvl support"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:47
+msgid "2.1 Clone TVM repo"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:49
+msgid ""
+"Refer to the following TVM documentation for cloning TVM "
+"https://tvm.apache.org/docs/install/from_source.html"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:53
+msgid "2.2 Build and start the TVM - mrvl docker container"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:61
+msgid "3. Compiling a model using TVMC command line"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:62
+msgid ""
+"Models can be compiled and run for mrvl target using TVMC which is "
+"optimized for performance."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:65
+msgid ""
+"Refer to the following TVMC documentation, for tvmc generic options. "
+"https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:68
+msgid ""
+"Additional mrvl-specific options may be added as attributes if necessary."
+" The advanced usage is described in this document below."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:72
+msgid "3.1 TVMC Compilation Flow for a model"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:74
+msgid ""
+"Refer to the following TVM documentation, for compilation flow "
+"https://tvm.apache.org/docs/arch/index.html#example-compilation-flow"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:79
+msgid "3.2. TVMC - Command line option(s): Syntax for mrvl target"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:81
+msgid "Compiling an ONNX model using the tvmc for mrvl target."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:83
+msgid "**Syntax:**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:93
+msgid ""
+"Following is an example TVMC Compile command for an ARMv9 core and "
+"integrated MLIP cn10ka processor, using only 4 tiles in the block."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:96
+msgid "**Example:**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:107
+msgid ""
+"The runtime support for hardware acceleration is a WIP, it will be added "
+"in future PR."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:110
+msgid "3.3. TVMC Compiler: mrvl specific Command Line Options"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:118
+msgid "**Description of mrvl options**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:120
+msgid "mcpu:"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:121
+msgid ""
+"The CPU class of Marvell(R) ML Inference Processor; possible values = "
+"{cn10ka, cnf10kb}; defaults to cn10ka"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:124
+msgid "num_tiles:"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:125
+msgid ""
+"Maximum number of tiles that may be used, possible values = {1,2,4,8}, "
+"defaults to 8"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:127
+msgid "mattr:"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:128
+msgid "Attributes for mrvl; possible values = {quantize, wb_pin_ocm}"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:130
+msgid "mattr specifies the data type, code generation options and optimizations."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:132
+msgid "*List of supported attributes are:*"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:134
+msgid "**1. quantize**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:136
+msgid ""
+"Specify the data type. Possible values = {fp16, int8}. Default is fp16, "
+"int8 is WIP and full support will be added in a future PR."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:139
+msgid "**2. wb_pin_ocm**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:141
+msgid ""
+"Optimize runtime by preloading a model's weights and bias into the on "
+"chip memory. Possible values = {0, 1}. Default is 0 (no preload)"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:145
+msgid "4. Compile ONNX model for Simulator + LLVM / x86_64 target"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:147
+msgid ""
+"In the TVMC mrvl flow, the model is partitioned into Marvell and LLVM "
+"regions. Building each partitioned Marvell subgraph generates serialized "
+"nodes.json and const.json. Partitioned nodes.json is the representation "
+"of the model graph which is suitable for the Marvell compiler (mrvl-"
+"tmlc). The compiler compiles the model graph to generate the model binary"
+" with MLIP instructions."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:153
+msgid "**Model Compilation for Simulator + LLVM / x86_64 target**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:160
+msgid "**Run TVM models on x86_64 host using MLIP Simulator**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:162
+msgid ""
+"Generated model binary is simulated using Marvell's MLIP Simulator(mrvl-"
+"mlsim)."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:169
+msgid "5. Compiling a model using Python APIs"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:171
+msgid ""
+"In addition to using TVMC, models can also be compiled and run using TVM "
+"Python API. Below is an example to compile and run the MNIST model."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:174
+msgid "**Download MNIST model from the web**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:181
+msgid "**Import the TVM and other dependent modules**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:193
+msgid "**Load model onnx file**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:199
+msgid "**Create a Relay graph from MNIST model**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:206
+msgid "**Define option dictionary and Partition the Model**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:208
+msgid ""
+"Annotate and partition the graph for mrvl. All operations which are "
+"supported by the mrvl will be marked and offloaded to mrvl hardware "
+"accelerator. The rest of the operations will go through the regular LLVM "
+"compilation and code generation for ARM."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:220
+msgid "**Build the Relay Graph**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:222
+msgid ""
+"Build the Relay graph, using the new module returned by "
+"partition_for_mrvl."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:229
+msgid "**Generate runtime graph of the model library**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:236
+msgid "**Get test data and initialize model input**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/mrvl.rst:246
+msgid "**Run Inference and print the output**"
+msgstr ""
+
+#~ msgid ""
+#~ "For runtime, the library supports native"
+#~ " execution on MLIP hardware as well"
+#~ " as Marvell's ML simulator (mlModel)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3. Build TVM inside the docker "
+#~ "container with mrvl (inside tvm "
+#~ "directory)"
+#~ msgstr ""
+
+#~ msgid "4. Compiling a model using TVMC command line"
+#~ msgstr ""
+
+#~ msgid "4.1 TVMC Compilation Flow for a model"
+#~ msgstr ""
+
+#~ msgid "4.2. TVMC - Command line option(s): Syntax for mrvl target"
+#~ msgstr ""
+
+#~ msgid "4.3. TVMC Compiler: mrvl specific Command Line Options"
+#~ msgstr ""
+
+#~ msgid "5. Compilation - Generating model partitions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the TVMC mrvl flow, the model"
+#~ " is partitioned into Marvell and LLVM"
+#~ " regions. Building each partitioned Marvell"
+#~ " subgraph generates serialized nodes.json "
+#~ "and const.json. Partitioned nodes.json is "
+#~ "the representation of the model graph"
+#~ " which is suitable for the Marvell"
+#~ " mmlc compiler. It is distributed "
+#~ "separately via CDK"
+#~ msgstr ""
+
+#~ msgid "**Model Partition**"
+#~ msgstr ""
+
+#~ msgid "6. Compiling a model using Python APIs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In addition to using TVMC, models "
+#~ "can also be compiled and run using"
+#~ " TVM Python API. Below is an "
+#~ "example to compile the MNIST model. "
+#~ "Support to run the model will be"
+#~ " part of next PR by mrvl"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Build the Relay graph, using the "
+#~ "new module returned by partition_for_mrvl. "
+#~ "The target must always be a LLVM"
+#~ " (ARM) target. ``partition_for_mrvl`` will "
+#~ "pass the options from dictionary into"
+#~ " the config parameters needed by the"
+#~ " compiler backend, so there is no "
+#~ "need to modify it - just pass "
+#~ "it along to the PassContext so the"
+#~ " values can be read during "
+#~ "compilation."
+#~ msgstr ""
+

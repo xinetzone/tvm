@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:23
+msgid "Algebraic Data Types in Relay"
+msgstr "Relay 中的代数数据类型"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:25
+msgid ""
+"Algebraic data types (ADTs) are a staple feature of functional "
+"programming languages, particularly those derived from ML, because they "
+"express data structures in a manner that is easy to reason about when "
+"writing recursive computations. Because recursion is intended to be one "
+"of the primary mechanisms of control flow in Relay, it is important that "
+"Relay include ADTs in order to best express loops and other control flow "
+"structures that must be implemented using recursion."
+msgstr ""
+"代数数据类型（ADTs）是函数式编程语言的核心特性，尤其是那些源自 ML 的语言，因为它们以一种易于推理的方式表达数据结构，特别是在编写递归计算时。"
+"由于递归旨在成为 Relay 中控制流的主要机制之一，因此 Relay 包含 ADT 非常重要，以便最好地表达必须使用递归实现的循环和其他控制流结构。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:33
+msgid "Defining and Matching on an ADT"
+msgstr "定义和匹配 ADT"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:35
+msgid ""
+"*Note: ADTs are not presently supported in the text format. The syntax "
+"here is speculative, based on ADTs in other languages.*"
+msgstr ""
+"*注意：ADT 目前在文本格式中不受支持。此处的语法是基于其他语言中的 ADT 推测的。*""
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:37
+msgid ""
+"ADTs can be understood as a generalized version of :code:`enum` and "
+":code:`struct` types from C-like languages. Like a C :code:`struct:`, an "
+"ADT instance is a container for fields of specified types, but the type "
+"system allows for the same type to encode different possible groupings of"
+" fields in a systematic manner, similar to C :code:`enum` types, which "
+"are defined using a finite set of possible values named by the user."
+msgstr ""
+"ADT 可以理解为类似 C 语言中 :code:`enum` 和 :code:`struct` 类型的广义版本。与 C 的 :code:`struct` 类似，ADT 实例是指定类型字段的容器，"
+"但类型系统允许同一类型以系统化的方式编码不同的字段组合，类似于 C 的 :code:`enum` 类型，后者使用用户命名的有限可能值集定义。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:43
+msgid ""
+"Specifically, an ADT is defined as a named group of constructors, each of"
+" which is a function that takes values of specified types as arguments "
+"and returns an instance of the named ADT. An ADT instance simply contains"
+" the values of the arguments passed to the constructor call used to "
+"produce it."
+msgstr ""
+"具体来说，ADT 被定义为一组命名的构造函数，每个构造函数都是一个函数，它接受指定类型的值作为参数并返回命名 ADT 的实例。ADT 实例仅包含用于生成它的构造函数调用中传递的参数值。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:48
+msgid ""
+"An ADT value is opaque until it is *deconstructed*, allowing the "
+"arguments to the constructor to be accessed again and used to compute new"
+" values. Because a particular ADT can have multiple constructors with "
+"different signatures, it is usually necessary to branch on the different "
+"possible constructors, resulting in the *match* syntax for ADTs. Hence, "
+"ADTs are sometimes called \"tagged unions\" because an ADT instance is "
+"tagged by the name of the constructor used to produce it and can later be"
+" inspected based on the tag."
+msgstr ""
+"ADT 值在被 *解构* 之前是不透明的，解构允许再次访问构造函数的参数并将其用于计算新值。"
+"由于特定的 ADT 可以具有不同签名的多个构造函数，因此通常需要根据不同的可能构造函数进行分支，从而产生 ADT 的 *match* 语法。"
+"因此，ADT 有时被称为“带标签的联合体”，因为 ADT 实例由用于生成它的构造函数的名称标记，并且以后可以根据标签进行检查。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:56
+msgid ""
+"Because each ADT has a finite set of constructors, it is straightforward "
+"to determine whether a function processing an ADT instance is handling "
+"all possible cases. In particular, the type system can ensure that types "
+"are properly assigned in all cases when deconstructing an ADT instance, "
+"in contrast to :code:`union` types in C. Hence, it is often easy to "
+"reason about ADTs."
+msgstr ""
+"由于每个 ADT 都有一组有限的构造函数，因此可以很容易地确定处理 ADT 实例的函数是否处理了所有可能的情况。"
+"特别是，类型系统可以确保在解构 ADT 实例时，在所有情况下都正确分配类型，这与 C 中的 :code:`union` 类型形成对比。因此，通常很容易对 ADT 进行推理。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:62
+msgid ""
+"*Implementation detail: Relay ADT definitions are global and are stored "
+"in the module, similarly to global function definitions. An ADT name is, "
+"in fact, a global type variable (just as a global function name is a "
+"global variable). The module keeps a mapping of ADT names (global type "
+"variables) to the list of constructors for that ADT.*"
+msgstr ""
+"*实现细节：Relay ADT 定义是全局的，并存储在模块中，类似于全局函数定义。"
+"实际上，ADT 名称是全局类型变量（就像全局函数名称是全局变量一样）。模块维护了 ADT 名称（全局类型变量）到该 ADT 构造函数列表的映射。*"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:64
+msgid ""
+"Below is a simple example of defining an ADT and using it in a function "
+"via a match expression:"
+msgstr ""
+"以下是定义 ADT 并通过 match 表达式在函数中使用它的简单示例："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:93
+msgid ""
+"Note that ADTs are identified by name, meaning that two ADTs with "
+"structurally identical constructors will nevertheless be distinct data "
+"types from the point of view of the typechecker."
+msgstr ""
+"请注意，ADT 通过名称进行标识，这意味着从类型检查器的角度来看，具有结构相同构造函数的两个 ADT 仍然是不同的数据类型。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:112
+msgid "Type-Checking ADTs and Polymorphism"
+msgstr "类型检查 ADT 和多态性"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:114
+msgid ""
+"This section will go into more specific detail about the typing of ADTs. "
+"Most of the complexity involved results from the fact that, as with "
+"functions, ADTs can be polymorphic and take type parameters."
+msgstr ""
+"本节将更详细地介绍 ADT 的类型。涉及的大部分复杂性源于这样的事实，即与函数一样，ADT 可以是多态的并接受类型参数。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:118
+msgid ""
+"For example, one of the standard ADTs commonly used in functional "
+"programming languages is the optional type, defined here:"
+msgstr ""
+"例如，函数式编程语言中常用的标准 ADT 之一是可选类型，定义如下："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:129
+msgid ""
+"Optional types are commonly used as the return type for any operation "
+"involving querying into a data structure (returning :code:`Some(v)` if a "
+"value is found and :code:`None` if it isn't). Taking a type parameter in "
+"the definition allows the same optional type to be used in a wide variety"
+" of situations, rather than having to define a unique ADT for each "
+"different type that could be contained in it."
+msgstr ""
+"可选类型通常用作涉及查询数据结构的任何运算的返回类型（如果找到值则返回 :code:`Some(v)`，如果未找到则返回 :code:`None`）。"
+"在定义中采用类型参数允许在多种情况下使用相同的可选类型，而不必为其中可能包含的每种不同类型定义唯一的 ADT。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:136
+msgid ""
+"However, it is important to ensure that option types whose contents are "
+"of different types can still be distinguished by the type system, since "
+"it would violate type safety if a function expecting an option containing"
+" a :code:`Tensor[(), int32]` instead receives an option containing a "
+":code:`Tensor[(3, 4), float32]`. As this example may imply, an ADT "
+"instance is thus given a type that contains the concrete type arguments "
+"for that instance, ensuring the information is kept around. Let the below"
+" example illustrate:"
+msgstr ""
+"然而，重要的是要确保内容类型不同的可选类型仍然可以被类型系统区分，"
+"因为如果期望包含 :code:`Tensor[(), int32]` 的可选类型的函数接收到包含 :code:`Tensor[(3, 4), float32]` 的可选类型，将违反类型安全性。"
+"正如这个例子可能暗示的那样，ADT 实例因此被赋予一个包含该实例的具体类型参数的类型，确保信息得以保留。让以下示例说明："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:167
+msgid ""
+"The syntax for the annotated type arguments (e.g., "
+":code:`Optional[Tensor[(), int32]]`) in the above examples is called a "
+"\"type call,\" treating the polymorphic ADT definition as a type-level "
+"function (taking type params and returning a type, namely the ADT). Any "
+"ADT appearing in a type annotation or function signature must be "
+"annotated with type arguments (a non-polymorphic ADT must be in a type "
+"call with no arguments)."
+msgstr ""
+"上述示例中带注释的类型参数（例如 :code:`Optional[Tensor[(), int32]]`）的语法称为“类型调用”，将多态 ADT 定义视为类型级函数（接受类型参数并返回类型，即 ADT）。"
+"出现在类型注释或函数签名中的任何 ADT 都必须用类型参数进行注释（非多态 ADT 必须位于没有参数的类型调用中）。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:175
+msgid ""
+"Thus, we can say in general that if constructor :code:`C` that takes "
+"arguments of types :code:`T1, ..., Tn` is a constructor for an ADT "
+":code:`D` that takes type parameters :code:`v1, ..., vn` (where "
+":code:`T1, ..., Tn` may contain any of the :code:`v1, ..., vn`), then "
+":code:`C` has the type :code:`fun<v1, ..., vn>(T1, ..., Tn) -> D[v1, ...,"
+" vn]`. This means that constructors are typed like ordinary functions and"
+" thus appear inside call nodes and can be passed to or returned by other "
+"functions. In particular, the :code:`Some` example above has the "
+"signature :code:`fun<a>(a) -> Optional[a]`, while :code:`None` has the "
+"signature :code:`fun<a>() -> Optional[a]`."
+msgstr ""
+"因此，可以说，如果接受类型为 :code:`T1, ..., Tn` 的参数的构造函数 :code:`C` 是接受类型参数 :code:`v1, ..., vn` 的 ADT :code:`D` 的构造函数"
+"（其中 :code:`T1, ..., Tn` 可能包含任何 :code:`v1, ..., vn`），那么 :code:`C` 的类型为 :code:`fun<v1, ..., vn>(T1, ..., Tn) -> D[v1, ..., vn]`。"
+"这意味着构造函数的类型与普通函数类似，因此出现在调用节点内部，并且可以传递给其他函数或由其他函数返回。"
+"特别是，上面的 :code:`Some` 示例具有签名 :code:`fun<a>(a) -> Optional[a]`，而 :code:`None` 具有签名 :code:`fun<a>() -> Optional[a]`。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:188
+msgid "Recursion with ADTs"
+msgstr "使用 ADT 进行递归"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:190
+msgid ""
+"ADT definitions are allowed to be recursive, that is, a definition for an"
+" ADT named :code:`D` can assume the existence of type :code:`D` and use "
+"it as an argument to constructors. Recursion allows ADTs to represent "
+"complex structures such as lists or trees; it is the source of much of "
+"ADTs' power in functional programming, since an appropriately designed "
+"data structure could make it easy to concisely express a computation with"
+" a recursive function."
+msgstr ""
+"ADT 定义允许递归，即名为 :code:`D` 的 ADT 的定义可以假设类型 :code:`D` 的存在并将其用作构造函数的参数。"
+"递归允许 ADT 表示复杂结构，例如列表或树；它是 ADT 在函数式编程中强大功能的来源，因为适当设计的数据结构可以很容易地用递归函数简洁地表达计算。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:198
+msgid ""
+"Many commonly used ADTs involve recursion; some of these are given in "
+"`Common ADT Uses`_. As an example here, we will examine the list ADT, "
+"ubiquitous in functional languages:"
+msgstr ""
+"许多常用的 ADT 都涉及递归；其中一些在 `Common ADT Uses`_ 中给出。作为例子，将检查函数式语言中无处不在的列表 ADT："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:209
+msgid ""
+"(Notice that the recursive reference to :code:`List` is wrapped in a type"
+" call even in the constructor.)"
+msgstr ""
+"（请注意，即使在构造函数中，对 :code:`List` 的递归引用也包装在类型调用中。）"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:212
+msgid ""
+"The above definition means that a list of values of a particular type can"
+" be represented by nesting :code:`Cons` constructors until the end of the"
+" list is reached, which can be indicated with a :code:`Nil` (representing"
+" an empty list)."
+msgstr ""
+"上述定义意味着特定类型值的列表可以通过嵌套 :code:`Cons` 构造函数来表示，直到到达列表的末尾，可以用 :code:`Nil` 表示（表示空列表）。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:217
+msgid ""
+"Lists represented in this manner can easily be recursively processed. For"
+" example, the following function sums a list of integers:"
+msgstr ""
+"以这种方式表示的列表可以很容易地递归处理。例如，以下函数对整数列表求和："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:230
+msgid ""
+"As it happens, many recursive functions on lists like the one just given "
+"share structures that can be factored out into generic, easily usable "
+"functions that will be discussed under `Common ADT Uses`_."
+msgstr ""
+"事实上，许多像上面给出的那样的列表递归函数共享可以分解为通用的、易于使用的函数的结构，这些函数将在 `Common ADT Uses`_ 下讨论。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:237
+msgid "Pattern Matching in Match Expressions"
+msgstr "匹配表达式中的模式匹配"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:239
+msgid ""
+"Match expressions in Relay, as in other functional languages, are capable"
+" of more versatile pattern matching than simply having one case for each "
+"constructor for the datatype of the value being deconstructed."
+msgstr ""
+"与其他函数式语言一样，Relay 中的匹配表达式能够进行比仅为被解构值的类型的每个构造函数提供一个 case 更通用的模式匹配。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:243
+msgid "In particular, the patterns in match cases can be built up recursively:"
+msgstr "特别是，匹配 case 中的模式可以递归构建："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:245
+msgid ""
+"Constructor patterns match for a particular ADT constructor. If a value "
+"matches the constructor, each argument to the constructor will be matched"
+" against a nested pattern."
+msgstr ""
+"构造函数模式匹配特定的 ADT 构造函数。如果值与构造函数匹配，则构造函数的每个参数将与嵌套模式匹配。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:246
+msgid "Wildcard patterns will match any value and will not bind to a variable."
+msgstr "通配符模式将匹配任何值，并且不会绑定到变量。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:247
+msgid ""
+"Variable patterns will match any value and bind it to a local variable, "
+"scoped to the match clause."
+msgstr ""
+"变量模式将匹配任何值并将其绑定到局部变量，作用域为匹配子句。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:249
+msgid ""
+"In the simple case of :code:`@list_sum` above, the first match case has a"
+" :code:`Nil` constructor pattern (with no nested arguments) and the "
+"second has a :code:`Cons` constructor pattern that uses variable patterns"
+" for each of the arguments to :code:`Cons`."
+msgstr ""
+"在上面简单的 :code:`@list_sum` 例子中，第一个匹配 case 有一个 :code:`Nil` 构造函数模式（没有嵌套参数），"
+"第二个有一个 :code:`Cons` 构造函数模式，该模式对 :code:`Cons` 的每个参数使用变量模式。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:252
+msgid ""
+"The below example uses a wildcard pattern to ignore one of the arguments "
+"to :code:`Cons`:"
+msgstr ""
+"以下示例使用通配符模式忽略 :code:`Cons` 的一个参数：""
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:263
+msgid ""
+"Here, a constructor pattern is nested inside another constructor pattern "
+"to avoid nested match expressions for a list option. A top-level wildcard"
+" pattern is also used to handle all cases that do not match the first "
+"clause:"
+msgstr ""
+"在这里，构造函数模式嵌套在另一个构造函数模式中，以避免列表选项的嵌套匹配表达式。还使用顶级通配符模式来处理与第一个子句不匹配的所有情况：""
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:281
+msgid ""
+"Note that a match expression checks its patterns in the order the cases "
+"are listed: the first clause whose pattern that matches the input value "
+"is the one that is evaluated. Here, a top-level variable pattern binds "
+"the whole input value:"
+msgstr ""
+"请注意，匹配表达式按照 case 列出的顺序检查其模式：第一个模式与输入值匹配的子句是被评估的子句。在这里，顶级变量模式绑定整个输入值："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:297
+msgid "Common ADT Uses"
+msgstr "常见的 ADT 用法"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:299
+msgid ""
+"In functional programming languages, certain ADTs provide useful "
+"facilities for writing common programs. Parametric polymorphism and "
+"higher-order functions allow these ADTs to be easily reuseable and for "
+"generic functions to manipulate them in common situations. Relay includes"
+" a \"Prelude\" of certain pre-defined ADTs and functions for them that "
+"correspond to the indispensable ADTs of other languages."
+msgstr ""
+"在函数式编程语言中，某些 ADT 为编写常见程序提供了有用的功能。"
+"参数多态性和高阶函数使这些 ADT 易于重用，并且通用函数可以在常见情况下操作它们。"
+"Relay 包含某些预定义 ADT 及其函数的“Prelude”，对应于其他语言中不可或缺的 ADT。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:304
+msgid ""
+"The option type defined under `Type-Checking ADTs and Polymorphism`_ is "
+"one such ADT, used whenever it can make sense for a function to only "
+"return a value under certain circumstances. Having the option type allows"
+" for the type system to keep track of which functions always return a "
+"value of a certain type versus returning an option of that type, ensuring"
+" that any options are always explicitly checked (contrast with returning "
+"null pointers or throwing exceptions as other ways to addressing that "
+"problem)."
+msgstr ""
+"在 `Type-Checking ADTs and Polymorphism`_ 下定义的可选类型就是这样一种 ADT，每当函数在某些情况下仅返回值有意义时使用。"
+"拥有可选类型允许类型系统跟踪哪些函数总是返回某个类型的值，而不是返回该类型的可选值，确保任何可选值总是被显式检查（与返回空指针或抛出异常作为解决该问题的其他方法形成对比）。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:311
+msgid ""
+"Lists (defined in `Recursion with ADTs`_) can be manipulated by generic "
+"functions in a manner similar to list comprehensions and certain library "
+"functions in Python. Below are very common functions for iterating "
+"through lists, which are included in Relay's Prelude. (These have all "
+"been extensively characterized in the functional programming literature, "
+"and we do not attempt to reproduce that work in this document.)"
+msgstr ""
+"列表（在 `Recursion with ADTs`_ 中定义）可以通过通用函数以类似于 Python 中的列表推导和某些库函数的方式操作。"
+"以下是遍历列表的非常常见的函数，它们包含在 Relay 的 Prelude 中。（这些函数在函数式编程文献中已经广泛描述，不会在本文档中尝试重现这些工作。）""
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:342
+msgid ""
+"Using these iteration constructs, many common operations over lists can "
+"be expressed compactly. For example, the following map doubles all "
+"members of a list:"
+msgstr ""
+"使用这些迭代结构，可以简洁地表达列表上的许多常见操作。例如，以下 map 将列表的所有成员加倍：""
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:358
+msgid "The following right fold concatenates two lists:"
+msgstr "以下右折叠连接两个列表："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:373
+msgid "The following left fold flattens a list of lists (using concatenation):"
+msgstr "以下左折叠展平列表的列表（使用连接）："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:387
+msgid ""
+"Note that these iteration constructs can be implemented directly in "
+"Relay's source language and more can easily be defined (and for more data"
+" types, like trees), rather than being constructs built into the language"
+" (e.g., `\"foreach\" in MXNet "
+"<https://mxnet.apache.org/versions/master/tutorials/control_flow/ControlFlowTutorial.html>`__)."
+" ADTs and their extensibility allow for a broad range of iterations and "
+"data structures to be expressed in Relay and supported by the type system"
+" without having to modify the language implementation."
+msgstr ""
+"请注意，这些迭代结构可以直接在 Relay 的源语言中实现，并且可以轻松定义更多（以及更多数据类型，如树），"
+"而不是内置到语言中的结构（例如，MXNet 中的 `\"foreach\" <https://mxnet.apache.org/versions/master/tutorials/control_flow/ControlFlowTutorial.html>`__）。"
+"ADT 及其可扩展性允许在 Relay 中表达广泛的迭代和数据结构，并由类型系统支持，而无需修改语言实现。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:395
+msgid "Implementing Neural Nets Using ADTs"
+msgstr "使用 ADT 实现神经网络"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:397
+msgid ""
+"In `this 2015 blog post <http://colah.github.io/posts/2015-09-NN-Types-"
+"FP/>`__, Christopher Olah notes that many neural networks can be easily "
+"expressed using common functional programming constructs. Relay's ADTs "
+"allow those examples to be implemented directly in TVM."
+msgstr ""
+"在 `这篇 2015 年的博客文章 <http://colah.github.io/posts/2015-09-NN-Types-FP/>`__ 中，Christopher Olah 指出，"
+"许多神经网络可以很容易地使用常见的函数式编程结构表达。Relay 的 ADT 允许这些示例直接在 TVM 中实现。"
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:401
+msgid ""
+"First let us suppose that we have a function corresponding to a trained "
+"recurrent neural net (RNN) cell, which takes in a past state and an input"
+" value and returns a new state and output value. In Relay, this would "
+"have the following signature:"
+msgstr ""
+"首先让假设有对应于训练好的递归神经网络（RNN）单元的函数，它接受过去的状态和输入值并返回新的状态和输出值。在 Relay 中，这将具有以下签名："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:409
+msgid ""
+"We might consider a ReLU cell as a simple concrete example, with a "
+"trained version below:"
+msgstr ""
+"可以将 ReLU 单元作为简单的具体示例，下面是训练好的版本："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:431
+msgid ""
+"Following Olah's example, we can encode a sequence (list) of inputs with "
+"the following left fold:"
+msgstr ""
+"按照 Olah 的例子，可以使用以下左折叠对输入序列（列表）进行编码："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:440
+msgid ""
+"Using an *unfold* iterator (from Haskell's standard library), the same "
+"cell could be used to make a generator network (which takes a single "
+"input and produces a sequence of outputs):"
+msgstr ""
+"使用 *unfold* 迭代器（来自 Haskell 的标准库），相同的单元可以用于制作生成器网络（它接受单个输入并产生一系列输出）："
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:469
+msgid ""
+"An accumulating map (a fold that simultaneously updates an accumulator "
+"value and a list of outputs) can be used to write a general RNN (with an "
+"output for every input):"
+msgstr ""
+"累积映射（同时更新累加器值和输出列表的折叠）可以用于编写通用 RNN（每个输入都有输出）：""
+
+#: ../../doc/docs/reference/langref/relay_adt.rst:500
+msgid ""
+"Olah also gives an example of a bidirectional neural network, in which "
+"two sets of cells (which may have different weights) process the input in"
+" both directions and produce a single set of outputs. The following is a "
+"Relay implementation of that example:"
+msgstr ""
+"Olah 还给出了双向神经网络的例子，其中两组单元（可能具有不同的权重）在两个方向上处理输入并产生一组输出。以下是该示例的 Relay 实现："

@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/program_bitstream/index.rst:2
+msgid "vta.program_bitstream"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:8
+msgid "VTA specific bitstream program library."
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid ""
+":py:obj:`bitstream_program <vta.program_bitstream.bitstream_program>`\\ "
+"\\(target\\, bitstream\\, \\*args\\)"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:29
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid "program bitstream to devices"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid ""
+":py:obj:`de10nano_bitstream_program "
+"<vta.program_bitstream.de10nano_bitstream_program>`\\ "
+"\\(bitstream\\_path\\)"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid ""
+":py:obj:`intelfocl_bitstream_program "
+"<vta.program_bitstream.intelfocl_bitstream_program>`\\ "
+"\\(bitstream\\_path\\[\\, mem\\_size\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid ":py:obj:`main <vta.program_bitstream.main>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:38
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid "Main function"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:23:<autosummary>:1
+msgid ""
+":py:obj:`pynq_bitstream_program "
+"<vta.program_bitstream.pynq_bitstream_program>`\\ \\(bitstream\\_path\\)"
+msgstr ""
+
+#: ../../doc/api/vta/program_bitstream/index.rst:25
+msgid "Module Contents"
+msgstr ""
+

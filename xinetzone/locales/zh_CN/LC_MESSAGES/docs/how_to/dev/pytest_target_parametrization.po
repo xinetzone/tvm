@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:19
+msgid "Python Target Parametrization"
+msgstr "Python Target 参数化"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:22
+msgid "Summary"
+msgstr "概要"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:24
+msgid ""
+"For any supported runtime, TVM should produce numerically correct "
+"results.  Therefore, when writing unit tests that validate the numeric "
+"output, these unit tests should be run on all supported runtimes.  Since "
+"this is a very common use case, TVM has helper functions to parametrize "
+"unit tests such that they will run on all targets that are enabled and "
+"have a compatible device."
+msgstr ""
+"对于任何支持的运行时环境，TVM 都应生成数值上正确的结果。"
+"因此，在编写验证数值输出的单元测试时，这些测试应在所有支持的运行时环境中运行。"
+"由于这是非常常见的用例，TVM 提供了辅助函数来参数化单元测试，使得它们能够在所有启用且设备兼容的目标上运行。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:31
+msgid ""
+"A single python function in the test suite can expand to several "
+"parameterized unit tests, each of which tests a single target device. In "
+"order for a test to be run, all of the following must be true."
+msgstr ""
+"测试套件中的单独的 Python 函数可以扩展为多个参数化的单元测试，每个测试针对特定的目标设备。要执行测试，以下所有条件必须成立。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:35
+msgid "The test exists in a file or directory that has been passed to `pytest`."
+msgstr "这个测试存在于文件或目录中，该文件或目录已被传递到 `pytest`。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:38
+msgid ""
+"The pytest marks applied to the function, either explicitly or through "
+"target parametrization, must be compatible with the expression passed to "
+"pytest's `-m` argument."
+msgstr ""
+"应用到函数上的 pytest 标记，无论是显式地还是通过目标参数化的方式，都必须与传递给 pytest 的 ``-m`` 参数表达式兼容。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:42
+msgid ""
+"For parametrized tests using the `target` fixture, the target must appear"
+" in the environment variable `TVM_TEST_TARGETS`."
+msgstr ""
+"对于使用 ``target`` 装置的参数化测试，目标必须出现在环境变量 ``TVM_TEST_TARGETS`` 中。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:45
+msgid ""
+"For parametrized tests using the `target` fixture, the build "
+"configuration in `config.cmake` must enable the corresponding runtime."
+msgstr ""
+"对于使用 ``target`` fixture的参数化测试，必须在 ``config.cmake`` 中的构建配置中启用相应的运行时环境。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:50
+msgid "Unit-Test File Contents"
+msgstr "单元测试文件内容"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:54
+msgid ""
+"The recommended method to run a test on multiple targets is by "
+"parametrizing the test.  This can be done explicitly for a fixed list of "
+"targets by decorating with ``@tvm.testing.parametrize_targets('target_1',"
+" 'target_2', ...)``, and accepting ``target`` or ``dev`` as function "
+"arguments.  The function will be run once for each target listed, and the"
+" success/failure of each target is reported separately.  If a target "
+"cannot be run because it is disabled in the `config.cmake`, or because no"
+" appropriate hardware is present, then that target will be reported as "
+"skipped."
+msgstr ""
+"在多个目标上运行测试的推荐方法是通过参数化测试。"
+"对于固定的目标列表，可以通过使用 ``@tvm.testing.parametrize_targets('target_1', 'target_2', ...)`` 装饰器显式地实现，"
+"并在函数中接受 ``target`` 或 ``dev`` 作为参数。该函数将为列出的每个目标运行一次，并且每个目标的成功或失败将单独报告。"
+"如果某个目标无法运行，例如在 `config.cmake` 中被禁用，或者没有合适的硬件存在，则该目标将被报告为跳过。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:71
+msgid ""
+"For tests that should run correctly on all targets, the decorator can be "
+"omitted.  Any test that accepts a ``target`` or ``dev`` argument will "
+"automatically be parametrized over all targets specified in "
+"``TVM_TEST_TARGETS``.  The parametrization provides the same "
+"pass/fail/skipped report for each target, while allowing the test suite "
+"to be easily extended to cover additional targets."
+msgstr ""
+"对于那些应当能在所有目标上正确运行的测试，可以省略装饰器。"
+"任何接受 ``target`` 或 ``dev`` 参数的测试都会自动针对 ``TVM_TEST_TARGETS`` 中指定的所有目标进行参数化。"
+"这种参数化方式为每个目标提供相同的通过/失败/跳过报告，同时使得测试套件能够轻松扩展以覆盖更多目标。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:85
+msgid ""
+"The ``@tvm.testing.parametrize_targets`` can also be used as a bare "
+"decorator to explicitly draw attention to the parametrization, but has no"
+" additional effect."
+msgstr ""
+"``@tvm.testing.parametrize_targets`` 也可以作为简单的装饰器使用，以明确提示测试已被参数化，但这并不会产生额外的效果。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:98
+msgid ""
+"Specific targets can be excluded or marked as expected to fail using the "
+"``@tvm.testing.exclude_targets`` or "
+"``@tvm.testing.known_failing_targets`` decorators.  For more information "
+"on their intended use cases, please see their docstrings."
+msgstr ""
+"可以使用 ``@tvm.testing.exclude_targets`` 或 ``@tvm.testing.known_failing_targets`` 装饰器来排除特定目标或将其标记为预期失败。"
+"有关其预期用例的更多信息，请参阅它们的文档字符串。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:103
+msgid ""
+"In some cases it may be necessary to parametrize across multiple "
+"parameters.  For instance, there may be target-specific implementations "
+"that should be tested, where some targets have more than one "
+"implementation.  These can be done by explicitly parametrizing over "
+"tuples of arguments, such as shown below.  In these cases, only the "
+"explicitly listed targets will run, but they will still have the "
+"appropriate ``@tvm.testing.requires_RUNTIME`` mark applied to them."
+msgstr ""
+"在某些情况下，可能需要对多个参数进行参数化。例如，可能存在需要测试的特定目标实现，其中某些目标拥有不止一种实现方式。"
+"这可以通过显式地对参数元组进行参数化来完成，如下所示。"
+"在这些情况下，只有明确列出的目标会运行，但它们仍然会应用适当的 ``@tvm.testing.requires_RUNTIME`` 标记。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:123
+msgid ""
+"The parametrization functionality is implemented on top of pytest marks."
+"  Each test function can be decorated with `pytest marks <pytest-marks>`_"
+" to include metadata.  The most frequently applied marks are as follows."
+msgstr ""
+"参数化功能是基于 pytest 标记实现的。每个测试函数都可以用 `pytest标记 <pytest-marks>`_ 来装饰，以包含元数据。最常用的标记如下。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:129
+msgid ""
+"``@pytest.mark.gpu`` - Tags a function as using GPU capabilities. This "
+"has no effect on its own, but can be paired with command-line arguments "
+"``-m gpu`` or ``-m 'not gpu'`` to restrict which tests pytest will "
+"execute.  This should not be called on its own, but is part of other "
+"marks used in unit-tests."
+msgstr ""
+"``@pytest.mark.gpu`` - 将函数标记为使用 GPU 功能。"
+"这个标记本身不会产生任何效果，但可以与命令行参数 ``-m gpu`` 或 ``-m 'not gpu'`` 结合使用，以限制 pytest 执行的测试范围。"
+"这个标记不应单独使用，而是作为单元测试中其他标记的一部分。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:135
+msgid ""
+"``@tvm.testing.uses_gpu`` - Applies ``@pytest.mark.gpu``.  This should be"
+" used to mark unit tests that may use the GPU, if one is present.  This "
+"decorator is only needed for tests that explicitly loop over "
+"``tvm.testing.enabled_targets()``, but that is no longer the preferred "
+"style of writing unit tests (see below).  When using "
+"``tvm.testing.parametrize_targets()``, this decorator is implicit for GPU"
+" targets, and does not need to be explicitly applied."
+msgstr ""
+"``@tvm.testing.uses_gpu`` - 应用了 ``@pytest.mark.gpu``。"
+ "这个装饰器应用于标记可能使用 GPU 的单元测试，如果存在 GPU 的话。"
+ "这个装饰器仅对于显式循环遍历 ``tvm.testing.enabled_targets()`` 的测试是必要的，但这已不再是编写单元测试的首选风格（见下文）。"
+ "当使用 ``tvm.testing.parametrize_targets()`` 时，对于 GPU 目标，这个装饰器是隐含的，不需要显式应用。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:143
+msgid ""
+"``@tvm.testing.requires_gpu`` - Applies ``@tvm.testing.uses_gpu``, and "
+"additionally marks that the test should be skipped "
+"(``@pytest.mark.skipif``) entirely if no GPU is present."
+msgstr ""
+"``@tvm.testing.requires_gpu`` - 应用了 ``@tvm.testing.uses_gpu``，并且额外标记了如果不存在 GPU，则测试应完全跳过（``@pytest.mark.skipif``）。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:147
+msgid ""
+"``@tvfm.testing.requires_RUNTIME`` - Several decorators (e.g. "
+"``@tvm.testing.requires_cuda``), each of which skips a test if the "
+"specified runtime cannot be used. A runtime cannot be used if it is "
+"disabled in the ``config.cmake``, or if a compatible device is not "
+"present. For runtimes that use the GPU, this includes "
+"``@tvm.testing.requires_gpu``."
+msgstr ""
+"``@tvm.testing.requires_RUNTIME`` - 多个装饰器（例如 ``@tvm.testing.requires_cuda``），每个装饰器在指定的运行时无法使用时跳过测试。"
+"如果运行时在 ``config.cmake`` 中被禁用，或者没有兼容的设备存在，则运行时无法使用。对于使用 GPU 的运行时，这包括 ``@tvm.testing.requires_gpu``。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:154
+msgid ""
+"When using parametrized targets, each test run is decorated with the "
+"``@tvm.testing.requires_RUNTIME`` that corresponds to the target being "
+"used.  As a result, if a target is disabled in ``config.cmake`` or does "
+"not have appropriate hardware to run, it will be explicitly listed as "
+"skipped."
+msgstr ""
+"当使用参数化目标时，每次测试运行都会根据所使用的目标自动应用相应的 ``@tvm.testing.requires_RUNTIME`` 装饰器。"
+"因此，如果某个目标在 ``config.cmake`` 中被禁用，或者没有适当的硬件来运行，它将被明确列为跳过状态。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:160
+msgid ""
+"There also exists a ``tvm.testing.enabled_targets()`` that returns all "
+"targets that are enabled and runnable on the current machine, based on "
+"the environment variable ``TVM_TEST_TARGETS``, the build configuration, "
+"and the physical hardware present.  Most current tests explicitly loop "
+"over the targets returned from ``enabled_targets()``, but it should not "
+"be used for new tests.  The pytest output for this style silently skips "
+"runtimes that are disabled in ``config.cmake``, or do not have a device "
+"on which they can run.  In addition, the test halts on the first target "
+"to fail, which is ambiguous as to whether the error occurs on a "
+"particular target, or on every target."
+msgstr ""
+"还存在 ``tvm.testing.enabled_targets()`` 函数，它根据环境变量 ``TVM_TEST_TARGETS``、构建配置和当前机器的物理硬件，返回所有已启用且可在当前机器上运行的目标。"
+"大多数现有测试显式地循环遍历从 ``enabled_targets()`` 返回的目标，但不建议在新测试中使用这种方式。"
+"这种风格的pytest输出会静默跳过在``config.cmake``中被禁用的运行时，或者没有设备可以运行的运行时。"
+"此外，测试会在第一个失败的目标处停止，这导致无法明确错误是发生在特定目标上，还是发生在所有目标上。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:181
+msgid "Running locally"
+msgstr "本地运行"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:183
+msgid ""
+"To run the python unit-tests locally, use the command ``pytest`` in the "
+"``${TVM_HOME}`` directory."
+msgstr ""
+"要在本地运行 Python 单元测试，请在 ``${TVM_HOME}`` 目录下使用命令 ``pytest``。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:199
+msgid "Environment variables"
+msgstr "环境变量"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:187
+msgid ""
+"``TVM_TEST_TARGETS`` should be a semicolon-separated list of targets to "
+"run. If unset, will default to the targets defined in "
+"``tvm.testing.DEFAULT_TEST_TARGETS``."
+msgstr ""   
+"``TVM_TEST_TARGETS`` 应设置为以分号分隔的目标列表，用于指定要运行的目标。如果未设置，则默认为 ``tvm.testing.DEFAULT_TEST_TARGETS`` 中定义的目标。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:191
+msgid ""
+"Note: If ``TVM_TEST_TARGETS`` does not contain any targets that are both "
+"enabled, and have an accessible device of that type, then the tests will "
+"fall back to running on the ``llvm`` target only."
+msgstr ""
+"注意：如果 ``TVM_TEST_TARGETS`` 中不包含任何已启用且具有可访问设备的类型的目标，则测试将回退到仅在 ``llvm`` 目标上运行。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:196
+msgid ""
+"``TVM_LIBRARY_PATH`` should be a path to the ``libtvm.so`` library. This "
+"can be used, for example, to run tests using a debug build. If unset, "
+"will search for ``libtvm.so`` relative to the TVM source directory."
+msgstr ""
+"``TVM_LIBRARY_PATH`` 应设置为指向 ``libtvm.so`` 库的路径。例如，这可以用于运行使用调试构建的测试。如果未设置，则会相对于TVM源代码目录搜索 ``libtvm.so``。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:201
+msgid "Command-line arguments"
+msgstr "命令行参数"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:203
+msgid ""
+"Passing a path to a folder or file will run only the unit tests in that "
+"folder or file. This can be useful, for example, to avoid running tests "
+"located in ``tests/python/frontend`` on a system without a specific "
+"frontend installed."
+msgstr ""
+"传递文件夹或文件的路径将仅运行该文件夹或文件中的单元测试。"
+"例如，在没有安装特定前端的情况下，这可以避免运行位于 ``tests/python/frontend`` 中的测试。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:208
+msgid ""
+"The ``-m`` argument only runs unit tests that are tagged with a specific "
+"pytest marker. The most frequent usage is to use ``m gpu`` to run only "
+"tests that are marked with ``@pytest.mark.gpu`` and use a GPU to run. It "
+"can also be used to run only tests that do not use a GPU, by passing ``m "
+"'not gpu'``."
+msgstr ""
+"``-m`` 参数仅运行带有特定 pytest 标记的单元测试。"
+"最常见的用法是使用 ``-m gpu`` 来仅运行标记为 ``@pytest.mark.gpu`` 的测试，这些测试会使用 GPU 运行。"
+"它也可以用于仅运行不使用 GPU 的测试，通过传递 ``-m 'not gpu'`` 来实现。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:215
+msgid ""
+"Note: This filtering takes place after the selection of targets based on "
+"the ``TVM_TEST_TARGETS`` environment variable.  Even if ``-m gpu`` is "
+"specified, if ``TVM_TEST_TARGETS`` does not contain GPU targets, no GPU "
+"tests will be run."
+msgstr ""
+"注意：此筛选操作是在基于 ``TVM_TEST_TARGETS`` 环境变量选择目标之后进行的。"
+"即使指定了 ``-m gpu``，如果 ``TVM_TEST_TARGETS`` 中不包含 GPU 目标，则不会运行任何 GPU 测试。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:221
+msgid "Running in local docker container"
+msgstr "在本地 Docker 容器中运行"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:225
+msgid ""
+"The ``docker/bash.sh`` script can be used to run unit tests inside the "
+"same docker image as is used by the CI.  The first argument should "
+"specify which docker image to run (e.g. ``docker/bash.sh ci_gpu``). "
+"Allowed image names are defined at the top of the Jenkinsfile located in "
+"the TVM source directory, and map to images at `tlcpack`_."
+msgstr ""
+"``docker/bash.sh`` 脚本可用于在与 CI 使用的相同的 Docker 镜像中运行单元测试。第一个参数应指定要运行的 Docker 镜像（例如 ``docker/bash.sh ci_gpu``）。"
+"允许的镜像名称定义在 TVM 源代码目录下的 Jenkinsfile 文件的顶部，并映射到 `tlcpack`_ 上的镜像。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:231
+msgid ""
+"If no additional arguments are given, the docker image will be loaded "
+"with an interactive bash session.  If a script is passed as an optional "
+"argument (e.g. ``docker/bash.sh ci_gpu "
+"tests/scripts/task_python_unittest.sh``), then that script will be "
+"executed inside the docker image."
+msgstr ""
+"如果没有提供额外的参数，Docker 镜像将会加载交互式的 bash 会话。"
+"如果传递了脚本作为可选参数（例如 ``docker/bash.sh ci_gpu tests/scripts/task_python_unittest.sh``），那么该脚本将会在 Docker 镜像内部执行。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:236
+msgid ""
+"Note: The docker images contain all system dependencies, but do not "
+"include the ``build/config.cmake`` configuration file for those systems."
+"  The TVM source directory is used as the home directory of the docker "
+"image, and so this will default to using the same config/build "
+"directories as the local config.  One solution is to maintain separate "
+"``build_local`` and ``build_docker`` directories, and make a symlink from"
+" ``build`` to the appropriate folder when entering/exiting docker."
+msgstr ""
+"注意：Docker 镜像包含了所有的系统依赖项，但并未包含针对这些系统的 ``build/config.cmake`` 配置文件。"
+"TVM 源代码目录被用作 Docker 镜像的主目录，因此默认情况下会使用与本地配置相同的构建目录。"
+"一种解决方案是维护单独的 ``build_local`` 和 ``build_docker`` 目录，并在进入或退出 Docker 时，将 ``build`` 符号链接到相应的文件夹。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:246
+msgid "Running in CI"
+msgstr "在 CI 中运行"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:248
+msgid ""
+"Everything in the CI starts from the task definitions present in the "
+"Jenkinsfile.  This includes defining which docker image gets used, what "
+"the compile-time configuration is, and which tests are included in which "
+"stages."
+msgstr ""
+"CI 中的所有流程都始于 Jenkinsfile 中的任务定义。这包括定义所使用的 Docker 镜像、编译时的配置以及各个阶段包含哪些测试。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:253
+msgid "Docker images"
+msgstr ""
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:255
+msgid ""
+"Each task of the Jenkinsfile (e.g. 'BUILD: CPU') makes calls to "
+"``docker/bash.sh``.  The argument following the call to docker/bash.sh "
+"defines the docker image in CI, just as it does locally."
+msgstr ""
+"Jenkinsfile 中的每个任务（例如 'BUILD: CPU'）都会调用 ``docker/bash.sh``。"
+"调用 ``docker/bash.sh`` 后跟随的参数定义了 CI 中使用的 Docker 镜像，这与本地操作一致。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:260
+msgid "Compile-time configuration"
+msgstr "编译时配置"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:262
+msgid ""
+"The docker image does not have the ``config.cmake`` file built into it, "
+"so this is the first step in each of the ``BUILD`` tasks.  This is done "
+"using the ``tests/scripts/task_config_build_*.sh`` scripts. Which script "
+"is used depends on the build being tested, and is specified in the "
+"Jenkinsfile."
+msgstr ""
+"Docker 镜像中并未内置 ``config.cmake`` 文件，因此这是每个 ``BUILD`` 任务的第一步。"
+"这一步通过使用 ``tests/scripts/task_config_build_*.sh`` 脚本来完成。"
+"具体使用哪个脚本取决于正在测试的构建类型，并在 Jenkinsfile 中指定。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:268
+msgid "Each ``BUILD`` task concludes by packing a library for use in later tests."
+msgstr "每个 ``BUILD`` 任务最终都会打包为库，以供后续测试使用。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:271
+msgid "Which tests run"
+msgstr "运行哪些测试"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:273
+msgid ""
+"The ``Unit Test`` and ``Integration Test`` stages of the Jenkinsfile "
+"determine how ``pytest`` is called.  Each task starts by unpacking a "
+"compiled library that was previous compiled in the ``BUILD`` stage, then "
+"runs a test script (e.g. ``tests/script/task_python_unittest.sh``).  "
+"These scripts set the files/folders and command-line options that are "
+"passed to ``pytest``."
+msgstr ""
+"Jenkinsfile 中的 ``Unit Test`` 和 ``Integration Test`` 阶段决定了如何调用 ``pytest``。"
+"每个任务首先解压在 ``BUILD`` 阶段预先编译好的库，然后运行测试脚本（例如 ``tests/script/task_python_unittest.sh``）。"
+"这些脚本设置了传递给 ``pytest`` 的文件/文件夹和命令行选项。"
+
+#: ../../doc/docs/how_to/dev/pytest_target_parametrization.rst:281
+msgid ""
+"Several of these scripts include the ``-m gpu`` option, which restricts "
+"the tests to only run tests that include the ``@pytest.mark.gpu`` mark."
+msgstr ""
+"其中一些脚本包含了 ``-m gpu`` 选项，该选项限制了测试仅运行包含 ``@pytest.mark.gpu`` 标记的测试。"

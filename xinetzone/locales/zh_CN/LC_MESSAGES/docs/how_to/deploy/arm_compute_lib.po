@@ -1,0 +1,437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:19
+msgid "Relay Arm\\ :sup:`®` Compute Library Integration"
+msgstr "Relay Arm\\ :sup:`®` 计算库集成"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:20
+msgid "**Author**: `Luke Hutton <https://github.com/lhutton1>`_"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:23
+msgid "Introduction"
+msgstr "简介"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:25
+msgid ""
+"Arm Compute Library (ACL) is an open source project that provides "
+"accelerated kernels for Arm CPU's and GPU's. Currently the integration "
+"offloads operators to ACL to use hand-crafted assembler routines in the "
+"library. By offloading select operators from a relay graph to ACL we can "
+"achieve a performance boost on such devices."
+msgstr ""
+"Arm 计算库（Arm Compute Library，简称 ACL）是开源项目，为 Arm CPU 和 GPU 提供加速内核。"
+"目前，集成将算子卸载到 ACL 以使用库中手工编写的汇编例程。通过将 Relay 图中的选定算子卸载到 ACL，可以在此类设备上实现性能提升。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:31
+msgid "Installing Arm Compute Library"
+msgstr "安装 Arm 计算库"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:33
+msgid ""
+"Before installing Arm Compute Library, it is important to know what "
+"architecture to build for. One way to determine this is to use `lscpu` "
+"and look for the \"Model name\" of the CPU. You can then use this to "
+"determine the architecture by looking online."
+msgstr ""
+"在安装 Arm 计算库之前，了解要构建的架构非常重要。确定架构的一种方法是使用 `lscpu` 并查找 CPU 的“型号名称”。然后，您可以通过在线查找来确定架构。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:37
+msgid ""
+"TVM only supports a single version of ACL, currently this is v21.08, "
+"there are two recommended ways to build and install the required "
+"libraries:"
+msgstr ""
+"TVM 仅支持单一版本的 ACL，目前为 v21.08，有两种推荐的构建和安装所需库的方法："
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:40
+msgid ""
+"Use the script located at "
+"`docker/install/ubuntu_download_arm_compute_lib_binaries.sh`. You can use"
+" this script for downloading ACL binaries for the architecture and "
+"extensions specified in `target_lib`, these will be installed to the "
+"location denoted by `install_path`."
+msgstr ""
+"使用位于 `docker/install/ubuntu_download_arm_compute_lib_binaries.sh` 的脚本。您可以使用此脚本下载指定架构和扩展的 ACL 二进制文件，这些文件将安装到 `install_path` 指定的位置。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:43
+msgid ""
+"Alternatively, you can download the pre-built binaries from: "
+"https://github.com/ARM-software/ComputeLibrary/releases. When using this "
+"package, you will need to select the binaries for the architecture and "
+"extensions you require, then make sure they are visible to CMake:"
+msgstr ""
+"或者，您可以从以下网址下载预构建的二进制文件：https://github.com/ARM-software/ComputeLibrary/releases。使用此包时，您需要选择所需架构和扩展的二进制文件，然后确保 CMake 可以找到它们："
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:54
+msgid ""
+"In both cases you will need to set USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR to "
+"the path where the ACL package is located. CMake will look in /path-to-"
+"acl/ along with /path-to-acl/lib and /path-to-acl/build for the required "
+"binaries. See the section below for more information on how to use these "
+"configuration options."
+msgstr ""
+"在这两种情况下，您都需要将 USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR 设置为 ACL 包的路径。"
+"CMake 将在 /path-to-acl/ 以及 /path-to-acl/lib 和 /path-to-acl/build 中查找所需的二进制文件。有关如何使用这些配置选项的更多信息，请参阅以下部分。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:59
+msgid "Building with ACL support"
+msgstr "构建支持 ACL 的 TVM"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:61
+msgid ""
+"The current implementation has two separate build options in CMake. The "
+"reason for this split is because ACL cannot be used on an x86 machine. "
+"However, we still want to be able compile an ACL runtime module on an x86"
+" machine."
+msgstr ""
+"当前实现在 CMake 中有两个独立的构建选项。这种分离的原因是 ACL 不能在 x86 机器上使用。然而，仍然希望在 x86 机器上编译 ACL 运行时模块。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:65
+msgid ""
+"USE_ARM_COMPUTE_LIB=ON/OFF - Enabling this flag will add support for "
+"compiling an ACL runtime module."
+msgstr ""
+"USE_ARM_COMPUTE_LIB=ON/OFF - 启用此标志将添加对编译 ACL 运行时模块的支持。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:66
+msgid ""
+"USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR=ON/OFF/path-to-acl - Enabling this "
+"flag will allow the graph executor to compute the ACL offloaded "
+"functions."
+msgstr ""
+"USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR=ON/OFF/path-to-acl - 启用此标志将允许图执行器计算 ACL 卸载的函数。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:69
+msgid ""
+"These flags can be used in different scenarios depending on your setup. "
+"For example, if you want to compile an ACL module on an x86 machine and "
+"then run the module on a remote Arm device via RPC, you will need to use "
+"USE_ARM_COMPUTE_LIB=ON on the x86 machine and "
+"USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR=ON on the remote AArch64 device."
+msgstr ""
+"这些标志可以根据您的设置在不同的场景中使用。"
+"例如，如果您想在 x86 机器上编译 ACL 模块，然后通过 RPC 在远程 Arm 设备上运行该模块，您需要在 x86 机器上使用 USE_ARM_COMPUTE_LIB=ON，并在远程 AArch64 设备上使用 USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR=ON。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:74
+msgid ""
+"By default both options are set to OFF. Using "
+"USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR=ON will mean that ACL binaries are "
+"searched for by CMake in the default locations (see "
+"https://cmake.org/cmake/help/v3.4/command/find_library.html). In addition"
+" to this, /path-to-tvm-project/acl/ will also be searched. It is likely "
+"that you will need to set your own path to locate ACL. This can be done "
+"by specifying a path in the place of ON."
+msgstr ""
+"默认情况下，这两个选项都设置为 OFF。使用 USE_ARM_COMPUTE_LIB_GRAPH_EXECUTOR=ON 将意味着 CMake 会在默认位置搜索 ACL 二进制文件（参见 https://cmake.org/cmake/help/v3.4/command/find_library.html）。"
+"除此之外，还会搜索 /path-to-tvm-project/acl/。您可能需要设置自己的路径来定位 ACL。这可以通过在 ON 的位置指定路径来完成。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:80
+msgid "These flags should be set in your config.cmake file. For example:"
+msgstr "这些标志应在您的 config.cmake 文件中设置。例如："
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:89
+msgid "Usage"
+msgstr "用法"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:93
+msgid "This section may not stay up-to-date with changes to the API."
+msgstr "本节内容可能不会随着 API 的变化而保持最新。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:95
+msgid ""
+"Create a relay graph. This may be a single operator or a whole graph. The"
+" intention is that any relay graph can be input. The ACL integration will"
+" only pick supported operators to be offloaded whilst the rest will be "
+"computed via TVM. (For this example we will use a single max_pool2d "
+"operator)."
+msgstr ""
+"创建 Relay 图。这可能是单一算子或整个图。目的是可以输入任何 Relay 图。ACL 集成将仅选择支持的算子进行卸载，而其余部分将通过 TVM 计算。（在此示例中，将使用单个 max_pool2d 算子）。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:118
+msgid "Annotate and partition the graph for ACL."
+msgstr "为 ACL 注解和分区图。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:126
+msgid "Build the Relay graph."
+msgstr "构建 Relay 图。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:135
+msgid "Export the module."
+msgstr "导出模块。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:144
+msgid ""
+"Run Inference. This must be on an Arm device. If compiling on x86 device "
+"and running on AArch64, consider using the RPC mechanism. :ref:`Tutorials"
+" for using the RPC mechanism <tutorial-cross-compilation-and-rpc>`"
+msgstr ""
+"运行推理。这必须在 Arm 设备上进行。如果在 x86 设备上编译并在 AArch64 上运行，请考虑使用 RPC 机制。:ref:`使用 RPC 机制的教程 <tutorial-cross-compilation-and-rpc>`"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:160
+msgid "More examples"
+msgstr "更多例子"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:161
+msgid ""
+"The example above only shows a basic example of how ACL can be used for "
+"offloading a single Maxpool2D. If you would like to see more examples for"
+" each implemented operator and for networks refer to the tests: "
+"`tests/python/contrib/test_arm_compute_lib`. Here you can modify "
+"`test_config.json` to configure how a remote device is created in "
+"`infrastructure.py` and, as a result, how runtime tests will be run."
+msgstr ""
+"上面的示例仅展示了如何使用 ACL 卸载单个 Maxpool2D 的基本示例。"
+"如果您想查看每个已实现算子和网络的更多示例，请参阅测试：`tests/python/contrib/test_arm_compute_lib`。"
+"在这里，您可以修改 `test_config.json` 以配置如何在 `infrastructure.py` 中创建远程设备，从而影响运行时测试的运行方式。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:167
+msgid "An example configuration for `test_config.json`:"
+msgstr "`test_config.json` 的示例配置："
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:169
+msgid ""
+"connection_type - The type of RPC connection. Options: local, tracker, "
+"remote."
+msgstr ""
+"connection_type - RPC 连接的类型。选项：local、tracker、remote。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:170
+msgid "host - The host device to connect to."
+msgstr "host - 要连接的主机设备。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:171
+msgid "port - The port to use when connecting."
+msgstr "port - 连接时使用的端口。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:172
+msgid "target - The target to use for compilation."
+msgstr "target - 用于编译的目标。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:173
+msgid "device_key - The device key when connecting via a tracker."
+msgstr "device_key - 通过跟踪器连接时的设备密钥。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:174
+msgid ""
+"cross_compile - Path to cross compiler when connecting from a non-arm "
+"platform e.g. aarch64-linux-gnu-g++."
+msgstr ""
+"cross_compile - 从非 Arm 平台连接时交叉编译器的路径，例如 aarch64-linux-gnu-g++。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:189
+msgid "Operator support"
+msgstr "算子支持"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:191
+msgid "Relay Node"
+msgstr "Relay 节点"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:191
+msgid "Remarks"
+msgstr "标记"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:193
+msgid "nn.conv2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:195
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:207
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:218
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:224
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:231
+msgid "fp32:"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:194
+msgid "Simple: nn.conv2d Composite: nn.pad?, nn.conv2d, nn.bias_add?, nn.relu?"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:197
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:203
+msgid ""
+"Normal and depth-wise (when kernel is 3x3 or 5x5 and strides are 1x1 or "
+"2x2) convolution supported. Grouped convolution is not supported."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:200
+msgid "qnn.conv2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:201
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:210
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:220
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:226
+msgid "uint8:"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:201
+msgid "Composite: nn.pad?, nn.conv2d, nn.bias_add?, nn.relu?, qnn.requantize"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:206
+msgid "nn.dense"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:207
+msgid "Simple: nn.dense Composite: nn.dense, nn.bias_add?"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:210
+msgid "qnn.dense"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:211
+msgid "Composite: qnn.dense, nn.bias_add?, qnn.requantize"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:213
+msgid "nn.max_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:213
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:215
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:234
+msgid "fp32, uint8"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:215
+msgid "nn.global_max_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:217
+msgid "nn.avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:218
+msgid "Simple: nn.avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:221
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:227
+msgid "Composite: cast(int32), nn.avg_pool2d, cast(uint8)"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:223
+msgid "nn.global_avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:224
+msgid "Simple: nn.global_avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:229
+msgid "power(of 2) + nn.avg_pool2d + sqrt"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:229
+msgid "A special case for L2 pooling."
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:232
+msgid "Composite: power(of 2), nn.avg_pool2d, sqrt"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:234
+msgid "reshape"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:236
+msgid "maximum"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:236
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:238
+msgid "fp32"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:238
+msgid "add"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:240
+msgid "qnn.add"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:240
+msgid "uint8"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:244
+msgid ""
+"A composite operator is a series of operators that map to a single Arm "
+"Compute Library operator. You can view this as being a single fused "
+"operator from the view point of Arm Compute Library. '?' denotes an "
+"optional operator in the series of operators that make up a composite "
+"operator."
+msgstr ""
+"复合算子是一系列映射到单个 Arm 计算库算子的算子。您可以从 Arm 计算库的角度将其视为单个融合算子。'?' 表示构成复合算子的算子系列中的可选算子。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:250
+msgid "Adding a new operator"
+msgstr "添加新算子"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:251
+msgid ""
+"Adding a new operator requires changes to a series of places. This "
+"section will give a hint on what needs to be changed and where, it will "
+"not however dive into the complexities for an individual operator. This "
+"is left to the developer."
+msgstr ""
+"添加新算子需要对一系列地方进行更改。本节将提示需要更改的内容和位置，但不会深入探讨单个算子的复杂性。这留给开发人员自行处理。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:255
+msgid "There are a series of files we need to make changes to:"
+msgstr "需要对一系列文件进行更改："
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:257
+msgid ""
+"`python/relay/op/contrib/arm_compute_lib.py` In this file we define the "
+"operators we wish to offload using the `op.register` decorator. This will"
+" mean the annotation pass recognizes this operator as ACL offloadable."
+msgstr ""
+"`python/relay/op/contrib/arm_compute_lib.py` 在此文件中，使用 `op.register` 装饰器定义希望卸载的算子。这将意味着注释传递将此算子识别为可 ACL 卸载的。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:259
+msgid ""
+"`src/relay/backend/contrib/arm_compute_lib/codegen.cc` Implement "
+"`Create[OpName]JSONNode` method. This is where we declare how the "
+"operator should be represented by JSON. This will be used to create the "
+"ACL module."
+msgstr ""
+"`src/relay/backend/contrib/arm_compute_lib/codegen.cc` 实现 `Create[OpName]JSONNode` 方法。这是声明算子应如何由 JSON 表示的地方。这将用于创建 ACL 模块。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:261
+msgid ""
+"`src/runtime/contrib/arm_compute_lib/acl_runtime.cc` Implement "
+"`Create[OpName]Layer` method. This is where we define how the JSON "
+"representation can be used to create an ACL function. We simply define "
+"how to translate from the JSON representation to ACL API."
+msgstr ""
+"`src/runtime/contrib/arm_compute_lib/acl_runtime.cc` 实现 `Create[OpName]Layer` 方法。这是定义如何使用 JSON 表示创建 ACL 函数的地方。只需定义如何从 JSON 表示转换为 ACL API。"
+
+#: ../../doc/docs/how_to/deploy/arm_compute_lib.rst:264
+msgid ""
+"`tests/python/contrib/test_arm_compute_lib` Add unit tests for the given "
+"operator."
+msgstr ""
+"`tests/python/contrib/test_arm_compute_lib` 为给定算子添加单元测试。"
