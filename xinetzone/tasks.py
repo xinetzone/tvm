@@ -93,7 +93,7 @@ def config(ctx, cuda=False, BUILD_TYPE="RelWithDebInfo"):
         # 其他配置
         # content = content.replace('set(USE_MICRO OFF)', 'set(USE_MICRO ON)')
         content = content.replace("set(USE_UMA OFF)", "set(USE_UMA ON)")
-        # content = content.replace("set(USE_MSC OFF)", "set(USE_MSC ON)")
+        content = content.replace("set(USE_MSC OFF)", "set(USE_MSC ON)")
         
         fp.write(content)
 
