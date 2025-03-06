@@ -58,8 +58,6 @@ dev = [
   "graphviz",
   "cloudpickle",
   "synr",
-  "attrs",
-  "decorator",
   "psutil",
   "onnx",
 ]
