@@ -1,0 +1,581 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:19
+msgid "Relay TensorRT Integration"
+msgstr "Relay TensorRT 集成"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:20
+msgid "**Author**: `Trevor Morris <https://github.com/trevor-m>`_"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:23
+msgid "Introduction"
+msgstr "简介"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:25
+msgid ""
+"NVIDIA TensorRT is a library for optimized deep learning inference. This "
+"integration will offload as many operators as possible from Relay to "
+"TensorRT, providing a performance boost on NVIDIA GPUs without the need "
+"to tune schedules."
+msgstr ""
+"NVIDIA TensorRT 是用于优化深度学习推理的库。此集成将尽可能多地将算子从 Relay 卸载到 TensorRT，从而在 NVIDIA GPU 上提供性能提升，而无需调整调度。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:29
+msgid ""
+"This guide will demonstrate how to install TensorRT and build TVM with "
+"TensorRT BYOC and runtime enabled. It will also provide example code to "
+"compile and run a ResNet-18 model using TensorRT and how to configure the"
+" compilation and runtime settings. Finally, we document the supported "
+"operators and how to extend the integration to support other operators."
+msgstr ""
+"本指南将演示如何安装 TensorRT 并构建启用 TensorRT BYOC 和运行时的 TVM。它还将提供使用 TensorRT 编译和运行 ResNet-18 模型的示例代码，以及如何配置编译和运行时设置。最后，将记录支持的算子以及如何扩展集成以支持其他算子。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:35
+msgid "Installing TensorRT"
+msgstr "安装 TensorRT"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:37
+msgid ""
+"In order to download TensorRT, you will need to create an NVIDIA "
+"Developer program account. Please see NVIDIA's documentation for more "
+"info: https://docs.nvidia.com/deeplearning/tensorrt/install-"
+"guide/index.html. If you have a Jetson device such as a TX1, TX2, Xavier,"
+" or Nano, TensorRT will already be installed on the device via the "
+"JetPack SDK."
+msgstr ""
+"要下载 TensorRT，您需要创建 NVIDIA 开发者计划账户。"
+"请参阅 NVIDIA 的文档以获取更多信息：https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html。"
+"如果您拥有 Jetson 设备（例如 TX1、TX2、Xavier 或 Nano），TensorRT 将通过 JetPack SDK 预装在设备上。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:43
+msgid "There are two methods to install TensorRT:"
+msgstr "有两种安装 TensorRT 的方法："
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:45
+msgid "System install via deb or rpm package."
+msgstr "通过 deb 或 rpm 包进行系统安装。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:46
+msgid "Tar file installation."
+msgstr "通过 tar 文件安装。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:48
+msgid ""
+"With the tar file installation method, you must provide the path of the "
+"extracted tar archive to USE_TENSORRT_RUNTIME=/path/to/TensorRT. With the"
+" system install method, USE_TENSORRT_RUNTIME=ON will automatically locate"
+" your installation."
+msgstr ""
+"使用 tar 文件安装方法时，您必须提供解压后的 tar 存档路径，例如 USE_TENSORRT_RUNTIME=/path/to/TensorRT。使用系统安装方法时，USE_TENSORRT_RUNTIME=ON 将自动定位您的安装。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:53
+msgid "Building TVM with TensorRT support"
+msgstr "构建支持 TensorRT 的 TVM"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:55
+msgid ""
+"There are two separate build flags for TensorRT integration in TVM. These"
+" flags also enable cross-compilation: USE_TENSORRT_CODEGEN=ON will also "
+"you to build a module with TensorRT support on a host machine, while "
+"USE_TENSORRT_RUNTIME=ON will enable the TVM runtime on an edge device to "
+"execute the TensorRT module. You should enable both if you want to "
+"compile and also execute models with the same TVM build."
+msgstr ""
+"TVM 中的 TensorRT 集成有两个独立的构建标志。"
+"这些标志还支持交叉编译：USE_TENSORRT_CODEGEN=ON 允许您在主机上构建支持 TensorRT 的模块，而 USE_TENSORRT_RUNTIME=ON 将启用边缘设备上的 TVM 运行时以执行 TensorRT 模块。"
+"如果您想使用相同的 TVM 构建编译并执行模型，则应同时启用这两个标志。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:61
+msgid ""
+"USE_TENSORRT_CODEGEN=ON/OFF - This flag will enable compiling a TensorRT "
+"module, which does not require any TensorRT library."
+msgstr ""
+"USE_TENSORRT_CODEGEN=ON/OFF - 此标志将启用编译 TensorRT 模块，该模块不需要任何 TensorRT 库。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:63
+msgid ""
+"USE_TENSORRT_RUNTIME=ON/OFF/path-to-TensorRT - This flag will enable the "
+"TensorRT runtime module. This will build TVM against the installed "
+"TensorRT library."
+msgstr ""
+"USE_TENSORRT_RUNTIME=ON/OFF/path-to-TensorRT - 此标志将启用 TensorRT 运行时模块。这将根据已安装的 TensorRT 库构建 TVM。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:66
+msgid "Example setting in config.cmake file:"
+msgstr "config.cmake 文件中的示例设置："
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:75
+msgid "Build and Deploy ResNet-18 with TensorRT"
+msgstr "使用 TensorRT 构建和部署 ResNet-18"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:77
+msgid "Create a Relay graph from a MXNet ResNet-18 model."
+msgstr "从 MXNet ResNet-18 模型创建 Relay 图。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:92
+msgid ""
+"Annotate and partition the graph for TensorRT. All ops which are "
+"supported by the TensorRT integration will be marked and offloaded to "
+"TensorRT. The rest of the ops will go through the regular TVM CUDA "
+"compilation and code generation."
+msgstr ""
+"为 TensorRT 注解和分区图。TensorRT 集成支持的所有算子将被标记并卸载到 TensorRT。其余算子将通过常规的 TVM CUDA 编译和代码生成。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:102
+msgid ""
+"Build the Relay graph, using the new module and config returned by "
+"partition_for_tensorrt. The target must always be a cuda target. "
+"``partition_for_tensorrt`` will automatically fill out the required "
+"values in the config, so there is no need to modify it - just pass it "
+"along to the PassContext so the values can be read during compilation."
+msgstr ""
+"使用 partition_for_tensorrt 返回的新模块和配置构建 Relay 图。目标必须始终是 cuda 目标。``partition_for_tensorrt`` 将自动填充配置中的所需值，因此无需修改它——只需将其传递给 PassContext，以便在编译期间读取这些值。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:114
+msgid "Export the module."
+msgstr "导出模块。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:121
+msgid ""
+"Load module and run inference on the target machine, which must be built "
+"with ``USE_TENSORRT_RUNTIME`` enabled. The first run will take longer "
+"because the TensorRT engine will have to be built."
+msgstr ""
+"在目标机器上加载模块并运行推理，目标机器必须启用 ``USE_TENSORRT_RUNTIME`` 构建。第一次运行会花费较长时间，因为需要构建 TensorRT 引擎。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:135
+msgid "Partitioning and Compilation Settings"
+msgstr "分区和编译设置"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:137
+msgid ""
+"There are some options which can be configured in "
+"``partition_for_tensorrt``."
+msgstr ""
+"可以在 ``partition_for_tensorrt`` 中配置一些选项。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:139
+msgid ""
+"``version`` - TensorRT version to target as tuple of (major, minor, "
+"patch). If TVM is compiled with USE_TENSORRT_RUNTIME=ON, the linked "
+"TensorRT version will be used instead. The version will affect which ops "
+"can be partitioned to TensorRT."
+msgstr ""
+"``version`` - 目标 TensorRT 版本，格式为 (major, minor, patch) 元组。如果 TVM 使用 USE_TENSORRT_RUNTIME=ON 编译，则将使用链接的 TensorRT 版本。版本将影响哪些算子可以分区到 TensorRT。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:142
+msgid ""
+"``use_implicit_batch`` - Use TensorRT implicit batch mode (default true)."
+" Setting to false will enable explicit batch mode which will widen "
+"supported operators to include those which modify the batch dimension, "
+"but may reduce performance for some models."
+msgstr ""
+"``use_implicit_batch`` - 使用 TensorRT 隐式批处理模式（默认为 true）。设置为 false 将启用显式批处理模式，这将扩展支持的算子以包括修改批处理维度的算子，但可能会降低某些模型的性能。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:145
+msgid ""
+"``remove_no_mac_subgraphs`` - A heuristic to improve performance. Removes"
+" subgraphs which have been partitioned for TensorRT if they do not have "
+"any multiply-accumulate operations. The removed subgraphs will go through"
+" TVM's standard compilation instead."
+msgstr ""
+"``remove_no_mac_subgraphs`` - 一种提高性能的启发式方法。如果子图没有乘加操作，则删除为 TensorRT 分区的子图。删除的子图将通过 TVM 的标准编译进行处理。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:148
+msgid ""
+"``max_workspace_size`` - How many bytes of workspace size to allow each "
+"subgraph to use for TensorRT engine creation. See TensorRT documentation "
+"for more info. Can be overriden at runtime."
+msgstr ""
+"``max_workspace_size`` - 允许每个子图用于 TensorRT 引擎创建的工作空间大小（以字节为单位）。有关更多信息，请参阅 TensorRT 文档。可以在运行时覆盖。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:153
+msgid "Runtime Settings"
+msgstr "运行时设置"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:155
+msgid ""
+"There are some additional options which can be configured at runtime "
+"using environment variables."
+msgstr ""
+"可以使用环境变量在运行时配置一些其他选项。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:157
+msgid ""
+"Automatic FP16 Conversion - Environment variable "
+"``TVM_TENSORRT_USE_FP16=1`` can be set to automatically convert the "
+"TensorRT components of your model to 16-bit floating point precision. "
+"This can greatly increase performance, but may cause some slight loss in "
+"the model accuracy."
+msgstr ""
+"自动 FP16 转换 - 可以设置环境变量 ``TVM_TENSORRT_USE_FP16=1`` 以自动将模型的 TensorRT 组件转换为 16 位浮点精度。这可以大大提高性能，但可能会导致模型精度略有下降。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:160
+msgid ""
+"Caching TensorRT Engines - During the first inference, the runtime will "
+"invoke the TensorRT API to build an engine. This can be time consuming, "
+"so you can set ``TVM_TENSORRT_CACHE_DIR`` to point to a directory to save"
+" these built engines to on the disk. The next time you load the model and"
+" give it the same directory, the runtime will load the already built "
+"engines to avoid the long warmup time. A unique directory is required for"
+" each model."
+msgstr ""
+"缓存 TensorRT 引擎 - 在第一次推理期间，运行时将调用 TensorRT API 来构建引擎。"
+"这可能很耗时，因此您可以设置 ``TVM_TENSORRT_CACHE_DIR`` 指向一个目录，以将这些构建的引擎保存到磁盘上。"
+"下次加载模型并提供相同的目录时，运行时将加载已构建的引擎以避免长时间预热。每个模型都需要一个唯一的目录。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:165
+msgid ""
+"TensorRT has a paramter to configure the maximum amount of scratch space "
+"that each layer in the model can use. It is generally best to use the "
+"highest value which does not cause you to run out of memory. You can use "
+"``TVM_TENSORRT_MAX_WORKSPACE_SIZE`` to override this by specifying the "
+"workspace size in bytes you would like to use."
+msgstr ""
+"TensorRT 有一个参数用于配置模型中每层可以使用的最大暂存空间量。通常最好使用不会导致内存不足的最大值。您可以使用 ``TVM_TENSORRT_MAX_WORKSPACE_SIZE`` 通过指定要使用的工作空间大小（以字节为单位）来覆盖此设置。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:169
+msgid ""
+"For models which contain a dynamic batch dimension, the varaible "
+"``TVM_TENSORRT_MULTI_ENGINE`` can be used to determine how TensorRT "
+"engines will be created at runtime. The default mode, "
+"``TVM_TENSORRT_MULTI_ENGINE=0``, will maintain only one engine in memory "
+"at a time. If an input is encountered with a higher batch size, the "
+"engine will be rebuilt with the new max_batch_size setting. That engine "
+"will be compatible with all batch sizes from 1 to max_batch_size. This "
+"mode reduces the amount of memory used at runtime. The second mode, "
+"``TVM_TENSORRT_MULTI_ENGINE=1`` will build a unique TensorRT engine which"
+" is optimized for each batch size that is encountered. This will give "
+"greater performance, but will consume more memory."
+msgstr ""
+"对于包含动态批处理维度的模型，可以使用变量 ``TVM_TENSORRT_MULTI_ENGINE`` 来确定如何在运行时创建 TensorRT 引擎。默认模式 ``TVM_TENSORRT_MULTI_ENGINE=0`` 将一次仅在内存中维护一个引擎。"
+"如果遇到具有更高批处理大小的输入，引擎将使用新的 max_batch_size 设置重建。"
+"该引擎将兼容从 1 到 max_batch_size 的所有批处理大小。此模式减少了运行时使用的内存量。"
+"第二种模式 ``TVM_TENSORRT_MULTI_ENGINE=1`` 将为遇到的每个批处理大小构建一个唯一的 TensorRT 引擎。这将提供更高的性能，但会消耗更多内存。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:180
+msgid "Operator support"
+msgstr "支持的算子"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:182
+msgid "Relay Node"
+msgstr "Relay 节点"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:182
+msgid "Remarks"
+msgstr "标记"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:184
+msgid "nn.relu"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:186
+msgid "sigmoid"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:188
+msgid "tanh"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:190
+msgid "nn.batch_norm"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:192
+msgid "nn.layer_norm"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:194
+msgid "nn.softmax"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:196
+msgid "nn.conv1d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:198
+msgid "nn.conv2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:200
+msgid "nn.dense"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:202
+msgid "nn.bias_add"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:204
+msgid "add"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:206
+msgid "subtract"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:208
+msgid "multiply"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:210
+msgid "divide"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:212
+msgid "power"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:214
+msgid "maximum"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:216
+msgid "minimum"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:218
+msgid "nn.max_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:220
+msgid "nn.avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:222
+msgid "nn.global_max_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:224
+msgid "nn.global_avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:226
+msgid "exp"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:228
+msgid "log"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:230
+msgid "sqrt"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:232
+msgid "abs"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:234
+msgid "negative"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:236
+msgid "nn.batch_flatten"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:238
+msgid "expand_dims"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:240
+msgid "squeeze"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:242
+msgid "concatenate"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:244
+msgid "nn.conv2d_transpose"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:246
+msgid "transpose"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:248
+msgid "layout_transform"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:250
+msgid "reshape"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:252
+msgid "nn.pad"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:254
+msgid "sum"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:256
+msgid "prod"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:258
+msgid "max"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:260
+msgid "min"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:262
+msgid "mean"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:264
+msgid "nn.adaptive_max_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:266
+msgid "nn.adaptive_avg_pool2d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:268
+msgid "nn.batch_matmul"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:270
+msgid "clip"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:270
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:272
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:274
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:276
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:278
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:280
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:282
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:284
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:286
+msgid "Requires TensorRT 5.1.5 or greater"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:272
+msgid "nn.leaky_relu"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:274
+msgid "sin"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:276
+msgid "cos"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:278
+msgid "atan"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:280
+msgid "ceil"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:282
+msgid "floor"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:284
+msgid "split"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:286
+msgid "strided_slice"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:288
+msgid "nn.conv3d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:288
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:290
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:292
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:294
+msgid "Requires TensorRT 6.0.1 or greater"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:290
+msgid "nn.max_pool3d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:292
+msgid "nn.avg_pool3d"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:294
+msgid "nn.conv3d_transpose"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:296
+msgid "erf"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:296
+msgid "Requires TensorRT 7.0.0 or greater"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:301
+msgid "Adding a new operator"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:302
+msgid ""
+"To add support for a new operator, there are a series of files we need to"
+" make changes to:"
+msgstr ""
+"要添加对新算子的支持，需要修改一系列文件："
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:304
+msgid ""
+"`src/runtime/contrib/tensorrt/tensorrt_ops.cc` Create a new op converter "
+"class which implements the ``TensorRTOpConverter`` interface. You must "
+"implement the constructor to specify how many inputs there are and "
+"whether they are tensors or weights. You must also implement the "
+"``Convert`` method to perform the conversion. This is done by using the "
+"inputs, attributes, and network from params to add the new TensorRT "
+"layers and push the layer outputs. You can use the existing converters as"
+" an example. Finally, register your new op conventer in the "
+"``GetOpConverters()`` map."
+msgstr ""
+"`src/runtime/contrib/tensorrt/tensorrt_ops.cc` 创建实现 ``TensorRTOpConverter`` 接口的新算子转换器类。您必须实现构造函数以指定有多少输入以及它们是张量还是权重。"
+"您还必须实现 ``Convert`` 方法以执行转换。这是通过使用来自 params 的输入、属性和网络来添加新的 TensorRT 层并推送层输出来完成的。"
+"您可以使用现有的转换器作为示例。最后，在 ``GetOpConverters()`` 映射中注册您的新算子转换器。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:311
+msgid ""
+"`python/relay/op/contrib/tensorrt.py` This file contains the annotation "
+"rules for TensorRT. These determine which operators and their attributes "
+"that are supported. You must register an annotation function for the "
+"relay operator and specify which attributes are supported by your "
+"converter, by checking the attributes are returning true or false."
+msgstr ""
+"`python/relay/op/contrib/tensorrt.py` 此文件包含 TensorRT 的注释规则。这些规则决定了支持的算子及其属性。您必须为 relay 算子注册注解函数，并通过检查属性返回 true 或 false 来指定您的转换器支持哪些属性。"
+
+#: ../../doc/docs/how_to/deploy/tensorrt.rst:315
+msgid ""
+"`tests/python/contrib/test_tensorrt.py` Add unit tests for the given "
+"operator."
+msgstr ""
+"`tests/python/contrib/test_tensorrt.py` 为给定的算子添加单元测试。"

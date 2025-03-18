@@ -1,0 +1,1134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-17 13:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:19
+msgid "Deploy to Adreno™ GPU"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:21
+msgid ""
+"**Authors**: Daniil Barinov, Egor Churaev, Andrey Malyshev, Siva Rama "
+"Krishna"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:24
+msgid "Introduction"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:26
+msgid ""
+"Adreno™ is a series of graphics processing unit (GPU) semiconductor "
+"intellectual property cores developed by Qualcomm and used in many of "
+"their SoCs."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:30
+msgid ""
+"The Adreno™ GPU accelerates the rendering of complex geometries to "
+"deliver high-performance graphics and a rich user experience with low "
+"power consumption."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:34
+msgid ""
+"TVM supports deep learning acceleration on Adreno™ GPU by native OpenCL "
+"backend of TVM and also through OpenCLML backend. Native OpenCL backend "
+"of TVM is enhanced to make it Adreno™ friendly by incorporating texture "
+"memory usage and Adreno™ friendly layouts. OpenCLML is an SDK release by "
+"Qualcomm that provides kernel acceleration library for most of the deep "
+"learning operators."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:40
+msgid "This guide is organized to demonstrate various design aspects of"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:42
+msgid ":ref:`OpenCL Backend Ehnahcements<opencl_enhancements>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:43
+msgid ":ref:`About OpenCLML<about_openclml>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:44
+msgid ":ref:`Build and Deploy<build_deploy>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:50
+msgid "OpenCL Backend Enhancements"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:52
+msgid ""
+"OpenCL backend of TVM is enhanced to take advantage of Adreno™ specific "
+"features like - Texture memory usage. - Adreno™ friendly activation "
+"layouts. - Brand new schedules to accelerate with above features."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:57
+msgid ""
+"One of the Adreno™'s advantages is the clever handling of textures. At "
+"the moment, TVM is able to benefit from this by having texture support "
+"for Adreno™. The graph below shows the Adreno™ A5x architecture."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:61
+msgid "|High-level overview of the Adreno™ A5x architecture for OpenCL|"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:675
+msgid "High-level overview of the Adreno™ A5x architecture for OpenCL"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:63
+msgid "*Fig. 1 High-level overview of the Adreno™ A5x architecture for OpenCL*"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:65
+msgid ""
+"*source:* `OpenCL Optimization and Best Practices for Qualcomm Adreno™ "
+"GPUs <https://dl.acm.org/doi/10.1145/3204919.3204935>`_"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:67
+msgid "Reasons of using textures:"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:69
+msgid ""
+"Texture processor (TP) has a dedicated L1 cache, which is read-only cache"
+" and stores data fetched from level-2 (L2) cache for texture operations "
+"(primary reason)"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:73
+msgid "The handling of image boundaries is built-in."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:75
+msgid ""
+"Supports numerous image format and data type combinations with support "
+"for automatic format conversions"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:78
+msgid ""
+"Overall, with textures, it is possible to achieve a significant "
+"performance boost compared to OpenCL buffer based solutions."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:81
+msgid ""
+"In general we specify target as ``target=\"opencl\"`` for a regular "
+"OpenCL based target which generates the kernels as shown below."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:88
+msgid ""
+"Above OpenCL kernel definition has ``__global float*`` poniters which are"
+" essestially OpenCL ``buffer``  objects."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:90
+msgid ""
+"When enabled texture based enhancements by modifying target definition as"
+" ``target=\"opencl -device=adreno\"`` we can see the generated kernels "
+"using texture backed OpenCL image objects as shown below."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:98
+msgid ""
+"*image2d_t* is a built-in OpenCL types that represents two-dimensional "
+"image object and provides several additional functions. When we use "
+"*image2d_t* we read *4 elements at one time*, and it helps to utilize "
+"hardware in a more efficient way."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:101
+msgid ""
+"Please refer to :ref:`Advanced Usage<advanced_usage>` for more details "
+"about generation and inspection of kernel sources."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:107
+msgid "About OpenCLML"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:109
+msgid ""
+"OpenCLML is a SDK released by Qualcomm that provides accelerated deep "
+"learning operators. These operators are exposed as an extension "
+"``cl_qcom_ml_ops`` to standard OpenCL specification. Please refer "
+"`Accelerate your models with our OpenCL ML SDK "
+"<https://developer.qualcomm.com/blog/accelerate-your-models-our-opencl-"
+"ml-sdk>`_ for more details."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:113
+#, python-format
+msgid ""
+"OpenCLML is integrated into TVM as a `BYOC "
+"<https://tvm.apache.org/docs/dev/how_to/relay_bring_your_own_codegen.html?highlight=bring%20your%20own>`_"
+" solution. OpenCLML operators can use same context and can be enqueued on"
+" same command queue as used in native OpenCL. We took advantage of this "
+"to avoid any context switching over heads while fallback to native "
+"OpenCL."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:121
+msgid "TVM for Adreno™"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:123
+msgid ""
+"This section gives instructions about various ways of building and "
+"deploying model to Adreno™ target. Adreno™ is a remote target which is "
+"connected to the host via ADB connection. Deploying the compiled model "
+"here require use some tools on host as well as on target."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:127
+msgid ""
+"TVM has simplified user friendly command line based tools as well as "
+"developer centric python API interface for various steps like auto "
+"tuning, building and deploying."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:131
+msgid "|Adreno deployment pipeline|"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:676
+msgid "Adreno deployment pipeline"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:133
+msgid "*Fig.2 Build and Deployment pipeline on Adreno devices*"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:135
+msgid ""
+"The figure above demonstrates a generalized pipeline for various stages "
+"listed below."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:137
+msgid ""
+"**Model import:** At this stage we import a model from well known "
+"frameworks like Tensorflow, PyTorch, ONNX ...etc. This stage converts the"
+" given model into TVM's relay module format. Alternatively one can build "
+"a relay module manually by using TVM's operator inventory too. TVM module"
+" generated here is a target independent representation of the graph."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:142
+msgid ""
+"**Auto Tuning:** At this stage we tune the TVM generated kernels specific"
+" to a target. Auto tuning process requires target device availability and"
+" in case of a remote target like Adreno™ on Android device we use RPC "
+"Setup for communication. Later sections in this guide will detail about "
+"RPC Setup for Android device. Auto tuning is not a necessary step for "
+"compilation of a model. It is necessary for acheiving best performance "
+"out of TVM generated kernels."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:148
+msgid ""
+"**Compilation:** At this stage we compile the model for specific target. "
+"Given we auto tuned the module in previous stage, TVM compilation make "
+"use of the tuning log for genetrating best performing kernels. TVM "
+"compilation process produces artifacts containing kernel shared lib, "
+"graph definition in json format and parameters binary file in TVM "
+"specific format."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:153
+msgid ""
+"**Deploy (or test run) on Target:** At this stage we run the TVM "
+"compilation output on the target. Deployment is possible from python "
+"environment using RPC Setup and also using TVM's native tool which is "
+"native binary cross compiled for Android. At this stage we can run the "
+"compiled model on Android target and unit test output correctness and "
+"performance aspects."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:158
+msgid ""
+"**Application Integration:** This stage is all about integrating TVM "
+"compiled model in applications. Here we discuss about interfacing tvm "
+"runtime from Android (cpp native environment or from JNI) for setting "
+"input and getting output."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:162
+msgid ""
+"**Advanced Usage:** This section advanced user interests like viewing "
+"generated source code, altering precision of the module ...etc."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:166
+msgid "This tutorial covers all the above aspects as part of below sections."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:168
+msgid ":ref:`Development environment<development_environment>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:169
+msgid ":ref:`RPC Setup<rpc_setup>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:170
+msgid ":ref:`Commandline tools<commandline_interface>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:171
+msgid ":ref:`Python interface<python_interface>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:172
+msgid ":ref:`Application Integration<application_integration>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:173
+msgid ":ref:`Advanced Usage<advanced_usage>`"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:179
+msgid "Development Environment Setup : Automatic"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:180
+msgid ""
+"TVM ships a predefined docker container environment with all "
+"prerequisites to get started quickly. You may also refer to :ref:`Manual "
+"Environment Setup<manual_setup>` for more control on the dependencies."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:183
+msgid ""
+"For docker setup the pre requisite is just docker tool availabilty on "
+"host."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:185
+msgid "Below commands can build a docker image for adreno."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:193
+msgid "Now we can build both host and target utils with below command."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:199
+msgid ""
+"To build TVM with OpenCLML SDK we need export the OpenCLML SDK as shown "
+"below while building"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:206
+msgid ""
+"On successful compilation this leaves us into a docker shell. The build "
+"leaves two folders"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:208
+msgid "build-adreno:  The host side TVM compiler build."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:209
+msgid "build-adreno-target : Contains the android target components"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:211
+msgid "libtvm_runtime.so : TVM runtime library"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:212
+msgid "tvm_rpc : The rpc runtime environment tool"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:213
+msgid "rtvm : A native stand alone tool"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:215
+msgid ""
+"While using docker environment the android device is shared with host. "
+"Hence, it is required to have adb version ``1.0.41`` on the host as the "
+"docker used the same version."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:218
+msgid "We can check adb devices availability inside docker environment too."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:230
+msgid "Development Environment Setup : Manual"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:232
+msgid "Manual build process require building of host and target components."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:234
+msgid "Below command will configure the build the host compiler"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:251
+msgid ""
+"Additionally we can push below config entry to compile with OpenCLML "
+"support."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:258
+msgid "now we can build as shown below"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:265
+msgid "Finally we can export python path as"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:273
+msgid ""
+"Now, we can configure and build the target components with below "
+"configuration Target build require Android NDK to be installed."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:276
+msgid ""
+"Read documentation about *Android NDK installation* here: "
+"https://developer.android.com/ndk"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:277
+msgid ""
+"To get access to adb tools you can see *Android Debug Bridge "
+"installation* here: https://developer.android.com/studio/command-line/adb"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:305
+msgid "Additionally we can push below config to compile with OpenCLML support."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:313
+msgid ""
+"For Android target build ``ANDROID_NDK_HOME`` is a dependency and we "
+"should have the same in the enviromnet variable. Below commands will "
+"build Adreno™ target components"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:335
+msgid "RPC Setup"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:337
+msgid ""
+"RPC Setup allows remote target access over TCP/IP networking interface. "
+"RPC Setup is essential for auto tuning stage as tuning involves running "
+"of auto generated kernels on real device and optimize the same by using "
+"machine learning approach. Please refer `Auto-Tune with Templates and "
+"AutoTVM "
+"<https://tvm.apache.org/docs/how_to/tune_with_autotvm/index.html>`_ got "
+"more details about AutoTVM."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:341
+msgid ""
+"RPC Setup is also useful to deply the compiled model to a remote device "
+"from python interface or ``tvmc`` tool from host device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:343
+msgid "RPC Setup has multiple components as listed below."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:345
+msgid ""
+"**TVM Tracker:** TVM tracker is a host side daemon that manages remote "
+"devices and serve them to host side applications. Applications can "
+"connect to this tracker and acquire a remote device handle to "
+"communicate."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:349
+msgid ""
+"**TVM RPC:** TVM RPC is a native application that runs on the remote "
+"device (Android in our case) and registers itself to the TVM Tracker "
+"running on the host."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:354
+msgid ""
+"Hence, for RPC based setup we will have above components running on host "
+"and target device. Below sections explain how to setup the same manually "
+"and also inside docker using automated tools."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:357
+msgid ""
+"**Automated RPC Setup:** Here we will explain how to setup RPC in docker "
+"environment."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:360
+msgid ""
+"Below command launches tracker in docker environment, where tracker "
+"listens on port 9190."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:367
+msgid ""
+"Now, the below comand can run TVM RPC on remote android device with id "
+"``abcdefgh``."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:375
+msgid ""
+"Further, below command can be used to query the RPC setup details on any "
+"other docker terminals."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:383
+msgid "**Manual RPC Setup:**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:385
+msgid ""
+"Please refer to the tutorial `How To Deploy model on Adreno "
+"<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_"
+" for manual RPC environment setup."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:389
+msgid ""
+"This concludes RPC Setup and we have rpc-tracker available on host "
+"``127.0.0.1`` (rpc-tracker) and port ``9190`` (rpc-port)."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:395
+msgid "Commandline Tools"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:397
+msgid ""
+"Here we describe entire compilation process using command line tools. TVM"
+" has command line utility `tvmc "
+"<https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ to"
+" perform model import, auto tuning, compilation and deply over rpc. `tvmc"
+" <https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_  "
+"has many options to explore and try."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:402
+msgid ""
+"**Model Import & Tuning:** Use the below command to import a model from "
+"any framework and auto tune the same. Here we use a model from Keras and "
+"it uses RPC setup for tuning and finally generates tuning log file "
+"``keras-resnet50.log``."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:417
+msgid "**Model Compilation:**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:419
+msgid ""
+"Use below command for compiling the model and produce TVM compiler "
+"outputs."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:428
+msgid ""
+"While enabled OpenCLML offloading we need to add target ``clml`` as shown"
+" below. Tuning log is valid for OpenCLML offloading also as the OpenCL "
+"path is fallback option for any operator didn't go through OpenCLML path."
+" The tuning log will be used for such operators."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:438
+msgid ""
+"On successful compilation, above command produce ``keras-resnet50.tar``. "
+"It is a compressed archive with kernel shared lib(mod.so), graph "
+"json(mod.json) and params binary(mod.params)."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:441
+msgid "**Deploy & Run on Target:**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:443
+msgid ""
+"Running the compiled model on Android target is possible in RPC way as "
+"well as native deployment."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:445
+msgid ""
+"We can use below tvmc command to deploy on remore target via RPC based "
+"setup."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:452
+msgid ""
+"`tvmc "
+"<https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ "
+"based run has more options to initialize the input in various modes like "
+"fill, random ..etc."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:455
+msgid ""
+"``tvmc`` based deployment generally a quick verification of compiled "
+"model on target from remote host via RPC setup."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:457
+msgid ""
+"Production generally uses native deploymenmt environment like Android JNI"
+" or CPP native environments. Here we need to use cross compiled "
+"``tvm_runtime`` interface to deploy the tvm compilation output, i.e. "
+"``TVMPackage``."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:460
+msgid ""
+"TVM has a standalone tool ``rtvm`` to deploy and run the model natively "
+"on ADB shell. The build process produces this tool under build-adreno-"
+"target. Please refer to `rtvm "
+"<https://github.com/apache/tvm/tree/main/apps/cpp_rtvm>`_ for more "
+"details about this tool."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:463
+msgid ""
+"While integrating inside existing Android application TVM has multiple "
+"options. For JNI or CPP native we may use `C Runtime API "
+"<https://github.com/apache/tvm/blob/main/include/tvm/runtime/c_runtime_api.h>`_"
+" You may refer to ``rtvm``'s simplified interface `TVMRunner "
+"<https://github.com/apache/tvm/blob/main/apps/cpp_rtvm/tvm_runner.h>`_ "
+"also."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:469
+msgid "Python Interface"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:471
+msgid ""
+"This section explains importing, auto tuning, compiling and running a "
+"model using python interface.\\ TVM has a high level interface through "
+"``tvmc`` abstraction as well as low level relay api. We will discuss "
+"about both of these in details."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:474
+msgid "**TVMC Interface:**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:476
+msgid ""
+"While using ``tvmc`` python interface we first load a model that produces"
+" ``TVMCModel``. ``TVMCModel`` will be used for Auto Tuning to produce "
+"tuning cache. Compilation process uses ``TVMCModel`` and tuning cache "
+"(optional) to produce ``TVMCPackage``. Now, ``TVMCPackage`` will be saved"
+" to file system or can be used to deploy and run on target device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:480
+msgid ""
+"Please refer to the tutorial for the same `How To Deploy model on Adreno "
+"using TVMC "
+"<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno_tvmc.html>`_"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:483
+msgid ""
+"Saved ``TVMCPackage`` can be used for native deployment using ``rtvm`` "
+"utility too."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:485
+msgid ""
+"Also, please refer to `tvmc "
+"<https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ "
+"documentation for more details about the api interface."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:488
+msgid "**Relay Interface:**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:490
+msgid ""
+"Relay api interface gives lower level api access to the tvm compiler "
+"interface. Similar to ``tvmc`` interface relay api interface provides "
+"various frontend API to convert models to a relay ``Module``. Relay "
+"``Module`` will be used for all kinds transforms like precision "
+"conversions, CLML offloading and other custom transforms if any. The "
+"resulting Module will be used for Auto Tuning too. Finally, we use "
+"``relay.build`` API to generate library module. From this library module,"
+" we can export compilation artifacts like module shared library (mod.so),"
+" params(mod.params) and json graph(mod.json). This library module will be"
+" used to create graph runtime to deploy and run on target device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:497
+msgid ""
+"Please refer to the tutorial `How To Deploy model on Adreno "
+"<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_"
+" for a step by step explanation of the same."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:500
+msgid ""
+"Additionally, TVM also supports Java interface through `TVM4J "
+"<https://github.com/apache/tvm/tree/main/jvm>`_"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:505
+msgid "Application Integration"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:507
+msgid ""
+"TVM compilation output is represented as module shared lib (mod.so), "
+"graph json(mod.json) and params (mod.params). Archived representation of "
+"TVMPackage is also contains the same."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:510
+msgid ""
+"In general a CPP/C based interface will be sufficient for any Android "
+"application integration."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:512
+msgid ""
+"TVM natively expose ``c_runtime_api`` for loading a TVM compiled module "
+"and run the same."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:514
+msgid ""
+"Alternatively one may refer to `cpp_rtvm "
+"<https://github.com/apache/tvm/blob/main/apps/cpp_rtvm/tvm_runner.h>`_ "
+"``TVMRunner`` interface too for further simplified version of the same."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:522
+msgid "Advanced Usage"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:524
+msgid ""
+"This section details some of the advanced usage and additional "
+"information while using Adreno™ target on TVM."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:527
+msgid "Generated Source Inspection"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:528
+msgid ""
+"Apart from standard tvm compilation artifacts kernel library (mod.so), "
+"graph (mod.json) and params (mod.params) we can also generate opencl "
+"kernel source, clml offloaded graph ...etc from lib handle as shown "
+"below. TVM compilation output is organized as a TVM module and many other"
+" TVM modules imported into it."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:532
+msgid "Below snippet can dump CLML sub graphs in json format."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:543
+msgid ""
+"Similarly, below snippet can extract opencl kernel source from the "
+"compiled TVM module."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:556
+msgid "Precisions"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:557
+msgid ""
+"The right choice of precision for a specific workload can greatly "
+"increase the efficiency of the solution, shifting the initial balance of "
+"precision and speed to the side that is a priority for the problem."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:560
+msgid ""
+"We can choose from *float16*, *float16_acc32* (Mixed Precision), "
+"*float32* (standard)."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:562
+msgid "**Float16**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:564
+msgid ""
+"To leverage the GPU hardware capabilities and utilize the benefits of "
+"half precision computation and memory management, we can convert an "
+"original model having floating points operation to a model operating with"
+" half precision. Choosing lower precision will positively affect the "
+"performance of the model, but it may also have a decrease in the accuracy"
+" of the model."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:568
+msgid ""
+"To do the conversion you need to call adreno specific transformation API "
+"as soon as relay module is generated through any frontend."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:584
+#: ../../xin/docs/how_to/deploy/adreno.rst:645
+msgid ""
+"``tvm.driver.tvmc.transform.apply_graph_transforms`` is simplified API "
+"over ``ToMixedPrecision`` pass to get desired precision."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:586
+#: ../../xin/docs/how_to/deploy/adreno.rst:647
+msgid "We can then compile our model in any convinient way"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:595
+#: ../../xin/docs/how_to/deploy/adreno.rst:656
+msgid ""
+"While using ``tvmc`` python interface, the below arguments enables "
+"precision conversion to float16."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:604
+#: ../../xin/docs/how_to/deploy/adreno.rst:665
+msgid ""
+"Similarly, ``tvmc`` command line interface option bas below listed "
+"options."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:614
+msgid "**float16_acc32 (Mixed Precision)**"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:616
+msgid ""
+"``ToMixedPrecision`` pass traverse over the network and split network to "
+"clusters of ops dealing with float or float16 data types. The clusters "
+"are defined by three types of operations: - Operations always be "
+"converted into float16 data type - Operations which can be converted if "
+"they followed by converted cluster - Operations never be converted to the"
+" float16 data type This list is defined in the ToMixedPrecision "
+"implementation here `relay/transform/mixed_precision.py "
+"<https://github.com/apache/tvm/blob/main/python/tvm/relay/transform/mixed_precision.py#L34>`_"
+" and can be overridden by user."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:625
+msgid ""
+"The ``ToMixedPrecision`` method is a pass to convert an FP32 relay graph "
+"into an FP16 version (with FP16 or FP32 accumulation dtypes). Doing this "
+"transformation is useful for reducing model size as it halves the "
+"expected size of the weights (FP16_acc16 case)."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy/adreno.rst:629
+msgid ""
+"``ToMixedPrecision`` pass usage is simplified into a simple call as shown"
+" below for usage."
+msgstr ""
+
+#~ msgid "Deploy to Adreno GPU"
+#~ msgstr ""
+
+#~ msgid "**Authors**: Daniil Barinov, Egor Churaev, Andrey Malyshev"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Adreno is a series of graphics "
+#~ "processing unit (GPU) semiconductor "
+#~ "intellectual property cores developed by "
+#~ "Qualcomm and used in many of their"
+#~ " SoCs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Adreno GPU accelerates the rendering"
+#~ " of complex geometries to deliver "
+#~ "high-performance graphics and a rich "
+#~ "user experience with low power "
+#~ "consumption."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This guide will demonstrate :ref:`the "
+#~ "benefits of using textures with "
+#~ "Adreno<advantages_of_the_textures>`, how to "
+#~ ":ref:`build TVM with "
+#~ "OpenCL<building_tvm_for_adreno>` (needed by Adreno"
+#~ " devices) and TVM RPC enabled. It "
+#~ "will also provide :ref:`example "
+#~ "code<build_and_deploy_model_for_adreno>` to better "
+#~ "understand the differences in compiling "
+#~ "and deploying models for Adreno devices."
+#~ msgstr ""
+
+#~ msgid "Advantages of the Textures"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One of the Adreno's advantages is "
+#~ "the clever handling of textures. At "
+#~ "the moment, TVM is able to benefit"
+#~ " from this by having texture support"
+#~ " for Adreno. The graph below shows"
+#~ " the Adreno A5x architecture."
+#~ msgstr ""
+
+#~ msgid "|High-level overview of the Adreno A5x architecture for OpenCL|"
+#~ msgstr ""
+
+#~ msgid "High-level overview of the Adreno A5x architecture for OpenCL"
+#~ msgstr ""
+
+#~ msgid "*Fig. 1 High-level overview of the Adreno A5x architecture for OpenCL*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*source:* `OpenCL Optimization and Best "
+#~ "Practices for Qualcomm Adreno GPUs "
+#~ "<https://dl.acm.org/doi/10.1145/3204919.3204935>`_"
+#~ msgstr ""
+
+#~ msgid "Building TVM for Adreno"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This section gives instructions on how"
+#~ " to build the Android part of "
+#~ "TVM with OpenCL and TVM RPC Server"
+#~ " in order to deploy models on "
+#~ "Adreno."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Since the process of building TVM "
+#~ "for Adreno is exactly the same as"
+#~ " the process of building TVM for "
+#~ "Android, please refer to these "
+#~ "instructions: `TVM RPC Server "
+#~ "<https://github.com/apache/tvm/tree/main/apps/cpp_rpc>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Since there are many required packages"
+#~ " for Android, you can use the "
+#~ "official Docker Image to build TVM. "
+#~ "For more information refer to this "
+#~ "guide: `Deploy the Pretrained Model on"
+#~ " Android "
+#~ "<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_android.html>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Prerequisites**: Android NDK and Android "
+#~ "Debug Bridge must be installed, the "
+#~ "desired device must have OpenCL support"
+#~ " and Android part of TVM must "
+#~ "be built:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can also build the android "
+#~ "part of TVM locally. From the root"
+#~ " folder of TVM:"
+#~ msgstr ""
+
+#~ msgid "where **N** is the number of cores available on your *CPU*."
+#~ msgstr ""
+
+#~ msgid "At this stage you have built TVM for Adreno."
+#~ msgstr ""
+
+#~ msgid "Build and deploy model for Adreno"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this section we will focus on"
+#~ " target, needed to compile and deploy"
+#~ " models for Adreno, demonstrate the "
+#~ "differences in generated kernels with "
+#~ "and without textures and, in addition,"
+#~ " the possibility of choosing a "
+#~ "different precision for model compilation "
+#~ "will be considered."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For the complete step-py-step "
+#~ "process of compiling and deploying "
+#~ "models on Adreno, including selection of"
+#~ " precision, running the inference of "
+#~ "the model, getting the predictions, and"
+#~ " measuring the performance please refer "
+#~ "to this tutorial: `How To Deploy "
+#~ "model on Adreno "
+#~ "<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_"
+#~ msgstr ""
+
+#~ msgid "|Android deployment pipeline|"
+#~ msgstr ""
+
+#~ msgid "Android deployment pipeline"
+#~ msgstr ""
+
+#~ msgid "*Fig.2 Deployment pipeline on Adreno devices*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The figure above demonstrates a "
+#~ "generalized pipeline for deploying and "
+#~ "running neural network models on android"
+#~ " devices. As can be seen from "
+#~ "the figure, the compiled model has "
+#~ "a set_input() and a run() methods, "
+#~ "which *prepare the inputs* for inference"
+#~ " and *execute the inference* on the"
+#~ " remote device using the Graph "
+#~ "Executor runtime module."
+#~ msgstr ""
+
+#~ msgid "Adreno target"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Normally, when compiling models for "
+#~ "Android using OpenCL, the corresponding "
+#~ "target is used"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Using Adreno, we want to get all"
+#~ " the benefits of textures, so we "
+#~ "have to use the following target "
+#~ "to generate texture leveraging kernels"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Let's write a simple model with "
+#~ "one convolutional (conv2d) layer and "
+#~ "take a look at generated kernels "
+#~ "for these two targets"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now compile our model with the "
+#~ "classic OpenCL target and print its "
+#~ "modules:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Notice that the generated convolution "
+#~ "kernel has pointers in the "
+#~ "initialization of the function. The "
+#~ "kernels generated with the above target"
+#~ " are buffer-based."
+#~ msgstr ""
+
+#~ msgid "Now take a look at “opencl -device=adreno” target:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The kernels generated this way is "
+#~ "actually working with 2d arrays, "
+#~ "leveraging textures"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To leverage the GPU hardware "
+#~ "capabilities and utilize the benefits of"
+#~ " half precision computation and memory "
+#~ "management, we can convert an original"
+#~ " model having floating points operation "
+#~ "to a model operating with half "
+#~ "precision. Choosing lower precision will "
+#~ "positively affect the performance of the"
+#~ " model, but it may also have a"
+#~ " decrease in the accuracy of the "
+#~ "model. To do the conversion you "
+#~ "need to write a simple conversion "
+#~ "function and specify the *dtype* value"
+#~ " of \"float16\" before calling the "
+#~ "function:"
+#~ msgstr ""
+
+#~ msgid "We then can compile our model in any convinient way"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ToMixedPrecision pass traverse over the "
+#~ "network and split network to clusters"
+#~ " of ops dealing with float or "
+#~ "float16 data types. The clusters are "
+#~ "defined by three types of operations:"
+#~ " - Operations always be converted "
+#~ "into float16 data type - Operations "
+#~ "which can be converted if they "
+#~ "follow by converted cluster - Operations"
+#~ " never be converted to the float16"
+#~ " data type This list is defined "
+#~ "in the ToMixedPrecision implementation here"
+#~ " `relay/transform/mixed_precision.py "
+#~ "<https://github.com/apache/tvm/blob/main/python/tvm/relay/transform/mixed_precision.py#L34>`_"
+#~ " and can be overridden by user"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In some cases, we want higher "
+#~ "precision in accumulation than the input"
+#~ " data. This is supported, for "
+#~ "example, for conv2d and dense "
+#~ "operations. To override accumulation type "
+#~ "you need to register function with "
+#~ "``@register_mixed_precision_conversion`` decorator to "
+#~ "modify parameters of ``ToMixedPrecision`` "
+#~ "conversion"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now we need to modify the "
+#~ "conversion function by adding some "
+#~ "logical \"forks\" and ToMixedPrecision() call,"
+#~ " then create a Relay graph from "
+#~ "desired model in any convinient way "
+#~ "and obtain **mod** (which is IR "
+#~ "representation of the model), after "
+#~ "which we can convert it to the "
+#~ "required **dtype** and then assemble our"
+#~ " model sequentialy"
+#~ msgstr ""
+
+#~ msgid "From this point onwards, we can compile our model as normal"
+#~ msgstr ""
+

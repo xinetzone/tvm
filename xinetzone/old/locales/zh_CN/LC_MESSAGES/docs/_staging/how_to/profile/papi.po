@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:20
+msgid "Getting Started With PAPI"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:22
+msgid ""
+"The Performance Application Programming Interface (PAPI) is a library "
+"that provides performance counters on a variety of platforms. Performance"
+" counters provide accurate low-level information about processors "
+"behavior during a given execution run. This information can contain "
+"simple metrics like total cycle count, cache misses, and instructions "
+"executed as well as more high level information like total FLOPS and warp"
+" occupancy. PAPI makes these metrics available while profiling."
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:31
+msgid "Installing PAPI"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:33
+msgid ""
+"PAPI can either be installed using your package manager (``apt-get "
+"install libpapi-dev`` on Ubuntu), or from source here: https://github.com"
+"/icl-utk-edu/papi."
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:37
+msgid ""
+"Pulling the latest version of PAPI from source has caused build issues "
+"before. Therefore, it is recommended to checkout tagged version "
+"``papi-6-0-0-1-t``."
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:40
+msgid "Building TVM With PAPI"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:42
+msgid ""
+"To include PAPI in your build of TVM, set the following line in you "
+"``config.cmake``:"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:48
+msgid ""
+"If PAPI is installed in a non-standard place, you can specify where it is"
+" like so:"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:56
+msgid "Using PAPI While Profiling"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:58
+msgid ""
+"If TVM has been built with PAPI (see above), then you can pass a "
+":py:class:`tvm.runtime.profiling.PAPIMetricCollector` to "
+":py:meth:`tvm.runtime.GraphModule.profile` to collect performance "
+"metrics. Here is an example:"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:98
+msgid "You can also change which metrics are collected:"
+msgstr ""
+
+#: ../../doc/docs/_staging/how_to/profile/papi.rst:120
+msgid ""
+"You can find a list of available metrics by running the ``papi_avail`` "
+"and ``papi_native_avail`` commands."
+msgstr ""
+

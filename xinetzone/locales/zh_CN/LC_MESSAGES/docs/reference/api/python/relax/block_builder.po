@@ -1,0 +1,422 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 09:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/block_builder.rst:19
+msgid "tvm.relax.block_builder"
+msgstr ""
+
+#: of tvm.relax.block_builder:1
+msgid "Developer API of constructing Relax AST."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder:1
+msgid "A builder to build Relax IR for testing and dev."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder:4
+#: tvm.relax.block_builder.BlockBuilder.emit_te:18
+#: tvm.relax.block_builder.BlockBuilder.emit_te:67
+msgid "示例"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder:20
+msgid ""
+"BlockBuilder can also be used to construct neural networks with nn.Module"
+" API"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.add_func:1
+#: tvm.relax.block_builder.BlockBuilder.update_func:1
+msgid "Add a Relax function or a TIR PrimFunc to the IRModule being built."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/block_builder.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.add_func:3
+msgid "The function to be added."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.add_func:5
+msgid "The name of the function to be added."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/block_builder.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.add_func:8
+msgid "**gvar** -- The global var bound to the added function."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/block_builder.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.begin_scope:1
+msgid ""
+"Begin a new scope, with optional parameters that are visible within the "
+"scope."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.begin_scope:4
+msgid "Parameters that are visible within the scope."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.begin_scope:9
+msgid ""
+"This function should be called when new scope is introduced (function, "
+"seq) to properly track the variable availability and help the best effort"
+" deduction."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:1
+msgid ""
+"Generate a call node according to the te function. This function converts"
+" arguments from relax expression to te tensor, The callback func should "
+"return a te tensor or a list of te tensors. Please see detailed example "
+"in emit_te"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:6
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:5
+#: tvm.relax.block_builder.BlockBuilder.emit_te:5
+msgid "A function that returns a te tensor or a list of te tensors."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:8
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:7
+#: tvm.relax.block_builder.BlockBuilder.emit_te:7
+msgid "arguments passed to the function."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:10
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:15
+msgid ""
+"The keyword arguments passed to the function. Note that the following "
+"keyword args are reserved:      - 'primfunc_name_hint' for passing name "
+"hint to the PrimFunc       that gets generated.     - 'primfunc_attrs' is"
+" reserved for passing func attributes to       be added to the PrimFunc "
+"that gets created."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:10
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:15
+msgid ""
+"The keyword arguments passed to the function. Note that the following "
+"keyword args are reserved:"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:13
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:18
+msgid ""
+"'primfunc_name_hint' for passing name hint to the PrimFunc that gets "
+"generated."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:15
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:20
+msgid ""
+"'primfunc_attrs' is reserved for passing func attributes to be added to "
+"the PrimFunc that gets created."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te:19
+#: tvm.relax.block_builder.BlockBuilder.call_te_with_grad:24
+msgid "**ret** -- A newly created call node"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te_with_grad:1
+msgid ""
+"Generate a call node according to the te function. This method will "
+"generate a call_tir_with_grad node, i.e. a call_tir node bound with a te "
+"gradient function (refered by te_grad_name)."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te_with_grad:9
+msgid ""
+"The registered name of the te gradient function associated with the "
+"call_tir_with_grad node. Must be provided as a keyword argument."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.call_te_with_grad:12
+msgid ""
+"The keyword arguments passed to the te gradient function. Optionally "
+"provided as a keyword argument. Default: {}."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.current:1
+msgid "Returns the current BlockBuilder."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.current_block_is_dataflow:1
+msgid "Check if the block being built is DataflowBlock or not."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.current_block_is_dataflow:3
+msgid ""
+"**ret** -- A boolean that indicates if the block being built is "
+"DataflowBlock or not."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.dataflow:1
+msgid "Annotate a Relax dataflow block."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.dataflow:3
+msgid "**ret** -- A DataflowScope for building a Relax dataflow block."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit:1
+msgid ""
+"Emit an expr. This infers the shape and type of the expr, create a "
+"variable, and bind the expr to the variable."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit:5
+msgid "The Expr to be emitted."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit:7
+#: tvm.relax.block_builder.BlockBuilder.emit_output:5
+msgid "Name hint for the bound variable."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit:10
+msgid "**ret** -- A newly created variable that gets bound to the input expr."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_func_output:1
+msgid "Emit output for the function."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_func_output:3
+#: tvm.relax.block_builder.BlockBuilder.emit_output:3
+msgid "The output of the current block/function."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_func_output:5
+msgid ""
+"The parameters of the function to be built. If params is None, it means "
+"the params have been initialized in the function with scope."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_func_output:9
+msgid "**gvar** -- A GlobalVar representing the function"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_normalized:1
+msgid "Emit an already normalized binding."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_normalized:3
+msgid "The binding to be emitted."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_output:1
+msgid "Emit output for the current dataflow block or function."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_output:8
+msgid "**ret** -- The return variable which gets bound to the output."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_te:1
+msgid ""
+"Emit a call node according to the te function. This function converts "
+"arguments from relax expression to te tensor, The callback func should "
+"return a te tensor or a list of te tensors."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_te:9
+msgid ""
+"The keyword arguments passed to the function. Note that the key "
+"\"primfunc_name_hint\" is reserved for passing name hint to the PrimFunc "
+"that gets generated."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_te:14
+msgid "**ret** -- A newly created variable that gets bound to the call code."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.emit_te:35
+#: tvm.relax.block_builder.BlockBuilder.emit_te:83
+msgid "will result in TVMScript"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.end_scope:1
+msgid "End the current scope. Please see `begin_scope` for details"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.finalize:1
+msgid "Finalize the building process and return the result IRModule."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.finalize:3
+msgid ""
+"Possibly rename GlobalVars in the IRModule to ensure name uniqueness and "
+"the invariant: every public function has the same name as its "
+"\"global_symbol\" attribute."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.finalize:6
+msgid ""
+"Note this method should be called only once at the end of the building "
+"process, since it may invalidate global vars previously returned by this "
+"builder. See also tvm.relax.transform.NormalizeGlobalVar."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.finalize:10
+#: tvm.relax.block_builder.BlockBuilder.get:4
+msgid "**ret** -- An IRModule with Relax and TIR functions being built."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:1
+msgid "Annotate a Relax function."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:3
+msgid "The name of the function"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:5
+msgid ""
+"The parameters of the function. If params is None, it means deferring "
+"initialization of function parameters until emit_func_output."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:9
+msgid "The function attrs"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:11
+msgid "Whether the function is annotated as pure."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:13
+msgid ""
+"Whether the function is annotated as private. If the function is private,"
+" it will not have a global symbol attribute. If it is not private and not"
+" an inner function, then it will have a global symbol attribute (mapped "
+"to the function's name)"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.function:19
+msgid "**ret** -- A FunctionScope for building a Relax function node."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.get:1
+msgid ""
+"Return intermediate IRModule. For the situation where the IRModule is "
+"needed in the middle of a building process."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.get_unique_name:1
+msgid "Generate a unique name with a specified prefix."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.get_unique_name:3
+msgid "The name prefix."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.get_unique_name:6
+msgid "**ret** -- The generated name."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.lookup_binding:1
+msgid "Lookup a var in the binding table."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.lookup_binding:3
+msgid "The input var."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.lookup_binding:6
+msgid "**expr** -- The Expr bound to the input var."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.match_cast:1
+msgid "Emit a MatchCast."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.match_cast:3
+msgid "The value of the MatchCast to be emitted."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.match_cast:5
+msgid "The struct info to be matched."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.match_cast:7
+msgid "The name of the match cast"
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.match_cast:10
+msgid ""
+"**ret** -- A newly created variable that get bounds to be the casted "
+"result."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.normalize:1
+msgid "Normalize an Expr to complete its shape and type."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.normalize:3
+msgid "The input expr."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.normalize:6
+msgid "**ret** -- The expr with normalized shape and type."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.testing_scope:1
+msgid "Start a scope for unit-testing purposes."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.testing_scope:3
+msgid "List of symbolic variables that are marked as defined in scope."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.testing_scope:6
+msgid "**ret** -- A TestingScope to setup builder for emit and other purposes."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.update_func:3
+msgid "The global var referring the function to be updated."
+msgstr ""
+
+#: of tvm.relax.block_builder.BlockBuilder.update_func:5
+msgid "The updated function."
+msgstr ""
+
+#: of tvm.relax.block_builder.DataflowScope:1
+msgid "Auxiliary scope for Dataflow block"
+msgstr ""
+
+#: of tvm.relax.block_builder.FunctionScope:1
+msgid "Auxiliary scope for function"
+msgstr ""
+
+#: of tvm.relax.block_builder.TestingScope:1
+msgid "Auxiliary scope for testing purposes"
+msgstr ""
+

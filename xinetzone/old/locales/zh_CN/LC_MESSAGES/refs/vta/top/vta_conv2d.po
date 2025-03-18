@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-15 19:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/top/vta_conv2d.rst:3
+msgid "``vta.top.vta_conv2d``"
+msgstr ""
+
+#: of vta.top.vta_conv2d:1
+msgid "Conv2D operator declaration and schedule registration for VTA."
+msgstr "VTA 的 Conv2D 算子声明和调度注册。"
+
+#: of vta.top.vta_conv2d.conv2d_packed:1
+msgid "Packed conv2d function."
+msgstr "打包的 conv2d 函数。"
+
+#: of vta.top.vta_conv2d.schedule_conv2d_packed:1
+msgid "Schedule packed conv2d"
+msgstr "调度打包的 conv2d"
+

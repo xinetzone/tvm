@@ -1,0 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.14.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/index.rst:2
+msgid "API Reference"
+msgstr ""
+
+#: ../../doc/api/index.rst:4
+msgid "This page contains auto-generated API reference documentation [#f1]_."
+msgstr ""
+
+#: ../../doc/api/index.rst:11
+msgid ""
+"Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-"
+"autoapi>`_"
+msgstr ""
+
+#~ msgid "TVM Python API"
+#~ msgstr ""
+

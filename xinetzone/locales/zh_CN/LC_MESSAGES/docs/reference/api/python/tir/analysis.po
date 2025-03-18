@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 09:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/analysis.rst:19
+msgid "tvm.tir.analysis"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis:1
+msgid "Wrapping existing analysis utils."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.OOBChecker:1
+msgid "Detect out of bounds memory access in arrays."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/analysis.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.OOBChecker:3
+msgid "**fpass** -- The result pass"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/analysis.rst
+msgid "返回类型"
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:1
+msgid ""
+"Returns func written to capture the memory (aka storage) scope "
+"constraints for each of the func's parameters given by "
+"arg_and_result_memory_scopes. However, arg_and_result_memory_scopes "
+"should be w.r.t. the func's representation as a Relay Function of "
+"relay_func_type before lowering and conversion to DPS."
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:6
+#: tvm.tir.analysis.analysis.get_prim_func_arg_and_result_memory_constraints:5
+msgid "Visible for testing."
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:8
+msgid ""
+"CAUTION: This is experimental. The resulting PrimFunc may not have fully "
+"accounted for all new memory scopes."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/analysis.rst
+msgid "参数"
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:11
+#: tvm.tir.analysis.analysis.get_prim_func_arg_and_result_memory_constraints:7
+msgid "The function to retrieve constraints from."
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:13
+#: tvm.tir.analysis.analysis.get_prim_func_arg_and_result_memory_constraints:9
+msgid "The type of the Relay Function from which the func was derived."
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:15
+msgid ""
+"Memory constraints for funcs args and result in Relay form. The empty "
+"string denotes 'no constraint'."
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.apply_prim_func_arg_and_result_memory_constraints:19
+msgid "**result** -- The rewritten func."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.assert_pure_function:1
+msgid "Asserts that the function is a pure function"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_allocated_bytes:1
+msgid "Calculate allocated memory per memory scope required by TIR PrimFuncs."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_allocated_bytes:3
+msgid ""
+"The function or module to be detected. If a module is passed, allocated "
+"memory is calculated for all PrimFuncs inside the module"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_allocated_bytes:7
+msgid ""
+"**result** -- Allocated memory size per scope in bytes for each function "
+"in the IRModule returned as a dict with function names as keys and a dict"
+" of allocated sizes as values. If a single PrimFunc is passed, the "
+"function name is returned as \"main\""
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_constant_bytes:1
+msgid ""
+"Calculate the constant size in bytes needed by the TIR allocates inside "
+"the TIR PrimFunc."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_constant_bytes:4
+#: tvm.tir.analysis.analysis.calculate_workspace_bytes:4
+#: tvm.tir.analysis.analysis.detect_buffer_access_lca:6
+msgid "The function to be detected."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_constant_bytes:6
+#: tvm.tir.analysis.analysis.calculate_workspace_bytes:6
+msgid "The byte alignment required for each tensor"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_constant_bytes:9
+#: tvm.tir.analysis.analysis.calculate_workspace_bytes:9
+msgid "**result** -- Workspace size in bytes."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.calculate_workspace_bytes:1
+msgid ""
+"Calculate the workspace size in bytes needed by the TIR allocates inside "
+"the TIR PrimFunc."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.detect_buffer_access_lca:1
+msgid ""
+"Detect the lowest common ancestor(LCA) of buffer access, including both "
+"high-level access (BufferLoad, BufferStore) and low-level access "
+"(BufferLoad, BufferStore and opaque access). The LCA may be a For loop or"
+" a Block."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.detect_buffer_access_lca:9
+msgid "**result** -- Map from buffer to the LCA of all access to it."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.estimate_tir_flops:1
+msgid "Estimate the FLOPs of a TIR fragment."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.estimate_tir_flops:3
+msgid "The TIR fragment or IRModule to be estimated."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.estimate_tir_flops:6
+msgid "**flops** -- The estimated FLOPs."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:1
+msgid "Deeply compare two nested expressions."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:3
+msgid "The left operand."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:5
+msgid "The right operand."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:8
+msgid "**result** -- The comparison result"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:13
+msgid ""
+"This function does not remap variable bindings, it will not return true "
+"for (let x = 1 in x + 1) vs (let y = 1 in y + 1), unless x.same_as(y). "
+"Use py:func:`tvm.ir.structural_equal` to handle structural variable "
+"remapping."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:17
+msgid ""
+"Due to the restriction of not remapping variables, this function can run "
+"faster than StructuralEqual and can be used as a utility function during "
+"arithmetic simplifications."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:21
+msgid ""
+"Always consider py:func:`tvm.ir.structural_equal` first, which handles "
+"the structural remapping."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.expr_deep_equal:24
+msgid ":obj:`tvm.ir.structural_equal`"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.find_anchor_block:1
+msgid "Find the \"anchor block\" of the given module."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.find_anchor_block:3
+msgid ""
+"We define the anchor block to be the block with (1) an init statement and"
+" (2) having the biggest flops count. The latter condition is only used "
+"when there are multiple blocks with an init statement."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.find_anchor_block:7
+msgid ""
+"For example, if the input module is conv2d + fused spatial blocks, conv2d"
+" is the anchor block. The input module may not contain more than one such"
+" block. For example, a module having two conv2d is not allowed as an "
+"input."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.find_anchor_block:11
+msgid ""
+"However, a module created from winograd convolution has multiple blocks "
+"with an init statement (input transform, batched GEMM, and output "
+"transform). We use the second condition, the flops count, to determine "
+"that the batched GEMM block is the anchor block."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.find_anchor_block:15
+msgid "The input TIR module."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.find_anchor_block:18
+msgid "**anchor_block** -- The anchor block if found, None otherwise."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:1
+msgid "Detect which regions of tensors in this block are read or written to."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:2
+msgid "Regions are sorted by order of appearance in the AST."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:4
+#: tvm.tir.analysis.analysis.get_block_read_write_region:4
+msgid "The block in which we are detecting read/write regions."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:6
+#: tvm.tir.analysis.analysis.get_block_read_write_region:6
+msgid ""
+"The outside buffers which may access the block. Mapping from buffer var "
+"to the buffer"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:9
+msgid ""
+"**result** --  Array of access regions. There are three arrays of "
+"BufferRegion:     - first: read regions     - second: write regions     -"
+" third: opaque regions"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:9
+msgid "**result** --"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:11
+msgid "Array of access regions. There are three arrays of BufferRegion:"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:12
+msgid "first: read regions"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:13
+msgid "second: write regions"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_access_region:14
+msgid "third: opaque regions"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_read_write_region:1
+msgid "Auto detect the block read/write region according to its body stmt."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_read_write_region:2
+msgid "An opaque access will be counted as both a read and a write access"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_block_read_write_region:9
+msgid ""
+"**result** -- An array only consisting of the read regions and write "
+"regions of the input block"
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.get_prim_func_arg_and_result_memory_constraints:1
+msgid ""
+"Returns the memory (aka storage) scope constraints for all the arguments "
+"and result of func. However the result will be w.r.t. the func's "
+"representation as a Relay Function of relay_func_type before lowering and"
+" conversion to DPS."
+msgstr ""
+
+#: of
+#: tvm.tir.analysis.analysis.get_prim_func_arg_and_result_memory_constraints:12
+msgid ""
+"**result** -- Memory scope constraints for funcs args and result in Relay"
+" form. The empty string denotes 'no constraint'."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_vtcm_compaction_passes:1
+msgid ""
+"Utility function to get the list of lowering passes to be applied to "
+"calculate the compacted VTCM allocation size"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.get_vtcm_compaction_passes:4
+msgid "**result** -- returns list of passes"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.is_pure_function:1
+msgid "Checks if the function is a pure function"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.undefined_vars:1
+msgid "Find undefined vars in a TIR statement or expression."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.undefined_vars:3
+msgid "The TIR statement or expression to be checked."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.undefined_vars:5
+msgid "The vars that is defined"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.undefined_vars:8
+msgid "**result** -- The undefined vars."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_gpu_code:1
+msgid "Verify if module contains illegal host side direct memory access."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_gpu_code:3
+#: tvm.tir.analysis.analysis.verify_memory:3
+#: tvm.tir.analysis.analysis.verify_ssa:3
+msgid "The module to be verified."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_gpu_code:5
+msgid "The attribute constraints."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_gpu_code:8
+#: tvm.tir.analysis.analysis.verify_memory:6
+#: tvm.tir.analysis.analysis.verify_ssa:6
+msgid "**result** -- The result of verification."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_memory:1
+msgid "Verify if func contains illegal host side direct memory access."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_ssa:1
+msgid "Verify if the func is in SSA form."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_well_formed:1
+msgid "Verify if the given TIR is well-formed. The verification includes:"
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_well_formed:2
+msgid "Check if expressions not contain vars that is defined outside the block."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_well_formed:4
+msgid "The function or module to be verified."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_well_formed:6
+msgid "The indicator if it raises an error when the function is not well-formed."
+msgstr ""
+
+#: of tvm.tir.analysis.analysis.verify_well_formed:9
+msgid "**result** -- Whether it is a well-formed TIR function."
+msgstr ""
+

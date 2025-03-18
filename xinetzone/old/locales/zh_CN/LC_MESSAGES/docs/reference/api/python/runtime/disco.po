@@ -1,0 +1,627 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/api/python/runtime/disco.rst:19
+msgid "tvm.runtime.disco"
+msgstr ""
+
+#: of tvm.runtime.disco:1
+msgid "TVM distributed runtime API."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DModule:1
+msgid "A Module in a Disco session."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/runtime/disco.rst of
+#: tvm.runtime.disco.session.DModule tvm.runtime.disco.session.DPackedFunc
+#: tvm.runtime.disco.session.ProcessSession
+#: tvm.runtime.disco.session.SocketSession
+#: tvm.runtime.disco.session.ThreadedSession.__init__
+msgid "参数"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DPackedFunc:1
+msgid "A PackedFunc in a Disco session."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef:1
+msgid ""
+"An object that exists on all workers. The controller process assigns a "
+"unique \"register id\" to each object, and the worker process uses this "
+"id to refer to the object residing on itself."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:1
+msgid "Copy an NDArray value to remote for debugging purposes."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:4
+#: tvm.runtime.disco.session.DRef.debug_get_from_remote:4
+#: tvm.runtime.disco.session.Session._sync_worker:7
+#: tvm.runtime.disco.session.Session.allgather:4
+#: tvm.runtime.disco.session.Session.allreduce:4
+#: tvm.runtime.disco.session.Session.broadcast:4
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:4
+#: tvm.runtime.disco.session.Session.call_packed:4
+#: tvm.runtime.disco.session.Session.copy_from_worker_0:4
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:4
+#: tvm.runtime.disco.session.Session.empty:4
+#: tvm.runtime.disco.session.Session.gather_to_worker0:4
+#: tvm.runtime.disco.session.Session.get_global_func:4
+#: tvm.runtime.disco.session.Session.import_python_module:6
+#: tvm.runtime.disco.session.Session.init_ccl:4
+#: tvm.runtime.disco.session.Session.load_vm_module:4
+#: tvm.runtime.disco.session.Session.scatter:4
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:5
+#: tvm.runtime.disco.session.DRef.debug_get_from_remote:5
+#: tvm.runtime.disco.session.Session._sync_worker:8
+msgid "worker_id"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:-1
+#: tvm.runtime.disco.session.DRef.debug_get_from_remote:-1
+#: tvm.runtime.disco.session.Session._sync_worker:-1
+#: tvm.runtime.disco.session.Session.init_ccl:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:6
+msgid "The id of the worker to be copied to."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:8
+#: tvm.runtime.disco.session.DRef.debug_get_from_remote:10
+msgid "value"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:-1
+msgid "Union[numpy.ndarray, NDArray]"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_copy_from:9
+msgid "The value to be copied."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/runtime/disco.rst of
+#: tvm.runtime.disco.session.Session.sync_worker_0
+#: tvm.runtime.disco.session.ThreadedSession.__init__
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_get_from_remote:1
+msgid ""
+"Get the value of a DRef from a remote worker. It is only used for "
+"debugging purposes."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_get_from_remote:6
+msgid "The id of the worker to be fetched from."
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_get_from_remote:9
+#: tvm.runtime.disco.session.Session.broadcast:16
+#: tvm.runtime.disco.session.Session.call_packed:16
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:12
+#: tvm.runtime.disco.session.Session.empty:24
+#: tvm.runtime.disco.session.Session.get_global_func:9
+#: tvm.runtime.disco.session.Session.load_vm_module:12
+#: tvm.runtime.disco.session.Session.scatter:19
+msgid "Returns"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_get_from_remote:-1
+msgid "object"
+msgstr ""
+
+#: of tvm.runtime.disco.session.DRef.debug_get_from_remote:11
+msgid "The value of the register."
+msgstr ""
+
+#: of tvm.runtime.disco.session.ProcessSession:1
+msgid "A Disco session backed by pipe-based multi-processing."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session:1
+msgid ""
+"A Disco interactive session. It allows users to interact with the Disco "
+"command queue with various PackedFunc calling convention."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session._sync_worker:1
+msgid ""
+"Synchronize the controller with a worker, and it will wait until the "
+"worker finishes executing all the existing instructions. This function is"
+" usually used for worker-0, because it is the only worker that is assumed"
+" to collocate with the controller. Syncing with other workers may not be "
+"supported and should only be used for debugging purposes."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session._sync_worker:9
+msgid "The id of the worker to be synced with."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:1
+msgid "Perform an allgather operation on an array."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:5
+msgid "src"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:-1
+#: tvm.runtime.disco.session.Session.allreduce:-1
+#: tvm.runtime.disco.session.Session.empty:-1
+#: tvm.runtime.disco.session.Session.gather_to_worker0:-1
+#: tvm.runtime.disco.session.Session.get_global_func:-1
+msgid "DRef"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:6
+#: tvm.runtime.disco.session.Session.gather_to_worker0:6
+msgid "The array to be gathered from."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:8
+msgid "dst"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:9
+#: tvm.runtime.disco.session.Session.gather_to_worker0:9
+msgid "The array to be gathered to."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:11
+#: tvm.runtime.disco.session.Session.allreduce:16
+msgid "in_group"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:-1
+#: tvm.runtime.disco.session.Session.allreduce:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allgather:12
+#: tvm.runtime.disco.session.Session.allreduce:17
+msgid "Whether the reduce operation performs globally or in group as default."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allreduce:1
+msgid "Perform an allreduce operation on an array."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allreduce:5
+#: tvm.runtime.disco.session.Session.empty:25
+msgid "array"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allreduce:6
+msgid "The array to be reduced."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allreduce:8
+msgid "op"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allreduce:-1
+msgid "str = \"sum\""
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.allreduce:9
+msgid ""
+"The reduce operation to be performed. Available options are: - \"sum\" - "
+"\"prod\" - \"min\" - \"max\" - \"avg\""
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:1
+msgid "Broadcast an array to all workers"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:5
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:5
+#: tvm.runtime.disco.session.Session.scatter:5
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:5
+msgid "src: Union[np.ndarray, NDArray]"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:6
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:6
+msgid "The array to be broadcasted."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:8
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:8
+#: tvm.runtime.disco.session.Session.scatter:10
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:10
+msgid "dst: Optional[DRef]"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:9
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:9
+msgid ""
+"The output array.  If None, an array matching the shape and dtype of "
+"`src` will be allocated on each worker."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:12
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:12
+#: tvm.runtime.disco.session.Session.empty:18
+#: tvm.runtime.disco.session.Session.gather_to_worker0:11
+#: tvm.runtime.disco.session.Session.scatter:15
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:15
+msgid "in_group: bool"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:13
+#: tvm.runtime.disco.session.Session.broadcast_from_worker0:13
+msgid "Whether the broadcast operation performs globally or in group as default."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:17
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:13
+#: tvm.runtime.disco.session.Session.scatter:20
+msgid "output_array: DRef"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast:19
+msgid ""
+"The DRef containing the broadcasted data on all workers. If `dst` was "
+"provided, this return value is the same as `dst`.  Otherwise, it is the "
+"newly allocated space."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.broadcast_from_worker0:1
+msgid "Broadcast an array from worker-0 to all other workers."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:1
+msgid "Call a PackedFunc on workers providing variadic arguments."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:5
+#: tvm.runtime.disco.session.Session.get_global_func:10
+msgid "func"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:-1
+msgid "PackedFunc"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:6
+msgid "The function to be called."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:7
+msgid "*args"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:-1
+msgid "various types"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:8
+msgid ""
+"In the variadic arguments, the supported types include: - integers and "
+"floating point numbers; - DLDataType; - DLDevice; - str (std::string in "
+"C++); - DRef."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:17
+msgid "return_value"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:18
+msgid "The return value of the function call."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:21
+msgid "Notes"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.call_packed:22
+msgid ""
+"Examples of unsupported types: - NDArray, DLTensor,; - TVM Objects, "
+"including PackedFunc, Module and String."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:1
+msgid "Copy an NDArray from worker-0 to the controller-side NDArray."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:5
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:5
+msgid "host_array"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:-1
+msgid "numpy.ndarray"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:6
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:6
+msgid "The array to be copied to worker-0."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:8
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:8
+msgid "remote_array"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:-1
+#: tvm.runtime.disco.session.Session.copy_to_worker_0:-1
+msgid "NDArray"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_from_worker_0:9
+msgid "The NDArray on worker-0."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_to_worker_0:1
+msgid "Copy the controller-side NDArray to worker-0."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_to_worker_0:-1
+msgid "Optiona[DRef]"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_to_worker_0:9
+msgid "The destination NDArray on worker-0."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.copy_to_worker_0:15
+msgid ""
+"The DRef containing the copied data on worker0, and NullOpt on all other "
+"workers.  If `remote_array` was provided, this return value is the same "
+"as `remote_array`. Otherwise, it is the newly allocated space."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:1
+msgid "Create an empty NDArray on all workers and attach them to a DRef."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:5
+msgid "shape"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:-1
+msgid "tuple of int"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:6
+msgid "The shape of the NDArray."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:8
+msgid "dtype"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:-1
+#: tvm.runtime.disco.session.Session.get_global_func:-1
+#: tvm.runtime.disco.session.Session.init_ccl:-1
+#: tvm.runtime.disco.session.Session.load_vm_module:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:9
+msgid "The data type of the NDArray."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:11
+#: tvm.runtime.disco.session.Session.load_vm_module:8
+msgid "device"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:-1
+#: tvm.runtime.disco.session.Session.load_vm_module:-1
+msgid "Optional[Device] = None"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:12
+msgid "The device of the NDArray."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:14
+msgid "worker0_only: bool"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:15
+msgid ""
+"If False (default), allocate an array on each worker.  If True, only "
+"allocate an array on worker0."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:19
+msgid ""
+"Take effective when `worker0_only` is True. If True (default), allocate "
+"an array on each first worker in each group. If False, only allocate an "
+"array on worker0 globally."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.empty:26
+msgid "The created NDArray."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.gather_to_worker0:1
+msgid "Gather an array from all other workers to worker-0."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.gather_to_worker0:5
+msgid "from_array"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.gather_to_worker0:8
+msgid "to_array"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.gather_to_worker0:12
+msgid "Whether the gather operation performs globally or in group as default."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.get_global_func:1
+msgid "Get a global function on workers."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.get_global_func:5
+msgid "name"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.get_global_func:6
+msgid "The name of the global function."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.get_global_func:11
+msgid "The global packed function"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.import_python_module:1
+msgid "Import a python module in each worker"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.import_python_module:3
+msgid "This may be required before call"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.import_python_module:7
+msgid "module_name: str"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.import_python_module:9
+msgid ""
+"The python module name, as it would be used in a python `import` "
+"statement."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.init_ccl:1
+msgid "Initialize the underlying communication collective library."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.init_ccl:5
+msgid "ccl"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.init_ccl:6
+msgid ""
+"The name of the communication collective library. Currently supported "
+"libraries are: - nccl - rccl - mpi"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.init_ccl:11
+msgid "*device_ids"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.init_ccl:12
+msgid "The device IDs to be used by the underlying communication library."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:1
+msgid "Load a VM module from a file."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:5
+msgid "path"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:6
+msgid "The path to the VM module file."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:9
+msgid ""
+"The device to load the VM module to. Default to the default device of "
+"each worker."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:13
+msgid "module"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:-1
+msgid "DModule"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.load_vm_module:14
+msgid "The loaded VM module."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.scatter:1
+msgid "Scatter an array across all workers"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.scatter:6
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:6
+msgid ""
+"The array to be scattered.  The first dimension of this array, "
+"`src.shape[0]`, must be equal to the number of workers."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.scatter:11
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:11
+msgid ""
+"The output array.  If None, an array with compatible shape and the same "
+"dtype as `src` will be allocated on each worker."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.scatter:16
+#: tvm.runtime.disco.session.Session.scatter_from_worker0:16
+msgid "Whether the scatter operation performs globally or in group as default."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.scatter:22
+msgid ""
+"The DRef containing the scattered data on all workers. If `dst` was "
+"provided, this return value is the same as `dst`.  Otherwise, it is the "
+"newly allocated space."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.scatter_from_worker0:1
+msgid "Scatter an array from worker-0 to all other workers."
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.shutdown:1
+msgid "Shut down the Disco session"
+msgstr ""
+
+#: of tvm.runtime.disco.session.Session.sync_worker_0:1
+msgid ""
+"Synchronize the controller with worker-0, and it will wait until the "
+"worker-0 finishes executing all the existing instructions."
+msgstr ""
+
+#: of tvm.runtime.disco.Session.num_workers:1
+msgid "Return the number of workers in the session"
+msgstr ""
+
+#: of tvm.runtime.disco.session.SocketSession:1
+msgid "A Disco session backed by socket-based multi-node communication."
+msgstr ""
+
+#: of tvm.runtime.disco.session.ThreadedSession:1
+msgid "A Disco session backed by multi-threading."
+msgstr ""
+
+#: of tvm.runtime.disco.session.ThreadedSession.__init__:1
+msgid "Create a disco session backed by multiple threads in the same process."
+msgstr ""
+

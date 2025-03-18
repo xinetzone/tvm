@@ -1,0 +1,847 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# xinetzone <735613050@qq.com>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: xinetzone <735613050@qq.com>, 2022\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/install/from_source.rst:21
+msgid "Install from Source"
+msgstr "从源码安装"
+
+#: ../../doc/docs/install/from_source.rst:22
+#, fuzzy
+msgid ""
+"This page gives instructions on how to build and install the TVM package "
+"from source."
+msgstr "这个页面给出了如何在各种系统上从头开始构建和安装 TVM 软件包的说明。它包括两个步骤："
+
+#: ../../doc/docs/install/from_source.rst:26
+#, fuzzy
+msgid "Table of Contents"
+msgstr "启用 C++ 测试"
+
+#: ../../doc/docs/install/from_source.rst:31
+#, fuzzy
+msgid "Step 1. Install Dependencies"
+msgstr "Python 依赖"
+
+#: ../../doc/docs/install/from_source.rst:33
+msgid "Apache TVM requires the following dependencies:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:35
+msgid "CMake (>= 3.24.0)"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:36
+msgid "LLVM (recommended >= 15)"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:37
+msgid "Git"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:38
+#, fuzzy
+msgid "A recent C++ compiler supporting C++ 17, at the minimum"
+msgstr "支持 C++14 的最新 C++ 编译器（g++-5 或更高）。"
+
+#: ../../doc/docs/install/from_source.rst:39
+msgid "GCC 7.1"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:40
+msgid "Clang 5.0"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:41
+msgid "Apple Clang 9.3"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:42
+msgid "Visual Studio 2019 (v16.7)"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:43
+msgid "Python (>= 3.8)"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:44
+msgid "(Optional) Conda (Strongly Recommended)"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:46
+msgid ""
+"To easiest way to manage dependency is via conda, which maintains a set "
+"of toolchains including LLVM across platforms. To create the environment "
+"of those build dependencies, one may simply use:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:65
+#, fuzzy
+msgid "Step 2. Get Source from Github"
+msgstr "开发者：从 Github 获取源码"
+
+#: ../../doc/docs/install/from_source.rst:66
+#, fuzzy
+msgid "You can also choose to clone the source repo from github."
+msgstr "你也可以选择从 github 克隆源码 repo。重要的是，要用 ``--recursive`` 选项来克隆子模块。"
+
+#: ../../doc/docs/install/from_source.rst:73
+msgid ""
+"It's important to use the ``--recursive`` flag when cloning the TVM "
+"repository, which will automatically clone the submodules. If you forget "
+"to use this flag, you can manually clone the submodules by running ``git "
+"submodule update --init --recursive`` in the root directory of the TVM "
+"repository."
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:78
+msgid "Step 3. Configure and Build"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:79
+msgid ""
+"Create a build directory and run CMake to configure the build. The "
+"following example shows how to build"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:88
+msgid ""
+"We want to specifically tweak the following flags by appending them to "
+"the end of the configuration file:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:112
+msgid ""
+"``HIDE_PRIVATE_SYMBOLS`` is a configuration option that enables the "
+"``-fvisibility=hidden`` flag. This flag helps prevent potential symbol "
+"conflicts between TVM and PyTorch. These conflicts arise due to the "
+"frameworks shipping LLVMs of different versions."
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:116
+msgid ""
+"`CMAKE_BUILD_TYPE "
+"<https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html>`_ "
+"controls default compilation flag:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:118
+msgid "``Debug`` sets ``-O0 -g``"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:119
+msgid "``RelWithDebInfo`` sets ``-O2 -g -DNDEBUG`` (recommended)"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:120
+msgid "``Release`` sets ``-O3 -DNDEBUG``"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:122
+msgid ""
+"Once ``config.cmake`` is edited accordingly, kick off build with the "
+"commands below:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:129
+msgid ""
+"``nproc`` may not be available on all systems, please replace it with the"
+" number of cores on your system"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:131
+msgid ""
+"A success build should produce ``libtvm`` and ``libtvm_runtime`` under "
+"``build/`` directory."
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:133
+msgid ""
+"Leaving the build environment ``tvm-build-venv``, there are two ways to "
+"install the successful build into your environment:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:135
+msgid "Install via environment variable"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:142
+msgid "Install via pip local project"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:152
+msgid "Step 4. Validate Installation"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:154
+msgid ""
+"Using a compiler infrastructure with multiple language bindings could be "
+"error-prone. Therefore, it is highly recommended to validate Apache TVM "
+"installation before use."
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:157
+msgid ""
+"**Step 1. Locate TVM Python package.** The following command can help "
+"confirm that TVM is properly installed as a python package and provide "
+"the location of the TVM python package:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:164
+msgid ""
+"**Step 2. Confirm which TVM library is used.** When maintaining multiple "
+"build or installation of TVM, it becomes important to double check if the"
+" python package is using the proper ``libtvm`` with the following "
+"command:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:171
+msgid ""
+"**Step 3. Reflect TVM build option.** Sometimes when downstream "
+"application fails, it could likely be some mistakes with a wrong TVM "
+"commit, or wrong build flags. To find it out, the following commands will"
+" be helpful:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:189
+msgid ""
+"**Step 4. Check device detection.** Sometimes it could be helpful to "
+"understand if TVM could detect your device at all with the following "
+"commands:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:200
+msgid ""
+"Please note that the commands above verify the presence of an actual "
+"device on the local machine for the TVM runtime (not the compiler) to "
+"execute properly. However, TVM compiler can perform compilation tasks "
+"without requiring a physical device. As long as the necessary toolchain, "
+"such as NVCC, is available, TVM supports cross-compilation even in the "
+"absence of an actual device."
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:204
+#, fuzzy
+msgid "Step 5. Extra Python Dependencies"
+msgstr "Python 依赖"
+
+#: ../../doc/docs/install/from_source.rst:205
+msgid ""
+"Building from source does not ensure the installation of all necessary "
+"Python dependencies. The following commands can be used to install the "
+"extra Python dependencies:"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:208
+msgid "Necessary dependencies:"
+msgstr "必要的依赖性："
+
+#: ../../doc/docs/install/from_source.rst:214
+msgid "If you want to use RPC Tracker"
+msgstr "如果你想使用 RPC Tracker"
+
+#: ../../doc/docs/install/from_source.rst:220
+msgid "If you want to use auto-tuning module"
+msgstr "如果你想使用 auto-tuning 模块"
+
+#: ../../doc/docs/install/from_source.rst:228
+msgid "Advanced Build Configuration"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:231
+msgid "Ccache"
+msgstr ""
+
+#: ../../doc/docs/install/from_source.rst:232
+#, fuzzy
+msgid ""
+"On supported platforms, the `Ccache compiler wrapper "
+"<https://ccache.dev/>`_ may be helpful for reducing TVM's build time, "
+"especially when building with `cutlass "
+"<https://github.com/NVIDIA/cutlass>`_ or `flashinfer <https://github.com"
+"/flashinfer-ai/flashinfer>`_. There are several ways to enable CCache in "
+"TVM builds:"
+msgstr "在支持的平台上，`Ccache 编译器包装器 <https://ccache.dev/>`_ 可能有助于减少TVM构建时间。"
+
+#: ../../doc/docs/install/from_source.rst:237
+#, fuzzy
+msgid ""
+"Leave ``USE_CCACHE=AUTO`` in ``build/config.cmake``. CCache will be used "
+"if it is found."
+msgstr "保留 `build/config.cmake` 中的 `USE_CCACHE=AUTO`。如果找到CCache，将自动使用它。"
+
+#: ../../doc/docs/install/from_source.rst:239
+msgid ""
+"Ccache's Masquerade mode. This is typically enabled during the Ccache "
+"installation process. To have TVM use Ccache in masquerade, simply "
+"specify the appropriate C/C++ compiler paths when configuring TVM's build"
+" system.  For example: ``cmake -DCMAKE_CXX_COMPILER=/usr/lib/ccache/c++ "
+"...``."
+msgstr ""
+"Ccache 的 Masquerade 模式。通常在Ccache安装过程中启用。要让 TVM 使用 Masquerade 模式下的 "
+"Ccache，只需在配置 TVM 构建系统时指定正确的 C/C++ 编译器路径。例如： ``cmake "
+"-DCMAKE_CXX_COMPILER=/usr/lib/ccache/c++ ...``。"
+
+#: ../../doc/docs/install/from_source.rst:244
+msgid ""
+"Ccache as CMake's C++ compiler prefix.  When configuring TVM's build "
+"system, set the CMake variable ``CMAKE_CXX_COMPILER_LAUNCHER`` to an "
+"appropriate value. E.g. ``cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache "
+"...``."
+msgstr ""
+"将Ccache作为CMake的C++编译器前缀。在配置TVM构建系统时，设置CMake变量 "
+"``CMAKE_CXX_COMPILER_LAUNCHER`` 为适当的值。例如：``cmake "
+"-DCMAKE_CXX_COMPILER_LAUNCHER=ccache ...``。"
+
+#: ../../doc/docs/install/from_source.rst:250
+msgid "Building on Windows"
+msgstr "构建在 Windows 上"
+
+#: ../../doc/docs/install/from_source.rst:251
+#, fuzzy
+msgid ""
+"TVM support build via MSVC using cmake. You will need to obtain a visual "
+"studio compiler. The minimum required VS version is **Visual Studio "
+"Enterprise 2019** (NOTE: we test against GitHub Actions' `Windows 2019 "
+"Runner <https://github.com/actions/virtual-"
+"environments/blob/main/images/win/Windows2019-Readme.md>`_, so see that "
+"page for full details. We recommend following :ref:`install-dependencies`"
+" to obtain necessary dependencies and get an activated tvm-build "
+"environment. Then you can run the following command to build"
+msgstr ""
+"TVM 支持通过 cmake 使用 MSVC 进行构建。您需要获取 Visual Studio 编译器。最低要求的 VS 版本是 **Visual"
+" Studio Enterprise 2019** （注意：根据 GitHub Actions 的 `Windows 2019 Runner "
+"<https://github.com/actions/virtual-"
+"environments/blob/main/images/win/Windows2019-Readme.md>`_ "
+"进行测试，因此请查看该页面以获取完整详情。我们建议按照：ref:`build-with-conda` 来获取必要的依赖项并激活 tvm-build"
+" 环境。然后您可以运行以下命令进行构建"
+
+#: ../../doc/docs/install/from_source.rst:264
+msgid ""
+"The above command generates the solution file under the build directory. "
+"You can then run the following command to build"
+msgstr "上述命令在构建目录下生成了解决方案文件。然后你可以运行以下命令来构建"
+
+#: ../../doc/docs/install/from_source.rst:273
+msgid "Building ROCm support"
+msgstr "建立 ROCm 支持"
+
+#: ../../doc/docs/install/from_source.rst:275
+msgid ""
+"Currently, ROCm is supported only on linux, so all the instructions are "
+"written with linux in mind."
+msgstr "目前，ROCm 只支持 linux，所以所有说明都是在考虑到 linux 的情况下编写的。"
+
+#: ../../doc/docs/install/from_source.rst:277
+msgid "Set ``set(USE_ROCM ON)``, set ROCM_PATH to the correct path."
+msgstr "设置 ``set(USE_ROCM ON)``，将 ROCM_PATH 设为正确的路径。"
+
+#: ../../doc/docs/install/from_source.rst:278
+msgid ""
+"You need to first install HIP runtime from ROCm. Make sure the "
+"installation system has ROCm installed in it."
+msgstr "你需要首先从 ROCm 安装 HIP 运行时。确保安装系统中已经安装了 ROCm。"
+
+#: ../../doc/docs/install/from_source.rst:279
+msgid ""
+"Install latest stable version of LLVM (v6.0.1), and LLD, make sure "
+"``ld.lld`` is available via command line."
+msgstr "安装最新的 LLVM 稳定版本（v6.0.1），以及 LLD，确保 ``ld.lld`` 可以通过命令行使用。"
+
+#: ../../doc/docs/install/from_source.rst:284
+msgid "Enable C++ Tests"
+msgstr "启用 C++ 测试"
+
+#: ../../doc/docs/install/from_source.rst:285
+msgid ""
+"We use `Google Test <https://github.com/google/googletest>`_ to drive the"
+" C++ tests in TVM. The easiest way to install GTest is from source."
+msgstr ""
+"我们使用 `Google Test <https://github.com/google/googletest>`_ 来驱动 TVM 中的 C++"
+" 测试。安装 GTest 的最简单方法是从源码开始。"
+
+#: ../../doc/docs/install/from_source.rst:298
+msgid ""
+"After installing GTest, the C++ tests can be built and started with "
+"``./tests/scripts/task_cpp_unittest.sh`` or just built with ``make "
+"cpptest``."
+msgstr ""
+"安装 GTest 后，可以用 ``./tests/scripts/task_cpp_unittest.sh`` 构建和启动 C++ "
+"测试，或者直接用 ``make cpptest`` 构建。"
+
+#~ msgid "to install and maintain your python development environment."
+#~ msgstr "来安装和维护你的 Python 开发环境。"
+
+#~ msgid ""
+#~ "First build the shared library from "
+#~ "the C++ codes (`libtvm.so` for linux,"
+#~ " `libtvm.dylib` for macOS and `libtvm.dll`"
+#~ " for windows)."
+#~ msgstr ""
+#~ "首先从 C++ 代码中构建共享库（linux 为 ``libtvm.so``，macOS"
+#~ " 为 ``libtvm.dylib``，windows 为 ``libtvm.dll``）。"
+
+#~ msgid "Setup for the language packages (e.g. Python Package)."
+#~ msgstr "语言包的设置（如 Python 包）。"
+
+#~ msgid ""
+#~ "To get started, download tvm source "
+#~ "code from the `Download Page "
+#~ "<https://tvm.apache.org/download>`_."
+#~ msgstr "要开始使用，请从 `下载页面 <https://tvm.apache.org/download>`_ 下载 tvm 源代码。"
+
+#~ msgid ""
+#~ "For windows users who use github "
+#~ "tools, you can open the git shell,"
+#~ " and type the following command."
+#~ msgstr "对于使用 github 工具的 windows 用户，你可以打开 git shell，并输入以下命令。"
+
+#~ msgid "Build the Shared Library"
+#~ msgstr "构建共享库"
+
+#~ msgid "Our goal is to build the shared libraries:"
+#~ msgstr "我们的目标是建立共享库："
+
+#~ msgid "On Linux the target library are `libtvm.so` and `libtvm_runtime.so`"
+#~ msgstr "在 Linux 上，目标库是 ``libtvm.so`` 和 ``libtvm_runtime.so``。"
+
+#~ msgid ""
+#~ "On macOS the target library are "
+#~ "`libtvm.dylib` and `libtvm_runtime.dylib`"
+#~ msgstr "在 macOS 上，目标库是 ``libtvm.dylib`` 和 ``libtvm_runtime.dylib``"
+
+#~ msgid "On Windows the target library are `libtvm.dll` and `libtvm_runtime.dll`"
+#~ msgstr "在 Windows 上，目标库是 ``libtvm.dll`` 和 ``libtvm_runtime.dll``"
+
+#~ msgid ""
+#~ "It is also possible to :ref:`build "
+#~ "the runtime <deploy-and-integration>` "
+#~ "library only."
+#~ msgstr "也可以只 :ref:`构建运行时的 <deploy-and-integration>` 库。"
+
+#~ msgid "The minimal building requirements for the ``TVM`` libraries are:"
+#~ msgstr "``TVM`` 库的最低构建要求是："
+
+#~ msgid "CMake 3.18 or higher"
+#~ msgstr "CMake 3.10 或更高版本"
+
+#~ msgid "We highly recommend to build with LLVM to enable all the features."
+#~ msgstr "强烈建议使用 LLVM 构建，以启用所有的功能。"
+
+#~ msgid ""
+#~ "If you want to use CUDA, CUDA "
+#~ "toolkit version >= 8.0 is required. "
+#~ "If you are upgrading from an older"
+#~ " version, make sure you purge the "
+#~ "older version and reboot after "
+#~ "installation."
+#~ msgstr "如果你想使用 CUDA，需要 CUDA 工具箱版本 >=8.0。如果你从旧版本升级，请确保在安装后清除旧版本并重新启动。"
+
+#~ msgid ""
+#~ "On macOS, you may want to install"
+#~ " `Homebrew <https://brew.sh>`_ to easily "
+#~ "install and manage dependencies."
+#~ msgstr "在 macOS 上，你可能想安装 `Homebrew <https://brew.sh>`_ 以方便安装和管理依赖性。"
+
+#~ msgid ""
+#~ "Python is also required. Avoid using "
+#~ "Python 3.9.X+ which is not `supported"
+#~ " <https://github.com/apache/tvm/issues/8577>`_. 3.7.X+ "
+#~ "and 3.8.X+ should be well supported "
+#~ "however."
+#~ msgstr ""
+#~ "Python 也是必需的。避免使用 Python 3.9.X+，它不 `支持 "
+#~ "<https://github.com/apache/tvm/issues/8577>`_。然而，3.7.X+ 和 "
+#~ "3.8.X+ 应该得到良好的支持。"
+
+#~ msgid ""
+#~ "To install the these minimal pre-"
+#~ "requisites on Ubuntu/Debian like linux "
+#~ "operating systems, execute (in a "
+#~ "terminal):"
+#~ msgstr "要在 Ubuntu/Debian 等 linux 操作系统上安装这些最小的先决条件，请执行（在终端）："
+
+#~ msgid ""
+#~ "Note that the version of CMake on"
+#~ " apt may not be sufficiently up "
+#~ "to date; it may be necessary to"
+#~ " install it directly from `Kitware's "
+#~ "third-party APT repository "
+#~ "<https://apt.kitware.com/>`_."
+#~ msgstr ""
+#~ "请注意，apt上的CMake版本可能不是最新的；可能需要直接从 `Kitware 的第三方APT仓库 "
+#~ "<https://apt.kitware.com/>`_ 安装。"
+
+#~ msgid "On Fedora/CentOS and related operating systems use:"
+#~ msgstr "在Fedora/CentOS及其相关操作系统上，请使用以下命令："
+
+#~ msgid ""
+#~ "Use Homebrew to install the required "
+#~ "dependencies for macOS running either "
+#~ "the Intel or M1 processors. You "
+#~ "must follow the post-installation steps"
+#~ " specified by Homebrew to ensure the"
+#~ " dependencies are correctly installed and"
+#~ " configured:"
+#~ msgstr ""
+#~ "使用 Homebrew 为运行英特尔或 M1 处理器的 macOS "
+#~ "安装所需的依赖项。你必须遵循 Homebrew 指定的安装后步骤，以确保正确地安装和配置这些依赖项："
+
+#~ msgid ""
+#~ "If you are on macOS with an "
+#~ "M1 Processor you may need to use"
+#~ " conda to manage dependencies while "
+#~ "building. Specifically you may need, "
+#~ "`Miniforge <https://github.com/conda-forge/miniforge>`_"
+#~ " to ensure that the dependencies "
+#~ "obtained using pip are compatible with"
+#~ " M1."
+#~ msgstr ""
+#~ "如果您在搭载M1处理器的macOS上，可能需要使用conda来管理构建过程中的依赖项。具体来说，您可能需要使用 "
+#~ "`Miniforge <https://github.com/conda-"
+#~ "forge/miniforge>`_，以确保通过pip获取的依赖项与M1兼容。"
+
+#~ msgid ""
+#~ "We use cmake to build the library."
+#~ " The configuration of TVM can be "
+#~ "modified by editing `config.cmake` and/or "
+#~ "by passing cmake flags to the "
+#~ "command line:"
+#~ msgstr "我们使用 cmake 来构建库。TVM 的配置可以通过编辑 ``config.cmake`` 和/或在命令行传递 cmake 标志来修改："
+
+#~ msgid ""
+#~ "First, check the cmake in your "
+#~ "system. If you do not have cmake,"
+#~ " you can obtain the latest version"
+#~ " from `official website "
+#~ "<https://cmake.org/download/>`_"
+#~ msgstr ""
+#~ "首先，检查你系统中的 cmake。如果你没有 cmake，你可以从 `官方网站 "
+#~ "<https://cmake.org/download/>`_ 获得最新版本。"
+
+#~ msgid ""
+#~ "First create a build directory, copy "
+#~ "the ``cmake/config.cmake`` to the directory."
+#~ msgstr "首先创建 build 目录，将 ``cmake/config.cmake`` 复制到该目录。"
+
+#~ msgid "Edit ``build/config.cmake`` to customize the compilation options"
+#~ msgstr "编辑 ``build/config.cmake`` 来定制编译选项"
+
+#~ msgid ""
+#~ "On macOS, for some versions of "
+#~ "Xcode, you need to add ``-lc++abi`` "
+#~ "in the LDFLAGS or you'll get link"
+#~ " errors."
+#~ msgstr "在 macOS 上，对于某些版本的 Xcode，你需要在 LDFLAGS 中加入 ``-lc++abi``，否则会出现链接错误。"
+
+#~ msgid ""
+#~ "Change ``set(USE_CUDA OFF)`` to ``set(USE_CUDA"
+#~ " ON)`` to enable CUDA backend. Do "
+#~ "the same for other backends and "
+#~ "libraries you want to build for "
+#~ "(OpenCL, RCOM, METAL, VULKAN, ...)."
+#~ msgstr ""
+#~ "将 ``set(USE_CUDA OFF)`` 改为 ``set(USE_CUDA "
+#~ "ON)`` 以启用 CUDA "
+#~ "后台。对其他你想构建的后端和库（OpenCL、RCOM、METAL、VULKAN ...）做同样的处理。"
+
+#~ msgid ""
+#~ "To help with debugging, ensure the "
+#~ "embedded graph executor and debugging "
+#~ "functions are enabled with "
+#~ "``set(USE_GRAPH_EXECUTOR ON)`` and "
+#~ "``set(USE_PROFILER ON)``"
+#~ msgstr ""
+#~ "为了帮助调试，确保用 ``set(USE_GRAPH_EXECUTOR ON)`` 和 "
+#~ "``set(USE_PROFILER ON)`` 启用嵌入式图形执行器和调试功能"
+
+#~ msgid ""
+#~ "To debug with IRs, ``set(USE_RELAY_DEBUG "
+#~ "ON)`` and set environment variable "
+#~ "`TVM_LOG_DEBUG`."
+#~ msgstr "要用 IR 进行调试，``set(USE_RELAY_DEBUG ON)`` 并设置环境变量 ``TVM_LOG_DEBUG``。"
+
+#~ msgid ""
+#~ "TVM requires LLVM for CPU codegen. "
+#~ "We highly recommend you to build "
+#~ "with the LLVM support on."
+#~ msgstr "TVM 需要 LLVM 用于 CPU 编码。我们强烈建议你使用 LLVM 支持来构建。"
+
+#~ msgid ""
+#~ "LLVM 4.0 or higher is needed for"
+#~ " build with LLVM. Note that version"
+#~ " of LLVM from default apt may "
+#~ "lower than 4.0."
+#~ msgstr "使用 LLVM 构建时需要 LLVM 4.0 或更高版本。注意，默认的 apt 中的 LLVM 版本可能低于 4.0。"
+
+#~ msgid ""
+#~ "Since LLVM takes long time to "
+#~ "build from source, you can download "
+#~ "pre-built version of LLVM from "
+#~ "`LLVM Download Page "
+#~ "<http://releases.llvm.org/download.html>`_."
+#~ msgstr ""
+#~ "由于 LLVM 从源代码构建需要很长时间，你可以从 `LLVM 下载页面 "
+#~ "<http://releases.llvm.org/download.html>`_ 下载预构建的 LLVM "
+#~ "版本。"
+
+#~ msgid ""
+#~ "Unzip to a certain location, modify "
+#~ "``build/config.cmake`` to add ``set(USE_LLVM "
+#~ "/path/to/your/llvm/bin/llvm-config)``"
+#~ msgstr ""
+#~ "解压到某个位置，修改 ``build/config.cmake``，加入 ``set(USE_LLVM "
+#~ "/path/to/your/llvm/bin/llvm-config)``"
+
+#~ msgid ""
+#~ "You can also directly set ``set(USE_LLVM"
+#~ " ON)`` and let cmake search for "
+#~ "a usable version of LLVM."
+#~ msgstr "你也可以直接设置 ``set(USE_LLVM ON)``，让 cmake 搜索可用的 LLVM 版本。"
+
+#~ msgid "You can also use `LLVM Nightly Ubuntu Build <https://apt.llvm.org/>`_"
+#~ msgstr "你也可以使用 `LLVM Nightly Ubuntu 构建版 <https://apt.llvm.org/>`_"
+
+#~ msgid ""
+#~ "Note that apt-package append ``llvm-"
+#~ "config`` with version number. For "
+#~ "example, set ``set(USE_LLVM llvm-config-10)``"
+#~ " if you installed LLVM 10 package"
+#~ msgstr ""
+#~ "注意，apt-package 会将 ``llvm-config`` "
+#~ "附加到版本号上。例如，如果你安装了 LLVM 10 软件包，请设置 "
+#~ "``set(USE_LLVM llvm-config-10)``"
+
+#~ msgid ""
+#~ "If you are a PyTorch user, it "
+#~ "is recommended to set ``(USE_LLVM "
+#~ "\"/path/to/llvm-config --link-static\")`` and"
+#~ " ``set(HIDE_PRIVATE_SYMBOLS ON)`` to avoid "
+#~ "potential symbol conflicts between different"
+#~ " versions LLVM used by TVM and "
+#~ "PyTorch."
+#~ msgstr ""
+#~ "如果你是 PyTorch 的用户，建议设置 ``(USE_LLVM \"/path/to"
+#~ "/llvm-config --link-static\")`` 和 "
+#~ "``set(HIDE_PRIVATE_SYMBOLS ON)``，以避免 TVM 和 "
+#~ "PyTorch 使用的不同版本 LLVM 之间的潜在 symbol 冲突。"
+
+#~ msgid "We can then build tvm and related libraries."
+#~ msgstr "接着可以建立 tvm 和相关的库。"
+
+#~ msgid ""
+#~ "You can also use Ninja build "
+#~ "system instead of Unix Makefiles. It "
+#~ "can be faster to build than using"
+#~ " Makefiles."
+#~ msgstr "你也可以用 Ninja 构建系统来代替 Unix Makefiles。它可以比使用 Makefiles 更快地构建。"
+
+#~ msgid ""
+#~ "There is also a makefile in the"
+#~ " top-level tvm directory that can "
+#~ "automate several of these steps.  It "
+#~ "will create the build directory, copy"
+#~ " the default ``config.cmake`` to the "
+#~ "build directory, run cmake, then run "
+#~ "make."
+#~ msgstr ""
+#~ "在顶层的 tvm 目录下还有一个 "
+#~ "makefile，可以自动完成其中的几个步骤。它将创建构建目录，将默认的 ``config.cmake`` "
+#~ "复制到构建目录，运行 cmake，然后运行 make。"
+
+#~ msgid ""
+#~ "The build directory can be specified "
+#~ "using the environment variable "
+#~ "``TVM_BUILD_PATH``.  If ``TVM_BUILD_PATH`` is "
+#~ "unset, the makefile assumes that the "
+#~ "``build`` directory inside tvm should be"
+#~ " used.  Paths specified by "
+#~ "``TVM_BUILD_PATH`` can be either absolute "
+#~ "paths or paths relative to the "
+#~ "base tvm directory. ``TVM_BUILD_PATH`` can "
+#~ "also be set to a list of "
+#~ "space-separated paths, in which case "
+#~ "all paths listed will be built."
+#~ msgstr ""
+#~ "构建目录可以使用环境变量 ``TVM_BUILD_PATH`` 来指定。如果 "
+#~ "``TVM_BUILD_PATH`` 没有设置，makefile 会假定使用 tvm 里面的"
+#~ " ``build`` 目录。``TVM_BUILD_PATH`` 指定的路径可以是绝对路径或相对于 "
+#~ "tvm 基本目录的路径。``TVM_BUILD_PATH`` "
+#~ "也可以设置为一个空格分隔的路径列表，在这种情况下，所有列出的路径都将被构建。"
+
+#~ msgid ""
+#~ "If an alternate build directory is "
+#~ "used, then the environment variable "
+#~ "``TVM_LIBRARY_PATH`` should be set at "
+#~ "runtime, pointing to the location of "
+#~ "the compiled ``libtvm.so`` and "
+#~ "``libtvm_runtime.so``.  If not set, tvm "
+#~ "will look relative to the location "
+#~ "of the tvm python module.  Unlike "
+#~ "``TVM_BUILD_PATH``, this must be an "
+#~ "absolute path."
+#~ msgstr ""
+#~ "如果使用另一个编译目录，那么环境变量 ``TVM_LIBRARY_PATH`` 应该在运行时设置，指向编译的 "
+#~ "``libtvm.so`` 和 ``libtvm_runtime.so`` 的位置。如果没有设置，tvm"
+#~ " 将寻找相对于 tvm python 模块的位置。与 "
+#~ "``TVM_BUILD_PATH`` 不同，这必须是一个绝对路径。"
+
+#~ msgid ""
+#~ "If everything goes well, we can go"
+#~ " to :ref:`python-package-installation`"
+#~ msgstr "如果一切顺利，我们可以去 :ref:`python-package-installation`。"
+
+#~ msgid "Building with a Conda Environment"
+#~ msgstr "用 Conda 环境构建"
+
+#~ msgid ""
+#~ "Conda is a very handy way to "
+#~ "the necessary obtain dependencies needed "
+#~ "for running TVM. First, follow the "
+#~ "`conda's installation guide "
+#~ "<https://docs.conda.io/projects/conda/en/latest/user-"
+#~ "guide/install/>`_ to install miniconda or "
+#~ "anaconda if you do not yet have"
+#~ " conda in your system. Run the "
+#~ "following command in a conda "
+#~ "environment:"
+#~ msgstr ""
+#~ "Conda 是一种非常方便的方式，可以获得运行 TVM 所需的必要依赖。首先，如果你的系统中还没有"
+#~ " conda，请按照 `conda 的安装指南 "
+#~ "<https://docs.conda.io/projects/conda/en/latest/user-"
+#~ "guide/install/>`_ 来安装 miniconda 或 anaconda。在"
+#~ " conda 环境下运行以下命令："
+
+#~ msgid ""
+#~ "The above command will install all "
+#~ "necessary build dependencies such as "
+#~ "cmake and LLVM. You can then run"
+#~ " the standard build process in the"
+#~ " last section."
+#~ msgstr "上述命令将安装所有必要的构建依赖项，如 cmake 和 LLVM。然后你就可以运行最后一节中的标准构建过程。"
+
+#~ msgid ""
+#~ "If you want to use the compiled"
+#~ " binary outside the conda environment, "
+#~ "you can set LLVM to static linking"
+#~ " mode ``set(USE_LLVM \"llvm-config "
+#~ "--link-static\")``. In this way, the "
+#~ "resulting library won't depend on the"
+#~ " dynamic LLVM libraries in the conda"
+#~ " environment."
+#~ msgstr ""
+#~ "如果你想在 conda 环境之外使用编译后的二进制文件，你可以将 LLVM "
+#~ "设置为静态链接模式 ``set(USE_LLVM \"llvm-config "
+#~ "--link-static\")``。这样一来，生成的库就不会依赖于 conda 环境中的动态 "
+#~ "LLVM 库。"
+
+#~ msgid ""
+#~ "The above instructions show how to "
+#~ "use conda to provide the necessary "
+#~ "build dependencies to build libtvm. If"
+#~ " you are already using conda as "
+#~ "your package manager and wish to "
+#~ "directly build and install tvm as "
+#~ "a conda package, you can follow "
+#~ "the instructions below:"
+#~ msgstr ""
+#~ "上面的说明显示了如何使用 conda 来提供必要的构建依赖项来构建 libtvm。如果你已经在使用"
+#~ " conda 作为你的软件包管理器，并且希望直接将 tvm 作为 conda "
+#~ "的软件包来构建和安装，你可以按照下面的说明进行："
+
+#~ msgid "Python Package Installation"
+#~ msgstr "Python 软件包的安装"
+
+#~ msgid "TVM package"
+#~ msgstr "TVM 包"
+
+#~ msgid ""
+#~ "Depending on your development environment, "
+#~ "you may want to use a virtual "
+#~ "environment and package manager, such as"
+#~ " ``virtualenv`` or ``conda``, to manage "
+#~ "your python packages and dependencies."
+#~ msgstr ""
+#~ "根据你的开发环境，你可能想使用一个虚拟环境和软件包管理器，如 ``virtualenv`` 或 "
+#~ "``conda``，来管理你的 Python 软件包和依赖关系。"
+
+#~ msgid ""
+#~ "The python package is located at "
+#~ "`tvm/python` There are two ways to "
+#~ "install the package:"
+#~ msgstr "Python 软件包位于 ``tvm/python``，有两种方法来安装软件包："
+
+#~ msgid "Method 1"
+#~ msgstr "方法 1"
+
+#~ msgid "This method is **recommended for developers** who may change the codes."
+#~ msgstr "这种方法是 **推荐给可能改变代码的开发者** 的。"
+
+#~ msgid ""
+#~ "Set the environment variable `PYTHONPATH` "
+#~ "to tell python where to find the"
+#~ " library. For example, assume we "
+#~ "cloned `tvm` on the directory "
+#~ "`/path/to/tvm` then we can add the "
+#~ "following line in `~/.bashrc`. The "
+#~ "changes will be immediately reflected "
+#~ "once you pull the code and rebuild"
+#~ " the project (no need to call "
+#~ "``setup`` again)"
+#~ msgstr ""
+#~ "设置环境变量 ``PYTHONPATH`` 来告诉 python "
+#~ "在哪里找到这个库。例如，假设我们在 ``/path/to/tvm`` 目录下克隆了 "
+#~ "``tvm``，那么我们可以在 ``~/.bashrc`` "
+#~ "中添加以下一行。一旦你拉出代码并重建项目，这些变化将立即反映出来（不需要再次调用 ``setup``）"
+
+#~ msgid "Method 2"
+#~ msgstr "方法 2"
+
+#~ msgid "Install TVM python bindings by `setup.py`:"
+#~ msgstr "通过 ``setup.py`` 安装 TVM 的 python 绑定："
+
+#~ msgid ""
+#~ "Note that the ``--user`` flag is "
+#~ "not necessary if you're installing to"
+#~ " a managed local environment, like "
+#~ "``virtualenv``."
+#~ msgstr "注意，如果你要安装到一个受管理的本地环境，如 ``virtualenv``，则不需要 ``--user`` flag。"
+
+#~ msgid "If you want to use ``tvmc``: the TVM command line driver."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note on M1 macs, you may have "
+#~ "trouble installing xgboost / scipy. "
+#~ "scipy and xgboost requires some "
+#~ "additional dependencies to be installed, "
+#~ "including openblas and its dependencies. "
+#~ "Use the following commands to install"
+#~ " scipy and xgboost with the required"
+#~ " dependencies and configuration. A "
+#~ "workaround for this is to do the"
+#~ " following commands:"
+#~ msgstr ""
+#~ "注意在 M1 macs 上，你可能在安装 xgboost / "
+#~ "scipy 时遇到麻烦。scipy 和 xgboost 需要安装一些额外的依赖，包括 "
+#~ "openblas 及其依赖。使用下面的命令来安装 scipy 和 xgboost "
+#~ "以及所需的依赖和配置。一个变通的方法是执行以下命令："
+
+#~ msgid "Install Contrib Libraries"
+#~ msgstr "安装 Contrib 库"
+

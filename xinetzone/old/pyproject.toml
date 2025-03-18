@@ -1,0 +1,91 @@
+[tool.pdm]
+
+[tool.pdm.build]
+package-dir = "src"
+# includes = ["src"]
+excludes = ["locales", "vta-test"]
+
+[project]
+name = "tvmx"
+dynamic = ["version"]
+description = ""
+authors = [
+    {name = "xinetzone", email = "xinzone@outlook.com"},
+]
+dependencies = [
+  "scipy>=1.9.3",
+  "toml",
+  "jaxlib",
+  # "tvm-book"
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {file = "../LICENSE"}
+
+[project.urls]
+Home = "https://github.com/xinetzone/tvm"
+
+[project.optional-dependencies]
+doc = [
+  "xyzstyle",
+  "sphinx>5",
+  "sphinx_book_theme",
+  "autodocsumm",
+  "sphinx_copybutton",
+  "tlcpack-sphinx-addon",
+  "babel",
+  "cloudpickle",
+  "jupyter-sphinx",
+  "sphinx-thebe",
+  "sphinx_design",
+  "sphinxext-rediraffe",
+  "pydata-sphinx-theme",
+  "sphinxcontrib-mermaid",
+  "sphinxcontrib.bibtex",
+  "autodocsumm",
+  "sphinx_automodapi",
+  "sphinx_sitemap",
+  "mdit-py-plugins",
+  "sphinx_plotly_directive",
+  "sphinxcontrib-websupport",
+  "sphinx-comments",
+  "myst-nb",
+  "sphinx-autoapi",
+]
+dev = [
+  "invoke",
+  "pytest",
+  "matplotlib",
+  "plotly",
+  "d2py",
+  "graphviz",
+  "cloudpickle",
+  "synr",
+  "attrs",
+  "decorator",
+  "psutil",
+  "onnx",
+  "xgboost",
+  # "typing_extensions",
+  # "black",
+  # "pybind11",
+  # "cython",
+  # "pythran",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/tvmx/__about__.py"
+
+[tool.hatch.build.force-include]
+"../python/tvm" = "tvm"
+"../build/libtvm.so" = "tvm/libtvm.so"
+"../build/libtvm_runtime.so" = "tvm/libtvm_runtime.so"
+# VTA 配置
+"../vta/python/vta" = "vta"
+"../build/libvta_fsim.so" = "libvta_fsim.so"
+"../3rdparty/vta-hw/config/" = "3rdparty/vta_hw/config"
+

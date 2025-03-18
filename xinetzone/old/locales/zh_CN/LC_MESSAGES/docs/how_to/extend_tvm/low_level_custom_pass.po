@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10002
+msgid "编写定制 Pass"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10005
+msgid "**原作者**: [Jian Weng](https://were.github.io)"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10007
+msgid ""
+"TVM 是抽象出机器学习加速器异质性（heterogenity）的框架。有时用户可能希望定制一些分析和 IR 变换，使 TVM "
+"适应他们自己的专用硬件。本教程帮助用户在 TVM 中编写定制的pass。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10009
+msgid "前提条件"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10011
+msgid "在阅读本教程开始之前，假设读者已经很好地了解了以下主题："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10013
+msgid "在 TVM 中编写算法并对其进行调度。否则，请参阅示例教程，如 {ref}`opt-gemm`。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10014
+msgid "HalideIR 的基本结构。否则，请参见 ``HalideIR/src/ir/IR.h`` 来了解 IR 节点定义了哪些属性。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10015
+msgid ""
+"访问者设计模式（Visitor design pattern）。否则，请查看 [Python AST "
+"模块](https://docs.python.org/3/library/ast.html)，查看 AST visitor 是如何实现的。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:10016
+msgid ""
+"如何将 Schedule 降格（lower）为 IRModule class 或 LLVM module。否则，请查看 "
+"``python/tvm/build_module.py`` 以获得一些基础知识。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:30002
+msgid ""
+"编写非常简单的向量加法，并使用默认的调度来构建它。然后，使用定制的 lower pass 直接操作 "
+"IR，而不是使用调度原语（primitives.）。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:50002
+msgid "编写 Pass"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:50004
+msgid "本质上，“IR 变换 pass” 是将语句映射到新语句的函数。因此，下面定义了一个向量化函数，并逐步实现它。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:50006
+msgid "TVM 已经为用户提供了两个类来分析和变换 IR。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:60002
+msgid "IR Visitor"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:60004
+msgid ""
+"可以使用 ``tvm.tir.stmt_functor.post_order_visit(stmt, func)`` 从 Halide IR "
+"收集信息。``func`` 是回调函数。该函数将在退出当前 IR 节点之前调用，即后序访问（post-order "
+"visit）。然后利用副作用来存储 IR 访问的结果，因为 ``func`` 的返回值会被忽略。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:60009
+msgid ""
+"你必须使用一些数组来存储 IR 访问的结果。甚至值也是 single 变量。这主要是由于 Python-C "
+"运行时中的约束。每次递归都会刷新变量值，但保留数组值。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:80002
+msgid "IR 变换"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:80004
+msgid ""
+"变换（transformation）接口与 visitor 接口略有不同。在 visitor 中只有 post-order 回调，但是  "
+"transformation visitor 同时支持 pre-order 和 post-order 回调。如果您想保留原始 IR 节点，只需返回"
+" None。如果您想将当前节点更改为某个节点，请使用 TVM IR maker 接口来构建它并返回此值。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:80009
+msgid "如果 pre-order 函数被调用并返回非 None 的值，则 post-order 函数将被跳过。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100002
+msgid "Glue 到 lower pass"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100004
+msgid "到目前为止，已经完成了这个 IR 变换过程。接下来需要做的是将这个 pass 粘合到 TVM 的 lower pass 上。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100006
+msgid ""
+"在本例中，通过向 ``tir.add_lower_pass`` 提供元组参数列表，将上面编写的 pass 注入到 TVM 标准 lower "
+"pass 中。\"Tuple\" 表明 lower 的不同阶段。在 TVM 中，有四个 lower "
+"阶段，每个阶段(phase)完成后将调用用户自定义的阶段。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100010
+msgid "以下是每个阶段所做的基本变换："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100012
+msgid "阶段 0：生成 raw IR 和循环级别（loop levels）。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100013
+msgid "阶段 1：对 array storage 进行扁平化（flatten）。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100014
+msgid "阶段 2：变换循环（transforms loops）：如 unroll、vectorization 和 thread-binding。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100015
+msgid "阶段 3：做一些清理工作。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:100018
+msgid "因此，将这个变换过程放置在阶段 1 之后是一个很好的地方。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:120002
+msgid "快速视图"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:120004
+msgid "本教程提供了编写自定义 IR 变换 pass 的快速视图："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:120006
+msgid "使用 ``tvm.tir.stmt_functor.post_order_visit`` 收集每个 IR 节点的信息。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:120007
+msgid "使用 ``tvm.tir.stmt_functor.ir_transform`` 变换 IR 节点。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:120008
+msgid "包装上面的两个，写出 IR-transformation 函数。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/low_level_custom_pass.ipynb:120009
+msgid "使用 ``tvm.transform.PassContext`` 将该函数放入 TVM lowering pass"
+msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Python source code: "
+#~ "low_level_custom_pass.py <low_level_custom_pass.py>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Jupyter notebook: "
+#~ "low_level_custom_pass.ipynb <low_level_custom_pass.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_extend_tvm_low_level_custom_pass.py>` "
+#~ "to download the full example code"
+#~ msgstr ""
+
+#~ msgid "Writing a Customized Pass"
+#~ msgstr ""
+
+#~ msgid "**Author**: `Jian Weng <https://were.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM is a framework that abstracts "
+#~ "away the heterogenity of machine "
+#~ "learning accelerators. Sometimes users may "
+#~ "want customize some analysis and IR "
+#~ "transformations to adapt TVM to their"
+#~ " own specialized hardware. This tutorial"
+#~ " helps users write a customized pass"
+#~ " in TVM."
+#~ msgstr ""
+
+#~ msgid "Prerequisites"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before reading this tutorial, we assume"
+#~ " readers have already known these "
+#~ "topics well:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Writing an algorithm in TVM and "
+#~ "schedule it. Otherwise, see example "
+#~ "tutorials like :ref:`opt-gemm`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The basic structure of HalideIR. "
+#~ "Otherwise, see ``HalideIR/src/ir/IR.h`` to "
+#~ "learn what attributes of IR nodes "
+#~ "are defined."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Visitor design pattern. Otherwise, check "
+#~ "the `Python AST module "
+#~ "<https://docs.python.org/3/library/ast.html>`_ to see "
+#~ "how an AST visitor is implemented."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "How a Schedule is lowered to "
+#~ "either an IRModule class or a LLVM"
+#~ " module. Otherwise, take a look at"
+#~ " ``python/tvm/build_module.py`` to get some "
+#~ "basics."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We first write a very simple "
+#~ "vector add and build it with the"
+#~ " default schedule. Then, we use our"
+#~ " customized lowering pass to manipulate "
+#~ "the IR directly instead of using "
+#~ "schedule primitives."
+#~ msgstr ""
+
+#~ msgid "Writing a Pass"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Essentially, an \"IR transformation pass\" "
+#~ "is a function which maps a "
+#~ "statement to a new statement. Thus, "
+#~ "we define this vectorize function and"
+#~ " implement it step by step."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM already provides two class for "
+#~ "users to both analyze and transform "
+#~ "IR."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can use "
+#~ "``tvm.tir.stmt_functor.post_order_visit(stmt, func)`` to"
+#~ " gather information from the Halide "
+#~ "IR. ``func`` is a function callback. "
+#~ "This function will be called before "
+#~ "exiting the current IR node, i.e. "
+#~ "post-order visit. Then we leverage "
+#~ "side effects to store the result "
+#~ "of IR visit, because the return "
+#~ "value of ``func`` will be ignored."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You MUST use some array to store"
+#~ " the result of IR visit. Even "
+#~ "the value is a single variable. "
+#~ "This is mainly due to the "
+#~ "constraints in the Python-C runtime. The"
+#~ " variable values will be refreshed "
+#~ "every recursion but the array values "
+#~ "will be preserved."
+#~ msgstr ""
+
+#~ msgid "IR Transformation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The transformation interface is slightly "
+#~ "different from the visitor interface. "
+#~ "There is only a post-order "
+#~ "callback in the visitor, but "
+#~ "transformation visitor supports both a "
+#~ "pre-order and a post-order callback."
+#~ " If you want to keep the origin"
+#~ " IR node, just return None. If "
+#~ "you want to change the current "
+#~ "node to some node, use TVM IR "
+#~ "maker interface to build it and "
+#~ "return this value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the pre-order function is "
+#~ "called and returns a value which "
+#~ "is not None, the post-order "
+#~ "function will be skipped."
+#~ msgstr ""
+
+#~ msgid "Glue to Lowering"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "So far, we are done with writing"
+#~ " this IR transformation pass. What we"
+#~ " need to do next is to glue "
+#~ "this pass to TVM's lower pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this case, we inject the pass"
+#~ " written above into the TVM standard"
+#~ " lowering pass by feeding **a list"
+#~ " of tuple** as argument to "
+#~ "``tir.add_lower_pass``. \"Tuple\" indicates "
+#~ "different phases of lowering. In TVM,"
+#~ " there are four phases of lowering"
+#~ " and user-customized ones will be "
+#~ "called after each phase is done."
+#~ msgstr ""
+
+#~ msgid "Here are the essential transformations done by each phase:"
+#~ msgstr ""
+
+#~ msgid "Phase 0 generates the raw IR and loop levels."
+#~ msgstr ""
+
+#~ msgid "Phase 1 flattens the array storage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Phase 2 transforms loops, like unroll,"
+#~ " vectorization and thread-binding."
+#~ msgstr ""
+
+#~ msgid "Phase 3 does some cleanup work."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Thus, a good place to put this "
+#~ "transformation pass is just after Phase"
+#~ " 1."
+#~ msgstr ""
+
+#~ msgid "Quick View"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial gives a quick view "
+#~ "of writing a customized IR "
+#~ "transformation pass: - Use "
+#~ "``tvm.tir.stmt_functor.post_order_visit`` to gather "
+#~ "information on each IR nodes. - "
+#~ "Use ``tvm.tir.stmt_functor.ir_transform`` to "
+#~ "transform IR nodes. - Wrap up two"
+#~ " above to write an IR-transformation"
+#~ " function. - Use ``tvm.transform.PassContext``"
+#~ " to put this function to TVM "
+#~ "lowering pass"
+#~ msgstr ""
+

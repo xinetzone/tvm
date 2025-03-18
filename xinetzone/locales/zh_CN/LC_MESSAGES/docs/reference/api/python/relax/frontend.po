@@ -1,0 +1,2524 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 09:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:19
+msgid "tvm.relax.frontend"
+msgstr ""
+
+#: of tvm.relax.frontend:1
+msgid "Frontends for constructing Relax programs, with the model importers"
+msgstr ""
+
+#: of tvm.relax.frontend.common.detach_params:1
+msgid ""
+"Detach the attribute \"params\" in the functions of the input IRModule as"
+" separate dictionary of params."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst of
+#: tvm.relax.frontend.torch.fx_translator.from_fx
+msgid "参数"
+msgstr ""
+
+#: of tvm.relax.frontend.common.detach_params:4
+msgid "The IRModule whose functions' \"param\" attribute is going to be detached."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst of
+#: tvm.relax.frontend.torch.fx_translator.from_fx
+msgid "返回"
+msgstr ""
+
+#: of tvm.relax.frontend.common.detach_params:7
+msgid ""
+"* **detached_mod** (*tvm.IRModule*) -- The IRModule after the detachment."
+" * **params_dict** (*Dict[str, List[tvm.nd.NDArray]]*) -- The detached "
+"params. The dict keys corresponds to the names of the   functions in the "
+"input IRModule that have attribute \"params\"."
+msgstr ""
+
+#: of tvm.relax.frontend.common.detach_params:7
+msgid "**detached_mod** (*tvm.IRModule*) -- The IRModule after the detachment."
+msgstr ""
+
+#: of tvm.relax.frontend.common.detach_params:8
+msgid ""
+"**params_dict** (*Dict[str, List[tvm.nd.NDArray]]*) -- The detached "
+"params. The dict keys corresponds to the names of the functions in the "
+"input IRModule that have attribute \"params\"."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:25
+msgid "tvm.relax.frontend.nn"
+msgstr ""
+
+#: of tvm.relax.frontend.nn:1
+msgid "A PyTorch-like API to build IRModules."
+msgstr ""
+
+#: of typing.Any:1
+msgid "Special type indicating an unconstrained type."
+msgstr ""
+
+#: of typing.Any:3
+msgid "Any is compatible with every type."
+msgstr ""
+
+#: of typing.Any:4
+msgid "Any assumed to have all methods."
+msgstr ""
+
+#: of typing.Any:5
+msgid "All values assumed to be instances of Any."
+msgstr ""
+
+#: of typing.Any:7
+msgid ""
+"Note that all the above statements are true from the point of view of "
+"static type checkers. At runtime, Any should not be used with instance "
+"checks."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv1D:1
+msgid "Module for conv1d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv1D.forward:1
+msgid "Forward method for conv1d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv1D.forward:3
+#: tvm.relax.frontend.nn.modules.Conv2D.forward:3
+#: tvm.relax.frontend.nn.modules.Conv3D.forward:3
+#: tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:3
+#: tvm.relax.frontend.nn.modules.Embedding.forward:3
+#: tvm.relax.frontend.nn.modules.GroupNorm.forward:3
+#: tvm.relax.frontend.nn.modules.LayerNorm.forward:3
+#: tvm.relax.frontend.nn.modules.Linear.forward:3
+#: tvm.relax.frontend.nn.modules.RMSNorm.forward:3
+#: tvm.relax.frontend.nn.op.ccl_allgather:3
+#: tvm.relax.frontend.nn.op.ccl_allreduce:3 tvm.relax.frontend.nn.op.repeat:3
+#: tvm.relax.frontend.nn.op.sort:4 tvm.relax.frontend.nn.op.sqrt:3
+#: tvm.relax.frontend.nn.op.square:3
+msgid "The input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv1D.forward:6
+msgid "**ret** -- The output tensor for the conv1d layer."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst of
+#: tvm.relax.frontend.torch.fx_translator.from_fx
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv2D:1
+msgid "Module for conv2d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv2D.forward:1
+msgid "Forward method for conv2d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv2D.forward:6
+msgid "**ret** -- The output tensor for the conv2d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv3D:1
+msgid "Module for conv3d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv3D.forward:1
+msgid "Forward method for conv3d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Conv3D.forward:6
+msgid "**ret** -- The output tensor for the conv3d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.ConvTranspose1D:1
+msgid "Module for ConvTranspose1D layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:1
+msgid "Forward method for conv transpose 1d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.ConvTranspose1D.forward:6
+msgid "**ret** -- The output tensor for the conv transpose 1d layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Effect:1
+msgid ""
+"Effect is a special non-user facing type that is used to represent "
+"operations with side effects, for example, print. It is used to represent"
+" the output of a computation."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Effect.create:1
+#: tvm.relax.frontend.nn.modules.IOEffect.create:1
+msgid ""
+"Create the implicit inputs to a relax.Function that represents the side "
+"effect"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Effect.emit_init:1
+#: tvm.relax.frontend.nn.modules.IOEffect.emit_init:1
+msgid ""
+"Emit the initialization of the effect. This method is called by the "
+"compiler to initialize the effect."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Effect.finalize:1
+#: tvm.relax.frontend.nn.modules.IOEffect.finalize:1
+msgid "finalize the effect as the implicit return value of a relax.Function"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Effect.set_state:1
+#: tvm.relax.frontend.nn.modules.IOEffect.set_state:1
+#: tvm.relax.frontend.nn.modules.KVCache.set_state:1
+msgid "Set the variables that represents the effect"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Effect.to:1
+msgid ""
+"Convert the effect to specific dtype. Usually it is no-op for most of the"
+" effects"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Embedding:1
+msgid "Module for embedding layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Embedding.forward:1
+msgid "Forward method for embedding layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Embedding.forward:6
+msgid "**ret** -- The output tensor for the embedding layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.ExternModule:1
+msgid ""
+"The abstract base class for external modules. External modules are "
+"designed to help incorporate user-provided handcrafted kernels into the "
+"exported TVM IRModule."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.ExternModule.load:1
+#: tvm.relax.frontend.nn.extern.ObjectModule.load:1
+#: tvm.relax.frontend.nn.extern.SourceModule.load:1
+msgid "Loads the external module into a TVM runtime module."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.GELU:1
+msgid "Module for GELU activation layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.GroupNorm:1
+msgid "Module for group norm layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.GroupNorm.forward:1
+msgid "Forward method for group norm layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.GroupNorm.forward:5
+msgid "Channel axis of the input data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.GroupNorm.forward:7
+msgid ""
+"Optional list of axes to compute norm over, if not specified, assumes "
+"that the first two axes should be left alone."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.GroupNorm.forward:11
+msgid "**ret** -- The output tensor for the group norm layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.IOEffect:1
+msgid ""
+"Modeling IO side effect, for example, printing the content of NDArrays on"
+" screen, inserting debug breakpoints, etc."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache:1
+msgid "Effect to implement KVCache."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.append:1
+msgid "Append a new element in KVCache."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.append:3
+msgid "The new tensor to append."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.create:1
+msgid ""
+"Create the implicit inputs to a relax.Function that represents the "
+"KVCache effect."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.create:3
+msgid "The name hint of the relax.Var."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.create:6
+msgid "**ret** -- The relax.Var for KVCache."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.emit_init:1
+msgid "Emit the initialization of the KVCache effect."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.emit_init:3
+msgid "The name hint of the initialization binding Var."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.emit_init:5
+msgid "The relax BlockBuilder to emit."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.finalize:1
+msgid ""
+"Finalize the KVCache effect as the implicit return value of a "
+"relax.Function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.finalize:3
+msgid "**ret** -- The output relax.Var as KVCache."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.to:1
+msgid "Convert the KVCache effect to specific dtype."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.to:3
+msgid "The target data type to convert."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.view:1
+msgid "View the last elements in KVCache."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.view:3
+msgid "The number of last elements to view."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.KVCache.view:6
+msgid "**ret** -- The last tensor to view."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.LayerNorm:1
+msgid "Module for Layer Normalization"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.LayerNorm.forward:1
+msgid "Forward method for layer normalization layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.LayerNorm.forward:6
+msgid "**ret** -- The output tensor for the layer normalization layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Linear:1
+msgid "Module for linear layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Linear.forward:1
+msgid "Forward method for linear layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Linear.forward:6
+msgid "**ret** -- The output tensor for the linear layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.Linear.to:1
+msgid ""
+"Override to() such that we do not convert bias if there is `out_dtype`. "
+"Otherwise, we might run into dtype mismatch when computing `x + "
+"self.bias` since x is of type `out_dtype` and bias becomes `dtype`, "
+"potentially different."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module:1
+msgid ""
+"Base class for neural network components. Subclass it to build your "
+"models. Modules can nest within each other in a tree structure using "
+"regular attribute assignment."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:1
+msgid "Export the module to TVM IRModule and parameters"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:3
+msgid ""
+"A dictionary mapping each input name to a specification that defines the "
+"inputs shape and dtype."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:6
+msgid ""
+"If set to True, then the exported module will support effects. This "
+"enables things like printing in the graph."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:10
+msgid ""
+"* **irmodule** (*tvm.ir.IRModule*) -- The converted tvm IR representation"
+" of the model. * **params** (*List[Tuple[str, Parameter]]*) -- A list of "
+"Parameters corresponding to the weights of the model. * **ext_mods** "
+"(*List[nn.ExternModule]*) -- A list of ExternModules that are used in the"
+" model."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:10
+msgid ""
+"**irmodule** (*tvm.ir.IRModule*) -- The converted tvm IR representation "
+"of the model."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:11
+msgid ""
+"**params** (*List[Tuple[str, Parameter]]*) -- A list of Parameters "
+"corresponding to the weights of the model."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.export_tvm:12
+msgid ""
+"**ext_mods** (*List[nn.ExternModule]*) -- A list of ExternModules that "
+"are used in the model."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.jit:1
+msgid "Just-in-time compilation of a nn.model to an executable"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.load_state_dict:1
+msgid ""
+"This function copies parameters and buffers from the state_dict into the "
+"current module and its descendants. If `strict` is set to True, the keys "
+"in the `state_dict` must exactly match the keys returned by the "
+"`state_dict()` function of this module."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.load_state_dict:5
+msgid "A dictionary containing a whole state of the module"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.load_state_dict:7
+msgid ""
+"Whether to strictly enforce that the keys in `state_dict` match the keys "
+"returned by this module's `state_dict()` function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.load_state_dict:11
+msgid ""
+"**(missing_keys, unexpected_keys)** -- A tuple of two lists: the missing "
+"keys and the unexpected keys."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.named_parameters:1
+msgid ""
+"This method provides an iterator over module parameters, yielding both "
+"the parameter name and its corresponding value."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.named_parameters:4
+#: tvm.relax.frontend.nn.core.Module.state_dict:3
+msgid "Prefix to prepend to all parameter names."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.named_parameters
+#: tvm.relax.frontend.nn.core.Module.parameters
+msgid "生成器"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.named_parameters:7
+msgid "*(str, Parameter) - Tuple containing the name and parameter*"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.parameters:1
+msgid ""
+"This method provides an iterator over module parameters, yielding only "
+"the Parameter value."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.parameters:4
+msgid "*Parameter - The module's parameter*"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.state_dict:1
+msgid ""
+"Returns a dictionary containing references to the whole state of the "
+"module."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.state_dict:5
+msgid ""
+"Dictionary to which state will be saved. If None, a new dictionary is "
+"created."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.state_dict:8
+msgid "**dict** -- a dictionary containing a whole state of the module"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Module.to:1
+#: tvm.relax.frontend.nn.core.ModuleList.to:1
+msgid "Convert the module to specific dtype recursively"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.ModuleList:1
+msgid "Holds submodules in a list."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.ModuleList.append:1
+msgid "Add a module to the end of the ModuleList"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.ModuleList.forward:1
+msgid "Feed-forward pass of the module"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator:1
+msgid ""
+"The mutator for nn.Module transform. Users can override the `visit_*` "
+"methods to apply transform in different structures, or even override the "
+"`visit` method to change the logic of traversal."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit:1
+msgid "The base dispatching method for visiting of all nodes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit:3
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_effect:3
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_module:3
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:3
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_param:3
+msgid "The name of the current node in parent's attribute."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit:5
+msgid "The current node to visit."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit:8
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_effect:8
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_module:8
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:8
+#: tvm.relax.frontend.nn.visitor.Mutator.visit_param:8
+msgid "**ret_node** -- The new node to replace current node."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_effect:1
+msgid "The base visiting method for mutation of nn.Parameter nodes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_effect:5
+msgid "The current node of nn.Parameter to mutate."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_module:1
+msgid "The base visiting method for mutation of nn.Module nodes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_module:5
+msgid "The current node of nn.Module to mutate."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:1
+msgid "The base visiting method for mutation of nn.ModuleList nodes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_modulelist:5
+msgid "The current node of nn.MoModuleListdule to mutate."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_param:1
+msgid "The base visiting method for mutation of nn.Effect nodes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.visitor.Mutator.visit_param:5
+msgid "The current node of nn.Effect to mutate."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Object:1
+msgid ""
+"A wrapper on top of relax.Expr whose struct_info is the base "
+"ObjectStructInfo (rather than any its subclass). Object effectively "
+"represents non-tensor frontend components such as KV caches."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.ObjectModule:1
+msgid ""
+"A subclass of `nn.ExternModule`, which allows users to provide an object "
+"`.o` file to be linked into compiled artifact;"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Parameter:1
+msgid ""
+"A parameter represents the weight of a neural network layer. It is a "
+"special tensor which could be bound or not bound to concrete values. If a"
+" parameter is bound to a concrete value, it is called a bound parameter, "
+"otherwise it is called an unbound parameter."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Parameter.data:1
+msgid ""
+"Returns the concrete value of the parameter if it is bound to a concrete "
+"value, otherwise returns None. The returned value is a "
+"tvm.runtime.NDArray."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Parameter.to:1
+msgid "Change the dtype of the parameter if it is not bound to any concrete data"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.RMSNorm:1
+msgid "Module for rms norm layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.RMSNorm.forward:1
+msgid "Forward method for rms norm layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.RMSNorm.forward:6
+msgid "**ret** -- The output tensor for the rms norm layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.ReLU:1
+msgid "Module for ReLU activation layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.modules.SiLU:1
+msgid "Module for SiLU activation layer."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:1
+msgid ""
+"A subclass of `nn.ExternModule`. It compiles C++/CUDA source code and "
+"link them into the eventual IRModule."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:4
+msgid ""
+"**Shape/dtype inference.** The `nn.ExternModule` system requires users to"
+" provide additional information to work, namely, `symbols`. It is a "
+"dictionary that maps each symbol in the external object file to its "
+"shape/dtype inference function. Consider a case where function `my_func` "
+"accepts two tensors, `a` of shape `(x, y, 1)`, and `b` of shape `(y, z, "
+"5)`, and produces a tensor `c` of shape `(x, y, z, 9)`, the shape/dtype "
+"inference function should look like:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:19
+msgid "and the `symbols` dictionary should be provided as:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:28
+msgid ""
+"**Calling convention.** All external modules now follows \"destination-"
+"passing-style\" (DPS) calling convention, which means the returned "
+"tensors are pre-allocated by the system already and passed in as an "
+"argument of the external function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:32
+msgid ""
+"Reuse the example above, the implementation of `my_func` should include "
+"three parameters in its signature, where tensors are represented using "
+"DLTensor from DLPack, the de facto standard of in-memory representation "
+"of tensors. More details: "
+"https://github.com/dmlc/dlpack/blob/v0.8/include/dlpack/dlpack.h#L163-L206."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:37
+msgid ""
+"To expose the symbol, `TVM_DLL_EXPORT_TYPED_FUNC(symbol, function)` is "
+"guaranteed available:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:55
+msgid ""
+"**A compiler pass `AttachExternModules`.** It is introduced to attach a "
+"list of `nn.ExternModule`s into an IRModule at any stage of the "
+"compilation pipeline, and attach the compiled external modules as "
+"`runtime.Module`s into IRModule's `external_mods` attribute. It is "
+"required by linking in `relax.build`, but with the existence of this "
+"pass, source compilation can be deferred to arbitrary stage of TVM "
+"compilation."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule:61
+msgid ""
+"**Caveats.** It is required to call `nn.add_extern` to register external "
+"modules exactly once during `export_tvm`. Each symbol should be "
+"registered exactly once to avoid potential conflicts, and otherwise an "
+"error will be raised."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.compile:1
+msgid ""
+"Compiles the source code in a provided directory and returns the compiled"
+" artifact."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:1
+msgid ""
+"Returns the default compile options depending on `source_format`, "
+"including the default inlcude paths w.r.t. `tvm_home()`, default flags to"
+" configure DMLC-Core, and by default, it uses \"-O3\" and \"-std=c++17\"."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:5
+msgid "The source code format. It can be either \"cpp\" or \"cu\"."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:7
+#: tvm.relax.frontend.nn.extern.SourceModule.get_includes:5
+msgid ""
+"The list of packages to be included under `tvm_home/3rdparty`. Each "
+"element should be a relative path to `tvm_home/3rdparty`."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_compile_options:11
+msgid "**compile_options** -- The list of compilation flags."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_includes:1
+msgid ""
+"Returns the default include paths according to `tvm_home()`. By default, "
+"it includes TVM, DLPack, and DMLC-Core. With `tvm_pkg` provided, it also "
+"includes the specified package under `tvm_home/3rdparty`."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.get_includes:9
+msgid "**includes** -- The list of include paths."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.tvm_home:1
+msgid ""
+"Find TVM's home directory. If `TVM_HOME` environment variable is set, use"
+" it. Otherwise, use the directory where the `tvm` Python package is "
+"installed. As a sanity check, it is required to have `include` and "
+"`3rdparty` as direct subdirectories."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.extern.SourceModule.tvm_home:5
+msgid ""
+"**tvm_home** -- The TVM home directory, and it is guaranteed to have "
+"`include` and `3rdparty` as direct subdirectories."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.subroutine.SubroutineMixin:1
+msgid "A mixin that generates a"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.subroutine.SubroutineMixin:3
+msgid ""
+"Contains common logic for `tvm.relax.frontend.nn.Module` and "
+"`tvm.relax.testing.nn.Module`."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Tensor:1
+msgid ""
+"A wrapper on top of relax.Expr whose struct_info is a TensorStructInfo, "
+"providing more convenient access shape and dtype information. Tensor is "
+"always symbolc and not bound to any concrete values. Shape and dtype "
+"inference is done eagerly upon tensor creation, i.e. when operators are "
+"applied on tensors, the shape and dtype information is already available."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.dtype:1
+msgid "Returns the data type of the tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.dtype:3
+msgid "**dtype** -- The data type of the tensor"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Tensor.from_const:1
+msgid "Construct a tensor from numpy constants."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Tensor.from_scalar:1
+msgid "Construct a tensor from a scalar with dtype specified."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Tensor.from_struct_info:1
+msgid "Construct a nn.Tensor from relax TensorStructInfo"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.ndim:1
+msgid "Returns the number of dimensions of the tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.ndim:3
+msgid "**ndim** -- The number of dimensions of the tensor"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Tensor.placeholder:1
+msgid ""
+"Create a placeholder tensor with given shape and dtype. A placeholder "
+"tensor should never be created directly by users in usual cases, and the "
+"only exception is to indicate the shape/dtype of return values of an "
+"external function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.Tensor.placeholder:5
+msgid ""
+"If shape is a string `name`, we create a symbolic shape "
+"`tvm.tir.Var(name, \"int64\")`."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.shape:1
+msgid "Returns the shape of the tensor as a list of integers."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.shape:3
+msgid ""
+"An integer can be a python int or tvm.tir.PrimExpr, depending on whether "
+"the shape is fully static, for example, [1, 2, tvm.tir.Var(\"n\")] is a "
+"valid shape where the last dimension is dynamic while the first two "
+"dimensions are always static constants."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.Tensor.shape:7
+msgid "**shape** -- The shape of the tensor"
+msgstr ""
+
+#: of typing.TypeVar:1
+msgid "Type variable."
+msgstr ""
+
+#: of typing.TypeVar:3
+msgid ""
+"The preferred way to construct a type variable is via the dedicated "
+"syntax for generic functions, classes, and type aliases::"
+msgstr ""
+
+#: of typing.TypeVar:9
+msgid ""
+"This syntax can also be used to create bound and constrained type "
+"variables::"
+msgstr ""
+
+#: of typing.TypeVar:20
+msgid ""
+"However, if desired, reusable type variables can also be constructed "
+"manually, like so::"
+msgstr ""
+
+#: of typing.TypeVar:27
+msgid ""
+"Type variables exist primarily for the benefit of static type checkers.  "
+"They serve as the parameters for generic types as well as for generic "
+"function and type alias definitions."
+msgstr ""
+
+#: of typing.TypeVar:31
+msgid ""
+"The variance of type variables is inferred by type checkers when they are"
+" created through the type parameter syntax and when "
+"``infer_variance=True`` is passed. Manually created type variables may be"
+" explicitly marked covariant or contravariant by passing "
+"``covariant=True`` or ``contravariant=True``. By default, manually "
+"created type variables are invariant. See PEP 484 and PEP 695 for more "
+"details."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.add:1
+msgid "Addition with numpy-style broadcasting."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.add:3 tvm.relax.frontend.nn.op.divide:3
+#: tvm.relax.frontend.nn.op.equal:3 tvm.relax.frontend.nn.op.greater:3
+#: tvm.relax.frontend.nn.op.greater_equal:3 tvm.relax.frontend.nn.op.less:3
+#: tvm.relax.frontend.nn.op.less_equal:3 tvm.relax.frontend.nn.op.matmul:6
+#: tvm.relax.frontend.nn.op.maximum:3 tvm.relax.frontend.nn.op.minimum:3
+#: tvm.relax.frontend.nn.op.multiply:3 tvm.relax.frontend.nn.op.not_equal:3
+#: tvm.relax.frontend.nn.op.subtract:3
+msgid "The first input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.add:5 tvm.relax.frontend.nn.op.divide:5
+#: tvm.relax.frontend.nn.op.equal:5 tvm.relax.frontend.nn.op.greater:5
+#: tvm.relax.frontend.nn.op.greater_equal:5 tvm.relax.frontend.nn.op.less:5
+#: tvm.relax.frontend.nn.op.less_equal:5 tvm.relax.frontend.nn.op.matmul:8
+#: tvm.relax.frontend.nn.op.maximum:5 tvm.relax.frontend.nn.op.minimum:5
+#: tvm.relax.frontend.nn.op.multiply:5 tvm.relax.frontend.nn.op.not_equal:5
+#: tvm.relax.frontend.nn.op.subtract:5
+msgid "The second input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.wrap_nested:6 tvm.relax.frontend.nn.op.add:7
+#: tvm.relax.frontend.nn.op.argsort:12 tvm.relax.frontend.nn.op.astype:7
+#: tvm.relax.frontend.nn.op.broadcast_to:7 tvm.relax.frontend.nn.op.conv1d:43
+#: tvm.relax.frontend.nn.op.conv2d:20 tvm.relax.frontend.nn.op.conv3d:20
+#: tvm.relax.frontend.nn.op.cumsum:15 tvm.relax.frontend.nn.op.divide:7
+#: tvm.relax.frontend.nn.op.empty:7 tvm.relax.frontend.nn.op.equal:7
+#: tvm.relax.frontend.nn.op.exp:8 tvm.relax.frontend.nn.op.full:10
+#: tvm.relax.frontend.nn.op.gelu:12 tvm.relax.frontend.nn.op.greater:7
+#: tvm.relax.frontend.nn.op.greater_equal:7
+#: tvm.relax.frontend.nn.op.group_norm:22
+#: tvm.relax.frontend.nn.op.layer_norm:31 tvm.relax.frontend.nn.op.less:7
+#: tvm.relax.frontend.nn.op.less_equal:7 tvm.relax.frontend.nn.op.matmul:13
+#: tvm.relax.frontend.nn.op.maximum:7 tvm.relax.frontend.nn.op.minimum:7
+#: tvm.relax.frontend.nn.op.multiply:7 tvm.relax.frontend.nn.op.negative:5
+#: tvm.relax.frontend.nn.op.not_equal:7 tvm.relax.frontend.nn.op.ones:7
+#: tvm.relax.frontend.nn.op.permute:7 tvm.relax.frontend.nn.op.permute_dims:7
+#: tvm.relax.frontend.nn.op.relu:8 tvm.relax.frontend.nn.op.repeat:11
+#: tvm.relax.frontend.nn.op.reshape:17 tvm.relax.frontend.nn.op.rms_norm:18
+#: tvm.relax.frontend.nn.op.sigmoid:7 tvm.relax.frontend.nn.op.silu:8
+#: tvm.relax.frontend.nn.op.softmax:11 tvm.relax.frontend.nn.op.sort:11
+#: tvm.relax.frontend.nn.op.split:9 tvm.relax.frontend.nn.op.sqrt:5
+#: tvm.relax.frontend.nn.op.square:5 tvm.relax.frontend.nn.op.squeeze:9
+#: tvm.relax.frontend.nn.op.subtract:7 tvm.relax.frontend.nn.op.take:14
+#: tvm.relax.frontend.nn.op.tanh:8 tvm.relax.frontend.nn.op.tensor_expr_op:5
+#: tvm.relax.frontend.nn.op.tensor_ir_inplace_op:5
+#: tvm.relax.frontend.nn.op.tensor_ir_op:5 tvm.relax.frontend.nn.op.topk:21
+#: tvm.relax.frontend.nn.op.triu:11 tvm.relax.frontend.nn.op.where:17
+#: tvm.relax.frontend.nn.op.zeros:7
+msgid "Name hint."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.wrap_nested:9 tvm.relax.frontend.nn.op.add:10
+#: tvm.relax.frontend.nn.op.conv1d:46
+#: tvm.relax.frontend.nn.op.conv1d_transpose:38
+#: tvm.relax.frontend.nn.op.divide:10 tvm.relax.frontend.nn.op.equal:10
+#: tvm.relax.frontend.nn.op.exp:11 tvm.relax.frontend.nn.op.gelu:15
+#: tvm.relax.frontend.nn.op.greater:10
+#: tvm.relax.frontend.nn.op.greater_equal:10
+#: tvm.relax.frontend.nn.op.group_norm:25
+#: tvm.relax.frontend.nn.op.layer_norm:34 tvm.relax.frontend.nn.op.less:10
+#: tvm.relax.frontend.nn.op.less_equal:10 tvm.relax.frontend.nn.op.matmul:16
+#: tvm.relax.frontend.nn.op.maximum:10 tvm.relax.frontend.nn.op.minimum:10
+#: tvm.relax.frontend.nn.op.multiply:10 tvm.relax.frontend.nn.op.negative:8
+#: tvm.relax.frontend.nn.op.not_equal:10 tvm.relax.frontend.nn.op.relu:11
+#: tvm.relax.frontend.nn.op.rms_norm:21 tvm.relax.frontend.nn.op.sigmoid:10
+#: tvm.relax.frontend.nn.op.silu:11 tvm.relax.frontend.nn.op.softmax:14
+#: tvm.relax.frontend.nn.op.sqrt:8 tvm.relax.frontend.nn.op.square:8
+#: tvm.relax.frontend.nn.op.subtract:10 tvm.relax.frontend.nn.op.sum:16
+#: tvm.relax.frontend.nn.op.tanh:11
+msgid "**result** -- The computed result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.add:14 tvm.relax.frontend.nn.op.cumsum:23
+#: tvm.relax.frontend.nn.op.divide:14 tvm.relax.frontend.nn.op.matmul:20
+#: tvm.relax.frontend.nn.op.maximum:14 tvm.relax.frontend.nn.op.minimum:14
+#: tvm.relax.frontend.nn.op.multinomial_from_uniform:31
+#: tvm.relax.frontend.nn.op.multiply:14 tvm.relax.frontend.nn.op.repeat:18
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:33
+#: tvm.relax.frontend.nn.op.subtract:14
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:19
+#: tvm.relax.frontend.torch.fx_translator.from_fx:26
+msgid "示例"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.exporter.add_extern:1
+msgid "Add an external module to the exporter."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.argsort:1
+msgid ""
+"Performs sorting along the given axis and returns an array of indices "
+"having same shape as an input array that index data in sorted order."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.argsort:4 tvm.relax.frontend.nn.op.topk:5
+msgid "The input data tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.argsort:6 tvm.relax.frontend.nn.op.topk:9
+msgid "Axis long which to sort the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.argsort:8 tvm.relax.frontend.nn.op.sort:9
+msgid "Whether to sort in descending order, the default is False"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.argsort:10
+msgid "The data type of the output indices."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.argsort:15
+msgid "**out** -- The indices of the sorted tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.astype:1
+msgid "Cast input tensor to the given data type."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.astype:3 tvm.relax.frontend.nn.op.broadcast_to:3
+#: tvm.relax.frontend.nn.op.conv1d:26
+#: tvm.relax.frontend.nn.op.conv1d_transpose:12
+#: tvm.relax.frontend.nn.op.cumsum:4 tvm.relax.frontend.nn.op.exp:6
+#: tvm.relax.frontend.nn.op.negative:3 tvm.relax.frontend.nn.op.permute:3
+#: tvm.relax.frontend.nn.op.permute_dims:3 tvm.relax.frontend.nn.op.reshape:13
+#: tvm.relax.frontend.nn.op.sigmoid:5 tvm.relax.frontend.nn.op.softmax:5
+#: tvm.relax.frontend.nn.op.squeeze:3 tvm.relax.frontend.nn.op.tanh:6
+msgid "The input data to the operator."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.astype:5
+msgid "The target data type"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.astype:10
+msgid "**result** -- The casted result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.broadcast_to:1
+msgid "Broadcasts a tensor to a specified shape."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.broadcast_to:5
+msgid "The target shape."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.broadcast_to:10
+msgid "**result** -- The broadcasted tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:1
+msgid "CCL Allgather operator"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:5
+msgid "Number of workers."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:7
+#: tvm.relax.frontend.nn.op.ccl_allreduce:10
+#: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:5
+#: tvm.relax.frontend.nn.op.chunk:9 tvm.relax.frontend.nn.op.interpolate:20
+#: tvm.relax.frontend.nn.op.sum:13
+msgid "Name hint for this operation."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allgather:10
+msgid "**result** -- The result tensor of allgather."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:1
+msgid "CCL Allreduce operator"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:5
+msgid ""
+"The type of reduction operation to be applied to the input data. Now "
+"\"sum\", \"prod\", \"min\", \"max\" and \"avg\" are supported."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:8
+msgid "Whether the reduction operation performs globally or in group as default."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_allreduce:13
+msgid "**result** -- The result tensor of allreduce."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:1
+msgid "Broadcast data from worker-0 to all other workers."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:3
+msgid "The tensor to be broadcast."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:8
+msgid ""
+"**result** -- The same tensor, which has been broadcast to all other "
+"workers."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.chunk:1
+msgid "Split a tensor along dim into the specified number of chunks."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.chunk:3 tvm.relax.frontend.nn.op.split:3
+msgid "Input tensor to be split."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.chunk:5
+msgid "Number of pieces to slice x into."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.chunk:7
+msgid "Which dimension to split x."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.chunk:12
+msgid "**result** -- A tuple with chunks elements containing slices of x."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.concat:1
+msgid "Concatenate a list of tensors along an axis."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.concat:3
+msgid "List of tensors to concatenate."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.concat:5
+msgid "Dimension to concatenate upon."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.concat:7 tvm.relax.frontend.nn.op.pad:13
+#: tvm.relax.frontend.nn.op.unsqueeze:7
+msgid "Name hint for this operator."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.concat:10 tvm.relax.frontend.nn.op.unsqueeze:10
+msgid "**result** -- Expanded result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:1
+msgid "1D convolution."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:3
+msgid ""
+"This operator takes the weight as the 1D convolution kernel and convolves"
+" it with data to produce an output."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:7
+msgid ""
+"In the default case, where the data_layout is `NCW` and kernel_layout is "
+"`OIW`, conv1d takes in a data Tensor with shape `(batch_size, "
+"in_channels, width)`, and a weight Tensor with shape `(channels, "
+"in_channels, kernel_w)`, where `kernel_w` is the length of the `W` kernel"
+" dimension, to produce an output Tensor with the following rule:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:14
+msgid ""
+"\\mbox{out}[b, c, x] = \\sum_{dx, k}\n"
+"   \\mbox{data}[b, k, \\mbox{strides} * x + dx] *\n"
+"   \\mbox{weight}[c, k, dx]"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:20
+msgid ""
+"Padding and dilation are applied to data and weight respectively before "
+"the computation. This operator accepts data layout specification. "
+"Semantically, the operator will convert the layout to the canonical "
+"layout (`NCW` for data and `OIW` for weight), perform the computation, "
+"then convert to the out_layout."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:28
+msgid "The weight expressions."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:30 tvm.relax.frontend.nn.op.conv2d:7
+#: tvm.relax.frontend.nn.op.conv3d:7
+msgid "Optional bias tensor of shape [O]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:32
+#: tvm.relax.frontend.nn.op.conv1d_transpose:16
+msgid "The strides of convolution. It is required to have length 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:34
+#: tvm.relax.frontend.nn.op.conv1d_transpose:18
+msgid ""
+"The padding of convolution on both sides of inputs before convolution. It"
+" is required to have length either 1 or 2."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:37
+msgid ""
+"Specifies the dilation rate to be used for dilated convolution. It is "
+"required to have length 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d:40
+#: tvm.relax.frontend.nn.op.conv1d_transpose:26
+msgid ""
+"Number of groups to split the input into for grouped convolution. The "
+"number of input and output channels should be divisible by the number of "
+"groups."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:1
+msgid "1D transposed convolution operator."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:3
+msgid "This operator can be seen as the gradient operator of conv1d."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:5
+#, python-format
+msgid ""
+"The output shape can be explained in the simple case when `data_layout =="
+" \"NCW\"` and `kernel_layout == \"IOW\"`. Suppose `data` has shape `(N, "
+"in_channel, in_w)`, `weight` has shape `(in_channel, out_channel, "
+"weight_w)`, we need to assure that `in_channel % groups == 0`. The shape "
+"of the output will be `(N, out_channel * groups, out_w)`, where"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:10
+msgid ""
+"`out_w = ((in_w - 1) * strides[0] + weight_w - 2 * padding[0] + "
+"output_padding[0])`"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:14
+msgid "The weight tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:21
+msgid "Used to disambiguate the output shape."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:23
+msgid ""
+"Specifies the dilation rate to be used for dilated convolution. It is "
+"required to have length either 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:29
+msgid "Layout of the input."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:31
+msgid "Layout of the weight."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:33
+msgid "Layout of the output. If not specified, it is the same as data_layout"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv1d_transpose:35
+msgid "Specifies the output data type for mixed precision conv2d."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:1
+msgid ""
+"Applies a 2D convolution over an input image composed of sevaral input "
+"planes"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:3
+msgid "Input tensor of shape [B, N, H, W]"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:5
+msgid "Filters of shape [O, N/groups, kH, kW]"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:9
+msgid ""
+"The stride of the convolving kernel. Can be a single number or tuple of "
+"(sH, sW)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:12 tvm.relax.frontend.nn.op.conv3d:12
+msgid "Implicit paddings on both sides of the input."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:14
+msgid ""
+"The spacing between kernel elements. Can be a single number of tuple (dH,"
+" dW)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:16 tvm.relax.frontend.nn.op.conv3d:16
+msgid "Split input into a number of groups."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:18
+msgid "Layout of input and output data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv2d:23
+msgid "**result** -- The computed result with shape [B, O, oH, oW]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:1
+msgid ""
+"Applies a 3D convolution over an input image composed of sevaral input "
+"planes"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:3
+msgid "Input tensor of shape [B, N, D, H, W]"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:5
+msgid "Filters of shape [O, N/groups, kD, kH, kW]"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:9
+msgid ""
+"The stride of the convolving kernel. Can be a single number or tuple of "
+"(sD, sH, sW)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:14
+msgid ""
+"The spacing between kernel elements. Can be a single number of tuple (dD,"
+" dH, dW)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:18
+msgid "Optional layout of the input and output data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.conv3d:23
+msgid "**result** -- The computed result with shape [B, O, oD, oH, oW]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.cumsum:1
+msgid ""
+"Numpy style cumsum op. Return the cumulative inclusive sum of the "
+"elements along a given axis."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.cumsum:6
+msgid ""
+"Axis along which the cumulative sum is computed. The default (None) is to"
+" compute the cumsum over the flattened array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.cumsum:9
+msgid ""
+"Type of the returned array and of the accumulator in which the elements "
+"are summed. If dtype is not specified, it defaults to the dtype of data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.cumsum:12
+msgid ""
+"If true will return exclusive sum in which the first element is not "
+"included."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.cumsum:18
+msgid ""
+"**result** -- The result has the same size as data, and the same shape as"
+" data if axis is not None. If axis is None, the result is a 1-d array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.debug_func:1
+msgid ""
+"Call a debug function during runtime. The debug function must be "
+"registered with the following type signature:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.debug_func:10
+msgid "The name of the debug function to call."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.debug_func:12
+msgid "The arguments to pass to the debug function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.divide:1
+msgid "Division with numpy-style broadcasting."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.empty:1
+msgid "Construct an uninitialized tensor, with the input shape and dtype."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.empty:3 tvm.relax.frontend.nn.op.full:3
+#: tvm.relax.frontend.nn.op.ones:3 tvm.relax.frontend.nn.op.zeros:3
+msgid "The shape of the created tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.empty:5 tvm.relax.frontend.nn.op.ones:5
+#: tvm.relax.frontend.nn.op.zeros:5
+msgid "The data type of the created tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.empty:10 tvm.relax.frontend.nn.op.full:13
+#: tvm.relax.frontend.nn.op.ones:10 tvm.relax.frontend.nn.op.tensor_expr_op:12
+#: tvm.relax.frontend.nn.op.where:20 tvm.relax.frontend.nn.op.zeros:10
+msgid "**result** -- The result tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.equal:1
+msgid "Broadcasted element-wise comparison for (lhs == rhs)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.exp:1
+msgid "Applies the exponential function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.exp:3
+msgid ""
+"\\text{Exp}(x) = e^x\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.exp:14 tvm.relax.frontend.nn.op.gelu:18
+#: tvm.relax.frontend.nn.op.sigmoid:13 tvm.relax.frontend.nn.op.silu:14
+#: tvm.relax.frontend.nn.op.softmax:17 tvm.relax.frontend.nn.op.sqrt:11
+#: tvm.relax.frontend.nn.op.tanh:14
+msgid "The input tensor is required to have float dtype"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.extern:1
+msgid ""
+"Invoke an extern function during runtime. The extern function must be "
+"registered with the \" TVM runtime using `TVM_REGISTER_GLOBAL` (C++), or "
+"`tvm.register_func` (Python)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.extern:4
+msgid "The name of the extern function to call."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.extern:6
+msgid "The arguments to pass to the extern function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.extern:8
+msgid "The output tensors, only"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.extern:11
+msgid "**result** -- The result"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.full:1
+msgid "Fill array with scalar value."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.full:5
+msgid "The value to fill. Must be a scalar tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.full:7
+msgid ""
+"The data type of the created tensor. If dtype is not given, it will by "
+"default use the dtype of fill_value."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.gelu:1
+msgid "Applies the Gaussian Error Linear Units function"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.gelu:3
+msgid ""
+"\\text{GeLU}(x) = 0.5 * x * (1 + \\text{erf}(x * 0.5**0.5))\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.gelu:6
+msgid "where :math:`erf` is the Gauss Error function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.gelu:8 tvm.relax.frontend.nn.op.silu:6
+msgid "The input data"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.gelu:10
+msgid "If set to tanh, use an approximation when calculating CDF."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.get_default_dtype:1
+msgid ""
+"Get the default parameter dtype if not specified. By default it is "
+"float32."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.get_default_dtype:3
+msgid "**dtype** -- The default dtype"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:1
+msgid ""
+"Timestep calculation as described in Denoising Diffusion Probabilistic "
+"Models."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:3
+msgid "A 1-D Tensor of N indices."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:5
+msgid "The dimension of the output."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:7
+msgid "If True, change the order of sine and cosine embeddings."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:9
+msgid "Adjusts the frequency of the sinusoidal sampling."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:11
+msgid "Weight adjustment for embedding magnitude."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:13
+msgid "Controls the minimum frequency of the embeddings."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:15
+msgid "The name to label this operator with."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.get_timestep_embedding:18
+msgid "**result** -- [N x dim] Tensor of positional embeddings."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.greater:1
+msgid "Broadcasted element-wise comparison for (lhs > rhs)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.greater_equal:1
+msgid "Broadcasted element-wise comparison for (lhs >= rhs)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:1
+msgid ""
+"Applies Group Normalization over a mini-batch of inputs as described in "
+"the paper `Group Normalization <https://arxiv.org/abs/1803.08494>`__"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:4
+msgid ""
+"y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
+"\\gamma + \\beta\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:7
+#: tvm.relax.frontend.nn.op.rms_norm:10
+msgid "Input to which rms_norm will be applied."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:9
+msgid "Number of groups to separate the channels into."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:11
+#: tvm.relax.frontend.nn.op.layer_norm:25
+msgid "The gamma scale factor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:13
+#: tvm.relax.frontend.nn.op.layer_norm:27
+msgid "The beta offset factor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:15
+#: tvm.relax.frontend.nn.op.rms_norm:16
+msgid "Small float added to square mean to avoid dividing by zero."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:17
+msgid "The channel axis of the data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.group_norm:19
+msgid ""
+"Which axes to compute the groupnorm over. If None, assumes first two "
+"channels should be ignored."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:1
+msgid "Resize a tensor using the specified mode."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:3
+msgid "Input tensor to be resized."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:5
+msgid "Requested output size, only one of size and scale_factor may be specified."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:8
+msgid "Multiplier for spatial size."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:10
+msgid "Algorithm used for sampling."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:12
+msgid "How to map pixels before and after sampling."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:14
+msgid "Recompute the scale_factor for use in interpolation."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:16
+msgid "Apply antialiasing to output."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:18
+msgid "Layout of the input and output data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.interpolate:23
+msgid "**result** -- Output tensor with requested shape."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:1
+msgid ""
+"Layer normalization (Lei Ba and et al., 2016). Applies layer "
+"normalization to the n-dimensional input array. This operator takes an "
+"n-dimensional input array and normalizes the input using the given axis:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:6
+msgid ""
+"out = \\frac{data - mean(data, axis)}{\\sqrt{var(data, axis)+\\epsilon}}\n"
+"    * gamma + beta"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:11
+msgid ""
+"Unlike batch normalization, the mean and var are computed along the "
+"channel dimension."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:13
+msgid ""
+"Assume the input has size k on axis 1, then both gamma and beta have "
+"shape (k,)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:17
+msgid "This operator can be optimized away for inference."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:19
+msgid "Input to which layer_norm will be applied."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:21
+msgid ""
+"The shape of axes to normalize. If a single integer is used, it is "
+"treated as a singleton list and this module will normalize over the last "
+"dimension."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.layer_norm:29
+msgid "Small float added to variance to avoid dividing by zero."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.less:1
+msgid "Broadcasted element-wise comparison for (lhs < rhs)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.less_equal:1
+msgid "Broadcasted element-wise comparison for (lhs <= rhs)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.matmul:1
+msgid ""
+"General matrix multiplication of two tensors, with broadcasting on "
+"batched dimensions."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.matmul:3
+msgid ""
+"The semantics and output shape deduction rule is specified as https"
+"://data-apis.org/array-"
+"api/latest/API_specification/generated/array_api.matmul.html."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.matmul:10
+msgid ""
+"The data type of the matmul result. When it is not specified, the output "
+"dtype will be the same as input dtype."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.maximum:1
+msgid "Element-wise maximum"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.minimum:1
+msgid "Element-wise minimum"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:1
+msgid ""
+"Returns a tensor where each row contains the index sampled from the "
+"multinomial probability distribution located in the corresponding row of "
+"tensor prob."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:5
+#: tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:5
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:4
+#: tvm.relax.frontend.torch.fx_translator.from_fx:72
+msgid "备注"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:6
+msgid ""
+"For better cpu performance, use 'vm.builtin.multinomial_from_uniform'. "
+"For accurate results, ensure probabilities are between 0 and 1 and sum to"
+" 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:9
+msgid ""
+"A 2-D tensor of shape (batch, vocab_size) representing probability "
+"distributions. Each row is a distribution across vocabulary for a batch, "
+"where: Values range from [0, 1], indicating the probability of each "
+"vocabulary item. The sum of values in each row is 1, forming a valid "
+"distribution."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:14
+msgid ""
+"The uniformly sampled 2-D tensor with the shape (n, 1). Values range from"
+" 0 to 1, indicating probabilities sampled uniformly."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:17
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:21
+msgid ""
+"The 2-D tensor with the shape [n, 1], which indicates the specific "
+"probability distribution to sample from. The value of sample_indices[i] "
+"determines that the ith token should be sampled from the "
+"sample_indices[i]th probability distribution. For instance, if there are "
+"3 distinct probability distributions and the requirement is to sample 2, "
+"3, and 4 tokens from each, then sample_indices would be [0, 0, 1, 1, 1, "
+"2, 2, 2, 2]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:24
+msgid "The data type of output tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multinomial_from_uniform:27
+msgid "**result** -- The computed tensor with shape (n, 1)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.multiply:1
+msgid "Multiplication with numpy-style broadcasting."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.negative:1
+msgid "Numerical negative of the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.not_equal:1
+msgid "Broadcasted element-wise comparison for (lhs != rhs)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.ones:1 tvm.relax.frontend.nn.op.zeros:1
+msgid "Construct a tensor of all zeros, with the input shape and dtype."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.pad:1
+msgid "Apply spatial padding to the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.pad:3
+msgid "Input tensor to be padded."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.pad:5
+msgid ""
+"List in the format of [before_0, after_0, before_1, after_1, ...] "
+"indicating how much to pad each axis of x."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.pad:8
+msgid ""
+"Padding mode to use, constant implies padded elements will use value "
+"argument."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.pad:11
+msgid "What to pad with in constant mode."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.pad:16
+msgid "**result** -- Padded output tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.permute:1
+msgid "Permutes the dimensions of the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.permute:5
+msgid "The target axes order."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.permute:10
+#: tvm.relax.frontend.nn.op.permute_dims:10
+msgid "**result** -- The transposed result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.permute_dims:1
+msgid "Permutes the dimensions of an array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.permute_dims:5
+msgid "The target axes order, reverse order if not specified."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.print_:1
+msgid "Debug printing a Tensor during runtime."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.relu:1
+msgid "Rectified Linear Unit (ReLU) activation function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.relu:3
+msgid ""
+"ext{ReLU}(x) =  ext{max}(x, 0)\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.relu:6
+msgid "The input data."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:1
+msgid ""
+"Renormalizes probabilities after filtering with top_p and top_k, ensuring"
+" they sum up to 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:6
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:5
+msgid ""
+"For accurate results, ensure probabilities are between 0 and 1 and sum to"
+" 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:8
+msgid ""
+"A 2-D tensor of shape (batch, vocab_size) representing probability "
+"distributions."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:10
+msgid "Probabilities sorted in descending order."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:12
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:14
+msgid ""
+"The cumulative probability threshold with shape (batch, 1) for nucleus "
+"sampling."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:14
+#: tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:16
+msgid ""
+"A tensor with shape (batch, 1), representing the number of top "
+"probabilities to consider for top-k sampling."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.renormalize_top_p_top_k_prob:18
+msgid ""
+"**result** -- The filtered and nomalized tensor with the sampe shape as "
+"input prob."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.repeat:1
+msgid "Repeats elements of an array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.repeat:5
+msgid "The number of repetitions."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.repeat:7
+msgid ""
+"The axis along which to repeat values. The negative numbers are "
+"interpreted counting from the backward. By default, use the flattened "
+"input array, and return a flat output array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.repeat:14
+msgid "**ret** -- The computed result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.reshape:1
+msgid "Reshape the input array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.reshape:3
+msgid ""
+"``-1`` infers the dimension of the output shape by using the remainder of"
+" the input dimensions keeping the size of the new array same as that of "
+"the input array. At most one dimension of shape can be -1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.reshape:15
+msgid "The new shape. Should be compatible with the original shape."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.reshape:20
+msgid "**result** -- The reshaped result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.reshape:25
+msgid ""
+"The ``-1`` inference is only performed at compile-time. That is to say, "
+"in any case the dimension length of ``-1`` cannot be inferred in compile-"
+"time, an error will be thrown."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.rms_norm:1
+msgid ""
+"Root mean square normalization (Biao Zhang and et al., 2019). Applies "
+"root mean square normalization to the n-dimensional input array. This "
+"operator takes an n-dimensional input array and normalizes the input "
+"using the given axis:"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.rms_norm:6
+msgid "out = \\frac{data}{\\sqrt{mean(data, axis)+\\epsilon}} * weight"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.rms_norm:12
+msgid "The scale factor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.rms_norm:14
+msgid "The axes that along which the normalization is applied."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:1
+msgid ""
+"Samples indices from a sorted probability tensor based on top_p and top_k"
+" criteria."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:7
+msgid ""
+"A 2-D tensor, with shape (batch, vocab_size), contains probabilities "
+"sorted in descending order."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:10
+msgid ""
+"The indices tensor with shape (batch, vocab_size), corresponding to the "
+"sorted_prob. Potentially from applying argsort on the original "
+"probability tensor in descending order."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:19
+msgid ""
+"Uniformly sampled values with shape (n, 1) are used to select the output "
+"indices."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sample_top_p_top_k_from_sorted_prob:29
+msgid "**result** -- The selected indices with shape (n, 1)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:1
+msgid ""
+"Computes a scaled dot product attention on provided attention query, key,"
+" and values. Compliant with the functional torch implementation."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:4
+msgid ""
+"Tensor representing current attention lookup of shape [batch, seq_len, "
+"num_heads, head_size]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:7
+msgid ""
+"Tensor representing cross attention mapping of shape [batch, seq_len_kv, "
+"num_heads_kv, head_size]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:10
+msgid ""
+"Tensor representing embedded attention values of shape [batch, "
+"seq_len_kv, num_heads_kv, head_size_value]."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:13
+msgid "Optional mask for attention, not yet supported."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:15
+msgid "If set, uses a causal attention mask."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:17
+msgid "Optional extra scaling argument applied to attention."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.scaled_dot_product_attention:19
+msgid "Name hint for this function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sigmoid:1
+msgid "Computes sigmoid."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sigmoid:3
+msgid ""
+"\\text{sigmoid}(x) = \\frac{1}{1 + \\exp(-x)}\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.silu:1
+msgid "Sigmoid Linear Unit function"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.silu:3
+msgid ""
+"\\text{SiLU}(x) = x * \\text{sigmoid}(x)\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.softmax:1
+msgid "Computes softmax."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.softmax:3
+msgid ""
+"\\text{softmax}(x)_i = \\frac{\\exp(x_i)}{\\sum_j \\exp(x_j)}\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.softmax:7
+msgid ""
+"The axis to sum over when computing softmax. If not specified, it is by "
+"default the last axis of the input tensor. Supports negative indexing."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sort:1
+msgid ""
+"Performs sorting along the given axis and returns an array in sorted "
+"order."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sort:6
+msgid ""
+"Axis along which to sort the input tensor. By default the last axis of "
+"the input is used."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sort:14
+msgid "**out** -- The sorted tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.split:1
+msgid "Split an array into multiple sub-arrays."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.split:5
+msgid "Indices or sections to split into."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.split:7
+msgid "The axis along which to split, default is 0."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.split:12
+msgid "**result** -- A list of sub-arrays as the outcome of splitting."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sqrt:1
+msgid "Computes the element-wise sqrt of the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.square:1
+msgid "Computes the element-wise square of the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.squeeze:1
+msgid "Squeeze axes in the array."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.squeeze:5
+msgid ""
+"The set of axes to remove. If axis = None, remove all axis of dimensions "
+"1. If any specified axis has dimension that does not equal 1, it is an "
+"error."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.squeeze:12
+msgid "**result** -- The squeezed result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.subtract:1
+msgid "Subtraction with numpy-style broadcasting."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sum:1
+msgid "Computes the sum of tensor elements over given axes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sum:3
+msgid "The input data tensor"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sum:5
+msgid ""
+"Axis or axes along which a sum is performed. The default, axis=None, will"
+" sum all of the elements of the input tensor. Negative indexing is "
+"supported."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.sum:9
+msgid ""
+"If this is set to True, the axes which are reduced are left in the result"
+" as dimensions with size one. With this option, the result will broadcast"
+" correctly against the input tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.take:1
+msgid ""
+"Take elements from a tensor along an axis. Its semantic is mostly similar"
+" to `numpy.take` "
+"(https://numpy.org/doc/stable/reference/generated/numpy.take.html), which"
+" can cover `torch.take` "
+"(https://pytorch.org/docs/stable/generated/torch.take.html) and "
+"`onnx.gather` "
+"(https://github.com/onnx/onnx/blob/main/docs/Changelog.md#Gather-13)."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.take:7
+msgid "The source tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.take:9
+msgid "The indices of the values to extract."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.take:11
+msgid ""
+"The axis over which to select values. If it is none, the input tensor is "
+"required to be one-dimensional."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.take:17
+msgid "**ret** -- The taken result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tanh:1
+msgid "Applies the hyperbolic tangent function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tanh:3
+msgid ""
+"\\text{Tanh}(x) = \\frac{e^x - e^{-x}}{e^x + e^{-x}}\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:1
+msgid "Build the given tensor_expr_func with te."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:3
+msgid "A function that returns a te tensor or a list of tensors."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:7
+msgid "Arguments passed to the function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_expr_op:9
+msgid "A dict of attributes to apply to the function."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:1
+msgid "Create a `call_tir_inplace` binding with given PrimFunc"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:3
+#: tvm.relax.frontend.nn.op.tensor_ir_op:3
+msgid "The PrimFunc to call."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:7
+#: tvm.relax.frontend.nn.op.tensor_ir_op:7
+msgid "The arguments to pass to the PrimFunc."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:9
+msgid ""
+"Specify which arguments should be used for in-place computations. If "
+"`inplace_indices` is a single integer, it will be made into a singleton "
+"list. Suppose `inplace_indices[i] = j`, where `j >= 0`. Then the `i`th "
+"output will be an alias of `args[j]`. If `inplace_indices[i] = -1`, then "
+"the `i`th output will be a freshly allocated tensor. At least one member "
+"of `inplace_indices` must not be -1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:16
+#: tvm.relax.frontend.nn.op.tensor_ir_op:9
+msgid "The output tensors."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_inplace_op:19
+#: tvm.relax.frontend.nn.op.tensor_ir_op:12
+msgid "**result** -- The result tensor"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.tensor_ir_op:1
+msgid "Create a `call_tir` binding with given PrimFunc"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:1
+msgid "Get the top k elements in an input tensor along the given axis."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:3
+msgid ""
+"ret_type specifies the return type, can be one of (\"both\", \"values\", "
+"\"indices\")."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:7
+msgid "Number of top elements to select. Return all elements if k < 1."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:11
+msgid ""
+"The return type [both, values, indices]. \"both\": return both top k data"
+" and indices. \"values\": return top k data only. \"indices\": return top"
+" k indices only."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:16
+msgid ""
+"Whether to return largest or smallest elements. The k smallest elements "
+"are returned if largest is False."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:19
+msgid "The data type of the indices output."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.topk:24
+msgid "**out** -- The computed result."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.triu:1
+msgid "Return the upper triangular part of a matrix or a batch of matrices."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.triu:3
+msgid ""
+"The tensor that triu will be applied to. It is required to have at least "
+"two dimensions."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.triu:6
+msgid ""
+"The index indicating the diagonal below which to zero elements. If k = 0,"
+" the diagonal is the main diagonal. If k < 0, the diagonal is below the "
+"main diagonal. If k > 0, the diagonal is above the main diagonal."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.triu:14
+msgid "**ret** -- The result tensor."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.unsqueeze:1
+msgid "Add a new axis to a tensor"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.unsqueeze:3
+msgid "Input tensor to expand."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.unsqueeze:5
+msgid "Dimension to expand."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.where:1
+msgid ""
+"Selecting elements from either the input tensors depending on the value "
+"of the condition."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.where:4
+msgid ""
+"For a given position, return the corresponding value in `x1` if "
+"`condition` is True, and return the corresponding value in `x2` "
+"otherwise."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.where:7
+msgid ""
+"When True, yield `x1`; otherwise, yield `x2`. Must be broadcasting "
+"compatible with `x1` and `x2`. Must have boolean dtype."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.where:11
+msgid ""
+"The first input tensor. Must be broadcasting compatible with `condition` "
+"and `x2`."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.where:14
+msgid ""
+"The second input tensor. Must be broadcasting compatible with `condition`"
+" and `x1`."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.wrap_nested:1
+msgid ""
+"Wrap the given relax.Expr, emit it using the current BlockBuilder, and "
+"automatically handle nested cases if the expr represents a Tuple."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.core.wrap_nested:4
+msgid "The Expr to be wrapped."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:33
+msgid "tvm.relax.frontend.onnx"
+msgstr ""
+
+#: of tvm.relax.frontend.onnx:1
+msgid "Tools for converting ONNX graphs into Relax graphs."
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:1
+msgid ""
+"Convert a ONNX model into an equivalent Relax Function. ONNX graphs are "
+"represented as Python Protobuf objects."
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:4
+msgid ""
+"The current implementation assumes that the input model is after ONNX "
+"v1.1.0."
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:6
+msgid "ONNX ModelProto after ONNX v1.1.0"
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:8
+msgid "The input shape to the graph"
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:10
+msgid "The input types to the graph"
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:12
+msgid "Override to autodetected opset. This can be helpful for some testing."
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:15
+msgid ""
+"If True, parameters will be treated as input variables. If false, "
+"parameters are treated as constant and folded directly into the graph."
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:18
+msgid ""
+"Whether to sanitize the input names to ensure they are valid Relax "
+"identifiers."
+msgstr ""
+
+#: of tvm.relax.frontend.onnx.onnx_frontend.from_onnx:21
+msgid "**mod** -- The relax module for compilation"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:39
+msgid "tvm.relax.frontend.stablehlo"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo:1
+msgid ""
+"StableHLO Frontends for constructing Relax programs, with the model "
+"importers"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:1
+msgid "Convert a StableHLO Module to a Relax program"
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:3
+msgid "The StableHLO Module to convert."
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:5
+#: tvm.relax.frontend.torch.fx_translator.from_fx:5
+msgid "A list of shapes and data types of input tensors."
+msgstr ""
+
+#: of tvm.relax.frontend.stablehlo.stablehlo_translator.from_stablehlo:8
+msgid "**output** -- The result IRModule with entry function \"main\""
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:45
+msgid "tvm.relax.frontend.torch"
+msgstr ""
+
+#: of tvm.relax.frontend.torch:1
+msgid ""
+"PyTorch Frontends for constructing Relax programs, with the model "
+"importers"
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:1
+msgid ""
+"Capture subgraphs of the PyTorch model using torch.compile into an "
+"IRModule."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:3
+msgid "The PyTorch model to be captured."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:5
+msgid "The parameters of the PyTorch model."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:7
+msgid ""
+"Whether to keep model parameters as input variables of the captured Relax"
+" functions."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.dynamo_capture_subgraphs:10
+msgid ""
+"**output** -- The output of translation, including the translated "
+"IRModule. If `keep_params_as_input` is true, the functions in the "
+"IRModule have an attribute \"params\" that contains the weights of the "
+"input model. The weights can be detached by "
+"`relax.frontend.detach_params`."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:1
+msgid "Convert a PyTorch ExportedProgram to a Relax program"
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:3
+msgid "The PyTorch ExportedProgram to convert."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:5
+#: tvm.relax.frontend.torch.fx_translator.from_fx:7
+msgid "Whether to keep model parameters as input variables."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:7
+#: tvm.relax.frontend.torch.fx_translator.from_fx:9
+msgid ""
+"A boolean flag indicating if to the return value when it is an unit "
+"tuple. When the return value is not a unit tuple, no unwrap will take "
+"place."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:10
+#: tvm.relax.frontend.torch.fx_translator.from_fx:12
+msgid ""
+"A boolean flag indicating whether to bind the return tuple as a relax "
+"var. If the flag is true and the return value is a tuple, it will not "
+"bind it to a var."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:14
+msgid ""
+"**output** -- The import result IRModule, with the function \"main\" "
+"containing the translated logic."
+msgstr ""
+
+#: of
+#: tvm.relax.frontend.torch.exported_program_translator.from_exported_program:20
+msgid ""
+"Users can use the torch.export.export() to extract a "
+"torch.export.ExportedProgram from a PyTorch model. The following codes "
+"show how to convert a PyTorch model to a Relax program."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:1
+msgid "Convert a PyTorch FX GraphModule to a Relax program"
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:3
+msgid "The PyTorch FX GraphModule to convert."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:15
+msgid ""
+"A custom op conversion map in the same format as "
+"TorchFXImporter.convert_map"
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:18
+msgid ""
+"**output** -- The import result IRModule, with the function \"main\" "
+"containing the translated logic. If `keep_params_as_input` is true, the "
+"\"main\" function have an attribute \"params\" that contains the weights "
+"of the input model. The weights can be detached by "
+"`relax.frontend.detach_params`."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:27
+msgid ""
+"Users can use the FX tracer or dynamo.export() to extract a "
+"fx.GraphModule from a PyTorch model. The following codes show how to "
+"convert a PyTorch model to a Relax program."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:73
+msgid ""
+"For a given PyTorch model, to lookup the names of the model inputs in FX,"
+" one can use"
+msgstr ""
+
+#: of tvm.relax.frontend.torch.fx_translator.from_fx:80
+msgid ""
+"to print out the tabular representation of the PyTorch module, and then "
+"check the placeholder rows in the beginning of the tabular."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.relax_dynamo:1
+msgid "A helper function to create a relax backend."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.relax_dynamo:3
+msgid "The pipeline to be applied to the relax module before sent to build."
+msgstr ""
+
+#: of tvm.relax.frontend.torch.dynamo.relax_dynamo:6
+msgid "**backend** -- The relax dynamo backend."
+msgstr ""
+

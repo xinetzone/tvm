@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/reference/api/python/tir/stmt_functor.rst:19
+msgid "tvm.tir.stmt_functor"
+msgstr ""
+
+#: of tvm.tir.stmt_functor:1
+msgid "Statement functor utilities for IR transformations"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:1
+msgid "Recursively visit and transform ir nodes in post DFS order."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:4
+#: tvm.tir.stmt_functor.post_order_visit:5
+#: tvm.tir.stmt_functor.pre_order_visit:5 tvm.tir.stmt_functor.renew_defs:6
+#: tvm.tir.stmt_functor.substitute:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:6
+msgid "stmt"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:-1 tvm.tir.stmt_functor.substitute:-1
+msgid "tvm.tir.Stmt"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:6
+msgid "The input to be transformed."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:12
+msgid "preorder: function"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:9
+msgid ""
+"The function called in before recursive mutation If preorder returns "
+"None, then the transform will proceed to recursive call. If preorder "
+"returns a not None tvm.tir.Stmt/Expr, the transformer will simply return "
+"it and won't do further recursion."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:15
+msgid "postorder"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:-1
+msgid "function"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:15
+msgid "The function called after recursive mutation."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:18
+msgid "only_enable"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:-1
+msgid "Optional[List[str]]"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:18
+msgid "List of types that we only enable."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:21 tvm.tir.stmt_functor.renew_defs:11
+#: tvm.tir.stmt_functor.substitute:12
+msgid "Returns"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:22 tvm.tir.stmt_functor.renew_defs:12
+#: tvm.tir.stmt_functor.substitute:13
+msgid "result"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:23 tvm.tir.stmt_functor.substitute:14
+msgid "The result."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:2
+msgid "Recursively visit the ir in post DFS order node, apply fvisit"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:2
+msgid "Each node is guaranteed to be visited only once."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:6
+msgid "fvisit: function"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:7
+#: tvm.tir.stmt_functor.pre_order_visit:7
+msgid "The visitor function."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.pre_order_visit:2
+msgid "Recursive pre-order visit on stmt AST, applying fvisit on each node."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.pre_order_visit:2
+msgid "If fvisit returns False, it won't visit the children of the node."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.pre_order_visit:6
+msgid "fvisit: function of the signature Object -> bool"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:1
+msgid ""
+"Re-generate the definition nodes for a TIR, including VarDef, BufferDef. "
+"This pass works as a simple DeepCopy to duplicate a function with "
+"different Vars and Buffers but the same behavior"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:8
+msgid "func: PrimFunc"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:8
+msgid "The input function"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:-1
+msgid "PrimFunc"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:13
+msgid "The new generated func."
+msgstr ""
+
+#: ../../doc/docs/_staging/reference/api/python/tir/stmt_functor.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:1
+msgid "Substitute the var specified by vmap."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:6
+msgid "node: ObjectRef"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:6
+msgid "The input."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:9
+msgid "vmap"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:-1
+msgid "Dict[Var, PrimExpr]"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:9
+msgid "The variable mapping."
+msgstr ""
+

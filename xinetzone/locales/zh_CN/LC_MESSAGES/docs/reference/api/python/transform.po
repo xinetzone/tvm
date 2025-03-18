@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 09:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../doc/docs/reference/api/python/transform.rst:19
+msgid "tvm.transform"
+msgstr ""
+
+#: ../../docstring of tvm.transform:1
+msgid "Common pass infrastructure across IR variants."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.ApplyPassToFunction:1
+msgid "Utility to apply a pass to specific functions in an IRModule"
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.ApplyPassToFunction:3
+msgid ""
+"TVM uses IRModule to IRModule transformations at all stages of lowering."
+"  These transformations may be useful when hand-writing an optimized "
+"model, or to perform optimizations on specific kernels within an "
+"IRModule.  This utility allows a pass to be applied to a specified "
+"function, without altering other functions in the module."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/transform.rst
+msgid "参数"
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.ApplyPassToFunction:9
+msgid "The IRModule to IRModule pass to be applied."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.ApplyPassToFunction:11
+msgid ""
+"A regex used to select the functions to be updated.  The pass will be "
+"applied to all functions whose name matches the regex."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.ApplyPassToFunction:14
+msgid ""
+"Specifies the behavior if an IRModule does not contain any function "
+"matching the provided regex.  If true, an error will be raised.  If false"
+" (default), the IRModule will be returned unmodified."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/transform.rst
+msgid "返回"
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.ApplyPassToFunction:20
+msgid "**new_transform** -- The modified IRModule to IRModule pass."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/transform.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.ir.transform.ModulePass:1
+msgid ""
+"A pass that works on tvm.IRModule. Users don't need to interact with this"
+" class directly. Instead, a module pass should be created through "
+"`module_pass`, because the design of the `module_pass` API is flexible "
+"enough to handle the creation of a module pass in different manners. In "
+"addition, all members of a module pass can be accessed from the base "
+"class. The same rule applies to FunctionPass as well."
+msgstr ""
+
+#: of tvm.ir.transform.Pass:1
+msgid ""
+"The base class of all passes. All methods here are just simple wrappers "
+"that are implemented in the backend. They are defined for users to "
+"conveniently interact with the base class."
+msgstr ""
+
+#: of tvm.transform.Pass.info:1
+msgid "Get the pass meta."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:1
+msgid ""
+"The basis where a Relay optimization/analysis runs on. Each pass context "
+"contains a number of auxiliary information that is used to help an "
+"optimization pass. Such information includes the error reporter to record"
+" the errors of during the optimization, etc."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:6
+msgid "opt_level"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:-1
+msgid "Optional[int]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:7 tvm.ir.transform.PassInfo:6
+msgid "The optimization level of this pass."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:9
+msgid "required_pass"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:-1
+msgid "Optional[Union[List[str], Set[str], Tuple[str]]]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:10 tvm.ir.transform.PassInfo:10
+msgid "The list of passes that are required by a certain pass."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:12
+msgid "disabled_pass"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:13
+msgid "The list of passes that are disabled."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:15
+#: tvm.ir.transform.PassContext.override_instruments:6
+msgid "instruments"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:-1
+msgid "Optional[Sequence[PassInstrument]]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:16
+#: tvm.ir.transform.PassContext.override_instruments:7
+msgid "The list of pass instrument implementations."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:18
+msgid "config"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:-1
+msgid "Optional[Dict[str, Object]]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:19
+msgid "Additional configurations for specific passes."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:21
+msgid "trace: Optional[relax.tuning.Trace]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:22
+msgid "Initial trace for trace mode."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:24
+msgid "trace_stack: Optional[List[relax.tuning_api.Trace]]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:25
+msgid "Initial trace stack for trace mode."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:27
+msgid "make_traceable: Optional[List[str]]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:28
+msgid "List of passes to make traceable."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:30
+msgid "num_evals: int"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:31
+msgid "initial number of evaluations conducted in the pipeline."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext:33
+msgid "tuning_api_database: Optional[relax.tuning_api.JSONDatabase]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.current:1
+msgid "Return the current pass context."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.get_current_trace:1
+msgid "Get the trace on the top of the stack."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.get_trace_stack:1
+msgid "Get the current trace stack."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.get_trace_stack_size:1
+msgid "Get the size of current stack."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.get_tuning_api_database:1
+msgid "Get tuning api database."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.inc_num_evals:1
+msgid "Increment the number of evaluations conducted in the pipeline."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.list_configs:1
+msgid "List all registered `PassContext` configuration names and metadata."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.list_configs:3
+msgid "**configs**"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.override_instruments:1
+msgid "Override instruments within this PassContext."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.override_instruments:3
+msgid ""
+"If there are existing instruments, their ``exit_pass_ctx`` callbacks are "
+"called. Then switching to new instruments and calling new "
+"``enter_pass_ctx`` callbacks."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.override_instruments:-1
+msgid "Sequence[PassInstrument]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.pop_trace:1
+msgid ""
+"Pop a topmost trace from the stack. :returns: **Trace** :rtype: "
+"Optional[relax.tuning.Trace]"
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.push_trace:1
+msgid "Push a trace into the stack."
+msgstr ""
+
+#: of tvm.ir.transform.PassContext.set_num_evals:1
+msgid "Set the number of evaluations conducted in the pipeline."
+msgstr ""
+
+#: of tvm.ir.transform.PassInfo:1
+msgid ""
+"The class contains the meta data required by a pass. It is the container "
+"of information needed by running an optimization or analysis. This class "
+"can be extended by adding new members when more meta data is needed."
+msgstr ""
+
+#: of tvm.ir.transform.PassInfo:8
+msgid "The pass name."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.PrintIR:1
+msgid "A special trace pass that prints the header and IR."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.PrintIR:3
+msgid "The header to be displayed along with the dump."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.PrintIR:5
+msgid "A boolean flag to indicate if meta data should be printed."
+msgstr ""
+
+#: of tvm.ir.transform.Sequential:1
+msgid ""
+"A pass that works on a sequence of pass objects. Multiple passes can be "
+"executed sequentially using this class."
+msgstr ""
+
+#: of tvm.ir.transform.Sequential:4
+msgid ""
+"Note that users can also provide a series of passes that they don't want "
+"to apply when running a sequential pass. Pass dependency will be resolved"
+" in the backend as well."
+msgstr ""
+
+#: of tvm.ir.transform.Sequential:8
+msgid "A sequence of passes candidate for optimization."
+msgstr ""
+
+#: of tvm.ir.transform.Sequential:10
+msgid ""
+"The optimization level of this sequential pass. The opt_level of a "
+"default sequential pass is set to 0. Note that some of the passes within "
+"the Sequantial may still not be executed if their opt_level is higher "
+"than the provided opt_level."
+msgstr ""
+
+#: of tvm.ir.transform.Sequential:15
+msgid "The name of the sequential pass."
+msgstr ""
+
+#: of tvm.ir.transform.Sequential:17
+msgid "The list of passes that the sequential pass is dependent on."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:1
+msgid "Decorate a module pass."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:3
+msgid ""
+"This function returns a callback when pass_func is provided. Otherwise, "
+"it serves a decorator function."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:6
+msgid ""
+"pass_func can also be a class type with a method transform_module. This "
+"function will create a decorated ModulePass using transform_module as the"
+" pass function."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:10
+msgid "The transformation function or class."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:12
+msgid "The optimization level of this module pass."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:14
+msgid ""
+"The name of the module pass. The name could be empty. In this case, the "
+"name of the optimization function will be used as the pass name."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:17
+msgid "The list of passes that the module pass is dependent on."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:19
+msgid "Boolean variable whether the module pass is traceable"
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:22
+msgid ""
+"**create_module_pass** -- A decorator will be returned if pass_func is "
+"not provided, otherwise return the decorated result. The returned "
+"decorator has two behaviors depending on the input: A new ModulePass will"
+" be returned when we decorate a pass function. A new ModulePass class "
+"will be returned when we decorate a class type."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:30
+msgid "示例"
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:31
+msgid "The following code block decorates a module pass class."
+msgstr ""
+
+#: ../../docstring of tvm.ir.transform.module_pass:54
+msgid ""
+"The following code creates a module pass by decorating a user defined "
+"transform function."
+msgstr ""
+

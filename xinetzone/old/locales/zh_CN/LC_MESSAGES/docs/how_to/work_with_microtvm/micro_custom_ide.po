@@ -1,0 +1,434 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-06 09:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20004
+msgid "9. Bring microTVM to your own development environment"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20005
+msgid "**Author**: [Mohamad Katanbaf](https://github.com/mkatanbaf)"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20008
+msgid ""
+"This tutorial describes the steps required to integrate a model compiled "
+"with microTVM into a custom development environment. We use "
+"[STM32CubeIDE](https://www.st.com/en/development-"
+"tools/stm32cubeide.html), as the target IDE in this tutorial, but we do "
+"not rely on any specific feature of this IDE and integrating microTVM in "
+"other IDEs would be similar. We also use the Visual Wake Word (VWW) model"
+" from MLPerf Tiny and the nucleo_l4r5zi board here, but the same steps "
+"can be used for any other model or target MCU. If you want to use another"
+" target MCU with the vww model, we recommend a cortex-M4 or cortex-M7 "
+"device with ~512 KB and ~256 KB of Flash and RAM respectively."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20013
+msgid "Here is a brief overview of the steps that we would take in this tutorial."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20015
+msgid ""
+"We start by importing the model, compiling it using TVM and generating "
+"the [Model Library "
+"Format](https://tvm.apache.org/docs/arch/model_library_format.html) (MLF)"
+" tar-file that includes the generated code for the model as well as all "
+"the required TVM dependencies."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20016
+msgid ""
+"We also add two sample images in binary format (one person and one not-"
+"person sample) to the .tar file for evaluating the model."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20017
+msgid ""
+"Next we use the stmCubeMX to generate the initialization code for the "
+"project in stmCube IDE."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20018
+msgid ""
+"After that, we include our MLF file and the required CMSIS libraries in "
+"the project and build it."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20019
+msgid ""
+"Finally, we flash the device and evaluate the model performance on our "
+"sample images."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:20021
+msgid "Let's Begin."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:30002
+msgid "Install microTVM Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:30004
+msgid ""
+"TVM does not include a package for Python serial communication, so we "
+"must install one before using microTVM. We will also need TFLite to load "
+"models, and Pillow to prepare the sample images."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:50002
+msgid "Import Python dependencies"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:50004
+msgid ""
+"If you want to run this script locally, check out [TVM Online "
+"Documentation](https://tvm.apache.org/docs/install/index.html) for "
+"instructions to install TVM."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:70002
+msgid "Import the TFLite model"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:70004
+msgid ""
+"To begin with, download and import a Visual Wake Word TFLite model. This "
+"model takes in a 96x96x3 RGB image and determines whether a person is "
+"present in the image or not. This model is originally from [MLPerf Tiny "
+"repository](https://github.com/mlcommons/tiny). To test this model, we "
+"use two samples from [COCO 2014 Train images](https://cocodataset.org/)."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:90002
+msgid "Generate the Model Library Format file"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:90004
+msgid ""
+"First we define the target, runtime and executor. Then we compile the "
+"model for the target device and finally we export the generated code and "
+"all the required dependencies in a single file."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:110002
+msgid "Add sample images to the MLF files"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:110003
+msgid ""
+"Finally, we downlaod two sample images (one person and one not-person), "
+"convert them to binary format and store them in two header files."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130002
+msgid ""
+"At this point you have all you need to take the compiled model to your "
+"IDE and evaluate it. Inside the MLF file (model.tar), you should find the"
+" following file hierearchy:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130014
+msgid "The codegen folder includes the C code TVM generated for your model."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130015
+msgid ""
+"The runtime folder includes all the TVM dependencies that the target "
+"needs to compile the generated C code."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130016
+msgid ""
+"The samples folder includes the two generated sample files for evaluating"
+" the model."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130017
+msgid "The src folder includes the relay module describing the model."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130018
+msgid ""
+"The templates folder includes two template files that you might need to "
+"edit based on your platform."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:130019
+msgid ""
+"The metadata.json file includes information about the model, its layers "
+"and memory requirement."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140002
+msgid "Generate the project in your IDE"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140004
+msgid ""
+"The next step is to create a project for our target device. We use "
+"STM32CubeIDE, you can download it [here](https://www.st.com/en"
+"/development-tools/stm32cubeide.html). We are using version 1.11.0 in "
+"this tutorial. Once you install STM32CubeIDE follow these steps to create"
+" a project:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140007
+msgid ""
+"#. select File -> New -> STM32Project. The target selection Window "
+"appears."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140009
+msgid ""
+"#. Navigate to the \"Board Selector\" tab, type in the board name "
+"\"nucleo-l4r5zi\" in the \"Commercial Part Number\" text box. Select the "
+"board from the list of boards that appear on the right side of the screen"
+" and click \"Next\"."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140011
+msgid ""
+"#. Type in your project name (for example microtvm_vww_demo). We are "
+"using the default options. (Target Language: C, Binary Type: Executable, "
+"Project Type: STM32Cube). Click \"Finish\"."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140013
+msgid ""
+"#. A text box will appear asking if you want to \"Initialize all the "
+"peripherals with their default mode?\". click \"Yes\". This will generate"
+" the project and open the device configuration tool where you can use the"
+" GUI to setup the peripherals. By default the USB, USART3 and LPUART1 are"
+" enabled, as well as a few GPIOs."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140015
+msgid ""
+"#. We will use LPUART1 to send data to the host pc. From the connectivity"
+" section, select the LPUART1 and set the \"Baud Rate\" to 115200 and the "
+"\"Word Length\" to 8. Save the changes and click \"Yes\" to regenerate "
+"the initialization code. This should regenerate the code and open your "
+"main.c file. You can also find main.c from the Project Explorer panel on "
+"the left, under microtvm_vww_demo -> Core -> Src."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140017
+msgid ""
+"#. For sanity check, copy the code below and paste it in the \"Infinite "
+"loop (aka. While (1) ) section of the main function."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140019
+msgid ""
+"Note: Make sure to write your code inside the sections marked by USER "
+"CODE BEGIN <...> and USER CODE END <...>. The code outside these sections"
+" get erased if you regenerate the initialization code."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140026
+msgid ""
+"#. From the menu bar, select Project -> Build (or right click on project "
+"name and select Build). This should build the project and generate the "
+".elf file. Select Run -> Run to download the binary on your MCU. If the "
+"\"Edit Configuration\" window opens, just click \"OK\"."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:140028
+msgid ""
+"#. Open the terminal console on your host machine. On Mac you can simply "
+"use the \"screen <usb_device> 115200\" command, e.g. \"screen "
+"tty.usbmodemXXXX 115200\". An LED should blink on the board and the "
+"string \"Hello World.\" should print out on your terminal console every "
+"second. Press \"Control-a k\" to exit screen."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150002
+msgid "Import the model to the generated project"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150004
+msgid ""
+"To integrate the compiled model into the generated project, follow these "
+"steps:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150006
+msgid "#. Extract the tar file and include it in the project"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150008
+msgid ""
+"Open the project Properties. (by right clicking on the project name and "
+"selecting \"Properties\" or by selecting Project -> Properties from the "
+"menu bar)."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150009
+msgid "Select C/C++ General -> Paths and Symbols. Select the Source Location tab."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150010
+msgid ""
+"If you extracted the model inside the project folder, click \"Add "
+"Folder\" and select the \"model\" folder. (You might need to right click "
+"on the project name and select \"Refresh\" before it appears.)"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150011
+msgid ""
+"If you extracted the model file somewhere else, click on the \"Link "
+"Folder\" button, check the box for \"Link to folder in the file system\" "
+"in the window that appears, click \"Browse\" and select the model folder."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150013
+msgid ""
+"#. If you used CMSIS-NN in compiling the model, you need to include the "
+"CMSIS-NN source files in your project too."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150015
+msgid ""
+"Download or clone the files from the [CMSIS-NN "
+"repository](https://github.com/ARM-software/CMSIS-NN), and follow the "
+"above steps to include the CMSIS-NN folder in the project."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150017
+msgid ""
+"#. Open the project properties. In C/C++ Build -> Settings: add the "
+"following folders to the list of Include Paths for MCU GCC Compiler (and "
+"MCU G++ Compiler if you have a C++ project) by clicking on the \"+\" "
+"button, selecting \"Workspace\" and navigating to each of the following "
+"folders:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150019
+msgid "model/runtime/include"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150020
+msgid "model/codegen/host/include"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150021
+msgid "model/samples"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150022
+msgid "CMSIS-NN/Include"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150024
+msgid ""
+"#. Copy crt_config.h.template from model/templates to the Core/Inc "
+"folder, and rename it to crt_config.h."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150026
+msgid ""
+"#. Copy platform.c.template from model/templates to the Core/Src folder, "
+"and rename it to platform.c."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150027
+msgid ""
+"This file includes functions for managing the memory that you might need "
+"to edit based on your platform."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150028
+msgid ""
+"define \"TVM_WORKSPACE_SIZE_BYTES\" in platform.c. if you are using USMP,"
+" a small value (for example 1024 Bytes) is enough."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150029
+msgid ""
+"if you are not using usmp, checkout \"workspace_size_bytes\" field in "
+"metadata.json for an estimate of the required memory."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150031
+msgid ""
+"#. Exclude the following folders from build (right click on the folder "
+"name, select Resource Configuration → Exclude from build). Check Debug "
+"and Release configurations."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150033
+msgid "CMSIS_NN/Tests"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150035
+msgid ""
+"#. Download the CMSIS drivers from [CMSIS Version 5 "
+"repository](https://github.com/ARM-software/CMSIS_5)."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150037
+msgid ""
+"In your Project directory, delete the Drivers/CMSIS/Include folder (which"
+" is an older version of the CMSIS drivers) and copy the "
+"CMSIS/Core/Include from the one you downloaded in its place."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150039
+msgid "#. Edit the main.c file:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150041
+msgid "Include following header files:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150051
+msgid ""
+"Copy the following code into the main function right before the infinite "
+"loop. It sets the input and output to the model."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150069
+msgid ""
+"Copy the following code inside the infinite loop to run inference on both"
+" images and print the result on the console:"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150090
+msgid ""
+"Define the TVMLogf function in main, to receive TVM runtime errors on "
+"serial console."
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:150103
+msgid ""
+"#. In project properties, C/C++ Build -> Settings, MCU GCC Compiler -> "
+"Optimization, set the Optimization level to \"Optimize more (-O2)\""
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:160002
+msgid "Evaluate the model"
+msgstr ""
+
+#: ../../xin/docs/how_to/work_with_microtvm/micro_custom_ide.ipynb:160004
+msgid ""
+"Now, select Run -> Run from the menu bar to flash the MCU and run the "
+"project. You should see the LED blinking and the inference result "
+"printing on the console."
+msgstr ""
+

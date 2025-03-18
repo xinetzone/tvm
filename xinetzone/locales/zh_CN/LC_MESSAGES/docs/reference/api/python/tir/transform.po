@@ -1,0 +1,892 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 09:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/transform.rst:20
+msgid "tvm.tir.transform"
+msgstr ""
+
+#: of tvm.tir.transform:1
+msgid "Namespace of all TIR transformations"
+msgstr ""
+
+#: of tvm.tir.transform.transform.AnnotateDeviceRegions:1
+msgid "Annotate locations that should be run on the device"
+msgstr ""
+
+#: of tvm.tir.transform.transform.AnnotateDeviceRegions:3
+msgid ""
+"Insert `AttrStmt` nodes specifying a target on which regions within the "
+"PrimFunc should be executed.  Only modifies functions that have a "
+"`tvm::attr::kTarget` attribute, and where that target defines a host."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/transform.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.tir.transform.transform.AnnotateDeviceRegions:8
+#: tvm.tir.transform.transform.AnnotateEntryFunc:3
+#: tvm.tir.transform.transform.Apply:8
+#: tvm.tir.transform.transform.ApplyLayoutTransforms:4
+#: tvm.tir.transform.transform.BF16ComputeLegalize:3
+#: tvm.tir.transform.transform.BF16StorageLegalize:3
+#: tvm.tir.transform.transform.BindTarget:5
+#: tvm.tir.transform.transform.CoProcSync:3
+#: tvm.tir.transform.transform.CombineContextCall:3
+#: tvm.tir.transform.transform.CommonSubexprElimTIR:3
+#: tvm.tir.transform.transform.CompactBufferAllocation:39
+#: tvm.tir.transform.transform.ConvertBlocksToOpaque:5
+#: tvm.tir.transform.transform.ConvertForLoopsToSerial:3
+#: tvm.tir.transform.transform.ConvertSSA:9
+#: tvm.tir.transform.transform.DecorateDeviceScope:3
+#: tvm.tir.transform.transform.ExtractPrimFuncConstants:3
+#: tvm.tir.transform.transform.FP8ComputeLegalize:6
+#: tvm.tir.transform.transform.FP8StorageLegalize:3
+#: tvm.tir.transform.transform.Filter:4
+#: tvm.tir.transform.transform.FlattenBuffer:4
+#: tvm.tir.transform.transform.ForceNarrowIndexToInt32:3
+#: tvm.tir.transform.transform.HoistExpression:10
+#: tvm.tir.transform.transform.HoistIfThenElse:16
+#: tvm.tir.transform.transform.InferFragment:3
+#: tvm.tir.transform.transform.InjectCopyIntrin:8
+#: tvm.tir.transform.transform.InjectDoubleBuffer:3
+#: tvm.tir.transform.transform.InjectPTXAsyncCopy:3
+#: tvm.tir.transform.transform.InjectPermutedLayout:3
+#: tvm.tir.transform.transform.InjectPrefetch:3
+#: tvm.tir.transform.transform.InjectRollingBuffer:3
+#: tvm.tir.transform.transform.InjectSoftwarePipeline:3
+#: tvm.tir.transform.transform.InjectVirtualThread:3
+#: tvm.tir.transform.transform.InlinePrivateFunctions:3
+#: tvm.tir.transform.transform.InstallDebugSpans:4
+#: tvm.tir.transform.transform.InstrumentBoundCheckers:3
+#: tvm.tir.transform.transform.InstrumentProfileIntrinsics:3
+#: tvm.tir.transform.transform.LegalizePackedCalls:3
+#: tvm.tir.transform.transform.LiftAttrScope:6
+#: tvm.tir.transform.transform.LiftThreadBinding:3
+#: tvm.tir.transform.transform.LoopPartition:3
+#: tvm.tir.transform.transform.LowerAutoCopy:3
+#: tvm.tir.transform.transform.LowerCrossThreadReduction:4
+#: tvm.tir.transform.transform.LowerCustomDatatypes:5
+#: tvm.tir.transform.transform.LowerDeviceKernelLaunch:14
+#: tvm.tir.transform.transform.LowerDeviceStorageAccessInfo:3
+#: tvm.tir.transform.transform.LowerInitBlock:3
+#: tvm.tir.transform.transform.LowerIntrin:3
+#: tvm.tir.transform.transform.LowerMatchBuffer:3
+#: tvm.tir.transform.transform.LowerOpaqueBlock:3
+#: tvm.tir.transform.transform.LowerTVMBuiltin:3
+#: tvm.tir.transform.transform.LowerThreadAllreduce:3
+#: tvm.tir.transform.transform.LowerWarpMemory:3
+#: tvm.tir.transform.transform.MakePackedAPI:23
+#: tvm.tir.transform.transform.MakeUnpackedAPI:13
+#: tvm.tir.transform.transform.ManifestSharedMemoryLocalStage:3
+#: tvm.tir.transform.transform.MergeSharedMemoryAllocations:4
+#: tvm.tir.transform.transform.NarrowDataType:6
+#: tvm.tir.transform.transform.PlanAndUpdateBufferAllocationLocation:5
+#: tvm.tir.transform.transform.PointerValueTypeRewrite:5
+#: tvm.tir.transform.transform.ReduceBranchingThroughOvercompute:3
+#: tvm.tir.transform.transform.RemoveAssume:3
+#: tvm.tir.transform.transform.RemoveNoOp:3
+#: tvm.tir.transform.transform.RemoveStoreUndef:3
+#: tvm.tir.transform.transform.RemoveWeightLayoutRewriteBlock:12
+#: tvm.tir.transform.transform.RenormalizeSplitPattern:3
+#: tvm.tir.transform.transform.RewriteUnsafeSelect:3
+#: tvm.tir.transform.transform.Simplify:3
+#: tvm.tir.transform.transform.SkipAssert:3
+#: tvm.tir.transform.transform.SplitHostDevice:3
+#: tvm.tir.transform.transform.StorageFlatten:8
+#: tvm.tir.transform.transform.StorageRewrite:7
+#: tvm.tir.transform.transform.TextureFlatten:5
+#: tvm.tir.transform.transform.ThreadSync:6
+#: tvm.tir.transform.transform.TransformMmaBufferLayout:3
+#: tvm.tir.transform.transform.UnifyThreadBinding:8
+#: tvm.tir.transform.transform.UnrollLoop:5
+#: tvm.tir.transform.transform.UseAssumeToReduceBranches:5
+#: tvm.tir.transform.transform.VectorizeLoop:7
+#: tvm.tir.transform.transform.VerifyMemory:3
+#: tvm.tir.transform.transform.VerifyVTCMLimit:3
+msgid "**fpass** -- The result pass"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/transform.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.tir.transform.transform.AnnotateEntryFunc:1
+msgid "Set a PrimFunc as the entry point if it is only function in IRModule."
+msgstr ""
+
+#: of tvm.tir.transform.transform.Apply:1
+msgid "Apply ftransform to each function in the Module."
+msgstr ""
+
+#: of tvm.tir.transform.transform.Apply:3
+msgid "This function is a thin wrapper around tvm.tir.transform.prim_func_pass"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/transform.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.tir.transform.transform.Apply:5
+msgid "The transformation pass."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ApplyLayoutTransforms:1
+msgid ""
+"Reshape buffers that appear in the \"layout_transform_map\" fucntion "
+"attribute."
+msgstr ""
+
+#: of tvm.tir.transform.transform.BF16ComputeLegalize:1
+msgid "Legalize bf16 compute Ops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.BF16StorageLegalize:1
+msgid "Legalize bf16 storage types to u16."
+msgstr ""
+
+#: of tvm.tir.transform.transform.BindTarget:1
+msgid ""
+"Annotate a PrimFunc with a given target. :param target: target :type "
+"target: tvm.target.Target"
+msgstr ""
+
+#: of tvm.tir.transform.transform.CoProcSync:1
+msgid "Detect and insert sync points to co-processor."
+msgstr ""
+
+#: of tvm.tir.transform.transform.CombineContextCall:1
+msgid "Combine context calls in the host function."
+msgstr ""
+
+#: of tvm.tir.transform.transform.CommonSubexprElimTIR:1
+msgid "Replace redundant computations by new variables."
+msgstr ""
+
+#: of tvm.tir.transform.transform.CompactBufferAllocation:1
+msgid ""
+"Compact the buffer access region. by removing the buffer regions that are"
+" not accessed, i.e. narrowing the buffer shape and adjust the access "
+"region if necessary."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:25
+#: tvm.tir.transform.transform.CompactBufferAllocation:6
+msgid "示例"
+msgstr ""
+
+#: of tvm.tir.transform.transform.CompactBufferAllocation:7
+msgid ""
+"Before narrowing, ``B`` is a ``[16, 16]`` buffer, but only a skinny "
+"vector ``B[i, 0:16]`` is accessed."
+msgstr ""
+
+#: of tvm.tir.transform.transform.CompactBufferAllocation:20
+msgid ""
+"This pass narrows the buffer shape and adjust its accessed region "
+"accordingly.  In this particular case, because only a ``1 * 16`` vector "
+"of ``B`` is accessed, the pass narrows ``B`` to shape ``[1, 16]``, and "
+"changes the access to ``B[i, j]`` to ``B[0, j]``."
+msgstr ""
+
+#: of tvm.tir.transform.transform.CompactBufferAllocation:35
+msgid ""
+"Ensure the compacted shape to be always smaller than the original shape. "
+"Otherwise it allows to grow the shape to match actual accessed buffer "
+"regions."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ConvertBlocksToOpaque:1
+msgid ""
+"Substitute all the block vars with the PrimExprs they are bound to, "
+"indicated by the corresponding iter_values in BlockRealize, and then "
+"convert the blocks into opaque ones by removing all the iter_values in "
+"BlockRealize and iter_vars in Block."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ConvertForLoopsToSerial:1
+msgid "Convert Parallel For Loops to Serial For Loops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ConvertSSA:1
+msgid "Convert an IRModule to be SSA form."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ConvertSSA:3
+msgid ""
+"This pass handles cases where the same `tir.Var` appears in multiple "
+"functions within the same module.  For example, after extracting a "
+"fragment from one function into another, where the same `tir.Var` may be "
+"defined both as within the body of the original function, and as a "
+"parameter within the hoisted function."
+msgstr ""
+
+#: of tvm.tir.transform.transform.DecorateDeviceScope:1
+msgid "Decorate all the function's body as device function."
+msgstr ""
+
+#: of tvm.tir.transform.transform.DefaultGPUSchedule:1
+msgid ""
+"The pass sets default thread bindings for PrimFuncs, including symbolic "
+"shape functions, allowing their build and execution on GPU devices. It "
+"examines all the blocks within the PrimFunc and conducts loop fusion, "
+"splitting, and reordering operation based on the loop extent and target "
+"information, such as the maximum thread block number and maximum thread "
+"per block."
+msgstr ""
+
+#: of tvm.tir.transform.transform.DefaultGPUSchedule:7
+msgid ""
+"The primary objective of this pass is not to optimize performance, but "
+"rather to generate a valid GPU kernel for unscheduled or symbolic shape "
+"PrimFuncs. The pass is currently only working for CUDA targets."
+msgstr ""
+
+#: of tvm.tir.transform.transform.DefaultGPUSchedule:11
+msgid "**ret**"
+msgstr ""
+
+#: of tvm.tir.transform.transform.ExtractPrimFuncConstants:1
+msgid ""
+"Collects and unificates tir non-scalar constants to module's attr "
+"'Constants' array."
+msgstr ""
+
+#: of tvm.tir.transform.transform.FP8ComputeLegalize:1
+msgid "Legalize fp8 compute Ops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.FP8ComputeLegalize:3
+msgid "The data type we promote fp8 to, options: float16/float32."
+msgstr ""
+
+#: of tvm.tir.transform.transform.FP8StorageLegalize:1
+msgid "Legalize fp8 storage types to u8."
+msgstr ""
+
+#: of tvm.tir.transform.transform.Filter:1
+msgid ""
+"Filter out PrimFuncs that does not satisfy the given condition. `fcond` "
+"should be a function that takes a primfunc and returns boolean."
+msgstr ""
+
+#: of tvm.tir.transform.transform.FlattenBuffer:1
+msgid ""
+"Flatten the multi-dimensional BufferLoad and BufferStore to single "
+"dimensional BufferLoad/BufferStore for the TIR not contains opaque block."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ForceNarrowIndexToInt32:1
+msgid "Force narrow down indexing expressions and integer buffers to int32 dtype."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ForceNarrowIndexToInt32:6
+msgid "This pass should not be used in default cases."
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistExpression:1
+msgid "Generalized verison of HoistIfThenElse."
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistExpression:3
+msgid ""
+"Hoist loop-invariant expressions to outside the eligible loops. Searches "
+"for expressions in:"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistExpression:6
+msgid "LetStmt bindings"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistExpression:7
+msgid "IfThenElse conditions"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistExpression:8
+msgid "Boolean operators"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistIfThenElse:1
+msgid "Hoist loop-invariant IfThenElse nodes to outside the eligible loops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistIfThenElse:3
+msgid ""
+"The variant of the pass. variant can have any one of following values "
+"[\"basic\", None(Default)].  The basic variant supports basic hoisting "
+"scenarios where it expects the For & If Nodes are in place consecutively "
+"and does not involve global scope variables or more advanced scenarios.  "
+"Default variant supports all hoisting scenarios,i.e., {\"Basic\" + "
+"\"Advanced\"} supported with control with PassContext configs like below:"
+"      config={\"tir.HoistIfThenElse\": {\"support_block_scope_hosting\": "
+"True}}"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistIfThenElse:3
+msgid ""
+"The variant of the pass. variant can have any one of following values "
+"[\"basic\", None(Default)]."
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistIfThenElse:6
+msgid ""
+"The basic variant supports basic hoisting scenarios where it expects the "
+"For & If Nodes are in place consecutively and does not involve global "
+"scope variables or more advanced scenarios."
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistIfThenElse:10
+msgid ""
+"Default variant supports all hoisting scenarios,i.e., {\"Basic\" + "
+"\"Advanced\"} supported with control with PassContext configs like below:"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistIfThenElse:13
+msgid "config={\"tir.HoistIfThenElse\": {\"support_block_scope_hosting\": True}}"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistedConditionals:1
+msgid "Flags for use in HoistExpressionConfig.conditional_types"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistedConditionals:3
+msgid ""
+"Each bitflag represents a type of expression that should be hoisted to "
+"the outermost loop possible."
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedConditionals.All:1
+msgid "Enable all hoisting of conditionals"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedConditionals.BooleanExpression:1
+msgid "If set, look for hoist candidates in all boolean expressions"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedConditionals.IfElseExpr:1
+msgid "If set, look for hoist candidates in tir.if_then_else"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedConditionals.IfElseStmt:1
+msgid "If set, look for hoist candidates in IfElseStmt"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedConditionals.Never:1
+msgid "No hoisting of conditionals"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedConditionals.UsingBlockVar:1
+msgid ""
+"If set, allow hoisting of conditionals that use a block variable (e.g. "
+"threadIdx.x)"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistedLetBindings:1
+msgid "Flags for use in HoistExpressionConfig.let_binding_types"
+msgstr ""
+
+#: of tvm.tir.transform.transform.HoistedLetBindings:3
+msgid ""
+"Each bitflag represents a type of let binding expression that should be "
+"hoisted to the outermost loop possible."
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedLetBindings.All:1
+msgid "Enable all hoisting of let bindings"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedLetBindings.LetExpr:1
+msgid "Bindings occuring in Let expressions"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedLetBindings.LetStmt:1
+msgid "Bindings occuring in LetStmt"
+msgstr ""
+
+#: ../../docstring of tvm.tir.transform.HoistedLetBindings.Never:1
+msgid "No hoisting of let bindings"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.tir.transform.HoistedLetBindings.RequiredByConditional:1
+msgid "Bindings that are used by a hoisted conditional"
+msgstr ""
+
+#: of tvm.tir.transform.transform.InferFragment:1
+msgid "Infer the TensorCore fragment infomation using tensor intrinsics."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectCopyIntrin:1
+#: tvm.tir.transform.transform.InjectVirtualThread:1
+#: tvm.tir.transform.transform.LoopPartition:1
+msgid "Inject virtual thread loops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectCopyIntrin:3
+msgid "The pragma key for hint of copy."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectCopyIntrin:5
+msgid ""
+"The function with signature copyintrin(src, dst, pad_before, pad_after, "
+"pad_value)"
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectDoubleBuffer:1
+msgid "Inject double buffer statements."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectPTXAsyncCopy:1
+msgid "Rewrite global to shared memory copy on CUDA with asyncronous copy."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectPermutedLayout:1
+msgid "Inject permuted layout in mma"
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectPrefetch:1
+msgid "Inject prefetch instructions into stmt."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectRollingBuffer:1
+msgid "Inject rolling buffer statements."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InjectSoftwarePipeline:1
+msgid ""
+"Transform annotated loops into pipelined one that parallelize producers "
+"and consumers"
+msgstr ""
+
+#: of tvm.tir.transform.transform.InlinePrivateFunctions:1
+msgid "Inline calls to private functions"
+msgstr ""
+
+#: of tvm.tir.transform.transform.InstallDebugSpans:1
+msgid ""
+"Add line information from the TIR printer as spans on each statement and "
+"expression."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InstrumentBoundCheckers:1
+msgid "Instruments bound checkers."
+msgstr ""
+
+#: of tvm.tir.transform.transform.InstrumentProfileIntrinsics:1
+msgid "Insert intrinsic calls to instrument function and loop level profiling."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LegalizePackedCalls:1
+msgid "Legalize packed calls to have its arguments wrapped in TVMValues"
+msgstr ""
+
+#: of tvm.tir.transform.transform.LiftAttrScope:1
+msgid "Lift common attrs with attr_key to outer scope."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LiftAttrScope:3
+msgid "The attribute key to be checked."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LiftThreadBinding:1
+msgid "Lift the same thread bindings to their LCA loops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerAutoCopy:1
+msgid "Automatically do memory optimizations for auto copy blocks"
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerCrossThreadReduction:1
+msgid ""
+"Lower cross-thread reduction from thread bindings to intrinsic function "
+"calls."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerCustomDatatypes:1
+msgid "Lower custom datatypes."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerCustomDatatypes:3
+msgid ""
+"See tvm::datatypes::Registry for more information on adding custom "
+"datatypes."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerDeviceKernelLaunch:1
+msgid "Lower cross-device function calls."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerDeviceKernelLaunch:3
+msgid ""
+"Prior to this pass, host to device calls are represented as subroutine "
+"calls, with environment parameters (e.g. env_thread) specified "
+"internally.  The device function is an internal function, without a "
+"`tvm::attr::kGlobalSymbol` attribute."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerDeviceKernelLaunch:8
+msgid ""
+"After this pass, host to device calls are represented as tvm_call_packed "
+"built-in.  The device function is an externally-exposed function, with a "
+"non-empty `tvm::attr::kGlobalSymbol` attribute."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerDeviceStorageAccessInfo:1
+msgid "Lower attached storage access information on device."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerDeviceStorageAccessInfo:6
+msgid "Run this pass after all storage access analysis finish."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerInitBlock:1
+msgid "Lower block init stmt into IfThenElse statements."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerIntrin:1
+msgid "Lower target specific intrinsic calls."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerMatchBuffer:1
+msgid "Remove match buffers inside the block. Also, it will validate the binding."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerOpaqueBlock:1
+msgid "Remove the block to ensure that the TIR can not be scheduled again."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerTVMBuiltin:1
+msgid "Lower tvm builtin intrinsics."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerThreadAllreduce:1
+msgid "Lower cross thread alleduce."
+msgstr ""
+
+#: of tvm.tir.transform.transform.LowerWarpMemory:1
+msgid "Lower warp memory access to low-level device related function calls."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakePackedAPI:1
+msgid "Transform the PrimFuncs in the module to a packed func API."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakePackedAPI:3
+msgid ""
+"Prior to this pass, the PrimFunc may have Buffer arguments defined in the"
+" `PrimFuncNode::buffer_map`.  This pass consumes the `buffer_map`, using "
+"it to generate `TVMArgs` and `TVMRetValue*` arguments that implement the "
+"`PackedFunc` API."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakePackedAPI:8
+msgid ""
+"For static shapes, the `BufferNode::shape`, `BufferNode::strides`, and "
+"`BufferNode::elem_offset` member variables are used to generate runtime "
+"checks on the corresponding member variables in the user-provided "
+"`DLTensor*` or `tvm.nd.array` argument.  (e.g. A PrimFunc that accepts a "
+"buffer of shape `[16,32]` validates that the `DLTensor::shape` array is "
+"`[16,32]`.)"
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakePackedAPI:15
+msgid ""
+"For dynamic Buffers, in which one or more of these `BufferNode` member "
+"variables use `tir.Var` that are not defined by other PrimFunc "
+"parameters, these are instead used to define the variables based on the "
+"corresponding `DLTensor` members.  (e.g. A PrimFunc that accepts a buffer"
+" of shape `[tir.Var(\"n\"), tir.Var(\"m\")]`, when passed a `DLTensor` of"
+" shape `[16,32]`, will define `n = 16` and `n=32`, based on the "
+"argument's shape."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakeUnpackedAPI:1
+msgid ""
+"Transform the PrimFuncs in the module to a C API compatible with internal"
+" calls."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakeUnpackedAPI:3
+msgid ""
+"Prior to this pass, the PrimFunc may have Buffer arguments defined in the"
+" `PrimFuncNode::buffer_map`.  This pass consumes the `buffer_map`, using "
+"it to generate `T*` arguments (e.g. `float32*`) that can be directly "
+"called by a C API."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MakeUnpackedAPI:8
+msgid ""
+"For static shapes, no runtime validation is performed to confirm that the"
+" argument buffer's shape matches the expected shape.  For dynamic shapes,"
+" `MakeUnpackedAPI` requires that the dynamic parameters be passed as "
+"separate `tir.Var` parameters."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ManifestSharedMemoryLocalStage:1
+msgid "Add the explicit local stage for the shared memory access on GPU."
+msgstr ""
+
+#: of tvm.tir.transform.transform.MergeSharedMemoryAllocations:1
+msgid ""
+"This pass merges multiple TIR-level shared memory allocations into one "
+"allocation."
+msgstr ""
+
+#: of tvm.tir.transform.transform.NarrowDataType:1
+msgid "Narrow down PrimExpr datatype in stmt to target_bits."
+msgstr ""
+
+#: of tvm.tir.transform.transform.NarrowDataType:3
+msgid "The target bit configuration."
+msgstr ""
+
+#: of tvm.tir.transform.transform.NarrowDataType:9
+msgid "Run this pass after StorageFlatten."
+msgstr ""
+
+#: of tvm.tir.transform.transform.PlanAndUpdateBufferAllocationLocation:1
+msgid ""
+"Locate the buffer allocation to the exact position (usually is the lca of"
+" buffer access). This pass will inject opaque block with alloc_buffers at"
+" the allocation site."
+msgstr ""
+
+#: of tvm.tir.transform.transform.PointerValueTypeRewrite:1
+msgid ""
+"Rewrite the pointer content type of arguments, as well as Alloc internal "
+"to the function to use the most frequently accessed type for load/store "
+"to avoid pointer casting in backend when possible."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.PrimFuncPass:1
+msgid ""
+"A pass that works on each :py:func:`tvm.tir.PrimFunc` in a module. A "
+"function pass class should be created through "
+"py:func:`tvm.tir.transform.function_pass`."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ReduceBranchingThroughOvercompute:1
+msgid "Reduce branching by introducing overcompute"
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveAssume:1
+msgid "Remove all instances of builtin::assume"
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveNoOp:1
+msgid "Remove No Op from the Stmt."
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveStoreUndef:1
+msgid "Remove stores of undefined values from the Stmt."
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveWeightLayoutRewriteBlock:1
+msgid ""
+"Remove weight layout rewrite block before benchmarking during tuning "
+"stage."
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveWeightLayoutRewriteBlock:3
+msgid ""
+"If True, exact rewrite of NDArray, according to the given index map, will"
+" be skipped. Only the shape of the NDArray is transformed correctly, and "
+"the content of the destination array will be filled with random values.  "
+"When this pass is called many times during MetaSchedule tuning, the raw "
+"data of NDArray, before and after rewrite, does not matter. Since NDArray"
+" layout rewrite, using IndexMap's MapNDArray, is currently slow, skipping"
+" the exact rewrite is sometimes necessary."
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveWeightLayoutRewriteBlock:3
+msgid ""
+"If True, exact rewrite of NDArray, according to the given index map, will"
+" be skipped. Only the shape of the NDArray is transformed correctly, and "
+"the content of the destination array will be filled with random values."
+msgstr ""
+
+#: of tvm.tir.transform.transform.RemoveWeightLayoutRewriteBlock:7
+msgid ""
+"When this pass is called many times during MetaSchedule tuning, the raw "
+"data of NDArray, before and after rewrite, does not matter. Since NDArray"
+" layout rewrite, using IndexMap's MapNDArray, is currently slow, skipping"
+" the exact rewrite is sometimes necessary."
+msgstr ""
+
+#: of tvm.tir.transform.transform.RenormalizeSplitPattern:1
+msgid ""
+"Renormalize the split pattern from floordiv(floormod()) to "
+"floormod(floordiv())"
+msgstr ""
+
+#: of tvm.tir.transform.transform.RewriteUnsafeSelect:1
+msgid "Detect and rewrite unsafe select that contains memory access."
+msgstr ""
+
+#: of tvm.tir.transform.transform.Simplify:1
+msgid "Run arithmetic simplifications on the statements and expressions."
+msgstr ""
+
+#: of tvm.tir.transform.transform.SkipAssert:1
+msgid "Skip assert stmt."
+msgstr ""
+
+#: of tvm.tir.transform.transform.SplitHostDevice:1
+msgid "Split the function into a host function and device functions."
+msgstr ""
+
+#: of tvm.tir.transform.transform.StorageFlatten:1
+msgid "Flatten the multi-dimensional read/write to 1D."
+msgstr ""
+
+#: of tvm.tir.transform.transform.StorageFlatten:4
+msgid "The size of CPU cache line."
+msgstr ""
+
+#: of tvm.tir.transform.transform.StorageFlatten:6
+msgid "Whether to create bound attributes."
+msgstr ""
+
+#: of tvm.tir.transform.transform.StorageRewrite:1
+msgid "Rewrite storage allocation pattern."
+msgstr ""
+
+#: of tvm.tir.transform.transform.StorageRewrite:3
+msgid ""
+"Moves the allocation to outer most possible scope. Trying to share space "
+"between allocations to make a static allocation plan when possible."
+msgstr ""
+
+#: of tvm.tir.transform.transform.TextureFlatten:1
+msgid "Flatten the multi-dimensional read/write to 2D."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ThreadSync:1
+msgid "Insert sync between parallel read/write of shared buffers."
+msgstr ""
+
+#: of tvm.tir.transform.transform.ThreadSync:3
+msgid "The target storage scope."
+msgstr ""
+
+#: of tvm.tir.transform.transform.TransformMmaBufferLayout:1
+msgid "Transform mma buffer layout"
+msgstr ""
+
+#: of tvm.tir.transform.transform.UnifyThreadBinding:1
+msgid ""
+"Unify all the thread bindings for \"blockIdx.x/y/z\", "
+"\"threadIdx.x/y/z\", and \"vthread.x/y/z\". Before the unification, two "
+"vars that are bound to a thread axis (e.g., \"threadIdx.x\") use "
+"different IterVars and variables in their AttrStmts. After the "
+"unification, we use a consolidated IterVar and a variable for them."
+msgstr ""
+
+#: of tvm.tir.transform.transform.UnifyThreadBinding:13
+msgid ""
+"`vthread` is a legacy behavior that will be deprecated, though thread "
+"bindings of `vthread` are still also unified in this pass. Please use "
+"`vthread.x`, `vthread.y` and `vthread.z` instead."
+msgstr ""
+
+#: of tvm.tir.transform.transform.UnrollLoop:1
+msgid "Unroll the constant loop marked by unroll."
+msgstr ""
+
+#: of tvm.tir.transform.transform.UnrollLoop:3
+msgid ""
+"This pass also automatically attach pragma unroll tag to loops which "
+"meets the standard."
+msgstr ""
+
+#: of tvm.tir.transform.transform.UseAssumeToReduceBranches:1
+msgid ""
+"This pass attempts to eliminates layout specific pad branch by "
+"overcomputing the values for padded region. Eliminating the branch will "
+"help to vectorize code, and improve element wise ops performance."
+msgstr ""
+
+#: of tvm.tir.transform.transform.VectorizeLoop:1
+msgid "Lower vectorization loops."
+msgstr ""
+
+#: of tvm.tir.transform.transform.VectorizeLoop:3
+msgid ""
+"Whether vectorization is enabled. Will lower to scalar loop when it is "
+"turned off."
+msgstr ""
+
+#: of tvm.tir.transform.transform.VerifyMemory:1
+msgid "Verify if func contains illegal host side direct memory access."
+msgstr ""
+
+#: of tvm.tir.transform.transform.VerifyVTCMLimit:1
+msgid "Verify if the size of the allocated vtcm memory satisfies the limit."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:1
+msgid "Decorate a function pass."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:3
+msgid ""
+"This function returns a callback when pass_func is provided. Otherwise, "
+"it returns the created function pass using the given optimization "
+"function."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:7
+msgid "The transformation function or class."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:9
+msgid "The optimization level of this module pass."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:11
+msgid ""
+"The name of the function pass. The name could be empty. In this case, the"
+" name of the optimization function will be used as the pass name."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:14
+msgid "The list of passes that the function pass is dependent on."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:17
+msgid ""
+"**create_function_pass** -- A decorator will be returned if pass_func is "
+"not provided, otherwise return the decorated result. The returned "
+"decorator has two behaviors depending on the input: A new FunctionPass "
+"will be returned when we decorate a pass function. A new FunctionPass "
+"class will be returned when we decorate a class type."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:26
+msgid "The following code block decorates a function pass class."
+msgstr ""
+
+#: of tvm.tir.transform.function_pass.prim_func_pass:40
+msgid ""
+"The following code creates a function pass by decorating a user defined "
+"transform function."
+msgstr ""
+

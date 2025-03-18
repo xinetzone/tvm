@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/api/python/dlight.rst:19
+msgid "tvm.dlight"
+msgstr ""
+
+#: of tvm.dlight:1
+msgid ""
+"DLight package provides efficient schedules out-of-box for deep learning "
+"workloads."
+msgstr ""
+
+#: of tvm.dlight.base.transform._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid ""
+"A IRModule pass that applies a list of ScheduleRules to all PrimFuncs in "
+"the module."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/dlight.rst of
+#: tvm.dlight.base.analysis.BlockInfo.__init__
+#: tvm.dlight.base.analysis.BlockInfo.is_elementwise
+#: tvm.dlight.base.analysis.IterInfo.__init__
+#: tvm.dlight.base.analysis.normalize_prim_func
+msgid "参数"
+msgstr ""
+
+#: of tvm.dlight.base.transform.ApplyDefaultSchedule.__init__:1
+msgid "Construct a new ApplyDefaultSchedule pass."
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:4
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:4
+#: tvm.dlight.base.schedule_rule.ScheduleRule.apply:4
+#: tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:4
+#: tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:4
+#: tvm.dlight.base.transform.ApplyDefaultSchedule.__init__:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.dlight.base.transform.ApplyDefaultSchedule.__init__:5
+msgid "*rules"
+msgstr ""
+
+#: of tvm.dlight.base.transform.ApplyDefaultSchedule.__init__:-1
+msgid "ScheduleRule"
+msgstr ""
+
+#: of tvm.dlight.base.transform.ApplyDefaultSchedule.__init__:6
+msgid "The ScheduleRules to apply to all PrimFuncs in the module."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo:1
+msgid "Information about a TIR block."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.__init__:1
+msgid "Construct a BlockInfo object."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.dom:1
+msgid "The iteration domain of the block."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/dlight.rst of
+#: tvm.dlight.base.analysis.BlockInfo.dom
+#: tvm.dlight.base.analysis.BlockInfo.dom_kind
+#: tvm.dlight.base.analysis.BlockInfo.is_elementwise
+#: tvm.dlight.base.analysis.BlockInfo.is_gemm
+#: tvm.dlight.base.analysis.BlockInfo.is_gemv
+#: tvm.dlight.base.analysis.BlockInfo.is_injective
+#: tvm.dlight.base.analysis.BlockInfo.is_reduction
+#: tvm.dlight.base.analysis.normalize_prim_func
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.dom_kind:1
+msgid "The iteration domain kind of the block, for example, SSSS, SSSR."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.is_elementwise:1
+msgid ""
+"Whether the block is elementwise, i.e. trivial mapping between read/write"
+" region"
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.is_gemm:1
+msgid "Whether the block is a GEMM workload."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.is_gemv:1
+msgid "Whether the block is a GEMV workload."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.is_injective:1
+msgid ""
+"Whether the block is injective, i.e. all its iteration domains are "
+"injective."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.BlockInfo.is_reduction:1
+msgid "Whether the block is a reduction workload."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.IterInfo:1
+msgid "Information about a loop/iter var."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.IterInfo.__init__:1
+msgid "Construct an IterInfo object."
+msgstr ""
+
+#: of tvm.dlight.IterInfo.dom:1
+msgid "The iteration domain of the loop."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule:1
+msgid ""
+"A thin wrapper on an arbitrary function that can be used to schedule a "
+"TIR PrimFunc."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule:3
+msgid ""
+"Given a PrimFunc, a target, and a tunable flag, the apply method of a "
+"ScheduleRule returns either a Schedule, a list of Schedules, or None, "
+"where None means that the rule is not applicable to the given PrimFunc. "
+"If the tunable flag is True, the ScheduleRule is allowed to return either"
+" a Schedule or a list of Schedules, and the Schedules are allowed to "
+"contain tunable instructions. If the tunable flag is False, the "
+"ScheduleRule is only allowed to return a Schedule, and the Schedule is "
+"not allowed to contain tunable instructions."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:1
+msgid "Apply the ScheduleRule to the given PrimFunc."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:5
+msgid "func"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:-1
+msgid "tir.PrimFunc"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:6
+msgid "The PrimFunc to apply the ScheduleRule to."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:7
+#: tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:5
+msgid "target"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:-1
+#: tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:-1
+msgid "Target"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:8
+#: tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:6
+msgid "The compilation target the schedule is supposed to be built for."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:9
+msgid "tunable"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:-1
+#: tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:10
+msgid "Whether the schedule is allowed to contain tunable instructions."
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:11
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:11
+#: tvm.dlight.base.schedule_rule.ScheduleRule.apply:13
+#: tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:8
+#: tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:9
+msgid "Returns"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:14
+msgid "results"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:-1
+msgid "Union[None, tir.Schedule, List[tir.Schedule]]"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.apply:15
+msgid ""
+"Either a Schedule, a list of Schedules, or None, where None means that "
+"the rule is not applicable to the given PrimFunc."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:1
+msgid "Create a ScheduleRule from a callable."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:5
+msgid "name : str"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:9
+msgid "decorator"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:-1
+msgid "Callable"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:10
+msgid "A decorator that takes a callable and returns a ScheduleRule."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.from_callable:13
+msgid "Examples"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:1
+msgid "Check whether the rule is available for the given target."
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:10
+msgid "available"
+msgstr ""
+
+#: of tvm.dlight.base.schedule_rule.ScheduleRule.is_target_available:11
+msgid "Whether the rule is available for the given target."
+msgstr ""
+
+#: of tvm.dlight.base.analysis.normalize_prim_func:1
+msgid "Normalize the primfunc to normal form"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:1
+msgid "Try to inline as many blocks as possible, and return the remaining blocks."
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:5
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:5
+msgid "sch"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:-1
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:-1
+msgid "tir.Schedule"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:6
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:6
+msgid "The TIR schedule used to inline blocks."
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:7
+msgid "blocks"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:-1
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:-1
+msgid "List[BlockInfo]"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:8
+msgid "The blocks to be inlined."
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:12
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:12
+msgid "remaining"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline:13
+#: tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:13
+msgid "The remaining blocks that cannot be inlined."
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:1
+msgid "Try to inline contiguous spatial blocks in a schedule"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:7
+msgid "block_infos"
+msgstr ""
+
+#: of tvm.dlight.base.common_schedules.try_inline_contiguous_spatial:8
+msgid "The blocks to be try."
+msgstr ""
+

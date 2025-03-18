@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/bitstream.rst:3
+msgid "``bitstream``"
+msgstr ""
+
+#: of vta.bitstream:1
+msgid "VTA specific bitstream management library."
+msgstr "VTA 专用 bitstream 管理库。"
+
+#: of vta.bitstream.download_bitstream:1
+msgid "Downloads a cached bitstream corresponding to the current config"
+msgstr "下载对应于当前配置的缓存 bitstream"
+
+#: of vta.bitstream.get_bitstream_path:1
+msgid ""
+"Returns the path to the cached bitstream corresponding to the current "
+"config"
+msgstr "返回与当前配置相对应的缓存 bitstream 的路径"
+
+#: of vta.bitstream.get_bitstream_path:4
+msgid "Returns"
+msgstr ""
+
+#: of vta.bitstream.get_bitstream_path:5
+msgid "bit_path: str"
+msgstr ""
+
+#: of vta.bitstream.get_bitstream_path:6
+msgid "Corresponding to the filepath of the bitstream"
+msgstr "对应于 bitstream 的文件路径"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+

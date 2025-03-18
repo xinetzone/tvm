@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/install/index.rst:21
+msgid "Installing TVM"
+msgstr "安装 TVM"
+
+#: ../../doc/docs/install/index.rst:29
+msgid ""
+"Visit the :ref:`install TVM from source <install-from-source>` page to "
+"install TVM from the source code. Installing from source gives you the "
+"maximum flexibility to configure the build effectively from the official "
+"source releases. If you are interested in deploying to mobile or embedded"
+" devices, you do not need to install the entire TVM stack on your device."
+" Instead, you only need the runtime and can install using the "
+":ref:`deployment and integration guide <deploy-and-integration>`."
+msgstr ""
+"访问 :ref:`从源代码安装 TVM <install-from-source>` 页面，以从源代码安装 TVM。"
+"从源代码安装为您提供了最大的灵活性，以便有效地配置官方发布的源代码构建。"
+"如果您有兴趣部署到移动或嵌入式设备，您无需在设备上安装整个 TVM 堆栈。"
+"相反，您只需要运行时，并且可以使用 :ref:`部署和集成指南 <deploy-and-integration>` 进行安装。"
+
+#: ../../doc/docs/install/index.rst:35
+msgid ""
+"If you would like to quickly try out TVM or run some demo and tutorials, "
+"you can :ref:`install from Docker <docker-images>`. You can also use TVM "
+"locally through ``pip``."
+msgstr ""
+"如果您想快速尝试 TVM 或运行一些演示和教程，"
+"您可以 :ref:`通过 Docker 安装 <docker-images>`。您也可以通过 ``pip`` 在本地使用 TVM。"
+
+#: ../../doc/docs/install/index.rst:44
+msgid ""
+"For more details on installation of pre-built binaries, visit `tlcpack.ai"
+" <https://tlcpack.ai>`_."
+msgstr ""
+"有关预构建二进制文件安装的更多详细信息，请访问 `tlcpack.ai <https://tlcpack.ai>`_。"

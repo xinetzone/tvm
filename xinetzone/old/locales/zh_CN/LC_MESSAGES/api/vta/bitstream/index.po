@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/bitstream/index.rst:2
+msgid "vta.bitstream"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:8
+msgid "VTA specific bitstream management library."
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:13
+msgid "Attributes"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:19:<autosummary>:1
+msgid ":py:obj:`BITSTREAM_URL <vta.bitstream.BITSTREAM_URL>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:21
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:28:<autosummary>:1
+msgid ":py:obj:`download_bitstream <vta.bitstream.download_bitstream>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:34
+#: ../../doc/api/vta/bitstream/index.rst:28:<autosummary>:1
+msgid "Downloads a cached bitstream corresponding to the current config"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:28:<autosummary>:1
+msgid ":py:obj:`get_bitstream_path <vta.bitstream.get_bitstream_path>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:39
+#: ../../doc/api/vta/bitstream/index.rst:28:<autosummary>:1
+msgid ""
+"Returns the path to the cached bitstream corresponding to the current "
+"config"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:30
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:42
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:43
+msgid "bit_path: str"
+msgstr ""
+
+#: ../../doc/api/vta/bitstream/index.rst:44
+msgid "Corresponding to the filepath of the bitstream"
+msgstr ""
+

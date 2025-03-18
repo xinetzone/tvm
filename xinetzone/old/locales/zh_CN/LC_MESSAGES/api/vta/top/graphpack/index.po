@@ -1,0 +1,435 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/top/graphpack/index.rst:2
+msgid "vta.top.graphpack"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:8
+msgid "A Relay implementation of graph packing."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:13
+msgid "Exceptions"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:19:<autosummary>:1
+msgid ":py:obj:`BT <vta.top.graphpack.BT>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:61
+#: ../../doc/api/vta/top/graphpack/index.rst:19:<autosummary>:1
+msgid "Common base class for all non-exit exceptions."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:21
+msgid "Classes"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:29:<autosummary>:1
+msgid ":py:obj:`ExprDeviceAnnot <vta.top.graphpack.ExprDeviceAnnot>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:69
+#: ../../doc/api/vta/top/graphpack/index.rst:29:<autosummary>:1
+msgid "Visitor to perform graph annotation on an AST."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:29:<autosummary>:1
+msgid ":py:obj:`ExprLocator <vta.top.graphpack.ExprLocator>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:103
+#: ../../doc/api/vta/top/graphpack/index.rst:29:<autosummary>:1
+msgid "Visitor to locate op on an AST."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:29:<autosummary>:1
+msgid ":py:obj:`ExprPack <vta.top.graphpack.ExprPack>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:117
+#: ../../doc/api/vta/top/graphpack/index.rst:29:<autosummary>:1
+msgid "Visitor to perform graph packing on an AST."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:31
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_channel_const_match <vta.top.graphpack._channel_const_match>`\\"
+" \\(channel\\_length\\, cfactor\\_out\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:128
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Round the channel const variant if the value not divisible by cfactor_out"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_const_shape_match <vta.top.graphpack._const_shape_match>`\\ "
+"\\(data\\, dshape\\, cfactor\\_out\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:133
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pad the constant if the shape[0] not divisible by cfactor_out."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_get_tensor_shape <vta.top.graphpack._get_tensor_shape>`\\ "
+"\\(node\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:138
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Get node shape."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_get_tensor_type <vta.top.graphpack._get_tensor_type>`\\ "
+"\\(node\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:143
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Get node type."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_operator_idx_inc <vta.top.graphpack._operator_idx_inc>`\\ "
+"\\(expr\\, count\\_meta\\, operator\\_current\\_idx\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:148
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Increase operator index"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_pack_batch_channel <vta.top.graphpack._pack_batch_channel>`\\ "
+"\\(data\\, dshape\\, bfactor\\, cfactor\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:153
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pack the data channel dimension."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_pack_const <vta.top.graphpack._pack_const>`\\ \\(data\\, "
+"dshape\\, dtype\\, bfactor\\, cfactor\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:158
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pack a constant parameter."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_pack_weight <vta.top.graphpack._pack_weight>`\\ \\(data\\, "
+"dshape\\, cfactor\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:163
+#: ../../doc/api/vta/top/graphpack/index.rst:168
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pack the weight into packed format."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_pack_weight_conv2d_transpose "
+"<vta.top.graphpack._pack_weight_conv2d_transpose>`\\ \\(data\\, dshape\\,"
+" cfactor\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ":py:obj:`_to_shape <vta.top.graphpack._to_shape>`\\ \\(shape\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:173
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "convert shape into tuple."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_unpack_batch_channel "
+"<vta.top.graphpack._unpack_batch_channel>`\\ \\(data\\, old\\_shape\\[\\,"
+" unpack\\_transpose\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:178
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Unpack the data channel dimension."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_weight_shape_match <vta.top.graphpack._weight_shape_match>`\\ "
+"\\(data\\, dshape\\, channels\\, cfactor\\_out\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:183
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pad the weight if the shape[0] not divisible by cfactor_out."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`_weight_shape_match_transpose "
+"<vta.top.graphpack._weight_shape_match_transpose>`\\ \\(data\\, dshape\\,"
+" channels\\, ...\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:188
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pad the weight if the shape[1] not divisible by cfactor_out."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`get_subgraph <vta.top.graphpack.get_subgraph>`\\ \\(expr\\, "
+"start\\_name\\, stop\\_name\\, ...\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "We assume stop_name only appears once for simplicity."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`graph_pack <vta.top.graphpack.graph_pack>`\\ \\(expr\\, "
+"bfactor\\, cfactor\\, weight\\_bits\\[\\, ...\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:200
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Pack the graph into batch&channel packed format."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid ""
+":py:obj:`run_opt_pass <vta.top.graphpack.run_opt_pass>`\\ \\(expr\\, "
+"opt\\_pass\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:253
+#: ../../doc/api/vta/top/graphpack/index.rst:52:<autosummary>:1
+msgid "Exectue a relay pass."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:54
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:58
+msgid "Bases: :py:obj:`Exception`"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:66
+#: ../../doc/api/vta/top/graphpack/index.rst:100
+#: ../../doc/api/vta/top/graphpack/index.rst:114
+msgid "Bases: :py:obj:`tvm.relay.ExprMutator`"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:72
+#: ../../doc/api/vta/top/graphpack/index.rst:203
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:73
+msgid "start: int"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:74
+msgid "the start location to mark run on vta (inclusive)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:75
+msgid "end: int"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:76
+msgid "the end location to mark run on vta (exclusive)"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:79
+#: ../../doc/api/vta/top/graphpack/index.rst:246
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:80
+msgid "None"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:85
+msgid ""
+"check if this op belongs to a float op in general, float op's odtype is "
+"float; a special case is float->int cast, which follow this op sequence: "
+"multiply(float) -> round(float) -> clip(float) -> cast(int);"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:94
+#: ../../doc/api/vta/top/graphpack/index.rst:108
+#: ../../doc/api/vta/top/graphpack/index.rst:122
+msgid "Visit the children."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:193
+msgid ""
+"We assume stop_name only appears once for simplicity. This constraint "
+"will be lifted in the future. bitpack_start and bitpack_end are both "
+"inclusive."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:204
+#: ../../doc/api/vta/top/graphpack/index.rst:247
+msgid "expr"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:-1
+msgid "relay.Expr"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:205
+msgid "The input program."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:207
+msgid "bfactor"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:-1
+msgid "int"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:208
+msgid "The packing factor in batch"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:210
+msgid "cfactor"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:211
+msgid "The packing factor in channel"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:213
+msgid "weight_bits: int"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:214
+msgid "The bit-width of the weights."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:216
+msgid "start_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:217
+msgid "Start packing from certain known node when start_name_idx is None."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:219
+msgid "stop_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:220
+msgid "Stop packing from certain known node when stop_name_idx is None."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:222
+msgid "start_name_idx: int, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:223
+msgid ""
+"When start_name_idx not None, start packing only when node name equal "
+"start_name and node idx equals start_name_idx."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:226
+msgid "stop_name_idx: int, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:227
+msgid ""
+"When stop_name_idx not None, stop packing only when node name equal "
+"stop_name and node index equals stop_name_idx."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:230
+msgid "count_meta:boolean, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:231
+msgid ""
+"When count_meta is False, the operator increase logic would not count the"
+" meta that have the type 'relay.expr.Constant', start_name_idx and "
+"stop_name_idx follow the index from 'expr.astext(show_meta_data=False)'. "
+"When count_meta is True, the operator increase logic would count the "
+"meta."
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:236
+msgid "device_annot: boolean, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:237
+msgid "if we want to annoate the device_type"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:239
+msgid "annot_start_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:240
+msgid "device annotation start node, from which we mark the nodes as `ext_dev`"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:242
+msgid "annot_end_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:243
+msgid "device annotation end node, after which we mark the nodes as 'cpu'"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:-1
+msgid "Expr"
+msgstr ""
+
+#: ../../doc/api/vta/top/graphpack/index.rst:248
+msgid "The transformed expression."
+msgstr ""
+

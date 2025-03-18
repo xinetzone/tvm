@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-07 10:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:10002
+msgid "将你的 TVMScript 代码包装为 PyTorch 模块"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:10004
+msgid "**作者**：[Yaoda Zhou](https://github.com/juda)"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:10006
+msgid ""
+"本文是关于如何将 TVMScript 代码包装为 PyTorch 模块的教程。 使用装饰器 `as_torch`，用户可以自然地将 "
+"TVMScript 代码包装成 PyTorch {class}`torch.~nn.Module`。"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:10009
+msgid "要跟随本教程，需要安装 PyTorch。"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:40002
+msgid "使用 TVMScript 编写自己的 PyTorch 算子"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:40004
+msgid ""
+"PyTorch 是非常流行的机器学习框架，其中包含了大多数常用算子的优化实现。尽管如此，有时你可能想在 PyTorch "
+"中编写自己的算子。在这种情况下，这些自定义算子的性能可能无法满足你的需求。"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:40006
+msgid ""
+"例如，假设我们要定义 1-d 深度卷积算子，输入通道数和输出通道数都是 70，宽度是 80，卷积核大小是 20，那么1-d深度卷积可以在 "
+"PyTorch 中用一行代码来表示："
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:60002
+msgid "可以这样运行函数："
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:80002
+msgid "在普通的 Python 代码中，`torch_depthwise` 函数可以写成："
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:100002
+msgid ""
+"然后，计划利用 TVM 的强大功能来优化 `depthwise` 函数。TVM 社区提出了一种嵌入在 Python 中的特定领域语言，称为 "
+"TVMScript，它作为 TVM 的 Tensor IR 的高级前端。"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:100004
+msgid ""
+"上面的深度卷积 1D 代码可以按照如下方式转换为 TVMScript。我们提供了 `as_torch` 装饰器，它会自动将 TVMScript "
+"代码转换为 PyTorch 的 `nn.Module`。"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:120002
+msgid "我们可以通过调用默认设置下的 `tune` 方法来构建 TVMScript 代码。如果不提供额外信息，模型将会针对 CPU 进行优化。"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:140002
+msgid "可以打印出优化后的 TVMScript 代码，以查看程序是如何被转换的，如下"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:160002
+msgid "可以验证这两个输出是相同的："
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:180002
+msgid "Benchmark"
+msgstr ""
+
+#: ../../doc/docs/how_to/work_with_pytorch/using-as-torch.ipynb:200002
+msgid ""
+"在作者的环境中，`tvm_depthwise` 的平均推理时间是120.0微秒，而 `torch_depthwise` "
+"的平均推理时间是196.0微秒（PyTorch版本是1.11.0），显示出大约38%的速度提升。"
+msgstr ""
+

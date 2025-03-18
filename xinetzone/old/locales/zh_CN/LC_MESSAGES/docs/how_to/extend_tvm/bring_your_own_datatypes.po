@@ -1,0 +1,527 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10002
+msgid "自定义 TVM 数据类型"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10004
+msgid ""
+"**原作者**: [Gus Smith](https://github.com/gussmith23), [Andrew "
+"Liu](https://github.com/hypercubestart)"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10006
+msgid ""
+"在本教程中，将向您展示如何利用 Bring Your Own Datatypes 框架在 TVM 中使用您自己的自定义数据类型。请注意，Bring"
+" Your Own Datatypes 框架目前只处理 **software emulated versions of "
+"datatypes**。框架不支持开箱即用的自定义加速器数据类型的编译。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10008
+msgid "Datatype 库"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10010
+msgid ""
+"Bring Your Own Datatypes 允许用户在 TVM 的原生数据类型(如 ``float`` "
+"下)旁边注册自己的数据类型实现。在一般情况下，这些数据类型实现通常以库的形式出现。例如："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10012
+msgid "[libposit](https://github.com/cjdelisle/libposit), a posit library"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10013
+msgid ""
+"[Stillwater Universal](https://github.com/stillwater-sc/universal), a "
+"library with posits, fixed-point numbers, and other types"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10014
+msgid ""
+"[SoftFloat](https://github.com/ucb-bar/berkeley-softfloat-3), Berkeley's "
+"software implementation of IEEE 754 floating-point"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10016
+msgid ""
+"在本节中，我们将使用一个已经实现的示例库，位于 "
+"``3rdparty/byodt/myfloat.cc``。我们称之为“myfloat”的这个数据类型实际上只是 IEE-754  "
+"浮点数，但它提供了有用的示例 以说明在 BYODT 框架中可以使用任何数据类型。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10019
+msgid "设置"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10021
+msgid "因为我们不使用任何 3rdparty 库，所以不需要设置。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:10023
+msgid "如果你想在自己的数据类型库中尝试这种方法，首先使用 ``CDLL`` 将库的函数引入进程空间："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:20002
+msgid "简单的 TVM 程序"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:20004
+msgid "我们将首先在 TVM 中编写一个简单的程序；然后，重写它以使用自定义数据类型。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:40002
+msgid "现在，我们使用 numpy 创建随机数输入到这个程序中："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:60002
+msgid "最后，我们准备好运行程序："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:80002
+msgid "添加自定义数据类型"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:80004
+msgid "现在，我们将做同样的事情，但是我们将为中间计算使用自定义数据类型。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:80006
+msgid ""
+"我们使用与上面相同的输入变量 ``x`` 和 ``y``，但在添加 ``x + y`` 之前，我们首先通过 ``relay.cast(...)``"
+" call 将 ``x`` 和 ``y`` 强制转换为自定义数据类型。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:80008
+msgid ""
+"注意我们如何指定自定义数据类型：我们使用特殊的 ``custom[...]`` 语法。另外，注意数据类型后面的“32”：这是自定义数据类型的 "
+"bitwidth。这告诉 TVM ``myfloat`` 的每个实例都是 32 位宽的。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:100002
+msgid ""
+"Trying to generate this program throws an error from TVM. TVM does not "
+"know how to handle any custom datatype out of the box! We first have to "
+"register the custom type with TVM, giving it a name and a type code:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:100006
+msgid ""
+"试图从 TVM 生成此程序会抛出一个错误。TVM 不知道如何处理任何开箱即用的自定义数据类型！我们首先要向 TVM "
+"注册自定义类型，给它一个名称和一个类型代码："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:120002
+msgid ""
+"Note that the type code, 150, is currently chosen manually by the user. "
+"See ``TVMTypeCode::kCustomBegin`` in "
+"[include/tvm/runtime/c_runtime_api.h](https://github.com/apache/tvm/blob/main/include/tvm/runtime/data_type.h)."
+" Now we can generate our program again:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:120006
+msgid ""
+"注意，type 代码 150 目前是由用户手动选择的。参见 "
+"[include/tvm/runtime/c_runtime_api.h](https://github.com/apache/tvm/blob/main/include/tvm/runtime/data_type.h)"
+" 中的 ``TVMTypeCode::kCustomBegin``。现在我们可以再次生成我们的程序:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:140002
+msgid "现在我们有了一个使用 ``myfloat`` 的 Relay 程序！"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:160002
+msgid "现在我们可以无错误地表示我们的程序，让我们试着运行它！"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:180002
+msgid ""
+"Now, trying to compile this program throws an error. Let's dissect this "
+"error."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:180005
+msgid ""
+"The error is occurring during the process of lowering the custom datatype"
+" code to code that TVM can compile and run. TVM is telling us that it "
+"cannot find a *lowering function* for the ``Cast`` operation, when "
+"casting from source type 2 (``float``, in TVM), to destination type 150 "
+"(our custom datatype). When lowering custom datatypes, if TVM encounters "
+"an operation over a custom datatype, it looks for a user-registered "
+"*lowering function*, which tells it how to lower the operation to an "
+"operation over datatypes it understands. We have not told TVM how to "
+"lower ``Cast`` operations for our custom datatypes; thus, the source of "
+"this error."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:180010
+msgid "To fix this error, we simply need to specify a lowering function:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:200002
+msgid ""
+"The ``register_op(...)`` call takes a lowering function, and a number of "
+"parameters which specify exactly the operation which should be lowered "
+"with the provided lowering function. In this case, the arguments we pass "
+"specify that this lowering function is for lowering a ``Cast`` from "
+"``float`` to ``myfloat`` for target ``\"llvm\"``."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:200005
+msgid ""
+"The lowering function passed into this call is very general: it should "
+"take an operation of the specified type (in this case, `Cast`) and return"
+" another operation which only uses datatypes which TVM understands."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:200007
+msgid ""
+"In the general case, we expect users to implement operations over their "
+"custom datatypes using calls to an external library. In our example, our "
+"``myfloat`` library implements a ``Cast`` from ``float`` to 32-bit "
+"``myfloat`` in the function ``FloatToCustom32``. To provide for the "
+"general case, we have made a helper function, ``create_lower_func(...)``,"
+" which does just this: given a dictionary, it replaces the given "
+"operation with a ``Call`` to the appropriate function name provided based"
+" on the op and the bit widths. It additionally removes usages of the "
+"custom datatype by storing the custom datatype in an opaque ``uint`` of "
+"the appropriate width; in our case, a ``uint32_t``. For more information,"
+" see [the source "
+"code](https://github.com/apache/tvm/blob/main/python/tvm/target/datatype.py)."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:220002
+msgid ""
+"This new error tells us that the ``Add`` lowering function is not found, "
+"which is good news, as it's no longer complaining about the ``Cast``! We "
+"know what to do from here: we just need to register the lowering "
+"functions for the other operations in our program."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:220005
+msgid ""
+"Note that for ``Add``, ``create_lower_func`` takes in a dict where the "
+"key is an integer. For ``Cast`` operations, we require a 2-tuple to "
+"specify the ``src_bit_length`` and the ``dest_bit_length``, while for all"
+" other operations, the bit length is the same between the operands so we "
+"only require one integer to specify ``bit_length``."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:240002
+msgid "Running Models With Custom Datatypes"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:240004
+msgid ""
+"We will first choose the model which we would like to run with myfloat. "
+"In this case we use [Mobilenet](https://arxiv.org/abs/1704.04861). We "
+"choose Mobilenet due to its small size. In this alpha state of the Bring "
+"Your Own Datatypes framework, we have not implemented any software "
+"optimizations for running software emulations of custom datatypes; the "
+"result is poor performance due to many calls into our datatype emulation "
+"library."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:240009
+msgid ""
+"First let us define two helper functions to get the mobilenet model and a"
+" cat image."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:260002
+msgid "It's easy to execute MobileNet with native TVM:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:280002
+msgid ""
+"Now, we would like to change the model to use myfloat internally. To do "
+"so, we need to convert the network. To do this, we first define a "
+"function which will help us convert tensors:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:300002
+msgid ""
+"Now, to actually convert the entire network, we have written [a pass in "
+"Relay](https://github.com/gussmith23/tvm/blob/ea174c01c54a2529e19ca71e125f5884e728da6e/python/tvm/relay/frontend/change_datatype.py#L21)"
+" which simply converts all nodes within the model to use the new "
+"datatype."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:320002
+msgid ""
+"When we attempt to run the model, we get a familiar error telling us that"
+" more functions need to be registered for myfloat."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:320004
+msgid ""
+"Because this is a neural network, many more operations are required. "
+"Here, we register all the needed functions:"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:340002
+msgid ""
+"Note we are making use of two new functions: ``register_min_func`` and "
+"``create_min_lower_func``."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:340004
+msgid ""
+"``register_min_func`` takes in an integer ``num_bits`` for the bit "
+"length, and should return an operation representing the minimum finite "
+"representable value for the custom data type with the specified bit "
+"length."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:340007
+msgid ""
+"Similar to ``register_op`` and ``create_lower_func``, the "
+"``create_min_lower_func`` handles the general case where the minimum "
+"representable custom datatype value is implemented using calls to an "
+"external library."
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/bring_your_own_datatypes.ipynb:340010
+msgid "Now we can finally run the model:"
+msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Python source code: "
+#~ "bring_your_own_datatypes.py <bring_your_own_datatypes.py>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Jupyter notebook: "
+#~ "bring_your_own_datatypes.ipynb <bring_your_own_datatypes.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_extend_tvm_bring_your_own_datatypes.py>` "
+#~ "to download the full example code"
+#~ msgstr ""
+
+#~ msgid "Bring Your Own Datatypes to TVM"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Authors**: `Gus Smith "
+#~ "<https://github.com/gussmith23>`_, `Andrew Liu "
+#~ "<https://github.com/hypercubestart>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this tutorial, we will show you"
+#~ " how to utilize the Bring Your "
+#~ "Own Datatypes framework to use your "
+#~ "own custom datatypes in TVM. Note "
+#~ "that the Bring Your Own Datatypes "
+#~ "framework currently only handles **software"
+#~ " emulated versions of datatypes**. The "
+#~ "framework does not support compiling for"
+#~ " custom accelerator datatypes out-of-"
+#~ "the-box."
+#~ msgstr ""
+
+#~ msgid "Datatype Libraries"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Bring Your Own Datatypes allows "
+#~ "users to register their own datatype "
+#~ "implementations alongside TVM's native "
+#~ "datatypes (such as ``float``). In the"
+#~ " wild, these datatype implementations often"
+#~ " appear as libraries. For example:"
+#~ msgstr ""
+
+#~ msgid "`libposit <https://github.com/cjdelisle/libposit>`_, a posit library"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Stillwater Universal <https://github.com/stillwater-"
+#~ "sc/universal>`_, a library with posits, "
+#~ "fixed-point numbers, and other types"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`SoftFloat <https://github.com/ucb-bar/berkeley-"
+#~ "softfloat-3>`_, Berkeley's software implementation"
+#~ " of IEEE 754 floating-point"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Bring Your Own Datatypes enables "
+#~ "users to plug these datatype "
+#~ "implementations into TVM!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this section, we will use an"
+#~ " example library we have already "
+#~ "implemented, located at "
+#~ "``3rdparty/byodt/myfloat.cc``. This datatype, which"
+#~ " we dubbed \"myfloat\", is really "
+#~ "just a IEE-754 float under-the-"
+#~ "hood, but it serves a useful "
+#~ "example to show that any datatype "
+#~ "can be used in the BYODT "
+#~ "framework."
+#~ msgstr ""
+
+#~ msgid "Setup"
+#~ msgstr ""
+
+#~ msgid "Since we do not use any 3rdparty library, there is no setup needed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you would like to try this "
+#~ "with your own datatype library, first"
+#~ " bring the library's functions into "
+#~ "the process space with ``CDLL``:"
+#~ msgstr ""
+
+#~ msgid "A Simple TVM Program"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We'll begin by writing a simple "
+#~ "program in TVM; afterwards, we will "
+#~ "re-write it to use custom "
+#~ "datatypes."
+#~ msgstr ""
+
+#~ msgid "Now, we create random inputs to feed into this program using numpy:"
+#~ msgstr ""
+
+#~ msgid "Finally, we're ready to run the program:"
+#~ msgstr ""
+
+#~ msgid "Adding Custom Datatypes"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now, we will do the same, but "
+#~ "we will use a custom datatype for"
+#~ " our intermediate computation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We use the same input variables "
+#~ "``x`` and ``y`` as above, but "
+#~ "before adding ``x + y``, we first"
+#~ " cast both ``x`` and ``y`` to a"
+#~ " custom datatype via the "
+#~ "``relay.cast(...)`` call."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note how we specify the custom "
+#~ "datatype: we indicate it using the "
+#~ "special ``custom[...]`` syntax. Additionally, "
+#~ "note the \"32\" after the datatype: "
+#~ "this is the bitwidth of the custom"
+#~ " datatype. This tells TVM that each"
+#~ " instance of ``myfloat`` is 32 bits"
+#~ " wide."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that the type code, 150, is"
+#~ " currently chosen manually by the "
+#~ "user. See ``TVMTypeCode::kCustomBegin`` in "
+#~ "`include/tvm/runtime/c_runtime_api.h "
+#~ "<https://github.com/apache/tvm/blob/main/include/tvm/runtime/data_type.h>`_."
+#~ " Now we can generate our program "
+#~ "again:"
+#~ msgstr ""
+
+#~ msgid "Now we have a Relay program that uses myfloat!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now that we can express our "
+#~ "program without errors, let's try "
+#~ "running it!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the general case, we expect "
+#~ "users to implement operations over their"
+#~ " custom datatypes using calls to an"
+#~ " external library. In our example, "
+#~ "our ``myfloat`` library implements a "
+#~ "``Cast`` from ``float`` to 32-bit "
+#~ "``myfloat`` in the function "
+#~ "``FloatToCustom32``. To provide for the "
+#~ "general case, we have made a "
+#~ "helper function, ``create_lower_func(...)``, which"
+#~ " does just this: given a dictionary,"
+#~ " it replaces the given operation with"
+#~ " a ``Call`` to the appropriate "
+#~ "function name provided based on the "
+#~ "op and the bit widths. It "
+#~ "additionally removes usages of the "
+#~ "custom datatype by storing the custom"
+#~ " datatype in an opaque ``uint`` of"
+#~ " the appropriate width; in our case,"
+#~ " a ``uint32_t``. For more information, "
+#~ "see `the source code "
+#~ "<https://github.com/apache/tvm/blob/main/python/tvm/target/datatype.py>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We will first choose the model "
+#~ "which we would like to run with"
+#~ " myfloat. In this case we use "
+#~ "`Mobilenet <https://arxiv.org/abs/1704.04861>`_. We "
+#~ "choose Mobilenet due to its small "
+#~ "size. In this alpha state of the"
+#~ " Bring Your Own Datatypes framework, "
+#~ "we have not implemented any software "
+#~ "optimizations for running software emulations"
+#~ " of custom datatypes; the result is"
+#~ " poor performance due to many calls"
+#~ " into our datatype emulation library."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now, to actually convert the entire "
+#~ "network, we have written `a pass "
+#~ "in Relay "
+#~ "<https://github.com/gussmith23/tvm/blob/ea174c01c54a2529e19ca71e125f5884e728da6e/python/tvm/relay/frontend/change_datatype.py#L21>`_"
+#~ " which simply converts all nodes "
+#~ "within the model to use the new"
+#~ " datatype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When we attempt to run the model,"
+#~ " we get a familiar error telling "
+#~ "us that more functions need to be"
+#~ " registerd for myfloat."
+#~ msgstr ""
+

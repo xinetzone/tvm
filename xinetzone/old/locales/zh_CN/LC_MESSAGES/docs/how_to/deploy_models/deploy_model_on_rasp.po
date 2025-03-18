@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:20004
+msgid "Deploy the Pretrained Model on Raspberry Pi"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:20005
+msgid ""
+"**Author**: [Ziheng Jiang](https://ziheng.org/),             [Hiroyuki "
+"Makino](https://makihiro.github.io/)"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:20007
+msgid ""
+"This is an example of using Relay to compile a ResNet model and deploy it"
+" on Raspberry Pi."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:40003
+msgid "Build TVM Runtime on Device"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:40005
+msgid "The first step is to build the TVM runtime on the remote device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:40011
+msgid ""
+"Since we do compilation on local machine, the remote device is only used "
+"for running the generated code. We only need to build tvm runtime on the "
+"remote device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:40024
+msgid ""
+"After building runtime successfully, we need to set environment varibles "
+"in :code:`~/.bashrc` file. We can edit :code:`~/.bashrc` using :code:`vi "
+"~/.bashrc` and add the line below (Assuming your TVM directory is in "
+":code:`~/tvm`):"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:40032
+msgid "To update the environment variables, execute :code:`source ~/.bashrc`."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:50002
+msgid "Set Up RPC Server on Device"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:50003
+msgid ""
+"To start an RPC server, run the following command on your remote device "
+"(Which is Raspberry Pi in our example)."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:50009
+msgid ""
+"If you see the line below, it means the RPC server started successfully "
+"on your device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:60002
+msgid "Prepare the Pre-trained Model"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:60003
+msgid ""
+"Back to the host machine, which should have a full TVM installed (with "
+"LLVM)."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:60005
+msgid ""
+"We will use pre-trained model from [MXNet Gluon model "
+"zoo](https://mxnet.apache.org/api/python/gluon/model_zoo.html). You can "
+"found more details about this part at tutorial `tutorial-from-mxnet`."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:80002
+msgid ""
+"In order to test our model, here we download an image of cat and "
+"transform its format."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:100002
+msgid ""
+"synset is used to transform the label from number of ImageNet class to "
+"the word human can understand."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:120002
+msgid ""
+"Now we would like to port the Gluon model to a portable computational "
+"graph. It's as easy as several lines."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:140002
+msgid "Here are some basic data workload configurations."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:160002
+msgid "Compile The Graph"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:160003
+msgid ""
+"To compile the graph, we call the :py:func:`relay.build` function with "
+"the graph configuration and parameters. However, You cannot to deploy a "
+"x86 program on a device with ARM instruction set. It means Relay also "
+"needs to know the compilation option of target device, apart from "
+"arguments :code:`net` and :code:`params` to specify the deep learning "
+"workload. Actually, the option matters, different option will lead to "
+"very different performance."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:170002
+msgid ""
+"If we run the example on our x86 server for demonstration, we can simply "
+"set it as :code:`llvm`. If running it on the Raspberry Pi, we need to "
+"specify its instruction set. Set :code:`local_demo` to False if you want "
+"to run this tutorial with a real device."
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:190002
+msgid "Deploy the Model Remotely by RPC"
+msgstr ""
+
+#: ../../xin/docs/how_to/deploy_models/deploy_model_on_rasp.ipynb:190003
+msgid ""
+"With RPC, you can deploy the model remotely from your host machine to the"
+" remote device."
+msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Python source code: "
+#~ "deploy_model_on_rasp.py <deploy_model_on_rasp.py>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Jupyter notebook: "
+#~ "deploy_model_on_rasp.ipynb <deploy_model_on_rasp.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_deploy_models_deploy_model_on_rasp.py>` "
+#~ "to download the full example code"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Author**: `Ziheng Jiang <https://ziheng.org/>`_,"
+#~ "             `Hiroyuki Makino "
+#~ "<https://makihiro.github.io/>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All instructions in both this section"
+#~ " and next section should be executed"
+#~ " on the target device, e.g. Raspberry"
+#~ " Pi. And we assume it has Linux"
+#~ " running."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We will use pre-trained model from"
+#~ " `MXNet Gluon model zoo "
+#~ "<https://mxnet.apache.org/api/python/gluon/model_zoo.html>`_. "
+#~ "You can found more details about "
+#~ "this part at tutorial :ref:`tutorial-"
+#~ "from-mxnet`."
+#~ msgstr ""
+
