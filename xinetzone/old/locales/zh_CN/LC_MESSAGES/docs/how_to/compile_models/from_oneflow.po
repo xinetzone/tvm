@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20003
+msgid "Compile OneFlow Models"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20004
+msgid "**Author**: [Xiaoyu Zhang](https://github.com/BBuf/)"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20006
+msgid ""
+"This article is an introductory tutorial to deploy OneFlow models with "
+"Relay."
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20008
+msgid "For us to begin with, OneFlow package should be installed."
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20010
+msgid "A quick solution is to install via pip"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20016
+msgid "or please refer to official site: https://github.com/Oneflow-Inc/oneflow"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:20019
+msgid "Currently, TVM supports OneFlow 0.7.0. Other versions may be unstable."
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:40002
+msgid "Load a pretrained OneFlow model and save model"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:60002
+msgid "Load a test image"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:60003
+msgid "Classic cat example!"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:80002
+msgid "Import the graph to Relay"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:80003
+msgid "Convert OneFlow graph to Relay graph. The input name can be arbitrary."
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:100002
+msgid "Relay Build"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:100003
+msgid "Compile the graph to llvm target with given input specification."
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:120002
+msgid "Execute the portable graph on TVM"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:120003
+msgid "Now we can try deploying the compiled model on target."
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:140002
+msgid "Look up synset name"
+msgstr ""
+
+#: ../../xin/docs/how_to/compile_models/from_oneflow.ipynb:140003
+msgid "Look up prediction top 1 index in 1000 class synset."
+msgstr ""
+

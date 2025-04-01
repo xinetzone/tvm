@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/topic/vta/index.rst:21
+msgid "VTA: Versatile Tensor Accelerator"
+msgstr "VTA：多功能张量加速器"
+
+#: ../../doc/docs/topic/vta/index.rst:23
+msgid ""
+"The Versatile Tensor Accelerator (VTA) is an open, generic, and "
+"customizable deep learning accelerator with a complete TVM-based compiler"
+" stack. We designed VTA to expose the most salient and common "
+"characteristics of mainstream deep learning accelerators. Together TVM "
+"and VTA form an end-to-end hardware-software deep learning system stack "
+"that includes hardware design, drivers, a JIT runtime, and an optimizing "
+"compiler stack based on TVM."
+msgstr ""
+"多功能张量加速器（VTA）是一种开放、通用且可定制的深度学习加速器，配备了完整的基于TVM的编译器堆栈。"
+"设计 VTA 的目的是展现主流深度学习加速器最突出和普遍的特性。"
+"TVM 与 VTA 共同构成了端到端的硬件-软件深度学习系统堆栈，其中包括硬件设计、驱动程序、JIT 运行时以及基于 TVM 的优化编译器堆栈。"
+
+#: ../../doc/docs/topic/vta/index.rst:29
+msgid "VTA has the following key features:"
+msgstr "VTA具备以下关键特性："
+
+#: ../../doc/docs/topic/vta/index.rst:31
+msgid "Generic, modular, open-source hardware."
+msgstr "通用的、模块化的、开源硬件。"
+
+#: ../../doc/docs/topic/vta/index.rst:32
+msgid "Streamlined workflow to deploy to FPGAs."
+msgstr "简化了部署到 FPGA 的工作流程。"
+
+#: ../../doc/docs/topic/vta/index.rst:33
+msgid "Simulator support to prototype compilation passes on regular workstations."
+msgstr "模拟器支持在常规工作站上对编译过程进行原型设计。"
+
+#: ../../doc/docs/topic/vta/index.rst:34
+msgid ""
+"Pynq-based driver and JIT runtime for both simulated and FPGA hardware "
+"back-end."
+msgstr ""
+"基于 Pynq 的驱动程序和即时编译（JIT）运行时环境，适用于模拟和 FPGA 硬件后端。"
+
+#: ../../doc/docs/topic/vta/index.rst:35
+msgid "End to end TVM stack integration."
+msgstr "端到端的 TVM 堆栈集成。"
+
+#: ../../doc/docs/topic/vta/index.rst:37
+msgid "This page contains links to all the resources related to VTA:"
+msgstr "本页面包含所有与 VTA 相关的资源链接："
+
+#: ../../doc/docs/topic/vta/index.rst:49
+msgid "Literature"
+msgstr "文献"
+
+#: ../../doc/docs/topic/vta/index.rst:51
+msgid "Read the VTA `release blog post`_."
+msgstr "阅读 VTA 的 `release blog post`_。"
+
+#: ../../doc/docs/topic/vta/index.rst:52
+msgid ""
+"Read the VTA tech report: `An Open Hardware Software Stack for Deep "
+"Learning`_."
+msgstr ""
+"阅读VTA技术报告： `An Open Hardware Software Stack for Deep Learning`_。"

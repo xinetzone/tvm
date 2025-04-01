@@ -1,0 +1,988 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:22
+msgid "Bring Your Own Codegen To TVM"
+msgstr "将您的自定义代码生成器引入 TVM"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:24
+msgid ""
+"As the number of hardware devices targeted by deep learning workloads "
+"keeps increasing, the required knowledge for users to achieve high "
+"performance on various devices keeps increasing as well. To free data "
+"scientists from worrying about the performance when developing a new "
+"model, hardware backend providers either provide libraries such as "
+"DNNL(Intel OneDNN) or cuDNN with many commonly used deep learning "
+"operators, or provide frameworks such as TensorRT to let users describe "
+"their models in a certain way to achieve high performance. However, users"
+" have to learn a new programming interface when they attempt to work on a"
+" new library or device. As a result, the demand for a unified programming"
+" interface becomes more and more important to 1) let all users and "
+"hardware backend providers stand on the same page, and 2) provide a "
+"feasible solution to allow specialized hardware or library to only "
+"support widely used operators with extremely high performance, but "
+"fallback unsupported operators to general devices like CPU/GPU."
+msgstr ""
+"随着深度学习应用所针对的硬件设备数量持续增长，用户在各种设备上实现高性能所需的知识也在不断增加。"
+"为了使数据科学家在开发新模型时不必担心性能问题，硬件后端供应商要么提供包含许多常用深度学习算子的库，如 DNNL（Intel OneDNN）或 cuDNN，"
+"要么提供像 TensorRT 这样的框架，让用户以特定方式描述他们的模型以实现高性能。"
+"然而，当用户尝试在新的库或设备上工作时，他们必须学习新的编程接口。"
+"因此，对统一编程接口的需求变得越来越重要，原因有二：1）让所有用户和硬件后端供应商站在同一立场上，"
+"2）提供可行的解决方案，允许专用硬件或库仅支持广泛使用的高性能算子，同时将不支持的算子回退到 CPU/GPU 等通用设备上。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:26
+msgid ""
+"In this developer guide, we demonstrate how you, as a hardware backend "
+"provider, can easily implement your own codegen and register it as a "
+"Relay backend compiler to support your hardware device/library. This "
+"guide covers two types of codegen based on different graph "
+"representations you need:"
+msgstr ""
+"在本开发者指南中，将向您展示，作为硬件后端提供商，如何轻松实现自己的代码生成器，并将其注册为 Relay 后端编译器，以支持您的硬件设备或库。"
+"本指南涵盖基于不同图表示需求的两种代码生成类型："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:28
+msgid "**1. You want to generate C code.**"
+msgstr "**1. 您希望生成 C 代码。**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:30
+msgid ""
+"If your hardware already has a well-optimized C/C++ library, such as "
+"Intel CBLAS/MKL to CPU and NVIDIA CUBLAS to GPU, then this is what you "
+"are looking for. Fortunately, C source code module is fully compatible "
+"with TVM runtime module, which means the generated code could be compiled"
+" by any C/C++ compiler with proper compilation flags, so the only task "
+"you have is to implement a codegen that generates C code for subgraphs "
+"and a C source module to integrate into TVM runtime module. We will "
+"demonstrate how to implement a C code generator for your hardware in the "
+"following section."
+msgstr ""
+"如果您的硬件已经拥有高度优化的 C/C++ 库，例如针对 CPU 的 Intel CBLAS/MKL 和针对 GPU 的 NVIDIA CUBLAS，那么这正是您所需要的。"
+"幸运的是，C 源代码模块与 TVM 运行时模块完全兼容，这意味着生成的代码可以通过任何具有适当编译标志的 C/C++ 编译器进行编译，"
+"因此您唯一需要做的就是实现为子图生成 C 代码的代码生成器，以及集成到 TVM 运行时模块中的 C 源代码模块。"
+"将在接下来的部分中演示如何为您的硬件实现 C 代码生成器。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:32
+msgid "**2. You want to generate any other graph representations.**"
+msgstr "**2. 您希望生成其他图表示形式。**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:34
+msgid ""
+"Your hardware may require other forms of graph representation, such as "
+"JSON. In this case, you need to implement not only a codegen but also a "
+"customized TVM runtime module to let TVM runtime know how this graph "
+"representation should be executed. If you already have a complete graph "
+"execution engine for your hardware, such as TensorRT for GPU, then this "
+"is a solution you can consider."
+msgstr ""
+"您的硬件可能需要其他形式的图表示，例如 JSON。在这种情况下，您不仅需要实现代码生成器，还需要实现定制的 TVM 运行时模块，以便让 TVM 运行时知道应如何执行此图表示。"
+"如果您已经为您的硬件拥有完整的图执行引擎，例如针对 GPU 的 TensorRT，那么这是您可以考虑的解决方案。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:36
+msgid ""
+"After you finish the codegen and runtime, you can then let your customers"
+" annotate their models with your customized tag to make use of them. The "
+"tutorial for end-users to annotate and launch a specific codegen is "
+"**here (TBA)**."
+msgstr ""
+"在完成代码生成器和运行时的实现后，您可以让您的客户使用您的自定义标签来标注他们的模型，以便利用这些功能。关于终端用户如何标注并启动特定代码生成器的教程，请参见 **here (TBA)**。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:40
+msgid "Implement a C Codegen"
+msgstr "**实现 C 代码生成器**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:42
+msgid ""
+"In this part, we demonstrate how to implement a codegen that generates C "
+"code with pre-implemented operator functions. To simplify, our example "
+"codegen does not depend on third-party libraries. Instead, we manually "
+"implement two macros in C:"
+msgstr ""
+"在这一部分，将演示如何实现代码生成器，该生成器利用预先实现的操作符函数生成 C 代码。为了简化，示例代码生成器不依赖于第三方库。相反，手动在 C 中实现两个宏："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:63
+msgid ""
+"With the two macros, we can generate binary operators for 1-D and 2-D "
+"tensors. For example, given a subgraph as follows. Assuming all inputs "
+"are 2-D tensors with shape (10, 10)."
+msgstr ""
+"通过这两个宏，可以为一维和二维张量生成二元算子。例如，给定如下子图。假设所有输入都是形状为 (10, 10) 的二维张量。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:77
+msgid ""
+"Our goal is to generate the following compilable code to execute the "
+"subgraph:"
+msgstr ""
+"目标是生成以下可编译代码来执行子图："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:132
+msgid "Here we highlight the notes marked in the above code:"
+msgstr "重点标注上述代码中的注释："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:134
+msgid ""
+"**Note 1** is the function implementation for the three nodes in the "
+"subgraph."
+msgstr ""
+"**Note 1** 是子图中三个节点的函数实现。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:136
+msgid ""
+"**Note 2** is a function to execute the subgraph by allocating "
+"intermediate buffers and invoking corresponding functions."
+msgstr ""
+"**Note 2** 是通过分配中间缓冲区并调用相应函数来执行子图的函数。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:138
+msgid ""
+"**Note 3** is a TVM runtime compatible wrapper function. It accepts a "
+"list of input tensors and one output tensor (the last argument), casts "
+"them to the right data type, and invokes the subgraph function described "
+"in Note 2. In addition, ``TVM_DLL_EXPORT_TYPED_FUNC`` is a TVM macro that"
+" generates another function ``gcc_0`` with unified the function arguments"
+" by packing all tensors to ``TVMArgs``. As a result, the TVM runtime can "
+"directly invoke ``gcc_0`` to execute the subgraph without additional "
+"efforts. With the above code generated, TVM is able to compile it along "
+"with the rest parts of the graph and export a single library for "
+"deployment."
+msgstr ""
+"**Note 3** 是与 TVM 运行时兼容的包装函数。它接受输入张量列表和输出张量（最后一个参数），将它们转换为正确的数据类型，并调用 Note 2 中描述的子图函数。"
+"此外，``TVM_DLL_EXPORT_TYPED_FUNC`` 是 TVM 宏，它通过将所有张量打包到 ``TVMArgs`` 中，生成另一个具有统一函数参数的函数 ``gcc_0``。"
+"因此，TVM 运行时可以直接调用 ``gcc_0`` 来执行子图，而无需额外的工作。通过生成上述代码，TVM 能够将其与图的其余部分一起编译，并导出单独的库以供部署。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:140
+msgid ""
+"In the rest of this section, we will implement a codegen step-by-step to "
+"generate the above code. Your own codegen has to be located at "
+"``src/relay/backend/contrib/<your-codegen-name>/``. In our example, we "
+"name our codegen \"codegen_c\" and put it under "
+"`/src/relay/backend/contrib/codegen_c/ "
+"<https://github.com/apache/tvm/blob/main/src/relay/backend/contrib/codegen_c/codegen.cc>`_."
+" Feel free to check this file for a complete implementation."
+msgstr ""
+"在本节的剩余部分，将逐步实现代码生成器来生成上述代码。"
+"您自己的代码生成器必须位于 ``src/relay/backend/contrib/<您的代码生成器名称>/`` 目录下。"
+"在示例中，将代码生成器命名为“codegen_c”，并将其放在 `/src/relay/backend/contrib/codegen_c/ <https://github.com/apache/tvm/blob/main/src/relay/backend/contrib/codegen_c/codegen.cc>`_ 目录下。"
+"您可以随时查看该文件以获取完整的实现。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:142
+msgid ""
+"Specifically, we are going to implement two classes in this file and here"
+" is their relationship:"
+msgstr ""
+"具体来说，将在这个文件中实现两个类，以下是它们的关系："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:153
+msgid ""
+"When TVM backend finds a function (subgraph) in a Relay graph is "
+"annotated with the registered compiler tag (``ccompiler`` in this "
+"example), TVM backend invokes ``CSourceCodegen`` and passes the subgraph."
+" ``CSourceCodegen``'s member function ``CreateCSourceModule`` will 1) "
+"generate C code for the subgraph, and 2) wrap the generated C code to a C"
+" source runtime module for TVM backend to compile and deploy. In "
+"particular, the C code generation is transparent to the ``CodegenC`` "
+"class because it provides many useful utilities to ease the code "
+"generation implementation. The following sections will implement these "
+"two classes in the bottom-up order."
+msgstr ""
+"当 TVM 后端在 Relay 图中发现函数（子图）被标记了已注册的编译器标签（在此例中为 ``ccompiler``），TVM 后端便会调用 ``CSourceCodegen`` 并将该子图传递给它。"
+"``CSourceCodegen`` 的成员函数 ``CreateCSourceModule`` 将执行两个主要步骤：1) 为该子图生成 C 代码，2) 将生成的 C 代码封装为 C 源运行时模块，供 TVM 后端编译和部署。"
+"特别地，C 代码的生成对 ``CodegenC`` 类是透明的，因为它提供了许多有用的工具来简化代码生成的实现。接下来的部分将按照自底向上的顺序实现这两个类。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:156
+msgid "Implement CodegenC"
+msgstr "实现 CodegenC"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:158
+msgid ""
+"In ``src/relay/backend/contrib/codegen_c/codegen.cc``, we first create a "
+"codegen class skeleton under the namespace of ``tvm.relay.contrib``:"
+msgstr ""
+"在 ``src/relay/backend/contrib/codegen_c/codegen.cc`` 文件中，首先在 ``tvm.relay.contrib`` 命名空间下创建代码生成类的框架："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:204
+msgid ""
+"The ``CodegenC`` class inherits two classes: ``ExprVisitor`` provides "
+"abilities to traverse subgraphs and collects the required information and"
+" generate subgraph functions such as ``gcc_0_``; ``CodegenCBase`` "
+"provides abilities and utilities to generate wrapper functions such as "
+"``gcc_0`` in the above example. As can be seen, we only need to implement"
+" three functions in this codegen class to make it work."
+msgstr ""
+"``CodegenC`` 类继承了两个类：``ExprVisitor`` 提供了遍历子图并收集所需信息的能力，以及生成子图函数（例如 ``gcc_0_``）的功能；``CodegenCBase`` 则提供了生成包装函数（如上述示例中的 ``gcc_0``）的能力和实用工具。"
+"由此可见，只需在该代码生成类中实现三个函数即可使其正常工作。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:207
+msgid "Code Generation for Operators"
+msgstr "算子代码生成"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:209
+msgid ""
+"We first implement ``VisitExpr_(const CallNode* call)``. This function "
+"visits all call nodes when traversing the subgraph. Each call node "
+"contains an operator that we want to offload to your hardware. As a "
+"result, we need to generate the corresponding C code with correct "
+"operators in topological order. We implement this function step-by-step "
+"as follows."
+msgstr ""
+"首先实现 ``VisitExpr_(const CallNode* call)`` 函数。"
+"该函数在遍历子图时会访问所有的调用节点。每个调用节点包含希望卸载到硬件上执行的算子。因此，需要按照拓扑顺序生成带有正确算子的对应 C 代码。将逐步实现该函数，具体步骤如下。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:211
+msgid "**1. Generate the function declaration**"
+msgstr "**1. 生成函数声明**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:213
+msgid "Example Result: ``GCC_BINARY_OP_2D(gcc_0_0, *, 10, 10);``"
+msgstr "示例结果：``GCC_BINARY_OP_2D(gcc_0_0, *, 10, 10);``"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:215
+msgid ""
+"To generate the function declaration, as shown above, we need 1) a "
+"function name (e.g., ``gcc_0_0``), 2) the type of operator (e.g., ``*``),"
+" and 3) the input tensor shape (e.g., ``(10, 10)``). Fortunately, this "
+"information can be obtained easily from ``CallNode``:"
+msgstr ""
+"为了生成如上所示的函数声明，需要以下信息：1) 函数名称（例如 ``gcc_0_0``），2) 算子类型（例如 ``*``），以及3) 输入张量的形状（例如 ``(10, 10)``）。幸运的是，这些信息可以轻松地从 ``CallNode`` 中获取："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:248
+msgid ""
+"As can be seen, we push the generated code to class member variables "
+"``func_decl_``. It means after we finish traversing the entire subgraph, "
+"we have collected all required function declarations and the only thing "
+"we need to do is having them compiled by GCC. The rest implementation of "
+"``VisitExpr_(const CallNode* call)`` also follow this concept."
+msgstr ""
+"可以看到，将生成的代码推送到类的成员变量 ``func_decl_`` 中。这意味着在遍历完整个子图后，已经收集了所有所需的函数声明，唯一需要做的就是让 GCC 编译它们。``VisitExpr_(const CallNode* call)`` 的其余实现也遵循这一概念。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:250
+msgid "**2. Generate the function call**"
+msgstr "**2. 生成函数调用**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:252
+msgid "Example Result: ``gcc_0_0(buf_1, gcc_input3, out);``"
+msgstr "示例结果：``gcc_0_0(buf_1, gcc_input3, out);``"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:254
+msgid ""
+"After generating the function declaration, we need to generate a function"
+" call with proper inputs and outputs. To know which inputs or buffers we "
+"should put when calling this function, we have to visit its arguments:"
+msgstr ""
+"在生成函数声明后，需要生成具有适当输入和输出的函数调用。为了知道在调用此函数时应放置哪些输入或缓冲区，必须访问其参数："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:272
+msgid "Again, we want to highlight the notes in the above code:"
+msgstr "再次，希望强调上述代码中的注意事项："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:274
+msgid ""
+"**Note 1**: ``VisitExpr(call->args[i])`` is a recursive call to visit "
+"arguments of the current function. An argument could be an output of "
+"another node or an input tensor. In our example implementation, we make "
+"sure every node updates a class variable ``out_`` before leaving the "
+"visitor. Here is an illustration:"
+msgstr ""
+"**Note 1**：``VisitExpr(call->args[i])`` 是递归调用，用于访问当前函数的参数。参数可能是另一个节点的输出或输入张量。在示例实现中，确保每个节点在离开访问者之前更新类变量 ``out_``。以下是说明："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:285
+msgid ""
+"We can see in the above figure, class variable ``out_`` is empty before "
+"visiting the argument node, and it was filled with the output buffer name"
+" and size of ``arg_node``. As a result, when we finished visiting the "
+"argument node, we know the proper input buffer we should put by looking "
+"at ``out_``. You will find out how we update ``out_`` at the end of this "
+"section as well as the next section."
+msgstr ""
+"从上图可以看出，在访问参数节点之前，类变量 ``out_`` 为空，并且它被填充了输出缓冲区名称和 ``arg_node`` 的大小。"
+"因此，当完成对参数节点的访问时，通过查看 ``out_``，就知道应该放置的正确输入缓冲区。在本节的最后部分，您将发现我们如何更新 ``out_``。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:287
+msgid ""
+"**Note 2**: You may notice that we did not close the function call string"
+" in this step. The current function call string looks like: "
+"``gcc_0_0(buf_1, gcc_input3``. This is because we have not put the last "
+"argument (i.e., the output) to this call. The output of a function call "
+"could be either an allocated temporary buffer or the subgraph output "
+"tensor. For simplify, in this example, we allocate an output buffer for "
+"every call node (next step) and copy the result in the very last buffer "
+"to the output tensor."
+msgstr ""
+"**Note 2**：您可能会注意到，在这一步中没有关闭函数调用字符串。当前的函数调用字符串看起来像这样：``gcc_0_0(buf_1, gcc_input3``。这是因为还没有将最后一个参数（即输出）放入此调用中。"
+"函数调用的输出可以是分配的临时缓冲区或子图输出张量。为了简化，在此示例中，为每个调用节点分配输出缓冲区（下一步），并将最后缓冲区中的结果复制到输出张量中。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:289
+msgid "**3. Generate the output buffer**"
+msgstr "**3. 生成输出缓冲区**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:291
+msgid "Example Result: ``float* buf_0 = (float*)malloc(4 * 100);``"
+msgstr "示例结果：``float* buf_0 = (float*)malloc(4 * 100);``"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:293
+msgid ""
+"As mentioned in the previous step, in addition to the subgraph input and "
+"output tensors, we may also need buffers to keep the intermediate "
+"results. To generate the buffer, we extract the shape information to "
+"determine the buffer type and size:"
+msgstr ""
+"正如前一步提到的，除了子图输入和输出张量外，可能还需要缓冲区来保存中间结果。为了生成缓冲区，提取形状信息以确定缓冲区的类型和大小："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:316
+msgid ""
+"After we have allocated the output buffer, we can now close the function "
+"call string and push the generated function call to a class variable "
+"``ext_func_body``."
+msgstr ""
+"在分配了输出缓冲区后，现在可以关闭函数调用字符串并将生成的函数调用推送到类变量 ``ext_func_body`` 中。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:323
+msgid "**4. Update output buffer**"
+msgstr "**4. 更新输出缓冲区**"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:325
+msgid ""
+"To let the next node, which accepts the output of the current call node "
+"as its input, know which buffer it should take, we need to update the "
+"class variable ``out_`` before leaving this visit function:"
+msgstr ""
+"为了让下一个节点（接受当前调用节点的输出作为其输入）知道它应该使用哪个缓冲区，需要在离开此访问函数之前更新类变量 ``out_``："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:332
+msgid ""
+"Congratulations! we have finished the most difficult function in this "
+"class. In the next two sections, we just need to make up some minor "
+"missing parts in this function."
+msgstr ""
+"恭喜！已经完成了这个类中最困难的功能。在接下来的两节中，只需要补充此函数中一些次要的缺失部分。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:335
+msgid "Code Generation for Input Variables"
+msgstr "输入变量的代码生成"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:337
+msgid ""
+"Recall that we collected the input buffer information by visiting the "
+"arguments of a call node (2nd step in the previous section), and handled "
+"the case when its argument is another call node (4th step). In this "
+"section, we demonstrate how to handle other nodes by taking ``VarNode`` "
+"as an example."
+msgstr ""
+"回想一下，通过访问调用节点的参数（上一节的第2步）收集了输入缓冲区信息，并处理了当参数是另一个调用节点的情况（第4步）。在本节中，以 ``VarNode`` 为例，演示如何处理其他节点。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:339
+msgid ""
+"``VarNode`` represents input tensors in a model. The only but important "
+"information it has is a name hint (e.g., ``data``, ``weight``, etc). When"
+" visiting a ``VarNode``, we simply update class variable ``out_`` to pass"
+" the name hint so that the descendant call nodes can generate the correct"
+" function call."
+msgstr ""
+"``VarNode`` 表示模型中的输入张量。它唯一但重要的信息是名称提示（例如 ``data``，``weight`` 等）。当访问 ``VarNode`` 时，只需更新类变量 ``out_`` 以传递名称提示，以便后代可以生成正确的函数调用。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:349
+msgid ""
+"Note that in this example we assume the subgraph we are offloading has "
+"only call nodes and variable nodes. If your subgraphs contain other types"
+" of nodes, such as ``TupleNode``, then you also need to visit them and "
+"bypass the output buffer information."
+msgstr ""
+"请注意，在此示例中，假设卸载的子图仅包含调用节点和变量节点。如果您的子图包含其他类型的节点，例如 ``TupleNode``，那么您还需要访问它们并绕过输出缓冲区信息。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:352
+msgid "Code Emitting"
+msgstr "代码 Emitting"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:354
+msgid ""
+"The final part in this codegen class is a ``JIT`` function that emits a C"
+" function for the subgraph and uses the C code we just generated as the "
+"function body. Remember, in addition to the subgraph function we "
+"generated in the previous sections, we also need a wrapper function with "
+"a unified argument for TVM runtime to invoke and pass data. Fortunately, "
+"the base class we inherited already provides an implementation, "
+"``JitImpl``, to generate the function. For example, we can invoke "
+"``JitImpl`` as follows:"
+msgstr ""
+"这个代码生成类的最后一部分是 ``JIT`` 函数，它为子图生成 C 函数，并使用刚刚生成的 C 代码作为函数体。"
+"请记住，除了在前几节中生成的子图函数外，还需要具有统一参数的包装函数，以便 TVM 运行时调用并传递数据。"
+"幸运的是，继承的基类已经提供了实现 ``JitImpl`` 来生成该函数。例如，可以如下调用 ``JitImpl``："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:364
+msgid ""
+"The above call will generate three functions (one from the TVM wrapper "
+"macro):"
+msgstr ""
+"上述调用将生成三个函数（其中一个来自 TVM 包装宏）："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:366
+msgid ""
+"The subgraph function ``gcc_0_`` (with one more underline at the end of "
+"the function name) with all C code we generated to execute a subgraph."
+msgstr ""
+"子图函数 ``gcc_0_`` （函数名称末尾多一个下划线）包含生成的所有 C 代码，用于执行子图。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:368
+msgid ""
+"The wrapper function ``gcc_0__wrapper_`` with a list of ``DLTensor`` "
+"arguments that casts data to the right type and invokes ``gcc_0_``."
+msgstr ""
+"包装函数 ``gcc_0__wrapper_`` 带有 ``DLTensor`` 参数列表，将数据转换为正确的类型并调用 ``gcc_0_``。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:370
+msgid ""
+"The TVM runtime compatible function ``gcc_0`` with TVM unified function "
+"arguments that unpacks TVM packed tensors and invokes "
+"``gcc_0__wrapper_``."
+msgstr ""
+"TVM 运行时兼容函数 ``gcc_0`` 具有 TVM 统一函数参数，解包 TVM 打包的张量并调用 ``gcc_0__wrapper_``。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:372
+msgid ""
+"Accordingly, the only thing we need in ``JIT`` implementation is passing "
+"all subgraph function code we generated to ``JitImpl``:"
+msgstr ""
+"因此，在 ``JIT`` 实现中，唯一需要做的就是将所有生成的子图函数代码传递给 ``JitImpl``："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:384
+msgid ""
+"All variables (``ext_func_id``, etc) we passed are class variables and "
+"were filled when we traversed the subgraph."
+msgstr ""
+"传递的所有变量（``ext_func_id`` 等）都是类变量，并在遍历子图时填充。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:387
+msgid "Implement CSourceCodegen"
+msgstr "实现 CSourceCodegen"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:389
+msgid ""
+"Again, let's create a class skeleton and implement the required "
+"functions. Note that it inherits ``CSourceModuleCodegenBase``"
+msgstr ""
+"再次，创建类框架并实现所需的函数。请注意，它继承了 ``CSourceModuleCodegenBase``："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:406
+msgid "Implement GenCFunc"
+msgstr "实现 GenCFunc"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:408
+msgid ""
+"``GenCFunc`` simply uses the ``CodegenC`` we just implemented to traverse"
+" a Relay function (subgraph) and obtains the generated C code. The "
+"builtin function ``GetExtSymbol`` retrieves a unique symbol name (e.g., "
+"``gcc_0``) in the Relay function and we **must** use it as the C function"
+" name, because this symbol is going to be used for DSO runtime lookup."
+msgstr ""
+"``GenCFunc`` 简单地使用刚刚实现的 ``CodegenC`` 来遍历 Relay 函数（子图）并获取生成的 C 代码。"
+"内置函数 ``GetExtSymbol`` 检索 Relay 函数中的唯一符号名称（例如 ``gcc_0``），并且我们必须将其用作 C 函数名称，因为此符号将用于 DSO 运行时查找。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:424
+msgid "Implement CreateCSourceModule"
+msgstr "实现 CreateCSourceModule"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:426
+msgid ""
+"This function creates a runtime module for the external library. In this "
+"example, we create a CSourceModule that can be directly compiled and "
+"linked together with a TVM generated DSOModule. After you have "
+"implemented ``CodegenC``, implementing this function is relatively "
+"straightforward:"
+msgstr ""
+"此函数为外部库创建运行时模块。在此示例中，创建 CSourceModule，它可以直接编译并与 TVM 生成的 DSOModule 链接。在您实现 ``CodegenC`` 之后，实现此函数相对简单："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:482
+msgid "Register Your Codegen"
+msgstr "注册 Codegen"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:484
+msgid ""
+"The last step is registering your codegen to TVM backend. We first "
+"implement a simple function to invoke our codegen and generate a runtime "
+"module."
+msgstr ""
+"最后一步是将您的代码生成器注册到 TVM 后端。首先实现简单的函数来调用代码生成器并生成运行时模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:493
+msgid "Finally, we register this function to TVM backend:"
+msgstr "最后，将此函数注册到 TVM 后端："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:499
+msgid ""
+"where ``ccompiler`` is a customized tag to let TVM know this is the "
+"codegen it should use to generate and offload subgraphs when the subgraph"
+" is annotated with ``ccompiler``."
+msgstr ""
+"其中 ``ccompiler`` 是自定义标签，用于让 TVM 知道这是当子图被标记为 ``ccompiler`` 时，它应该用来生成和卸载子图的代码生成器。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:501
+msgid ""
+"Finally, a good practice is to set up a CMake configuration flag to "
+"include your compiler only for your customers. We first create a cmake "
+"file: ``cmake/modules/contrib/CODEGENC.cmake``:"
+msgstr ""
+"最后，好的做法是设置 CMake 配置标志，以便仅为您的客户包含您的编译器。首先创建 cmake 文件：``cmake/modules/contrib/CODEGENC.cmake``："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:510
+msgid ""
+"So that users can configure whether to include your compiler when "
+"configuring TVM using ``config.cmake``:"
+msgstr ""
+"这样用户可以在使用 ``config.cmake`` 配置 TVM 时选择是否包含您的编译器："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:518
+msgid "Implement a Codegen for Your Representation"
+msgstr "为您的表示实现代码生成器"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:520
+msgid ""
+"Although we have demonstrated how to implement a C codegen, your hardware"
+" may require other forms of graph representation, such as JSON. In this "
+"case, you could modify ``CodegenC`` class we have implemented to generate"
+" your own graph representation and implement a customized runtime module "
+"to let TVM runtime know how this graph representation should be executed."
+msgstr ""
+"尽管已经演示了如何实现 C 代码生成器，但您的硬件可能需要其他形式的图表示，例如 JSON。"
+"在这种情况下，您可以修改实现的 ``CodegenC`` 类以生成您自己的图表示，并实现自定义的运行时模块，以让 TVM 运行时知道应如何执行此图表示。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:522
+msgid ""
+"To simplify, we define a graph representation named \"ExampleJSON\" in "
+"this guide. ExampleJSON does not mean the real JSON but just a simple "
+"representation for graphs without a control flow. For example, assuming "
+"we have the following subgraph named ``subgraph_0``:"
+msgstr ""
+"为了简化，在本指南中定义了名为“ExampleJSON”的图表示。"
+"ExampleJSON 并不是指真正的 JSON，而只是没有控制流的图的简单表示。例如，假设有名为 ``subgraph_0`` 的子图："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:536
+msgid "Then the ExampleJON of this subgraph looks like:"
+msgstr "那么此子图的 ExampleJSON 如下所示："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:549
+msgid ""
+"The ``input`` keyword declares an input tensor with its ID and shape; "
+"while the other statements describes computations in ``<op> <output ID> "
+"inputs: [input ID] shape: [shape]`` syntax."
+msgstr ""
+"``input`` 关键字声明了输入张量及其 ID 和形状；而其他语句以 ``<op> <output ID> inputs: [input ID] shape: [shape]`` 语法描述计算。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:551
+msgid ""
+"In this section, our goal is to implement the following customized TVM "
+"runtime module to execute ExampleJSON graphs."
+msgstr ""
+"在本节中，目标是实现以下自定义 TVM 运行时模块来执行 ExampleJSON 图。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:564
+msgid ""
+"**Note 1**: We will implement a customized codegen later to generate a "
+"ExampleJSON code string by taking a subgraph."
+msgstr ""
+"**Note 1**：稍后将实现自定义代码生成器，通过获取子图来生成 ExampleJSON 代码字符串。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:566
+msgid ""
+"**Note 2**: This line obtains a pointer to a function for creating the "
+"customized runtime module. You can see that it takes subgraph code in "
+"ExampleJSON format we just generated and initializes a runtime module."
+msgstr ""
+"**Note 2**：此行获取指向用于创建自定义运行时模块的函数的指针。您可以看到，它接受刚刚生成的 ExampleJSON 格式的子图代码并初始化运行时模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:568
+msgid ""
+"In the following sections, we are going to introduce 1) how to implement "
+"``ExampleJsonCodeGen`` and 2) how to implement and register "
+"``examplejson_module_create``."
+msgstr ""
+"在接下来的部分中，将介绍1）如何实现 ``ExampleJsonCodeGen``，以及2）如何实现并注册 ``examplejson_module_create``。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:571
+msgid "Implement ExampleJsonCodeGen"
+msgstr "实现 ExampleJsonCodeGen"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:573
+msgid ""
+"Similar to the C codegen, we also derive ``ExampleJsonCodeGen`` from "
+"``ExprVisitor`` to make use of visitor patterns for subgraph traversing. "
+"On the other hand, we do not have to inherit ``CodegenCBase`` because we "
+"do not need TVM C++ wrappers. The codegen class is implemented as "
+"follows:"
+msgstr ""
+"与 C 代码生成器类似，也将 ``ExampleJsonCodeGen`` 从 ``ExprVisitor`` 派生，以利用访问者模式进行子图遍历。另一方面，不需要继承 ``CodegenCBase``，因为不需要 TVM C++ 包装器。代码生成类的实现如下："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:619
+msgid ""
+"**Note 1**: We again implement corresponding visitor functions to "
+"generate ExampleJSON code and store it to a class variable ``code`` (we "
+"skip the visitor function implementation in this example as their "
+"concepts are basically the same as C codegen). After finished the graph "
+"visiting, we should have an ExampleJSON graph in ``code``."
+msgstr ""
+"**Note 1**：再次实现了相应的访问者函数来生成 ExampleJSON 代码，并将其存储到类变量 ``code`` 中（在此示例中跳过了访问者函数的实现，因为它们的概念与 C 代码生成基本相同）。"
+"完成图的访问后，应该在 ``code`` 中得到 ExampleJSON 图。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:621
+msgid ""
+"**Note 2**: We define an internal API ``gen`` to take a subgraph and "
+"generate a ExampleJSON code. This API can be in an arbitrary name you "
+"prefer."
+msgstr ""
+"**Note 2**：定义了内部 API ``gen``，用于接收子图并生成 ExampleJSON 代码。此 API 的名称可以根据您的喜好任意命名。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:623
+msgid ""
+"The next step is to implement a customized runtime to make use of the "
+"output of ``ExampleJsonCodeGen``."
+msgstr ""
+"接下来的步骤是实现定制化的运行时，以利用 ``ExampleJsonCodeGen`` 的输出。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:626
+msgid "Implement a Customized Runtime"
+msgstr "实现定制化的运行时"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:628
+msgid ""
+"In this section, we will implement a customized TVM runtime step-by-step "
+"and register it to TVM runtime modules. The customized runtime should be "
+"located at ``src/runtime/contrib/<your-runtime-name>/``. In our example, "
+"we name our runtime \"example_ext_runtime\"."
+msgstr ""
+"在本节中，将逐步实现定制的 TVM 运行时，并将其注册到 TVM 运行时模块中。定制的运行时应位于 ``src/runtime/contrib/<your-runtime-name>/`` 目录下。在示例中，将运行时命名为“example_ext_runtime”。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:630
+msgid ""
+"Again, we first define a customized runtime class as follows. The class "
+"has to be derived from TVM ``ModuleNode`` in order to be compatible with "
+"other TVM runtime modules."
+msgstr ""
+"同样，首先定义定制化的运行时类，如下所示。该类必须继承自 TVM 的 ``ModuleNode``，以便与其他 TVM 运行时模块兼容。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:686
+msgid ""
+"In particular, there are some functions derived from ``ModuleNode`` that "
+"we must implement in ``ExampleJsonModule``:"
+msgstr ""
+"具体来说，有一些从 ``ModuleNode`` 继承的函数，必须在 ``ExampleJsonModule`` 中实现："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:688
+msgid ""
+"Constructor: The constructor of this class should accept a subgraph (in "
+"your representation), process and store it in any format you like. The "
+"saved subgraph could be used by the following two functions."
+msgstr ""
+"构造函数：该类的构造函数应接受子图（以您的表示形式），处理并以您喜欢的任何格式存储它。保存的子图可以被以下两个函数使用。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:690
+msgid ""
+"``GetFunction``: This is the most important function in this class. When "
+"TVM runtime wants to execute a subgraph with your compiler tag, TVM "
+"runtime invokes this function from your customized runtime module. It "
+"provides the function name as well as runtime arguments, and "
+"``GetFunction`` should return a packed function implementation for TVM "
+"runtime to execute."
+msgstr ""
+"``GetFunction``：这是该类中最重要的函数。当 TVM 运行时希望使用您的编译器标签执行子图时，TVM 运行时会从您的定制运行时模块中调用此函数。"
+"它提供了函数名称以及运行时参数，而 ``GetFunction`` 应返回打包的函数实现，供 TVM 运行时执行。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:692
+msgid ""
+"``SaveToBinary`` and ``LoadFromBinary``: ``SaveToBinary`` serialize the "
+"runtime module to a binary format for later deployment. This function "
+"will be called by TVM when users use ``export_library`` API. On the other"
+" hand, since we are now using our own graph representation, we have to "
+"make sure that ``LoadFromBinary`` is able to construct the same runtime "
+"module by taking the serialized binary generated by ``SaveToBinary``."
+msgstr ""
+"``SaveToBinary`` 和 ``LoadFromBinary``：``SaveToBinary`` 将运行时模块序列化为二进制格式，以便后续部署。"
+"当用户使用 ``export_library`` API 时，TVM 会调用此函数。"
+"另一方面，由于现在使用自己的图表示形式，必须确保 ``LoadFromBinary`` 能够通过读取 ``SaveToBinary`` 生成的序列化二进制文件，构建相同的运行时模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:694
+msgid ""
+"``GetSource`` (optional): If you would like to see the generated "
+"ExampleJSON code, you can implement this function to dump it; otherwise "
+"you can skip the implementation."
+msgstr ""
+"``GetSource`` （可选）：如果您希望查看生成的 ExampleJSON 代码，可以实现此函数以将其导出；否则，您可以跳过此实现。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:696
+msgid ""
+"Other functions and class variables will be introduced along with the "
+"implementation of above must-have functions."
+msgstr ""
+"其他函数和类变量将随着上述必需函数的实现一起引入。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:699
+msgid "Implement Constructor"
+msgstr "实现构造函数"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:708
+msgid ""
+"Then, we implement ``ParseJson`` to parse a subgraph in ExampleJSON "
+"format and construct a graph in memory for later usage. Since we do not "
+"support subgraph with branches in this example, we simply use an array to"
+" store every nodes in a subgraph in order."
+msgstr ""
+"接下来，实现 ``ParseJson`` 来解析 ExampleJSON 格式的子图，并在内存中构建图以供后续使用。由于在此示例中不支持带有分支的子图，因此简单地使用数组按顺序存储子图中的每个节点。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:767
+msgid ""
+"**Note 1**: We use a class variable ``op_id_`` to map from subgraph node "
+"ID to the operator name (e.g., ``add``) so that we can invoke the "
+"corresponding operator function in runtime."
+msgstr ""
+"**Note 1**：使用类变量 ``op_id_`` 来将子图节点 ID 映射到算子名称（例如，``add``），以便可以在运行时调用相应的算子函数。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:769
+msgid ""
+"**Note 2**: We use a class variable ``graph_`` to map from subgraph name "
+"to an array of nodes. ``GetFunction`` will query graph nodes by a "
+"subgraph ID in runtime."
+msgstr ""
+"**Note 2**：使用类变量 ``graph_`` 来将子图名称映射到节点数组。``GetFunction`` 将在运行时通过子图 ID 查询图节点。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:771
+msgid ""
+"**Note 3**: We use a class variable `data_entry_` to map from a subgraph "
+"node ID to a tensor data placeholder. We will put inputs and outputs to "
+"the corresponding data entry in runtime."
+msgstr ""
+"**Note 3**：使用类变量 ``data_entry_`` 来将子图节点 ID 映射到张量数据占位符。将在运行时将输入和输出放入相应的数据条目中。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:774
+msgid "Implement GetFunction"
+msgstr "实现 GetFunction"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:776
+msgid ""
+"After the construction, we should have the above class variables ready. "
+"We then implement ``GetFunction`` to provide executable subgraph "
+"functions to TVM runtime:"
+msgstr ""
+"在构建完成后，应该已经准备好上述类变量。接着，实现 ``GetFunction``，以向 TVM 运行时提供可执行的子图函数："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:822
+msgid ""
+"As can be seen, ``GetFunction`` is composed of three major parts. The "
+"first part copies data from TVM runtime arguments to the corresponding "
+"data entries we assigned in the constructor. The second part executes the"
+" subgraph with ``Run`` function (will implement later) and saves the "
+"results to another data entry. The third part copies the results from the"
+" output data entry back to the corresponding TVM runtime argument for "
+"output."
+msgstr ""
+"可以看出，``GetFunction`` 由三个主要部分组成。第一部分将数据从 TVM 运行时参数复制到在构造函数中分配的相应数据条目中。"
+"第二部分使用 ``Run`` 函数（稍后将实现）执行子图，并将结果保存到另一个数据条目中。第三部分将结果从输出数据条目复制回相应的 TVM 运行时参数以进行输出。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:825
+msgid "Implement Run"
+msgstr "实现 Run"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:827
+msgid ""
+"Now let's implement ``Run`` function. This function accepts 1) a subgraph"
+" ID, 2) a list of input data entry indexs, and 3) an output data entry "
+"index."
+msgstr ""
+"现在实现 ``Run`` 函数。该函数接受1）子图 ID，2）输入数据条目索引列表，以及3）输出数据条目索引。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:862
+msgid ""
+"``Run`` function mainly has two parts. The first part allocates a list of"
+" ``TVMValue``, and maps corresponding data entry blocks. This will become"
+" the arguments of our operator functions. The second part than invokes "
+"our operator functions. Although we use the same C functions as the "
+"previous example, you can replace ``Add``, ``Sub``, and ``Mul`` with your"
+" own engine. You only need to make sure your engine stores the results to"
+" the last argument so that they can be transferred back to TVM runtime."
+msgstr ""
+"``Run`` 函数主要有两个部分。第一部分分配 ``TVMValue`` 列表，并映射相应的数据条目块。这将作为算子函数的参数。第二部分随后调用算子函数。"
+"尽管使用与之前相同的 C 函数，您可以用自己的引擎替换 ``Add``、``Sub`` 和 ``Mul``。您只需要确保您的引擎将结果存储到最后一个参数中，以便它们可以传输回 TVM 运行时。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:864
+msgid ""
+"With above functions implemented, our customized codegen and runtime can "
+"now execute subgraphs. The last step is registering an API "
+"(``examplejson_module_create``) to create this module:"
+msgstr ""
+"通过实现上述函数，定制代码生成器和运行时现在可以执行子图。最后一步是注册API（``examplejson_module_create``）来创建此模块："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:875
+msgid "Implement SaveToBinary and LoadFromBinary"
+msgstr "实现 SaveToBinary 和 LoadFromBinary"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:877
+msgid ""
+"So far we have implemented the main features of a customized runtime so "
+"that it can be used as other TVM runtimes. However, when users want to "
+"save the built runtime to a disk for deployment, TVM has no idea about "
+"how to save it. This is the reason we want to implement ``SaveToBinary`` "
+"and ``LoadFromBinary``, which tell TVM how should this customized runtime"
+" be persist and restored."
+msgstr ""
+"到目前为止，已经实现了定制运行时的主要功能，以便它可以像其他 TVM 运行时一样使用。"
+"然而，当用户希望将构建的运行时保存到磁盘以进行部署时，TVM 并不知道如何保存它。这就是为什么要实现 ``SaveToBinary`` 和 ``LoadFromBinary``，它们告诉 TVM 应该如何持久化和恢复这个定制的运行时。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:879
+msgid ""
+"We first implement ``SaveToBinary`` function to allow users to save this "
+"module in disk."
+msgstr ""
+"首先实现 ``SaveToBinary`` 函数，以允许用户将此模块保存到磁盘中。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:887
+msgid ""
+"We can find that this function is pretty simple. Recall that the only "
+"argument we took in constructor is a subgraph representation, meaning "
+"that we only need a subgraph representation to construct/recover this "
+"customized runtime module. As a result, ``SaveToBinary`` simply writes "
+"the subgraph to an output DMLC stream. That is, when users use "
+"``export_library`` API to export the module, the customized module will "
+"be an ExampleJSON stream of a subgraph."
+msgstr ""
+"可以发现这个函数非常简单。回想一下，在构造函数中接受的唯一参数是子图表示，这意味着只需要子图表示来构建/恢复这个定制的运行时模块。"
+"因此，``SaveToBinary`` 简单地将子图写入输出 DMLC 流。也就是说，当用户使用 ``export_library`` API导出模块时，定制的模块将是子图的 ExampleJSON 流。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:889
+msgid ""
+"Similarity, ``LoadFromBinary`` reads the subgraph stream and re-"
+"constructs the customized runtime module:"
+msgstr ""
+"类似地，``LoadFromBinary`` 读取子图流并重新构建定制的运行时模块："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:901
+msgid ""
+"We also need to register this function to enable the corresponding Python"
+" API:"
+msgstr ""
+"还需要注册此函数以启用相应的 Python API："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:908
+msgid ""
+"The above registration means when users call "
+"``tvm.runtime.load_module(lib_path)`` API and the exported library has an"
+" ExampleJSON stream, our ``LoadFromBinary`` will be invoked to create the"
+" same customized runtime module."
+msgstr ""
+"上述注册意味着当用户调用 ``tvm.runtime.load_module(lib_path)`` API 并且导出的库包含 ExampleJSON 流时，``LoadFromBinary`` 将被调用来创建相同的定制运行时模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:910
+msgid ""
+"In addition, if you want to support module creation directly from an "
+"ExampleJSON file, you can also implement a simple function and register a"
+" Python API as follows:"
+msgstr ""
+"此外，如果您希望支持直接从 ExampleJSON 文件创建模块，您还可以实现简单的函数并注册 Python API，如下所示："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:933
+msgid ""
+"It means users can manually write/modify an ExampleJSON file, and use "
+"Python API ``tvm.runtime.load_module(\"mysubgraph.examplejson\", "
+"\"examplejson\")`` to construct a customized module."
+msgstr ""
+"这意味着用户可以手动编写/修改 ExampleJSON 文件，并使用 Python API ``tvm.runtime.load_module(\"mysubgraph.examplejson\", \"examplejson\")`` 来构建定制模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:937
+msgid "Summary"
+msgstr "小结"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:939
+msgid "In summary, here is a checklist for you to refer:"
+msgstr "总结一下，以下是供您参考的清单："
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:941
+msgid ""
+"A codegen class derived from ``ExprVisitor`` and ``CodegenCBase`` (only "
+"for C codegen) with following functions."
+msgstr ""
+"从 ``ExprVisitor`` 和 ``CodegenCBase`` （仅适用于 C 代码生成）派生的代码生成类，包含以下函数。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:943
+msgid "``VisitExpr_(const CallNode* call)`` to collect call node information."
+msgstr "``VisitExpr_(const CallNode* call)`` 用于收集调用节点信息。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:944
+msgid "Other visitor functions you needed to collect subgraph information."
+msgstr "您需要收集子图信息的其他访问者函数。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:945
+msgid "``JIT`` to generate subgraph code."
+msgstr "``JIT`` 用于生成子图代码。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:946
+msgid "Register codegen."
+msgstr "注册代码生成器。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:948
+msgid "A function to create ``CSourceModule`` (for C codegen)."
+msgstr "用于创建 ``CSourceModule`` 的函数（适用于 C 代码生成）。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:950
+msgid ""
+"A runtime module class derived from ``ModuleNode`` with following "
+"functions (for your graph representation)."
+msgstr ""
+"从 ``ModuleNode`` 派生的运行时模块类，包含以下函数（适用于您的图表示）。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:952
+msgid "Constructor."
+msgstr ""
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:953
+msgid "``GetFunction`` to generate a TVM runtime compatible ``PackedFunc``."
+msgstr "``GetFunction`` 用于生成与 TVM 运行时兼容的 ``PackedFunc``。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:954
+msgid "``Run`` to execute a subgraph."
+msgstr "``Run`` 用于执行子图。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:955
+msgid "Register a runtime creation API."
+msgstr "注册运行时创建 API。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:956
+msgid ""
+"``SaveToBinary`` and ``LoadFromBinary`` to serialize/deserialize "
+"customized runtime module."
+msgstr ""
+"``SaveToBinary`` 和 ``LoadFromBinary`` 用于序列化/反序列化定制的运行时模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:957
+msgid ""
+"Register ``LoadFromBinary`` API to support "
+"``tvm.runtime.load_module(your_module_lib_path)``."
+msgstr ""
+"注册 ``LoadFromBinary`` API 以支持 ``tvm.runtime.load_module(your_module_lib_path)``。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:958
+msgid ""
+"(optional) ``Create`` to support customized runtime module construction "
+"from subgraph file in your representation."
+msgstr ""
+"（可选） ``Create`` 用于支持从子图文件中构建定制的运行时模块。"
+
+#: ../../doc/docs/dev/how_to/relay_bring_your_own_codegen.rst:960
+msgid ""
+"An annotator to annotate a user Relay program to make use of your "
+"compiler and runtime (TBA)."
+msgstr ""
+"annotator，用于注解用户的 Relay 程序以利用您的编译器和运行时（待添加）。"

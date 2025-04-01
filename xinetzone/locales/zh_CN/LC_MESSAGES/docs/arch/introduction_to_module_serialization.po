@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:19
+msgid "Introduction to Module Serialization"
+msgstr "模型序列化简介"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:21
+msgid ""
+"When to deploy TVM runtime module, no matter whether it is CPU or GPU, "
+"TVM only needs one single dynamic shared library. The key is our unified "
+"module serialization mechanism. This document will introduce TVM module "
+"serialization format standard and implementation details."
+msgstr ""
+"在部署 TVM 运行时模块时，无论是 CPU 还是 GPU，TVM 只需要一个单一的动态共享库。"
+"关键在于统一的模块序列化机制。本文档将介绍 TVM 模块序列化格式标准及其实现细节。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:27
+msgid "Module Export Example"
+msgstr "模块导出示例"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:29
+msgid "Let us build one ResNet-18 workload for GPU as an example first."
+msgstr "首先，以 GPU 为例构建 ResNet-18 的工作负载。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:62
+msgid "Serialization"
+msgstr "序列化"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:64
+msgid ""
+"The entrance API is ``export_library`` of ``tvm.module.Module``. Inside "
+"this function, we will do the following steps:"
+msgstr ""
+"入口 API 是 ``tvm.module.Module`` 的 ``export_library``。在这个函数内部，将执行以下步骤："
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:67
+msgid "Collect all DSO modules (LLVM modules and C modules)"
+msgstr "收集所有 DSO 模块（LLVM 模块和 C 模块）"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:69
+msgid ""
+"Once we have DSO modules, we will call ``save`` function to save them "
+"into files."
+msgstr ""
+"一旦拥有 DSO 模块，便可调用 ``save`` 函数将它们保存到文件中。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:71
+msgid ""
+"Next, we will check whether we have imported modules, such as CUDA, "
+"OpenCL or anything else. We don't restrict the module type here. Once we "
+"have imported modules, we will create one file named ``devc.o`` / "
+"``dev.cc`` (so that we could embed the binary blob data of import modules"
+" into one dynamic shared library), then call function "
+"``_PackImportsToLLVM`` or ``_PackImportsToC`` to do module serialization."
+msgstr ""
+"接着，将检查是否导入了模块，例如 CUDA、OpenCL 或任何其他模块。"
+"不限制模块类型。一旦导入了模块，将创建名为 ``devc.o`` / ``dev.cc`` 的文件，"
+"（以便能够将二进制 blob 数据嵌入到动态共享库中），然后调用函数 ``_PackImportsToLLVM`` 或 ``_PackImportsToC`` 来完成模块序列化。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:77
+msgid ""
+"Finally, we call ``fcompile`` which invokes ``_cc.create_shared`` to get "
+"dynamic shared library."
+msgstr ""
+"最后，将调用 ``fcompile``，它将调用 ``_cc.create_shared`` 来获取动态共享库。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:81
+msgid ""
+"For C source modules, we will compile them and link them together with "
+"the DSO module."
+msgstr ""
+"对于 C 源模块，将编译它们并将它们链接在一起。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:83
+msgid ""
+"Use ``_PackImportsToLLVM`` or ``_PackImportsToC`` depends on whether we "
+"enable LLVM in TVM. They achieve the same goal in fact."
+msgstr ""
+"最后，根据在 TVM 中是否启用 LLVM，使用 ``_PackImportsToLLVM`` 或 ``_PackImportsToC``。实际上，它们实现了相同的目标。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:88
+msgid "Under the Hood of Serialization and Format Standard"
+msgstr "序列化与格式标准的背后原理""
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:90
+msgid ""
+"As said before, we will do the serialization work in the "
+"``_PackImportsToLLVM`` or ``_PackImportsToC``. They both call "
+"``SerializeModule`` to serialize the runtime module. In "
+"``SerializeModule`` function, we firstly construct one helper class "
+"``ModuleSerializer``. It will take ``module`` to do some initialization "
+"work, like marking module index. Then we could use its "
+"``SerializeModule`` to serialize module."
+msgstr ""
+"如前所述，将会执行序列化工作于 `_PackImportsToLLVM` 或 `_PackImportsToC` 函数中。"
+"这两个函数都会调用 `SerializeModule` 来对运行时模块进行序列化。"
+"在 `SerializeModule` 函数中，首先构建辅助类 `ModuleSerializer`。"
+"这个类会接收 ``module`` 并做一些初始化工作，比如标记模块索引。"
+"之后可以使用它的 `SerializeModule` 方法来对模块进行序列化。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:95
+msgid ""
+"For better understanding, let us dig the implementation of this class a "
+"little deeper."
+msgstr ""
+"为了更深入地理解，对这个类的实现进行更细致的探讨。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:97
+msgid "The following code is used to construct ``ModuleSerializer``:"
+msgstr "以下代码用于构建 ``ModuleSerializer``："
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:110
+msgid ""
+"In ``CreateModuleIndex()``, We will inspect module import relationship "
+"using DFS and create index for them. Note the root module is fixed at "
+"location 0. In our example, we have module relationship like this:"
+msgstr ""
+"在  ``CreateModuleIndex()`` 函数中，使用深度优先搜索（DFS）来检查模块间的导入关系，并为它们创建索引。"
+"请注意，根模块的位置固定为 0。在示例中，模块之间的关系如下："
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:119
+msgid "So LLVM module will have index 0, CUDA module will have index 1."
+msgstr "故而 LLVM 模块索引为 0，CUDA 模块索引为 1"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:121
+msgid ""
+"After constructing module index, we will try to construct import tree "
+"(``CreateImportTree()``), which will be used to restore module import "
+"relationship when we load the exported library back. In our design, we "
+"use CSR format to store import tree, each row is parent index, the child "
+"indices correspond to its children index. In code, we use "
+"``import_tree_row_ptr_`` and ``import_tree_child_indices_`` to represent "
+"them."
+msgstr ""
+"构建模块索引之后，将尝试构建导入树（``CreateImportTree()``），该树在重新加载导出的库时用于恢复模块导入关系。"
+"在我们的设计中，使用 CSR 格式存储导入树，每一行代表父索引，子索引对应其子节点的索引。"
+"在代码中，用 ``import_tree_row_ptr_`` 和 ``import_tree_child_indices_`` 来表示它们。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:128
+msgid ""
+"After initialization, we could serialize module using ``SerializeModule``"
+" function. In its function logic, we will assume the serialization format"
+" like this:"
+msgstr ""
+"初始化完成后，可以使用 ``SerializeModule`` 函数对模块进行序列化。在它的功能逻辑中，假设序列化的格式如下："
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:142
+msgid ""
+"``binary_blob_size`` is the number of blobs we will have in this "
+"serialization step. There will be three blobs in our example which are "
+"created for LLVM module, CUDA module, and ``_import_tree``, respectively."
+msgstr ""
+"``binary_blob_size`` 是在这一步序列化过程中将要处理的二进制数据块的数量。"
+"在示例中，将有三个二进制数据块被创建，分别对应于 LLVM 模块、CUDA 模块和 ``_import_tree``。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:146
+msgid ""
+"``binary_blob_type_key`` is the blob type key of module. For LLVM / C "
+"module, whose blob type key is ``_lib``. For CUDA module, it is ``cuda``,"
+" which could be got by ``module->type_key()``."
+msgstr ""
+"``binary_blob_type_key`` 是模块的二进制类型键。"
+"对于 LLVM/C++ 模块，其二进制类型键是 ``_lib``。"
+"而对于 CUDA 模块，则是 ``cuda``，可以通过调用 ``module->type_key()`` 获取该键。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:149
+msgid ""
+"``binary_blob_logic`` is the logic handling of blob. For most of blob "
+"(like CUDA, OpenCL), we will call ``SaveToBinary`` function to serialize "
+"blob into binary. However, like LLVM / C module, we will only write "
+"``_lib`` to indicate this is a DSO module."
+msgstr ""
+"``binary_blob_logic`` 是指处理 blob 的逻辑。"
+"对于大多数 blob（如 CUDA、OpenCL），将调用 ``SaveToBinary`` 函数将 blob 序列化为二进制格式。"
+"然而，对于 LLVM/C 模块，我们只会写入 ``_lib`` 来表示这是动态共享对象模块。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:154
+msgid ""
+"Whether or not it is required to implement the SaveToBinary virtual "
+"function depends on how the module is used. For example, If the module "
+"has information we need when we load the dynamic shared library back, we "
+"should do. Like CUDA module, we need its binary data passing to GPU "
+"driver when we load the dynamic shared library, so we should implement "
+"``SaveToBinary`` to serialize its binary data. But for host module (like "
+"DSO), we don't need other information when we load the dynamic shared "
+"library, so we don't need to implement ``SaveToBinary``. However, if in "
+"the future, we want to record some meta information of DSO module, we "
+"could implement ``SaveToBinary`` for DSO module too."
+msgstr ""
+"是否需要实现 ``SaveToBinary`` 虚函数，这取决于模块的使用方式。"
+"例如，如果在重新加载动态共享库时需要模块中的信息，那么应该实现它。"
+"以 CUDA 模块为例，当加载动态共享库时，需要将其二进制数据传递给 GPU 驱动，因此应实现 ``SaveToBinary`` 来序列化其二进制数据。"
+"但对于主机模块（如 DSO），在加载动态共享库时不需要其他信息，因此无需实现 ``SaveToBinary``。"
+"然而，如果将来希望记录 DSO 模块的一些元信息，也可以为 DSO 模块实现 ``SaveToBinary``。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:163
+msgid ""
+"Finally, we will write one key ``_import_tree`` unless our module only "
+"has one DSO module and it is in the root. It is used to reconstruct the "
+"module import relationship when we load the exported library back as said"
+" before. The ``import_tree_logic`` is just to write "
+"``import_tree_row_ptr_`` and ``import_tree_child_indices_`` into stream."
+msgstr ""
+"最终，将编写关键的 ``_import_tree`` 函数，除非模块只包含一个 DSO 模块并且它位于根目录中。"
+"这个函数用于在重新加载导出的库时重建模块导入关系，正如之前所述。"
+"``import_tree_logic`` 的功能仅是将 ``import_tree_row_ptr_`` 和 ``import_tree_child_indices_`` 写入流中。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:169
+msgid ""
+"After this step, we will pack it into a symbol "
+"``runtime::symbol::tvm_dev_mblob`` that can be recovered in the dynamic "
+"libary."
+msgstr ""
+"完成此步骤后，将它打包进名为 ``runtime::symbol::tvm_dev_mblob`` 的符号中，该符号可以在动态库中恢复。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:173
+msgid ""
+"Now, we complete the serialization part. As you have seen, we could "
+"support arbitrary modules to import ideally."
+msgstr ""
+"现在，完成了序列化部分。正如你所看到的，理想情况下可以支持任意模块的导入。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:178
+msgid "Deserialization"
+msgstr "反序列化"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:180
+msgid ""
+"The entrance API is ``tvm.runtime.load``. This function is to call "
+"``_LoadFromFile`` in fact. If we dig it a little deeper, this is "
+"``Module::LoadFromFile``. In our example, the file is ``deploy.so``, "
+"according to the function logic, we will call ``module.loadfile_so`` in "
+"``dso_library.cc``. The key is here:"
+msgstr ""
+"入口API为 ``tvm.runtime.load``。此函数实际上是调用 ``_LoadFromFile``。如果更深入地研究，这其实是 ``Module::LoadFromFile``。"
+"在示例中，文件名为 ``deploy.so``，根据函数逻辑，将在 ``dso_library.cc`` 中调用 ``module.loadfile_so``。关键点在此："
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:198
+msgid ""
+"As said before, we will pack the blob into the symbol "
+"``runtime::symbol::tvm_dev_mblob``. During deserialization part, we will "
+"inspect it. If we have ``runtime::symbol::tvm_dev_mblob``, we will call "
+"``ProcessModuleBlob``, whose logic like this:"
+msgstr ""
+"如前所述，将 blob 打包到符号 ``runtime::symbol::tvm_dev_mblob`` 中。"
+"在反序列化部分，将检查它。如果有 ``runtime::symbol::tvm_dev_mblob``，将调用 ``ProcessModuleBlob``，其逻辑如下："
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:223
+msgid ""
+"After this, we will set the ``ctx_address`` to be the ``root_module`` so "
+"that allow lookup of symbol from root (so all symbols are visible)."
+msgstr ""
+"之后，将 ``ctx_address`` 设置为 ``root_module``，这样可以从根目录查找符号（因此所有符号都是可见的）。"
+
+#: ../../doc/docs/arch/introduction_to_module_serialization.rst:226
+msgid "Finally, we complete the deserialization part."
+msgstr ""
+"最后，完成反序列化部分。"

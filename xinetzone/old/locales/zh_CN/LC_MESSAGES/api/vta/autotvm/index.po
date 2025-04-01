@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/autotvm/index.rst:2
+msgid "vta.autotvm"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:8
+msgid "Defines AutoTVM components used with VTA."
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:19:<autosummary>:1
+msgid ""
+":py:obj:`module_loader <vta.autotvm.module_loader>`\\ "
+"\\(\\[bitstream\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:25
+#: ../../doc/api/vta/autotvm/index.rst:19:<autosummary>:1
+msgid "Construct a ModuleLoader implementation specialized for VTA."
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:21
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:28
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:29
+msgid "bitsream"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:30
+msgid "Path to the bitstream to write prior to uploading code."
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:33
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:34
+msgid "ModuleLoader :"
+msgstr ""
+
+#: ../../doc/api/vta/autotvm/index.rst:35
+msgid "The ModuleLoader instance."
+msgstr ""
+
