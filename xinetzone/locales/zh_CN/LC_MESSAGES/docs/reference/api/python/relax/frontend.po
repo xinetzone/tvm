@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 10:27+0800\n"
+"POT-Creation-Date: 2025-04-03 09:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -915,7 +915,8 @@ msgstr ""
 #: tvm.relax.frontend.nn.op.group_norm:25
 #: tvm.relax.frontend.nn.op.layer_norm:34 tvm.relax.frontend.nn.op.less:10
 #: tvm.relax.frontend.nn.op.less_equal:10 tvm.relax.frontend.nn.op.matmul:16
-#: tvm.relax.frontend.nn.op.maximum:10 tvm.relax.frontend.nn.op.minimum:10
+#: tvm.relax.frontend.nn.op.max:16 tvm.relax.frontend.nn.op.maximum:10
+#: tvm.relax.frontend.nn.op.min:16 tvm.relax.frontend.nn.op.minimum:10
 #: tvm.relax.frontend.nn.op.multiply:10 tvm.relax.frontend.nn.op.negative:8
 #: tvm.relax.frontend.nn.op.not_equal:10 tvm.relax.frontend.nn.op.relu:11
 #: tvm.relax.frontend.nn.op.rms_norm:21 tvm.relax.frontend.nn.op.sigmoid:10
@@ -1015,6 +1016,7 @@ msgstr ""
 #: tvm.relax.frontend.nn.op.ccl_allreduce:10
 #: tvm.relax.frontend.nn.op.ccl_broadcast_from_worker0:5
 #: tvm.relax.frontend.nn.op.chunk:9 tvm.relax.frontend.nn.op.interpolate:20
+#: tvm.relax.frontend.nn.op.max:13 tvm.relax.frontend.nn.op.min:13
 #: tvm.relax.frontend.nn.op.sum:13
 msgid "Name hint for this operation."
 msgstr ""
@@ -1658,8 +1660,43 @@ msgid ""
 "dtype will be the same as input dtype."
 msgstr ""
 
+#: of tvm.relax.frontend.nn.op.max:1
+msgid "Computes the max of tensor elements over given axes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.max:3 tvm.relax.frontend.nn.op.min:3
+#: tvm.relax.frontend.nn.op.sum:3
+msgid "The input data tensor"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.max:5
+msgid ""
+"Axis or axes along which a max is performed. The default, axis=None, will"
+" max all of the elements of the input tensor. Negative indexing is "
+"supported."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.max:9 tvm.relax.frontend.nn.op.min:9
+#: tvm.relax.frontend.nn.op.sum:9
+msgid ""
+"If this is set to True, the axes which are reduced are left in the result"
+" as dimensions with size one. With this option, the result will broadcast"
+" correctly against the input tensor."
+msgstr ""
+
 #: of tvm.relax.frontend.nn.op.maximum:1
 msgid "Element-wise maximum"
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.min:1
+msgid "Computes the min of tensor elements over given axes."
+msgstr ""
+
+#: of tvm.relax.frontend.nn.op.min:5
+msgid ""
+"Axis or axes along which a min is performed. The default, axis=None, will"
+" min all of the elements of the input tensor. Negative indexing is "
+"supported."
 msgstr ""
 
 #: of tvm.relax.frontend.nn.op.minimum:1
@@ -2081,22 +2118,11 @@ msgstr ""
 msgid "Computes the sum of tensor elements over given axes."
 msgstr ""
 
-#: of tvm.relax.frontend.nn.op.sum:3
-msgid "The input data tensor"
-msgstr ""
-
 #: of tvm.relax.frontend.nn.op.sum:5
 msgid ""
 "Axis or axes along which a sum is performed. The default, axis=None, will"
 " sum all of the elements of the input tensor. Negative indexing is "
 "supported."
-msgstr ""
-
-#: of tvm.relax.frontend.nn.op.sum:9
-msgid ""
-"If this is set to True, the axes which are reduced are left in the result"
-" as dimensions with size one. With this option, the result will broadcast"
-" correctly against the input tensor."
 msgstr ""
 
 #: of tvm.relax.frontend.nn.op.take:1

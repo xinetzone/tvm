@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 10:27+0800\n"
+"POT-Creation-Date: 2025-04-03 09:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -76,7 +76,7 @@ msgstr ""
 #: tvm.relax.op.nn.nn.adaptive_avg_pool2d:36
 #: tvm.relax.op.nn.nn.adaptive_avg_pool3d:36 tvm.relax.op.nn.nn.avg_pool1d:34
 #: tvm.relax.op.nn.nn.avg_pool2d:42 tvm.relax.op.nn.nn.avg_pool3d:35
-#: tvm.relax.op.nn.nn.batch_norm:76 tvm.relax.op.nn.nn.conv1d:50
+#: tvm.relax.op.nn.nn.batch_norm:81 tvm.relax.op.nn.nn.conv1d:50
 #: tvm.relax.op.nn.nn.conv1d_transpose:38 tvm.relax.op.nn.nn.conv2d:50
 #: tvm.relax.op.nn.nn.conv2d_transpose:48 tvm.relax.op.nn.nn.conv3d:52
 #: tvm.relax.op.nn.nn.cross_entropy_with_logits:16 tvm.relax.op.nn.nn.gelu:11
@@ -86,19 +86,20 @@ msgstr ""
 #: tvm.relax.op.nn.nn.max_pool2d:41 tvm.relax.op.nn.nn.max_pool3d:35
 #: tvm.relax.op.nn.nn.nll_loss:25 tvm.relax.op.nn.nn.pad:20
 #: tvm.relax.op.nn.nn.relu:9 tvm.relax.op.nn.nn.rms_norm:21
-#: tvm.relax.op.nn.nn.silu:9 tvm.relax.op.nn.nn.softmax:12
-#: tvm.relax.op.qdq.dequantize:18 tvm.relax.op.qdq.quantize:18
-#: tvm.relax.op.search.argmax:14 tvm.relax.op.search.argmin:14
-#: tvm.relax.op.statistical.max:14 tvm.relax.op.statistical.mean:14
-#: tvm.relax.op.statistical.min:14 tvm.relax.op.statistical.prod:14
-#: tvm.relax.op.statistical.std:14 tvm.relax.op.statistical.sum:14
-#: tvm.relax.op.statistical.variance:14 tvm.relax.op.ternary.ewise_fma:11
-#: tvm.relax.op.unary.abs:6 tvm.relax.op.unary.acos:6
-#: tvm.relax.op.unary.acosh:6 tvm.relax.op.unary.asin:6
-#: tvm.relax.op.unary.asinh:6 tvm.relax.op.unary.atan:6
-#: tvm.relax.op.unary.atanh:6 tvm.relax.op.unary.bitwise_not:6
-#: tvm.relax.op.unary.ceil:6 tvm.relax.op.unary.clip:10
-#: tvm.relax.op.unary.cos:6 tvm.relax.op.unary.cosh:6 tvm.relax.op.unary.exp:6
+#: tvm.relax.op.nn.nn.selu:14 tvm.relax.op.nn.nn.silu:9
+#: tvm.relax.op.nn.nn.softmax:12 tvm.relax.op.qdq.dequantize:18
+#: tvm.relax.op.qdq.quantize:18 tvm.relax.op.search.argmax:14
+#: tvm.relax.op.search.argmin:14 tvm.relax.op.statistical.max:14
+#: tvm.relax.op.statistical.mean:14 tvm.relax.op.statistical.min:14
+#: tvm.relax.op.statistical.prod:14 tvm.relax.op.statistical.std:14
+#: tvm.relax.op.statistical.sum:14 tvm.relax.op.statistical.variance:14
+#: tvm.relax.op.ternary.ewise_fma:11 tvm.relax.op.unary.abs:6
+#: tvm.relax.op.unary.acos:6 tvm.relax.op.unary.acosh:6
+#: tvm.relax.op.unary.asin:6 tvm.relax.op.unary.asinh:6
+#: tvm.relax.op.unary.atan:6 tvm.relax.op.unary.atanh:6
+#: tvm.relax.op.unary.bitwise_not:6 tvm.relax.op.unary.ceil:6
+#: tvm.relax.op.unary.clip:10 tvm.relax.op.unary.cos:6
+#: tvm.relax.op.unary.cosh:6 tvm.relax.op.unary.exp:6
 #: tvm.relax.op.unary.floor:6 tvm.relax.op.unary.isfinite:6
 #: tvm.relax.op.unary.isinf:6 tvm.relax.op.unary.isnan:6
 #: tvm.relax.op.unary.log:6 tvm.relax.op.unary.logical_not:6
@@ -1147,7 +1148,7 @@ msgstr ""
 msgid "Applies a linear transformation to the incoming data: y = xA^T + b"
 msgstr ""
 
-#: of tvm.relax.op.linear_algebra.linear:3
+#: of tvm.relax.op.linear_algebra.linear:3 tvm.relax.op.nn.nn.selu:11
 msgid "The input data."
 msgstr ""
 
@@ -2627,6 +2628,23 @@ msgstr ""
 msgid "The value used for the moving_mean and moving_var update."
 msgstr ""
 
+#: of tvm.relax.op.nn.nn.batch_norm:75
+msgid ""
+"A boolean value to indicate whether training or in eval mode. By default."
+"   relax batch_norm is training mode. To transform it to inference mode,"
+"   can use DecomposeOpsForInference."
+msgstr ""
+
+#: of tvm.relax.op.nn.nn.batch_norm:76
+msgid "A boolean value to indicate whether training or in eval mode. By default."
+msgstr ""
+
+#: of tvm.relax.op.nn.nn.batch_norm:77
+msgid ""
+"relax batch_norm is training mode. To transform it to inference mode, can"
+" use DecomposeOpsForInference."
+msgstr ""
+
 #: of tvm.relax.op.nn.nn.conv1d:1
 msgid "1D convolution."
 msgstr ""
@@ -3226,6 +3244,25 @@ msgstr ""
 
 #: of tvm.relax.op.nn.nn.rms_norm:18
 msgid "Small float added to square mean to avoid dividing by zero."
+msgstr ""
+
+#: of tvm.relax.op.nn.nn.selu:1
+msgid "Scaled Exponential Linear Unit (SELU)."
+msgstr ""
+
+#: of tvm.relax.op.nn.nn.selu:3
+msgid ""
+"\\text{SELU}(x) = \\lambda \\begin{cases}\n"
+"    x & \\text{if } x > 0 \\\\\n"
+"    \\alpha (e^x - 1) & \\text{if } x \\leq 0\n"
+"\\end{cases}\n"
+"\n"
+msgstr ""
+
+#: of tvm.relax.op.nn.nn.selu:9
+msgid ""
+"where :math:`\\lambda \\approx 1.0507` and :math:`\\alpha \\approx "
+"1.6733`."
 msgstr ""
 
 #: of tvm.relax.op.nn.nn.silu:1

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tvm \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 10:27+0800\n"
+"POT-Creation-Date: 2025-04-03 09:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -51,18 +51,17 @@ msgstr ""
 msgid "The right hand operand."
 msgstr ""
 
-#: of tvm.tir.expr.Add:7 tvm.tir.expr.And:7 tvm.tir.expr.Any:4
-#: tvm.tir.expr.Broadcast:7 tvm.tir.expr.BufferLoad:7 tvm.tir.expr.Call:10
-#: tvm.tir.expr.Cast:7 tvm.tir.expr.CommReducer:11 tvm.tir.expr.Div:7
-#: tvm.tir.expr.EQ:7 tvm.tir.expr.FloatImm:7 tvm.tir.expr.FloorDiv:7
-#: tvm.tir.expr.FloorMod:7 tvm.tir.expr.GE:7 tvm.tir.expr.GT:7
-#: tvm.tir.expr.IntImm:7 tvm.tir.expr.IterVar:13 tvm.tir.expr.LE:7
-#: tvm.tir.expr.LT:7 tvm.tir.expr.Let:9 tvm.tir.expr.Max:7 tvm.tir.expr.Min:7
-#: tvm.tir.expr.Mod:7 tvm.tir.expr.Mul:7 tvm.tir.expr.NE:7 tvm.tir.expr.Not:5
-#: tvm.tir.expr.Or:7 tvm.tir.expr.ProducerLoad:7 tvm.tir.expr.Ramp:9
-#: tvm.tir.expr.Reduce:15 tvm.tir.expr.Select:16 tvm.tir.expr.Shuffle:7
-#: tvm.tir.expr.SizeVar:8 tvm.tir.expr.StringImm:5 tvm.tir.expr.Sub:7
-#: tvm.tir.expr.Var:7
+#: of tvm.tir.expr.Add:7 tvm.tir.expr.And:7 tvm.tir.expr.Broadcast:7
+#: tvm.tir.expr.BufferLoad:7 tvm.tir.expr.Call:10 tvm.tir.expr.Cast:7
+#: tvm.tir.expr.CommReducer:11 tvm.tir.expr.Div:7 tvm.tir.expr.EQ:7
+#: tvm.tir.expr.FloatImm:7 tvm.tir.expr.FloorDiv:7 tvm.tir.expr.FloorMod:7
+#: tvm.tir.expr.GE:7 tvm.tir.expr.GT:7 tvm.tir.expr.IntImm:7
+#: tvm.tir.expr.IterVar:13 tvm.tir.expr.LE:7 tvm.tir.expr.LT:7
+#: tvm.tir.expr.Let:9 tvm.tir.expr.Max:7 tvm.tir.expr.Min:7 tvm.tir.expr.Mod:7
+#: tvm.tir.expr.Mul:7 tvm.tir.expr.NE:7 tvm.tir.expr.Not:5 tvm.tir.expr.Or:7
+#: tvm.tir.expr.ProducerLoad:7 tvm.tir.expr.Ramp:9 tvm.tir.expr.Reduce:15
+#: tvm.tir.expr.Select:16 tvm.tir.expr.Shuffle:7 tvm.tir.expr.SizeVar:8
+#: tvm.tir.expr.StringImm:5 tvm.tir.expr.Sub:7 tvm.tir.expr.Var:7
 msgid "The location of this expression in the source code."
 msgstr ""
 
@@ -124,18 +123,6 @@ msgstr ""
 
 #: of tvm.tir.expr.And:1
 msgid "And node."
-msgstr ""
-
-#: of tvm.tir.expr.Any:1
-msgid "Any node."
-msgstr ""
-
-#: of tvm.tir.expr.Any:3
-msgid "span"
-msgstr ""
-
-#: of tvm.tir.expr.Any:-1
-msgid "Optional[Span]"
 msgstr ""
 
 #: of tvm.tir.stmt.AssertStmt:1
@@ -3039,5 +3026,14 @@ msgstr ""
 #~ "Here's an example of how broadcast "
 #~ "buffer can be used to define a "
 #~ "symbolic broadcast operation,"
+#~ msgstr ""
+
+#~ msgid "Any node."
+#~ msgstr ""
+
+#~ msgid "span"
+#~ msgstr ""
+
+#~ msgid "Optional[Span]"
 #~ msgstr ""
 
