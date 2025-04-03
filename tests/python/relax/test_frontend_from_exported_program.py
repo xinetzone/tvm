@@ -477,6 +477,27 @@ def test_extended_unary_ops():
     # log_softmax
     test_logsoftmax()
 
+    # reciprocal
+    class Reciprocal(Module):
+        def forward(self, input):
+            return torch.reciprocal(input)
+
+    @tvm.script.ir_module
+    class expected_reciprocal:
+        @R.function
+        def main(
+            input_1: R.Tensor((1, 3, 10, 10), dtype="float32")
+        ) -> R.Tuple(R.Tensor((1, 3, 10, 10), dtype="float32")):
+            with R.dataflow():
+                lv: R.Tensor((1, 3, 10, 10), dtype="float32") = R.divide(
+                    R.const(1.0, "float32"), input_1
+                )
+                gv: R.Tuple(R.Tensor((1, 3, 10, 10), dtype="float32")) = (lv,)
+                R.output(gv)
+            return gv
+
+    verify_model(Reciprocal(), example_args, {}, expected_reciprocal)
+
     # relu
     class ReLU0(Module):
         def __init__(self):
@@ -523,24 +544,12 @@ def test_extended_unary_ops():
     class expected_selu:
         @R.function
         def main(
-            input_1: R.Tensor((1, 3, 10, 10), dtype="float32")
+            input: R.Tensor((1, 3, 10, 10), dtype="float32")
         ) -> R.Tuple(R.Tensor((1, 3, 10, 10), dtype="float32")):
             with R.dataflow():
-                lv_relu: R.Tensor((1, 3, 10, 10), dtype="float32") = R.nn.relu(input_1)
-                lv_exp: R.Tensor((1, 3, 10, 10), dtype="float32") = R.exp(input_1)
-                lv_sub: R.Tensor((1, 3, 10, 10), dtype="float32") = R.subtract(
-                    lv_exp, R.const(1.0, "float32")
-                )
-                lv_scaled: R.Tensor((1, 3, 10, 10), dtype="float32") = R.multiply(
-                    R.const(1.6732631921768188, "float32"), lv_sub
-                )
-                lv_add: R.Tensor((1, 3, 10, 10), dtype="float32") = R.add(lv_relu, lv_scaled)
-                lv_selu: R.Tensor((1, 3, 10, 10), dtype="float32") = R.multiply(
-                    R.const(1.0507010221481323, "float32"), lv_add
-                )
-                gv: R.Tuple(R.Tensor((1, 3, 10, 10), dtype="float32")) = (lv_selu,)
+                lv: R.Tensor((1, 3, 10, 10), dtype="float32") = R.nn.selu(input)
+                gv: R.Tuple(R.Tensor((1, 3, 10, 10), dtype="float32")) = (lv,)
                 R.output(gv)
-
             return gv
 
     verify_model(Selu1(), example_args, {}, expected_selu)
@@ -3816,6 +3825,53 @@ def test_prod():
 
     example_args = (torch.randn(5, 3, dtype=torch.float32),)
     verify_model(Prod(), example_args, {}, Expected)
+
+
+def test_cumprod():
+    class Cumprod(Module):
+        def forward(self, x):
+            return torch.cumprod(x, 0)
+
+    @tvm.script.ir_module
+    class Expected:
+        @R.function
+        def main(
+            inp_0: R.Tensor((5, 3), dtype="float32"),
+        ) -> R.Tuple(R.Tensor((5, 3), dtype="float32")):
+            with R.dataflow():
+                lv: R.Tensor((5, 3), dtype="float32") = R.cumprod(inp_0, axis=0, exclusive=False)
+                gv: R.Tuple(R.Tensor((5, 3), dtype="float32")) = (lv,)
+                R.output(gv)
+            return gv
+
+    example_input = torch.randn(5, 3, dtype=torch.float32)
+    verify_model(Cumprod(), (example_input,), {}, Expected)
+
+
+def test_where():
+    class Where(Module):
+        def forward(self, condition, x, y):
+            return torch.where(condition, x, y)
+
+    @tvm.script.ir_module
+    class Expected:
+        @R.function
+        def main(
+            inp_0: R.Tensor((5, 3), dtype="bool"),
+            inp_1: R.Tensor((5, 3), dtype="float32"),
+            inp_2: R.Tensor((5, 3), dtype="float32"),
+        ) -> R.Tuple(R.Tensor((5, 3), dtype="float32")):
+            with R.dataflow():
+                lv: R.Tensor((5, 3), dtype="float32") = R.where(inp_0, inp_1, inp_2)
+                gv: R.Tuple(R.Tensor((5, 3), dtype="float32")) = (lv,)
+                R.output(gv)
+            return gv
+
+    condition = torch.randint(0, 2, (5, 3), dtype=torch.bool)
+    x = torch.randn(5, 3, dtype=torch.float32)
+    y = torch.randn(5, 3, dtype=torch.float32)
+
+    verify_model(Where(), (condition, x, y), {}, Expected)
 
 
 if __name__ == "__main__":
