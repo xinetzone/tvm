@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/top/op/index.rst:2
+msgid "vta.top.op"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:8
+msgid "Namespace for supporting Relay operators on VTA."
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:13
+msgid "Attributes"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:19:<autosummary>:1
+msgid ":py:obj:`ENV <vta.top.op.ENV>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:21
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ":py:obj:`add_packed <vta.top.op.add_packed>`\\ \\(cfg\\, lhs\\, rhs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`add_strategy_vta <vta.top.op.add_strategy_vta>`\\ \\(attrs\\, "
+"inputs\\, out\\_type\\, target\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`clip_strategy_vta <vta.top.op.clip_strategy_vta>`\\ \\(attrs\\, "
+"inputs\\, out\\_type\\, target\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`compute_clip_vta <vta.top.op.compute_clip_vta>`\\ \\(attrs\\, "
+"inputs\\, output\\_type\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:50
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid "Clip operator."
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`conv2d_strategy_vta <vta.top.op.conv2d_strategy_vta>`\\ "
+"\\(attrs\\, inputs\\, out\\_type\\, target\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:55
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid "conv2d vta strategy"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`conv2d_transpose_strategy_vta "
+"<vta.top.op.conv2d_transpose_strategy_vta>`\\ \\(attrs\\, inputs\\, "
+"out\\_type\\, ...\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:60
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid "conv2d_transpose vta strategy"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`dense_strategy_vta <vta.top.op.dense_strategy_vta>`\\ "
+"\\(attrs\\, inputs\\, out\\_type\\, target\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:65
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid "dense vta strategy"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`multiply_packed <vta.top.op.multiply_packed>`\\ \\(cfg\\, lhs\\,"
+" rhs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`multiply_strategy_vta <vta.top.op.multiply_strategy_vta>`\\ "
+"\\(attrs\\, inputs\\, out\\_type\\, target\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`schedule_add_packed <vta.top.op.schedule_add_packed>`\\ "
+"\\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`schedule_alu_packed <vta.top.op.schedule_alu_packed>`\\ "
+"\\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:76
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid "alu packed schedule"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:38:<autosummary>:1
+msgid ""
+":py:obj:`schedule_multiply_packed "
+"<vta.top.op.schedule_multiply_packed>`\\ \\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/op/index.rst:40
+msgid "Module Contents"
+msgstr ""
+

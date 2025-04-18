@@ -1,0 +1,975 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:19
+msgid "Deploy to Adreno™ GPU"
+msgstr "部署到 Adreno™ GPU"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:21
+msgid ""
+"**Authors**: Daniil Barinov, Egor Churaev, Andrey Malyshev, Siva Rama "
+"Krishna"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:24
+msgid "Introduction"
+msgstr "简介"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:26
+msgid ""
+"Adreno™ is a series of graphics processing unit (GPU) semiconductor "
+"intellectual property cores developed by Qualcomm and used in many of "
+"their SoCs."
+msgstr ""
+"Adreno™ 是由高通开发的一系列图形处理器（GPU）半导体知识产权核心，用于其许多 SoC 中。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:30
+msgid ""
+"The Adreno™ GPU accelerates the rendering of complex geometries to "
+"deliver high-performance graphics and a rich user experience with low "
+"power consumption."
+msgstr ""
+"Adreno™ GPU 加速复杂几何图形的渲染，以提供高性能图形和丰富的用户体验，同时保持低功耗。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:34
+msgid ""
+"TVM supports deep learning acceleration on Adreno™ GPU by native OpenCL "
+"backend of TVM and also through OpenCLML backend. Native OpenCL backend "
+"of TVM is enhanced to make it Adreno™ friendly by incorporating texture "
+"memory usage and Adreno™ friendly layouts. OpenCLML is an SDK release by "
+"Qualcomm that provides kernel acceleration library for most of the deep "
+"learning operators."
+msgstr ""
+"TVM 通过其原生 OpenCL 后端以及 OpenCLML 后端支持 Adreno™ GPU 上的深度学习加速。"
+"TVM 的原生 OpenCL 后端通过结合纹理内存使用和 Adreno™ 友好的布局进行了增强，使其更适合 Adreno™。OpenCLML 是高通发布的 SDK，为大多数深度学习算子提供内核加速库。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:40
+msgid "This guide is organized to demonstrate various design aspects of"
+msgstr "本指南旨在展示以下设计方面的内容："
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:42
+msgid ":ref:`OpenCL Backend Ehnahcements<opencl_enhancements>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:43
+msgid ":ref:`About OpenCLML<about_openclml>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:44
+msgid ":ref:`Build and Deploy<build_deploy>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:50
+msgid "OpenCL Backend Enhancements"
+msgstr "OpenCL 后端增强"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:52
+msgid ""
+"OpenCL backend of TVM is enhanced to take advantage of Adreno™ specific "
+"features like - Texture memory usage. - Adreno™ friendly activation "
+"layouts. - Brand new schedules to accelerate with above features."
+msgstr ""
+"TVM 的 OpenCL 后端经过增强，以利用 Adreno™ 的特定功能，例如：- 纹理内存使用。- Adreno™ 友好的激活布局。- 利用上述功能加速的全新调度。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:57
+msgid ""
+"One of the Adreno™'s advantages is the clever handling of textures. At "
+"the moment, TVM is able to benefit from this by having texture support "
+"for Adreno™. The graph below shows the Adreno™ A5x architecture."
+msgstr ""
+"Adreno™ 的优势之一是其对纹理的巧妙处理。目前，TVM 通过对 Adreno™ 的纹理支持从中受益。下图显示了 Adreno™ A5x 架构。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:61
+msgid "|High-level overview of the Adreno™ A5x architecture for OpenCL|"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:675
+msgid "High-level overview of the Adreno™ A5x architecture for OpenCL"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:63
+msgid "*Fig. 1 High-level overview of the Adreno™ A5x architecture for OpenCL*"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:65
+msgid ""
+"*source:* `OpenCL Optimization and Best Practices for Qualcomm Adreno™ "
+"GPUs <https://dl.acm.org/doi/10.1145/3204919.3204935>`_"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:67
+msgid "Reasons of using textures:"
+msgstr "使用纹理的原因："
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:69
+msgid ""
+"Texture processor (TP) has a dedicated L1 cache, which is read-only cache"
+" and stores data fetched from level-2 (L2) cache for texture operations "
+"(primary reason)"
+msgstr ""
+"纹理处理器（Texture processor，简称 TP）具有专用的 L1 缓存，这是一个只读缓存，用于存储从二级（L2）缓存中获取的数据以进行纹理操作（主要原因）"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:73
+msgid "The handling of image boundaries is built-in."
+msgstr "图像边界的处理是内置的。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:75
+msgid ""
+"Supports numerous image format and data type combinations with support "
+"for automatic format conversions"
+msgstr ""
+"支持多种图像格式和数据类型组合，并支持自动格式转换"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:78
+msgid ""
+"Overall, with textures, it is possible to achieve a significant "
+"performance boost compared to OpenCL buffer based solutions."
+msgstr ""
+"总体而言，与基于 OpenCL 缓冲区的解决方案相比，使用纹理可以显著提高性能。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:81
+msgid ""
+"In general we specify target as ``target=\"opencl\"`` for a regular "
+"OpenCL based target which generates the kernels as shown below."
+msgstr ""
+"通常，将目标指定为 ``target=\"opencl\"`` 以生成基于常规 OpenCL 的目标，如下所示生成内核。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:88
+msgid ""
+"Above OpenCL kernel definition has ``__global float*`` poniters which are"
+" essestially OpenCL ``buffer``  objects."
+msgstr ""
+"上述 OpenCL 内核定义中包含 ``__global float*`` 指针，这些指针本质上是 OpenCL 的 ``buffer`` 对象。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:90
+msgid ""
+"When enabled texture based enhancements by modifying target definition as"
+" ``target=\"opencl -device=adreno\"`` we can see the generated kernels "
+"using texture backed OpenCL image objects as shown below."
+msgstr ""
+"当通过将目标定义修改为 ``target=\"opencl -device=adreno\"`` 来启用基于纹理的增强功能时，可以看到生成的核函数使用了基于纹理的 OpenCL 图像对象，如下所示。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:98
+msgid ""
+"*image2d_t* is a built-in OpenCL types that represents two-dimensional "
+"image object and provides several additional functions. When we use "
+"*image2d_t* we read *4 elements at one time*, and it helps to utilize "
+"hardware in a more efficient way."
+msgstr ""
+"*image2d_t* 是 OpenCL 内置的类型，用于表示二维图像对象，并提供了多种附加功能。当使用 *image2d_t* 时，可以 *一次性读取 4 个元素*，这有助于更高效地利用硬件资源。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:101
+msgid ""
+"Please refer to :ref:`Advanced Usage<advanced_usage>` for more details "
+"about generation and inspection of kernel sources."
+msgstr ""
+"有关内核源代码的生成和检查的更多详细信息，请参阅 :ref:`高级用法<advanced_usage>`。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:107
+msgid "About OpenCLML"
+msgstr "关于 OpenCLML"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:109
+msgid ""
+"OpenCLML is a SDK released by Qualcomm that provides accelerated deep "
+"learning operators. These operators are exposed as an extension "
+"``cl_qcom_ml_ops`` to standard OpenCL specification. Please refer "
+"`Accelerate your models with our OpenCL ML SDK "
+"<https://developer.qualcomm.com/blog/accelerate-your-models-our-opencl-"
+"ml-sdk>`_ for more details."
+msgstr ""
+"OpenCLML 是由高通发布的 SDK，提供了加速的深度学习算子。"
+"这些算子作为标准 OpenCL 规范的扩展 ``cl_qcom_ml_ops`` 提供。更多详细信息，请参阅 `使用 OpenCL ML SDK 加速您的模型 <https://developer.qualcomm.com/blog/accelerate-your-models-our-opencl-ml-sdk>`_。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:113
+#, python-format
+msgid ""
+"OpenCLML is integrated into TVM as a `BYOC "
+"<https://tvm.apache.org/docs/dev/how_to/relay_bring_your_own_codegen.html?highlight=bring%20your%20own>`_"
+" solution. OpenCLML operators can use same context and can be enqueued on"
+" same command queue as used in native OpenCL. We took advantage of this "
+"to avoid any context switching over heads while fallback to native "
+"OpenCL."
+msgstr ""
+"OpenCLML 已作为 `BYOC（自带代码生成） <https://tvm.apache.org/docs/dev/how_to/relay_bring_your_own_codegen.html?highlight=bring%20your%20own>`_ "
+"解决方案集成到 TVM 中。"
+"OpenCLML 算子可以使用与原生 OpenCL 相同的上下文，并可以在相同的命令队列中排队。利用这一点，避免了在回退到原生 OpenCL 时的上下文切换开销。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:121
+msgid "TVM for Adreno™"
+msgstr "适用于 Adreno™ 的 TVM"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:123
+msgid ""
+"This section gives instructions about various ways of building and "
+"deploying model to Adreno™ target. Adreno™ is a remote target which is "
+"connected to the host via ADB connection. Deploying the compiled model "
+"here require use some tools on host as well as on target."
+msgstr ""
+"本节提供了关于构建和部署模型到 Adreno™ 目标的各种方法的说明。Adreno™ 是远程目标设备，通过 ADB 连接与主机相连。在此部署编译后的模型需要在主机和目标设备上使用一些工具。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:127
+msgid ""
+"TVM has simplified user friendly command line based tools as well as "
+"developer centric python API interface for various steps like auto "
+"tuning, building and deploying."
+msgstr ""
+"TVM 提供了简化的、用户友好的命令行工具，以及面向开发者的 Python API 接口，用于自动调优、构建和部署等各种步骤。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:131
+msgid "|Adreno deployment pipeline|"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:676
+msgid "Adreno deployment pipeline"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:133
+msgid "*Fig.2 Build and Deployment pipeline on Adreno devices*"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:135
+msgid ""
+"The figure above demonstrates a generalized pipeline for various stages "
+"listed below."
+msgstr ""
+"上图展示了通用流程，涵盖了以下列出的各个阶段。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:137
+msgid ""
+"**Model import:** At this stage we import a model from well known "
+"frameworks like Tensorflow, PyTorch, ONNX ...etc. This stage converts the"
+" given model into TVM's relay module format. Alternatively one can build "
+"a relay module manually by using TVM's operator inventory too. TVM module"
+" generated here is a target independent representation of the graph."
+msgstr ""
+"**模型导入：** 在此阶段，从 TensorFlow、PyTorch、ONNX 等知名框架中导入模型。"
+"此阶段将给定模型转换为 TVM 的 Relay 模块格式。或者，也可以通过使用 TVM 的算子库手动构建 Relay 模块。此处生成的 TVM 模块是图的与目标设备无关的表示形式。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:142
+msgid ""
+"**Auto Tuning:** At this stage we tune the TVM generated kernels specific"
+" to a target. Auto tuning process requires target device availability and"
+" in case of a remote target like Adreno™ on Android device we use RPC "
+"Setup for communication. Later sections in this guide will detail about "
+"RPC Setup for Android device. Auto tuning is not a necessary step for "
+"compilation of a model. It is necessary for acheiving best performance "
+"out of TVM generated kernels."
+msgstr ""
+"**自动调优：** 在此阶段，针对特定目标设备对 TVM 生成的内核进行调优。自动调优过程需要目标设备的可用性，对于像 Android 设备上的 Adreno™ 这样的远程目标设备，使用 RPC 设置进行通信。"
+"本指南的后续部分将详细介绍 Android 设备的 RPC 设置。自动调优并不是模型编译的必要步骤，但它是为了从 TVM 生成的内核中获得最佳性能所必需的。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:148
+msgid ""
+"**Compilation:** At this stage we compile the model for specific target. "
+"Given we auto tuned the module in previous stage, TVM compilation make "
+"use of the tuning log for genetrating best performing kernels. TVM "
+"compilation process produces artifacts containing kernel shared lib, "
+"graph definition in json format and parameters binary file in TVM "
+"specific format."
+msgstr ""
+"**编译：** 在此阶段，我们为特定目标设备编译模型。"
+"如果在上一阶段对模块进行了自动调优，TVM 编译过程将利用调优日志来生成性能最佳的内核。"
+"TVM 编译过程会生成一些文件，包括内核共享库、以 JSON 格式表示的图定义以及以 TVM 特定格式存储的参数二进制文件。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:153
+msgid ""
+"**Deploy (or test run) on Target:** At this stage we run the TVM "
+"compilation output on the target. Deployment is possible from python "
+"environment using RPC Setup and also using TVM's native tool which is "
+"native binary cross compiled for Android. At this stage we can run the "
+"compiled model on Android target and unit test output correctness and "
+"performance aspects."
+msgstr ""
+"**在目标设备上部署（或测试运行）：** 在此阶段，我们在目标设备上运行 TVM 编译的输出。"
+"可以通过使用 RPC 设置的 Python 环境进行部署，也可以使用 TVM 的原生工具进行部署，该工具是为 Android 交叉编译的原生二进制文件。"
+"在此阶段，我们可以在 Android 目标设备上运行编译后的模型，并对输出的正确性和性能方面进行单元测试。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:158
+msgid ""
+"**Application Integration:** This stage is all about integrating TVM "
+"compiled model in applications. Here we discuss about interfacing tvm "
+"runtime from Android (cpp native environment or from JNI) for setting "
+"input and getting output."
+msgstr ""
+"**应用程序集成：** 此阶段主要是将 TVM 编译的模型集成到应用程序中。在这里，我们讨论如何从 Android（C++ 原生环境或通过 JNI）与 TVM 运行时进行交互，以设置输入并获取输出。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:162
+msgid ""
+"**Advanced Usage:** This section advanced user interests like viewing "
+"generated source code, altering precision of the module ...etc."
+msgstr ""
+"**高级用法：** 本节面向高级用户，涵盖查看生成的源代码、修改模块精度等内容。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:166
+msgid "This tutorial covers all the above aspects as part of below sections."
+msgstr "本教程涵盖上述所有方面，具体内容将在以下部分中展开。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:168
+msgid ":ref:`Development environment<development_environment>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:169
+msgid ":ref:`RPC Setup<rpc_setup>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:170
+msgid ":ref:`Commandline tools<commandline_interface>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:171
+msgid ":ref:`Python interface<python_interface>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:172
+msgid ":ref:`Application Integration<application_integration>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:173
+msgid ":ref:`Advanced Usage<advanced_usage>`"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:179
+msgid "Development Environment Setup : Automatic"
+msgstr "开发环境设置：自动"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:180
+msgid ""
+"TVM ships a predefined docker container environment with all "
+"prerequisites to get started quickly. You may also refer to :ref:`Manual "
+"Environment Setup<manual_setup>` for more control on the dependencies."
+msgstr ""
+"TVM 提供了预定义的 Docker 容器环境，其中包含了所有快速入门的必备条件。您也可以参考 :ref:`手动环境设置<manual_setup>` 以获得对依赖项的更多控制。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:183
+msgid ""
+"For docker setup the pre requisite is just docker tool availabilty on "
+"host."
+msgstr ""
+"对于 Docker 设置，唯一的先决条件就是主机上需具备 Docker 工具的可用性。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:185
+msgid "Below commands can build a docker image for adreno."
+msgstr "以下命令可以构建用于 Adreno 的 Docker 镜像。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:193
+msgid "Now we can build both host and target utils with below command."
+msgstr "现在可以通过以下命令同时构建主机和目标设备的实用工具。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:199
+msgid ""
+"To build TVM with OpenCLML SDK we need export the OpenCLML SDK as shown "
+"below while building"
+msgstr ""
+"要使用 OpenCLML SDK 构建 TVM，需要在构建时导出 OpenCLML SDK，如下所示。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:206
+msgid ""
+"On successful compilation this leaves us into a docker shell. The build "
+"leaves two folders"
+msgstr ""
+"成功编译后，我们将进入 Docker 容器的 shell 环境。编译完成后会生成两个文件夹。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:208
+msgid "build-adreno:  The host side TVM compiler build."
+msgstr "`build-adreno`：主机端的 TVM 编译器构建。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:209
+msgid "build-adreno-target : Contains the android target components"
+msgstr "`build-adreno-target`：包含 Android 目标设备的组件。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:211
+msgid "libtvm_runtime.so : TVM runtime library"
+msgstr "`libtvm_runtime.so`：TVM 运行时库。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:212
+msgid "tvm_rpc : The rpc runtime environment tool"
+msgstr "`tvm_rpc`：RPC 运行时环境工具。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:213
+msgid "rtvm : A native stand alone tool"
+msgstr "`rtvm`：原生的独立工具。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:215
+msgid ""
+"While using docker environment the android device is shared with host. "
+"Hence, it is required to have adb version ``1.0.41`` on the host as the "
+"docker used the same version."
+msgstr ""
+"在使用 Docker 环境时，Android 设备是与主机共享的。因此，主机上需要安装版本为 ``1.0.41`` 的 adb，因为 Docker 使用了相同版本。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:218
+msgid "We can check adb devices availability inside docker environment too."
+msgstr "也可以在 Docker 环境中检查 adb 设备的可用性。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:230
+msgid "Development Environment Setup : Manual"
+msgstr "开发环境设置：手动"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:232
+msgid "Manual build process require building of host and target components."
+msgstr "手动构建过程需要分别构建主机和目标设备的组件。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:234
+msgid "Below command will configure the build the host compiler"
+msgstr "以下命令将配置并构建主机编译器。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:251
+msgid ""
+"Additionally we can push below config entry to compile with OpenCLML "
+"support."
+msgstr ""
+"此外，可以添加以下配置条目以支持 OpenCLML 编译。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:258
+msgid "now we can build as shown below"
+msgstr "现在可以按照以下方式构建。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:265
+msgid "Finally we can export python path as"
+msgstr "最后，可以导出 Python 路径，如下所示。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:273
+msgid ""
+"Now, we can configure and build the target components with below "
+"configuration Target build require Android NDK to be installed."
+msgstr ""
+"现在，可以通过以下配置来配置并构建目标设备组件。目标构建需要安装 Android NDK。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:276
+msgid ""
+"Read documentation about *Android NDK installation* here: "
+"https://developer.android.com/ndk"
+msgstr ""
+"请在此处阅读有关 *Android NDK 安装* 的文档：https://developer.android.com/ndk。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:277
+msgid ""
+"To get access to adb tools you can see *Android Debug Bridge "
+"installation* here: https://developer.android.com/studio/command-line/adb"
+msgstr ""
+"要获取 adb 工具的访问权限，您可以在此处查看 *Android Debug Bridge 安装*：https://developer.android.com/studio/command-line/adb。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:305
+msgid "Additionally we can push below config to compile with OpenCLML support."
+msgstr "此外，可以添加以下配置以支持 OpenCLML 编译。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:313
+msgid ""
+"For Android target build ``ANDROID_NDK_HOME`` is a dependency and we "
+"should have the same in the enviromnet variable. Below commands will "
+"build Adreno™ target components"
+msgstr ""
+"对于 Android 目标构建，``ANDROID_NDK_HOME`` 是依赖项，需要将其设置为环境变量。以下命令将构建 Adreno™ 目标组件。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:335
+msgid "RPC Setup"
+msgstr "RPC 设置"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:337
+msgid ""
+"RPC Setup allows remote target access over TCP/IP networking interface. "
+"RPC Setup is essential for auto tuning stage as tuning involves running "
+"of auto generated kernels on real device and optimize the same by using "
+"machine learning approach. Please refer `Auto-Tune with Templates and "
+"AutoTVM "
+"<https://tvm.apache.org/docs/how_to/tune_with_autotvm/index.html>`_ got "
+"more details about AutoTVM."
+msgstr ""
+"RPC 设置允许通过 TCP/IP 网络接口远程访问目标设备。"
+"RPC 设置在自动调优阶段至关重要，因为调优过程涉及在真实设备上运行自动生成的内核，并通过机器学习方法对其进行优化。"
+"有关 AutoTVM 的更多详细信息，请参阅 `使用模板和 AutoTVM 进行自动调优 <https://tvm.apache.org/docs/how_to/tune_with_autotvm/index.html>`_。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:341
+msgid ""
+"RPC Setup is also useful to deply the compiled model to a remote device "
+"from python interface or ``tvmc`` tool from host device."
+msgstr ""
+"RPC 设置还可用于通过 Python 接口或主机设备上的 ``tvmc`` 工具将编译后的模型部署到远程设备。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:343
+msgid "RPC Setup has multiple components as listed below."
+msgstr "RPC 设置包含多个组件，如下所列。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:345
+msgid ""
+"**TVM Tracker:** TVM tracker is a host side daemon that manages remote "
+"devices and serve them to host side applications. Applications can "
+"connect to this tracker and acquire a remote device handle to "
+"communicate."
+msgstr ""
+"**TVM Tracker：** TVM Tracker 是主机端的守护进程，用于管理远程设备并将其提供给主机端应用程序。应用程序可以连接到此 Tracker 并获取远程设备句柄以进行通信。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:349
+msgid ""
+"**TVM RPC:** TVM RPC is a native application that runs on the remote "
+"device (Android in our case) and registers itself to the TVM Tracker "
+"running on the host."
+msgstr ""
+"**TVM RPC：** TVM RPC 是在远程设备（在我们的案例中是 Android 设备）上运行的原生应用程序，它会向主机上运行的 TVM Tracker 注册自己。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:354
+msgid ""
+"Hence, for RPC based setup we will have above components running on host "
+"and target device. Below sections explain how to setup the same manually "
+"and also inside docker using automated tools."
+msgstr ""
+"因此，对于基于 RPC 的设置，我们需要在主机和目标设备上运行上述组件。以下部分将解释如何手动设置以及如何在 Docker 中使用自动化工具进行设置。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:357
+msgid ""
+"**Automated RPC Setup:** Here we will explain how to setup RPC in docker "
+"environment."
+msgstr ""
+"**自动化 RPC 设置：** 这里我们将解释如何在 Docker 环境中设置 RPC。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:360
+msgid ""
+"Below command launches tracker in docker environment, where tracker "
+"listens on port 9190."
+msgstr ""
+"以下命令在 Docker 环境中启动 Tracker，Tracker 将监听端口 9190。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:367
+msgid ""
+"Now, the below comand can run TVM RPC on remote android device with id "
+"``abcdefgh``."
+msgstr ""
+"现在，以下命令可以在 ID 为 ``abcdefgh`` 的远程 Android 设备上运行 TVM RPC。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:375
+msgid ""
+"Further, below command can be used to query the RPC setup details on any "
+"other docker terminals."
+msgstr ""
+"此外，以下命令可用于在任何其他 Docker 终端上查询 RPC 设置的详细信息。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:383
+msgid "**Manual RPC Setup:**"
+msgstr "**手动 RPC 设置：**"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:385
+msgid ""
+"Please refer to the tutorial `How To Deploy model on Adreno "
+"<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_"
+" for manual RPC environment setup."
+msgstr ""
+"请参考教程 `如何在 Adreno 上部署模型 <https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_ 以了解手动 RPC 环境设置。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:389
+msgid ""
+"This concludes RPC Setup and we have rpc-tracker available on host "
+"``127.0.0.1`` (rpc-tracker) and port ``9190`` (rpc-port)."
+msgstr ""
+"至此，RPC 设置已完成，在主机 ``127.0.0.1`` （rpc-tracker）和端口 ``9190`` （rpc-port）上可用的 rpc-tracker。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:395
+msgid "Commandline Tools"
+msgstr "命令行工具"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:397
+msgid ""
+"Here we describe entire compilation process using command line tools. TVM"
+" has command line utility `tvmc "
+"<https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ to"
+" perform model import, auto tuning, compilation and deply over rpc. `tvmc"
+" <https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_  "
+"has many options to explore and try."
+msgstr ""
+"这里我们描述了使用命令行工具的完整编译过程。"
+"TVM 提供了命令行工具 `tvmc <https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_，用于执行模型导入、自动调优、编译以及通过 RPC 进行部署。"
+"`tvmc <https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ 提供了许多选项供探索和尝试。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:402
+msgid ""
+"**Model Import & Tuning:** Use the below command to import a model from "
+"any framework and auto tune the same. Here we use a model from Keras and "
+"it uses RPC setup for tuning and finally generates tuning log file "
+"``keras-resnet50.log``."
+msgstr ""
+"**模型导入与调优：** 使用以下命令从任何框架导入模型并进行自动调优。这里我们使用了来自 Keras 的模型，并通过 RPC 设置进行调优，最终生成调优日志文件 ``keras-resnet50.log``。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:417
+msgid "**Model Compilation:**"
+msgstr "**模型编译：**"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:419
+msgid ""
+"Use below command for compiling the model and produce TVM compiler "
+"outputs."
+msgstr ""
+"使用以下命令编译模型并生成 TVM 编译器输出。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:428
+msgid ""
+"While enabled OpenCLML offloading we need to add target ``clml`` as shown"
+" below. Tuning log is valid for OpenCLML offloading also as the OpenCL "
+"path is fallback option for any operator didn't go through OpenCLML path."
+" The tuning log will be used for such operators."
+msgstr ""
+"启用 OpenCLML 卸载时，我们需要添加目标 ``clml``，如下所示。"
+"调优日志对于 OpenCLML 卸载同样有效，因为 OpenCL 路径是任何未通过 OpenCLML 路径的算子的后备选项。调优日志将用于这些算子。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:438
+msgid ""
+"On successful compilation, above command produce ``keras-resnet50.tar``. "
+"It is a compressed archive with kernel shared lib(mod.so), graph "
+"json(mod.json) and params binary(mod.params)."
+msgstr ""
+"成功编译后，上述命令将生成 ``keras-resnet50.tar``。这是一个包含内核共享库（mod.so）、图结构 JSON（mod.json）和参数二进制文件（mod.params）的压缩归档文件。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:441
+msgid "**Deploy & Run on Target:**"
+msgstr "**部署并在目标设备上运行：**"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:443
+msgid ""
+"Running the compiled model on Android target is possible in RPC way as "
+"well as native deployment."
+msgstr ""
+"可以在 Android 目标设备上以 RPC 方式或原生部署方式运行编译后的模型。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:445
+msgid ""
+"We can use below tvmc command to deploy on remore target via RPC based "
+"setup."
+msgstr ""
+"可以使用以下 tvmc 命令通过基于 RPC 的设置部署到远程目标设备。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:452
+msgid ""
+"`tvmc "
+"<https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ "
+"based run has more options to initialize the input in various modes like "
+"fill, random ..etc."
+msgstr ""
+"基于 `tvmc <https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ 的运行提供了更多选项，可以以各种模式（如填充、随机等）初始化输入。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:455
+msgid ""
+"``tvmc`` based deployment generally a quick verification of compiled "
+"model on target from remote host via RPC setup."
+msgstr ""
+"基于 ``tvmc`` 的部署通常是通过 RPC 设置在远程主机上快速验证目标设备上的编译模型。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:457
+msgid ""
+"Production generally uses native deploymenmt environment like Android JNI"
+" or CPP native environments. Here we need to use cross compiled "
+"``tvm_runtime`` interface to deploy the tvm compilation output, i.e. "
+"``TVMPackage``."
+msgstr ""
+"生产环境通常使用原生部署环境，如 Android JNI 或 CPP 原生环境。这里我们需要使用交叉编译的 ``tvm_runtime`` 接口来部署 TVM 编译输出，即 ``TVMPackage``。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:460
+msgid ""
+"TVM has a standalone tool ``rtvm`` to deploy and run the model natively "
+"on ADB shell. The build process produces this tool under build-adreno-"
+"target. Please refer to `rtvm "
+"<https://github.com/apache/tvm/tree/main/apps/cpp_rtvm>`_ for more "
+"details about this tool."
+msgstr ""
+"TVM 提供了独立的工具 ``rtvm``，用于在 ADB shell 中原生部署和运行模型。构建过程会在 build-adreno-target 目录下生成此工具。"
+"有关此工具的更多详细信息，请参阅 `rtvm <https://github.com/apache/tvm/tree/main/apps/cpp_rtvm>`_。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:463
+msgid ""
+"While integrating inside existing Android application TVM has multiple "
+"options. For JNI or CPP native we may use `C Runtime API "
+"<https://github.com/apache/tvm/blob/main/include/tvm/runtime/c_runtime_api.h>`_"
+" You may refer to ``rtvm``'s simplified interface `TVMRunner "
+"<https://github.com/apache/tvm/blob/main/apps/cpp_rtvm/tvm_runner.h>`_ "
+"also."
+msgstr ""
+"在集成到现有的 Android 应用程序时，TVM 提供了多种选项。对于 JNI 或 CPP 原生环境，"
+"可以使用 `C Runtime API <https://github.com/apache/tvm/blob/main/include/tvm/runtime/c_runtime_api.h>`_。"
+"您也可以参考 ``rtvm`` 的简化接口 `TVMRunner <https://github.com/apache/tvm/blob/main/apps/cpp_rtvm/tvm_runner.h>`_。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:469
+msgid "Python Interface"
+msgstr "Python 接口"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:471
+msgid ""
+"This section explains importing, auto tuning, compiling and running a "
+"model using python interface.\\ TVM has a high level interface through "
+"``tvmc`` abstraction as well as low level relay api. We will discuss "
+"about both of these in details."
+msgstr ""
+"本节将解释如何使用 Python 接口进行模型导入、自动调优、编译和运行。TVM 提供了通过 ``tvmc`` 抽象的高级接口以及低级的 Relay API。我们将详细讨论这两种方式。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:474
+msgid "**TVMC Interface:**"
+msgstr "**TVMC 接口：**"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:476
+msgid ""
+"While using ``tvmc`` python interface we first load a model that produces"
+" ``TVMCModel``. ``TVMCModel`` will be used for Auto Tuning to produce "
+"tuning cache. Compilation process uses ``TVMCModel`` and tuning cache "
+"(optional) to produce ``TVMCPackage``. Now, ``TVMCPackage`` will be saved"
+" to file system or can be used to deploy and run on target device."
+msgstr ""
+"使用 ``tvmc`` Python 接口时，我们首先加载一个模型，生成 ``TVMCModel``。``TVMCModel`` 将用于自动调优以生成调优缓存。"
+"编译过程使用 ``TVMCModel`` 和调优缓存（可选）生成 ``TVMCPackage``。现在，``TVMCPackage`` 可以保存到文件系统，也可以用于在目标设备上部署和运行。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:480
+msgid ""
+"Please refer to the tutorial for the same `How To Deploy model on Adreno "
+"using TVMC "
+"<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno_tvmc.html>`_"
+msgstr ""
+"请参考以下教程了解如何使用 TVMC 在 Adreno 上部署模型："
+"`如何使用 TVMC 在 Adreno 上部署模型 <https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno_tvmc.html>`_。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:483
+msgid ""
+"Saved ``TVMCPackage`` can be used for native deployment using ``rtvm`` "
+"utility too."
+msgstr ""
+"保存的 ``TVMCPackage`` 也可以使用 ``rtvm`` 工具进行原生部署。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:485
+msgid ""
+"Also, please refer to `tvmc "
+"<https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ "
+"documentation for more details about the api interface."
+msgstr ""
+"此外，请参阅 `tvmc <https://tvm.apache.org/docs/tutorial/tvmc_command_line_driver.html>`_ 文档以了解有关 API 接口的更多详细信息。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:488
+msgid "**Relay Interface:**"
+msgstr "**Relay 接口:**"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:490
+msgid ""
+"Relay api interface gives lower level api access to the tvm compiler "
+"interface. Similar to ``tvmc`` interface relay api interface provides "
+"various frontend API to convert models to a relay ``Module``. Relay "
+"``Module`` will be used for all kinds transforms like precision "
+"conversions, CLML offloading and other custom transforms if any. The "
+"resulting Module will be used for Auto Tuning too. Finally, we use "
+"``relay.build`` API to generate library module. From this library module,"
+" we can export compilation artifacts like module shared library (mod.so),"
+" params(mod.params) and json graph(mod.json). This library module will be"
+" used to create graph runtime to deploy and run on target device."
+msgstr ""
+"Relay API 接口提供了对 TVM 编译器接口的低级 API 访问。与 ``tvmc`` 接口类似，Relay API 接口提供了各种前端 API，"
+"用于将模型转换为 Relay ``Module``。Relay ``Module`` 将用于各种转换，如精度转换、CLML 卸载以及其他自定义转换（如果有）。"
+"生成的 Module 也将用于自动调优。最后，我们使用 ``relay.build`` API 生成库模块。"
+"从这个库模块中，我们可以导出编译产物，如模块共享库（mod.so）、参数（mod.params）和 JSON 图结构（mod.json）。此库模块将用于创建图运行时，以在目标设备上部署和运行。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:497
+msgid ""
+"Please refer to the tutorial `How To Deploy model on Adreno "
+"<https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_"
+" for a step by step explanation of the same."
+msgstr ""
+"请参考教程 `如何在 Adreno 上部署模型 <https://tvm.apache.org/docs/how_to/deploy_models/deploy_model_on_adreno.html>`_ 以获取逐步的详细说明。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:500
+msgid ""
+"Additionally, TVM also supports Java interface through `TVM4J "
+"<https://github.com/apache/tvm/tree/main/jvm>`_"
+msgstr ""
+"此外，TVM 还通过 `TVM4J <https://github.com/apache/tvm/tree/main/jvm>`_ 支持 Java 接口。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:505
+msgid "Application Integration"
+msgstr "应用程序集成"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:507
+msgid ""
+"TVM compilation output is represented as module shared lib (mod.so), "
+"graph json(mod.json) and params (mod.params). Archived representation of "
+"TVMPackage is also contains the same."
+msgstr ""
+"TVM 编译输出表示为模块共享库（mod.so）、图结构 JSON（mod.json）和参数（mod.params）。TVMPackage 的归档表示也包含相同的内容。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:510
+msgid ""
+"In general a CPP/C based interface will be sufficient for any Android "
+"application integration."
+msgstr ""
+"通常，基于 CPP/C 的接口足以满足任何 Android 应用程序集成的需求。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:512
+msgid ""
+"TVM natively expose ``c_runtime_api`` for loading a TVM compiled module "
+"and run the same."
+msgstr ""
+"TVM 原生提供了 ``c_runtime_api``，用于加载 TVM 编译的模块并运行它。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:514
+msgid ""
+"Alternatively one may refer to `cpp_rtvm "
+"<https://github.com/apache/tvm/blob/main/apps/cpp_rtvm/tvm_runner.h>`_ "
+"``TVMRunner`` interface too for further simplified version of the same."
+msgstr ""
+"或者，您也可以参考 `cpp_rtvm <https://github.com/apache/tvm/blob/main/apps/cpp_rtvm/tvm_runner.h>`_ 的 ``TVMRunner`` 接口，它是进一步简化的版本。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:522
+msgid "Advanced Usage"
+msgstr "高级用法"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:524
+msgid ""
+"This section details some of the advanced usage and additional "
+"information while using Adreno™ target on TVM."
+msgstr ""
+"本节详细介绍了在 TVM 上使用 Adreno™ 目标时的一些高级用法和附加信息。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:527
+msgid "Generated Source Inspection"
+msgstr "生成的源代码检查"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:528
+msgid ""
+"Apart from standard tvm compilation artifacts kernel library (mod.so), "
+"graph (mod.json) and params (mod.params) we can also generate opencl "
+"kernel source, clml offloaded graph ...etc from lib handle as shown "
+"below. TVM compilation output is organized as a TVM module and many other"
+" TVM modules imported into it."
+msgstr ""
+"除了标准的 TVM 编译产物内核库（mod.so）、图结构（mod.json）和参数（mod.params）外，"
+"还可以从库句柄中生成 OpenCL 内核源代码、CLML 卸载图等，如下所示。TVM 编译输出组织为 TVM 模块，并导入了许多其他 TVM 模块。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:532
+msgid "Below snippet can dump CLML sub graphs in json format."
+msgstr "以下代码片段可以以 JSON 格式导出 CLML 子图。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:543
+msgid ""
+"Similarly, below snippet can extract opencl kernel source from the "
+"compiled TVM module."
+msgstr ""
+"类似地，以下代码片段可以从编译的 TVM 模块中提取 OpenCL 内核源代码。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:556
+msgid "Precisions"
+msgstr "精度"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:557
+msgid ""
+"The right choice of precision for a specific workload can greatly "
+"increase the efficiency of the solution, shifting the initial balance of "
+"precision and speed to the side that is a priority for the problem."
+msgstr ""
+"为特定工作负载选择合适的精度可以大大提高解决方案的效率，将精度和速度的初始平衡转移到问题的优先级一侧。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:560
+msgid ""
+"We can choose from *float16*, *float16_acc32* (Mixed Precision), "
+"*float32* (standard)."
+msgstr ""
+"可以选择 *float16*、*float16_acc32* （混合精度）或 *float32* （标准精度）。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:562
+msgid "**Float16**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:564
+msgid ""
+"To leverage the GPU hardware capabilities and utilize the benefits of "
+"half precision computation and memory management, we can convert an "
+"original model having floating points operation to a model operating with"
+" half precision. Choosing lower precision will positively affect the "
+"performance of the model, but it may also have a decrease in the accuracy"
+" of the model."
+msgstr ""
+"为了利用 GPU 硬件功能并享受半精度计算和内存管理的优势，"
+"可以将具有浮点运算的原始模型转换为使用半精度运算的模型。"
+"选择较低的精度会对模型的性能产生积极影响，但也可能导致模型的准确性下降。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:568
+msgid ""
+"To do the conversion you need to call adreno specific transformation API "
+"as soon as relay module is generated through any frontend."
+msgstr ""
+"要进行转换，您需要在通过任何前端生成 Relay 模块后立即调用 Adreno 特定的转换 API。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:584
+#: ../../doc/docs/how_to/deploy/adreno.rst:645
+msgid ""
+"``tvm.driver.tvmc.transform.apply_graph_transforms`` is simplified API "
+"over ``ToMixedPrecision`` pass to get desired precision."
+msgstr ""
+"``tvm.driver.tvmc.transform.apply_graph_transforms`` 是 ``ToMixedPrecision`` pass 的简化 API，用于获得所需的精度。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:586
+#: ../../doc/docs/how_to/deploy/adreno.rst:647
+msgid "We can then compile our model in any convinient way"
+msgstr "然后可以以任何方便的方式编译我们的模型。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:595
+#: ../../doc/docs/how_to/deploy/adreno.rst:656
+msgid ""
+"While using ``tvmc`` python interface, the below arguments enables "
+"precision conversion to float16."
+msgstr ""
+"使用 ``tvmc`` Python 接口时，以下参数启用精度转换为 float16。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:604
+#: ../../doc/docs/how_to/deploy/adreno.rst:665
+msgid ""
+"Similarly, ``tvmc`` command line interface option bas below listed "
+"options."
+msgstr ""
+"类似地，``tvmc`` 命令行接口提供了以下列出的选项。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:614
+msgid "**float16_acc32 (Mixed Precision)**"
+msgstr ""
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:616
+msgid ""
+"``ToMixedPrecision`` pass traverse over the network and split network to "
+"clusters of ops dealing with float or float16 data types. The clusters "
+"are defined by three types of operations: - Operations always be "
+"converted into float16 data type - Operations which can be converted if "
+"they followed by converted cluster - Operations never be converted to the"
+" float16 data type This list is defined in the ToMixedPrecision "
+"implementation here `relay/transform/mixed_precision.py "
+"<https://github.com/apache/tvm/blob/main/python/tvm/relay/transform/mixed_precision.py#L34>`_"
+" and can be overridden by user."
+msgstr ""
+"``ToMixedPrecision`` pass 遍历网络并将网络拆分为处理 float 或 float16 数据类型的操作集群。"
+"这些集群由三种类型的操作定义： - 始终转换为 float16 数据类型的操作 - 如果它们跟随转换后的集群，则可以转换的操作 - "
+"永远不会转换为 float16 数据类型的操作 此列表在 "
+"`relay/transform/mixed_precision.py <https://github.com/apache/tvm/blob/main/python/tvm/relay/transform/mixed_precision.py#L34>`_ 中的 "
+"ToMixedPrecision 实现中定义，并且可以由用户覆盖。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:625
+msgid ""
+"The ``ToMixedPrecision`` method is a pass to convert an FP32 relay graph "
+"into an FP16 version (with FP16 or FP32 accumulation dtypes). Doing this "
+"transformation is useful for reducing model size as it halves the "
+"expected size of the weights (FP16_acc16 case)."
+msgstr ""
+"``ToMixedPrecision`` 方法是一种将 FP32 Relay 图转换为 FP16 版本（具有 FP16 或 FP32 累加数据类型）的 pass。"
+"进行此转换有助于减小模型大小，因为它将权重的预期大小减半（FP16_acc16 情况）。"
+
+#: ../../doc/docs/how_to/deploy/adreno.rst:629
+msgid ""
+"``ToMixedPrecision`` pass usage is simplified into a simple call as shown"
+" below for usage."
+msgstr ""
+"``ToMixedPrecision`` pass 的使用被简化为如下所示的简单调用。"

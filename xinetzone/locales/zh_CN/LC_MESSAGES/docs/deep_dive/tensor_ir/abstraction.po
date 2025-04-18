@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:21
+msgid "Tensor Program Abstraction"
+msgstr "张量程序抽象"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:22
+msgid ""
+"Before we dive into the details of TensorIR, let's first introduce what "
+"is a primitive tensor function. Primitive tensor functions are functions "
+"that correspond to a single \"unit\" of computational operation. For "
+"example, a convolution operation can be a primitive tensor function, and "
+"a fused convolution + relu operation can also be a primitive tensor "
+"function. Usually, a typical abstraction for primitive tensor function "
+"implementation contains the following elements: multi-dimensional "
+"buffers, loop nests that drive the tensor computations, and finally, the "
+"compute statements themselves."
+msgstr ""
+"在深入了解 TensorIR 的细节之前，首先介绍一下什么是元张量函数。"
+"元张量函数是指对应于单一计算操作“单元”的函数。"
+"例如，卷积运算可以是元张量函数，而融合了卷积和 ReLU 算子也可以是元张量函数。"
+"通常，对元张量函数实现的典型抽象包含以下元素："
+"多维缓冲区、驱动张量计算的循环嵌套结构，以及最终的计算语句本身。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:46
+msgid "Key Elements of Tensor Programs"
+msgstr "张量程序的关键要素"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:47
+msgid ""
+"The demonstrated primitive tensor function calculates the element-wise "
+"sum of two vectors. The function:"
+msgstr ""
+"展示的元张量函数计算两个向量的元素级和。该函数："
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:50
+msgid ""
+"Accepts three **multi-dimensional buffers** as parameters, and generates "
+"one **multi-dimensional buffer** as output."
+msgstr ""
+"该函数接受三个 **多维缓冲区** 作为参数，并生成一个 **多维缓冲区** 作为输出。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:52
+msgid ""
+"Incorporates a solitary **loop nest** ``i`` that facilitates the "
+"computation."
+msgstr ""
+"包含单独的 **循环嵌套** ``i``，这有助于进行计算。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:53
+msgid ""
+"Features a singular **compute statement** that calculates the element-"
+"wise sum of the two vectors."
+msgstr ""
+"包含独特的 **计算语句**，它计算两个向量的逐元素和。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:57
+msgid "Extra Structure in TensorIR"
+msgstr "TensorIR 中的额外结构"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:58
+msgid ""
+"Crucially, we are unable to execute arbitrary transformations on the "
+"program, as certain computations rely on the loop's sequence. "
+"Fortunately, the majority of primitive tensor functions we focus on "
+"possess favorable properties, such as independence among loop iterations."
+" For instance, the aforementioned program includes block and iteration "
+"annotations:"
+msgstr ""
+"至关重要的是，无法对程序执行任意变换，因为某些计算依赖于循环的顺序。"
+"幸运的是，我们关注的主要元张量函数具有有利的属性，例如循环迭代之间的独立性。"
+"例如，上述程序包括块和迭代注解："
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:63
+msgid ""
+"The **block annotation** ``with T.block(\"C\")`` signifies that the block"
+" is the fundamental computation unit designated for scheduling. A block "
+"may encompass a single computation statement, multiple computation "
+"statements with loops, or opaque intrinsics such as Tensor Core "
+"instructions."
+msgstr ""
+"``with T.block(\"C\")`` 的 **块注解** 表示该块是指定用于调度的基本计算单元。"
+"块可能包含单个计算语句，多个带有循环的计算语句，或者像张量核心指令（Tensor Core instructions）那样的不透明内建函数。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:67
+msgid ""
+"The **iteration annotation** ``T.axis.spatial``, indicating that variable"
+" ``vi`` is mapped to ``i``, and all iterations are independent."
+msgstr ""
+"**迭代注解** ``T.axis.spatial`` 表明变量 ``vi`` 映射到 ``i``，且所有迭代都是独立的。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/abstraction.rst:70
+msgid ""
+"While this information isn't crucial for *executing* the specific "
+"program, it proves useful when transforming the program. Consequently, we"
+" can confidently parallelize or reorder loops associated with ``vi``, "
+"provided we traverse all the index elements from 0 to 128."
+msgstr ""
+"尽管这些信息对于执行特定的程序来说并非至关重要，但它们在程序变换过程中却显得十分有用。"
+"因此，只要遍历从 0 到 128 的所有索引元素，就可以自信地并行化或重新排序与 ``vi`` 相关的循环。"

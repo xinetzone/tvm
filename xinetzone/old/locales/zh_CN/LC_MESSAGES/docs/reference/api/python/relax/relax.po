@@ -1,0 +1,2850 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/relax.rst:19
+msgid "tvm.relax"
+msgstr ""
+
+#: of tvm.relax:1
+msgid ""
+"The Relax IR namespace containing the IR, type, operator, builder, vm, "
+"etc."
+msgstr ""
+
+#: of tvm.relax.expr.Binding:1
+msgid "The base class of a binding in Relax."
+msgstr ""
+
+#: of tvm.relax.expr.BindingBlock:1
+msgid ""
+"base class of binding block, bindings inside can be impure (with side "
+"effect or control flow)"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/relax.rst of
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite
+#: tvm.relax.exec_builder.ExecBuilder.c
+#: tvm.relax.exec_builder.ExecBuilder.declare_function
+#: tvm.relax.exec_builder.ExecBuilder.emit_call
+#: tvm.relax.exec_builder.ExecBuilder.emit_ret
+#: tvm.relax.exec_builder.ExecBuilder.f
+#: tvm.relax.exec_builder.ExecBuilder.function
+#: tvm.relax.exec_builder.ExecBuilder.imm tvm.relax.exec_builder.ExecBuilder.r
+#: tvm.relax.expr.BindingBlock tvm.relax.expr.DataTypeImm
+#: tvm.relax.expr.DataflowBlock tvm.relax.expr.ExternFunc
+#: tvm.relax.expr.Function.create_empty tvm.relax.expr.PrimValue
+#: tvm.relax.expr.SeqExpr tvm.relax.expr.StringImm tvm.relax.expr.extern
+#: tvm.relax.expr_functor.ExprFunctor.visit_expr
+#: tvm.relax.expr_functor.PyExprMutator.__init__
+#: tvm.relax.struct_info.FuncStructInfo tvm.relax.struct_info.ObjectStructInfo
+#: tvm.relax.ty.ObjectType tvm.relax.ty.PackedFuncType
+#: tvm.runtime.relax_vm.VirtualMachine._convert
+#: tvm.runtime.relax_vm.VirtualMachine._convert_func_named_args
+#: tvm.runtime.relax_vm.VirtualMachine._setup_device
+msgid "参数"
+msgstr ""
+
+#: of tvm.relax.expr.Call:1
+msgid "Function call node in Relax."
+msgstr ""
+
+#: of tvm.relax.expr.Call:3
+msgid ""
+"Call node corresponds the operator application node in computational "
+"graph terminology."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:4
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.add:4
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:4
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:4
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:4
+#: tvm.relax.expr.Call:7 tvm.relax.expr.Constant:4 tvm.relax.expr.DataflowVar:6
+#: tvm.relax.expr.Function.__call__:4 tvm.relax.expr.Function.bind_params:4
+#: tvm.relax.expr.Function.bind_symbolic_vars:4 tvm.relax.expr.If:4
+#: tvm.relax.expr.MatchCast:8 tvm.relax.expr.ShapeExpr:4
+#: tvm.relax.expr.StructInfo.is_base_of:4 tvm.relax.expr.Tuple:4
+#: tvm.relax.expr.TupleGetItem:4 tvm.relax.expr.Var:4
+#: tvm.relax.expr.VarBinding:4 tvm.relax.expr.const:4
+#: tvm.relax.expr.get_shape_of:4
+#: tvm.relax.expr_functor.PyExprMutator.get_var_remap:4
+#: tvm.relax.expr_functor.PyExprMutator.lookup_binding:5
+#: tvm.relax.expr_functor.PyExprMutator.set_var_remap:4
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_call_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_constant_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr:5
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:4
+#: tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_global_var_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_if_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_match_cast_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_op_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_span:5
+#: tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_binding_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:4
+#: tvm.relax.expr_functor.PyExprMutator.with_struct_info:5
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_call_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_constant_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_data_type_imm_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_block_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_def_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_expr:5
+#: tvm.relax.expr_functor.PyExprVisitor.visit_extern_func_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_function_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_global_var_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_if_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_match_cast_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_op_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_prim_value_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_seq_expr_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_shape_expr_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_span:5
+#: tvm.relax.expr_functor.PyExprVisitor.visit_string_imm_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_getitem_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_binding_:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def_:6
+#: tvm.relax.op.base.call_dps_packed:8 tvm.relax.op.base.call_pure_packed:13
+#: tvm.relax.op.base.call_tir:4 tvm.relax.op.base.call_tir_inplace:14
+#: tvm.relax.op.base.call_tir_with_grad:6 tvm.relax.pipeline.get_pipeline:4
+#: tvm.relax.pipeline.register_pipeline:4
+#: tvm.relax.struct_info.FuncStructInfo:4
+#: tvm.relax.struct_info.FuncStructInfo.opaque_func:8
+#: tvm.relax.struct_info.PrimStructInfo:4
+#: tvm.relax.struct_info.ShapeStructInfo:4
+#: tvm.relax.struct_info.TensorStructInfo:4
+#: tvm.relax.struct_info.TupleStructInfo:4 tvm.relax.ty.DynTensorType:6
+#: tvm.relax.ty.ShapeType:4 tvm.relax.vm_build.Executable.export_library:4
+#: tvm.relax.vm_build.Executable.jit:9 tvm.relax.vm_build.build:4
+#: tvm.runtime.relax_vm.VirtualMachine.__init__:4
+#: tvm.runtime.relax_vm.VirtualMachine.get_outputs:7
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_closure:4
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:9
+#: tvm.runtime.relax_vm.VirtualMachine.profile:4
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:15
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:10
+#: tvm.runtime.relax_vm.VirtualMachine.set_instrument:30
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:7
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.relax.expr.Call:8
+msgid "op: tvm.ir.Op or any tvm.relax.Expr with function type."
+msgstr ""
+
+#: of tvm.relax.expr.Call:9
+msgid "The operation to be called."
+msgstr ""
+
+#: of tvm.relax.expr.Call:11
+msgid "args: Union[List[Expr], typing.Tuple[Expr, ...]]"
+msgstr ""
+
+#: of tvm.relax.expr.Call:12
+msgid "The arguments to the call."
+msgstr ""
+
+#: of tvm.relax.expr.Call:14
+msgid "attrs: Optional[tvm.ir.Attrs]"
+msgstr ""
+
+#: of tvm.relax.expr.Call:15
+msgid "Attributes to the call, can be None"
+msgstr ""
+
+#: of tvm.relax.expr.Call:17
+msgid ""
+"sinfo_args: Optional[Union[List[StructInfo], typing.Tuple[StructInfo, "
+"...]]]"
+msgstr ""
+
+#: of tvm.relax.expr.Call:18
+msgid ""
+"The structure info arguments of a CallNode. sinfo_args is designed to be "
+"non-empty only for intrinsic op (e.g., call_tir, call_builtin_with_ctx, "
+"etc.) and calls to ExternFuncs, with the main usage of structure info "
+"inference."
+msgstr ""
+
+#: of tvm.relax.expr.Call:23 tvm.relax.expr.Constant:11
+#: tvm.relax.expr.DataflowVar:13 tvm.relax.expr.If:14
+#: tvm.relax.expr.ShapeExpr:8 tvm.relax.expr.Tuple:8
+#: tvm.relax.expr.TupleGetItem:11 tvm.relax.expr.Var:11
+#: tvm.relax.struct_info.FuncStructInfo.opaque_func:18
+msgid "span: Optional[Span]"
+msgstr ""
+
+#: of tvm.relax.expr.Call:24 tvm.relax.expr.Constant:12
+#: tvm.relax.expr.DataflowVar:14 tvm.relax.expr.If:15
+#: tvm.relax.expr.ShapeExpr:9 tvm.relax.expr.Tuple:9
+#: tvm.relax.expr.TupleGetItem:12 tvm.relax.expr.Var:12
+msgid "Span that points to original source code"
+msgstr ""
+
+#: of tvm.relax.expr.Constant:1
+msgid "Constant Tensor"
+msgstr ""
+
+#: of tvm.relax.expr.Constant:5
+msgid "data: tvm.nd.NDArray"
+msgstr ""
+
+#: of tvm.relax.expr.Constant:6
+msgid "The data of the constant tensor."
+msgstr ""
+
+#: of tvm.relax.expr.Constant:8 tvm.relax.expr.DataflowVar:10
+#: tvm.relax.expr.Var:8
+msgid "struct_info: Optional[StructInfo]"
+msgstr ""
+
+#: of tvm.relax.expr.Constant:9
+msgid ""
+"The struct info of the constant tensor. If not specified, infer it from "
+"data."
+msgstr ""
+
+#: of tvm.relax.expr.Constant:15 tvm.relax.expr.const:12
+#: tvm.relax.expr.get_shape_of:14
+#: tvm.relax.struct_info.FuncStructInfo.opaque_func:26
+#: tvm.relax.struct_info.ShapeStructInfo:12
+#: tvm.relax.struct_info.TensorStructInfo:18
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:44
+msgid "Note"
+msgstr ""
+
+#: of tvm.relax.expr.Constant:16
+msgid "Scalar constants are represented by ndim-0 constant tensors."
+msgstr ""
+
+#: of tvm.relax.expr.DataTypeImm:1
+msgid "Represent a data type constant."
+msgstr ""
+
+#: of tvm.relax.expr.DataflowBlock:1
+msgid ""
+"dataflow block, bindings inside are pure (no side effect and no control "
+"flow)"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite:1
+msgid "A binding/statement-level dataflow block rewriter."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite:4
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.add:13
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_all_unused:4
+#: tvm.relax.utils.convert_to_expr:8
+msgid "Notes"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite:5
+msgid ""
+"Due to the immutable and copy-on-write nature of TVM AST nodes, the "
+"rewriting is not done in place. Instead, a new DataflowBlock is created "
+"and returned with mutated_dfb. Similarly, its new root Function is "
+"created and returned by mutated_root_fn. To apply this change for an "
+"IRModule, use mutate_irmodule which rewrites the old function that "
+"registered in the constructor."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:1
+msgid ""
+"Construct a rewriter with the DataflowBlock to rewrite and its root "
+"function."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:5
+msgid "dfb"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_block_:-1
+msgid "DataflowBlock"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:6
+msgid "The DataflowBlock to rewrite."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:7
+msgid "root_fn"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_function_:-1
+msgid "Function"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.__init__:8
+msgid "The root function of the DataflowBlock."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:1
+msgid ""
+"Add a new statement to the DataflowBlock with an automatically generated "
+"variable name."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:5
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr:6
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:5
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:5
+#: tvm.relax.expr_functor.PyExprVisitor.visit_expr:6
+msgid "expr"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_call_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_constant_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_global_var_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_if_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_op_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_expr:-1
+#: tvm.relax.op.base.call_dps_packed:-1 tvm.relax.op.base.call_pure_packed:-1
+#: tvm.relax.op.base.call_tir:-1 tvm.relax.op.base.call_tir_inplace:-1
+#: tvm.relax.op.base.call_tir_with_grad:-1
+msgid "Expr"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:6
+msgid "The expression to add."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:7
+#: tvm.relax.pipeline.get_pipeline:5 tvm.relax.pipeline.register_pipeline:5
+msgid "name"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:-1
+msgid "Optional[str], optional"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:8
+msgid "Variable name, by default None"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:9
+msgid "is_dfvar"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:-1
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:-1
+msgid "bool, optional"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:10
+msgid "The variable type, by default False"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.add:14
+msgid ""
+"If the variable name is not given, it will be automatically generated in "
+"a form of \"tmp${COUNTER}\". The variable type will be DataflowVar if "
+"is_dfvar is True, otherwise it will be Var. Being Var means the variables"
+" are output variables of the DataflowBlock. While being DataflowVar means"
+" the variables are internal variables of the DataflowBlock."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/relax.rst of
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.mutated_dfb
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.mutated_root_fn
+#: tvm.relax.exec_builder.ExecBuilder.c
+#: tvm.relax.exec_builder.ExecBuilder.declare_function
+#: tvm.relax.exec_builder.ExecBuilder.emit_call
+#: tvm.relax.exec_builder.ExecBuilder.emit_ret
+#: tvm.relax.exec_builder.ExecBuilder.f
+#: tvm.relax.exec_builder.ExecBuilder.function
+#: tvm.relax.exec_builder.ExecBuilder.get
+#: tvm.relax.exec_builder.ExecBuilder.imm tvm.relax.exec_builder.ExecBuilder.r
+#: tvm.relax.expr_functor.ExprFunctor.visit_expr
+#: tvm.relax.expr_functor.PyExprMutator.__init__
+#: tvm.relax.struct_info.FuncStructInfo tvm.relax.vm_build.Executable.as_python
+#: tvm.relax.vm_build.Executable.as_text tvm.relax.vm_build.Executable.stats
+#: tvm.runtime.relax_vm.VirtualMachine._convert
+#: tvm.runtime.relax_vm.VirtualMachine._convert_func_named_args
+#: tvm.runtime.relax_vm.VirtualMachine._setup_device
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:1
+msgid ""
+"Return an updated IRModule by replacing the old function with the mutated"
+" root function."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:5
+msgid "irmodule"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:-1
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:10
+msgid "tvm.IRModule"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:6
+msgid "The base IRModule to update."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:9
+#: tvm.relax.expr.Function.bind_params:22
+#: tvm.relax.expr.Function.bind_symbolic_vars:13
+#: tvm.relax.expr.StructInfo.is_base_of:9 tvm.relax.expr.get_shape_of:9
+#: tvm.relax.expr_functor.PyExprMutator.get_var_remap:9
+#: tvm.relax.expr_functor.PyExprMutator.lookup_binding:10
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_call_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_constant_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr:10
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:9
+#: tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_global_var_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_if_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_op_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_span:10
+#: tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:9
+#: tvm.relax.expr_functor.PyExprMutator.with_struct_info:12
+#: tvm.relax.op.base.call_dps_packed:21 tvm.relax.op.base.call_pure_packed:24
+#: tvm.relax.op.base.call_tir:20 tvm.relax.op.base.call_tir_inplace:39
+#: tvm.relax.op.base.call_tir_with_grad:30 tvm.relax.pipeline.get_pipeline:11
+#: tvm.relax.struct_info.FuncStructInfo.opaque_func:22
+#: tvm.relax.vm_build.Executable.export_library:20
+#: tvm.relax.vm_build.Executable.jit:17 tvm.relax.vm_build.build:33
+#: tvm.runtime.relax_vm.VirtualMachine.get_outputs:12
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_closure:12
+#: tvm.runtime.relax_vm.VirtualMachine.profile:12
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:81
+msgid "Returns"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutate_irmodule:11
+msgid "The updated IRModule."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutated_dfb:1
+msgid "Returns the mutated DataflowBlock."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.mutated_root_fn:1
+msgid "Returns the mutated root function."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_all_unused:1
+msgid "Remove all unused variables."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_all_unused:5
+msgid "This could remove unused variables in other DataflowBlocks as well."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:1
+msgid "Remove a statement by its variable definition if and only if it is unused."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:5
+#: tvm.relax.expr_functor.PyExprMutator.get_var_remap:10
+#: tvm.relax.expr_functor.PyExprMutator.lookup_binding:6
+#: tvm.relax.expr_functor.PyExprMutator.lookup_binding:11
+#: tvm.relax.expr_functor.PyExprMutator.set_var_remap:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:10
+#: tvm.relax.expr_functor.PyExprMutator.with_struct_info:6
+#: tvm.relax.expr_functor.PyExprMutator.with_struct_info:13
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_def_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def_:7
+msgid "var"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:-1
+#: tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:-1
+#: tvm.relax.expr_functor.PyExprMutator.get_var_remap:-1
+#: tvm.relax.expr_functor.PyExprMutator.lookup_binding:-1
+#: tvm.relax.expr_functor.PyExprMutator.set_var_remap:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:-1
+#: tvm.relax.expr_functor.PyExprMutator.with_struct_info:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def_:-1
+msgid "Var"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:6
+msgid "The unused variable definition."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:7
+msgid "allow_undef"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:8
+msgid "Whether to allow var being undefined variable, by default False"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:11
+msgid "Raises"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.remove_unused:12
+msgid "TVMError if the variable is used or undefined (allow_undef=False)."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:1
+msgid "Replace all uses of old_var with new_var."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:5
+msgid "old_var"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:6
+msgid "The old variable to replace."
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:7
+msgid "new_var"
+msgstr ""
+
+#: of tvm.relax.binding_rewrite.DataflowBlockRewrite.replace_all_uses:8
+msgid "The new variable to replace with."
+msgstr ""
+
+#: of tvm.relax.expr.DataflowVar:1
+msgid ""
+"A sub-type of the variable node used to mark dataflow variables from "
+"normal visible \"function local\" bindings."
+msgstr ""
+
+#: of tvm.relax.expr.DataflowVar:7 tvm.relax.expr.Var:5
+msgid "name_hint: Union[str, Id]"
+msgstr ""
+
+#: of tvm.relax.expr.DataflowVar:8 tvm.relax.expr.Var:6
+msgid "The name hint of the variable."
+msgstr ""
+
+#: of tvm.relax.expr.DataflowVar:11 tvm.relax.expr.Var:9
+msgid "The struct info annotation of the variable."
+msgstr ""
+
+#: of tvm.relax.ty.DynTensorType:1
+msgid "A dynamic tensor type in Relax."
+msgstr ""
+
+#: of tvm.relax.ty.DynTensorType:3
+msgid "This is the type assigned to tensors with a known dtype and unknown shape."
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:8
+#: tvm.relax.struct_info.TensorStructInfo:14 tvm.relax.ty.DynTensorType:7
+#: tvm.relax.ty.ShapeType:5
+msgid "ndim"
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:-1
+#: tvm.relax.struct_info.TensorStructInfo:-1 tvm.relax.ty.DynTensorType:-1
+#: tvm.relax.ty.ShapeType:-1
+msgid "Optional[int]"
+msgstr ""
+
+#: of tvm.relax.ty.DynTensorType:8
+msgid "The ndim of the Tensor"
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:8 tvm.relax.ty.DynTensorType:10
+msgid "dtype"
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:-1
+#: tvm.relax.struct_info.TensorStructInfo:-1 tvm.relax.ty.DynTensorType:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:9 tvm.relax.ty.DynTensorType:11
+msgid "The content data type."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder:1
+msgid ""
+"A builder to emit instructions and build executable for the virtual "
+"machine."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.c:1
+msgid "set instruction's argument as a constant."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.declare_function:1
+msgid "Declare a function"
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.emit_call:1
+msgid "emit a call instruction which calls a packed function."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.emit_goto:1
+msgid "emit a goto instruction"
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.emit_if:1
+msgid "emit an if instruction"
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.emit_ret:1
+msgid "emit a return instruction"
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.f:1
+msgid "set instruction's argument as a function."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.function:1
+msgid "annotate a VM function."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.get:1
+msgid "return the executable"
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.imm:1
+msgid "set instruction's argument as an immediate."
+msgstr ""
+
+#: of tvm.relax.exec_builder.ExecBuilder.r:1
+msgid "set instruction's argument as a register."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable:1
+msgid "The executable object emitted by the VM compiler or the ExecBuilder."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.as_python:1
+msgid "print the instructions as python program."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.as_text:1
+msgid "print the instructions as text format."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:1
+msgid "Export the executable to a library which can then be loaded back."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:5
+msgid "file_name"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:-1
+#: tvm.relax.pipeline.register_pipeline:-1
+#: tvm.relax.vm_build.Executable.export_library:-1
+#: tvm.runtime.relax_vm.VirtualMachine.profile:-1
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:6
+msgid "The name of the shared library."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:8
+#: tvm.relax.vm_build.Executable.jit:10
+msgid "fcompile"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:-1
+#: tvm.relax.vm_build.Executable.jit:-1
+msgid "function(target, file_list, kwargs), optional"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:9
+#: tvm.relax.vm_build.Executable.jit:11
+msgid "The compilation function to use create the final library object during"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:11
+msgid "workspace_dir"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:-1
+msgid "str, optional"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:12
+msgid ""
+"The path of the directory used to create the intermediate artifacts when "
+"exporting the module. If this is not provided a temporary dir will be "
+"created."
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:7
+#: tvm.relax.vm_build.Executable.export_library:16
+#: tvm.relax.vm_build.Executable.jit:13
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:30
+msgid "kwargs"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:-1
+#: tvm.relax.vm_build.Executable.jit:-1
+msgid "dict, optional"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:17
+#: tvm.relax.vm_build.Executable.jit:14
+msgid "Additional arguments passed to fcompile"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:21
+msgid "result of fcompile()"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:-1
+msgid "unknown, optional"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:22
+msgid ""
+"If the compilation function returns an artifact it would be returned via "
+"export_library, if any."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.export_library:26
+#: tvm.relax.vm_build.Executable.jit:22
+msgid "Examples"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.jit:1
+msgid "Just-in-time compile and link the modules."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.jit:3
+msgid ""
+"The Executable returned by relax.build may not be directly runnable as "
+"they may contain cuda source files and objects that are yet to be "
+"compiled and linked. This function helps to create a runtime.Module for "
+"these cases."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.jit:18
+msgid "rt_mod: tvm.runtime.Module"
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.jit:19
+msgid "A runnable runtime module that can be passed to VirtualMachine."
+msgstr ""
+
+#: of tvm.relax.vm_build.Executable.stats:1
+msgid "print the detailed statistics of the executable."
+msgstr ""
+
+#: of tvm.relax.expr_functor.ExprFunctor:1
+msgid ""
+"An abstract visitor defined over Expr. Defines the default dispatch over "
+"expressions, and implements memoization."
+msgstr ""
+
+#: of tvm.relax.expr_functor.ExprFunctor.visit_expr:1
+msgid "Apply the visitor to an expression."
+msgstr ""
+
+#: of tvm.relax.expr.ExternFunc:1
+msgid "extern function, which represents a PackedFunc."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:1
+msgid "StructInfo of a function value."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:5
+msgid "params: List[StructInfo]"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:6
+#: tvm.relax.struct_info.TupleStructInfo:6
+msgid "The struct info of the fields."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:8
+msgid "ret: StructInfo"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:9
+msgid "The struct info of return value"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:11
+#: tvm.relax.struct_info.FuncStructInfo.opaque_func:15
+msgid "purity: bool"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo:12
+msgid ""
+"Whether the function is pure (has no visible side effects). Note: We "
+"consider a function to be pure only if it is pure on all inputs. If a "
+"function can have visible side effects only in some cases, we still "
+"consider it impure."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:1
+msgid "Create an opaque FuncStructInfo."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:3
+msgid ""
+"The opaque function takes either a ret that specificies the struct info "
+"of the return value or a derive_func that provides a customized "
+"derivation rule."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:9
+msgid "ret: Optional[StructInfo]"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:10
+msgid "The struct info of the function return value."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:12
+msgid "derive_func: Optional[Union[str,EnvFunc]]"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:13
+msgid "The environment function used for derivation"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:16
+msgid ""
+"Whether the function is pure (false by default, as most opaque functions "
+"are not pure)"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:19
+msgid "Optional span information of the ast."
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:23
+msgid "info: FuncStructInfo"
+msgstr ""
+
+#: of tvm.relax.struct_info.FuncStructInfo.opaque_func:27
+msgid "We cannot specify ret and derive_func simultaneously."
+msgstr ""
+
+#: of tvm.relax.expr.Function:1
+msgid "A Relax function."
+msgstr ""
+
+#: of tvm.relax.expr.Function.__call__:1
+msgid "Invoke the global function."
+msgstr ""
+
+#: of tvm.relax.expr.Function.__call__:5
+msgid "args: List[relax.Expr]"
+msgstr ""
+
+#: of tvm.relax.expr.Function.__call__:6
+msgid "Arguments."
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:1
+#: tvm.relax.expr.Function.bind_symbolic_vars:1
+msgid "Return a new function with updated symbolic variable"
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:5
+msgid "binding_map: Mapping["
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:6
+msgid ""
+"Union[str, Var], Union[int, float, PrimExpr, tvm.runtime.NDArray, "
+"_np.ndarray, Expr],"
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:8
+msgid "]"
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:10
+msgid "The mapping of values to be replaced."
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:12
+msgid ""
+"Keys may be either a `relax.Var` or a string name of the Relax variable."
+"  If the variables are referred to by name, the name must uniquely "
+"identify a parameter in the function."
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:17
+msgid ""
+"Values must be a relax expression, or a value that is convertible into a "
+"relax expression.  The value must be compatible with the variable being "
+"replaced."
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:23
+#: tvm.relax.expr.Function.bind_symbolic_vars:14
+msgid "func: Function"
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_params:25
+#: tvm.relax.expr.Function.bind_symbolic_vars:16
+msgid "The updated function"
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_symbolic_vars:5
+msgid "binding_map: Mapping[Union[str, tvm.tir.Var], PrimExpr]"
+msgstr ""
+
+#: of tvm.relax.expr.Function.bind_symbolic_vars:7
+msgid ""
+"The mapping of values to be replaced.  Keys may be either a `tir.Var` or "
+"a string name of the variable.  If the variables are referred to by name,"
+" the name must uniquely identify a symbolic variable in the function."
+msgstr ""
+
+#: of tvm.relax.expr.Function.create_empty:1
+msgid "Construct a relax.Function but without body"
+msgstr ""
+
+#: of tvm.relax.expr.Id:1
+msgid ""
+"Unique identifier(name) used in Var. Guaranteed to be stable across all "
+"passes."
+msgstr ""
+
+#: of tvm.relax.expr.If:1
+msgid "A conditional expression in Relax."
+msgstr ""
+
+#: of tvm.relax.expr.If:5
+msgid "cond: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.If:6
+msgid "The condition."
+msgstr ""
+
+#: of tvm.relax.expr.If:8
+msgid "true_branch: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.If:9
+msgid "The expression evaluated when condition is true."
+msgstr ""
+
+#: of tvm.relax.expr.If:11
+msgid "false_branch: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.If:12
+msgid "The expression evaluated when condition is false."
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:1
+msgid "Runtime-match the value to the struct info."
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:3
+msgid ""
+"This operation does runtime check, populates the un-defined symbolic "
+"shape vars and vars in struct_info in the first occurrence, and insert "
+"equality assertions in other cases."
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:9 tvm.relax.expr.VarBinding:5
+msgid "var: Var"
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:10 tvm.relax.expr.VarBinding:6
+msgid "The return variable that the match cast bind to."
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:12 tvm.relax.expr.VarBinding:8
+msgid "value: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:13 tvm.relax.expr.VarBinding:9
+msgid "The input value expression."
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:15
+msgid "struct_info: tvm.relax.StructInfo"
+msgstr ""
+
+#: of tvm.relax.expr.MatchCast:16
+msgid "The struct info to match cast to."
+msgstr ""
+
+#: of tvm.relax.struct_info.ObjectStructInfo:1
+msgid "StructInfo of an Object."
+msgstr ""
+
+#: of tvm.relax.ty.ObjectType:1
+msgid ""
+"A type that corresponds to tvm::runtime::Object, is base of all possible "
+"object values in TVM."
+msgstr ""
+
+#: of tvm.relax.ty.PackedFuncType:1
+msgid "The type of ExternFunc in Relax."
+msgstr ""
+
+#: of tvm.relax.struct_info.PrimStructInfo:1
+msgid "StructInfo of a primitive POD value."
+msgstr ""
+
+#: of tvm.relax.struct_info.PrimStructInfo:5
+msgid "dtype_or_expr : Union[str, DataType, PrimExpr]"
+msgstr ""
+
+#: of tvm.relax.struct_info.PrimStructInfo:7
+msgid "The data type of the prim value, or a known expression for the prim value."
+msgstr ""
+
+#: of tvm.relax.expr.PrimValue:1
+msgid "The prim expr representing the value."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator:1
+msgid ""
+"An abstract ExprMutator with customized methods on the python-side. This "
+"is the user facing class for method overwriting inheritance. "
+"_tvm_metadata discribes the class to inherit(\"cls\"), the methods that "
+"users can overwrite(\"methods\"), the constructor's "
+"parameters(\"fields\")"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator:6
+msgid ""
+"Note: @relax.expr_functor.mutator is required for proper usage of any "
+"inherited class."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator:8
+#: tvm.relax.expr_functor.PyExprVisitor:8
+msgid "See also: visitor, _PyExprVisitor"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator:10
+#: tvm.relax.expr_functor.PyExprVisitor:10
+msgid "Example:"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.__init__:1
+msgid "Constructor"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.get_var_remap:1
+#: tvm.relax.expr_functor.PyExprMutator.set_var_remap:1
+msgid "Remap a var to a new var in use-site."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.get_var_remap:5
+#: tvm.relax.expr_functor.PyExprMutator.set_var_remap:5
+msgid "vid"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.get_var_remap:-1
+#: tvm.relax.expr_functor.PyExprMutator.set_var_remap:-1
+msgid "Id"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.get_var_remap:6
+msgid "The vid of the old var"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.get_var_remap:11
+msgid "The remapped var."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.lookup_binding:1
+msgid ""
+"Look up the value bound to a variable. Note: For function parameters, "
+"this function returns NullOpt."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.lookup_binding:7
+msgid "The var to be looked up."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.lookup_binding:12
+msgid "The value bound to the input var."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.set_var_remap:6
+msgid "The vid of the old var."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.set_var_remap:8
+msgid "The new var."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding:1
+msgid ""
+"Generic dispatcher for Binding. Users can customized this function to "
+"overwrite VisitBinding(const Binding& binding) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_match_cast_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_binding_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_match_cast_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_binding_:7
+msgid "binding"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding:-1
+msgid "Binding"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding:8
+msgid "The binding to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block:1
+msgid ""
+"Generic dispatcher for BindingBlock. Users can customized this function "
+"to overwrite VisitBindingBlock(const BindingBlock& block) on the C++ "
+"side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_block_:7
+msgid "block"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block_:-1
+msgid "BindingBlock"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block:8
+msgid "The block to be visited."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:10
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_call_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_constant_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:10
+#: tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_global_var_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_if_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_op_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_span:11
+#: tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:12
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:12
+#: tvm.relax.op.base.call_pure_packed:25
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_closure:13
+msgid "result"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block:13
+msgid "The binding block after transformation."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block_:1
+msgid ""
+"Visit BindingBlock. Users can customized this function to overwrite "
+"VisitBindingBlock_(const BindingBlockNode* block) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_binding_block_:8
+msgid "The BindingBlock to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_binding_block_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:13
+msgid "The binding block after transformation"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_call_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_call_:1
+msgid ""
+"Visit Call. Users can customized this function to overwrite "
+"VisitExpr_(const CallNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_call_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_constant_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_global_var_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_if_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_op_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_call_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_constant_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_data_type_imm_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_extern_func_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_function_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_global_var_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_if_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_op_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_prim_value_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_seq_expr_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_shape_expr_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_string_imm_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_getitem_:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_:7
+msgid "op"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_call_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_call_:-1
+msgid "Call"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_call_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_call_:8
+msgid "The Call to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_call_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_constant_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_function_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_global_var_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_if_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_op_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_:13
+msgid "The Expr after transformation"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_constant_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_constant_:1
+msgid ""
+"Visit Constant. Users can customized this function to overwrite "
+"VisitExpr_(const ConstantNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_constant_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_constant_:-1
+msgid "Constant"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_constant_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_constant_:8
+msgid "The Constant to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_data_type_imm_:1
+msgid ""
+"Visit DataTypeImm. Users can customized this function to overwrite "
+"VisitExpr_(const DataTypeImmNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_data_type_imm_:-1
+msgid "DataTypeImm"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_data_type_imm_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_data_type_imm_:8
+msgid "The DataTypeImm to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_block_:1
+msgid ""
+"Visit DataflowBlock. Users can customized this function to overwrite "
+"VisitBindingBlock_(const DataflowBlockNode* block) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_block_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_block_:8
+msgid "The DataflowBlock to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_:1
+msgid ""
+"Visit DataflowVar. Users can customized this function to overwrite "
+"VisitExpr_(const DataflowVarNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:-1
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_def_:-1
+msgid "DataflowVar"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_:8
+#: tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_def_:8
+msgid "The DataflowVar to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_dataflow_var_def_:1
+msgid ""
+"Visit the DataflowVar definition site. Users can customized this function"
+" to overwrite VisitVarDef_(const DataflowVarNode* var) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_dataflow_var_def_:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def:13
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:13
+msgid "The var after post-order rewritten."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_expr:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_expr:1
+msgid ""
+"Generic dispatcher for Expr. Users can customized this function to "
+"overwrite VisitExpr(const Expr& expr) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_expr:7
+#: tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_expr:7
+msgid "The expr to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_expr:12
+msgid "The Expr after transformation."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:1
+msgid "Post-order rewrite an Expr and normalize."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:6
+msgid "The Expr to be rewritten."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_expr_post_order:11
+msgid "The Expr after post-order rewritten."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_extern_func_:1
+msgid ""
+"Visit ExternFunc. Users can customized this function to overwrite "
+"VisitExpr_(const ExternFuncNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_extern_func_:-1
+msgid "ExternFunc"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_extern_func_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_extern_func_:8
+msgid "The ExternFunc to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_function_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_function_:1
+msgid ""
+"Visit Function. Users can customized this function to overwrite "
+"VisitExpr_(const FunctionNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_function_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_function_:8
+msgid "The Function to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_global_var_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_global_var_:1
+msgid ""
+"Visit GlobalVar. Users can customized this function to overwrite "
+"VisitExpr_(const GlobalVarNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_global_var_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_global_var_:-1
+#: tvm.relax.op.base.call_tir:-1 tvm.relax.op.base.call_tir_inplace:-1
+#: tvm.relax.op.base.call_tir_with_grad:-1
+msgid "GlobalVar"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_global_var_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_global_var_:8
+msgid "The GlobalVar to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_if_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_if_:1
+msgid ""
+"Visit If. Users can customized this function to overwrite "
+"VisitExpr_(const IfNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_if_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_if_:-1
+msgid "If"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_if_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_if_:8
+msgid "The If to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_match_cast_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_match_cast_:1
+msgid ""
+"Visit MatchCast. Users can customized this function to overwrite "
+"VisitBinding_(const MatchCastNode* binding) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_match_cast_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_match_cast_:-1
+msgid "MatchCast"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_match_cast_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_match_cast_:8
+msgid "The MatchCast to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_op_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_op_:1
+msgid ""
+"Visit Op. Users can customized this function to overwrite "
+"VisitExpr_(const OpNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_op_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_op_:-1
+msgid "Op"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_op_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_op_:8
+msgid "The Op to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_prim_value_:1
+msgid ""
+"Visit PrimValue. Users can customized this function to overwrite "
+"VisitExpr_(const PrimValueNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_prim_value_:-1
+msgid "PrimValue"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_prim_value_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_prim_value_:8
+msgid "The PrimValue to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_seq_expr_:1
+msgid ""
+"Visit SeqExpr. Users can customized this function to overwrite "
+"VisitExpr_(const SeqExprNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_seq_expr_:-1
+msgid "SeqExpr"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_seq_expr_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_seq_expr_:8
+msgid "The SeqExpr to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_shape_expr_:1
+msgid ""
+"Visit ShapeExpr. Users can customized this function to overwrite "
+"VisitExpr_(const ShapeExprNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_shape_expr_:-1
+msgid "ShapeExpr"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_shape_expr_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_shape_expr_:8
+msgid "The ShapeExpr to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_span:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_span:1
+msgid ""
+"Visit Span. Users can customized this function to overwrite "
+"VisitSpan(const Span& span) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_span:6
+#: tvm.relax.expr_functor.PyExprVisitor.visit_span:6
+msgid "span"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_span:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_span:-1
+msgid "Span"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_span:7
+#: tvm.relax.expr_functor.PyExprVisitor.visit_span:7
+msgid "The Span to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_span:12
+msgid "The span after transformation."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_string_imm_:1
+msgid ""
+"Visit StringImm. Users can customized this function to overwrite "
+"VisitExpr_(const StringImmNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_string_imm_:-1
+msgid "StringImm"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_string_imm_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_string_imm_:8
+msgid "The StringImm to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_tuple_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_:1
+msgid ""
+"Visit Tuple. Users can customized this function to overwrite "
+"VisitExpr_(const TupleNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_tuple_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_:-1
+msgid "Tuple"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_tuple_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_:8
+msgid "The Tuple to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_getitem_:1
+msgid ""
+"Visit TupleGetItem. Users can customized this function to overwrite "
+"VisitExpr_(const TupleGetItemNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_getitem_:-1
+msgid "TupleGetItem"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_tuple_getitem_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_tuple_getitem_:8
+msgid "The TupleGetItem to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_:1
+msgid ""
+"Visit Var. Users can customized this function to overwrite "
+"VisitExpr_(const VarNode* op) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_:8
+#: tvm.relax.expr_functor.PyExprMutator.visit_var_def_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def_:8
+msgid "The Var to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_binding_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_binding_:1
+msgid ""
+"Visit VarBinding. Users can customized this function to overwrite "
+"VisitBinding_(const VarBindingNode* binding) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_binding_:-1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_binding_:-1
+msgid "VarBinding"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_binding_:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_binding_:8
+msgid "The VarBinding to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_def:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def:1
+msgid ""
+"Generic dispatcher for visiting the var definition site. Users can "
+"customized this function to overwrite VisitVarDef(const Var& var) on the "
+"C++ side. Note that visit_var_() will only visit the usage site of an "
+"Var."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_def:8
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def:8
+msgid "The var to be visited."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_def:12
+msgid "result: Var"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_var_def_:1
+#: tvm.relax.expr_functor.PyExprVisitor.visit_var_def_:1
+msgid ""
+"Visit the Var definition site. Users can customized this function to "
+"overwrite VisitVarDef_(const VarNode* var) on the C++ side."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:1
+msgid ""
+"Rewrite the expr with a new scope, used in a Function's body and the "
+"branches of If."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.visit_with_new_scope:11
+msgid "The expr after visiting."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.with_struct_info:1
+msgid ""
+"Create a new var with specified shape and type if the original var's "
+"shape or type does not match with the specified ones."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.with_struct_info:7
+msgid "The var to be updated."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.with_struct_info:8
+msgid "struct_info"
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:-1
+#: tvm.relax.expr_functor.PyExprMutator.with_struct_info:-1
+msgid "StructInfo"
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.with_struct_info:9
+msgid "The struct info."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprMutator.with_struct_info:14
+msgid "The var filled with shape and type."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprVisitor:1
+msgid ""
+"An abstract ExprVisitor with customized methods on the python-side. This "
+"is the user facing class for method overwriting inheritance. "
+"_tvm_metadata discribes the class to inherit(\"cls\"), the methods that "
+"users can overwrite(\"methods\")."
+msgstr ""
+
+#: of tvm.relax.expr_functor.PyExprVisitor:6
+msgid ""
+"Note: @relax.expr_functor.visitor is required for proper usage of any "
+"inherited class."
+msgstr ""
+
+#: of tvm.relax.expr.SeqExpr:1
+msgid "A sequence of binding blocks followed by an expression."
+msgstr ""
+
+#: of tvm.relax.expr.ShapeExpr:1
+msgid ""
+"A shape expression which allows users to construct a shape containing "
+"PrimExpr."
+msgstr ""
+
+#: of tvm.relax.expr.ShapeExpr:5
+msgid "values: Union[List[PrimExpr], typing.Tuple[PrimExpr, ...], tvm.ir.Array]"
+msgstr ""
+
+#: of tvm.relax.expr.ShapeExpr:6
+msgid "The values of the shape expression."
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:1
+msgid "StructInfo of a shape value."
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:5
+msgid "values"
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:-1
+msgid "Optional[List[PrimExpr]]"
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:6
+msgid "The symbolic shape values if known."
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:9 tvm.relax.ty.ShapeType:6
+msgid "The size of the shape."
+msgstr ""
+
+#: of tvm.relax.struct_info.ShapeStructInfo:13
+msgid "Do not specify values and ndim at the same time."
+msgstr ""
+
+#: of tvm.relax.ty.ShapeType:1
+msgid "The type of shape in Relax."
+msgstr ""
+
+#: of tvm.relax.expr.StringImm:1
+msgid "Represent a string literal constant."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo:1
+msgid "The base class of all StructInfo."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo:3
+msgid ""
+"StructInfo contains both the static type and runtime structural "
+"information."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.__eq__:1
+msgid "Compare two struct info for structural equivalence."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:1
+msgid "Check if self is base of another derived struct info."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:5
+msgid "derived"
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:6
+msgid "The derived struct info to be checked."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:-1
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.is_base_of:11
+msgid "The check result."
+msgstr ""
+
+#: of tvm.relax.expr.StructInfo.same_as:1
+msgid "Overload with structural equality."
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:1
+msgid "StructInfo of a Tensor value."
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:5
+msgid "shape"
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:-1
+msgid "Optional[Expr]"
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:6
+msgid "The shape expression."
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:11
+msgid "vdevice"
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:-1
+msgid "Optional[Vdevice]"
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:12
+msgid "The virtual device."
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:15
+msgid "The number of dimensions of the tensor."
+msgstr ""
+
+#: of tvm.relax.struct_info.TensorStructInfo:19
+msgid "Do not specify shape and ndim at the same time."
+msgstr ""
+
+#: of tvm.relax.expr.Tuple:1
+msgid "Tuple expression that groups several fields together."
+msgstr ""
+
+#: of tvm.relax.expr.Tuple:5
+msgid "fields"
+msgstr ""
+
+#: of tvm.relax.expr.Tuple:-1
+msgid "Union[List[Expr], typing.Tuple[Expr, ...]]"
+msgstr ""
+
+#: of tvm.relax.expr.Tuple:6
+msgid "The fields in the tuple."
+msgstr ""
+
+#: of tvm.relax.expr.TupleGetItem:1
+msgid "Get index-th item from a tuple."
+msgstr ""
+
+#: of tvm.relax.expr.TupleGetItem:5
+msgid "tuple_value: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.TupleGetItem:6
+msgid "The input tuple expression."
+msgstr ""
+
+#: of tvm.relax.expr.TupleGetItem:8
+msgid "index: int"
+msgstr ""
+
+#: of tvm.relax.expr.TupleGetItem:9
+msgid "The index."
+msgstr ""
+
+#: of tvm.relax.struct_info.TupleStructInfo:1
+msgid "StructInfo of a Tuple value."
+msgstr ""
+
+#: of tvm.relax.struct_info.TupleStructInfo:5
+msgid "fields: List[StructInfo]"
+msgstr ""
+
+#: of tvm.relax.expr.Var:1
+msgid "The variable class for all Relax bindings."
+msgstr ""
+
+#: of tvm.relax.Var.name_hint:1
+msgid "Get name hint of the current var."
+msgstr ""
+
+#: of tvm.relax.expr.VarBinding:1
+msgid "Variable binding, bind he variable of the lhs with the rhs."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine:1
+msgid "Relax VM runtime."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:1
+msgid "Construct a VirtualMachine wrapper object."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:5
+msgid "rt_mod: Union[tvm.runtime.Module, tvm.relax.Executable]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:6
+msgid "Runtime module exported by the result of build."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:8
+msgid "device"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:-1
+msgid "Union[Device, List[Device]]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:9
+msgid "The device to deploy the module."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:11
+msgid "memory_cfg"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:-1
+msgid "Optional[Union[str, Dict[Device, str]]]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:12
+msgid ""
+"Config the type of memory allocator. The allocator type can be "
+"[\"naive\", \"pooled\"]. If memory_cfg is None, all devices will use "
+"pooled allocator by default. If memory_cfg is string, all devices will "
+"use the specified allocator type. If memory_cfg is a dict, each device "
+"uses the allocator type specified in the dict, or pooled allocator if not"
+" specified in the dict."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:19
+msgid "profile"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:-1
+msgid "Optional[bool]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:20
+msgid "Whether or not to enable profiling."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine._convert:1
+msgid "helper function to convert arguments to vm function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine._convert_func_named_args:1
+msgid ""
+"Takes named function parameters and returns a list of those needed, in "
+"the order they should appear"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine._setup_device:1
+msgid "init devices and allocators."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:1
+msgid ""
+"Get the value output by the function by the given name after a call of "
+"`invoke_stateful`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:4
+msgid ""
+"It is an error to call this function without first calling "
+"`invoke_stateful`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:8
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:10
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:8
+msgid "func_name: str"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:9
+msgid "The name of the function whose output should be fetched."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:13
+msgid "ret: Union[tvm.Object, Tuple[Any]]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:14
+msgid ""
+"The result of the earlier call to the function via `invoke_stateful`. If "
+"the result is a tuple, it returns a list of the fields. The fields are "
+"potentially also tuples, so these can be arbitrily nested."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:1
+msgid "Invoke a closure."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:5
+msgid "closure"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:-1
+msgid "Object"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:6
+msgid "The VMClosure Object."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:12 tvm.relax.op.base.call_tir:8
+#: tvm.relax.op.base.call_tir_inplace:18
+#: tvm.relax.op.base.call_tir_with_grad:10
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_closure:8
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:27
+msgid "args"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:-1
+msgid "list[tvm.runtime.NDArray] or list[np.ndarray]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:9
+msgid "The arguments to the closure."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:14
+msgid "The output."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:1
+msgid ""
+"Call the named function from the VM module using the arguments set using "
+"`set_input`. It is an error to call `invoke_stateful` without using "
+"`set_input` first (even if it's to set 0 inputs); conversely, if "
+"`set_input` has been called, it is an error to call the function without "
+"using `invoke_stateful`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:6
+msgid "The results of the call can be obtained by calling `get_outputs`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:11
+msgid "The name of the function to call."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:1
+msgid "Profile a function call."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:5
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:16
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:11
+msgid "func_name"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:6
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:12
+msgid "The name of the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:8
+msgid "args: List of NDArray or other objects supported by PackedFunc."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:9
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:14
+msgid "The arguments to the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:13
+msgid "report: tvm.runtime.profiling.Report"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:14
+msgid "The formatted profiling result, showing per-op timing measurements."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:1
+msgid ""
+"Convenience function. Takes a function from the module and saves a "
+"`PackedFunc` that, when called, will invoke the function with the given "
+"arguments. The `PackedFunc` can be accessed from the module using "
+"`saved_name`. This is included to facilitate timing trials: Invoking the "
+"returned `PackedFunc` will have less overhead from dictionary lookups "
+"than normally running through the VM."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:8
+msgid ""
+"If the saved name is taken, it can be overridden, though it cannot "
+"override the name of a function defined in the Relax source."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:11
+msgid ""
+"This is really creating a closure, but the function has a different name "
+"to avoid confusion with `invoke_closure` (they are not meant to be used "
+"together)."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:17
+msgid "The function that should be packaged up."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:19
+msgid "saved_name"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:20
+msgid "The name that the resulting closure should be saved under."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:22
+msgid "include_return"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:23
+msgid ""
+"Whether the saved PackedFunc should return its output. If timing over "
+"RPC, it may not be desirable to send output between machines."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+msgid "List[Any]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:28
+msgid "The arguments to package up with the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+msgid "Dict[str, Any]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:31
+msgid "Any named arguments to package up with the function"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:1
+msgid ""
+"Set the inputs to a function. This interface works when using VM over RPC"
+" by internally converting NDArray in the arguments to DLTensor, which is "
+"supported in RPC where remote could only have a minimal C runtime."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:6
+msgid ""
+"Note: If `set_input` is used, the function *must* be called using "
+"`invoke_stateful` and the results must be obtained using `get_outputs`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:13
+msgid "args: List[tvm.runtime.NDArray] or List[np.ndarray]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:15
+msgid "kwargs: dict of str to tvm.runtime.NDArray or np.ndarray"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:16
+msgid "Named arguments to the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:1
+msgid "Set an instrumentation function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:3
+msgid ""
+"If instrument is present, the function will be called before/after each "
+"Call instruction. The function have the following signature:"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:17
+msgid ""
+"The instrument takes the following parameters: - func: function object to"
+" be called. - func_symbol: the symbol name of the function. - before_run:"
+" whether it is before or after call. - ret_value: the return value of the"
+" call, only valid after run. - args: the arguments being passed to call."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:24
+msgid ""
+"The instrument function can choose an integer, which corresponds to "
+"action direction for the following run. See VMInstrumentReturnKind for "
+"more details."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:31
+msgid "instrument: tvm.runtime.PackedFunc"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:32
+msgid "A instrumentation function that get invoked every VM call instr."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:35
+msgid "See Also"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:36
+msgid "VMInstrumentReturnKind: the possible return values in VM."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:1
+msgid ""
+"Returns an evaluator that times a function in the module. This follows "
+"the same convention as time_evaluator in tvm.runtime.module. This can be "
+"used in combination with save_function() so that the timings avoid extra "
+"dictionary lookups."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:9
+msgid "The name of the function in the module."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:11
+msgid "dev: Device"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:12
+msgid "The device we should run this function on."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:14
+msgid "number: int"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:15
+msgid ""
+"The number of times to run this function for taking average. We call "
+"these runs as one `repeat` of measurement."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:18
+msgid "repeat: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:19
+msgid ""
+"The number of times to repeat the measurement. In total, the function "
+"will be invoked (1 + number x repeat) times, where the first one is warm "
+"up and will be discarded. The returned result contains `repeat` costs, "
+"each of which is an average of `number` costs."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:25
+msgid "min_repeat_ms: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:26
+msgid ""
+"The minimum duration of one `repeat` in milliseconds. By default, one "
+"`repeat` contains `number` runs. If this parameter is set, the parameters"
+" `number` will be dynamically adjusted to meet the minimum duration "
+"requirement of one `repeat`. i.e., When the run time of one `repeat` "
+"falls below this time, the `number` parameter will be automatically "
+"increased."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:33
+msgid "cooldown_interval_ms: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:34
+msgid ""
+"The cooldown interval in milliseconds between the number of repeats "
+"defined by `repeats_to_cooldown`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:37
+msgid "repeats_to_cooldown: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:38
+msgid "The number of repeats before the cooldown is activated."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:40
+msgid "f_preproc: str, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:41
+msgid ""
+"The preprocess function name we want to execute before executing the time"
+" evaluator."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:45
+msgid ""
+"The function will be invoked  (1 + number x repeat) times, with the first"
+" call discarded in case there is lazy initialization."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:38
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:49
+msgid "Example"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:50
+msgid ""
+"Normal use with a VM function (may not work over RPC if the function "
+"returns a tuple):"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:59
+msgid "Use with the stateful API:"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:69
+msgid ""
+"With saved closures via `save_function` (this results in fewer dictionary"
+" lookups in the timed portion):"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:82
+msgid "ftimer"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:-1
+msgid "function"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:83
+msgid ""
+"The function that takes same argument as func and returns a "
+"BenchmarkResult. The ProfileResult reports `repeat` time costs in "
+"seconds."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:1
+msgid "Build an IRModule to VM executable."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:5
+msgid "mod: IRModule"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:6
+msgid "The input IRModule to be built."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:8
+msgid "target"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:-1
+msgid "Optional[Union[str, tvm.target.Target]]"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:9
+msgid "A build target which can have optional host side compilation target."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:11
+msgid ""
+"When TVM compiles device specific program such as CUDA, we also need "
+"host(CPU) side code to interact with the driver to setup the dimensions "
+"and parameters correctly. host is used to specify the host side codegen "
+"target. By default, llvm is used if it is enabled, otherwise a stackvm "
+"interpreter is used."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:18
+msgid "params: Optional[Dict[str, list]]"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:19
+msgid "Parameters for the input IRModule that will be bound."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:21
+msgid "pipeline"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:-1
+msgid "str = \"default_build\""
+msgstr ""
+
+#: of tvm.relax.vm_build.build:22
+msgid "The compilation pipeline to use."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:24
+msgid "exec_mode: {\"bytecode\", \"compiled\"}"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:25
+msgid "The execution mode."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:27
+msgid "system_lib: Optional[bool]"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:28
+msgid ""
+"Whether to build system lib that is being packed statically and auto "
+"registers generated functions to the system. By default auto detects "
+"based on the target."
+msgstr ""
+
+#: of tvm.relax.vm_build.build:34
+msgid "ex: tvm.relax.Executable"
+msgstr ""
+
+#: of tvm.relax.vm_build.build:35
+msgid "An executable that can be loaded by virtual machine."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:1
+msgid "Call a destination-passing-style packed function and return the output."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:3
+msgid ""
+"Note: The called function is assumed to be _pure_ (other than modifying "
+"the designated output arguments). If the function _does_ result in other "
+"side effects, then the compiler may end up removing, reordering, or "
+"repeating those effects--no guarantees can be made."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:9 tvm.relax.op.base.call_pure_packed:14
+msgid "func"
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:-1
+msgid "Union[str, Expr]"
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:10
+msgid "The destination-passing-style function, can be ExternFunc."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:13 tvm.relax.op.base.call_tir:9
+#: tvm.relax.op.base.call_tir_inplace:19
+#: tvm.relax.op.base.call_tir_with_grad:11
+msgid "The input arguments."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:15 tvm.relax.op.base.call_tir:11
+#: tvm.relax.op.base.call_tir_inplace:29
+#: tvm.relax.op.base.call_tir_with_grad:13
+msgid "out_sinfo"
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:-1 tvm.relax.op.base.call_tir:-1
+#: tvm.relax.op.base.call_tir_inplace:-1
+#: tvm.relax.op.base.call_tir_with_grad:-1
+msgid "Union[TensorStructInfo, List[TensorStructInfo]]"
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:16
+msgid ""
+"The structure info of the call_dps_packed output. It should be a single "
+"or a list of TensorStructInfo. Each one denotes the structure info of a "
+"returned tensor."
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:22 tvm.relax.op.base.call_tir:21
+#: tvm.relax.op.base.call_tir_inplace:40
+#: tvm.relax.op.base.call_tir_with_grad:31
+msgid "ret: Call"
+msgstr ""
+
+#: of tvm.relax.op.base.call_dps_packed:23
+msgid "A call node for the call_dps_packed operator."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:1
+msgid ""
+"Construct a call to a packed function that should be treated as pure, "
+"even though packed calls are normally not treated as pure."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:4
+msgid ""
+"The resulting call will have the same semantics as calling the packed "
+"function directly."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:6
+msgid ""
+"Note: This should be used for cases when the user knows that calling the "
+"packed function with these arguments will **in reality** not cause any "
+"side effects. If it is used for a call that **does** result in side "
+"effects, then the compiler may end up removing, reordering, or repeating "
+"that call, with no guarantees made about any side effects from the "
+"callee."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:-1
+msgid "Union[str, ExternFunc]"
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:15
+msgid "The name (global symbol) for a PackedFunc or an ExternFunc node."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:17
+msgid "args: Expr"
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:18
+msgid "The arguments for the PackedFunc."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:20
+msgid "sinfo_args: Union[StructInfo, List[StructInfo]]"
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:21
+msgid ""
+"The list of structure info arguments (giving the structural info for the "
+"returned value)."
+msgstr ""
+
+#: of tvm.relax.op.base.call_pure_packed:26
+msgid ""
+"A Relax call, corresponding to `call_pure_packed(ExternFunc(func), args, "
+"DictAttrs(kwargs), sinfo_args)`"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:1
+msgid "Call a tir.prim_func and return the output."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:5 tvm.relax.op.base.call_tir_inplace:15
+#: tvm.relax.op.base.call_tir_with_grad:7
+msgid "gvar"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:6 tvm.relax.op.base.call_tir_with_grad:8
+msgid "The GlobalVar referring to a tir PrimFunc."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:12
+msgid ""
+"The structure info of the call_tir output. It should be a single or a "
+"list of TensorStructInfo. Each one denotes the structure info of a "
+"returned tensor."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:16 tvm.relax.op.base.call_tir_inplace:35
+#: tvm.relax.op.base.call_tir_with_grad:26
+msgid "tir_vars"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:-1 tvm.relax.op.base.call_tir_inplace:-1
+#: tvm.relax.op.base.call_tir_with_grad:-1
+msgid "Optional[Union[ShapeExpr, Tuple[PrimExpr], List[PrimExpr]]]"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:17 tvm.relax.op.base.call_tir_inplace:36
+#: tvm.relax.op.base.call_tir_with_grad:27
+msgid ""
+"ShapeExpr representing a tuple of integers to unpack when calling func. "
+"Is null if not used"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir:22 tvm.relax.op.base.call_tir_inplace:41
+msgid "A call node for the call_tir operator."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:1
+msgid ""
+"Call a TIR PrimFunc and return the result, doing the specified "
+"computations in-place (based on the `inplace_indices` argument; outputs "
+"will alias the inputs selected by in-place indices)."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:5
+msgid ""
+"Warning: This operator is considered pure by the type system but actually"
+" mutates the arguments specified by `inplace_indices`. This operator "
+"should not be used directly, but rather should be inserted by passes that"
+" have checked whether it is safe to perform operations in-place (i.e., "
+"none of the arguments specified as an output is aliased or is live after "
+"calling call_tir_inplace)."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:11
+msgid "Direct calls to this operator should be done for testing purposes only."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:16
+msgid "The GlobalVar referring to a TIR PrimFunc."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:21
+msgid "inplace_indices"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:-1
+msgid "Union[int, List[int]]"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:22
+msgid ""
+"Specify which arguments should be used for in-place computations. If "
+"`inplace_indices` is a single integer, it will be made into a singleton "
+"list. Suppose `inplace_indices[i] = j`, where `j >= 0`. Then the `i`th "
+"output will be an alias of `args[j]`. If `inplace_indices[i] = -1`, then "
+"the `i`th output will be a freshly allocated tensor. At least one member "
+"of `inplace_indices` must not be -1."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_inplace:30
+msgid ""
+"The structure info of the call_tir_inplace output. It should be a single "
+"`TensorStructInfo` or a list of `TensorStructInfo`. Each one denotes the "
+"structure info of a returned tensor. If a list of `TensorStructInfo` is "
+"given, the result will be a tuple of `TensorStructInfo`."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:1
+msgid ""
+"Call a tir.prim_func and return the output. This intrinsic will bind a te"
+" gradient function (refered by te_grad_name) to the call_tir_with_grad "
+"node. The te gradient function will be called by the Gradient pass."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:14
+msgid ""
+"The structure info of the call_tir_with_grad output. It should be a "
+"single or a list of TensorStructInfo. Each one denotes the structure info"
+" of a returned tensor."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:18
+msgid "te_grad_name"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:19
+msgid ""
+"The registered name of the te gradient function associated with the "
+"call_tir_with_grad node. Must be provided as a keyword argument."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:22
+msgid "te_grad_kwargs"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:-1
+msgid "Dict[str, Object], optional"
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:23
+msgid ""
+"The keyword arguments passed to the te gradient function. Optionally "
+"provided as a keyword argument. Default: {}."
+msgstr ""
+
+#: of tvm.relax.op.base.call_tir_with_grad:32
+msgid "A call node for the call_tir_with_grad operator."
+msgstr ""
+
+#: of tvm.relax.expr.const:1
+msgid "Create a constant value."
+msgstr ""
+
+#: of tvm.relax.expr.const:5
+msgid "value: Union[bool, int, float, numpy.ndarray, tvm.nd.NDArray]"
+msgstr ""
+
+#: of tvm.relax.expr.const:6
+msgid "The constant value."
+msgstr ""
+
+#: of tvm.relax.expr.const:8
+msgid "dtype: Optional[str]"
+msgstr ""
+
+#: of tvm.relax.expr.const:9
+msgid "The data type of the resulting constant."
+msgstr ""
+
+#: of tvm.relax.expr.const:13
+msgid "When dtype is None, we use the following rule:"
+msgstr ""
+
+#: of tvm.relax.expr.const:15
+msgid "int maps to \"int32\""
+msgstr ""
+
+#: of tvm.relax.expr.const:16
+msgid "float maps to \"float32\""
+msgstr ""
+
+#: of tvm.relax.expr.const:17
+msgid "bool maps to \"bool\""
+msgstr ""
+
+#: of tvm.relax.expr.const:18
+msgid "other using the same default rule as numpy."
+msgstr ""
+
+#: of tvm.relax.utils.convert_to_expr:1
+msgid ""
+"Helper function to convert the input to Expr, which follows the rules: 1."
+" Return the input itself if it's already a `relax.Expr`; 2. Return "
+"`relax.PrimValue` if the input is a `PrimExpr`; 3. Return "
+"`relax.StringImm` if the input is `tvm.String` or `str`; 4. Return "
+"`relax.Tuple` if the input is a tuple/list of `Expr`."
+msgstr ""
+
+#: of tvm.relax.utils.convert_to_expr:9
+msgid ""
+"`tvm.tir.StringImm` is not allowed because of ambiguity, which can be "
+"either `relax.StringImm` or `relax.PrimValue`."
+msgstr ""
+
+#: of tvm.relax.expr.extern:1
+msgid "Create extern function."
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:1
+msgid "Get pre-build pipeline by name"
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:6 tvm.relax.pipeline.register_pipeline:6
+msgid "Name of the pipeline"
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:-1
+msgid "Dict[str, object]"
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:8
+msgid "Keyword args for configuring the pipeline."
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:12
+msgid "pipeline: tvm.transform.Pass"
+msgstr ""
+
+#: of tvm.relax.pipeline.get_pipeline:13
+msgid "The transformation pipeline."
+msgstr ""
+
+#: of tvm.relax.expr.get_shape_of:1
+msgid "Get shape of expr."
+msgstr ""
+
+#: of tvm.relax.expr.get_shape_of:5
+msgid "expr: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.get_shape_of:6
+msgid "The input expr."
+msgstr ""
+
+#: of tvm.relax.expr.get_shape_of:10
+msgid "shape: Expr"
+msgstr ""
+
+#: of tvm.relax.expr.get_shape_of:11
+msgid "The shape expression"
+msgstr ""
+
+#: of tvm.relax.expr.get_shape_of:15
+msgid ""
+"This function requires expr to be normalized. The function will report an"
+" error if expr's StructInfo is not TensorStructInfo. It will try to "
+"return symbolic function when possible. If the tensor do not have a "
+"compile-time symbolic shape, the function will then choose to return "
+"`Call(relax.op.shape_of, [expr])`."
+msgstr ""
+
+#: of tvm.relax.pipeline.register_pipeline:1
+msgid "Register a new pipeline"
+msgstr ""
+

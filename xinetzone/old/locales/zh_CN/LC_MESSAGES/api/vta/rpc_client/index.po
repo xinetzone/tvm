@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/rpc_client/index.rst:2
+msgid "vta.rpc_client"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:8
+msgid "VTA RPC client function"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:20:<autosummary>:1
+msgid ""
+":py:obj:`program_fpga <vta.rpc_client.program_fpga>`\\ \\(remote\\[\\, "
+"bitstream\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:26
+#: ../../doc/api/vta/rpc_client/index.rst:20:<autosummary>:1
+msgid "Upload and program bistream"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:20:<autosummary>:1
+msgid ""
+":py:obj:`reconfig_runtime <vta.rpc_client.reconfig_runtime>`\\ "
+"\\(remote\\)"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:39
+#: ../../doc/api/vta/rpc_client/index.rst:20:<autosummary>:1
+msgid "Reconfigure remote runtime based on current hardware spec."
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:22
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:29
+#: ../../doc/api/vta/rpc_client/index.rst:42
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:30
+#: ../../doc/api/vta/rpc_client/index.rst:43
+msgid "remote"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:-1
+msgid "RPCSession"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:31
+#: ../../doc/api/vta/rpc_client/index.rst:44
+msgid "The TVM RPC session"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:33
+msgid "bitstream"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:-1
+msgid "str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/rpc_client/index.rst:34
+msgid ""
+"Path to a local bistream file. If unset, tries to download from cache "
+"server."
+msgstr ""
+
