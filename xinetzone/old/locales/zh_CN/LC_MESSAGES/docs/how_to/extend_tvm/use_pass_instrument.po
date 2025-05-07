@@ -1,0 +1,405 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:10002
+msgid "如何使用 TVM Pass Instrument"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:10004
+msgid "**原作者**: [Chi-Wei Wang](https://github.com/chiwwang)"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:10006
+msgid "随着越来越多的 pass 被实现，检测每个 pass 的执行、分析每个 pass 的效果和观测各种事件变得越来越有用。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:10008
+msgid ""
+"可以通过向 {py:class}`tvm.transform.PassContext` 提供 "
+"{py:class}`tvm.ir.instrument.PassInstrument` "
+"实例列表来检测（instrument）传递。提供了用于收集计时信息的 pass "
+"工具（{py:class}`tvm.ir.instrument.PassTimingInstrument`），但可以通过 "
+"{py:func}`tvm.instrument.pass_instrument` 装饰器使用扩展机制。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:10010
+msgid ""
+"本教程演示了开发人员如何使用 ``PassContext`` 检测（instrument） passes。请参阅 {ref}`pass-"
+"infra`。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:30002
+msgid "创建 Relay 示例程序"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:30004
+msgid "在 Relay 中使用了预定义的 resnet-18 网络。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:60002
+msgid "使用 Instruments 创建 PassContext"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:60004
+msgid ""
+"要使用 instrument 运行所有的传递，请通过 ``instruments`` 参数将其传递给 ``PassContext`` "
+"构造函数。内置的 ``PassTimingInstrument`` 用于分析每次传递的执行时间。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:80002
+msgid "使用当前带 Instruments 的 PassContext"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:80004
+msgid ""
+"你也可以使用当前的 ``PassContext`` 并通过 ``override_instruments`` 方法注册 "
+"``PassInstrument`` 实例。注意，如果任何 instrument 已经存在，``override_instruments`` "
+"会执行 ``exit_pass_ctx`` 方法。然后切换到新的 instrument，调用新 instrument 的 "
+"``enter_pass_ctx`` 方法。有关这些方法，请参阅以下部分和 "
+"{py:func}`tvm.instrument.pass_instrument`。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:100002
+msgid "注册空 list 以清除现有 instruments。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:100004
+msgid ""
+"注意，调用了 ``PassTimingInstrument`` 的 ``exit_pass_ctx``。Profiles "
+"被清除，所以不会打印任何内容。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:120002
+msgid "创建定制的 Instrument 类"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:120004
+msgid "可以使用 {py:func}`tvm.instrument.pass_instrument` 装饰器创建定制的 instrument 类。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:120006
+msgid ""
+"创建 instrument 类，它可以计算每次传递所导致的每个算子出现次数的变化。可以查看 ``op.name`` "
+"来查找每个算子的名称。在传递前后这样做来计算差异。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:140002
+msgid "应用 Passes 和多个 Instrument 类"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:140004
+msgid ""
+"可以在 ``PassContext`` 中使用多个 instrument 类。但是，应该注意到 instrument 方法是按顺序执行的，遵循 "
+"``instruments`` 参数的顺序。因此，对于像 ``PassTimingInstrument`` 这样的 instrument "
+"类，不可避免地要将其他 instrument 类的执行时间统计到最终的 profile 结果中。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:160002
+msgid "可以看到每个 op 类型增加/减少了多少 CallNode。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:160004
+msgid "打印由每次 pass 引起的每个算子出现次数的变化："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:180002
+msgid "异常处理"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:180004
+msgid "如果 ``PassInstrument`` 的方法发生异常会发生什么？"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:180006
+msgid "定义在进入/退出 ``PassContext`` 时引发异常的 ``PassInstrument`` 类："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:200002
+msgid ""
+"如果 ``enter_pass_ctx`` 中发生异常，``PassContext`` 将禁用 pass "
+"instrumentation。运行每个成功完成 ``enter_pass_ctx`` 的 ``PassInstrument`` 的 "
+"``exit_pass_ctx``。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:200004
+msgid "在下面的例子中，可以看到 `PassFine_0` 的 ``exit_pass_ctx`` 在异常之后被执行。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:220002
+msgid ""
+"``PassInstrument`` 实例中的异常会导致当前 ``PassContext`` 中的所有 instruments 被清除，因此当调用"
+" ``override_instruments`` 时不会打印任何东西。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:240002
+msgid ""
+"如果 ``exit_pass_ctx`` 中发生异常，则禁用 pass instrument。然后传播异常。这意味着在抛出异常之后注册的 "
+"``PassInstrument`` 实例不执行 ``exit_pass_ctx``。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:260002
+msgid ""
+"在 ``should_run``, ``run_before_pass``, ``run_after_pass`` "
+"中发生的异常没有被显式处理——依赖于上下文管理器( ``with`` 语法)安全地退出 ``PassContext``。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:260004
+msgid "以 ``run_before_pass`` 为例："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:280002
+msgid ""
+"还要注意，pass instrumentation 不是禁用的。因此，如果调用 ``override_instruments``，旧注册 "
+"``PassInstrument`` 的 ``exit_pass_ctx`` 就会被调用。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:300002
+msgid ""
+"如果不使用 ``with`` 语法封装 pass 执行，则不会调用 ``exit_pass_ctx``。让我们用当前的 "
+"``PassContext`` 来试试："
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:320002
+msgid "然后调用传递。``exit_pass_ctx`` 不像预期的那样在异常之后执行。"
+msgstr ""
+
+#: ../../xin/docs/how_to/extend_tvm/use_pass_instrument.ipynb:340002
+msgid "清除 instruments。"
+msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Python source code: "
+#~ "use_pass_instrument.py <use_pass_instrument.py>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":download:`Download Jupyter notebook: "
+#~ "use_pass_instrument.ipynb <use_pass_instrument.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_extend_tvm_use_pass_instrument.py>` to"
+#~ " download the full example code"
+#~ msgstr ""
+
+#~ msgid "How to Use TVM Pass Instrument"
+#~ msgstr ""
+
+#~ msgid "**Author**: `Chi-Wei Wang <https://github.com/chiwwang>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As more and more passes are "
+#~ "implemented, it becomes useful to "
+#~ "instrument pass execution, analyze per-"
+#~ "pass effects, and observe various "
+#~ "events."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can instrument passes by providing"
+#~ " a list of "
+#~ ":py:class:`tvm.ir.instrument.PassInstrument` instances to"
+#~ " :py:class:`tvm.transform.PassContext`. We provide "
+#~ "a pass instrument for collecting timing"
+#~ " information "
+#~ "(:py:class:`tvm.ir.instrument.PassTimingInstrument`), but "
+#~ "an extension mechanism is available via"
+#~ " the :py:func:`tvm.instrument.pass_instrument` "
+#~ "decorator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This tutorial demostrates how developers "
+#~ "can use ``PassContext`` to instrument "
+#~ "passes. Please also refer to the "
+#~ ":ref:`pass-infra`."
+#~ msgstr ""
+
+#~ msgid "Create An Example Relay Program"
+#~ msgstr ""
+
+#~ msgid "We use pre-defined resnet-18 network in Relay."
+#~ msgstr ""
+
+#~ msgid "Create PassContext With Instruments"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To run all passes with an "
+#~ "instrument, pass it via the "
+#~ "``instruments`` argument to the "
+#~ "``PassContext`` constructor. A built-in "
+#~ "``PassTimingInstrument`` is used to profile"
+#~ " the execution time of each passes."
+#~ msgstr ""
+
+#~ msgid "Use Current PassContext With Instruments"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One can also use the current "
+#~ "``PassContext`` and register ``PassInstrument`` "
+#~ "instances by ``override_instruments`` method. "
+#~ "Note that ``override_instruments`` executes "
+#~ "``exit_pass_ctx`` method if any instrument "
+#~ "already exists. Then it switches to "
+#~ "new instruments and calls ``enter_pass_ctx``"
+#~ " method of new instruments. Refer to"
+#~ " following sections and "
+#~ ":py:func:`tvm.instrument.pass_instrument` for these "
+#~ "methods."
+#~ msgstr ""
+
+#~ msgid "Register empty list to clear existing instruments."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that ``exit_pass_ctx`` of "
+#~ "``PassTimingInstrument`` is called. Profiles "
+#~ "are cleared so nothing is printed."
+#~ msgstr ""
+
+#~ msgid "Create Customized Instrument Class"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A customized instrument class can be "
+#~ "created using the "
+#~ ":py:func:`tvm.instrument.pass_instrument` decorator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Let's create an instrument class which"
+#~ " calculates the change in number of"
+#~ " occurrences of each operator caused "
+#~ "by each pass. We can look at "
+#~ "``op.name`` to find the name of "
+#~ "each operator. And we do this "
+#~ "before and after passes to calculate "
+#~ "the difference."
+#~ msgstr ""
+
+#~ msgid "Apply Passes and Multiple Instrument Classes"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can use multiple instrument classes"
+#~ " in a ``PassContext``. However, it "
+#~ "should be noted that instrument methods"
+#~ " are executed sequentially, obeying the "
+#~ "order of ``instruments`` argument. So "
+#~ "for instrument classes like "
+#~ "``PassTimingInstrument``, it is inevitable to"
+#~ " count-up the execution time of "
+#~ "other instrument classes to the final"
+#~ " profile result."
+#~ msgstr ""
+
+#~ msgid "We can see how many CallNode increase/decrease per op type."
+#~ msgstr ""
+
+#~ msgid "Exception Handling"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Let's see what happens if an "
+#~ "exception occurs in a method of a"
+#~ " ``PassInstrument``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Define ``PassInstrument`` classes which raise"
+#~ " exceptions in enter/exit ``PassContext``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If an exception occurs in "
+#~ "``enter_pass_ctx``, ``PassContext`` will disable "
+#~ "the pass instrumentation. And it will"
+#~ " run the ``exit_pass_ctx`` of each "
+#~ "``PassInstrument`` which successfully finished "
+#~ "``enter_pass_ctx``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In following example, we can see "
+#~ "``exit_pass_ctx`` of `PassFine_0` is executed"
+#~ " after exception."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Exceptions in ``PassInstrument`` instances "
+#~ "cause all instruments of the current "
+#~ "``PassContext`` to be cleared, so "
+#~ "nothing is printed when "
+#~ "``override_instruments`` is called."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If an exception occurs in "
+#~ "``exit_pass_ctx``, then the pass instrument"
+#~ " is disabled. Then exception is "
+#~ "propagated. That means ``PassInstrument`` "
+#~ "instances registered after the one "
+#~ "throwing the exception do not execute"
+#~ " ``exit_pass_ctx``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Exceptions occured in ``should_run``, "
+#~ "``run_before_pass``, ``run_after_pass`` are not "
+#~ "handled explicitly -- we rely on "
+#~ "the context manager (the ``with`` "
+#~ "syntax) to exit ``PassContext`` safely."
+#~ msgstr ""
+
+#~ msgid "We use ``run_before_pass`` as an example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Also note that pass instrumentation is"
+#~ " not disable. So if we call "
+#~ "``override_instruments``, the ``exit_pass_ctx`` of"
+#~ " old registered ``PassInstrument`` is "
+#~ "called."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If we don't wrap pass execution "
+#~ "with ``with`` syntax, ``exit_pass_ctx`` is "
+#~ "not called. Let try this with "
+#~ "current ``PassContext``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then call passes. ``exit_pass_ctx`` is "
+#~ "not executed after the exception, as "
+#~ "expectation."
+#~ msgstr ""
+
+#~ msgid "Clear instruments."
+#~ msgstr ""
+

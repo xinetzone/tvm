@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:21
+msgid "Understand Relax Abstraction"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:22
+msgid ""
+"Relax is a graph abstraction used in Apache TVM Unity strategy, which "
+"helps to end-to-end optimize ML models. The principal objective of Relax "
+"is to depict the structure and data flow of ML models, including the "
+"dependencies and relationships between different parts of the model, as "
+"well as how to execute the model on hardware."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:29
+msgid "End to End Model Execution"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:31
+msgid ""
+"In this chapter, we will use the following model as an example. This is a"
+" two-layer neural network that consists of two linear operations with "
+"relu activation."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:41
+msgid "High-Level Operations Representation"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:43
+msgid "Let us begin by reviewing a Numpy implementation of the model."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:53
+msgid ""
+"The above example code shows the high-level array operations to perform "
+"the end-to-end model execution. Of course, we can rewrite the above code "
+"using Relax as follows:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:76
+msgid "Low-Level Integration"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:78
+msgid ""
+"However, again from the pov of machine learning compilation (MLC), we "
+"would like to see through the details under the hood of these array "
+"computations."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:81
+msgid ""
+"For the purpose of illustrating details under the hood, we will again "
+"write examples in low-level numpy:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:83
+msgid ""
+"We will use a loop instead of array functions when necessary to "
+"demonstrate the possible loop computations. When possible, we always "
+"explicitly allocate arrays via numpy.empty and pass them around. The code"
+" block below shows a low-level numpy implementation of the same model."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:122
+msgid ""
+"With the low-level NumPy example in mind, now we are ready to introduce "
+"an Relax abstraction for the end-to-end model execution. The code block "
+"below shows a TVMScript implementation of the model."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:175
+msgid ""
+"The above code contains kinds of functions: the primitive tensor "
+"functions (``T.prim_func``) and a ``R.function`` (relax function). Relax "
+"function is a new type of abstraction representing high-level neural "
+"network executions."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:179
+msgid ""
+"Note that the above relax module natively supports symbolic shapes, see "
+"the ``\"n\"`` in the tensor shapes in ``main`` function and ``M``, ``N``,"
+" ``K`` in the ``linear`` function. This is a key feature of Relax "
+"abstraction, which enables the compiler to track dynamic shape relations "
+"globally across tensor operators and function calls."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:184
+msgid ""
+"Again it is helpful to see the TVMScript code and low-level numpy code "
+"side-by-side and check the corresponding elements, and we are going to "
+"walk through each of them in detail. Since we already learned about "
+"primitive tensor functions, we are going to focus on the high-level "
+"execution part."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:189
+msgid "Key Elements of Relax"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:190
+msgid ""
+"This section will introduce the key elements of Relax abstraction and how"
+" it enables optimization in ML compilers."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:194
+msgid "Structure Info"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:195
+msgid ""
+"Structure info is a new concept in Relax that represents the type of "
+"relax expressions. It can be ``TensorStructInfo``, ``TupleStructInfo``, "
+"etc. In the above example, we use ``TensorStructInfo`` (short in "
+"``R.Tensor`` in TVMScript) to represent the shape and dtype of the tensor"
+" of the inputs, outputs, and intermediate results."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:201
+msgid "R.call_tir"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:202
+msgid ""
+"The ``R.call_tir`` function is a new abstraction in Relax that allows "
+"calling primitive tensor functions in the same IRModule. This is a key "
+"feature of Relax that enables cross-level abstractions, from high-level "
+"neural network layers to low-level tensor operations. Taking one line "
+"from the above code as an example:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:211
+msgid ""
+"To explain what does ``R.call_tir`` work, let us review an equivalent "
+"low-level numpy implementation of the operation, as follows:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:219
+msgid ""
+"Specifically, ``call_tir`` allocates an output tensor res, then pass the "
+"inputs and the output to the prim_func. After executing prim_func the "
+"result is populated in res, then we can return the result."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:223
+msgid ""
+"This convention is called **destination passing**, The idea is that input"
+" and output are explicitly allocated outside and passed to the low-level "
+"primitive function. This style is commonly used in low-level library "
+"designs, so higher-level frameworks can handle that memory allocation "
+"decision. Note that not all tensor operations can be presented in this "
+"style (specifically, there are operations whose output shape depends on "
+"the input). Nevertheless, in common practice, it is usually helpful to "
+"write the low-level function in this style when possible."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:231
+msgid "Dataflow Block"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:232
+msgid ""
+"Another important element in a relax function is the R.dataflow() scope "
+"annotation."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:242
+msgid ""
+"Before we talk about the dataflow block, let us first introduce the "
+"concept of **pure** and **side-effect**. A function is **pure** or "
+"**side-effect free** if:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:245
+msgid "it only reads from its inputs and returns the result via its output"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:246
+msgid ""
+"it will not change other parts of the program (such as incrementing a "
+"global counter)."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:248
+msgid ""
+"For example, all ``R.call_tir`` functions are pure functions, as they "
+"only read from their inputs and write the output to another new allocated"
+" tensor. However, the **inplace operations** are not pure functions, in "
+"other words, they are side-effect functions, because they will change the"
+" existing intermediate or input tensors."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:253
+msgid ""
+"A dataflow block is a way for us to mark the computational graph regions "
+"of the program. Specifically, within a dataflow block, all the operations"
+" need to be **side-effect free**. Outside a dataflow block, the "
+"operations can contain side-effect."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:259
+msgid ""
+"A common question that arises is why we need to manually mark dataflow "
+"blocks instead of automatically inferring them. There are two main "
+"reasons for this approach:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:262
+msgid ""
+"Automatic inference of dataflow blocks can be challenging and imprecise, "
+"particularly when dealing with calls to packed functions (such as cuBLAS "
+"integrations). By manually marking dataflow blocks, we enable the "
+"compiler to accurately understand and optimize the program's dataflow."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:266
+msgid ""
+"Many optimizations can only be applied within dataflow blocks. For "
+"instance, fusion optimization is limited to operations within a single "
+"dataflow block. If the compiler were to incorrectly infer dataflow "
+"boundaries, it might miss crucial optimization opportunities, potentially"
+" impacting the program's performance."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/learning.rst:271
+msgid ""
+"By allowing manual marking of dataflow blocks, we ensure that the "
+"compiler has the most accurate information to work with, leading to more "
+"effective optimizations."
+msgstr ""
+

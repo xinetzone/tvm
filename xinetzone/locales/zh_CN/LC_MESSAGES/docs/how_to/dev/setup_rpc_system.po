@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:19
+msgid "Setup RPC System"
+msgstr "设置 RPC 系统"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:21
+msgid ""
+"Remote procedure call (RPC) is a very important and useful feature of "
+"Apache TVM, it allows us to run compiled Neural Network (NN) models on "
+"the real hardware without need to touch the remote device, the output "
+"result will be passed back automatically through network."
+msgstr ""
+"远程过程调用（Remote procedure call，简称 RPC）是 Apache TVM 中非常重要且实用的功能。"
+"它使我们能够在真实硬件上运行编译过的神经网络（NN）模型，而无需直接接触远程设备。输出结果将通过网络自动传回。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:23
+msgid ""
+"By eliminating the manual work like, dumping input data to file, copying "
+"the exported NN model to remote device, setuping the device user "
+"environment, copying the output result to host development environment, "
+"RPC improve the development efficiency extremely."
+msgstr ""
+"通过消除如将输入数据转储到文件、复制导出的神经网络模型到远程设备、设置设备用户环境、复制输出结果到主机开发环境等手动工作，RPC 极大地提高了开发效率。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:25
+msgid ""
+"In addition, because only the execution part of the compiled NN model is "
+"run on the remote device, all other parts are run on host development "
+"environment, so any Python packages can be used to do the preprocess and "
+"postprocess works."
+msgstr ""
+"此外，由于编译后的神经网络模型只有执行部分在远程设备上运行，所有其他部分都在主机开发环境中运行，因此可以使用任何 Python 包进行预处理和后处理工作。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:27
+msgid "RPC is very helpful in below 2 situations"
+msgstr "RPC 在以下两种情况下非常有用："
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:29
+msgid "**Hardware resources are limited**"
+msgstr "**硬件资源有限**"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:31
+msgid ""
+"RPC’s queue and resource management mechanism can make the hardware "
+"devices serve many developers and test jobs to run the compiled NN models"
+" correctly."
+msgstr ""
+"RPC 的队列和资源管理机制可以使硬件设备为许多开发人员和测试工作提供服务，以正确运行编译后的 NN 模型。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:33
+msgid "**Early-stage end to end evaluation**"
+msgstr "**早期端到端评估**"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:35
+msgid ""
+"Except the compiled NN model, all other parts are executed on the host "
+"development environment, so the complex preprocess or postprocess can be "
+"implemented easily."
+msgstr ""
+"除了编译后的 NN 模型，所有其他部分都在主机开发环境中执行，因此复杂的预处理或后处理可以通过简单的实现。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:39
+msgid "Suggested Architecture"
+msgstr "建议的架构"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:41
+msgid ""
+"Apache TVM RPC contains 3 tools, RPC tracker, RPC proxy, and PRC server. "
+"The RPC server is the necessary one, an RPC system can work correctly "
+"without RPC proxy and RPC tracker. RPC proxy is needed when you can’t "
+"access the RPC server directly. RPC tracker is strongly suggested to be "
+"added in your RPC system, because it provides many useful features, e.g.,"
+" queue capability, multiple RPC servers management, manage RPC server "
+"through key instead of IP address."
+msgstr ""
+"Apache TVM RPC 包含 3 个工具：RPC 追踪器、RPC 代理和 PRC 服务器。"
+"RPC 服务器是必需的，RPC 系统可以在没有 RPC 代理和 RPC 追踪器的情况下正常工作。"
+"当你无法直接访问 RPC 服务器时，需要 RPC 代理。"
+"强烈建议在你的 RPC 系统中添加 RPC 追踪器，因为它提供了许多有用的功能，"
+"例如队列功能、多个 RPC 服务器管理、通过密钥而不是 IP 地址管理 RPC 服务器。"
+
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:47
+msgid ""
+"As above figure shown, because there aren’t physical connection channels "
+"between machine A and machine C, D, so we set up a RPC proxy on machine "
+"B. The RPC tracker manage a request queue per RPC key, each user can "
+"request an RPC server from RPC tracker by a RPC key at anytime, if there "
+"is a idle RPC server with the same RPC key, then RPC tracker assign the "
+"RPC server to the user, if there isn’t a idle RPC server for the moment, "
+"the request will be put into the request queue of that RPC key, and check"
+" for it later."
+msgstr ""
+"如上图所示，由于机器 A 和机器 C、D 之间没有物理连接通道，因此在机器 B 上设置了 RPC 代理。"
+"RPC 跟踪器为每个 RPC 密钥管理请求队列，每个用户可以随时通过 RPC 密钥向 RPC 跟踪器请求 RPC 服务器。"
+"如果存在具有相同 RPC 密钥的空闲 RPC 服务器，则 RPC 跟踪器将该 RPC 服务器分配给用户。"
+"如果目前没有空闲的 RPC 服务器，则请求将被放入该 RPC 密钥的请求队列中，并稍后检查。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:51
+msgid "Setup RPC Tracker and RPC Proxy"
+msgstr "建立 RPC 追踪器和 RPC 代理"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:53
+msgid ""
+"In general, RPC tracker and RPC proxy only need to be run on host "
+"machine, e.g., development server or PC, they needn't depend on any "
+"enironment of device machine, so the only work need to do for setting up "
+"them is executing below commands on the corresponding machine after "
+"installing Apache TVM according to the official document "
+"`<https://tvm.apache.org/docs/install/index.html>`_."
+msgstr ""
+"通常，RPC 跟踪器和 RPC 代理只需在主机上运行，例如开发服务器或个人电脑，它们无需依赖于任何环境或设备机器。"
+"因此，安装 Apache TVM 后，根据官方文档 `<https://tvm.apache.org/docs/install/index.html>`_ 所述，"
+"设置它们的唯一工作就是在相应的机器上执行以下命令。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:55
+msgid "RPC Tracker"
+msgstr ""
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:62
+msgid "RPC Proxy"
+msgstr ""
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:69
+msgid ""
+"Please modify the *RPC_TRACKER_IP*, *RPC_TRACKER_PORT*, *RPC_PROXY_IP*, "
+"and the port numbers in above commands according to your concrete "
+"environment, the option ``port-end`` can be used to avoid the service "
+"start with an unexpected port number, which may cause other service can't"
+" be connected correctly, this is important especially for auto testing "
+"system."
+msgstr ""
+"请根据您的具体环境修改上述命令中的 *RPC_TRACKER_IP*、*RPC_TRACKER_PORT*、"
+"*RPC_PROXY_IP* 和端口号，使用 ``port-end`` 选项可以避免服务意外启动在意外的端口号上，"
+"这可能导致其他服务无法正确连接。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:73
+msgid "Setup RPC Server"
+msgstr "设置 RPC 服务器"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:75
+msgid ""
+"In our community, there is multiple RPC server implementations, e.g., "
+"``apps/android_rpc``, ``apps/cpp_rpc``, ``apps/ios_rpc``, below content "
+"only focus on the Python version RPC server which is implemented by "
+"``python/tvm/exec/rpc_server.py``, for the setup instruction of other "
+"version RPC server please refer to the document of its corresponding "
+"directory."
+msgstr ""
+"在我们的社区中，有多个 RPC 服务器实现，例如 ``apps/android_rpc``、"
+"``apps/cpp_rpc``、``apps/ios_rpc``，下面内容仅关注由 ``python/tvm/exec/rpc_server.py`` 实现的 Python 版本的 RPC 服务器，"
+"对于其他版本 RPC 服务器的安装说明，请参考其相应目录的文档。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:77
+msgid ""
+"RPC server need to be run on device machine, and it usually will depend "
+"on xPU driver, the enhanced TVM runtime with xPU support, and other "
+"libraries, so please setup the dependent components first, e.g., install "
+"the KMD driver, ensure the required dynamic libraries can be found from "
+"environment variable ``LD_LIBRARY_PATH``."
+msgstr ""
+"RPC 服务器需要在设备机器上运行，通常会依赖于 xPU 驱动、增强的 TVM 运行时和其他库。"
+"请先安装 KMD 驱动程序，确保所需的动态库可以从环境变量 ``LD_LIBRARY_PATH`` 中找到。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:79
+msgid ""
+"If the required compilation environment can be setup on your device "
+"machine, i.e., you needn't to do the cross compilation, then just follow "
+"the instruction of "
+"`<https://tvm.apache.org/docs/install/from_source.html>`_ to compile the "
+"TVM runtime and directly jump to the step :ref:`launch-rpc-server`."
+msgstr ""
+"如果您的计算机上能够配置所需的编译环境，也就是说，您不需要进行交叉编译，"
+"那么只需按照以下 `<https://tvm.apache.org/docs/install/from_source.html>`_ 链接中的说明操作，"
+"以编译 TVM 运行时库，然后直接跳转到 :ref:`launch-rpc-server` 步骤。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:82
+msgid "1. Cross Compile TVM Runtime"
+msgstr "1. 交叉编译 TVM 运行时库"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:84
+msgid ""
+"We use CMake to manage the compile process, for cross compilation, CMake "
+"need a toolchain file to get the required information, so you need to "
+"prepare this file according to your device platform, below is a example "
+"for the device machine which CPU is 64bit ARM architecture and the "
+"operating system is Linux."
+msgstr ""
+"使用 CMake 来管理编译过程。对于跨平台编译，CMake 需要工具链文件以获取必要的信息，因此你需要根据设备平台准备这个文件。"
+"以下示例，针对 CPU 为 64 位 ARM 架构且操作系统为 Linux 的设备机器。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:100
+msgid ""
+"After executing commands like something below under the root directory of"
+" TVM repository, the runtime will be cross compiled successfully, please "
+"enable other needed options in file ``config.cmake`` according to your "
+"concrete requirement."
+msgstr ""
+"在 TVM 仓库的根目录下执行以下命令，将成功交叉编译运行时库。请根据您的具体需求，在文件 ``config.cmake`` 中启用其他所需选项。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:119
+msgid "2. Pack and Deploy to Device Machine"
+msgstr "2. 打包并部署到设备机器上"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:121
+msgid ""
+"Pack the Python version RPC server through the commands like something "
+"below."
+msgstr ""
+"打包 Python 版本的 RPC 服务器，如下所示。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:129
+msgid ""
+"Then copy the compress package ``tvm_runtime.tar.gz`` to your concrete "
+"device machine, and setting the environment variable ``PYTHONPATH`` "
+"correctly through the commands like something below on your device "
+"machine."
+msgstr ""
+"在设备机器上，将压缩包 ``tvm_runtime.tar.gz`` 复制到您的具体设备机器上，"
+"并通过以下命令在设备机器上设置环境变量 ``PYTHONPATH`` 正确。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:140
+msgid "3. Launch RPC Server"
+msgstr "3. 启动 RPC 服务器"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:142
+msgid ""
+"The RPC server can be launched on your device machine through the "
+"commands like something below, please modify the *RPC_TRACKER_IP*, "
+"*RPC_TRACKER_PORT*, *RPC_PROXY_IP*, *RPC_PROXY_PORT*, and *RPC_KEY* "
+"according to your concrete environment."
+msgstr ""
+"通过以下命令在您的设备机器上启动 RPC 服务器，"
+"请根据您的具体环境修改 *RPC_TRACKER_IP*、*RPC_TRACKER_PORT*、*RPC_PROXY_IP*、*RPC_PROXY_PORT* 和 *RPC_KEY*。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:153
+msgid "Validate RPC System"
+msgstr "验证 RPC 系统"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:159
+msgid ""
+"Through the above command, we can query all available RPC servers and the"
+" queue status, if you have 3 RPC servers that connected to the RPC "
+"tracker through RPC proxy, the output should be something like below."
+msgstr ""
+"通过上述命令，可以查询所有可用的 RPC 服务器和队列状态，如果您有 3 个 RPC 服务器通过 RPC 代理连接到 RPC 跟踪器，"
+"输出应该类似于下面。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:181
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:184
+msgid ""
+"1. The lack of ``numpy`` on device machine caused the RPC server can't be"
+" launched."
+msgstr ""
+"1. 因为 ``numpy`` 包在设备机器上不可用，所以无法启动 RPC 服务器。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:186
+msgid ""
+"The package ``numpy`` is imported in some Python files which RPC server "
+"dependent on, and eliminating the import relationship is difficult, for "
+"some devices cross compiling ``numpy`` is very hard to do too."
+msgstr ""
+"因为 ``numpy`` 包在一些 RPC 服务器依赖的 Python 文件中被导入，消除这些导入关系是非常困难的，"
+"对于一些设备，交叉编译 ``numpy`` 非常困难。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:188
+msgid ""
+"But acturally the TVM runtime doesn't really dependent on ``numpy``, so a"
+" very simple workaround is create a dummy ``numpy``, just need to copy "
+"the below content into a file named ``numpy.py`` and place it into "
+"directory like ``/usr/local/lib/python3.9/site-packages``."
+msgstr ""
+"但实际上 TVM 运行时并不依赖 ``numpy``，因此非常简单的解决方法是创建虚拟的 ``numpy``，"
+"只需要将下面的内容复制到名为 ``numpy.py`` 的文件中，并将其放置在像 ``/usr/local/lib/python3.9/site-packages`` 这样的目录中。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:243
+msgid ""
+"2. The lack of ``cloudpickle`` on device machine caused the RPC server "
+"can't be launched."
+msgstr ""
+"2. 因为 ``cloudpickle`` 包在设备机器上不可用，所以无法启动 RPC 服务器。"
+
+#: ../../doc/docs/how_to/dev/setup_rpc_system.rst:245
+msgid ""
+"Because ``cloudpickle`` package is a pure Python package, so just copying"
+" it from other machine to the directory like ``/usr/local/lib/python3.9"
+"/site-packages`` of the device machine will resolve the problem."
+msgstr ""
+"因为 ``cloudpickle`` 包是纯 Python 包，所以只需将其从其他机器复制到设备机器的目录中，"
+"例如 ``/usr/local/lib/python3.9/site-packages``，就可以解决问题。"

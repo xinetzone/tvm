@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:20
+msgid "Deploy TVM Module using C++ API"
+msgstr "使用 C++ API 部署 TVM 模块"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:22
+msgid ""
+"We provide an example on how to deploy TVM modules in `apps/howto_deploy "
+"<https://github.com/apache/tvm/tree/main/apps/howto_deploy>`_"
+msgstr ""
+"在 `apps/howto_deploy <https://github.com/apache/tvm/tree/main/apps/howto_deploy>`_ 中提供了关于如何部署 TVM 模块的示例。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:24
+msgid "To run the example, you can use the following command"
+msgstr "要运行该示例，您可以使用以下命令"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:34
+msgid "Get TVM Runtime Library"
+msgstr "获取 TVM 运行时库"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:36
+msgid ""
+"The only thing we need is to link to a TVM runtime in your target "
+"platform. TVM provides a minimum runtime, which costs around 300K to 600K"
+" depending on how much modules we use. In most cases, we can use "
+"``libtvm_runtime.so`` that comes with the build."
+msgstr ""
+"唯一需要的是在您的目标平台上链接到 TVM 运行时。"
+"TVM 提供了最小运行时，其大小约为 300K 到 600K，具体取决于使用的模块数量。"
+"在大多数情况下，可以使用构建时附带的 ``libtvm_runtime.so``。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:40
+msgid ""
+"If somehow you find it is hard to build ``libtvm_runtime``, checkout "
+"`tvm_runtime_pack.cc "
+"<https://github.com/apache/tvm/tree/main/apps/howto_deploy/tvm_runtime_pack.cc>`_."
+" It is an example all in one file that gives you TVM runtime. You can "
+"compile this file using your build system and include this into your "
+"project."
+msgstr ""
+"如果您发现构建 ``libtvm_runtime`` 很困难，请查看 `tvm_runtime_pack.cc <https://github.com/apache/tvm/tree/main/apps/howto_deploy/tvm_runtime_pack.cc>`_。"
+"这是包含 TVM 运行时的单文件示例。您可以使用您的构建系统编译此文件并将其包含到您的项目中。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:45
+msgid ""
+"You can also checkout `apps "
+"<https://github.com/apache/tvm/tree/main/apps/>`_ for example "
+"applications build with TVM on iOS, Android and others."
+msgstr ""
+"您还可以查看 `apps <https://github.com/apache/tvm/tree/main/apps/>`_ 以获取在 iOS、Android 和其他平台上使用 TVM 构建的示例应用程序。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:48
+msgid "Dynamic Library vs. System Module"
+msgstr "动态库与系统模块"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:49
+msgid ""
+"TVM provides two ways to use the compiled library. You can checkout "
+"`prepare_test_libs.py "
+"<https://github.com/apache/tvm/tree/main/apps/howto_deploy/prepare_test_libs.py>`_"
+" on how to generate the library and `cpp_deploy.cc "
+"<https://github.com/apache/tvm/tree/main/apps/howto_deploy/cpp_deploy.cc>`_"
+" on how to use them."
+msgstr ""
+"TVM 提供了两种使用编译库的方式。"
+"您可以查看 `prepare_test_libs.py <https://github.com/apache/tvm/tree/main/apps/howto_deploy/prepare_test_libs.py>`_ 了解如何生成库，"
+"以及 `cpp_deploy.cc <https://github.com/apache/tvm/tree/main/apps/howto_deploy/cpp_deploy.cc>`_ 了解如何使用它们。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:53
+msgid ""
+"Store library as a shared library and dynamically load the library into "
+"your project."
+msgstr ""
+"将库存储为共享库，并动态加载到您的项目中。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:54
+msgid "Bundle the compiled library into your project in system module mode."
+msgstr "以系统模块模式将编译后的库捆绑到您的项目中。"
+
+#: ../../doc/docs/how_to/deploy/cpp_deploy.rst:56
+msgid ""
+"Dynamic loading is more flexible and can load new modules on the fly. "
+"System module is a more ``static`` approach.  We can use system module in"
+" places where dynamic library loading is banned."
+msgstr ""
+"动态加载更加灵活，可以动态加载新模块。系统模块是一种更“静态”的方法。可以在禁止动态库加载的地方使用系统模块。"
