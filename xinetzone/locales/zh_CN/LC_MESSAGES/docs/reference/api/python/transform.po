@@ -1,0 +1,359 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/transform.rst:19
+msgid "tvm.transform"
+msgstr ""
+
+#~ msgid ""
+#~ "The basis where a Relay "
+#~ "optimization/analysis runs on. Each pass "
+#~ "context contains a number of auxiliary"
+#~ " information that is used to help "
+#~ "an optimization pass. Such information "
+#~ "includes the error reporter to record"
+#~ " the errors of during the "
+#~ "optimization, etc."
+#~ msgstr ""
+
+#~ msgid "Common pass infrastructure across IR variants."
+#~ msgstr ""
+
+#~ msgid "Utility to apply a pass to specific functions in an IRModule"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM uses IRModule to IRModule "
+#~ "transformations at all stages of "
+#~ "lowering.  These transformations may be "
+#~ "useful when hand-writing an optimized"
+#~ " model, or to perform optimizations "
+#~ "on specific kernels within an IRModule."
+#~ "  This utility allows a pass to "
+#~ "be applied to a specified function, "
+#~ "without altering other functions in the"
+#~ " module."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The IRModule to IRModule pass to be applied."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A regex used to select the "
+#~ "functions to be updated.  The pass "
+#~ "will be applied to all functions "
+#~ "whose name matches the regex."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the behavior if an IRModule"
+#~ " does not contain any function "
+#~ "matching the provided regex.  If true,"
+#~ " an error will be raised.  If "
+#~ "false (default), the IRModule will be"
+#~ " returned unmodified."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**new_transform** -- The modified IRModule to IRModule pass."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass that works on tvm.IRModule. "
+#~ "Users don't need to interact with "
+#~ "this class directly. Instead, a module"
+#~ " pass should be created through "
+#~ "`module_pass`, because the design of the"
+#~ " `module_pass` API is flexible enough "
+#~ "to handle the creation of a module"
+#~ " pass in different manners. In "
+#~ "addition, all members of a module "
+#~ "pass can be accessed from the base"
+#~ " class. The same rule applies to "
+#~ "FunctionPass as well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The base class of all passes. All"
+#~ " methods here are just simple "
+#~ "wrappers that are implemented in the "
+#~ "backend. They are defined for users "
+#~ "to conveniently interact with the base"
+#~ " class."
+#~ msgstr ""
+
+#~ msgid "Get the pass meta."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The basis where a TVM "
+#~ "optimization/analysis runs on. Each pass "
+#~ "context contains a number of auxiliary"
+#~ " information that is used to help "
+#~ "an optimization pass. Such information "
+#~ "includes the error reporter to record"
+#~ " the errors of during the "
+#~ "optimization, etc."
+#~ msgstr ""
+
+#~ msgid "opt_level"
+#~ msgstr ""
+
+#~ msgid "Optional[int]"
+#~ msgstr ""
+
+#~ msgid "The optimization level of this pass."
+#~ msgstr ""
+
+#~ msgid "required_pass"
+#~ msgstr ""
+
+#~ msgid "Optional[Union[List[str], Set[str], Tuple[str]]]"
+#~ msgstr ""
+
+#~ msgid "The list of passes that are required by a certain pass."
+#~ msgstr ""
+
+#~ msgid "disabled_pass"
+#~ msgstr ""
+
+#~ msgid "The list of passes that are disabled."
+#~ msgstr ""
+
+#~ msgid "instruments"
+#~ msgstr ""
+
+#~ msgid "Optional[Sequence[PassInstrument]]"
+#~ msgstr ""
+
+#~ msgid "The list of pass instrument implementations."
+#~ msgstr ""
+
+#~ msgid "config"
+#~ msgstr ""
+
+#~ msgid "Optional[Dict[str, Object]]"
+#~ msgstr ""
+
+#~ msgid "Additional configurations for specific passes."
+#~ msgstr ""
+
+#~ msgid "trace: Optional[relax.tuning.Trace]"
+#~ msgstr ""
+
+#~ msgid "Initial trace for trace mode."
+#~ msgstr ""
+
+#~ msgid "trace_stack: Optional[List[relax.tuning_api.Trace]]"
+#~ msgstr ""
+
+#~ msgid "Initial trace stack for trace mode."
+#~ msgstr ""
+
+#~ msgid "make_traceable: Optional[List[str]]"
+#~ msgstr ""
+
+#~ msgid "List of passes to make traceable."
+#~ msgstr ""
+
+#~ msgid "num_evals: int"
+#~ msgstr ""
+
+#~ msgid "initial number of evaluations conducted in the pipeline."
+#~ msgstr ""
+
+#~ msgid "tuning_api_database: Optional[relax.tuning_api.JSONDatabase]"
+#~ msgstr ""
+
+#~ msgid "Return the current pass context."
+#~ msgstr ""
+
+#~ msgid "Get the trace on the top of the stack."
+#~ msgstr ""
+
+#~ msgid "Get the current trace stack."
+#~ msgstr ""
+
+#~ msgid "Get the size of current stack."
+#~ msgstr ""
+
+#~ msgid "Get tuning api database."
+#~ msgstr ""
+
+#~ msgid "Increment the number of evaluations conducted in the pipeline."
+#~ msgstr ""
+
+#~ msgid "List all registered `PassContext` configuration names and metadata."
+#~ msgstr ""
+
+#~ msgid "**configs**"
+#~ msgstr ""
+
+#~ msgid "Override instruments within this PassContext."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If there are existing instruments, their"
+#~ " ``exit_pass_ctx`` callbacks are called. "
+#~ "Then switching to new instruments and"
+#~ " calling new ``enter_pass_ctx`` callbacks."
+#~ msgstr ""
+
+#~ msgid "Sequence[PassInstrument]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pop a topmost trace from the "
+#~ "stack. :returns: **Trace** :rtype: "
+#~ "Optional[relax.tuning.Trace]"
+#~ msgstr ""
+
+#~ msgid "Push a trace into the stack."
+#~ msgstr ""
+
+#~ msgid "Set the number of evaluations conducted in the pipeline."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The class contains the meta data "
+#~ "required by a pass. It is the "
+#~ "container of information needed by "
+#~ "running an optimization or analysis. "
+#~ "This class can be extended by "
+#~ "adding new members when more meta "
+#~ "data is needed."
+#~ msgstr ""
+
+#~ msgid "The pass name."
+#~ msgstr ""
+
+#~ msgid "A special trace pass that prints the header and IR."
+#~ msgstr ""
+
+#~ msgid "The header to be displayed along with the dump."
+#~ msgstr ""
+
+#~ msgid "A boolean flag to indicate if meta data should be printed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass that works on a sequence"
+#~ " of pass objects. Multiple passes can"
+#~ " be executed sequentially using this "
+#~ "class."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that users can also provide a"
+#~ " series of passes that they don't "
+#~ "want to apply when running a "
+#~ "sequential pass. Pass dependency will be"
+#~ " resolved in the backend as well."
+#~ msgstr ""
+
+#~ msgid "A sequence of passes candidate for optimization."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The optimization level of this "
+#~ "sequential pass. The opt_level of a "
+#~ "default sequential pass is set to "
+#~ "0. Note that some of the passes"
+#~ " within the Sequantial may still not"
+#~ " be executed if their opt_level is"
+#~ " higher than the provided opt_level."
+#~ msgstr ""
+
+#~ msgid "The name of the sequential pass."
+#~ msgstr ""
+
+#~ msgid "The list of passes that the sequential pass is dependent on."
+#~ msgstr ""
+
+#~ msgid "Decorate a module pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function returns a callback when"
+#~ " pass_func is provided. Otherwise, it "
+#~ "serves a decorator function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "pass_func can also be a class type"
+#~ " with a method transform_module. This "
+#~ "function will create a decorated "
+#~ "ModulePass using transform_module as the "
+#~ "pass function."
+#~ msgstr ""
+
+#~ msgid "The transformation function or class."
+#~ msgstr ""
+
+#~ msgid "The optimization level of this module pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the module pass. The"
+#~ " name could be empty. In this "
+#~ "case, the name of the optimization "
+#~ "function will be used as the pass"
+#~ " name."
+#~ msgstr ""
+
+#~ msgid "The list of passes that the module pass is dependent on."
+#~ msgstr ""
+
+#~ msgid "Boolean variable whether the module pass is traceable"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**create_module_pass** -- A decorator will "
+#~ "be returned if pass_func is not "
+#~ "provided, otherwise return the decorated "
+#~ "result. The returned decorator has two"
+#~ " behaviors depending on the input: A"
+#~ " new ModulePass will be returned when"
+#~ " we decorate a pass function. A "
+#~ "new ModulePass class will be returned"
+#~ " when we decorate a class type."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "The following code block decorates a module pass class."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following code creates a module "
+#~ "pass by decorating a user defined "
+#~ "transform function."
+#~ msgstr ""
+

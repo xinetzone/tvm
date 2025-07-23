@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/top/bitpack/index.rst:2
+msgid "vta.top.bitpack"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:8
+msgid "Bit packing operators"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:20:<autosummary>:1
+msgid ""
+":py:obj:`bitpack <vta.top.bitpack.bitpack>`\\ \\(data\\, bits\\[\\, "
+"pack\\_type\\, name\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:26
+#: ../../doc/api/vta/top/bitpack/index.rst:20:<autosummary>:1
+msgid "Packs lowest dimension into format needed by VTA"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:20:<autosummary>:1
+msgid ""
+":py:obj:`compute_bitpack <vta.top.bitpack.compute_bitpack>`\\ \\(attrs\\,"
+" inputs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:22
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:29
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:30
+msgid "pack_axis"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:-1
+msgid "int"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:31
+msgid "index of the axis to pack in data"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:32
+msgid "bit_axis"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:33
+msgid "index of axis to place bit axis in resulting packed data"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:36
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:37
+msgid "packed"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:-1
+msgid "Tensor"
+msgstr ""
+
+#: ../../doc/api/vta/top/bitpack/index.rst:38
+msgid "The packed tensor."
+msgstr ""
+

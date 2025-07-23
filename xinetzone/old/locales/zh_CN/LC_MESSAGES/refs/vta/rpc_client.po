@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/rpc_client.rst:3
+msgid "``rpc_client``"
+msgstr ""
+
+#: of vta.rpc_client:1
+msgid "VTA RPC client function"
+msgstr "VTA RPC 客户端函数"
+
+#: of vta.rpc_client.program_fpga:1
+msgid "Upload and program bistream"
+msgstr "上传和编程 bistream"
+
+#: of vta.rpc_client.program_fpga:4 vta.rpc_client.reconfig_runtime:4
+msgid "Parameters"
+msgstr ""
+
+#: of vta.rpc_client.program_fpga:6 vta.rpc_client.reconfig_runtime:5
+msgid "remote"
+msgstr ""
+
+#: of vta.rpc_client.program_fpga:-1 vta.rpc_client.reconfig_runtime:-1
+msgid "RPCSession"
+msgstr ""
+
+#: of vta.rpc_client.program_fpga:6 vta.rpc_client.reconfig_runtime:6
+msgid "The TVM RPC session"
+msgstr "TVM RPC 会话"
+
+#: of vta.rpc_client.program_fpga:8
+msgid "bitstream"
+msgstr ""
+
+#: of vta.rpc_client.program_fpga:-1
+msgid "str, optional"
+msgstr ""
+
+#: of vta.rpc_client.program_fpga:9
+msgid ""
+"Path to a local bistream file. If unset, tries to download from cache "
+"server."
+msgstr "本地 bistream 文件的路径。如果未设置，则尝试从缓存服务器下载。"
+
+#: of vta.rpc_client.reconfig_runtime:1
+msgid "Reconfigure remote runtime based on current hardware spec."
+msgstr "根据当前硬件规格重新配置远程运行时。"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+

@@ -1,0 +1,1177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/meta_schedule.rst:19
+msgid "tvm.meta_schedule"
+msgstr ""
+
+#~ msgid ":py:obj:`Builder <tvm.meta_schedule.Builder>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`CostModel <tvm.meta_schedule.CostModel>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Database <tvm.meta_schedule.Database>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`FeatureExtractor "
+#~ "<tvm.meta_schedule.FeatureExtractor>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`MeasureCallback <tvm.meta_schedule.MeasureCallback>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Mutator <tvm.meta_schedule.Mutator>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Postproc <tvm.meta_schedule.Postproc>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Runner <tvm.meta_schedule.Runner>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`ScheduleRule <tvm.meta_schedule.ScheduleRule>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`SearchStrategy <tvm.meta_schedule.SearchStrategy>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`SpaceGenerator <tvm.meta_schedule.SpaceGenerator>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`TaskScheduler <tvm.meta_schedule.TaskScheduler>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`is_meta_schedule_enabled "
+#~ "<tvm.meta_schedule.is_meta_schedule_enabled>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Return whether the meta-schedule is enabled."
+#~ msgstr ""
+
+#~ msgid "**enabled** -- Whether the meta schedule is enabled"
+#~ msgstr ""
+
+#~ msgid "Package `tvm.meta_schedule`. The meta schedule infrastructure."
+#~ msgstr ""
+
+#~ msgid "**Classes:**"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Builder <tvm.meta_schedule.Builder>`\\"
+#~ msgstr ""
+
+#~ msgid "The abstract builder interface."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`CostModel <tvm.meta_schedule.CostModel>`\\"
+#~ msgstr ""
+
+#~ msgid "Cost model."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Database <tvm.meta_schedule.Database>`\\"
+#~ msgstr ""
+
+#~ msgid "The abstract database interface."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`ExtractedTask <tvm.meta_schedule.ExtractedTask>`\\ "
+#~ "\\(task\\_name\\, mod\\, target\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid "A tuning task extracted from the high-level IR"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`FeatureExtractor <tvm.meta_schedule.FeatureExtractor>`\\"
+#~ msgstr ""
+
+#~ msgid "Extractor for features from measure candidates for use in cost model."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`MeasureCallback <tvm.meta_schedule.MeasureCallback>`\\"
+#~ msgstr ""
+
+#~ msgid "Rules to apply after measure results is available."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`MeasureCandidate "
+#~ "<tvm.meta_schedule.MeasureCandidate>`\\ \\(sch\\, "
+#~ "args\\_info\\)"
+#~ msgstr ""
+
+#~ msgid "Measure candidate class."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Mutator <tvm.meta_schedule.Mutator>`\\"
+#~ msgstr ""
+
+#~ msgid "Mutator is designed to mutate the trace to explore the design space."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Postproc <tvm.meta_schedule.Postproc>`\\"
+#~ msgstr ""
+
+#~ msgid "Rules to apply a postprocessor to a schedule."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Profiler <tvm.meta_schedule.Profiler>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Tuning time profiler."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`Runner <tvm.meta_schedule.Runner>`\\"
+#~ msgstr ""
+
+#~ msgid "The abstract runner interface"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`ScheduleRule <tvm.meta_schedule.ScheduleRule>`\\"
+#~ msgstr ""
+
+#~ msgid "Rules to modify a block in a schedule."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`SearchStrategy <tvm.meta_schedule.SearchStrategy>`\\"
+#~ msgstr ""
+
+#~ msgid "Search strategy is the class that generates the measure candidates."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`SpaceGenerator <tvm.meta_schedule.SpaceGenerator>`\\"
+#~ msgstr ""
+
+#~ msgid "The abstract design space generator interface."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`TaskScheduler <tvm.meta_schedule.TaskScheduler>`\\"
+#~ msgstr ""
+
+#~ msgid "The abstract task scheduler interface."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`TuneContext <tvm.meta_schedule.TuneContext>`\\ "
+#~ "\\(\\[mod\\, target\\, space\\_generator\\, "
+#~ "...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The tune context class is designed "
+#~ "to contain all resources for a "
+#~ "tuning task."
+#~ msgstr ""
+
+#~ msgid "**Functions:**"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`derived_object <tvm.meta_schedule.derived_object>`\\ \\(cls\\)"
+#~ msgstr ""
+
+#~ msgid "A decorator to register derived subclasses for TVM objects."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`tune_tasks <tvm.meta_schedule.tune_tasks>`\\ "
+#~ "\\(\\*\\, tasks\\, task\\_weights\\, work\\_dir\\,"
+#~ " ...\\)"
+#~ msgstr ""
+
+#~ msgid "Tune a list of tasks."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`tune_tir <tvm.meta_schedule.tune_tir>`\\ "
+#~ "\\(mod\\, target\\, work\\_dir\\, ...\\[\\, "
+#~ "...\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Tune a TIR function or an IRModule of TIR functions."
+#~ msgstr ""
+
+#~ msgid "**Methods:**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`build <tvm.meta_schedule.Builder.build>`\\ "
+#~ "\\(build\\_inputs\\)"
+#~ msgstr ""
+
+#~ msgid "Build the given inputs."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`create <tvm.meta_schedule.Builder.create>`\\ \\(\\[kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Create a Builder."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The inputs to be built."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**build_results** -- The results of building the given inputs."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "The kind of the builder. For now, only \"local\" is supported."
+#~ msgstr ""
+
+#~ msgid "**builder** -- The builder created."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`create <tvm.meta_schedule.CostModel.create>`\\ "
+#~ "\\(kind\\, \\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid "Create a CostModel."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`load <tvm.meta_schedule.CostModel.load>`\\ \\(path\\)"
+#~ msgstr ""
+
+#~ msgid "Load the cost model from given file location."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`predict <tvm.meta_schedule.CostModel.predict>`\\ "
+#~ "\\(context\\, candidates\\)"
+#~ msgstr ""
+
+#~ msgid "Predict normalized score with the cost model."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`save <tvm.meta_schedule.CostModel.save>`\\ \\(path\\)"
+#~ msgstr ""
+
+#~ msgid "Save the cost model to given file location."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`update <tvm.meta_schedule.CostModel.update>`\\ "
+#~ "\\(context\\, candidates\\, results\\)"
+#~ msgstr ""
+
+#~ msgid "Update the cost model given running results."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The kind of the cost model. Can"
+#~ " be \"xgb\", \"mlp\", \"random\" or "
+#~ "\"none\"."
+#~ msgstr ""
+
+#~ msgid "**cost_model** -- The created cost model."
+#~ msgstr ""
+
+#~ msgid "The file path."
+#~ msgstr ""
+
+#~ msgid "The tuning context."
+#~ msgstr ""
+
+#~ msgid "The measure candidates."
+#~ msgstr ""
+
+#~ msgid "**result** -- The predicted normalized score."
+#~ msgstr ""
+
+#~ msgid "The running results of the measure candidates."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`commit_tuning_record "
+#~ "<tvm.meta_schedule.Database.commit_tuning_record>`\\ "
+#~ "\\(record\\)"
+#~ msgstr ""
+
+#~ msgid "Commit a tuning record to the database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`commit_workload "
+#~ "<tvm.meta_schedule.Database.commit_workload>`\\ \\(mod\\)"
+#~ msgstr ""
+
+#~ msgid "Commit a workload to the database if missing."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`create <tvm.meta_schedule.Database.create>`\\ \\(\\[kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Create a Database."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`current <tvm.meta_schedule.Database.current>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the current database under scope."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`dump_pruned <tvm.meta_schedule.Database.dump_pruned>`\\"
+#~ " \\(destination\\)"
+#~ msgstr ""
+
+#~ msgid "Dump the pruned database to files of JSONDatabase format."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`get_all_tuning_records "
+#~ "<tvm.meta_schedule.Database.get_all_tuning_records>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get all the tuning records from the database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`get_top_k <tvm.meta_schedule.Database.get_top_k>`\\ "
+#~ "\\(workload\\, top\\_k\\)"
+#~ msgstr ""
+
+#~ msgid "Get the top K valid tuning records of given workload from the database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`has_workload "
+#~ "<tvm.meta_schedule.Database.has_workload>`\\ \\(mod\\)"
+#~ msgstr ""
+
+#~ msgid "Check if the database has the given workload."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`query <tvm.meta_schedule.Database.query>`\\ "
+#~ "\\(mod\\, target\\, \\*\\[\\, workload\\_name\\, "
+#~ "kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Query the database to retrieve the "
+#~ "best optimization outcome of the given"
+#~ " workload."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`query_ir_module "
+#~ "<tvm.meta_schedule.Database.query_ir_module>`\\ \\(mod\\, "
+#~ "target\\, workload\\_name\\)"
+#~ msgstr ""
+
+#~ msgid "Query the best IRModule of the given workload from the database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`query_schedule "
+#~ "<tvm.meta_schedule.Database.query_schedule>`\\ \\(mod\\, "
+#~ "target\\, workload\\_name\\)"
+#~ msgstr ""
+
+#~ msgid "Query the best schedule of the given workload from the database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`query_tuning_record "
+#~ "<tvm.meta_schedule.Database.query_tuning_record>`\\ \\(mod\\,"
+#~ " target\\, workload\\_name\\)"
+#~ msgstr ""
+
+#~ msgid "Query the best record of the given workload from the database."
+#~ msgstr ""
+
+#~ msgid "The tuning record to add."
+#~ msgstr ""
+
+#~ msgid "The IRModule to be searched for or added."
+#~ msgstr ""
+
+#~ msgid "**workload** -- The workload corresponding to the given IRModule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The kind of the database to be "
+#~ "created. The following kinds are "
+#~ "supported: \"json\", \"memory\", \"union\", "
+#~ "\"ordered_union\", and a custom schedule "
+#~ "function."
+#~ msgstr ""
+
+#~ msgid "**database** -- The created database."
+#~ msgstr ""
+
+#~ msgid "The destination database to be dumped to."
+#~ msgstr ""
+
+#~ msgid "**tuning_records** -- All tuning records from the database."
+#~ msgstr ""
+
+#~ msgid "The workload to be searched for."
+#~ msgstr ""
+
+#~ msgid "The number of top records to get."
+#~ msgstr ""
+
+#~ msgid "**top_k_records** -- The top K records."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check if the database has the "
+#~ "given workload. :param mod: The IRModule"
+#~ " to be searched for. :type mod: "
+#~ "IRModule"
+#~ msgstr ""
+
+#~ msgid "**result** -- Whether the database has the given workload."
+#~ msgstr ""
+
+#~ msgid "The IRModule to be searched for."
+#~ msgstr ""
+
+#~ msgid "The target to be searched for."
+#~ msgstr ""
+
+#~ msgid "The kind of the optimization outcome to be returned."
+#~ msgstr ""
+
+#~ msgid "**result** -- The best optimization outcome of the given workload."
+#~ msgstr ""
+
+#~ msgid "The name of the workload to be searched for."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ir_module** -- The best IRModule of"
+#~ " the given workload; None if not "
+#~ "found."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**schedule** -- The best schedule of "
+#~ "the given workload; None if not "
+#~ "found."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**tuning_record** -- The best record of"
+#~ " the given workload; None if not "
+#~ "found."
+#~ msgstr ""
+
+#~ msgid "The name of the task extracted"
+#~ msgstr ""
+
+#~ msgid "The high-level IR"
+#~ msgstr ""
+
+#~ msgid "Target information"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A list of low-level IRs that "
+#~ "the high-level IR could potentially "
+#~ "dispatch to"
+#~ msgstr ""
+
+#~ msgid "The weight of the task"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`create <tvm.meta_schedule.FeatureExtractor.create>`\\"
+#~ " \\(kind\\, \\*args\\, \\*\\*kwargs\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`extract_from "
+#~ "<tvm.meta_schedule.FeatureExtractor.extract_from>`\\ "
+#~ "\\(context\\, candidates\\)"
+#~ msgstr ""
+
+#~ msgid "Extract features from the given measure candidate."
+#~ msgstr ""
+
+#~ msgid "The tuning context for feature extraction."
+#~ msgstr ""
+
+#~ msgid "The measure candidates to extract features from."
+#~ msgstr ""
+
+#~ msgid "**features** -- The feature tvm ndarray extracted."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`apply <tvm.meta_schedule.MeasureCallback.apply>`\\ "
+#~ "\\(task\\_scheduler\\, task\\_id\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid "Apply a measure callback to the given schedule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`create <tvm.meta_schedule.MeasureCallback.create>`\\"
+#~ " \\(kind\\)"
+#~ msgstr ""
+
+#~ msgid "Create a list of measure callbacks."
+#~ msgstr ""
+
+#~ msgid "The task scheduler."
+#~ msgstr ""
+
+#~ msgid "The task id."
+#~ msgstr ""
+
+#~ msgid "The builder results by building the measure candidates."
+#~ msgstr ""
+
+#~ msgid "The runner results by running the built measure candidates."
+#~ msgstr ""
+
+#~ msgid "The schedule to be measured."
+#~ msgstr ""
+
+#~ msgid "The argument information."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`apply <tvm.meta_schedule.Mutator.apply>`\\ \\(trace\\)"
+#~ msgstr ""
+
+#~ msgid "Apply the mutator function to the given trace."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`clone <tvm.meta_schedule.Mutator.clone>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Clone the mutator."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`create <tvm.meta_schedule.Mutator.create>`\\ \\(kind\\)"
+#~ msgstr ""
+
+#~ msgid "Create a list of default mutators."
+#~ msgstr ""
+
+#~ msgid "The given trace for mutation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**trace** -- None if mutator failed, "
+#~ "otherwise return the mutated trace."
+#~ msgstr ""
+
+#~ msgid "**mutator** -- The cloned mutator."
+#~ msgstr ""
+
+#~ msgid "The kind of mutators."
+#~ msgstr ""
+
+#~ msgid "**mutators** -- The list of mutators."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`apply <tvm.meta_schedule.Postproc.apply>`\\ \\(sch\\)"
+#~ msgstr ""
+
+#~ msgid "Apply a postprocessor to the given schedule."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`clone <tvm.meta_schedule.Postproc.clone>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Clone the postprocessor."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`create <tvm.meta_schedule.Postproc.create>`\\ \\(kind\\)"
+#~ msgstr ""
+
+#~ msgid "Create a list of default postprocessors."
+#~ msgstr ""
+
+#~ msgid "The schedule to be post processed."
+#~ msgstr ""
+
+#~ msgid "**result** -- Whether the postprocessor was successfully applied."
+#~ msgstr ""
+
+#~ msgid "**cloned_postproc** -- The cloned postprocessor."
+#~ msgstr ""
+
+#~ msgid "The kind of the postprocessors."
+#~ msgstr ""
+
+#~ msgid "**postprocs** -- The list of postprocessors."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`current <tvm.meta_schedule.Profiler.current>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the current profiler."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`get <tvm.meta_schedule.Profiler.get>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the profiling results in seconds"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`table <tvm.meta_schedule.Profiler.table>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Get the profiling results in a table format"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`timeit <tvm.meta_schedule.Profiler.timeit>`\\ \\(name\\)"
+#~ msgstr ""
+
+#~ msgid "Timeit a block of code"
+#~ msgstr ""
+
+#~ msgid ":py:obj:`create <tvm.meta_schedule.Runner.create>`\\ \\(\\[kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Create a Runner."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`run <tvm.meta_schedule.Runner.run>`\\ \\(runner\\_inputs\\)"
+#~ msgstr ""
+
+#~ msgid "Run the built artifact and get runner futures."
+#~ msgstr ""
+
+#~ msgid "The inputs to the runner."
+#~ msgstr ""
+
+#~ msgid "**runner_futures** -- The runner futures."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`apply <tvm.meta_schedule.ScheduleRule.apply>`\\ "
+#~ "\\(sch\\, block\\)"
+#~ msgstr ""
+
+#~ msgid "Apply a schedule rule to the specific block in the given schedule."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`clone <tvm.meta_schedule.ScheduleRule.clone>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Deep clone the schedule rule."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`create <tvm.meta_schedule.ScheduleRule.create>`\\ \\(kind\\)"
+#~ msgstr ""
+
+#~ msgid "Create a list of schedule rules for the given kind."
+#~ msgstr ""
+
+#~ msgid "The schedule to be modified."
+#~ msgstr ""
+
+#~ msgid "The specific block to apply the schedule rule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**design_spaces** -- The list of "
+#~ "schedules generated by applying the "
+#~ "schedule rule."
+#~ msgstr ""
+
+#~ msgid "**cloned_rule** -- The cloned schedule rule."
+#~ msgstr ""
+
+#~ msgid "The kind of the schedule rules."
+#~ msgstr ""
+
+#~ msgid "**rules** -- The list of schedule rules."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`clone <tvm.meta_schedule.SearchStrategy.clone>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Clone the search strategy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`create <tvm.meta_schedule.SearchStrategy.create>`\\ "
+#~ "\\(\\[kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Create a search strategy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`generate_measure_candidates "
+#~ "<tvm.meta_schedule.SearchStrategy.generate_measure_candidates>`\\ "
+#~ "\\(\\)"
+#~ msgstr ""
+
+#~ msgid "Generate measure candidates from design spaces for measurement."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`notify_runner_results "
+#~ "<tvm.meta_schedule.SearchStrategy.notify_runner_results>`\\ "
+#~ "\\(measure\\_candidates\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid "Update the search strategy with profiling results."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`post_tuning "
+#~ "<tvm.meta_schedule.SearchStrategy.post_tuning>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Post-tuning for the search strategy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`pre_tuning "
+#~ "<tvm.meta_schedule.SearchStrategy.pre_tuning>`\\ "
+#~ "\\(max\\_trials\\, num\\_trials\\_per\\_iter\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid "Pre-tuning for the search strategy."
+#~ msgstr ""
+
+#~ msgid "**cloned** -- The cloned search strategy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**measure_candidates** -- The measure "
+#~ "candidates generated, None if finished."
+#~ msgstr ""
+
+#~ msgid "The measure candidates for update."
+#~ msgstr ""
+
+#~ msgid "The profiling results from the runner."
+#~ msgstr ""
+
+#~ msgid "The maximum number of trials."
+#~ msgstr ""
+
+#~ msgid "The number of trials per iteration."
+#~ msgstr ""
+
+#~ msgid "The design spaces used during tuning process."
+#~ msgstr ""
+
+#~ msgid "The database used during tuning process."
+#~ msgstr ""
+
+#~ msgid "The cost model used during tuning process."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`clone <tvm.meta_schedule.SpaceGenerator.clone>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Clone the design space generator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`create <tvm.meta_schedule.SpaceGenerator.create>`\\ "
+#~ "\\(\\[kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Create a design space generator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`generate_design_space "
+#~ "<tvm.meta_schedule.SpaceGenerator.generate_design_space>`\\ "
+#~ "\\(mod\\)"
+#~ msgstr ""
+
+#~ msgid "Generate design spaces given a module."
+#~ msgstr ""
+
+#~ msgid "**cloned_sg** -- The cloned design space generator."
+#~ msgstr ""
+
+#~ msgid "The module used for design space generation."
+#~ msgstr ""
+
+#~ msgid "**design_spaces** -- The generated design spaces, i.e., schedules."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`create <tvm.meta_schedule.TaskScheduler.create>`\\ "
+#~ "\\(\\[kind\\]\\)"
+#~ msgstr ""
+
+#~ msgid "Create a task scheduler."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`join_running_task "
+#~ "<tvm.meta_schedule.TaskScheduler.join_running_task>`\\ "
+#~ "\\(task\\_id\\)"
+#~ msgstr ""
+
+#~ msgid "Wait until the task is finished."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`next_task_id "
+#~ "<tvm.meta_schedule.TaskScheduler.next_task_id>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Fetch the next task id."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`print_tuning_statistics "
+#~ "<tvm.meta_schedule.TaskScheduler.print_tuning_statistics>`\\ "
+#~ "\\(\\)"
+#~ msgstr ""
+
+#~ msgid "Print out a human-readable format of the tuning statistics."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`terminate_task "
+#~ "<tvm.meta_schedule.TaskScheduler.terminate_task>`\\ "
+#~ "\\(task\\_id\\)"
+#~ msgstr ""
+
+#~ msgid "Terminate the task"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`touch_task "
+#~ "<tvm.meta_schedule.TaskScheduler.touch_task>`\\ \\(task\\_id\\)"
+#~ msgstr ""
+
+#~ msgid "Touch the task and update its status"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`tune <tvm.meta_schedule.TaskScheduler.tune>`\\ "
+#~ "\\(tasks\\, task\\_weights\\, max\\_trials\\_global\\, "
+#~ "...\\)"
+#~ msgstr ""
+
+#~ msgid "Auto-tuning."
+#~ msgstr ""
+
+#~ msgid "The task id to be joined."
+#~ msgstr ""
+
+#~ msgid "**results** -- The list of results."
+#~ msgstr ""
+
+#~ msgid "**next_task_id** -- The next task id."
+#~ msgstr ""
+
+#~ msgid "The task id to be terminated."
+#~ msgstr ""
+
+#~ msgid "The task id to be checked."
+#~ msgstr ""
+
+#~ msgid "The list of tuning contexts as tasks."
+#~ msgstr ""
+
+#~ msgid "The list of task weights."
+#~ msgstr ""
+
+#~ msgid "The maximum number of trials globally."
+#~ msgstr ""
+
+#~ msgid "The maximum number of trials per task."
+#~ msgstr ""
+
+#~ msgid "The builder."
+#~ msgstr ""
+
+#~ msgid "The runner."
+#~ msgstr ""
+
+#~ msgid "The list of measure callbacks."
+#~ msgstr ""
+
+#~ msgid "The database."
+#~ msgstr ""
+
+#~ msgid "The cost model."
+#~ msgstr ""
+
+#~ msgid "The workload to be optimized."
+#~ msgstr ""
+
+#~ msgid "The target to be optimized for."
+#~ msgstr ""
+
+#~ msgid "The design space generator."
+#~ msgstr ""
+
+#~ msgid "The search strategy. if None, the strategy is left blank."
+#~ msgstr ""
+
+#~ msgid "The name of the tuning task."
+#~ msgstr ""
+
+#~ msgid "The logger for the tuning task."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The random state. Need to be in"
+#~ " integer in [1, 2^31-1], -1 means "
+#~ "using random number."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The number of threads to be used,"
+#~ " None means using the logical cpu "
+#~ "count."
+#~ msgstr ""
+
+#~ msgid ":py:obj:`clone <tvm.meta_schedule.TuneContext.clone>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid "Clone the TuneContext."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`generate_design_space "
+#~ "<tvm.meta_schedule.TuneContext.generate_design_space>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`generate_measure_candidates "
+#~ "<tvm.meta_schedule.TuneContext.generate_measure_candidates>`\\ "
+#~ "\\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Generate a batch of measure candidates"
+#~ " from design spaces for measurement."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`notify_runner_results "
+#~ "<tvm.meta_schedule.TuneContext.notify_runner_results>`\\ "
+#~ "\\(measure\\_candidates\\, ...\\)"
+#~ msgstr ""
+
+#~ msgid "Update the state in SearchStrategy with profiling results."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`post_tuning "
+#~ "<tvm.meta_schedule.TuneContext.post_tuning>`\\ \\(\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A method to be called for "
+#~ "SearchStrategy to do necessary cleanup "
+#~ "after tuning."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`pre_tuning "
+#~ "<tvm.meta_schedule.TuneContext.pre_tuning>`\\ "
+#~ "\\(max\\_trials\\[\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A method to be called for "
+#~ "SearchStrategy to do necessary preparation "
+#~ "before tuning."
+#~ msgstr ""
+
+#~ msgid "**cloned_context** -- The cloned TuneContext."
+#~ msgstr ""
+
+#~ msgid "Delegated to self.space_generator.generate_design_space with self.mod"
+#~ msgstr ""
+
+#~ msgid "Delegated to self.search_strategy.generate_measure_candidates."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**measure_candidates** -- The measure "
+#~ "candidates generated, None if search is"
+#~ " finished."
+#~ msgstr ""
+
+#~ msgid "Delegated to self.search_strategy.notify_runner_results."
+#~ msgstr ""
+
+#~ msgid "Delegated to self.search_strategy.post_tuning."
+#~ msgstr ""
+
+#~ msgid "Delegated to self.search_strategy.pre_tuning."
+#~ msgstr ""
+
+#~ msgid "The maximum number of trials to be executed."
+#~ msgstr ""
+
+#~ msgid "The number of trials to be executed per iteration."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The design spaces used during tuning "
+#~ "process. If None, use the outcome "
+#~ "of `self.generate_design_space()`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The database used during tuning process."
+#~ " If None, and the search strategy "
+#~ "is `EvolutionarySearch`, then use "
+#~ "`tvm.meta_schedule.database.MemoryDatabase`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The cost model used during tuning "
+#~ "process. If None, and the search "
+#~ "strategy is `EvolutionarySearch`, then use "
+#~ "`tvm.meta_schedule.cost_model.RandomModel`."
+#~ msgstr ""
+
+#~ msgid "The derived class to be registered."
+#~ msgstr ""
+
+#~ msgid "**cls** -- The decorated TVM object."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Tune a list of tasks. Using a task scheduler."
+#~ msgstr ""
+
+#~ msgid "The list of tasks to tune."
+#~ msgstr ""
+
+#~ msgid "The weight of each task."
+#~ msgstr ""
+
+#~ msgid "The working directory."
+#~ msgstr ""
+
+#~ msgid "The maximum number of trials to run globally."
+#~ msgstr ""
+
+#~ msgid "The maximum number of trials to run per task."
+#~ msgstr ""
+
+#~ msgid "The number of trials to run per iteration"
+#~ msgstr ""
+
+#~ msgid "The measure callbacks."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A string to specify the module "
+#~ "equality testing and hashing method. It"
+#~ " must be one of the followings:"
+#~ "      - \"structural\": Use StructuralEqual/Hash"
+#~ "     - \"ignore-ndarray\": Same as "
+#~ "\"structural\", but ignore ndarray raw "
+#~ "data during equality         testing and "
+#~ "hashing.     - \"anchor-block\": Apply "
+#~ "equality testing and hashing on the "
+#~ "anchor block extracted from         a "
+#~ "given module. The \"ignore-ndarray\" "
+#~ "varint is used for the extracted "
+#~ "blocks or in         case no anchor "
+#~ "block is found. For the definition "
+#~ "of the anchor block, see         "
+#~ "tir/analysis/analysis.py."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A string to specify the module "
+#~ "equality testing and hashing method. It"
+#~ " must be one of the followings:"
+#~ msgstr ""
+
+#~ msgid "\"structural\": Use StructuralEqual/Hash"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\"ignore-ndarray\": Same as \"structural\","
+#~ " but ignore ndarray raw data during"
+#~ " equality"
+#~ msgstr ""
+
+#~ msgid "testing and hashing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\"anchor-block\": Apply equality testing "
+#~ "and hashing on the anchor block "
+#~ "extracted from"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "a given module. The \"ignore-ndarray\""
+#~ " varint is used for the extracted "
+#~ "blocks or in case no anchor block"
+#~ " is found. For the definition of "
+#~ "the anchor block, see "
+#~ "tir/analysis/analysis.py."
+#~ msgstr ""
+
+#~ msgid "Generate post-optimization using Droplet Search as exploitation space."
+#~ msgstr ""
+
+#~ msgid "**database** -- The database with all tuning records"
+#~ msgstr ""
+
+#~ msgid "The TIR IRModule to tune."
+#~ msgstr ""
+
+#~ msgid "The target to tune for."
+#~ msgstr ""
+
+#~ msgid "The space generator."
+#~ msgstr ""
+
+#~ msgid "The search strategy."
+#~ msgstr ""
+
+#~ msgid "The number of CPU cores to use during tuning."
+#~ msgstr ""
+
+#~ msgid "The seed for the random number generator."
+#~ msgstr ""
+
+#~ msgid "A string to specify the module equality testing and hashing method."
+#~ msgstr ""
+
+#~ msgid "A mapping from task name to a special space generator for that task."
+#~ msgstr ""
+

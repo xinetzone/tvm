@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-15 19:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/top/op.rst:3
+msgid "``vta.top.op``"
+msgstr ""
+
+#: of vta.top.op:1
+msgid "Namespace for supporting Relay operators on VTA."
+msgstr "在 VTA 上支持的 Relay 算子命名空间。"
+
+#: of vta.top.op.compute_clip_vta:1
+msgid "Clip operator."
+msgstr "Clip 算子。"
+
+#: of vta.top.op.conv2d_strategy_vta:1
+msgid "conv2d vta strategy"
+msgstr "conv2d vta 策略"
+
+#: of vta.top.op.conv2d_transpose_strategy_vta:1
+msgid "conv2d_transpose vta strategy"
+msgstr "conv2d_transpose vta 策略"
+
+#: of vta.top.op.dense_strategy_vta:1
+msgid "dense vta strategy"
+msgstr "dense vta 策略"
+
+#: of vta.top.op.schedule_alu_packed:1
+msgid "alu packed schedule"
+msgstr "alu 打包调度"
+

@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:21
+msgid "Understand TensorIR Abstraction"
+msgstr "理解 TensorIR 抽象"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:22
+msgid ""
+"TensorIR is the tensor program abstraction in Apache TVM, which is one of"
+" the standard machine learning compilation frameworks. The principal "
+"objective of tensor program abstraction is to depict loops and associated"
+" hardware acceleration options, including threading, the application of "
+"specialized hardware instructions, and memory access."
+msgstr ""
+"TensorIR 是 Apache TVM 中的张量程序抽象，它是标准的机器学习编译框架之一。"
+"张量程序抽象的主要目标是描述循环及其相关的硬件加速选项，包括线程、特殊硬件指令的应用和内存访问。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:27
+msgid ""
+"To help our explanations, let us use the following sequence of tensor "
+"computations as a motivating example. Specifically, for two :math:`128 "
+"\\times 128` matrices ``A`` and ``B``, let us perform the following two "
+"steps of tensor computations."
+msgstr ""
+"为了帮助我们的说明，让我们使用以下张量计算序列作为一个激励的例子。"
+"具体来说，对于两个 :math:`128 \\times 128` 矩阵 ``A`` 和 ``B``，让我们执行以下两个步骤的张量计算。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:31
+msgid ""
+"Y_{i, j} &= \\sum_k A_{i, k} \\times B_{k, j} \\\\\n"
+"C_{i, j} &= \\mathbb{relu}(Y_{i, j}) = \\mathbb{max}(Y_{i, j}, 0)"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:37
+msgid ""
+"The above computations resemble a typical primitive tensor function "
+"commonly seen in neural networks, a linear layer with relu activation. We"
+" use TensorIR to depict the above computations as follows."
+msgstr ""
+"上述计算类似于神经网络中常见的典型元张量函数，即带有 ReLU 激活的线性层。我们使用 TensorIR 将上述计算描述如下。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:40
+msgid ""
+"Before we invoke TensorIR, let's use native Python codes with NumPy to "
+"show the computation:"
+msgstr ""
+"在调用 TensorIR 之前，让我们先使用带有 NumPy 的原生 Python 代码来展示计算："
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:56
+msgid ""
+"With the low-level NumPy example in mind, now we are ready to introduce "
+"TensorIR. The code block below shows a TensorIR implementation of "
+"``mm_relu``. The particular code is implemented in a language called "
+"TVMScript, which is a domain-specific dialect embedded in python AST."
+msgstr ""
+"考虑到低级别的 NumPy 示例，现在我们准备介绍 TensorIR。"
+"下面的代码块展示了 ``mm_relu`` 的 TensorIR 实现。特定的代码是用一种叫做 TVMScript 的语言实现的，这是嵌入到 Python AST 中的特定领域的方言。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:84
+msgid "Next, let's invest the elements in the above TensorIR program."
+msgstr "接下来，让我们仔细研究上述 TensorIR 程序中的元素。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:87
+msgid "Function Parameters and Buffers"
+msgstr "函数参数和缓冲区"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:88
+msgid ""
+"**The function parameters correspond to the same set of parameters on the"
+" numpy function.**"
+msgstr ""
+"**函数参数对应于 numpy 函数上相同的参数集。**"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:101
+msgid ""
+"Here ``A``, ``B``, and ``C`` takes a type named ``T.Buffer``, which with "
+"shape argument ``(128, 128)`` and data type ``float32``. This additional "
+"information helps possible MLC process to generate code that specializes "
+"in the shape and data type."
+msgstr ""
+"这里 ``A``，``B`` 和 ``C`` 采用名为 ``T.Buffer`` 的类型，带有形状参数 ``(128, 128)`` 和数据类型 ``float32``。"
+"这些附加信息有助于可能的 MLC 过程生成专门针对特定形状和数据类型的代码。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:106
+msgid ""
+"**Similarly, TensorIR also uses a buffer type in intermediate result "
+"allocation.**"
+msgstr "**同样，TensorIR 也在中间结果分配中使用缓冲区类型。**"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:116
+msgid "Loop Iterations"
+msgstr "循环迭代"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:117
+msgid "**There are also direct correspondence of loop iterations.**"
+msgstr "**循环迭代也有直接对应关系。**"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:119
+msgid ""
+"``T.grid`` is a syntactic sugar in TensorIR for us to write multiple "
+"nested iterators."
+msgstr ""
+"``T.grid`` 是 TensorIR 中的一个语法糖，用于编写多个嵌套迭代器。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:138
+msgid "Computational Block"
+msgstr "计算块"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:139
+msgid ""
+"A significant distinction lies in computational statements: **TensorIR "
+"incorporates an additional construct termed** ``T.block``."
+msgstr ""
+"一个显著的区别在于计算语句：**TensorIR 包含了一个额外的结构，称为** ``T.block``。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:158
+msgid ""
+"A **block** represents a fundamental computation unit within TensorIR. "
+"Importantly, a block encompasses more information than standard NumPy "
+"code. It comprises a set of block axes ``(vi, vj, vk)`` and the "
+"computations delineated around them."
+msgstr ""
+"一个 **块** 代表了 TensorIR 中的一个基本计算单元。重要的是，一个块包含了比标准 NumPy 代码更多的信息。它包括一组块轴 ``(vi, vj, vk)`` 以及围绕它们描述的计算。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:168
+msgid ""
+"The above three lines declare the **key properties** about block axes in "
+"the following syntax."
+msgstr "上面三行声明了关于块轴的 **关键属性**，采用以下语法。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:174
+msgid "These three lines convey the following details:"
+msgstr "这三行传达了以下细节："
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:176
+msgid ""
+"They specify the binding of ``vi``, ``vj``, ``vk`` (in this instance, to "
+"``i``, ``j``, ``k``)."
+msgstr ""
+"它们指定了 ``vi``、``vj``、``vk`` （在这个例子中，对应 ``i``、``j``、``k``）的绑定。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:177
+msgid ""
+"They declare the original range intended for ``vi``, ``vj``, ``vk`` (the "
+"128 in ``T.axis.spatial(128, i)``)."
+msgstr ""
+"它们声明了 ``vi``、``vj``、``vk`` （在 ``T.axis.spatial(128, i)`` 中的 128）的预期原始范围。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:179
+msgid "They announce the properties of the iterators (spatial, reduce)."
+msgstr "它们宣布迭代器的属性（spatial, reduce）。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:182
+msgid "Block Axis Properties"
+msgstr "块轴属性"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:183
+msgid ""
+"Let's delve deeper into the properties of the block axis. These "
+"properties signify the axis's relationship to the computation in "
+"progress. The block comprises three axes ``vi``, ``vj``, and ``vk``, "
+"meanwhile the block reads the buffer ``A[vi, vk]``, ``B[vk, vj]`` and "
+"writs the buffer ``Y[vi, vj]``. Strictly speaking, the block performs "
+"(reduction) updates to Y, which we label as write for the time being, as "
+"we don't require the value of Y from another block."
+msgstr ""
+"让我们更深入地探讨块轴的属性。这些属性表明了轴与正在进行的计算之间的关系。"
+"该块包括三个轴 ``vi``，``vj`` 和 ``vk``，同时该块读取缓冲区 ``A[vi, vk]``，``B[vk, vj]`` 并写入缓冲区 ``Y[vi, vj]``。"
+"严格来说，该块对 Y 执行（归约）更新，我们暂时将其标记为写入，因为我们不需要来自另一个块的 Y 的值。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:189
+msgid ""
+"Significantly, for a fixed value of ``vi`` and ``vj``, the computation "
+"block yields a point value at a spatial location of ``Y`` (``Y[vi, vj]``)"
+" that is independent of other locations in ``Y`` (with different ``vi``, "
+"``vj`` values). We can refer to ``vi``, ``vj`` as **spatial axes** since "
+"they directly correspond to the start of a spatial region of buffers that"
+" the block writes to. The axes involved in reduction (``vk``) are "
+"designated as **reduce axes**."
+msgstr ""
+"重要的是，对于固定的 ``vi`` 和 ``vj`` 值，计算块在 ``Y`` 的空间位置（``Y[vi, vj]``）产生一个与其他位置（具有不同的 ``vi`` 和 ``vj`` 值）无关的点值。"
+"我们可以将 ``vi`` 和 ``vj`` 称为 **空间轴** （spatial axes），因为它们直接对应于块写入的缓冲区空间区域的开始。参与归约的轴（``vk``）被指定为 **归约轴** （reduce axes）。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:196
+msgid "Why Extra Information in Block"
+msgstr "为什么块中需要额外信息"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:197
+msgid ""
+"One crucial observation is that the additional information (block axis "
+"range and their properties) makes the block to be **self-contained** when"
+" it comes to the iterations that it is supposed to carry out independent "
+"from the external loop-nest ``i, j, k``."
+msgstr ""
+"一个关键的观察是，额外的信息（块轴范围及其属性）使得块在执行它应该独立于外部循环嵌套 ``i, j, k`` 执行的迭代时变得 **自给自足**。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:201
+msgid ""
+"The block axis information also provides additional properties that help "
+"us to validate the correctness of the external loops that are used to "
+"carry out the computation. For example, the above code block will result "
+"in an error because the loop expects an iterator of size 128, but we only"
+" bound it to a for loop of size 127."
+msgstr ""
+"块轴信息还提供了额外的属性，这些属性帮助我们验证用于执行计算的外部循环的正确性。"
+"例如，上述代码块将导致错误，因为循环期望一个大小为 128 的迭代器，但我们只将其绑定到一个大小为 127 的 for 循环。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:216
+msgid "Sugars for Block Axes Binding"
+msgstr "块轴绑定的语法糖"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:217
+msgid ""
+"In situations where each of the block axes is directly mapped to an outer"
+" loop iterator, we can use ``T.axis.remap`` to declare the block axis in "
+"a single line."
+msgstr ""
+"在每个块轴都直接映射到外部循环迭代器的情况下，我们可以使用 ``T.axis.remap`` 来单行声明块轴。"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:225
+msgid "which is equivalent to"
+msgstr "等价于"
+
+#: ../../doc/docs/deep_dive/tensor_ir/learning.rst:233
+msgid "So we can also write the programs as follows."
+msgstr "所以我们也可以这样编写程序。"
+

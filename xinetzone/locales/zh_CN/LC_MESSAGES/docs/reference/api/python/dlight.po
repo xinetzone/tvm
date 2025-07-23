@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/dlight.rst:19
+msgid "tvm.dlight"
+msgstr ""
+
+#~ msgid ""
+#~ "DLight package provides efficient schedules"
+#~ " out-of-box for deep learning "
+#~ "workloads."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A IRModule pass that applies a "
+#~ "list of ScheduleRules to all PrimFuncs"
+#~ " in the module."
+#~ msgstr ""
+
+#~ msgid "Information about a TIR block."
+#~ msgstr ""
+
+#~ msgid "The iteration domain of the block."
+#~ msgstr ""
+
+#~ msgid "The iteration domain kind of the block, for example, SSSS, SSSR."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether the block is elementwise, i.e."
+#~ " trivial mapping between read/write region"
+#~ msgstr ""
+
+#~ msgid "Whether the block is a GEMM workload."
+#~ msgstr ""
+
+#~ msgid "Whether the block is a GEMV workload."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether the block is injective, i.e. "
+#~ "all its iteration domains are injective."
+#~ msgstr ""
+
+#~ msgid "Whether the block is a reduction workload."
+#~ msgstr ""
+
+#~ msgid "Information about a loop/iter var."
+#~ msgstr ""
+
+#~ msgid "The iteration domain of the loop."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A thin wrapper on an arbitrary "
+#~ "function that can be used to "
+#~ "schedule a TIR PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Given a PrimFunc, a target, and a"
+#~ " tunable flag, the apply method of"
+#~ " a ScheduleRule returns either a "
+#~ "Schedule, a list of Schedules, or "
+#~ "None, where None means that the "
+#~ "rule is not applicable to the "
+#~ "given PrimFunc. If the tunable flag "
+#~ "is True, the ScheduleRule is allowed "
+#~ "to return either a Schedule or a"
+#~ " list of Schedules, and the Schedules"
+#~ " are allowed to contain tunable "
+#~ "instructions. If the tunable flag is "
+#~ "False, the ScheduleRule is only allowed"
+#~ " to return a Schedule, and the "
+#~ "Schedule is not allowed to contain "
+#~ "tunable instructions."
+#~ msgstr ""
+
+#~ msgid "Apply the ScheduleRule to the given PrimFunc."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The PrimFunc to apply the ScheduleRule to."
+#~ msgstr ""
+
+#~ msgid "The compilation target the schedule is supposed to be built for."
+#~ msgstr ""
+
+#~ msgid "Whether the schedule is allowed to contain tunable instructions."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**results** -- Either a Schedule, a "
+#~ "list of Schedules, or None, where "
+#~ "None means that the rule is not"
+#~ " applicable to the given PrimFunc."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Create a ScheduleRule from a callable."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**decorator** -- A decorator that takes"
+#~ " a callable and returns a "
+#~ "ScheduleRule."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Check whether the rule is available for the given target."
+#~ msgstr ""
+
+#~ msgid "**available** -- Whether the rule is available for the given target."
+#~ msgstr ""
+
+#~ msgid "Normalize the primfunc to normal form"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Try to inline as many blocks as"
+#~ " possible, and return the remaining "
+#~ "blocks."
+#~ msgstr ""
+
+#~ msgid "The TIR schedule used to inline blocks."
+#~ msgstr ""
+
+#~ msgid "The blocks to be inlined."
+#~ msgstr ""
+
+#~ msgid "**remaining** -- The remaining blocks that cannot be inlined."
+#~ msgstr ""
+
+#~ msgid "Try to inline contiguous spatial blocks in a schedule"
+#~ msgstr ""
+
+#~ msgid "The blocks to be try."
+#~ msgstr ""
+

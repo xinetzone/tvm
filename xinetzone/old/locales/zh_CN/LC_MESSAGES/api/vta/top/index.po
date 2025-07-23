@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/top/index.rst:2
+msgid "vta.top"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:8
+msgid "TVM TOPI connector, eventually most of these should go to TVM repo"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:13
+msgid "Submodules"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:29
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`conv2d_packed <vta.top.conv2d_packed>`\\ \\(cfg\\, data\\, "
+"kernel\\, strides\\, padding\\, ...\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:49
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Packed conv2d function."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`conv2d_transpose_packed <vta.top.conv2d_transpose_packed>`\\ "
+"\\(cfg\\, data\\, kernel\\, strides\\, ...\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:54
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Packed conv2d_transpose compute"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`dense_packed <vta.top.dense_packed>`\\ \\(cfg\\, data\\, "
+"weight\\[\\, bias\\, out\\_dtype\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:59
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Dense function declaration."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`graph_pack <vta.top.graph_pack>`\\ \\(expr\\, bfactor\\, "
+"cfactor\\, weight\\_bits\\[\\, ...\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:64
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Pack the graph into batch&channel packed format."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`group_conv2d_packed <vta.top.group_conv2d_packed>`\\ \\(cfg\\, "
+"data\\, kernel\\, strides\\, ...\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:117
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Packed group conv2d nchw function."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`schedule_conv2d_packed <vta.top.schedule_conv2d_packed>`\\ "
+"\\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:122
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Schedule packed conv2d"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`schedule_conv2d_transpose_packed "
+"<vta.top.schedule_conv2d_transpose_packed>`\\ \\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:127
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Schedule packed conv2d_transpose"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`schedule_dense_packed <vta.top.schedule_dense_packed>`\\ "
+"\\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:132
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Packed dense schedule."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid ""
+":py:obj:`schedule_group_conv2d_packed "
+"<vta.top.schedule_group_conv2d_packed>`\\ \\(cfg\\, outs\\)"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:137
+#: ../../doc/api/vta/top/index.rst:43:<autosummary>:1
+msgid "Schedule the packed conv2d."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:45
+msgid "Package Contents"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:67
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:68 ../../doc/api/vta/top/index.rst:111
+msgid "expr"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:-1
+msgid "relay.Expr"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:69
+msgid "The input program."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:71
+msgid "bfactor"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:-1
+msgid "int"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:72
+msgid "The packing factor in batch"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:74
+msgid "cfactor"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:75
+msgid "The packing factor in channel"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:77
+msgid "weight_bits: int"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:78
+msgid "The bit-width of the weights."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:80
+msgid "start_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:81
+msgid "Start packing from certain known node when start_name_idx is None."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:83
+msgid "stop_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:84
+msgid "Stop packing from certain known node when stop_name_idx is None."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:86
+msgid "start_name_idx: int, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:87
+msgid ""
+"When start_name_idx not None, start packing only when node name equal "
+"start_name and node idx equals start_name_idx."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:90
+msgid "stop_name_idx: int, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:91
+msgid ""
+"When stop_name_idx not None, stop packing only when node name equal "
+"stop_name and node index equals stop_name_idx."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:94
+msgid "count_meta:boolean, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:95
+msgid ""
+"When count_meta is False, the operator increase logic would not count the"
+" meta that have the type 'relay.expr.Constant', start_name_idx and "
+"stop_name_idx follow the index from 'expr.astext(show_meta_data=False)'. "
+"When count_meta is True, the operator increase logic would count the "
+"meta."
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:100
+msgid "device_annot: boolean, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:101
+msgid "if we want to annoate the device_type"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:103
+msgid "annot_start_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:104
+msgid "device annotation start node, from which we mark the nodes as `ext_dev`"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:106
+msgid "annot_end_name: str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:107
+msgid "device annotation end node, after which we mark the nodes as 'cpu'"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:110
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:-1
+msgid "Expr"
+msgstr ""
+
+#: ../../doc/api/vta/top/index.rst:112
+msgid "The transformed expression."
+msgstr ""
+

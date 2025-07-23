@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/runtime/profiling.rst:19
+msgid "tvm.runtime.profiling"
+msgstr ""
+
+#~ msgid "Registration of profiling objects in python."
+#~ msgstr ""
+
+#~ msgid "A integer count of something"
+#~ msgstr ""
+
+#~ msgid "Wraps a tvm.runtime.Device"
+#~ msgstr ""
+
+#~ msgid "A duration of something"
+#~ msgstr ""
+
+#~ msgid "Interface for user defined profiling metric collection."
+#~ msgstr ""
+
+#~ msgid "A Percent of something"
+#~ msgstr ""
+
+#~ msgid "A Ratio of two things"
+#~ msgstr ""
+
+#~ msgid "A container for information gathered during a profiling run."
+#~ msgstr ""
+
+#~ msgid "Per-call profiling metrics (function name, runtime, device, ...)."
+#~ msgstr ""
+
+#~ msgid "type"
+#~ msgstr ""
+
+#~ msgid "Array[Dict[str, Object]]"
+#~ msgstr ""
+
+#~ msgid "Per-device metrics collected over the entire run."
+#~ msgstr ""
+
+#~ msgid "Dict[Device, Dict[str, Object]]"
+#~ msgstr ""
+
+#~ msgid "Convert this profiling report into CSV format."
+#~ msgstr ""
+
+#~ msgid "This only includes calls and not overall metrics."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**csv** -- `calls` in CSV format."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Deserialize a report from JSON."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "Report serialize via :py:meth:`json`."
+#~ msgstr ""
+
+#~ msgid "**report** -- The deserialized report."
+#~ msgstr ""
+
+#~ msgid "Convert this profiling report into JSON format."
+#~ msgstr ""
+
+#~ msgid "Example output:"
+#~ msgstr ""
+
+#~ msgid "**json** -- Formatted JSON"
+#~ msgstr ""
+
+#~ msgid "Generate a human-readable table"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If aggregate is true, whether to "
+#~ "sort call frames by descending duration."
+#~ "  If aggregate is False, whether to"
+#~ " sort frames by order of appearancei"
+#~ " n the program."
+#~ msgstr ""
+
+#~ msgid "Whether to join multiple calls to the same op into a single line."
+#~ msgstr ""
+
+#~ msgid "Whether to include the sum of each column."
+#~ msgstr ""
+
+#~ msgid "**table** -- A human-readable table"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Collect performance information of a "
+#~ "function execution. Usually used with a"
+#~ " compiled PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This information can include performance "
+#~ "counters like cache hits and FLOPs "
+#~ "that are useful in debugging performance"
+#~ " issues of individual PrimFuncs. Different"
+#~ " metrics can be collected depending "
+#~ "on which MetricCollector is used."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Module containing the function to profile."
+#~ msgstr ""
+
+#~ msgid "Device to run the function on."
+#~ msgstr ""
+
+#~ msgid ":py:class:`MetricCollector` which will collect performance information."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Name of the function in `mod` to"
+#~ " profile. Defaults to the `entry_name` "
+#~ "of `mod`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Number of iterations to run the "
+#~ "function before collecting performance "
+#~ "information. Recommended to set this "
+#~ "larger than 0 for consistent cache "
+#~ "effects. Defaults to 10."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**prof** -- PackedFunc which takes the"
+#~ " same arguments as the `mod[func_name]` "
+#~ "and returns performance metrics as a "
+#~ "`Dict[str, ObjectRef]` where values can "
+#~ "be `CountNode`, `DurationNode`, `PercentNode`."
+#~ msgstr ""
+

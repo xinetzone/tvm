@@ -1,0 +1,855 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/reference/api/python/relay/testing.rst:19
+msgid "tvm.relay.testing"
+msgstr ""
+
+#: of tvm.relay.testing.mlp:1
+msgid "a simple multilayer perceptron"
+msgstr ""
+
+#: of tvm.relay.testing.mlp.get_net:1
+msgid "Get network a simple multilayer perceptron."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:5
+#: tvm.relay.testing.densenet.get_workload:13
+#: tvm.relay.testing.inception_v3.get_net:4
+#: tvm.relay.testing.inception_v3.get_workload:6
+#: tvm.relay.testing.lstm.get_workload:9 tvm.relay.testing.lstm.lstm_cell:9
+#: tvm.relay.testing.mlp.get_net:4 tvm.relay.testing.mlp.get_workload:6
+#: tvm.relay.testing.mobilenet.get_workload:6
+#: tvm.relay.testing.resnet.get_workload:6
+#: tvm.relay.testing.squeezenet.get_net:6
+#: tvm.relay.testing.squeezenet.get_workload:6 tvm.relay.testing.vgg.get_net:4
+#: tvm.relay.testing.vgg.get_workload:6
+msgid "batch_size"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.lstm.lstm_cell:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.resnet.residual_unit:-1 tvm.relay.testing.resnet.resnet:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
+msgid "int"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:6
+#: tvm.relay.testing.inception_v3.get_net:4
+#: tvm.relay.testing.inception_v3.get_workload:6
+#: tvm.relay.testing.lstm.get_workload:10 tvm.relay.testing.mlp.get_net:4
+#: tvm.relay.testing.mlp.get_workload:6
+#: tvm.relay.testing.mobilenet.get_workload:6
+#: tvm.relay.testing.resnet.get_workload:6
+#: tvm.relay.testing.squeezenet.get_net:6
+#: tvm.relay.testing.squeezenet.get_workload:6 tvm.relay.testing.vgg.get_net:4
+#: tvm.relay.testing.vgg.get_workload:6
+msgid "The batch size used in the model"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:7
+#: tvm.relay.testing.inception_v3.get_workload:9
+#: tvm.relay.testing.mlp.get_net:7 tvm.relay.testing.mlp.get_workload:9
+#: tvm.relay.testing.mobilenet.get_workload:9
+#: tvm.relay.testing.resnet.get_workload:9 tvm.relay.testing.resnet.resnet:15
+#: tvm.relay.testing.squeezenet.get_workload:9 tvm.relay.testing.vgg.get_net:10
+#: tvm.relay.testing.vgg.get_workload:9
+msgid "num_classes"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
+msgid "int, optional"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:7 tvm.relay.testing.mlp.get_net:7
+#: tvm.relay.testing.mlp.get_workload:9 tvm.relay.testing.vgg.get_net:10
+#: tvm.relay.testing.vgg.get_workload:9
+msgid "Number of claseses"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:16
+#: tvm.relay.testing.inception_v3.get_net:10
+#: tvm.relay.testing.inception_v3.get_workload:12
+#: tvm.relay.testing.mlp.get_net:10 tvm.relay.testing.mlp.get_workload:12
+#: tvm.relay.testing.mobilenet.get_workload:12
+#: tvm.relay.testing.resnet.get_workload:15
+#: tvm.relay.testing.squeezenet.get_net:9
+#: tvm.relay.testing.squeezenet.get_workload:15 tvm.relay.testing.vgg.get_net:7
+#: tvm.relay.testing.vgg.get_workload:12
+msgid "image_shape"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
+msgid "tuple, optional"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:10
+#: tvm.relay.testing.inception_v3.get_workload:12
+#: tvm.relay.testing.mlp.get_net:10 tvm.relay.testing.mlp.get_workload:12
+#: tvm.relay.testing.resnet.get_workload:15
+#: tvm.relay.testing.squeezenet.get_net:9
+#: tvm.relay.testing.squeezenet.get_workload:15 tvm.relay.testing.vgg.get_net:7
+#: tvm.relay.testing.vgg.get_workload:12
+msgid "The input image shape"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:16
+#: tvm.relay.testing.densenet.get_workload:19
+#: tvm.relay.testing.inception_v3.get_net:13
+#: tvm.relay.testing.inception_v3.get_workload:15
+#: tvm.relay.testing.lstm.get_workload:11 tvm.relay.testing.mlp.get_net:13
+#: tvm.relay.testing.mlp.get_workload:15
+#: tvm.relay.testing.mobilenet.get_workload:15
+#: tvm.relay.testing.resnet.get_workload:21 tvm.relay.testing.resnet.resnet:26
+#: tvm.relay.testing.squeezenet.get_workload:18
+#: tvm.relay.testing.vgg.get_net:13 tvm.relay.testing.vgg.get_workload:15
+msgid "dtype"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.mlp.get_net:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_net:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_net:-1 tvm.relay.testing.vgg.get_workload:-1
+msgid "str, optional"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:16
+#: tvm.relay.testing.inception_v3.get_net:13
+#: tvm.relay.testing.inception_v3.get_workload:15
+#: tvm.relay.testing.lstm.get_workload:12 tvm.relay.testing.mlp.get_net:13
+#: tvm.relay.testing.mlp.get_workload:15
+#: tvm.relay.testing.mobilenet.get_workload:15
+#: tvm.relay.testing.resnet.get_workload:21
+#: tvm.relay.testing.squeezenet.get_workload:18
+#: tvm.relay.testing.vgg.get_net:13 tvm.relay.testing.vgg.get_workload:15
+msgid "The data type"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:19
+#: tvm.relay.testing.densenet.get_workload:22
+#: tvm.relay.testing.inception_v3.get_net:16
+#: tvm.relay.testing.inception_v3.get_workload:18
+#: tvm.relay.testing.lstm.get_workload:14 tvm.relay.testing.lstm.lstm_cell:12
+#: tvm.relay.testing.mlp.get_net:16 tvm.relay.testing.mlp.get_workload:18
+#: tvm.relay.testing.mobilenet.get_workload:22
+#: tvm.relay.testing.resnet.get_workload:27
+#: tvm.relay.testing.squeezenet.get_workload:21
+#: tvm.relay.testing.vgg.get_workload:24
+msgid "Returns"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:17
+#: tvm.relay.testing.mlp.get_net:17
+msgid "net"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:-1
+#: tvm.relay.testing.mlp.get_net:-1
+msgid "relay.Function"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:18
+#: tvm.relay.testing.mlp.get_net:18
+msgid "The dataflow."
+msgstr ""
+
+#: of tvm.relay.testing.mlp.get_workload:1
+msgid "Get benchmark workload for a simple multilayer perceptron."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:4
+#: tvm.relay.testing.densenet.get_workload:4
+#: tvm.relay.testing.inception_v3.get_workload:4
+#: tvm.relay.testing.lstm.get_workload:4 tvm.relay.testing.lstm.lstm_cell:4
+#: tvm.relay.testing.mlp.get_workload:4
+#: tvm.relay.testing.mobilenet.get_workload:4
+#: tvm.relay.testing.resnet.get_workload:4
+#: tvm.relay.testing.resnet.residual_unit:4 tvm.relay.testing.resnet.resnet:4
+#: tvm.relay.testing.squeezenet.get_net:4
+#: tvm.relay.testing.squeezenet.get_workload:4 tvm.relay.testing.vgg.get_net:2
+#: tvm.relay.testing.vgg.get_workload:4
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:20
+#: tvm.relay.testing.inception_v3.get_workload:20
+#: tvm.relay.testing.lstm.get_workload:15 tvm.relay.testing.mlp.get_workload:20
+#: tvm.relay.testing.mobilenet.get_workload:24
+#: tvm.relay.testing.resnet.get_workload:29
+#: tvm.relay.testing.squeezenet.get_workload:23
+#: tvm.relay.testing.vgg.get_workload:26
+msgid "mod"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_workload:-1
+msgid "tvm.IRModule"
+msgstr ""
+
+#: of tvm.relay.testing.mlp.get_workload:20
+msgid "The relay module that contains a mlp network."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:22
+#: tvm.relay.testing.densenet.get_workload:26
+#: tvm.relay.testing.inception_v3.get_workload:22
+#: tvm.relay.testing.lstm.get_workload:17 tvm.relay.testing.mlp.get_workload:22
+#: tvm.relay.testing.mobilenet.get_workload:26
+#: tvm.relay.testing.resnet.get_workload:31
+#: tvm.relay.testing.squeezenet.get_workload:25
+#: tvm.relay.testing.vgg.get_workload:28
+msgid "params"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:-1
+#: tvm.relay.testing.densenet.get_workload:-1
+#: tvm.relay.testing.inception_v3.get_workload:-1
+#: tvm.relay.testing.lstm.get_workload:-1 tvm.relay.testing.mlp.get_workload:-1
+#: tvm.relay.testing.mobilenet.get_workload:-1
+#: tvm.relay.testing.resnet.get_workload:-1
+#: tvm.relay.testing.squeezenet.get_workload:-1
+#: tvm.relay.testing.vgg.get_workload:-1
+msgid "dict of str to NDArray"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:23
+#: tvm.relay.testing.inception_v3.get_workload:23
+#: tvm.relay.testing.lstm.get_workload:18 tvm.relay.testing.mlp.get_workload:23
+#: tvm.relay.testing.mobilenet.get_workload:27
+#: tvm.relay.testing.resnet.get_workload:32
+#: tvm.relay.testing.squeezenet.get_workload:26
+#: tvm.relay.testing.vgg.get_workload:29
+msgid "The parameters."
+msgstr ""
+
+#: of tvm.relay.testing.resnet:1
+msgid ""
+"Adapted from "
+"https://github.com/tornadomeet/ResNet/blob/master/symbol_resnet.py "
+"Original author Wei Wu"
+msgstr ""
+
+#: of tvm.relay.testing.resnet:4
+msgid "Implemented the following paper:"
+msgstr ""
+
+#: of tvm.relay.testing.resnet:6
+msgid ""
+"Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. \"Identity Mappings in"
+" Deep Residual Networks\""
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_net:1
+msgid ""
+"Adapted from "
+"https://github.com/tornadomeet/ResNet/blob/master/train_resnet.py "
+"Original author Wei Wu"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:1
+msgid "Get benchmark workload for resnet"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_workload:9
+#: tvm.relay.testing.mobilenet.get_workload:9
+#: tvm.relay.testing.resnet.get_workload:9
+#: tvm.relay.testing.squeezenet.get_workload:9
+msgid "Number of classes"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:12 tvm.relay.testing.vgg.get_net:16
+#: tvm.relay.testing.vgg.get_workload:18
+msgid "num_layers"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:12
+msgid "Number of layers"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:18
+#: tvm.relay.testing.resnet.resnet:24
+msgid "layout: str"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:18
+#: tvm.relay.testing.resnet.resnet:24
+msgid "The data layout for conv2d"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:24
+msgid "kwargs"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:-1
+msgid "dict"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:24
+msgid "Extra arguments"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.get_workload:29
+msgid "The relay module that contains a ResNet network."
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:1
+msgid "Return ResNet Unit symbol for building ResNet"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:6
+msgid "data"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:-1
+#: tvm.relay.testing.resnet.resnet:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:6
+msgid "Input data"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:9
+msgid "num_filter"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:9
+msgid "Number of output channels"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:12
+msgid "bnf"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:12
+msgid "Bottle neck channels factor with regard to num_filter"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:15
+msgid "stride"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:-1
+msgid "tuple"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:15
+msgid "Stride used in convolution"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:19
+msgid "dim_match"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:-1
+#: tvm.relay.testing.resnet.resnet:-1 tvm.relay.testing.vgg.get_workload:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:18
+msgid ""
+"True means channel number between input and output is the same, otherwise"
+" means differ"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:21
+msgid "name"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.residual_unit:22
+msgid "Base name of the operators"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:1
+msgid "Return ResNet Program."
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:6
+msgid "units"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:-1
+msgid "list"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:6
+msgid "Number of units in each stage"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:9
+msgid "num_stages"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:9
+msgid "Number of stages"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:12
+msgid "filter_list"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:12
+msgid "Channel size of each stage"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:15
+msgid "Output size of symbol"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:18
+msgid "data_shape"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:-1
+msgid "tuple of int."
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:18
+msgid "The shape of input data."
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:21
+msgid "bottle_neck"
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:21
+msgid "Whether apply bottleneck transformation."
+msgstr ""
+
+#: of tvm.relay.testing.resnet.resnet:27
+msgid "The global data type."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan:1
+msgid "Net of the generator of DCGAN"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan:3
+msgid ""
+"Adopted from: https://github.com/tqchen/mxnet-"
+"gan/blob/main/mxgan/generator.py"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan:6
+msgid ""
+"Reference: Radford, Alec, Luke Metz, and Soumith Chintala. \"Unsupervised"
+" representation learning with deep convolutional generative adversarial "
+"networks.\" arXiv preprint arXiv:1511.06434 (2015)."
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.deconv2d:1
+msgid "a deconv layer that enlarges the feature map"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.deconv2d_bn_relu:1
+msgid "a block of deconv + batch norm + relu"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_net:1
+msgid "get net of dcgan generator"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:1
+msgid "Get benchmark workload for a DCGAN generator"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:7
+msgid "oshape"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:8
+msgid "The shape of output image, layout=\"CHW\""
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:9
+msgid "ngf: int, optional"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:10
+msgid "The number of final feature maps in the generator"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:11
+msgid "random_len"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:12
+msgid "The length of random input"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:13
+msgid "layout: str, optional"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:14
+msgid "The layout of conv2d transpose"
+msgstr ""
+
+#: of tvm.relay.testing.dcgan.get_workload:21
+msgid "The relay module that contains a DCGAN network."
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet:1
+msgid "Port of NNVM version of MobileNet to Relay."
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.conv_block:1
+msgid "Helper function to construct conv_bn-relu"
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.get_workload:1
+msgid "Get benchmark workload for mobilenet"
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.get_workload:12
+msgid "The input image shape, cooperate with layout"
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.get_workload:19
+msgid "layout"
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.get_workload:18
+msgid ""
+"The data layout of image_shape and the operators cooperate with "
+"image_shape"
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.get_workload:24
+msgid "The relay module that contains a MobileNet network."
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.mobile_net:1
+msgid "Function to construct a MobileNet"
+msgstr ""
+
+#: of tvm.relay.testing.mobilenet.separable_conv_block:1
+msgid "Helper function to get a separable conv block"
+msgstr ""
+
+#: of tvm.relay.testing.lstm:1
+msgid "Implementation of a Long Short-Term Memory (LSTM) cell."
+msgstr ""
+
+#: of tvm.relay.testing.lstm:3
+msgid ""
+"Adapted from: "
+"https://gist.github.com/merrymercy/5eb24e3b019f84200645bd001e9caae9"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_net:1
+msgid "Constructs an unrolled RNN with LSTM cells"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:1
+msgid "Get benchmark workload for an LSTM RNN."
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:5
+msgid "iterations"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:6
+msgid "The number of iterations in the desired LSTM RNN."
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:7 tvm.relay.testing.lstm.lstm_cell:6
+msgid "num_hidden"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:8
+msgid "The size of the hiddxen state"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:-1
+msgid "int, optional (default 1)"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:-1
+msgid "str, optional (default \"float32\")"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.get_workload:16
+msgid "The relay module that contains a LSTM network."
+msgstr ""
+
+#: of tvm.relay.testing.lstm.lstm_cell:1
+msgid "Long-Short Term Memory (LSTM) network cell."
+msgstr ""
+
+#: of tvm.relay.testing.lstm.lstm_cell:6
+msgid "Number of units in output symbol."
+msgstr ""
+
+#: of tvm.relay.testing.lstm.lstm_cell:9
+msgid "Batch size (length of states)."
+msgstr ""
+
+#: of tvm.relay.testing.lstm.lstm_cell:17
+msgid "result"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.lstm_cell:-1
+msgid "tvm.relay.Function"
+msgstr ""
+
+#: of tvm.relay.testing.lstm.lstm_cell:14
+msgid ""
+"A Relay function that evaluates an LSTM cell. The function takes in a "
+"tensor of input data, a tuple of two states, and weights and biases for "
+"dense operations on the inputs and on the state. It returns a tuple with "
+"two members, an output tensor and a tuple of two new states."
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3:1
+msgid "Inception V3, suitable for images with around 299 x 299"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3:3
+msgid ""
+"Reference: Szegedy, Christian, et al. \"Rethinking the Inception "
+"Architecture for Computer Vision.\" arXiv preprint arXiv:1512.00567 "
+"(2015)."
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3:7
+msgid "Adopted from https://github.com/apache/incubator-mxnet/blob/master/"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3:8
+msgid "example/image-classification/symbols/inception-v3.py"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_net:1
+msgid "Get network a Inception v3 network."
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_workload:1
+msgid "Get benchmark workload for InceptionV3"
+msgstr ""
+
+#: of tvm.relay.testing.inception_v3.get_workload:20
+msgid "The relay module that contains an Inception V3 network."
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet:1
+msgid "Symbol of SqueezeNet"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet:3
+msgid ""
+"Reference: Iandola, Forrest N., et al. \"Squeezenet: Alexnet-level "
+"accuracy with 50x fewer parameters and< 0.5 mb model size.\" (2016)."
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_net:1
+msgid "Get symbol of SqueezeNet"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_net:12
+msgid "num_classes: int"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_net:12
+msgid "The number of classification results"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_net:14
+#: tvm.relay.testing.squeezenet.get_workload:12
+msgid "version"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_net:15
+#: tvm.relay.testing.squeezenet.get_workload:12
+msgid "\"1.0\" or \"1.1\" of SqueezeNet"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_workload:1
+msgid "Get benchmark workload for SqueezeNet"
+msgstr ""
+
+#: of tvm.relay.testing.squeezenet.get_workload:23
+msgid "The relay module that contains a SqueezeNet network."
+msgstr ""
+
+#: of tvm.relay.testing.vgg:1
+msgid "References:"
+msgstr ""
+
+#: of tvm.relay.testing.vgg:3
+msgid ""
+"Simonyan, Karen, and Andrew Zisserman. \"Very deep convolutional networks"
+" for large-scale image recognition.\" arXiv preprint arXiv:1409.1556 "
+"(2014)."
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_classifier:1
+msgid "Get VGG classifier layers as fc layers."
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_feature:1
+msgid "Get VGG feature body as stacks of convolutions."
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_net:16 tvm.relay.testing.vgg.get_workload:18
+msgid "Number of layers for the variant of vgg. Options are 11, 13, 16, 19."
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_net:18 tvm.relay.testing.vgg.get_workload:21
+msgid "batch_norm"
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_net:-1
+msgid "bool, default False"
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_net:19 tvm.relay.testing.vgg.get_workload:21
+msgid "Use batch normalization."
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_workload:1
+msgid "Get benchmark workload for VGG nets."
+msgstr ""
+
+#: of tvm.relay.testing.vgg.get_workload:26
+msgid "The relay module that contains a VGG network."
+msgstr ""
+
+#: of tvm.relay.testing.densenet:1
+msgid ""
+"Port of MxNet version of Densenet to Relay. https://github.com/apache"
+"/incubator-"
+"mxnet/blob/master/python/mxnet/gluon/model_zoo/vision/densenet.py"
+msgstr ""
+
+#: of tvm.relay.testing.densenet._make_dense_block:1
+msgid "Makes a block of dense layers of the specified size."
+msgstr ""
+
+#: of tvm.relay.testing.densenet._make_dense_layer:1
+msgid "Single densenet layer."
+msgstr ""
+
+#: of tvm.relay.testing.densenet._make_dense_net:1
+msgid "Builds up a densenet."
+msgstr ""
+
+#: of tvm.relay.testing.densenet._make_transition:1
+msgid "Transition between layers."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:1
+msgid "Gets benchmark workload for densenet."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:7
+msgid "densenet_size"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:-1
+msgid "int, optional (default 121)"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:6
+msgid ""
+"Parameter for the network size. The supported sizes are 121, 161, 169, "
+"and 201."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:10
+msgid "classes"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:-1
+msgid "int, optional (default 1000)"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:10
+msgid "The number of classes."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:-1
+msgid "int, optional (detault 4)"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:13
+msgid "The batch size for the network."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:-1
+msgid "shape, optional (default (3, 224, 224))"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:16
+msgid "The shape of the input data."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:-1
+msgid "data type, optional (default 'float32')"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:19
+msgid "The data type of the input data."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:24
+msgid "mod: tvm.IRModule"
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:24
+msgid "The relay module that contains a DenseNet network."
+msgstr ""
+
+#: of tvm.relay.testing.densenet.get_workload:27
+msgid "The benchmark paraeters."
+msgstr ""
+

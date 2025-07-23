@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-13 11:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../notebook/docs/arch/model_library_format.rst:21
+msgid "Model Library Format"
+msgstr "Model 库格式"
+
+#: ../../notebook/docs/arch/model_library_format.rst:24
+msgid "About Model Library Format"
+msgstr "关于 Model 库格式"
+
+#: ../../notebook/docs/arch/model_library_format.rst:26
+msgid ""
+"TVM traditionally exports generated libraries as Dynamic Shared Objects "
+"(e.g. DLLs (Windows) or .so (linux)). Inferences can be performed using "
+"those libraries by loading them into an executable using "
+"``libtvm_runtime.so``. This process is very dependent on services "
+"provided by traditional OS."
+msgstr ""
+"TVM 传统上将生成的库作为动态共享对象（例如 DLLs（Windows）或 .so（linux））导出。"
+"可以使用这些库通过使用 ``libtvm_runtime.so`` 将其加载到可执行文件中来执行推理。"
+"此过程非常依赖于传统操作系统提供的服务。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:30
+msgid ""
+"For deployment to unconventional platforms (e.g. those lacking "
+"traditional OS), TVM provides another output format, Model Library "
+"Format. Initially, the microTVM project is the primary use case for this "
+"format. Should it become useful in other use cases (and in particular, "
+"should it become possible to export BYOC artifacts in Model Library "
+"Format), it could be used as a general-purpose TVM export format.  Model "
+"Library Format is a tarball containing a file for each piece of the TVM "
+"compiler output."
+msgstr ""
+"对于部署到非传统平台（例如缺乏传统操作系统的平台），TVM 提供了另一种输出格式，即模型库格式。"
+"最初，microTVM 项目是此格式的主要用例。"
+"如果它在其他用例中变得有用（特别是如果它成为可能以 Model Library 格式导出 BYOC 制品），则可以将其用作通用的 TVM 导出格式。"
+"Model Library 格式包含 TVM 编译器输出的每个文件的 tarball。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:38
+msgid "What can be Exported?"
+msgstr "可以输出什么？"
+
+#: ../../notebook/docs/arch/model_library_format.rst:40
+msgid ""
+"At the time of writing, export is limited to full models built with "
+"``tvm.relay.build``."
+msgstr "在撰写本文时，导出仅限于使用  ``tvm.relay.build`` 构建的完整模型。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:43
+msgid "Directory Layout"
+msgstr "直接布局"
+
+#: ../../notebook/docs/arch/model_library_format.rst:45
+msgid ""
+"Model Library Format is contained within a tarball. All paths are "
+"relative to the root of the tarball:"
+msgstr ""
+"Model Library Format 包含在 tarball 中。所有路径都相对于 tarball 的根目录："
+
+#: ../../notebook/docs/arch/model_library_format.rst:48
+msgid "``/`` - Root of the tarball"
+msgstr "``/`` - tarball 的根目录"
+
+#: ../../notebook/docs/arch/model_library_format.rst:50
+msgid "``codegen`` - Root directory for all generated device code"
+msgstr "``codegen`` - 所有生成的设备代码的根目录"
+
+#: ../../notebook/docs/arch/model_library_format.rst:52
+msgid "(see `codegen`_ section)"
+msgstr "阅读 `codegen`_ 部分"
+
+#: ../../notebook/docs/arch/model_library_format.rst:54
+msgid ""
+"``executor-config/`` - Configuration for the executor which drives model "
+"inference"
+msgstr "``executor-config/`` - 驱动模型推理执行器的配置"
+
+#: ../../notebook/docs/arch/model_library_format.rst:56
+msgid "``graph/`` - Root directory containing configuration for the GraphExecutor"
+msgstr "``graph/`` - 包含 GraphExecutor 配置的根目录"
+
+#: ../../notebook/docs/arch/model_library_format.rst:58
+msgid "``graph.json`` - GraphExecutor JSON configuration"
+msgstr "``graph.json`` - GraphExecutor JSON 配置"
+
+#: ../../notebook/docs/arch/model_library_format.rst:60
+msgid "``metadata.json`` - Machine-parseable metadata for this model"
+msgstr "``metadata.json`` - 该模型的机器可解析元数据"
+
+#: ../../notebook/docs/arch/model_library_format.rst:62
+msgid "``parameters/`` - Root directory where simplified parameters are placed"
+msgstr "``parameters/`` - 简化参数所放置的根目录"
+
+#: ../../notebook/docs/arch/model_library_format.rst:64
+msgid ""
+"``<model_name>.params`` - Parameters for the model tvm.relay._save_params"
+" format"
+msgstr "``<model_name>.params`` - tvm.relay._save_params 格式的模型参数"
+
+#: ../../notebook/docs/arch/model_library_format.rst:66
+msgid "``src/`` - Root directory for all source code consumed by TVM"
+msgstr "``src/`` - TVM 使用的所有源代码的根目录"
+
+#: ../../notebook/docs/arch/model_library_format.rst:68
+msgid "``relay.txt`` - Relay source code for the generated model"
+msgstr "``relay.txt`` - 生成模型的 Relay 源代码"
+
+#: ../../notebook/docs/arch/model_library_format.rst:71
+msgid "Description of Sub-directories"
+msgstr ""
+
+#: ../../notebook/docs/arch/model_library_format.rst:76
+msgid "``codegen``"
+msgstr ""
+
+#: ../../notebook/docs/arch/model_library_format.rst:78
+msgid ""
+"All TVM-generated code is placed in this directory. At the time of "
+"writing, there is 1 file per Module in the generated Module tree, though "
+"this restriction may change in the future. Files in this directory should"
+" have filenames of the form "
+"``<target>/(lib|src)/<unique_name>.<format>``."
+msgstr ""
+"所有由 TVM 生成的代码都存放在该目录中。在编写本文时，每个生成的模块树中有 1 "
+"个文件，但是这种限制在未来可能会改变。该目录中的文件应该具有以下格式的文件名: "
+"``<target>/(lib|src)/<unique_name>.<format>``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:82
+msgid "These components are described below:"
+msgstr "以下将对这些组件进行描述："
+
+#: ../../notebook/docs/arch/model_library_format.rst:84
+msgid ""
+"``<target>`` - Identifies the TVM target on which the code should run. "
+"Currently, only ``host`` is supported."
+msgstr "``<target>`` - 标识应在其上运行代码的 TVM 目标。目前仅支持 ``host``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:86
+msgid ""
+"``<unique_name>`` - A unique slug identifying this file. Currently "
+"``lib<n>``, with ``<n>>`` an auto-incrementing integer."
+msgstr "``<unique_name>`` - 用于标识此文件的唯一短标识符。当前为 ``lib<n>``，其中 ``<n>>`` 是自增的整数。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:88
+msgid ""
+"``<format>`` - Suffix identifying the filename format. Currently ``c`` or"
+" ``o``."
+msgstr "``<format>`` - 用于标识文件名格式的后缀。当前为 ``c`` 或 ``o``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:90
+msgid "An example directory tree for a CPU-only model is shown below:"
+msgstr "下面是 CPU-only 模型的目录树示例："
+
+#: ../../notebook/docs/arch/model_library_format.rst:92
+msgid "``codegen/`` - Codegen directory"
+msgstr "``codegen/`` - Codegen 目录"
+
+#: ../../notebook/docs/arch/model_library_format.rst:94
+msgid "``host/`` - Generated code for ``target_host``"
+msgstr "``host/`` - 为 ``target_host`` 生成的代码。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:96
+msgid "``lib/`` - Generated binary object files"
+msgstr "``lib/`` - 生成的二进制目标文件。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:98
+msgid "``lib0.o`` - LLVM module (if ``llvm`` target is used)"
+msgstr "``lib0.o`` - LLVM 模块（如果使用 ``llvm`` 目标）。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:99
+msgid "``lib1.o`` - LLVM CRT Metadata Module (if ``llvm`` target is used)"
+msgstr "``lib1.o`` - LLVM CRT 元数据模块（如果使用 ``llvm`` 目标）。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:101
+msgid "``src/`` - Generated C source"
+msgstr "``src/`` - 生成的 C 源代码。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:103
+msgid "``lib0.c`` - C module (if ``c`` target is used)"
+msgstr "``lib0.c`` - C 模块（如果使用 ``c`` 目标）。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:104
+msgid "``lib1.c`` - C CRT Metadata module (if ``c`` target is used)"
+msgstr "``lib1.c`` - C CRT 元数据模块（如果使用 ``c`` 目标）。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:107
+msgid "``executor-config``"
+msgstr ""
+
+#: ../../notebook/docs/arch/model_library_format.rst:109
+msgid ""
+"Contains machine-parsable configuration for executors which can drive "
+"model inference. Currently, only the GraphExecutor produces configuration"
+" for this directory, in ``graph/graph.json``. This file should be read in"
+" and the resulting string supplied to the ``GraphExecutor()`` constructor"
+" for parsing."
+msgstr ""
+"包含可驱动模型推断的执行器的机器可解析配置。目前，仅 GraphExecutor 会生成该目录的配置，位于 "
+"``graph/graph.json`` 中。应读取该文件并将结果字符串提供给 ``GraphExecutor()`` 构造函数进行解析。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:115
+msgid "``parameters``"
+msgstr ""
+
+#: ../../notebook/docs/arch/model_library_format.rst:117
+msgid ""
+"Contains machine-parseable parameters. A variety of formats may be "
+"provided, but at present, only the format produced by "
+"``tvm.relay._save_params`` is supplied. When building with "
+"``tvm.relay.build``,  the ``name`` parameter is considered to be the "
+"model name. A single file is created in this directory "
+"``<model_name>.json``."
+msgstr ""
+"包含机器可解析参数。可以提供各种格式，但目前只提供由 ``tvm.relay._save_params`` 生成的格式。使用 "
+"``tvm.relay.build`` 进行构建时，``name`` 参数被认为是模型名称。在该目录中创建单个文件 "
+"``<model_name>.json``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:123
+msgid "``src``"
+msgstr ""
+
+#: ../../notebook/docs/arch/model_library_format.rst:125
+msgid ""
+"Contains source code parsed by TVM. Currently, just the Relay source code"
+" is created in ``src/relay.txt``."
+msgstr "包含由 TVM 解析的源代码。目前，仅 Relay 源代码在 ``src/relay.txt`` 中创建。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:129
+msgid "Metadata"
+msgstr ""
+
+#: ../../notebook/docs/arch/model_library_format.rst:131
+msgid ""
+"Machine-parseable metadata is placed in a file ``metadata.json`` at the "
+"root of the tarball. Metadata is a dictionary with these keys:"
+msgstr "机器可解析元数据放置在压缩文件的根目录下的 ``metadata.json`` 文件中。元数据是包含以下键的字典："
+
+#: ../../notebook/docs/arch/model_library_format.rst:134
+#, python-format
+msgid ""
+"``export_datetime``: Timestamp when this Model Library Format was "
+"generated, in `strftime <https://docs.python.org/3/library/datetime.html"
+"#strftime-strptime-behavior>`_ format ``\"%Y-%M-%d %H:%M:%SZ\",``."
+msgstr ""
+"``export_datetime``：此模型库格式生成时的时间戳，格式为 `strftime "
+"<https://docs.python.org/3/library/datetime.html#strftime-strptime-"
+"behavior>`_ 的 ``\"%Y-%M-%d %H:%M:%SZ\",``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:137
+msgid ""
+"``memory``: A summary of the memory usage of each generated function. "
+"Documented in `Memory Usage Summary`_."
+msgstr "``memory``：每个生成函数的内存使用情况的摘要，详细说明在 `Memory Usage Summary`_ 中。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:139
+msgid ""
+"``model_name``: The name of this model (e.g. the ``name`` parameter "
+"supplied to ``tvm.relay.build``)."
+msgstr "``model_name``：此模型的名称（例如提供给 ``tvm.relay.build`` 的 ``name`` 参数）."
+
+#: ../../notebook/docs/arch/model_library_format.rst:141
+msgid ""
+"``executors``: A list of executors supported by this model. Currently, "
+"this list is always ``[\"graph\"]``."
+msgstr "``executors``：此模型支持的执行器列表。当前，此列表总是 ``[\"graph\"]``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:143
+msgid ""
+"``target``: A dictionary mapping ``device_type`` (the underlying integer,"
+" as a string) to the sub-target which describes that relay backend used "
+"for that ``device_type``."
+msgstr ""
+"``target``：将 ``device_type``（作为字符串的底层整数）映射到描述用于该 ``device_type`` 的 Relay "
+"后端的子目标的字典。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:145
+msgid ""
+"``version``: A numeric version number that identifies the format used in "
+"this Model Library Format. This number is incremented when the metadata "
+"structure or on-disk structure changes. This document reflects version "
+"``5``."
+msgstr "``version``：数字版本号，用于标识此模型库格式中使用的格式。当元数据结构或磁盘结构更改时，此数字将递增。此文档反映版本 ``5``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:150
+msgid "Memory Usage Summary"
+msgstr "内存使用概要"
+
+#: ../../notebook/docs/arch/model_library_format.rst:152
+msgid "A dictionary with these sub-keys:"
+msgstr "一个包含这些子键的字典："
+
+#: ../../notebook/docs/arch/model_library_format.rst:154
+msgid ""
+"``\"main\"``: ``list[MainFunctionWorkspaceUsage]``. A list summarizing "
+"memory usage for each workspace used by the main function and all sub-"
+"functions invoked."
+msgstr ""
+"``\"main\"``: "
+"``list[MainFunctionWorkspaceUsage]``。一个列表，总结了主函数和所有调用的子函数使用的每个工作空间的内存使用情况。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:156
+msgid ""
+"``\"operator_functions\"``: ``map[string, "
+"list[FunctionWorkspaceUsage]]``. Maps operator function name to a list "
+"summarizing memory usage for each workpace used by the function."
+msgstr ""
+"``\"operator_functions\"``: ``map[string, "
+"list[FunctionWorkspaceUsage]]`。将算子函数名称映射到列表，该列表总结了函数使用的每个工作空间的内存使用情况。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:159
+msgid "A ``MainFunctionWorkspaceUsage`` is a dict with these keys:"
+msgstr "``MainFunctionWorkspaceUsage`` 是带有以下键的字典："
+
+#: ../../notebook/docs/arch/model_library_format.rst:161
+#: ../../notebook/docs/arch/model_library_format.rst:170
+msgid ""
+"``\"device\"``: ``int``. The ``device_type`` associated with this "
+"workspace."
+msgstr "``device``：``int``。与此工作空间关联的 ``device_type``。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:162
+msgid ""
+"``\"workspace_size_bytes\"``: ``int``. Number of bytes needed in this "
+"workspace by this function and all sub-functions invoked."
+msgstr "``\"workspace_size_bytes\"``：``int``。该函数及其调用的所有子函数所需的此工作空间中的字节数。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:164
+msgid ""
+"``\"constants_size_bytes\"``: ``int``. Size of the constants used by the "
+"main function."
+msgstr "``\"constants_size_bytes\"``：``int``。主函数使用的常量的大小。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:165
+msgid ""
+"``\"io_size_bytes\"``: ``int``. Sum of the sizes of the buffers used from"
+" this workspace by this function and sub-functions."
+msgstr "``\"io_size_bytes\"``：``int``。该函数及其子函数从此工作空间中使用的缓冲区大小的总和。"
+
+#: ../../notebook/docs/arch/model_library_format.rst:168
+msgid "A ``FunctionWorkspaceUsage`` is a dict with these keys:"
+msgstr "``FunctionWorkspaceUsage`` 是具有以下键的字典："
+
+#: ../../notebook/docs/arch/model_library_format.rst:171
+msgid ""
+"``\"workspace_size_bytes\"``: ``int``. Number of bytes needed in this "
+"workspace by this function."
+msgstr "``\"workspace_size_bytes\"``：``int``。此函数在此工作空间中所需的字节数。"

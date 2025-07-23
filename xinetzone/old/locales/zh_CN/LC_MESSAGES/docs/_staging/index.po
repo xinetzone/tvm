@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/index.rst:31
+msgid "Getting Started"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:40
+msgid "How To"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:53
+msgid "Deep Dive"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:61
+msgid "API Reference"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:68
+msgid "Legacy"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:80
+msgid "About"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:88
+msgid "Index"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:19
+msgid "Apache TVM Documentation"
+msgstr ""
+
+#: ../../doc/docs/_staging/index.rst:21
+msgid ""
+"Welcome to the documentation for Apache TVM, a deep learning compiler "
+"that enables access to high-performance machine learning anywhere for "
+"everyone. TVM's diverse community of hardware vendors, compiler engineers"
+" and ML researchers work together to build a unified, programmable "
+"software stack, that enriches the entire ML technology ecosystem and make"
+" it accessible to the wider ML community. TVM empowers users to leverage "
+"community-driven ML-based optimizations to push the limits and amplify "
+"the reach of their research and development, which in turn raises the "
+"collective performance of all ML, while driving its costs down."
+msgstr ""
+

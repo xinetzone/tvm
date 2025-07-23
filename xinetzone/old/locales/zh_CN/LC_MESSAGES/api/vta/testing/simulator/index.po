@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/testing/simulator/index.rst:2
+msgid "vta.testing.simulator"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:8
+msgid "Utilities to start simulator."
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:13
+msgid "Attributes"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:20:<autosummary>:1
+msgid ":py:obj:`DEBUG_SKIP_EXEC <vta.testing.simulator.DEBUG_SKIP_EXEC>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:20:<autosummary>:1
+msgid ":py:obj:`LIBS <vta.testing.simulator.LIBS>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:22
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid ":py:obj:`_load_sw <vta.testing.simulator._load_sw>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:38
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid "Load hardware library for simulator."
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid ":py:obj:`clear_stats <vta.testing.simulator.clear_stats>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:43
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid "Clear profiler statistics."
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid ":py:obj:`debug_mode <vta.testing.simulator.debug_mode>`\\ \\(flag\\)"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid "Set debug mode"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid ":py:obj:`enabled <vta.testing.simulator.enabled>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:57
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid "Check if simulator is enabled."
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid ":py:obj:`stats <vta.testing.simulator.stats>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:62
+#: ../../doc/api/vta/testing/simulator/index.rst:32:<autosummary>:1
+msgid "Get profiler statistics"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:34
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:48
+msgid "Set debug mode Paramaters ---------- flag : int"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:52
+msgid "The debug flag, 0 means clear all flags."
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:65
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:66
+msgid "stats"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:-1
+msgid "dict"
+msgstr ""
+
+#: ../../doc/api/vta/testing/simulator/index.rst:67
+msgid "Current profiler statistics"
+msgstr ""
+

@@ -1,0 +1,523 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/api/python/runtime/relax_vm.rst:19
+msgid "tvm.runtime.relax_vm"
+msgstr ""
+
+#: of tvm.runtime.relax_vm:1
+msgid "The Relax virtual machine."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine:1
+msgid "Relax VM runtime."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/runtime/relax_vm.rst of
+#: tvm.runtime.relax_vm.VirtualMachine._convert
+#: tvm.runtime.relax_vm.VirtualMachine._convert_func_named_args
+#: tvm.runtime.relax_vm.VirtualMachine._setup_device
+msgid "参数"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:1
+msgid "Construct a VirtualMachine wrapper object."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:4
+#: tvm.runtime.relax_vm.VirtualMachine.get_outputs:7
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_closure:4
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:9
+#: tvm.runtime.relax_vm.VirtualMachine.profile:4
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:15
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:10
+#: tvm.runtime.relax_vm.VirtualMachine.set_instrument:30
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:7
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:5
+msgid "rt_mod: Union[tvm.runtime.Module, tvm.relax.Executable]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:6
+msgid "Runtime module exported by the result of build."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:8
+msgid "device"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:-1
+msgid "Union[Device, List[Device]]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:9
+msgid "The device to deploy the module."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:11
+msgid "memory_cfg"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:-1
+msgid "Optional[Union[str, Dict[Device, str]]]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:12
+msgid ""
+"Config the type of memory allocator. The allocator type can be "
+"[\"naive\", \"pooled\"]. If memory_cfg is None, all devices will use "
+"pooled allocator by default. If memory_cfg is string, all devices will "
+"use the specified allocator type. If memory_cfg is a dict, each device "
+"uses the allocator type specified in the dict, or pooled allocator if not"
+" specified in the dict."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:19
+msgid "profile"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:-1
+msgid "Optional[bool]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.__init__:20
+msgid "Whether or not to enable profiling."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/runtime/relax_vm.rst of
+#: tvm.runtime.relax_vm.VirtualMachine._convert
+#: tvm.runtime.relax_vm.VirtualMachine._convert_func_named_args
+#: tvm.runtime.relax_vm.VirtualMachine._setup_device
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine._convert:1
+msgid "helper function to convert arguments to vm function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine._convert_func_named_args:1
+msgid ""
+"Takes named function parameters and returns a list of those needed, in "
+"the order they should appear"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine._setup_device:1
+msgid "init devices and allocators."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:1
+msgid ""
+"Get the value output by the function by the given name after a call of "
+"`invoke_stateful`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:4
+msgid ""
+"It is an error to call this function without first calling "
+"`invoke_stateful`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:8
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:10
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:8
+msgid "func_name: str"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:9
+msgid "The name of the function whose output should be fetched."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:12
+#: tvm.runtime.relax_vm.VirtualMachine.invoke_closure:12
+#: tvm.runtime.relax_vm.VirtualMachine.profile:12
+#: tvm.runtime.relax_vm.VirtualMachine.time_evaluator:81
+msgid "Returns"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:13
+msgid "ret: Union[tvm.Object, Tuple[Any]]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.get_outputs:14
+msgid ""
+"The result of the earlier call to the function via `invoke_stateful`. If "
+"the result is a tuple, it returns a list of the fields. The fields are "
+"potentially also tuples, so these can be arbitrily nested."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:1
+msgid "Invoke a closure."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:5
+msgid "closure"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:-1
+msgid "Object"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:6
+msgid "The VMClosure Object."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:8
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:27
+msgid "args"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:-1
+msgid "list[tvm.runtime.NDArray] or list[np.ndarray]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:9
+msgid "The arguments to the closure."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:13
+msgid "result"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_closure:14
+msgid "The output."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:1
+msgid ""
+"Call the named function from the VM module using the arguments set using "
+"`set_input`. It is an error to call `invoke_stateful` without using "
+"`set_input` first (even if it's to set 0 inputs); conversely, if "
+"`set_input` has been called, it is an error to call the function without "
+"using `invoke_stateful`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:6
+msgid "The results of the call can be obtained by calling `get_outputs`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.invoke_stateful:11
+msgid "The name of the function to call."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:1
+msgid "Profile a function call."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:5
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:16
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:11
+msgid "func_name"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:-1
+#: tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:-1
+msgid "str"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:6
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:12
+msgid "The name of the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:8
+msgid "args: List of NDArray or other objects supported by PackedFunc."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:9
+#: tvm.runtime.relax_vm.VirtualMachine.set_input:14
+msgid "The arguments to the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:13
+msgid "report: tvm.runtime.profiling.Report"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.profile:14
+msgid "The formatted profiling result, showing per-op timing measurements."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:1
+msgid ""
+"Convenience function. Takes a function from the module and saves a "
+"`PackedFunc` that, when called, will invoke the function with the given "
+"arguments. The `PackedFunc` can be accessed from the module using "
+"`saved_name`. This is included to facilitate timing trials: Invoking the "
+"returned `PackedFunc` will have less overhead from dictionary lookups "
+"than normally running through the VM."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:8
+msgid ""
+"If the saved name is taken, it can be overridden, though it cannot "
+"override the name of a function defined in the Relax source."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:11
+msgid ""
+"This is really creating a closure, but the function has a different name "
+"to avoid confusion with `invoke_closure` (they are not meant to be used "
+"together)."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:17
+msgid "The function that should be packaged up."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:19
+msgid "saved_name"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:20
+msgid "The name that the resulting closure should be saved under."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:22
+msgid "include_return"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+msgid "bool"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:23
+msgid ""
+"Whether the saved PackedFunc should return its output. If timing over "
+"RPC, it may not be desirable to send output between machines."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+msgid "List[Any]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:28
+msgid "The arguments to package up with the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:30
+msgid "kwargs"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:-1
+msgid "Dict[str, Any]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.save_function:31
+msgid "Any named arguments to package up with the function"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:1
+msgid ""
+"Set the inputs to a function. This interface works when using VM over RPC"
+" by internally converting NDArray in the arguments to DLTensor, which is "
+"supported in RPC where remote could only have a minimal C runtime."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:6
+msgid ""
+"Note: If `set_input` is used, the function *must* be called using "
+"`invoke_stateful` and the results must be obtained using `get_outputs`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:13
+msgid "args: List[tvm.runtime.NDArray] or List[np.ndarray]"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:15
+msgid "kwargs: dict of str to tvm.runtime.NDArray or np.ndarray"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_input:16
+msgid "Named arguments to the function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:1
+msgid "Set an instrumentation function."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:3
+msgid ""
+"If instrument is present, the function will be called before/after each "
+"Call instruction. The function have the following signature:"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:17
+msgid ""
+"The instrument takes the following parameters: - func: function object to"
+" be called. - func_symbol: the symbol name of the function. - before_run:"
+" whether it is before or after call. - ret_value: the return value of the"
+" call, only valid after run. - args: the arguments being passed to call."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:24
+msgid ""
+"The instrument function can choose an integer, which corresponds to "
+"action direction for the following run. See VMInstrumentReturnKind for "
+"more details."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:31
+msgid "instrument: tvm.runtime.PackedFunc"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:32
+msgid "A instrumentation function that get invoked every VM call instr."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:35
+msgid "See Also"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.set_instrument:36
+msgid "VMInstrumentReturnKind: the possible return values in VM."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:1
+msgid ""
+"Returns an evaluator that times a function in the module. This follows "
+"the same convention as time_evaluator in tvm.runtime.module. This can be "
+"used in combination with save_function() so that the timings avoid extra "
+"dictionary lookups."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:9
+msgid "The name of the function in the module."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:11
+msgid "dev: Device"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:12
+msgid "The device we should run this function on."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:14
+msgid "number: int"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:15
+msgid ""
+"The number of times to run this function for taking average. We call "
+"these runs as one `repeat` of measurement."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:18
+msgid "repeat: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:19
+msgid ""
+"The number of times to repeat the measurement. In total, the function "
+"will be invoked (1 + number x repeat) times, where the first one is warm "
+"up and will be discarded. The returned result contains `repeat` costs, "
+"each of which is an average of `number` costs."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:25
+msgid "min_repeat_ms: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:26
+msgid ""
+"The minimum duration of one `repeat` in milliseconds. By default, one "
+"`repeat` contains `number` runs. If this parameter is set, the parameters"
+" `number` will be dynamically adjusted to meet the minimum duration "
+"requirement of one `repeat`. i.e., When the run time of one `repeat` "
+"falls below this time, the `number` parameter will be automatically "
+"increased."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:33
+msgid "cooldown_interval_ms: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:34
+msgid ""
+"The cooldown interval in milliseconds between the number of repeats "
+"defined by `repeats_to_cooldown`."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:37
+msgid "repeats_to_cooldown: int, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:38
+msgid "The number of repeats before the cooldown is activated."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:40
+msgid "f_preproc: str, optional"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:41
+msgid ""
+"The preprocess function name we want to execute before executing the time"
+" evaluator."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:44
+msgid "Note"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:45
+msgid ""
+"The function will be invoked  (1 + number x repeat) times, with the first"
+" call discarded in case there is lazy initialization."
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:49
+msgid "Example"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:50
+msgid ""
+"Normal use with a VM function (may not work over RPC if the function "
+"returns a tuple):"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:59
+msgid "Use with the stateful API:"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:69
+msgid ""
+"With saved closures via `save_function` (this results in fewer dictionary"
+" lookups in the timed portion):"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:82
+msgid "ftimer"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:-1
+msgid "function"
+msgstr ""
+
+#: of tvm.runtime.relax_vm.VirtualMachine.time_evaluator:83
+msgid ""
+"The function that takes same argument as func and returns a "
+"BenchmarkResult. The ProfileResult reports `repeat` time costs in "
+"seconds."
+msgstr ""
+

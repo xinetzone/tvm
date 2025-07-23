@@ -1,0 +1,3656 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:19
+#: ../../doc/docs/reference/api/python/relax/op.rst:22
+msgid "tvm.relax.op"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:28
+msgid "tvm.relax.op.nn"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:34
+msgid "tvm.relax.op.builtin"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:40
+msgid "tvm.relax.op.ccl"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:46
+msgid "tvm.relax.op.distributed"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:52
+msgid "tvm.relax.op.grad"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:58
+msgid "tvm.relax.op.image"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:64
+msgid "tvm.relax.op.memory"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/op.rst:70
+msgid "tvm.relax.op.op_attrs"
+msgstr ""
+
+#~ msgid "The value used for padding"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "'constant' pads with constant_value pad_value"
+#~ " 'edge' pads using the edge values"
+#~ " of the input array 'reflect' pads"
+#~ " by reflecting values with respect to"
+#~ " the edge"
+#~ msgstr ""
+
+#~ msgid "Relax core operators."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise absolute value of the input data."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The input data"
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed result."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Compute element-wise arc cos of the input data."
+#~ msgstr ""
+
+#~ msgid "The input tensor is required to have float dtype"
+#~ msgstr ""
+
+#~ msgid "Compute element-wise arc cosh of the input data."
+#~ msgstr ""
+
+#~ msgid "Addition with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "The first input tensor."
+#~ msgstr ""
+
+#~ msgid "The second input tensor."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Construct a tensor with evenly spaced elements."
+#~ msgstr ""
+
+#~ msgid "The start of the interval."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The end of the interval. If not"
+#~ " given, it will be set to "
+#~ "start, and start will be set to"
+#~ " 0."
+#~ msgstr ""
+
+#~ msgid "The step size."
+#~ msgstr ""
+
+#~ msgid "The data type of the created tensor."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor."
+#~ msgstr ""
+
+#~ msgid "Computes the argmax of tensor elements over given axis."
+#~ msgstr ""
+
+#~ msgid "The input data tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which an argmax operation "
+#~ "is performed. The default, axis=None, "
+#~ "will compute the argmax of all "
+#~ "elements in the input tensor. Negative"
+#~ " indexing is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this is set to True, the "
+#~ "axis being reduced is left in the"
+#~ " result as dimensions with size one."
+#~ " With this option, the result will"
+#~ " broadcast correctly against the input "
+#~ "tensor."
+#~ msgstr ""
+
+#~ msgid "Computes the argmin of tensor elements over given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which an argmin operation "
+#~ "is performed. The default, axis=None, "
+#~ "will compute the argmin of all "
+#~ "elements in the input tensor. Negative"
+#~ " indexing is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Performs sorting along the given axis"
+#~ " and returns an array of indices "
+#~ "having same shape as an input "
+#~ "array that index data in sorted "
+#~ "order."
+#~ msgstr ""
+
+#~ msgid "The input data tensor."
+#~ msgstr ""
+
+#~ msgid "Axis long which to sort the input tensor."
+#~ msgstr ""
+
+#~ msgid "Whether to sort in descending order, the default is False"
+#~ msgstr ""
+
+#~ msgid "The data type of the output indices."
+#~ msgstr ""
+
+#~ msgid "**out** -- Tensor with same shape as data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise arc sin of the input data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise arc sinh of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a call to Relax's assert_op "
+#~ "operation (`assert` is reserved in "
+#~ "Python, so the name must be "
+#~ "distinct)."
+#~ msgstr ""
+
+#~ msgid "The assertion condition."
+#~ msgstr ""
+
+#~ msgid "Format arguments for the error message if the condition fails."
+#~ msgstr ""
+
+#~ msgid "The format string or StringImm for the error message."
+#~ msgstr ""
+
+#~ msgid "**result** -- A Call to the Relax assert operation."
+#~ msgstr ""
+
+#~ msgid "Cast input tensor to the given data type."
+#~ msgstr ""
+
+#~ msgid "The input data to the operator."
+#~ msgstr ""
+
+#~ msgid "The target data type"
+#~ msgstr ""
+
+#~ msgid "**result** -- The casted result."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise arc tan of the input data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise arc tanh of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bitwise AND :param x1: The first "
+#~ "input tensor. :type x1: relax.Expr "
+#~ ":param x2: The second input tensor. "
+#~ ":type x2: relax.Expr"
+#~ msgstr ""
+
+#~ msgid "Compute bitwise NOT of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bitwise OR :param x1: The first "
+#~ "input tensor. :type x1: relax.Expr "
+#~ ":param x2: The second input tensor. "
+#~ ":type x2: relax.Expr"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bitwise XOR :param x1: The first "
+#~ "input tensor. :type x1: relax.Expr "
+#~ ":param x2: The second input tensor. "
+#~ ":type x2: relax.Expr"
+#~ msgstr ""
+
+#~ msgid "Broadcasts a tensor to a specified shape."
+#~ msgstr ""
+
+#~ msgid "The target shape."
+#~ msgstr ""
+
+#~ msgid "**result** -- The broadcasted tensor."
+#~ msgstr ""
+
+#~ msgid "Call a builtin function func."
+#~ msgstr ""
+
+#~ msgid "The builtin function to be called."
+#~ msgstr ""
+
+#~ msgid "The input arguments."
+#~ msgstr ""
+
+#~ msgid "The struct info arguments to the call node."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The created call node."
+#~ msgstr ""
+
+#~ msgid "Call a destination-passing-style packed function and return the output."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: The called function is assumed "
+#~ "to be _pure_ (other than modifying "
+#~ "the designated output arguments). If the"
+#~ " function _does_ result in other side"
+#~ " effects, then the compiler may end"
+#~ " up removing, reordering, or repeating "
+#~ "those effects--no guarantees can be "
+#~ "made."
+#~ msgstr ""
+
+#~ msgid "The destination-passing-style function, can be ExternFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The structure info of the "
+#~ "call_dps_packed output. It should be a"
+#~ " single or a list of "
+#~ "TensorStructInfo. Each one denotes the "
+#~ "structure info of a returned tensor."
+#~ msgstr ""
+
+#~ msgid "**ret** -- A call node for the call_dps_packed operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a call to a packed "
+#~ "function that consumes some of its "
+#~ "arguments \"in-place\" and returns the"
+#~ " mutated arguments (aliased), but should"
+#~ " be considered to be otherwise pure."
+#~ " The `inplace_indices` argument indicates "
+#~ "which of the outputs are mutated "
+#~ "arguments."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The resulting call will have the "
+#~ "same semantics as calling the packed "
+#~ "function directly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: This should be used for "
+#~ "cases when the user knows that "
+#~ "calling the packed function with these"
+#~ " arguments will **in reality** not "
+#~ "cause any other side effects. If "
+#~ "it is used for a call that "
+#~ "**does** result in other side effects,"
+#~ " then the compiler may end up "
+#~ "removing, reordering, or repeating that "
+#~ "call, with no guarantees made about "
+#~ "any side effects from the callee."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Warning: This operator as treated as "
+#~ "pure by the type system even "
+#~ "though it *is* performing side effects"
+#~ " (mutating some arguments). It is "
+#~ "therefore incumbent upon the user to "
+#~ "ensure that it is being used "
+#~ "safely (viz., that mutated arguments are"
+#~ " not live after the mutation, that"
+#~ " they do not alias values live "
+#~ "after the mutation)."
+#~ msgstr ""
+
+#~ msgid "The name (global symbol) for a PackedFunc or an ExternFunc node."
+#~ msgstr ""
+
+#~ msgid "The arguments for the PackedFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specify which arguments should be used"
+#~ " for in-place computations. If "
+#~ "`inplace_indices` is a single integer, "
+#~ "it will be made into a singleton"
+#~ " list. Suppose `inplace_indices[i] = j`,"
+#~ " where `j >= 0`. Then the `i`th"
+#~ " output will be an alias of "
+#~ "`args[j]`. If `inplace_indices[i] = -1`, "
+#~ "then the `i`th output will be a"
+#~ " freshly allocated tensor. At least "
+#~ "one member of `inplace_indices` must not"
+#~ " be -1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The list of structure info arguments "
+#~ "(giving the structural info for the "
+#~ "returned value)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- A Relax call, "
+#~ "corresponding to `call_pure_packed(ExternFunc(func), "
+#~ "args, DictAttrs(kwargs), sinfo_args)`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a call to a packed "
+#~ "function that should be treated as "
+#~ "pure, even though packed calls are "
+#~ "normally not treated as pure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: This should be used for "
+#~ "cases when the user knows that "
+#~ "calling the packed function with these"
+#~ " arguments will **in reality** not "
+#~ "cause any side effects. If it is"
+#~ " used for a call that **does** "
+#~ "result in side effects, then the "
+#~ "compiler may end up removing, "
+#~ "reordering, or repeating that call, with"
+#~ " no guarantees made about any side"
+#~ " effects from the callee."
+#~ msgstr ""
+
+#~ msgid "Call a tir.prim_func and return the output."
+#~ msgstr ""
+
+#~ msgid "The GlobalVar referring to a tir PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The structure info of the call_tir "
+#~ "output. It should be a single or"
+#~ " a list of TensorStructInfo. Each one"
+#~ " denotes the structure info of a "
+#~ "returned tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ShapeExpr representing a tuple of "
+#~ "integers to unpack when calling func."
+#~ " Is null if not used"
+#~ msgstr ""
+
+#~ msgid "**ret** -- A call node for the call_tir operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Call a TIR PrimFunc and return the"
+#~ " result, doing the specified computations"
+#~ " in-place (based on the "
+#~ "`inplace_indices` argument; outputs will alias"
+#~ " the inputs selected by in-place "
+#~ "indices)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Warning: This operator is considered "
+#~ "pure by the type system but "
+#~ "actually mutates the arguments specified "
+#~ "by `inplace_indices`. This operator should "
+#~ "not be used directly, but rather "
+#~ "should be inserted by passes that "
+#~ "have checked whether it is safe to"
+#~ " perform operations in-place (i.e., "
+#~ "none of the arguments specified as "
+#~ "an output is aliased or is live"
+#~ " after calling call_tir_inplace)."
+#~ msgstr ""
+
+#~ msgid "Direct calls to this operator should be done for testing purposes only."
+#~ msgstr ""
+
+#~ msgid "The GlobalVar referring to a TIR PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The structure info of the "
+#~ "call_tir_inplace output. It should be a"
+#~ " single `TensorStructInfo` or a list "
+#~ "of `TensorStructInfo`. Each one denotes "
+#~ "the structure info of a returned "
+#~ "tensor. If a list of `TensorStructInfo`"
+#~ " is given, the result will be a"
+#~ " tuple of `TensorStructInfo`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Call a tir.prim_func and return the "
+#~ "output. This intrinsic will bind a "
+#~ "te gradient function (refered by "
+#~ "te_grad_name) to the call_tir_with_grad node."
+#~ " The te gradient function will be "
+#~ "called by the Gradient pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The structure info of the "
+#~ "call_tir_with_grad output. It should be "
+#~ "a single or a list of "
+#~ "TensorStructInfo. Each one denotes the "
+#~ "structure info of a returned tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The registered name of the te "
+#~ "gradient function associated with the "
+#~ "call_tir_with_grad node. Must be provided "
+#~ "as a keyword argument."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The keyword arguments passed to the "
+#~ "te gradient function. Optionally provided "
+#~ "as a keyword argument. Default: {}."
+#~ msgstr ""
+
+#~ msgid "**ret** -- A call node for the call_tir_with_grad operator."
+#~ msgstr ""
+
+#~ msgid "Take ceil of input data."
+#~ msgstr ""
+
+#~ msgid "Clips tensor values to a specified min and max."
+#~ msgstr ""
+
+#~ msgid "The minimum value"
+#~ msgstr ""
+
+#~ msgid "The maximum value"
+#~ msgstr ""
+
+#~ msgid "Return a summation of data to the shape of collapse_target."
+#~ msgstr ""
+
+#~ msgid "For details, please see relax.op.collapse_sum_to."
+#~ msgstr ""
+
+#~ msgid "The input tensor."
+#~ msgstr ""
+
+#~ msgid "The tensor whose shape is the shape to collapse to."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor after summation."
+#~ msgstr ""
+
+#~ msgid "Return a summation of data to the given shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "collapse_sum_to is intended as the "
+#~ "backward operator of tvm.relax.op.broadcast_to "
+#~ "and other broadcast operators in the "
+#~ "automatic differentiation process."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We expect that data is the result"
+#~ " of broadcasting some tensor of the"
+#~ " given shape in some broadcast "
+#~ "operation. Thus the given `shape` and"
+#~ " `data.shape` must follow broadcast rules."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "During computation, all axes of "
+#~ "`data.shape` and `shape` are checked "
+#~ "from right to left. For an axis,"
+#~ " if it follows these rules, `data`"
+#~ " will be summed over this axis: "
+#~ "- the axis exists in `data.shape` "
+#~ "but not in `shape`, or - the "
+#~ "axis exists in `data.shape` and equals"
+#~ " to 1 in `shape`."
+#~ msgstr ""
+
+#~ msgid "The shape to collapse to."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor of the given shape after summation."
+#~ msgstr ""
+
+#~ msgid "Concatenate the input tensors along the given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An Expr in Tuple type, containing "
+#~ "the tensors to be concatenated, or "
+#~ "a list of Tensors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis along which the tensors "
+#~ "are concatenated. If `axis` is `None`,"
+#~ " the input tensor is required to "
+#~ "be flattened before concatenation."
+#~ msgstr ""
+
+#~ msgid "**result** -- The concatenated tensor."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise cos of the input data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise cosh of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Numpy style cumprod op. Return the "
+#~ "cumulative product of the elements along"
+#~ " a given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which the cumulative product"
+#~ " is computed. The default (None) is"
+#~ " to compute the cumprod over the "
+#~ "flattened array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type of the returned array and of"
+#~ " the accumulator in which the "
+#~ "elements are computed. If dtype is "
+#~ "not specified, it defaults to the "
+#~ "dtype of data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If false (default), all elements are "
+#~ "included in the product.  If true, "
+#~ "the first element is excluded from "
+#~ "the product."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The result has the "
+#~ "same size as data, and the same"
+#~ " shape as data if axis is not"
+#~ " None. If axis is None, the "
+#~ "result is a 1-d array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Numpy style cumsum op. Return the "
+#~ "cumulative inclusive sum of the elements"
+#~ " along a given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which the cumulative sum "
+#~ "is computed. The default (None) is "
+#~ "to compute the cumsum over the "
+#~ "flattened array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type of the returned array and of"
+#~ " the accumulator in which the "
+#~ "elements are summed. If dtype is "
+#~ "not specified, it defaults to the "
+#~ "dtype of data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If false (default), all elements are "
+#~ "included in the sum.  If true, the"
+#~ " first element is excluded from the"
+#~ " sum."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Dequantize op This operator takes input"
+#~ " and produces dequantized output. The "
+#~ "input tensor can be of any shape."
+#~ " The output shape is the same "
+#~ "as input shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "output = clamp(scale * (input_tensor -"
+#~ " zero_point), out_dtype::min, out_dtype::max)"
+#~ msgstr ""
+
+#~ msgid "The input tensor to be dequantized."
+#~ msgstr ""
+
+#~ msgid "The input scale."
+#~ msgstr ""
+
+#~ msgid "The input zero_point."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The channel axis for dequantization. "
+#~ "Default value is -1 which corresponds"
+#~ " to the last axis."
+#~ msgstr ""
+
+#~ msgid "The data type of the output tensor."
+#~ msgstr ""
+
+#~ msgid "Division with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Dynamic strided slice of a tensor. "
+#~ "`begin`, `end`, `strides` can be "
+#~ "computed at runtime."
+#~ msgstr ""
+
+#~ msgid "The source tensor to be sliced."
+#~ msgstr ""
+
+#~ msgid "The indices to begin with in the slicing, inclusive."
+#~ msgstr ""
+
+#~ msgid "The indices indicating end of the slice, exclusive."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the stride values, it can "
+#~ "be negative in that case, the "
+#~ "input tensor will be reversed in "
+#~ "that particular axis. If not specified,"
+#~ " it by default is an list of"
+#~ " ones of the same length as "
+#~ "`axes`."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The sliced result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "dyn_strided_slice require the input `begin`,"
+#~ " `end` and `strides` to have the "
+#~ "same length as rank of `data` "
+#~ "tensor."
+#~ msgstr ""
+
+#~ msgid "Evaluates the Einstein summation convention on data"
+#~ msgstr ""
+
+#~ msgid "A list of expression."
+#~ msgstr ""
+
+#~ msgid "The einsum expression string."
+#~ msgstr ""
+
+#~ msgid "**result** -- The output from the einsum op."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise test for (lhs == rhs)."
+#~ msgstr ""
+
+#~ msgid "Computes the error function of the input."
+#~ msgstr ""
+
+#~ msgid "**result** -- Computed error function for each element."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Elementwise fused multiply-add operator "
+#~ "Returns elementwise result of :math:`x1 "
+#~ "* x2 + x3`"
+#~ msgstr ""
+
+#~ msgid "The left hand operand of the multiplication"
+#~ msgstr ""
+
+#~ msgid "The right hand operand of the multiplication"
+#~ msgstr ""
+
+#~ msgid "The operand of the addition"
+#~ msgstr ""
+
+#~ msgid "Compute element-wise exp of data."
+#~ msgstr ""
+
+#~ msgid "Insert new axes at the positions given by `axis`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axes at which the input array"
+#~ " are expanded. All values are "
+#~ "required to lie in range `[-data.ndim"
+#~ " - 1, data.ndim]`, with the "
+#~ "convention of negative indexing."
+#~ msgstr ""
+
+#~ msgid "**result** -- The transformed result."
+#~ msgstr ""
+
+#~ msgid "Construct a 2-D tensor with ones on the diagonal and zeros elsewhere."
+#~ msgstr ""
+
+#~ msgid "Number of rows in the output."
+#~ msgstr ""
+
+#~ msgid "Number of columns in the output. If None, defaults to n."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Index of the diagonal: 0 (the "
+#~ "default) refers to the main diagonal,"
+#~ " a positive value refers to an "
+#~ "upper diagonal, and a negative value "
+#~ "to a lower diagonal."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return a 2-D tensor with ones on"
+#~ " the diagonal and zeros elsewhere, "
+#~ "with the same shape as the input"
+#~ " tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input tensor, which provides the "
+#~ "shape, and dtype when the `dtype` "
+#~ "field is not specified."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type of the created "
+#~ "tensor. If dtype is not given, it"
+#~ " will by default use the dtype "
+#~ "of the input tensor."
+#~ msgstr ""
+
+#~ msgid "Flatten all the tensor dimensions into one."
+#~ msgstr ""
+
+#~ msgid "**result** -- The flattened result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reverses the order of elements along "
+#~ "given axis while preserving array shape."
+#~ msgstr ""
+
+#~ msgid "axis to flip on"
+#~ msgstr ""
+
+#~ msgid "**ret** -- The computed result."
+#~ msgstr ""
+
+#~ msgid "Take floor of input data."
+#~ msgstr ""
+
+#~ msgid "Floor division with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Floor modulo with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Fill array with scalar value."
+#~ msgstr ""
+
+#~ msgid "The shape of the created tensor."
+#~ msgstr ""
+
+#~ msgid "The value to fill. Must be a scalar tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type of the created "
+#~ "tensor. If dtype is not given, it"
+#~ " will by default use the dtype "
+#~ "of fill_value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a tensor such that - its"
+#~ " shape is the same as the input"
+#~ " data tensor's shape, - its value "
+#~ "is filled with the input scalar "
+#~ "fill value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Gather elements from data according to"
+#~ " indices along the specified axis."
+#~ msgstr ""
+
+#~ msgid "The indices tensor, must have integer type."
+#~ msgstr ""
+
+#~ msgid "The axis along which to index. Default is 0."
+#~ msgstr ""
+
+#~ msgid "Update data at positions defined by indices with values in updates."
+#~ msgstr ""
+
+#~ msgid "The number of batch dimensions. Default is 0."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise test for (lhs > rhs)."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise test for (lhs >= rhs)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It provides a hint specifying the "
+#~ "device on which the input data "
+#~ "should be executed. This hint is "
+#~ "utilized by RealizeVDevice to propagate "
+#~ "the virtual device.\""
+#~ msgstr ""
+
+#~ msgid "The tensor to be copied."
+#~ msgstr ""
+
+#~ msgid "The destination device where the data is supposed to be executed."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result."
+#~ msgstr ""
+
+#~ msgid "Invoke a closure."
+#~ msgstr ""
+
+#~ msgid "The VMClosure object."
+#~ msgstr ""
+
+#~ msgid "The structure info arguments of the CallNode"
+#~ msgstr ""
+
+#~ msgid "**ret** -- A call to `invoke_closure`."
+#~ msgstr ""
+
+#~ msgid "Invoke a closure and indicate to the compiler that it is pure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: This should be used for "
+#~ "cases when the user knows that "
+#~ "calling the closure with these arguments"
+#~ " will **in reality** not cause any"
+#~ " side effects. If it is used "
+#~ "for a call that _does_ result in"
+#~ " side effects, then the compiler may"
+#~ " end up removing, reordering, or "
+#~ "repeating that call, with no guarantees"
+#~ " made about any side effects from "
+#~ "the callee."
+#~ msgstr ""
+
+#~ msgid "**ret** -- A call to `invoke_pure_closure`."
+#~ msgstr ""
+
+#~ msgid "Check if input value is finite."
+#~ msgstr ""
+
+#~ msgid "Check if input value is infinite."
+#~ msgstr ""
+
+#~ msgid "Check if input value is Nan."
+#~ msgstr ""
+
+#~ msgid "Modifies the layout of a tensor."
+#~ msgstr ""
+
+#~ msgid "The input tensor to the operator."
+#~ msgstr ""
+
+#~ msgid "The transformation to apply."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The value used for padding if the"
+#~ " transformation results in implicit "
+#~ "padding. If not specified, any value "
+#~ "can be used."
+#~ msgstr ""
+
+#~ msgid "The axis_separators for index_map to create non flat buffers."
+#~ msgstr ""
+
+#~ msgid "**result** -- The transformed tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bitwise Shift Left :param x1: The "
+#~ "input tensor to be shifted. :type "
+#~ "x1: relax.Expr :param x2: The number "
+#~ "of positions to shift. :type x2: "
+#~ "relax.Expr"
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise test for (lhs < rhs)."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise test for (lhs <= rhs)."
+#~ msgstr ""
+
+#~ msgid "Applies a linear transformation to the incoming data: y = xA^T + b"
+#~ msgstr ""
+
+#~ msgid "The input data."
+#~ msgstr ""
+
+#~ msgid "The weight tensor."
+#~ msgstr ""
+
+#~ msgid "The bias tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type of the matmul "
+#~ "result. When it is not specified, "
+#~ "the output dtype will be the same"
+#~ " as input dtype."
+#~ msgstr ""
+
+#~ msgid "备注"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Relax does not regard the Linear "
+#~ "Op as a primitive Op, while "
+#~ "combine the transpose, matmul and add"
+#~ " op to implement it."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise natural logarithm of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Logical AND :param x1: The first "
+#~ "input tensor. :type x1: relax.Expr "
+#~ ":param x2: The second input tensor. "
+#~ ":type x2: relax.Expr"
+#~ msgstr ""
+
+#~ msgid "Compute logical NOT of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Logical OR :param x1: The first "
+#~ "input tensor. :type x1: relax.Expr "
+#~ ":param x2: The second input tensor. "
+#~ ":type x2: relax.Expr"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Logical XOR :param x1: The first "
+#~ "input tensor. :type x1: relax.Expr "
+#~ ":param x2: The second input tensor. "
+#~ ":type x2: relax.Expr"
+#~ msgstr ""
+
+#~ msgid "Create a closure with free variables and return the closure."
+#~ msgstr ""
+
+#~ msgid "The closure, can be ExternFunc or PrimFunc."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The VMClosure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fill a tensor by a specified value"
+#~ " in places defined by a mask. "
+#~ ":param x: The input data to the"
+#~ " operator. :type x: relax.Expr :param "
+#~ "mask: The mask. :type mask: relax.Expr"
+#~ " :param value: The value to set "
+#~ "in the input tensor. :type value: "
+#~ "relax.Expr"
+#~ msgstr ""
+
+#~ msgid "**result** -- The filled tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "General matrix multiplication of two "
+#~ "tensors, with broadcasting on batched "
+#~ "dimensions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The semantics and output shape deduction"
+#~ " rule is specified as https://data-"
+#~ "apis.org/array-"
+#~ "api/latest/API_specification/generated/array_api.matmul.html."
+#~ msgstr ""
+
+#~ msgid "Computes the max of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a max "
+#~ "operation is performed. The default, "
+#~ "axis=None, will compute the max of "
+#~ "all elements in the input tensor. "
+#~ "Negative indexing is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this is set to True, the "
+#~ "axes which are reduced are left in"
+#~ " the result as dimensions with size"
+#~ " one. With this option, the result"
+#~ " will broadcast correctly against the "
+#~ "input tensor."
+#~ msgstr ""
+
+#~ msgid "Element-wise maximum"
+#~ msgstr ""
+
+#~ msgid "Computes the mean of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a mean"
+#~ " operation is performed. The default, "
+#~ "axis=None, will compute the mean of "
+#~ "all elements in the input tensor. "
+#~ "Negative indexing is supported."
+#~ msgstr ""
+
+#~ msgid "Computes the min of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a min "
+#~ "operation is performed. The default, "
+#~ "axis=None, will compute the min of "
+#~ "all elements in the input tensor. "
+#~ "Negative indexing is supported."
+#~ msgstr ""
+
+#~ msgid "Element-wise minimum"
+#~ msgstr ""
+
+#~ msgid "Modulo with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a tensor where each row "
+#~ "contains the index sampled from the "
+#~ "multinomial probability distribution located "
+#~ "in the corresponding row of tensor "
+#~ "prob."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For better cpu performance, use "
+#~ "'vm.builtin.multinomial_from_uniform'. For accurate "
+#~ "results, ensure probabilities are between "
+#~ "0 and 1 and sum to 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A 2-D tensor of shape (batch, "
+#~ "vocab_size) representing probability distributions."
+#~ " Each row is a distribution across"
+#~ " vocabulary for a batch, where: "
+#~ "Values range from [0, 1], indicating "
+#~ "the probability of each vocabulary item."
+#~ " The sum of values in each row"
+#~ " is 1, forming a valid distribution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The uniformly sampled 2-D tensor with"
+#~ " the shape (n, 1). Values range "
+#~ "from 0 to 1, indicating probabilities"
+#~ " sampled uniformly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The 2-D tensor with the shape [n,"
+#~ " 1], which indicates the specific "
+#~ "probability distribution to sample from. "
+#~ "The value of sample_indices[i] determines "
+#~ "that the ith token should be "
+#~ "sampled from the sample_indices[i]th "
+#~ "probability distribution. For instance, if "
+#~ "there are 3 distinct probability "
+#~ "distributions and the requirement is to"
+#~ " sample 2, 3, and 4 tokens from"
+#~ " each, then sample_indices would be "
+#~ "[0, 0, 1, 1, 1, 2, 2, 2, "
+#~ "2]."
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed tensor with shape (n, 1)."
+#~ msgstr ""
+
+#~ msgid "Multiplication with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise negative of the input data."
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed result"
+#~ msgstr ""
+
+#~ msgid "Find the indices of elements of a tensor that are non-zero."
+#~ msgstr ""
+
+#~ msgid "**result** -- A 2-D tensor containing indices of non-zero elements."
+#~ msgstr ""
+
+#~ msgid "This function is equivalent to `onnx.nonzero`."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise test for (lhs != rhs)."
+#~ msgstr ""
+
+#~ msgid "Create a call node that represents a null value object."
+#~ msgstr ""
+
+#~ msgid "Returns a one-hot tensor."
+#~ msgstr ""
+
+#~ msgid "The indices to set to `on_value`."
+#~ msgstr ""
+
+#~ msgid "The value to fill at `indices`."
+#~ msgstr ""
+
+#~ msgid "The value to fill at other locations."
+#~ msgstr ""
+
+#~ msgid "The depth of the one-hot dimension."
+#~ msgstr ""
+
+#~ msgid "The axis to fill. Default is -1 which adds a new dimension at the end."
+#~ msgstr ""
+
+#~ msgid "Construct a tensor of all ones, with the input shape and dtype."
+#~ msgstr ""
+
+#~ msgid "Construct a tensor with all ones, with shape of the input tensor shape."
+#~ msgstr ""
+
+#~ msgid "Permutes the dimensions of an array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The target axes order. If not "
+#~ "specified, permute_dims will reverse the "
+#~ "order of all axes."
+#~ msgstr ""
+
+#~ msgid "**result** -- The transposed result."
+#~ msgstr ""
+
+#~ msgid "Power with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Print op to print the values"
+#~ msgstr ""
+
+#~ msgid "The values to print."
+#~ msgstr ""
+
+#~ msgid "The format string or StringImm."
+#~ msgstr ""
+
+#~ msgid "**result** -- A relax Call, which will print the value during runtime."
+#~ msgstr ""
+
+#~ msgid "Computes the product of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a product"
+#~ " is performed. The default, axis=None, "
+#~ "will compute the product of all "
+#~ "elements of the input tensor. Negative"
+#~ " indexing is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Quantize op This operator takes input"
+#~ " and produces quantized output. The "
+#~ "input tensor can be of any shape."
+#~ " The output shape is the same "
+#~ "as input shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Q_output = clamp((round(input_tensor/scale) + "
+#~ "zero_point), out_dtype::min, out_dtype::max)"
+#~ msgstr ""
+
+#~ msgid "The input tensor to be quantized."
+#~ msgstr ""
+
+#~ msgid "The output scale."
+#~ msgstr ""
+
+#~ msgid "The output zero_point."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The channel axis for quantization. "
+#~ "Default value is -1 which corresponds"
+#~ " to the last axis."
+#~ msgstr ""
+
+#~ msgid "Register operator gradient function for a relax operator."
+#~ msgstr ""
+
+#~ msgid "The name of the op."
+#~ msgstr ""
+
+#~ msgid "-> partials: List[Expr] The gradient function being used."
+#~ msgstr ""
+
+#~ msgid "The priority level"
+#~ msgstr ""
+
+#~ msgid "Repeats elements of an array."
+#~ msgstr ""
+
+#~ msgid "The number of repetitions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis along which to repeat "
+#~ "values. The negative numbers are "
+#~ "interpreted counting from the backward. "
+#~ "By default, use the flattened input "
+#~ "array, and return a flat output "
+#~ "array."
+#~ msgstr ""
+
+#~ msgid "Reshape the input array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``-1`` infers the dimension of the "
+#~ "output shape by using the remainder "
+#~ "of the input dimensions keeping the "
+#~ "size of the new array same as "
+#~ "that of the input array. At most"
+#~ " one dimension of shape can be "
+#~ "-1."
+#~ msgstr ""
+
+#~ msgid "The new shape. Should be compatible with the original shape."
+#~ msgstr ""
+
+#~ msgid "**result** -- The reshaped result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``-1`` inference is only performed"
+#~ " at compile-time. That is to "
+#~ "say, in any case the dimension "
+#~ "length of ``-1`` cannot be inferred "
+#~ "in compile-time, an error will be"
+#~ " thrown."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bitwise Shift Right :param x1: The "
+#~ "input tensor to be shifted. :type "
+#~ "x1: relax.Expr :param x2: The number "
+#~ "of positions to shift. :type x2: "
+#~ "relax.Expr"
+#~ msgstr ""
+
+#~ msgid "Rounds each element of the input data to nearest integer."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise reciprocal square root of the input data."
+#~ msgstr ""
+
+#~ msgid "1/sqrt(x)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ONNX style scatter elements. This "
+#~ "operation updates its value in `data`"
+#~ " to values specified by `updates` at"
+#~ " specific index positions specified by "
+#~ "`indices`. For example, in 2D tensor,"
+#~ " the update corresponding to the "
+#~ "[i][j] entry is performed as below:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When the `reduction` is set to "
+#~ "some reduction function `f`, the update"
+#~ " corresponding to [i][j] entry is "
+#~ "performed as below:"
+#~ msgstr ""
+
+#~ msgid "Where `f` is update, add, mul, mean, max, min."
+#~ msgstr ""
+
+#~ msgid "The index positions to update in `data`."
+#~ msgstr ""
+
+#~ msgid "Values to replace to."
+#~ msgstr ""
+
+#~ msgid "Axis to scatter on."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type of reduction to apply: update, "
+#~ "add, mul, mean, max, min. It is"
+#~ " \"update\" by default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The result has the "
+#~ "same size as data, and the same"
+#~ " shape as data"
+#~ msgstr ""
+
+#~ msgid "Scatter updates into an array according to indices."
+#~ msgstr ""
+
+#~ msgid "The input data to be updated."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type of reduction to apply: update, "
+#~ "add, mul, max, min. It is "
+#~ "\"update\" by default."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result has the same shape as data."
+#~ msgstr ""
+
+#~ msgid "Get shape of a tensor."
+#~ msgstr ""
+
+#~ msgid "The input Expr."
+#~ msgstr ""
+
+#~ msgid "**result** -- A relax Call, which gets the shape of the input"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert shape to tensor expr. :param "
+#~ "expr: The input Expr :type expr: "
+#~ "Expr"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- A relax Call, which "
+#~ "transforms the shape values to the "
+#~ "tensor"
+#~ msgstr ""
+
+#~ msgid "Compute element-wise sigmoid of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an indication of the sign "
+#~ "of a number for each element of"
+#~ " the input data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise sin of the input data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise sinh of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Performs sorting along the given axis"
+#~ " and returns an array in sorted "
+#~ "order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which to sort the input"
+#~ " tensor. By default the last axis "
+#~ "of the input is used."
+#~ msgstr ""
+
+#~ msgid "**out** -- Sorted tensor."
+#~ msgstr ""
+
+#~ msgid "Split input tensor along axis by sections or indices."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If indices_or_sections is an integer, "
+#~ "the input will be divided equally "
+#~ "along given axis (if possible). Last "
+#~ "section will be smaller if the "
+#~ "tensor size along the given dimension"
+#~ " is not divisible by the integer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If indices_or_sections is a tuple of "
+#~ "mixture of int or PrimExpr, the "
+#~ "entries indicate the indices where along"
+#~ " axis the array is split."
+#~ msgstr ""
+
+#~ msgid "The tensor to be split."
+#~ msgstr ""
+
+#~ msgid "Indices or sections to split into. Accepts an int or a list."
+#~ msgstr ""
+
+#~ msgid "The axis over which to split."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise square root of the input data."
+#~ msgstr ""
+
+#~ msgid "Squares each element of the input data."
+#~ msgstr ""
+
+#~ msgid "Squeeze axes in the array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The set of axes to remove. If "
+#~ "axis = None, remove all axis of"
+#~ " dimensions 1. If any specified axis"
+#~ " has dimension that does not equal"
+#~ " 1, it is an error."
+#~ msgstr ""
+
+#~ msgid "**result** -- The squeezed result."
+#~ msgstr ""
+
+#~ msgid "Computes the standard deviation of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a "
+#~ "standard deviation is performed. The "
+#~ "default, axis=None, will compute the std"
+#~ " of all elements of the input "
+#~ "tensor. Negative indexing is supported."
+#~ msgstr ""
+
+#~ msgid "Strided slice of a tensor."
+#~ msgstr ""
+
+#~ msgid "Axes along which slicing is applied."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to assume the indices are "
+#~ "in bound. If it is set to "
+#~ "false, out of bound indices will "
+#~ "be clipped to the bound."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "strided_slice require the input `begin`, "
+#~ "`end` and `strides` to have the "
+#~ "same length as `axes`."
+#~ msgstr ""
+
+#~ msgid "Subtraction with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Computes the sum of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a sum "
+#~ "is performed. The default, axis=None, "
+#~ "will sum all of the elements of"
+#~ " the input tensor. Negative indexing "
+#~ "is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Take elements from a tensor along "
+#~ "an axis. Its semantic is mostly "
+#~ "similar to `numpy.take` "
+#~ "(https://numpy.org/doc/stable/reference/generated/numpy.take.html),"
+#~ " which can cover `torch.take` "
+#~ "(https://pytorch.org/docs/stable/generated/torch.take.html) and"
+#~ " `onnx.gather` "
+#~ "(https://github.com/onnx/onnx/blob/main/docs/Changelog.md#Gather-13)."
+#~ msgstr ""
+
+#~ msgid "The source tensor."
+#~ msgstr ""
+
+#~ msgid "The indices of the values to extract."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis over which to select "
+#~ "values. If it is none, the input"
+#~ " tensor is required to be one-"
+#~ "dimensional."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The taken result."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise tan of the input data."
+#~ msgstr ""
+
+#~ msgid "Compute element-wise tanh of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert tensor to shape expr. :param "
+#~ "expr: The input Expr :type expr: "
+#~ "Expr"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- A relax Call, which "
+#~ "transforms the tensor values to the "
+#~ "shape"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct an array by repeating data "
+#~ "the number of times given by "
+#~ "repeats."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If repeats has length l, and data"
+#~ " has dimension d, the result will "
+#~ "have dimension of max(l, d)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If d < l, data is promoted "
+#~ "to be l-dimensional by prepending new"
+#~ " axes. So a shape (3,) Tensor "
+#~ "is promoted to (1, 3) for 2-D "
+#~ "replication, or shape (1, 1, 3) "
+#~ "for 3-D replication. If this is "
+#~ "not the desired behavior, promote data"
+#~ " to d-dimensions manually before calling"
+#~ " this function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If d > l, reps is promoted "
+#~ "to length d by pre-pending 1's "
+#~ "to it. Thus for a data of "
+#~ "shape (2, 3, 4, 5), a reps "
+#~ "of (2, 2) is treated as (1, "
+#~ "1, 2, 2)."
+#~ msgstr ""
+
+#~ msgid "The number of repetitions of data along each axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Copy data to the destination device. "
+#~ "This operator helps data transferring "
+#~ "between difference devices for heterogeneous"
+#~ " execution."
+#~ msgstr ""
+
+#~ msgid "The destination device where the data is copied to."
+#~ msgstr ""
+
+#~ msgid "**result** -- The copied result."
+#~ msgstr ""
+
+#~ msgid "Get the top k elements in an input tensor along the given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ret_type specifies the return type, can"
+#~ " be one of (\"both\", \"values\", "
+#~ "\"indices\")."
+#~ msgstr ""
+
+#~ msgid "Number of top elements to select. Return all elements if k < 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The return type [both, values, indices]."
+#~ " \"both\": return both top k data "
+#~ "and indices. \"values\": return top k"
+#~ " data only. \"indices\": return top k"
+#~ " indices only."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to return largest or smallest"
+#~ " elements. The k smallest elements "
+#~ "are returned if largest is False."
+#~ msgstr ""
+
+#~ msgid "The data type of the indices output."
+#~ msgstr ""
+
+#~ msgid "**out** -- The computed result."
+#~ msgstr ""
+
+#~ msgid "Return the lower triangular part of a matrix or a batch of matrices."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The tensor that tril will be "
+#~ "applied to. It is required to have"
+#~ " at least two dimensions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The index indicating the diagonal above"
+#~ " which to zero elements. If k ="
+#~ " 0, the diagonal is the main "
+#~ "diagonal. If k < 0, the diagonal"
+#~ " is below the main diagonal. If "
+#~ "k > 0, the diagonal is above "
+#~ "the main diagonal."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The result tensor."
+#~ msgstr ""
+
+#~ msgid "Return the upper triangular part of a matrix or a batch of matrices."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The tensor that triu will be "
+#~ "applied to. It is required to have"
+#~ " at least two dimensions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The index indicating the diagonal below"
+#~ " which to zero elements. If k ="
+#~ " 0, the diagonal is the main "
+#~ "diagonal. If k < 0, the diagonal"
+#~ " is below the main diagonal. If "
+#~ "k > 0, the diagonal is above "
+#~ "the main diagonal."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Find the unique elements in a "
+#~ "given tensor. In addition, it optionally"
+#~ " returns - the indices of the "
+#~ "input tensor that give the unique "
+#~ "values; - the indices of the "
+#~ "unique tensor that reconstruct the input"
+#~ " tensor; - the number of times "
+#~ "each unique value comes up in the"
+#~ " input tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to sort the unique elements "
+#~ "in ascending order before returning as"
+#~ " output."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to return an additional tensor"
+#~ " with indices for where elements in"
+#~ " the unique tensor come from the "
+#~ "original input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to return an additional tensor"
+#~ " with indices for where elements in"
+#~ " the original input ended up in "
+#~ "the returned unique list."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to return an additional tensor"
+#~ " with counts of each unique elements."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The dimension to apply unique. If "
+#~ "not specified, the unique values of "
+#~ "the flattened input are returned."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The created relax call with"
+#~ msgstr ""
+
+#~ msgid "Computes the variance of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a "
+#~ "variance operation is performed. The "
+#~ "default, axis=None, will compute the "
+#~ "variance of all elements in the "
+#~ "input tensor. Negative indexing is "
+#~ "supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Selecting elements from either the input"
+#~ " tensors depending on the value of"
+#~ " the condition."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a given position, return the "
+#~ "corresponding value in `x1` if "
+#~ "`condition` is True, and return the "
+#~ "corresponding value in `x2` otherwise."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When True, yield `x1`; otherwise, yield"
+#~ " `x2`. Must be broadcasting compatible "
+#~ "with `x1` and `x2`. Must have "
+#~ "boolean dtype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The first input tensor. Must be "
+#~ "broadcasting compatible with `condition` and"
+#~ " `x2`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The second input tensor. Must be "
+#~ "broadcasting compatible with `condition` and"
+#~ " `x1`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Cast input tensor which is model "
+#~ "param to data type if the dtype"
+#~ " of the input data is not the"
+#~ " same as the given dtype. :param "
+#~ "data: The input data to the "
+#~ "operator. :type data: relax.Expr :param "
+#~ "dtype: The target data type :type "
+#~ "dtype: Union[str, DataType]"
+#~ msgstr ""
+
+#~ msgid "Construct a tensor of all zeros, with the input shape and dtype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a tensor with all zeros, "
+#~ "with shape of the input tensor "
+#~ "shape."
+#~ msgstr ""
+
+#~ msgid "Neural network related operators."
+#~ msgstr ""
+
+#~ msgid "1D adaptive average pooling operator. This operator is experimental."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 1D average value calculation"
+#~ " across each window represented by W."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCW` a data Tensor "
+#~ "with shape `(batch_size, in_channels, width)`,"
+#~ " to produce an output Tensor with "
+#~ "shape (batch_size, in_channels, output_width)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The pooling kernel and stride sizes "
+#~ "are automatically chosen for desired "
+#~ "output sizes."
+#~ msgstr ""
+
+#~ msgid "For output_size:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this argument is not provided, "
+#~ "input height and width will be "
+#~ "used as output width."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a single integer is provided "
+#~ "for output_size, the output size is "
+#~ "(N x C x output_size) for any "
+#~ "input (NCW)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Output height and width. If not "
+#~ "specified, it will be the same as"
+#~ " the input height and width. If "
+#~ "specified, it is required to have "
+#~ "length either 1 or 2."
+#~ msgstr ""
+
+#~ msgid "Layout of the input."
+#~ msgstr ""
+
+#~ msgid "Layout of the output. If not specified, it is the same as data_layout"
+#~ msgstr ""
+
+#~ msgid "2D adaptive average pooling operator. This operator is experimental."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 2D average value calculation"
+#~ " across each window represented by "
+#~ "WxH."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCHW` a data Tensor "
+#~ "with shape `(batch_size, in_channels, height,"
+#~ " width)`, to produce an output Tensor"
+#~ " with shape (batch_size, in_channels, "
+#~ "output_height, output_width)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this argument is not provided, "
+#~ "input height and width will be "
+#~ "used as output height and width."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a single integer is provided "
+#~ "for output_size, the output size is "
+#~ "(N x C x output_size x "
+#~ "output_size) for any input (NCHW)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a tuple of integers (height, "
+#~ "width) are provided for output_size, the"
+#~ " output size is (N x C x "
+#~ "height x width) for any input "
+#~ "(NCHW)."
+#~ msgstr ""
+
+#~ msgid "3D adaptive average pooling operator. This operator is experimental."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 3D average value calculation"
+#~ " across each window represented by "
+#~ "WxH."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCDHW` a data Tensor "
+#~ "with shape `(batch_size, in_channels, depth,"
+#~ " height, width)`, to produce an "
+#~ "output Tensor with shape (batch_size, "
+#~ "in_channels, output_depth, output_height, "
+#~ "output_width)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this argument is not provided, "
+#~ "input depth, height and width will "
+#~ "be used as output depth, height "
+#~ "and width."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a single integer is provided "
+#~ "for output_size, the output size is "
+#~ "(N x C x output_size x output_size"
+#~ " x output_size) for any input "
+#~ "(NCDHW)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a tuple of integers (depth, "
+#~ "height, width) are provided for "
+#~ "output_size, the output size is (N "
+#~ "x C x depth x height x "
+#~ "width) for any input (NCDHW)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Output height and width. If not "
+#~ "specified, it will be the same as"
+#~ " the input height and width. If "
+#~ "specified, it is required to have "
+#~ "length either 1 or 3."
+#~ msgstr ""
+
+#~ msgid "Computes fused multi head attention."
+#~ msgstr ""
+
+#~ msgid "All input tensors are of 4-D tensors with BSNH layout."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "FMA(Q, K, V) = \\text{Softmax}(Q @ K^T) @ V\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "The input tensor is required to have float16 dtype"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input query to the operator. "
+#~ "The layout of the input query "
+#~ "should be (batch_size, seq_len, num_head, "
+#~ "head_dim)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input key to the operator. The"
+#~ " layout of the input key should "
+#~ "be (batch_size, seq_len_kv, num_head, "
+#~ "head_dim)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input value to the operator. "
+#~ "The layout of the input value "
+#~ "should be (batch_size, seq_len_kv, num_head,"
+#~ " head_dim_v)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The optional attention bias to the "
+#~ "operator. The layout of the attention"
+#~ " bias should be a 4-D tensor "
+#~ "ending with seq_len_kv, and broadcastable "
+#~ "to (batch_size, num_head, seq_len, "
+#~ "seq_len_kv)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The scale value to be applied to"
+#~ " the attention score, by default 1"
+#~ " / sqrt(head_dim)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The optional causal mask, i.e. 'TopLeft'"
+#~ " and 'BottomRight'. For 'TopLeft', the "
+#~ "mask matrix is as `np.tril(*, k=0)`, "
+#~ "while for 'BottomRight', the mask matrix"
+#~ " is as `np.tril(*, k=abs(seq_len - "
+#~ "seq_len_kv))` For example, with seq_len "
+#~ "= 4, seq_len_kv = 2, mask for "
+#~ "'TopLeft':  .. code:: python      [[1, "
+#~ "0],     [1, 1],     [1, 1],     [1, "
+#~ "1]]  mask for 'BottomRight':  .. code::"
+#~ " python      [[1, 1],     [1, 1],     "
+#~ "[1, 1],     [1, 1]]  with seq_len "
+#~ "= 2, seq_len_kv = 4, mask for "
+#~ "'TopLeft':  .. code:: python      [[1, "
+#~ "0, 0, 0],     [1, 1, 0, 0]]  "
+#~ "mask for 'BottomRight':  .. code:: "
+#~ "python      [[1, 1, 1, 0],     [1, "
+#~ "1, 1, 1]]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The optional causal mask, i.e. 'TopLeft'"
+#~ " and 'BottomRight'. For 'TopLeft', the "
+#~ "mask matrix is as `np.tril(*, k=0)`, "
+#~ "while for 'BottomRight', the mask matrix"
+#~ " is as `np.tril(*, k=abs(seq_len - "
+#~ "seq_len_kv))` For example, with seq_len "
+#~ "= 4, seq_len_kv = 2, mask for "
+#~ "'TopLeft':"
+#~ msgstr ""
+
+#~ msgid "mask for 'BottomRight':"
+#~ msgstr ""
+
+#~ msgid "with seq_len = 2, seq_len_kv = 4, mask for 'TopLeft':"
+#~ msgstr ""
+
+#~ msgid "The size of the window for sliding-window attention."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The computed result. The"
+#~ " layout of the output should be "
+#~ "(batch_size, seq_len, num_head, head_dim_v)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Computes fused multi head attention over"
+#~ " batched sequences of variable lengths."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Given concatenated inputs and sequence "
+#~ "lengths information, this operator computes"
+#~ " attention for all sequences more "
+#~ "efficiently than calling the normal "
+#~ "attention operator for each sequence "
+#~ "individually."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input queries concatenated along the"
+#~ " second axis. Its shape must be "
+#~ "(1, total_seq_len, num_head, head_dim)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input keys concatenated along the"
+#~ " second axis. Its shape must be "
+#~ "(1, total_seq_len_kv, num_head, head_dim)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input values concatenated along the"
+#~ " second axis. Its shape must be "
+#~ "(1, total_seq_len_kv, num_head, head_dim_v)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The cumsum of query sequence lengths,"
+#~ " prepended with 0. Its dtype must "
+#~ "be int32. For example, if the "
+#~ "lengths of the sequences that are "
+#~ "batched are [2, 5, 3], this tensor"
+#~ " has values [0, 2, 7, 10]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The cumsum of key sequence lengths, "
+#~ "prepended with 0. By default it is"
+#~ " the same as seqstart_q."
+#~ msgstr ""
+
+#~ msgid "The maximum query sequence length in the batch. It must be int32."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The maximum key sequence length in "
+#~ "the batch. It must be int32. By"
+#~ " default it is the same as "
+#~ "max_seqlen_q."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The computed result with"
+#~ " shape `(1, total_seq_len, num_head, "
+#~ "head_dim_v)`."
+#~ msgstr ""
+
+#~ msgid "1D average pooling operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 1D average value calculation"
+#~ " with in pool_size sized window by"
+#~ " striding defined by stride"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCW` a data Tensor "
+#~ "with shape `(batch_size, channels, width)`,"
+#~ " to produce an output Tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ceil_mode is used to take ceil"
+#~ " or floor while computing out shape."
+#~ " count_include_pad indicates including or "
+#~ "excluding padded input values in "
+#~ "computation. This operator accepts data "
+#~ "layout specification."
+#~ msgstr ""
+
+#~ msgid "The size of window for pooling. It is required to have length is 1."
+#~ msgstr ""
+
+#~ msgid "The strides of pooling. It is required to have length is 1."
+#~ msgstr ""
+
+#~ msgid "The padding for pooling. It is required to have length either 1 or 2."
+#~ msgstr ""
+
+#~ msgid "The dilation of pooling. It is required to have length is 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean indicating if use ceil "
+#~ "or floor to compute the output "
+#~ "shape. By using ceil, every element "
+#~ "in the input tensor will be "
+#~ "covered by a sliding window."
+#~ msgstr ""
+
+#~ msgid "To include padding to compute the average."
+#~ msgstr ""
+
+#~ msgid "2D average pooling operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 2D avarage value calculation"
+#~ " with in pool_size sized window by"
+#~ " striding defined by stride."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCHW` a data Tensor "
+#~ "with shape `(batch_size, in_channels, height,"
+#~ " width)`, to produce an output Tensor"
+#~ " with the following rule:"
+#~ msgstr ""
+
+#~ msgid "with data of shape (b, c, h, w) and pool_size (kh, kw)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\mbox{out}(b, c, y, x)  = \\frac{1}{kh"
+#~ " * kw} \\sum_{m=0, \\ldots, kh-1}\n"
+#~ "    \\sum_{n=0, \\ldots, kw-1}\n"
+#~ "    \\mbox{data}(b, c, \\mbox{stride}[0] * "
+#~ "y + m, \\mbox{stride}[1] * x + "
+#~ "n)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Padding is applied to data before "
+#~ "the computation. ceil_mode is used to"
+#~ " take ceil or floor while computing"
+#~ " out shape. This operator accepts "
+#~ "data layout specification."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The size of window for pooling. It"
+#~ " is required to have length either"
+#~ " 1 or 2."
+#~ msgstr ""
+
+#~ msgid "The strides of pooling. It is required to have length either 1 or 2."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The padding for pooling. It is "
+#~ "required to have length either 1, "
+#~ "2 or 4."
+#~ msgstr ""
+
+#~ msgid "The dilation of pooling. It is required to have length either 1 or 2."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 3D average value calculation"
+#~ " with in pool_size sized window by"
+#~ " striding defined by stride"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCDHW` a data Tensor "
+#~ "with shape `(batch_size, channels, depth, "
+#~ "height, width)`, to produce an output"
+#~ " Tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The size of window for pooling. It"
+#~ " is required to have length either"
+#~ " 1 or 3."
+#~ msgstr ""
+
+#~ msgid "The strides of pooling. It is required to have length either 1 or 3."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The padding for pooling. It is "
+#~ "required to have length either 1, "
+#~ "3 or 6."
+#~ msgstr ""
+
+#~ msgid "The dilation of pooling. It is required to have length either 1 or 3."
+#~ msgstr ""
+
+#~ msgid "Batch normalization layer (Ioffe and Szegedy, 2014)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Normalizes the input at each batch, "
+#~ "i.e. applies a transformation that "
+#~ "maintains the mean activation close to"
+#~ " 0 and the activation standard "
+#~ "deviation close to 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "data\\_mean[i] = mean(data[:,i,:,...]) \\\\\n"
+#~ "data\\_var[i] = var(data[:,i,:,...])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Both *mean* and *var* returns a "
+#~ "scalar by treating the input as a"
+#~ " vector."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then compute the normalized output, "
+#~ "which has the same shape as input,"
+#~ " as following:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "out[:,i,:,...] = \\frac{data[:,i,:,...] - "
+#~ "data\\_mean[i]}{\\sqrt{data\\_var[i]+\\epsilon}}\n"
+#~ "    * gamma[i] + beta[i]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Assume the input has size *k* on"
+#~ " axis 1, then both ``gamma`` and "
+#~ "``beta`` have shape *(k,)*."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Besides the inputs and the outputs, "
+#~ "this operator accepts two auxiliary "
+#~ "states, ``moving_mean`` and ``moving_var``, "
+#~ "which are *k*-length vectors. They are"
+#~ " global statistics for the whole "
+#~ "dataset, which are updated by"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The parameter ``axis`` specifies which "
+#~ "axis of the input shape denotes "
+#~ "the 'channel' (separately normalized groups)."
+#~ "  The default is 1. Specifying -1 "
+#~ "sets the channel axis to be the"
+#~ " last item in the input shape."
+#~ msgstr ""
+
+#~ msgid "This operator has two modes:"
+#~ msgstr ""
+
+#~ msgid "Training mode."
+#~ msgstr ""
+
+#~ msgid "Use the mean and var computed from THIS batch to normalize."
+#~ msgstr ""
+
+#~ msgid "Update and then return the running mean and running var."
+#~ msgstr ""
+
+#~ msgid "Inference mode."
+#~ msgstr ""
+
+#~ msgid "Use the running_mean and running_var parameters to normalize."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do not update the running mean and"
+#~ " running var. Just return the "
+#~ "original value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the legalization stage, this operator"
+#~ " will be legalized to the training"
+#~ " mode by default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can use "
+#~ "tvm.relax.transform.DecomposeOpsForInference to decompose"
+#~ " the operator, so it executes the "
+#~ "inference mode computation. Similarly, use "
+#~ "tvm.relax.transform.DecomposeOpsForTraining to execute "
+#~ "the training mode computation."
+#~ msgstr ""
+
+#~ msgid "The gamma scale factor."
+#~ msgstr ""
+
+#~ msgid "The beta offset factor."
+#~ msgstr ""
+
+#~ msgid "Running mean of input."
+#~ msgstr ""
+
+#~ msgid "Running variance of input."
+#~ msgstr ""
+
+#~ msgid "The axis along which the normalization is applied."
+#~ msgstr ""
+
+#~ msgid "Small float added to variance to avoid dividing by zero."
+#~ msgstr ""
+
+#~ msgid "Indicating if the beta offset will be added to the normalized tensor."
+#~ msgstr ""
+
+#~ msgid "Indicating if the gamma scale will be multiplied."
+#~ msgstr ""
+
+#~ msgid "The value used for the moving_mean and moving_var update."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean value to indicate whether "
+#~ "training or in eval mode. By "
+#~ "default.   relax batch_norm is training "
+#~ "mode. To transform it to inference "
+#~ "mode,   can use DecomposeOpsForInference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean value to indicate whether "
+#~ "training or in eval mode. By "
+#~ "default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "relax batch_norm is training mode. To"
+#~ " transform it to inference mode, can"
+#~ " use DecomposeOpsForInference."
+#~ msgstr ""
+
+#~ msgid "1D convolution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes the weight as "
+#~ "the 1D convolution kernel and convolves"
+#~ " it with data to produce an "
+#~ "output."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCW` and kernel_layout "
+#~ "is `OIW`, conv1d takes in a data"
+#~ " Tensor with shape `(batch_size, "
+#~ "in_channels, width)`, and a weight "
+#~ "Tensor with shape `(channels, in_channels, "
+#~ "kernel_w)`, where `kernel_w` is the "
+#~ "length of the `W` kernel dimension, "
+#~ "to produce an output Tensor with "
+#~ "the following rule:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\mbox{out}[b, c, x] = \\sum_{dx, k}\n"
+#~ "   \\mbox{data}[b, k, \\mbox{strides} * x + dx] *\n"
+#~ "   \\mbox{weight}[c, k, dx]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Padding and dilation are applied to "
+#~ "data and weight respectively before the"
+#~ " computation. This operator accepts data"
+#~ " layout specification. Semantically, the "
+#~ "operator will convert the layout to "
+#~ "the canonical layout (`NCW` for data "
+#~ "and `OIW` for weight), perform the "
+#~ "computation, then convert to the "
+#~ "out_layout."
+#~ msgstr ""
+
+#~ msgid "The weight expressions."
+#~ msgstr ""
+
+#~ msgid "The strides of convolution. It is required to have length 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The padding of convolution on both "
+#~ "sides of inputs before convolution. It"
+#~ " is required to have length either"
+#~ " 1 or 2."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the dilation rate to be "
+#~ "used for dilated convolution. It is "
+#~ "required to have length 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Number of groups to split the "
+#~ "input into for grouped convolution. The"
+#~ " number of input and output channels"
+#~ " should be divisible by the number"
+#~ " of groups."
+#~ msgstr ""
+
+#~ msgid "Layout of the weight."
+#~ msgstr ""
+
+#~ msgid "Specifies the output data type for mixed precision conv1d."
+#~ msgstr ""
+
+#~ msgid "1D transposed convolution operator."
+#~ msgstr ""
+
+#~ msgid "This operator can be seen as the gradient operator of conv1d."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output shape can be explained "
+#~ "in the simple case when `data_layout "
+#~ "== \"NCW\"` and `kernel_layout == "
+#~ "\"IOW\"`. Suppose `data` has shape `(N,"
+#~ " in_channel, in_w)`, `weight` has shape "
+#~ "`(in_channel, out_channel, weight_w)`, we need"
+#~ " to assure that `in_channel % groups"
+#~ " == 0`. The shape of the output"
+#~ " will be `(N, out_channel * groups,"
+#~ " out_w)`, where"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`out_w = ((in_w - 1) * strides[0]"
+#~ " + weight_w - 2 * padding[0] +"
+#~ " output_padding[0])`"
+#~ msgstr ""
+
+#~ msgid "Used to disambiguate the output shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the dilation rate to be "
+#~ "used for dilated convolution. It is "
+#~ "required to have length either 1."
+#~ msgstr ""
+
+#~ msgid "Specifies the output data type for mixed precision conv2d."
+#~ msgstr ""
+
+#~ msgid "2D convolution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes the weight as "
+#~ "the convolution kernel and convolves it"
+#~ " with data to produce an output."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCHW` and kernel_layout "
+#~ "is `OIHW`, conv2d takes in a data"
+#~ " Tensor with shape `(batch_size, "
+#~ "in_channels, height, width)`, and a "
+#~ "weight Tensor with shape `(channels, "
+#~ "in_channels, kernel_h, kernel_w)`, where "
+#~ "`kernel_h` and `kernel_w` is the lengths"
+#~ " of the `H` and `W` kernel "
+#~ "dimensions, to produce an output Tensor"
+#~ " with the following rule:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\mbox{out}[b, c, y, x] = \\sum_{dy, dx, k}\n"
+#~ "   \\mbox{data}[b, k, \\mbox{strides}[0] * "
+#~ "y  + dy, \\mbox{strides}[1] * x +"
+#~ " dx] *\n"
+#~ "   \\mbox{weight}[c, k, dy, dx]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Padding and dilation are applied to "
+#~ "data and weight respectively before the"
+#~ " computation. This operator accepts data"
+#~ " layout specification. Semantically, the "
+#~ "operator will convert the layout to "
+#~ "the canonical layout (`NCHW` for data"
+#~ " and `OIHW` for weight), perform the"
+#~ " computation, then convert to the "
+#~ "out_layout."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The strides of convolution. It is "
+#~ "required to have length either 1 "
+#~ "or 2."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The padding of convolution on both "
+#~ "sides of inputs before convolution. It"
+#~ " is required to have length either"
+#~ " 1, 2 or 4."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the dilation rate to be "
+#~ "used for dilated convolution. It is "
+#~ "required to have length either 1 "
+#~ "or 2."
+#~ msgstr ""
+
+#~ msgid "Two dimensional transposed convolution operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator is intended to be "
+#~ "the gradient operator of conv2d. That"
+#~ " means, if"
+#~ msgstr ""
+
+#~ msgid "`out = conv2d(data, weight, strides, padding, dilation)`,"
+#~ msgstr ""
+
+#~ msgid "The gradient w.r.t. data can be calculated as follows:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`data_grad = conv2d_transpose(out_grad, weight, "
+#~ "strides, padding, output_padding, dilation)`,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where `output_padding` is a parameter "
+#~ "used to determine the output shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output shape can be explained "
+#~ "in the simple case when `data_layout "
+#~ "== \"NCHW\"` and `kernel_layout == "
+#~ "\"IOHW\"`. Suppose `data` has shape `(N,"
+#~ " in_channel, in_h, in_w)`, `weight` has "
+#~ "shape `(in_channel, out_channel, weight_h, "
+#~ "weight_w)`, we need to assure that "
+#~ "`in_channel % groups == 0`. The "
+#~ "shape of the output will be `(N,"
+#~ " out_channel * groups, out_h, out_w)`, "
+#~ "where"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`out_h = ((in_h - 1) * strides[0]"
+#~ " + weight_h - 2 * padding[0] +"
+#~ " output_padding[0])`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`out_w = ((in_w - 1) * strides[1]"
+#~ " + weight_w - 2 * padding[1] +"
+#~ " output_padding[1])`"
+#~ msgstr ""
+
+#~ msgid "3D convolution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCDHW` and kernel_layout "
+#~ "is `OIDHW`, conv3d takes in a data"
+#~ " Tensor with shape `(batch_size, "
+#~ "in_channels, depth, height, width)`, and "
+#~ "a weight Tensor with shape `(channels,"
+#~ " in_channels, kernel_d, kernel_h, kernel_w)`, "
+#~ "where `kernel_d`, `kernel_h`, and `kernel_w`"
+#~ " are the lengths of the `D`, "
+#~ "`H`, and `W` kernel dimensions, to "
+#~ "produce an output Tensor with the "
+#~ "following rule:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\mbox{out}[b, c, z, y, x] = \\sum_{dz, dy, dx, k}\n"
+#~ "   \\mbox{data}[b, k, \\mbox{strides}[0] * z + dz,\n"
+#~ "   \\mbox{strides}[1] * y  + dy,\n"
+#~ "   \\mbox{strides}[2] * x + dx] *\n"
+#~ "   \\mbox{weight}[c, k, dz, dy, dx]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Padding and dilation are applied to "
+#~ "data and weight respectively before the"
+#~ " computation. This operator accepts data"
+#~ " layout specification. Semantically, the "
+#~ "operator will convert the layout to "
+#~ "the canonical layout (`NCDHW` for data"
+#~ " and `OIDHW` for weight), perform the"
+#~ " computation, then convert to the "
+#~ "out_layout."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The strides of convolution. It is "
+#~ "required to have length either 1 "
+#~ "or 3."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The padding of convolution on both "
+#~ "sides of inputs before convolution. It"
+#~ " is required to have length either"
+#~ " 1, 3 or 6."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the dilation rate to be "
+#~ "used for dilated convolution. It is "
+#~ "required to have length either 1 "
+#~ "or 3."
+#~ msgstr ""
+
+#~ msgid "CrossEntropy with logits between the predictions and labels."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The shape of predictions and labels "
+#~ "must be the same. And when ndim"
+#~ " >= 2, the first dimension is "
+#~ "regarded as the batch_size N. In "
+#~ "this case the computed result will "
+#~ "divide by N to perform a mean "
+#~ "reduction."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{cross\\_entropy\\_with\\_logits}(x_i, y_i) = "
+#~ "\\frac{\\sum_i -x_i \\cdot y_i}{N}"
+#~ msgstr ""
+
+#~ msgid "The predictions."
+#~ msgstr ""
+
+#~ msgid "The labels (the ground truth values)."
+#~ msgstr ""
+
+#~ msgid "Applies the dropout operation to the input tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "During training, each element of the "
+#~ "input is set to zero with "
+#~ "probability ``p``. The whole array is"
+#~ " scaled by ``1/(1-p)`` to keep the"
+#~ " expected sum of the input unchanged."
+#~ msgstr ""
+
+#~ msgid "The probability for an element to be reset to 0."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The result of dropout, "
+#~ "which is a tuple of two tensors."
+#~ " The first one is the original "
+#~ "tensor and the second one is a "
+#~ "mask tensor (1.0 where element not "
+#~ "dropped, 0.0 where dropped)"
+#~ msgstr ""
+
+#~ msgid "Gaussian Error Linear Units function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{GeLU}(x) = 0.5 * x * (1 + \\text{erf}(x * 0.5**0.5))\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "where :math:`erf` is the Gauss Error function."
+#~ msgstr ""
+
+#~ msgid "Gaussian Error Linear Units function with tanh approximation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{GELU}(x) = 0.5 * x * (1 "
+#~ "+ \\text{Tanh}(\\sqrt(2 / \\pi) * (x "
+#~ "+ 0.044715 * x^3)))\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Group normalization (Yuxin Wu and et "
+#~ "al., 2016). Applies group normalization "
+#~ "to the n-dimensional input array. This"
+#~ " operator takes an n-dimensional input "
+#~ "array. First separate the input array"
+#~ " into groups along the channel axis."
+#~ " Then apply layer normalization to "
+#~ "each group."
+#~ msgstr ""
+
+#~ msgid "Input to which group_norm will be applied."
+#~ msgstr ""
+
+#~ msgid "Number of groups to separate the channels into."
+#~ msgstr ""
+
+#~ msgid "The index of the channel axis in the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axes that along which the "
+#~ "normalization is applied (excluding the "
+#~ "group axis)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Layer normalization (Lei Ba and et "
+#~ "al., 2016). Applies layer normalization "
+#~ "to the n-dimensional input array. This"
+#~ " operator takes an n-dimensional input "
+#~ "array and normalizes the input using "
+#~ "the given axis:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "out = \\frac{data - mean(data, "
+#~ "axis)}{\\sqrt{var(data, axis)+\\epsilon}}\n"
+#~ "    * gamma + beta"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unlike batch normalization, the mean and"
+#~ " var are computed along the channel"
+#~ " dimension."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Assume the input has size k on "
+#~ "axis 1, then both gamma and beta"
+#~ " have shape (k,)."
+#~ msgstr ""
+
+#~ msgid "This operator can be optimized away for inference."
+#~ msgstr ""
+
+#~ msgid "Input to which layer_norm will be applied."
+#~ msgstr ""
+
+#~ msgid "The axes that along which the normalization is applied."
+#~ msgstr ""
+
+#~ msgid "Rectified linear unit."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "text{LeakyReLU, negative_slope}(x) = max(x, 0)"
+#~ " + negative_slope * min(x, 0)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Controls the angle of the negative "
+#~ "slope, used for nagative inputs. Default"
+#~ " value is 0.01"
+#~ msgstr ""
+
+#~ msgid "Computes log softmax."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{log\\_softmax}(x_i) = \\log\\left( "
+#~ "\\frac{\\exp(x_i)}{\\sum_j \\exp(x_j)}\\right)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis to sum over when "
+#~ "computing log softmax. If not specified,"
+#~ " it is by default the last axis"
+#~ " of the input tensor. Supports "
+#~ "negative indexing."
+#~ msgstr ""
+
+#~ msgid "1D maximum pooling operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 1D max value calculation "
+#~ "with in pool_size sized window by "
+#~ "striding defined by stride."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "IIn the default case, where the "
+#~ "data_layout is `NCW` a data Tensor "
+#~ "with shape `(batch_size, channels, width)`,"
+#~ " to produce an output Tensor."
+#~ msgstr ""
+
+#~ msgid "The size of window for pooling. It is required to have length either 1."
+#~ msgstr ""
+
+#~ msgid "The strides of pooling. It is required to have length either 1."
+#~ msgstr ""
+
+#~ msgid "The dilation of pooling. It is required to have length either 1."
+#~ msgstr ""
+
+#~ msgid "2D maximum pooling operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 2D max value calculation "
+#~ "with in pool_size sized window by "
+#~ "striding defined by stride."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\mbox{out}(b, c, y, x)  = \\max_{m=0,"
+#~ " \\ldots, kh-1} \\max_{n=0, \\ldots, kw-1}"
+#~ "\n"
+#~ "     \\mbox{data}(b, c, \\mbox{stride}[0] *"
+#~ " y + m, \\mbox{stride}[1] * x +"
+#~ " n)"
+#~ msgstr ""
+
+#~ msgid "3D maximum pooling operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 3D max value calculation "
+#~ "with in pool_size sized window by "
+#~ "striding defined by stride."
+#~ msgstr ""
+
+#~ msgid "Negative log likelihood loss."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`output[n, i_1, i_2, ..., i_k] = "
+#~ "-p * w`, where - `p = "
+#~ "predictions[n, t, i_1, i_2, i_k]`, - "
+#~ "`t = targets[n, i_1, i_2, ..., "
+#~ "i_k]`, - `w = weights[t] if t "
+#~ "!= ignore_index else 0`"
+#~ msgstr ""
+
+#~ msgid "result = reduction(output)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The predictions. Should be a `(k+2)-D`"
+#~ " Tensor with shape `(N, C, d_1, "
+#~ "d_2, ..., d_k)` where C is the "
+#~ "number of target classes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The target value of each prediction. "
+#~ "Should be a `(k+1)-D` Tensor with "
+#~ "shape `(N, d_1, d_2, ..., d_k)`. "
+#~ "Must be of int dtype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The weight of each target value. "
+#~ "Should be a `1-D` Tensor with "
+#~ "shape `(C,)`. If not specified, it "
+#~ "is treated as if having all ones."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The reduction method to apply to "
+#~ "the output. Possible values are "
+#~ "\"mean\", \"sum\" and \"none\"."
+#~ msgstr ""
+
+#~ msgid "The target value to ignore."
+#~ msgstr ""
+
+#~ msgid "Padding"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes in a tensor "
+#~ "and pads each axis by the "
+#~ "specified widths using the specified "
+#~ "value."
+#~ msgstr ""
+
+#~ msgid "The input data to the operator"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Number of values padded to the "
+#~ "edges of each axis, in the format"
+#~ " of ((before_1, after_1), ..., (before_N,"
+#~ " after_N))"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "'constant', 'edge', or 'reflect' 'constant'"
+#~ " pads with constant_value pad_value 'edge'"
+#~ " pads using the edge values of "
+#~ "the input array 'reflect' pads by "
+#~ "reflecting values with respect to the"
+#~ " edge Default is 'constant'"
+#~ msgstr ""
+
+#~ msgid "The value used for padding. Default is 0."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{ReLU}(x) = \\max(x, 0)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Root mean square normalization (Biao "
+#~ "Zhang and et al., 2019). Applies "
+#~ "root mean square normalization to the"
+#~ " n-dimensional input array. This operator"
+#~ " takes an n-dimensional input array "
+#~ "and normalizes the input using the "
+#~ "given axis:"
+#~ msgstr ""
+
+#~ msgid "out = \\frac{data}{\\sqrt{mean(data, axis)+\\epsilon}} * weight + bias"
+#~ msgstr ""
+
+#~ msgid "Input to which rms_norm will be applied."
+#~ msgstr ""
+
+#~ msgid "The scale factor."
+#~ msgstr ""
+
+#~ msgid "The offset factor."
+#~ msgstr ""
+
+#~ msgid "Small float added to square mean to avoid dividing by zero."
+#~ msgstr ""
+
+#~ msgid "Scaled Exponential Linear Unit (SELU)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{SELU}(x) = \\lambda \\begin{cases}\n"
+#~ "    x & \\text{if } x > 0 \\\\\n"
+#~ "    \\alpha (e^x - 1) & \\text{if } x \\leq 0\n"
+#~ "\\end{cases}\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where :math:`\\lambda \\approx 1.0507` and "
+#~ ":math:`\\alpha \\approx 1.6733`."
+#~ msgstr ""
+
+#~ msgid "Sigmoid Linear Unit function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{SiLU}(x) = x * \\text{sigmoid}(x)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "Computes softmax."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{softmax}(x)_i = \\frac{\\exp(x_i)}{\\sum_j \\exp(x_j)}\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis to sum over when "
+#~ "computing softmax. If not specified, it"
+#~ " is by default the last axis of"
+#~ " the input tensor. Supports negative "
+#~ "indexing."
+#~ msgstr ""
+
+#~ msgid "Relax builtin operators."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a Call to allocate a "
+#~ "tensor with specific shape, dtype, "
+#~ "runtime_device_index."
+#~ msgstr ""
+
+#~ msgid "The shape of the tensor to be allocated."
+#~ msgstr ""
+
+#~ msgid "The datatype of the tensor to be allocated."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The device index indicating on which "
+#~ "device the tensor is to be "
+#~ "allocated at runtime. Index -1 is "
+#~ "reserved for the host device."
+#~ msgstr ""
+
+#~ msgid "The storage scope to allocate the storage to."
+#~ msgstr ""
+
+#~ msgid "**result** -- A relax Call, which gets the allocated tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An indicator that the consumers of "
+#~ "input tensor should not be lifted "
+#~ "to transform_params function"
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor that is the same as input tensor"
+#~ msgstr ""
+
+#~ msgid "CCL related operators."
+#~ msgstr ""
+
+#~ msgid "AllGather operator"
+#~ msgstr ""
+
+#~ msgid "The number of workers to gather data from."
+#~ msgstr ""
+
+#~ msgid "Whether the gather operation performs globally or in group as default."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result of allgather."
+#~ msgstr ""
+
+#~ msgid "Allreduce operator"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The type of reduction operation to "
+#~ "be applied to the input data. Now"
+#~ " \"sum\", \"prod\", \"min\", \"max\" and"
+#~ " \"avg\" are supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether the reduction operation performs "
+#~ "globally or in group as default."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result of allreduce."
+#~ msgstr ""
+
+#~ msgid "Broadcast data from worker-0 to all other workers."
+#~ msgstr ""
+
+#~ msgid "The tensor to be broadcast."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The same tensor, which "
+#~ "has been broadcast to all other "
+#~ "workers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Perform a scatter operation from "
+#~ "worker-0, chunking the given buffer into"
+#~ " equal parts."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The buffer to be divided into "
+#~ "equal parts and sent to each "
+#~ "worker accordingly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The number of workers, i.e. the "
+#~ "number of parts the given buffer "
+#~ "should be chunked into."
+#~ msgstr ""
+
+#~ msgid "The dimension of the tensor to be scattered. Default is 0."
+#~ msgstr ""
+
+#~ msgid "**result** -- Chunked Tensor received by different workers."
+#~ msgstr ""
+
+#~ msgid "Operators serving for distributed Relax."
+#~ msgstr ""
+
+#~ msgid "Annotate sharding plan for tensor"
+#~ msgstr ""
+
+#~ msgid "The device mesh of the sharding plan"
+#~ msgstr ""
+
+#~ msgid "The placement of the sharding plan"
+#~ msgstr ""
+
+#~ msgid "**result** -- The tensor unmodified."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Call a tir.prim_func and return the "
+#~ "output. The prim_func should be a "
+#~ "worker-local function that is actually "
+#~ "executed on each worker, instead of "
+#~ "the unpartitioned function. The output "
+#~ "of this operator is DTensor or a"
+#~ " tuple of DTensors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The structure info of the call_tir "
+#~ "output. It should be a single or"
+#~ " a list of DTensorStructInfo. Each "
+#~ "one denotes the structure info of "
+#~ "a returned tensor."
+#~ msgstr ""
+
+#~ msgid "**ret** -- A call node for the call_tir_local_view operator."
+#~ msgstr ""
+
+#~ msgid "Redistribute tensor"
+#~ msgstr ""
+
+#~ msgid "The device mesh after redistribution"
+#~ msgstr ""
+
+#~ msgid "The placement after redistribution"
+#~ msgstr ""
+
+#~ msgid "**result** -- The tensor after redistribution."
+#~ msgstr ""
+
+#~ msgid "Slice tensor into several parts along one axis,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "and each worker takes one part. "
+#~ "input.struct_info.shape[axis] % num_workers == "
+#~ "0 is required. Each worker must "
+#~ "have an identical copy of the "
+#~ "input. This is a specialized version "
+#~ "of redistribute op."
+#~ msgstr ""
+
+#~ msgid "The buffer to be sliced into equal parts."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The number of workers, i.e. the "
+#~ "number of parts the given buffer "
+#~ "should be sliced into."
+#~ msgstr ""
+
+#~ msgid "The axis of the tensor to be sliced."
+#~ msgstr ""
+
+#~ msgid "**result** -- Sliced Tensor kept by each device."
+#~ msgstr ""
+
+#~ msgid "Operators serving for finding gradient of relax operators."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Backward operator of relax.nn.avg_pool2d. All"
+#~ " parameters except output_grad is the "
+#~ "same as relax.nn.avg_pool2d. Returns the "
+#~ "gradient w.r.t. data."
+#~ msgstr ""
+
+#~ msgid "The gradient w.r.t. the result of avg_pool2d."
+#~ msgstr ""
+
+#~ msgid "**result** -- The gradient w.r.t. data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mark the end of checkpoint stage. "
+#~ "See tvm.relax.op.grad.start_checkpoint."
+#~ msgstr ""
+
+#~ msgid "The output of the checkpoint stage."
+#~ msgstr ""
+
+#~ msgid "**result** -- The same tensor as the input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Backward operator of relax.nn.max_pool2d. All"
+#~ " parameters except output_grad is the "
+#~ "same as relax.nn.max_pool2d. Returns the "
+#~ "gradient w.r.t. data."
+#~ msgstr ""
+
+#~ msgid "The gradient w.r.t. the result of max_pool2d."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Backward operator of relax.nn.nll_loss. All"
+#~ " parameters except output_grad is the "
+#~ "same as relax.nn.nll_loss. Returns the "
+#~ "gradient w.r.t. predictions."
+#~ msgstr ""
+
+#~ msgid "The gradient w.r.t. the result of nll_loss."
+#~ msgstr ""
+
+#~ msgid "**result** -- The gradient w.r.t. predictions."
+#~ msgstr ""
+
+#~ msgid "No gradient dummy operator w.r.t. the input."
+#~ msgstr ""
+
+#~ msgid "The corresponding input tensor."
+#~ msgstr ""
+
+#~ msgid "**result** -- The no-gradient representation w.r.t. input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mark the start of the checkpoint "
+#~ "stage. The computation between "
+#~ "start_checkpoint and end_checkpoint will be"
+#~ " marked as the checkpoint stage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rather than storing all intermediate "
+#~ "activations of the entire computation "
+#~ "graph for computing backward, the "
+#~ "checkpointed stage does not save "
+#~ "intermediate activations, and instead "
+#~ "recomputes them in backward process."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For instance, ``` a = relax.Var(\"a\","
+#~ " relax.TensorStructInfo((2, 2), \"float32\")) b"
+#~ " = relax.Var(\"b\", relax.TensorStructInfo((2, "
+#~ "2), \"float32\")) c = a * 2 "
+#~ "d = b * 2 c_cp = "
+#~ "start_checkpoint(c) d_cp = start_checkpoint(d) "
+#~ "e = c_cp + d_cp e_out = "
+#~ "end_checkpoint(e) ``` Then `e` will be"
+#~ " recomputed in the backward stage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "See tvm.relax.transform.Gradient, "
+#~ "tvm.relax.testing.nn.checkpoint, "
+#~ "tvm.relax.op.grad.end_checkpoint for more "
+#~ "information."
+#~ msgstr ""
+
+#~ msgid "The tensor marking the input of the checkpoint stage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Backward operator of relax.take. All "
+#~ "parameters except output_grad is the "
+#~ "same as relax.take. Returns the gradient"
+#~ " w.r.t. x."
+#~ msgstr ""
+
+#~ msgid "The gradient w.r.t. the result of take."
+#~ msgstr ""
+
+#~ msgid "**result** -- The gradient w.r.t. x."
+#~ msgstr ""
+
+#~ msgid "Image operators."
+#~ msgstr ""
+
+#~ msgid "Image resize2d operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes data as input "
+#~ "and does 2D scaling to the given"
+#~ " scale factor. In the default case,"
+#~ " where the data_layout is `NCHW` with"
+#~ " data of shape (n, c, h, w) "
+#~ "out will have a shape (n, c, "
+#~ "size[0], size[1])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "method indicates the algorithm to be "
+#~ "used while calculating the out value "
+#~ "and method can be one of "
+#~ "(\"linear\", \"nearest_neighbor\", \"cubic\")"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The out size to which the image"
+#~ " will be resized. If specified as "
+#~ "a list, it is required to have "
+#~ "length either 1 or 2. If specified"
+#~ " as an Expr, it is required to"
+#~ " have ndim 2."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The region of interest for cropping "
+#~ "the input image. Expected to be of"
+#~ " size 4, and format [start_h, "
+#~ "start_w, end_h, end_w]. Only used if "
+#~ "coordinate_transformation_mode is tf_crop_and_resize."
+#~ msgstr ""
+
+#~ msgid "Scale method to used [nearest_neighbor, linear, cubic]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Describes how to transform the "
+#~ "coordinate in the resized tensor to "
+#~ "the coordinate in the original tensor."
+#~ " Definitions can be found in "
+#~ "topi/image/resize.py. [half_pixel, align_corners, "
+#~ "asymmetric, pytorch_half_pixel, tf_half_pixel_for_nn, "
+#~ "and tf_crop_and_resize]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "indicates how to find the \"nearest\""
+#~ " pixel in nearest_neighbor method [round,"
+#~ " floor, ceil]"
+#~ msgstr ""
+
+#~ msgid "Spline Coefficient for bicubic interpolation"
+#~ msgstr ""
+
+#~ msgid "Flag to exclude exterior of the image during bicubic interpolation"
+#~ msgstr ""
+
+#~ msgid "Fill value to use when roi is outside of the image"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The dtype of the output tensor. It"
+#~ " it is not specified, the output "
+#~ "will have the same dtype as input"
+#~ " if not specified."
+#~ msgstr ""
+
+#~ msgid "**result** -- The resized result."
+#~ msgstr ""
+
+#~ msgid "Relax memory primitives."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a Call to allocate a "
+#~ "storage with specific size, "
+#~ "virtual_device_index, storage_scope and dtype."
+#~ msgstr ""
+
+#~ msgid "The size of the storage to be allocated."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The virtual device index indicating on"
+#~ " which device the storage is to "
+#~ "be allocated. Index -1 is reserved "
+#~ "for the host device."
+#~ msgstr ""
+
+#~ msgid "The datatype of the storage to be allocated."
+#~ msgstr ""
+
+#~ msgid "**result** -- A relax Call, which gets the allocated storage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Construct a Call to allocate a "
+#~ "tensor on a certain storage starting "
+#~ "from the given offset."
+#~ msgstr ""
+
+#~ msgid "The storage to allocate the tensor to."
+#~ msgstr ""
+
+#~ msgid "The storage offset to allocate the tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ensure the tensor has elem_offset == "
+#~ "0. A copy will be made if "
+#~ "necessary."
+#~ msgstr ""
+
+#~ msgid "The input tensor"
+#~ msgstr ""
+
+#~ msgid "The tensor with elem_offset == 0"
+#~ msgstr ""
+
+#~ msgid "Construct a Call to kill a storage."
+#~ msgstr ""
+
+#~ msgid "The storage to be killed."
+#~ msgstr ""
+
+#~ msgid "**result** -- A relax Call to kill a storage."
+#~ msgstr ""
+
+#~ msgid "Construct a Call to kill a tensor."
+#~ msgstr ""
+
+#~ msgid "The tensor to be killed."
+#~ msgstr ""
+
+#~ msgid "**result** -- A relax Call to kill a tensor."
+#~ msgstr ""
+
+#~ msgid "Provide a view into an existing tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The view may have a different "
+#~ "shape, may be a different datatype, "
+#~ "and may start at an offset "
+#~ "relative to the source array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Regardless of which combination of these"
+#~ " options are used, the view may "
+#~ "never access memory that was not "
+#~ "accessible through the input `data` "
+#~ "array.  This restriction applies even if"
+#~ " the `data` array is itself a "
+#~ "view into a shared backing array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The target shape.  Should be a "
+#~ "`relax.ShapeExpr`, or a collection that "
+#~ "can be converted to a `relax.ShapeExpr`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The target datatype.  Should be a "
+#~ "`relax.ShapeExpr`, or a collection that "
+#~ "can be converted to a `relax.ShapeExpr`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The offset of the output NDArray, "
+#~ "relative to the byte offset of "
+#~ "`data`.  If `None`, the offset of "
+#~ "the view is the same as the "
+#~ "offset of `data`."
+#~ msgstr ""
+
+#~ msgid "**result** -- The tensor view"
+#~ msgstr ""
+
+#~ msgid "The attributes node used for Relax operators"
+#~ msgstr ""
+
+#~ msgid "Attributes for 2d adaptive pool operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for argmax/argmin operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for argsort operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in astype operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in batch_norm operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in call_tir_with_grad operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for concat operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for nn.conv2d"
+#~ msgstr ""
+
+#~ msgid "Attributes for nn.conv2d_transpose"
+#~ msgstr ""
+
+#~ msgid "Attributes for nn.conv3d"
+#~ msgstr ""
+
+#~ msgid "Attributes for dropout operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for einsum operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for expand_dims operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for flip operator"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Attributes used in full/full_like, "
+#~ "ones/ones_like, and zeros/zeros_like operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in layer_norm operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in layout_transform operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for matmul operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for permute_dims operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for nn.max_pool2d"
+#~ msgstr ""
+
+#~ msgid "Attributes for repeat operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in image resize2d operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for scan operators"
+#~ msgstr ""
+
+#~ msgid "Attributes for nn.softmax"
+#~ msgstr ""
+
+#~ msgid "Attributes for sort operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in split operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for squeeze operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in statistical operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in strided_slice operator"
+#~ msgstr ""
+
+#~ msgid "Attributes used in take operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for tile operator"
+#~ msgstr ""
+
+#~ msgid "Attributes for topk operators"
+#~ msgstr ""
+
+#~ msgid "Attributes used in tril and triu operator"
+#~ msgstr ""
+

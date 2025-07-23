@@ -1,0 +1,2418 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/tir.rst:19
+msgid "tvm.tir"
+msgstr ""
+
+#~ msgid ""
+#~ "Here's an example of how broadcast "
+#~ "buffer can be used to define a "
+#~ "symbolic broadcast operation,"
+#~ msgstr ""
+
+#~ msgid "Any node."
+#~ msgstr ""
+
+#~ msgid "span"
+#~ msgstr ""
+
+#~ msgid "Optional[Span]"
+#~ msgstr ""
+
+#~ msgid "Namespace for Tensor-level IR"
+#~ msgstr ""
+
+#~ msgid "Add node."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The left hand operand."
+#~ msgstr ""
+
+#~ msgid "The right hand operand."
+#~ msgstr ""
+
+#~ msgid "The location of this expression in the source code."
+#~ msgstr ""
+
+#~ msgid "Allocate node."
+#~ msgstr ""
+
+#~ msgid "The buffer variable."
+#~ msgstr ""
+
+#~ msgid "The data type of the buffer."
+#~ msgstr ""
+
+#~ msgid "The extents of the allocate"
+#~ msgstr ""
+
+#~ msgid "The condition."
+#~ msgstr ""
+
+#~ msgid "The body statement."
+#~ msgstr ""
+
+#~ msgid "Additional annotation hints"
+#~ msgstr ""
+
+#~ msgid "The location of the stmt in the source code."
+#~ msgstr ""
+
+#~ msgid "Allocate constant node."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If an NDArray, this is the const"
+#~ " data associated with the constant.  "
+#~ "If an integer, this is the index"
+#~ " into the \"constants\" attribute of "
+#~ "the `IRModule` that contains the "
+#~ "`AllocateConst`."
+#~ msgstr ""
+
+#~ msgid "Additional annotations about the allocation."
+#~ msgstr ""
+
+#~ msgid "And node."
+#~ msgstr ""
+
+#~ msgid "AssertStmt node."
+#~ msgstr ""
+
+#~ msgid "The assert condition."
+#~ msgstr ""
+
+#~ msgid "The error message."
+#~ msgstr ""
+
+#~ msgid "AttrStmt node."
+#~ msgstr ""
+
+#~ msgid "The node to annotate the attribute"
+#~ msgstr ""
+
+#~ msgid "Attribute type key."
+#~ msgstr ""
+
+#~ msgid "The value of the attribute"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bijective mapping for two layouts "
+#~ "(src-layout and dst-layout). It "
+#~ "provides shape and index conversion "
+#~ "between each other."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do not construct directly, use "
+#~ ":any:`bijective_layout` instead. See the "
+#~ "documentation of :any:`bijective_layout` for "
+#~ "more details."
+#~ msgstr ""
+
+#~ msgid "source layout."
+#~ msgstr ""
+
+#~ msgid "destination layout."
+#~ msgstr ""
+
+#~ msgid ":obj:`bijective_layout`"
+#~ msgstr ""
+
+#~ msgid "Declare a layout"
+#~ msgstr ""
+
+#~ msgid "Given the indices of the dst-layout, infer the src index."
+#~ msgstr ""
+
+#~ msgid "The indices in dst-layout."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**src_index** -- The inferred indices in src-layout."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Given the shape of the dst-layout, infer the src shape."
+#~ msgstr ""
+
+#~ msgid "The shape in dst-layout."
+#~ msgstr ""
+
+#~ msgid "**src_shape** -- The inferred shape in src-layout."
+#~ msgstr ""
+
+#~ msgid "Given the indices of the src-layout, infer the dst index."
+#~ msgstr ""
+
+#~ msgid "The indices in src-layout."
+#~ msgstr ""
+
+#~ msgid "**dst_index** -- The inferred indices in dst-layout."
+#~ msgstr ""
+
+#~ msgid "Given the shape of the src-layout, infer the dst shape."
+#~ msgstr ""
+
+#~ msgid "The shape in src-layout."
+#~ msgstr ""
+
+#~ msgid "**dst_shape** -- The inferred shape in dst-layout."
+#~ msgstr ""
+
+#~ msgid "Block node."
+#~ msgstr ""
+
+#~ msgid "The block Variable."
+#~ msgstr ""
+
+#~ msgid "The read buffer regions of the block."
+#~ msgstr ""
+
+#~ msgid "The write buffer regions of the block."
+#~ msgstr ""
+
+#~ msgid "the name_hint of the block."
+#~ msgstr ""
+
+#~ msgid "The body of the block."
+#~ msgstr ""
+
+#~ msgid "The init block of the reduction block"
+#~ msgstr ""
+
+#~ msgid "The buffer allocations"
+#~ msgstr ""
+
+#~ msgid "The subregion buffer match"
+#~ msgstr ""
+
+#~ msgid "Additional annotation hints."
+#~ msgstr ""
+
+#~ msgid "The location of this block in the source code."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An object that helps build and "
+#~ "query block level dependences using the"
+#~ " 2 core objects BlockScope and "
+#~ "StmtSRef"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data structures exposed are: 1) "
+#~ "sref2scope: Mapping from the srefs to"
+#~ " its corresponding BlockScope 2) stmt2ref:"
+#~ " Mapping from blocks to corresponding "
+#~ "StmtSRefs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that this object does not "
+#~ "store SRefs to loops as the "
+#~ "purpose is only to expose block "
+#~ "level dependences. This provides the "
+#~ "advantage that the scope block (parent"
+#~ " block) for a given block sref "
+#~ "can be directly accessed as sref->parent"
+#~ msgstr ""
+
+#~ msgid "Get the BlockScope correpsonding to the block sref"
+#~ msgstr ""
+
+#~ msgid "The block sref to be retrieved"
+#~ msgstr ""
+
+#~ msgid "**scope** -- The corresponding BlockScope"
+#~ msgstr ""
+
+#~ msgid "Return the corresponding sref that points to the block"
+#~ msgstr ""
+
+#~ msgid "The block for which the sref is to be retrived"
+#~ msgstr ""
+
+#~ msgid "**sref** -- The corresponding sref"
+#~ msgstr ""
+
+#~ msgid "BlockRealize node."
+#~ msgstr ""
+
+#~ msgid "The binding values of the block var."
+#~ msgstr ""
+
+#~ msgid "The predicate of the block."
+#~ msgstr ""
+
+#~ msgid "The block to realize"
+#~ msgstr ""
+
+#~ msgid "The location of this block_realize in the source code."
+#~ msgstr ""
+
+#~ msgid "Broadcast node."
+#~ msgstr ""
+
+#~ msgid "The value of the expression."
+#~ msgstr ""
+
+#~ msgid "The lanes of the expression."
+#~ msgstr ""
+
+#~ msgid "Symbolic data buffer in TVM."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Buffer provide a way to represent "
+#~ "data layout specialization of data "
+#~ "structure in TVM."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do not construct directly, use "
+#~ ":py:func:`~decl_buffer` instead. See the "
+#~ "documentation of :py:func:`decl_buffer` for "
+#~ "more details."
+#~ msgstr ""
+
+#~ msgid ":obj:`decl_buffer`"
+#~ msgstr ""
+
+#~ msgid "Declare a buffer"
+#~ msgstr ""
+
+#~ msgid "Get an access pointer to the head of buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is the recommended method to "
+#~ "get buffer data ptress when interacting"
+#~ " with external functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The access pattern MASK. Indicate "
+#~ "whether the access will read or "
+#~ "write to the data content."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type of the result "
+#~ "pointer. Do not specify unless we "
+#~ "want to cast pointer to specific "
+#~ "type."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The number of lanes for the data"
+#~ " type. This value is greater than "
+#~ "one for vector types."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The offset of pointer. We can use"
+#~ " it to offset by the number of"
+#~ " elements from the address of ptr."
+#~ msgstr ""
+
+#~ msgid "The extent of pointer."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Generate a Buffer that is a flattened version of this buffer."
+#~ msgstr ""
+
+#~ msgid "**flattened** -- The corresponding flat buffer."
+#~ msgstr ""
+
+#~ msgid "Determine the offset of the provided indices in the flattened buffer."
+#~ msgstr ""
+
+#~ msgid "The indices of the element in the original buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**flattened_indices** -- The offset indices"
+#~ " of the element in the flattened "
+#~ "buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return the storage scope associated with"
+#~ " this buffer. :returns: **scope** -- "
+#~ "The storage scope associated with this"
+#~ " buffer. :rtype: str"
+#~ msgstr ""
+
+#~ msgid "Generate an Expr that loads dtype from begin index."
+#~ msgstr ""
+
+#~ msgid "The beginning index in unit of Buffer.dtype"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type to be loaded, can"
+#~ " be vector type which have lanes "
+#~ "that is multiple of Buffer.dtype"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A vector mask of boolean values "
+#~ "indicating which lanes of a vector "
+#~ "are to be loaded. The number lanes"
+#~ " of the mask must be equal to"
+#~ " the number of lanes being loaded."
+#~ msgstr ""
+
+#~ msgid "**load** -- The corresponding load expression."
+#~ msgstr ""
+
+#~ msgid "Generate a Stmt that store value into begin index."
+#~ msgstr ""
+
+#~ msgid "The value to be stored."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A vector mask of boolean values "
+#~ "indicating which lanes of a vector "
+#~ "are to be stored. The number lanes"
+#~ " of the mask must be equal to"
+#~ " the number of lanes in value."
+#~ msgstr ""
+
+#~ msgid "**store** -- The corresponding store stmt."
+#~ msgstr ""
+
+#~ msgid "Buffer load node."
+#~ msgstr ""
+
+#~ msgid "The buffer to be loaded."
+#~ msgstr ""
+
+#~ msgid "The buffer indices to load values from."
+#~ msgstr ""
+
+#~ msgid "Buffer realize node."
+#~ msgstr ""
+
+#~ msgid "The buffer."
+#~ msgstr ""
+
+#~ msgid "The value we to be stored."
+#~ msgstr ""
+
+#~ msgid "The realize condition."
+#~ msgstr ""
+
+#~ msgid "The body of the statement."
+#~ msgstr ""
+
+#~ msgid "BufferRegion node."
+#~ msgstr ""
+
+#~ msgid "The buffer of the buffer region"
+#~ msgstr ""
+
+#~ msgid "The region array of the buffer region"
+#~ msgstr ""
+
+#~ msgid "Buffer store node."
+#~ msgstr ""
+
+#~ msgid "The indices location to be stored."
+#~ msgstr ""
+
+#~ msgid "Call node."
+#~ msgstr ""
+
+#~ msgid "The return data type"
+#~ msgstr ""
+
+#~ msgid "The function to be called, or the name to the global tvm.Op"
+#~ msgstr ""
+
+#~ msgid "The input arguments to the call"
+#~ msgstr ""
+
+#~ msgid "Possible kinds of Call effects."
+#~ msgstr ""
+
+#~ msgid "Cast expression."
+#~ msgstr ""
+
+#~ msgid "The data type"
+#~ msgstr ""
+
+#~ msgid "The value of the function."
+#~ msgstr ""
+
+#~ msgid "Commutative reduce operator"
+#~ msgstr ""
+
+#~ msgid "The left arguments of the reducer."
+#~ msgstr ""
+
+#~ msgid "The right arguments of the reducer."
+#~ msgstr ""
+
+#~ msgid "The reduction results."
+#~ msgstr ""
+
+#~ msgid "The identity elements."
+#~ msgstr ""
+
+#~ msgid "DeclBuffer node."
+#~ msgstr ""
+
+#~ msgid "The buffer being declared."
+#~ msgstr ""
+
+#~ msgid "The body statement to be executed."
+#~ msgstr ""
+
+#~ msgid "The location of this DeclBuffer in the source code."
+#~ msgstr ""
+
+#~ msgid "Div node."
+#~ msgstr ""
+
+#~ msgid "EQ node."
+#~ msgstr ""
+
+#~ msgid "Evaluate node."
+#~ msgstr ""
+
+#~ msgid "The expression to be evaluated."
+#~ msgstr ""
+
+#~ msgid "Float constant."
+#~ msgstr ""
+
+#~ msgid "The constant value."
+#~ msgstr ""
+
+#~ msgid "FloorDiv node."
+#~ msgstr ""
+
+#~ msgid "FloorMod node."
+#~ msgstr ""
+
+#~ msgid "For node."
+#~ msgstr ""
+
+#~ msgid "The loop variable."
+#~ msgstr ""
+
+#~ msgid "The beginning value."
+#~ msgstr ""
+
+#~ msgid "The length of the loop."
+#~ msgstr ""
+
+#~ msgid "The type of the for."
+#~ msgstr ""
+
+#~ msgid "The thread this loop binds to. Only valid if kind is ThreadBinding"
+#~ msgstr ""
+
+#~ msgid "The kind of the for loop."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ForKind can change the control flow "
+#~ "semantics of the loop and need to"
+#~ " be considered in all TIR passes."
+#~ msgstr ""
+
+#~ msgid "GE node."
+#~ msgstr ""
+
+#~ msgid "GT node."
+#~ msgstr ""
+
+#~ msgid "IfThenElse node."
+#~ msgstr ""
+
+#~ msgid "The expression"
+#~ msgstr ""
+
+#~ msgid "The statement to execute if condition is true."
+#~ msgstr ""
+
+#~ msgid "The statement to execute if condition is false."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A mapping from multi-dimensional indices"
+#~ " to another set of multi-dimensional"
+#~ " indices"
+#~ msgstr ""
+
+#~ msgid "Variables representing the indices prior to remapping."
+#~ msgstr ""
+
+#~ msgid "Expressions defining the indices after remapping."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The optional pre-defined inverse index"
+#~ " map. When this is defined, "
+#~ "IndexMap::Inverse will return the pre-"
+#~ "defined inverse index map. Otherwise, "
+#~ "the inverse index map will be "
+#~ "computed on the fly. It is the "
+#~ "user's responsibility to ensure the "
+#~ "correctness of the pre-defined inverse"
+#~ " index map."
+#~ msgstr ""
+
+#~ msgid "Create an index map from a function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The function to map from source "
+#~ "indices to target indices. The function"
+#~ " should accept `tir.Var` parameters and "
+#~ "return a either a `tir.PrimExpr`, or "
+#~ "a list of `tir.PrimExpr`. Returning a"
+#~ " `tir.PrimExpr` is equivalent to returning"
+#~ " a list of length 1 containing "
+#~ "that `tir.PrimExpr`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The dimensionality of the buffer to "
+#~ "which this transformation should be "
+#~ "applied.  If mapping_function uses variadic"
+#~ " argument `*args`, `ndim` must be "
+#~ "specified.  If mapping_function does not "
+#~ "use variadic arguments, ndim is "
+#~ "optional."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**index_map** -- Returns an IndexMap "
+#~ "representing the `mapping_function`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The function to map from source "
+#~ "indices to target indices. The function"
+#~ " should accept tir.Var parameters and "
+#~ "return either a `tir.PrimExpr` or a "
+#~ "list.  Each element of the returned "
+#~ "list should be either a `tir.PrimExpr`"
+#~ " or the object `IndexMap.AXIS_SEPARATOR`.  "
+#~ "Returning a `tir.PrimExpr` is equivalent "
+#~ "to returning a list of length 1"
+#~ " containing that `tir.PrimExpr`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The dimensionality of the buffer to "
+#~ "which this transformation should be "
+#~ "applied.  If mapping_function uses variadic"
+#~ " argument `*args`, ndim must be "
+#~ "specified.  If mapping_function does not "
+#~ "use variadic arguments, ndim is "
+#~ "optional."
+#~ msgstr ""
+
+#~ msgid "The default index dtype to use for input iters in the mapping function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- Returns a tuple whose "
+#~ "first element is an IndexMap "
+#~ "representing the `mapping_function`, and whose"
+#~ " second index is a list of "
+#~ "indices at which `IndexMap.AXIS_SEPARATOR` "
+#~ "occurred."
+#~ msgstr ""
+
+#~ msgid "Return the inverse of the map"
+#~ msgstr ""
+
+#~ msgid "Throws an error if the function is not bijective."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The region over which the inverse "
+#~ "should be determined. Used for "
+#~ "validating that the mapping is bijective"
+#~ " over this range."
+#~ msgstr ""
+
+#~ msgid "**inverse** -- The inverse"
+#~ msgstr ""
+
+#~ msgid "Return if the index maps are equivalent."
+#~ msgstr ""
+
+#~ msgid "The IndexMap to which the comparison should be made."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**is_equivalent** -- True if the two "
+#~ "mappings represent the same transformation,"
+#~ " otherwise False"
+#~ msgstr ""
+
+#~ msgid "Apply the index map to a set of indices"
+#~ msgstr ""
+
+#~ msgid "The indices to be mapped"
+#~ msgstr ""
+
+#~ msgid "**result** -- The mapped indices"
+#~ msgstr ""
+
+#~ msgid "Apply thie index map to transform the layout of the input NDArray"
+#~ msgstr ""
+
+#~ msgid "The NDArray to be transformed"
+#~ msgstr ""
+
+#~ msgid "**arr_dst** -- The transformed NDArray"
+#~ msgstr ""
+
+#~ msgid "Apply the index map to a buffer shape"
+#~ msgstr ""
+
+#~ msgid "The buffer shape to be mapped"
+#~ msgstr ""
+
+#~ msgid "**result** -- The mapped shape"
+#~ msgstr ""
+
+#~ msgid "Can be applied to transformations that introduce padding."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The region over which the inverse "
+#~ "should be determined. Used for "
+#~ "determining the predicate."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The inverse, and a "
+#~ "predicate for which the inverse maps "
+#~ "to a valid index in the input "
+#~ "range."
+#~ msgstr ""
+
+#~ msgid "Int constant."
+#~ msgstr ""
+
+#~ msgid "Represent iteration variable."
+#~ msgstr ""
+
+#~ msgid "IterVar represents axis iterations in the computation."
+#~ msgstr ""
+
+#~ msgid "The domain of the iteration."
+#~ msgstr ""
+
+#~ msgid "The internal variable that is used for iteration."
+#~ msgstr ""
+
+#~ msgid "The iteration type."
+#~ msgstr ""
+
+#~ msgid "The thread type tag."
+#~ msgstr ""
+
+#~ msgid ":obj:`te.thread_axis`"
+#~ msgstr ""
+
+#~ msgid "Create thread axis IterVar."
+#~ msgstr ""
+
+#~ msgid ":obj:`te.reduce_axis`"
+#~ msgstr ""
+
+#~ msgid "Create reduce axis IterVar."
+#~ msgstr ""
+
+#~ msgid "LE node."
+#~ msgstr ""
+
+#~ msgid "LT node."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Layout is composed of upper cases, "
+#~ "lower cases and numbers, where upper "
+#~ "case indicates a primal axis and "
+#~ "the corresponding lower case with factor"
+#~ " size indicates the subordinate axis. "
+#~ "For example, NCHW16c can describe a "
+#~ "5-D tensor of [batch_size, channel, "
+#~ "height, width, channel_block]. Here "
+#~ "subordinate axis channel_block=16 is the "
+#~ "factor size of the primal axis C"
+#~ " (channel)."
+#~ msgstr ""
+
+#~ msgid ":obj:`layout`"
+#~ msgstr ""
+
+#~ msgid "Get the factor size of the subordinate axis."
+#~ msgstr ""
+
+#~ msgid "The axis name, need to be [a-z,A-Z]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**factor** -- the size of the "
+#~ "subordinate-axis of axis (if axis is"
+#~ " a primal-axis), or the size of"
+#~ " axis itself (if axis is a "
+#~ "subordinate-axis). Return -1 if axis "
+#~ "is not in the layout."
+#~ msgstr ""
+
+#~ msgid "Get the index of an axis"
+#~ msgstr ""
+
+#~ msgid "**index** -- The index of the axis, -1 if not found."
+#~ msgstr ""
+
+#~ msgid "Let node."
+#~ msgstr ""
+
+#~ msgid "The variable in the binding."
+#~ msgstr ""
+
+#~ msgid "The value in to be bound."
+#~ msgstr ""
+
+#~ msgid "The body expression."
+#~ msgstr ""
+
+#~ msgid "LetStmt node."
+#~ msgstr ""
+
+#~ msgid "MatchBufferRegion node."
+#~ msgstr ""
+
+#~ msgid "The target buffer"
+#~ msgstr ""
+
+#~ msgid "The region of source buffer"
+#~ msgstr ""
+
+#~ msgid "Max node."
+#~ msgstr ""
+
+#~ msgid "Min node."
+#~ msgstr ""
+
+#~ msgid "Mod node."
+#~ msgstr ""
+
+#~ msgid "Mul node."
+#~ msgstr ""
+
+#~ msgid "NE node."
+#~ msgstr ""
+
+#~ msgid "Not node."
+#~ msgstr ""
+
+#~ msgid "The input value"
+#~ msgstr ""
+
+#~ msgid "Or node."
+#~ msgstr ""
+
+#~ msgid "Prefetch node."
+#~ msgstr ""
+
+#~ msgid "The buffer to be prefetched."
+#~ msgstr ""
+
+#~ msgid "The bounds to be prefetched."
+#~ msgstr ""
+
+#~ msgid "A function declaration expression."
+#~ msgstr ""
+
+#~ msgid "List of input parameters to the function."
+#~ msgstr ""
+
+#~ msgid "The body of the function."
+#~ msgstr ""
+
+#~ msgid "The return type annotation of the function."
+#~ msgstr ""
+
+#~ msgid "The buffer binding map."
+#~ msgstr ""
+
+#~ msgid "Attributes of the function, can be None"
+#~ msgstr ""
+
+#~ msgid "The location of this itervar in the source code."
+#~ msgstr ""
+
+#~ msgid "Specialize parameters of PrimFunc"
+#~ msgstr ""
+
+#~ msgid "The mapping from function params to the instance"
+#~ msgstr ""
+
+#~ msgid "We can define a Meta TIR function with symbolic shape:"
+#~ msgstr ""
+
+#~ msgid "Then we can make it specialized with given shapes or buffers."
+#~ msgstr ""
+
+#~ msgid "The specialized function:"
+#~ msgstr ""
+
+#~ msgid "**func** -- The new function with parameter specialized"
+#~ msgstr ""
+
+#~ msgid "Create a new PrimFunc with the same set signatures but a new body."
+#~ msgstr ""
+
+#~ msgid "The new body."
+#~ msgstr ""
+
+#~ msgid "**new_func** -- The created new function."
+#~ msgstr ""
+
+#~ msgid "Producer load node."
+#~ msgstr ""
+
+#~ msgid "The buffer indices."
+#~ msgstr ""
+
+#~ msgid "ProducerRealize node."
+#~ msgstr ""
+
+#~ msgid "The data producer."
+#~ msgstr ""
+
+#~ msgid "The bound of realize"
+#~ msgstr ""
+
+#~ msgid "The realize body"
+#~ msgstr ""
+
+#~ msgid "The storage scope associated with this realization"
+#~ msgstr ""
+
+#~ msgid "ProducerStore node."
+#~ msgstr ""
+
+#~ msgid "The index arguments of the store."
+#~ msgstr ""
+
+#~ msgid "Ramp node."
+#~ msgstr ""
+
+#~ msgid "The base expression."
+#~ msgstr ""
+
+#~ msgid "The stride of the ramp."
+#~ msgstr ""
+
+#~ msgid "Reduce node."
+#~ msgstr ""
+
+#~ msgid "The combiner."
+#~ msgstr ""
+
+#~ msgid "The source expression."
+#~ msgstr ""
+
+#~ msgid "The iteration domain"
+#~ msgstr ""
+
+#~ msgid "The reduce condition."
+#~ msgstr ""
+
+#~ msgid "The value index."
+#~ msgstr ""
+
+#~ msgid "The initial value for output. This can be an int, float or ProducerLoad"
+#~ msgstr ""
+
+#~ msgid "Select node."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Select may compute both true_value and"
+#~ " false_value. Use :py:class:`tvm.tir.if_then_else` "
+#~ "instead if you want to get a "
+#~ "conditional expression that only evaluates "
+#~ "the correct branch."
+#~ msgstr ""
+
+#~ msgid "The condition expression."
+#~ msgstr ""
+
+#~ msgid "The value to take when condition is true."
+#~ msgstr ""
+
+#~ msgid "The value to take when condition is false."
+#~ msgstr ""
+
+#~ msgid "Sequence of statements."
+#~ msgstr ""
+
+#~ msgid "The statements"
+#~ msgstr ""
+
+#~ msgid "Shuffle node."
+#~ msgstr ""
+
+#~ msgid "The vectors"
+#~ msgstr ""
+
+#~ msgid "The indices"
+#~ msgstr ""
+
+#~ msgid "Symbolic variable to represent a tensor index size"
+#~ msgstr ""
+
+#~ msgid "which is greater or equal to zero."
+#~ msgstr ""
+
+#~ msgid "The name"
+#~ msgstr ""
+
+#~ msgid "Base class of all the statements."
+#~ msgstr ""
+
+#~ msgid "String constant."
+#~ msgstr ""
+
+#~ msgid "Sub node."
+#~ msgstr ""
+
+#~ msgid "Backend function to allocate temporal workspace"
+#~ msgstr ""
+
+#~ msgid "The device type which the space will be allocated."
+#~ msgstr ""
+
+#~ msgid "The device id which the space will be allocated."
+#~ msgstr ""
+
+#~ msgid "The size of the space requested."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The type code of the array "
+#~ "elements. Only used in certain backends"
+#~ " such as OpenGL."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The type bits of the array "
+#~ "elements. Only used in certain backends"
+#~ " such as OpenGL."
+#~ msgstr ""
+
+#~ msgid "**call** -- The call expression."
+#~ msgstr ""
+
+#~ msgid "Backend function to free temporal workspace."
+#~ msgstr ""
+
+#~ msgid "The result allocated space pointer."
+#~ msgstr ""
+
+#~ msgid "A tensor intrinsic."
+#~ msgstr ""
+
+#~ msgid "The function to describe the computation."
+#~ msgstr ""
+
+#~ msgid "The function of the implementation for the execution."
+#~ msgstr ""
+
+#~ msgid "Look up a tensor intrinsic by its name."
+#~ msgstr ""
+
+#~ msgid "The name of the TensorIntrin to look up."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to allow missing tensor intrin."
+#~ " If False, raise an error if "
+#~ "the tensor intrin"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The TensorIntrin with the"
+#~ " specified name, or None if not "
+#~ "found."
+#~ msgstr ""
+
+#~ msgid "Register a tensor intrinsic with its name."
+#~ msgstr ""
+
+#~ msgid "The name of the TensorIntrin to register."
+#~ msgstr ""
+
+#~ msgid "Whether override existing intrinsic."
+#~ msgstr ""
+
+#~ msgid "Symbolic variable."
+#~ msgstr ""
+
+#~ msgid "While node."
+#~ msgstr ""
+
+#~ msgid "The termination condition."
+#~ msgstr ""
+
+#~ msgid "Get absolute value of the input element-wise."
+#~ msgstr ""
+
+#~ msgid "Input argument."
+#~ msgstr ""
+
+#~ msgid "The location of this operator in the source code."
+#~ msgstr ""
+
+#~ msgid "**y** -- The result."
+#~ msgstr ""
+
+#~ msgid "Take acos of input x."
+#~ msgstr ""
+
+#~ msgid "Generic add operator."
+#~ msgstr ""
+
+#~ msgid "The left operand."
+#~ msgstr ""
+
+#~ msgid "The right operand."
+#~ msgstr ""
+
+#~ msgid "The location of this operator in the source."
+#~ msgstr ""
+
+#~ msgid "**op** -- The result Expr of add operaton."
+#~ msgstr ""
+
+#~ msgid "Returns the address of an element in the buffer"
+#~ msgstr ""
+
+#~ msgid "The buffer load."
+#~ msgstr ""
+
+#~ msgid "Create a new expression of the intersection of all conditions in the"
+#~ msgstr ""
+
+#~ msgid "arguments"
+#~ msgstr ""
+
+#~ msgid "List of symbolic boolean expressions"
+#~ msgstr ""
+
+#~ msgid "**expr** -- Expression"
+#~ msgstr ""
+
+#~ msgid "Create a new experssion of the union of all conditions in the arguments"
+#~ msgstr ""
+
+#~ msgid "Take asin of input x."
+#~ msgstr ""
+
+#~ msgid "Take asinh of input x."
+#~ msgstr ""
+
+#~ msgid "Provide a true statement that can be used for simplifications"
+#~ msgstr ""
+
+#~ msgid "The constraint condition."
+#~ msgstr ""
+
+#~ msgid "Take atan of input x."
+#~ msgstr ""
+
+#~ msgid "Take arctan2(x1, x2)."
+#~ msgstr ""
+
+#~ msgid "Take atanh of input x."
+#~ msgstr ""
+
+#~ msgid "Create a bijective layout mapping."
+#~ msgstr ""
+
+#~ msgid "**bijective_layout** -- The created bijective layout"
+#~ msgstr ""
+
+#~ msgid "Take bitwise and of two values"
+#~ msgstr ""
+
+#~ msgid "Left operand"
+#~ msgstr ""
+
+#~ msgid "Right operand"
+#~ msgstr ""
+
+#~ msgid "**res** -- The result."
+#~ msgstr ""
+
+#~ msgid "Take bitwise not of input value"
+#~ msgstr ""
+
+#~ msgid "Input operand"
+#~ msgstr ""
+
+#~ msgid "Take bitwise or of two values"
+#~ msgstr ""
+
+#~ msgid "Take bitwise xor of two values"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Build a function with a signature, "
+#~ "generating code for devices coupled with"
+#~ " target information."
+#~ msgstr ""
+
+#~ msgid "The input to be built."
+#~ msgstr ""
+
+#~ msgid "The target for compilation."
+#~ msgstr ""
+
+#~ msgid "The pipeline to use for compilation."
+#~ msgstr ""
+
+#~ msgid "A module combining both host and device code."
+#~ msgstr ""
+
+#~ msgid "Build expression by call an external packed function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Same as call_packed, except that the "
+#~ "first argument is the function name "
+#~ "(as in call_extern), and the last "
+#~ "argument is the resource handle."
+#~ msgstr ""
+
+#~ msgid "Positional arguments."
+#~ msgstr ""
+
+#~ msgid ":obj:`te.extern`"
+#~ msgstr ""
+
+#~ msgid "Create tensor with extern function call."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lowered version of call c-packed. Same"
+#~ " as call_packed, except that the "
+#~ "first argument is the function name "
+#~ "(as in call_extern), and the last "
+#~ "argument is the resource handle."
+#~ msgstr ""
+
+#~ msgid "Build expression by calling a extern function."
+#~ msgstr ""
+
+#~ msgid "The data type of the result."
+#~ msgstr ""
+
+#~ msgid "The extern function name."
+#~ msgstr ""
+
+#~ msgid "Build expression by calling an intrinsic function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Intrinsics can be overloaded with "
+#~ "multiple data types via the intrinsic"
+#~ " translation rule."
+#~ msgstr ""
+
+#~ msgid "The intrinsic function name."
+#~ msgstr ""
+
+#~ msgid "Build expression by calling a llvm intrinsic function"
+#~ msgstr ""
+
+#~ msgid "The name of the llvm intrinsic function."
+#~ msgstr ""
+
+#~ msgid "Build expression by calling a pure llvm intrinsic function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The argument to packed function can "
+#~ "be Expr or Buffer. The argument is"
+#~ " the corresponding POD type when Expr"
+#~ " is presented."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When the argument is Buffer, the "
+#~ "corresponding PackedFunc will receive an "
+#~ "TVMArrayHandle whose content is valid "
+#~ "during the callback period. If the "
+#~ "PackedFunc is a python callback, then"
+#~ " the corresponding argument is NDArray."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lowered version of call packed. The "
+#~ "argument to packed function can be "
+#~ "Expr or Buffer. The argument is "
+#~ "the corresponding POD type when Expr "
+#~ "is presented. When the argument is "
+#~ "Buffer, the corresponding PackedFunc will "
+#~ "recieve an TVMArrayHandle whose content "
+#~ "is valid during the callback period. "
+#~ "If the PackedFunc is a python "
+#~ "callback, then the corresponding argument "
+#~ "is NDArray."
+#~ msgstr ""
+
+#~ msgid "Build expression by calling a pure extern function."
+#~ msgstr ""
+
+#~ msgid "Performs a call into another PrimFunc in the same IRModule"
+#~ msgstr ""
+
+#~ msgid "Take ceil of float input x."
+#~ msgstr ""
+
+#~ msgid "Generic ceildiv operator."
+#~ msgstr ""
+
+#~ msgid "**op** -- The result Expr of ceildiv operaton."
+#~ msgstr ""
+
+#~ msgid "Count leading zero bits of an integer x."
+#~ msgstr ""
+
+#~ msgid "Input 32 or 64 bit integer. The result is undefined if the input is 0."
+#~ msgstr ""
+
+#~ msgid "Create a commutative reducer for reduction."
+#~ msgstr ""
+
+#~ msgid "A binary function which takes two Expr as input to return a Expr."
+#~ msgstr ""
+
+#~ msgid "A function which takes a type string as input to return a const Expr."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**reducer** -- A function which creates"
+#~ " a reduce expression over axis. There"
+#~ " are two ways to use it:  1."
+#~ " accept (expr, axis, where) to "
+#~ "produce an Reduce Expr on    specified"
+#~ " axis; 2. simply use it with "
+#~ "multiple Exprs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**reducer** -- A function which creates"
+#~ " a reduce expression over axis. There"
+#~ " are two ways to use it:"
+#~ msgstr ""
+
+#~ msgid "accept (expr, axis, where) to produce an Reduce Expr on specified axis;"
+#~ msgstr ""
+
+#~ msgid "simply use it with multiple Exprs."
+#~ msgstr ""
+
+#~ msgid "Change the sign of x1 to that of x2, element-wise."
+#~ msgstr ""
+
+#~ msgid "Take cos of input x."
+#~ msgstr ""
+
+#~ msgid "Take cosh of input x."
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic to create N barriers"
+#~ msgstr ""
+
+#~ msgid "The number of barriers to create."
+#~ msgstr ""
+
+#~ msgid "Declare a new symbolic buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Normally buffer is created automatically "
+#~ "during lower and build. This is "
+#~ "only needed if user want to "
+#~ "specify their own buffer layout."
+#~ msgstr ""
+
+#~ msgid "See the note below for detailed discussion on usage of buffer."
+#~ msgstr ""
+
+#~ msgid "The shape of the buffer."
+#~ msgstr ""
+
+#~ msgid "The name of the buffer."
+#~ msgstr ""
+
+#~ msgid "The data pointer in the buffer."
+#~ msgstr ""
+
+#~ msgid "The stride of the buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The beginning offset of the array "
+#~ "to data. In terms of number of "
+#~ "elements of dtype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The storage scope of the buffer, "
+#~ "if not global. If scope equals "
+#~ "empty string, it means it is "
+#~ "global memory."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The alignment of data pointer in "
+#~ "bytes. If -1 is passed, the "
+#~ "alignment will be set to TVM's "
+#~ "internal default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The factor of elem_offset field, when"
+#~ " set, elem_offset is required to be"
+#~ " multiple of offset_factor. If 0 is"
+#~ " pssed, the alignment will be set "
+#~ "to 1. if non-zero is passed, "
+#~ "we will created a Var for "
+#~ "elem_offset if elem_offset is not None."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "auto_broadcast buffer allows one to "
+#~ "implement broadcast computation without "
+#~ "considering whether dimension size equals "
+#~ "to one. TVM maps buffer[i][j][k] -> "
+#~ "buffer[i][0][k] if dimension j's shape "
+#~ "equals 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If passed, a list of separators "
+#~ "between groups of axes, each of "
+#~ "which is flattened to an output "
+#~ "axis.  For flat memory spaces, should"
+#~ " either be None, or an empty "
+#~ "list."
+#~ msgstr ""
+
+#~ msgid "The location of the decl_buffer creation in the source."
+#~ msgstr ""
+
+#~ msgid "**buffer** -- The created buffer"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Buffer data structure reflects the "
+#~ "DLTensor structure in dlpack. While "
+#~ "DLTensor data structure is very general,"
+#~ " it is usually helpful to create "
+#~ "function that only handles specific case"
+#~ " of data structure and make compiled"
+#~ " function benefit from it."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If user pass strides and elem_offset "
+#~ "is passed as None when constructing "
+#~ "the function, then the function will "
+#~ "be specialized for the DLTensor that "
+#~ "is compact and aligned. If user "
+#~ "pass a fully generic symbolic array "
+#~ "to the strides, then the resulting "
+#~ "function becomes fully generic."
+#~ msgstr ""
+
+#~ msgid "Compute a / b as in C/C++ semantics."
+#~ msgstr ""
+
+#~ msgid "The left hand operand, known to be non-negative."
+#~ msgstr ""
+
+#~ msgid "The right hand operand, known to be non-negative."
+#~ msgstr ""
+
+#~ msgid "**res** -- The result expression."
+#~ msgstr ""
+
+#~ msgid "When operands are integers, returns truncdiv(a, b, span)."
+#~ msgstr ""
+
+#~ msgid "Dot product of two int8x4 vectors and add an optional accumulator"
+#~ msgstr ""
+
+#~ msgid "The input vector."
+#~ msgstr ""
+
+#~ msgid "The accumulator."
+#~ msgstr ""
+
+#~ msgid "End profile intrinsic. :param id: The intrinsic id. :type id: int"
+#~ msgstr ""
+
+#~ msgid "Take gauss error function of the input x."
+#~ msgstr ""
+
+#~ msgid "Take exponential of input x."
+#~ msgstr ""
+
+#~ msgid "Calculate 10**x"
+#~ msgstr ""
+
+#~ msgid "Calculate 2**x"
+#~ msgstr ""
+
+#~ msgid "Take floor of float input x."
+#~ msgstr ""
+
+#~ msgid "Compute the floordiv of two expressions."
+#~ msgstr ""
+
+#~ msgid "The left hand operand"
+#~ msgstr ""
+
+#~ msgid "The right hand operand"
+#~ msgstr ""
+
+#~ msgid "Compute the floormod of two expressions."
+#~ msgstr ""
+
+#~ msgid "Return the remainder of x divided by y with the same sign as x."
+#~ msgstr ""
+
+#~ msgid "**z** -- The result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Calculate a predicate mask given an "
+#~ "upper bound (limit) and a current "
+#~ "value (base)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It will be lowered to the "
+#~ "llvm.get.active.lane.mask intrinsic. "
+#~ "(https://llvm.org/docs/LangRef.html#llvm-get-active-"
+#~ "lane-mask-intrinsics)"
+#~ msgstr ""
+
+#~ msgid "An expression reprsenting the base."
+#~ msgstr ""
+
+#~ msgid "An expression representing the limit."
+#~ msgstr ""
+
+#~ msgid "Get the default TIR pipeline for the given target."
+#~ msgstr ""
+
+#~ msgid "Get pre-build pipeline by name"
+#~ msgstr ""
+
+#~ msgid "Name of the pipeline"
+#~ msgstr ""
+
+#~ msgid "Create a datatype dependent scalable expression."
+#~ msgstr ""
+
+#~ msgid "Element data type."
+#~ msgstr ""
+
+#~ msgid "The minimum size of the scalable vector in bits."
+#~ msgstr ""
+
+#~ msgid "Equivalent to sqrt(x1**2 + x2**2), element-wise."
+#~ msgstr ""
+
+#~ msgid "Conditional selection expression."
+#~ msgstr ""
+
+#~ msgid "The condition"
+#~ msgstr ""
+
+#~ msgid "The result expression if cond is true."
+#~ msgstr ""
+
+#~ msgid "The result expression if cond is false."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result of conditional expression."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unlike Select, if_then_else will not "
+#~ "execute the branch that does not "
+#~ "satisfy the condition. You can use "
+#~ "it to guard against out of bound"
+#~ " access. Unlike Select, if_then_else cannot"
+#~ " be vectorized if some lanes in "
+#~ "the vector have different conditions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Annotate a predicate not be considered"
+#~ " as target condition of loop "
+#~ "partition."
+#~ msgstr ""
+
+#~ msgid "The annotated predicate expression."
+#~ msgstr ""
+
+#~ msgid "Compute floor(a / b) where a and b are non-negative."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use this function to split non-"
+#~ "negative indices. This function may take"
+#~ " advantage of operands' non-negativeness."
+#~ msgstr ""
+
+#~ msgid "Compute the remainder of indexdiv. a and b are non-negative."
+#~ msgstr ""
+
+#~ msgid "infinity value of dtype"
+#~ msgstr ""
+
+#~ msgid "The data type."
+#~ msgstr ""
+
+#~ msgid "**value** -- The infinity value of dtype."
+#~ msgstr ""
+
+#~ msgid "Check if input value is finite."
+#~ msgstr ""
+
+#~ msgid "Check if input value is infinite."
+#~ msgstr ""
+
+#~ msgid "Check if input value is Nan."
+#~ msgstr ""
+
+#~ msgid "Check if input value is nullptr."
+#~ msgstr ""
+
+#~ msgid "Create a layout node from a string."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A layout representation is composed of"
+#~ " upper cases, lower cases and "
+#~ "numbers, where upper case indicates a"
+#~ " primal axis and the corresponding "
+#~ "lower case with factor size indicates"
+#~ " the subordinate axis. For example, "
+#~ "NCHW16c can describe a 5-D tensor "
+#~ "of [batch_size, channel, height, width, "
+#~ "channel_block]. Here subordinate axis "
+#~ "channel_block=16 is the factor size of"
+#~ " the primal axis C (channel)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The dtype of generated axes vars "
+#~ "in the returned layout. It is "
+#~ "required to be integer type."
+#~ msgstr ""
+
+#~ msgid "**layout** -- The created layout"
+#~ msgstr ""
+
+#~ msgid "Returns x1 * (2 ** x2)."
+#~ msgstr ""
+
+#~ msgid "Mark condition as likely."
+#~ msgstr ""
+
+#~ msgid "**y** -- The marked expression."
+#~ msgstr ""
+
+#~ msgid "Take log of input x."
+#~ msgstr ""
+
+#~ msgid "Take log10 of input x."
+#~ msgstr ""
+
+#~ msgid "Take log(x + 1) with respect to input x."
+#~ msgstr ""
+
+#~ msgid "Take log2 of input x."
+#~ msgstr ""
+
+#~ msgid "Returns the param by name"
+#~ msgstr ""
+
+#~ msgid "The name of param."
+#~ msgstr ""
+
+#~ msgid "Create a filled SIMDGroup matrix"
+#~ msgstr ""
+
+#~ msgid "The simdgroup var"
+#~ msgstr ""
+
+#~ msgid "The index of the matrix."
+#~ msgstr ""
+
+#~ msgid "The value to fill."
+#~ msgstr ""
+
+#~ msgid "The number of columns."
+#~ msgstr ""
+
+#~ msgid "The number of rows."
+#~ msgstr ""
+
+#~ msgid "Create a max expression over axis."
+#~ msgstr ""
+
+#~ msgid "The reduction IterVar axis"
+#~ msgstr ""
+
+#~ msgid "Filtering predicate of the reduction."
+#~ msgstr ""
+
+#~ msgid "**value** -- The result value."
+#~ msgstr ""
+
+#~ msgid "maximum value of dtype"
+#~ msgstr ""
+
+#~ msgid "**value** -- The maximum value of dtype."
+#~ msgstr ""
+
+#~ msgid "Create a min expression over axis."
+#~ msgstr ""
+
+#~ msgid "minimum value of dtype"
+#~ msgstr ""
+
+#~ msgid "**value** -- The minimum value of dtype."
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic for zero-initalizing an MMA accumulation registor"
+#~ msgstr ""
+
+#~ msgid "The number of elements."
+#~ msgstr ""
+
+#~ msgid "The destination pointer variable."
+#~ msgstr ""
+
+#~ msgid "The destination offset."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for storing the result "
+#~ "of PTX MMA into a destination "
+#~ "pointer"
+#~ msgstr ""
+
+#~ msgid "The shape of mma fragment."
+#~ msgstr ""
+
+#~ msgid "The source pointer variable."
+#~ msgstr ""
+
+#~ msgid "The source offset."
+#~ msgstr ""
+
+#~ msgid "The destination stride."
+#~ msgstr ""
+
+#~ msgid "Generic multiply operator."
+#~ msgstr ""
+
+#~ msgid "**op** -- The result Expr of multiply operaton."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Round elements of the array to the"
+#~ " nearest integer. This intrinsic uses "
+#~ "llvm.nearbyint instead of llvm.round which "
+#~ "is faster but will results different "
+#~ "from te.round. Notably nearbyint rounds "
+#~ "according to the rounding mode, whereas"
+#~ " te.round (llvm.round) ignores that. For"
+#~ " differences between the two see: "
+#~ "https://en.cppreference.com/w/cpp/numeric/math/round "
+#~ "https://en.cppreference.com/w/cpp/numeric/math/nearbyint"
+#~ msgstr ""
+
+#~ msgid "Return the next floating-point value after x1 towards x2."
+#~ msgstr ""
+
+#~ msgid "Count the number of set bits in input x."
+#~ msgstr ""
+
+#~ msgid "x power y"
+#~ msgstr ""
+
+#~ msgid "The exponent"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx barrier arrival"
+#~ " using mbarrier.arrive https://docs.nvidia.com/cuda"
+#~ "/parallel-thread-execution/index.html#parallel-"
+#~ "synchronization-and-communication-instructions-"
+#~ "mbarrier-arrive"
+#~ msgstr ""
+
+#~ msgid "The ID of the barrier shared memory pointer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx barrier arrival"
+#~ " with expect tx using "
+#~ "mbarrier.arrive.expect_tx https://docs.nvidia.com/cuda"
+#~ "/parallel-thread-execution/index.html#parallel-"
+#~ "synchronization-and-communication-instructions-"
+#~ "mbarrier-arrive https://docs.nvidia.com/cuda/parallel-"
+#~ "thread-execution/index.html#parallel-synchronization-"
+#~ "and-communication-instructions-mbarrier-"
+#~ "expect-tx-operation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Increases the tx count of the "
+#~ "mbarrier object to track completion of"
+#~ " addtional async transactions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx async copy "
+#~ "commit https://docs.nvidia.com/cuda/parallel-thread-"
+#~ "execution/index.html#data-movement-and-"
+#~ "conversion-instructions-cp-async-commit-"
+#~ "group"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx async copy "
+#~ "from global to shared memory using "
+#~ "cp.async https://docs.nvidia.com/cuda/parallel-thread-"
+#~ "execution/index.html#data-movement-and-"
+#~ "conversion-instructions-cp-async"
+#~ msgstr ""
+
+#~ msgid "The shared memory pointer variable."
+#~ msgstr ""
+
+#~ msgid "The offset of shared memory pointer."
+#~ msgstr ""
+
+#~ msgid "The global memory pointer variable."
+#~ msgstr ""
+
+#~ msgid "The offset of global memory pointer."
+#~ msgstr ""
+
+#~ msgid "The data size to copy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx async copy "
+#~ "barrier using cp.async.mbarrier.arrive "
+#~ "https://docs.nvidia.com/cuda/parallel-thread-"
+#~ "execution/index.html#parallel-synchronization-and-"
+#~ "communication-instructions-cp-async-mbarrier-"
+#~ "arrive"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx async copy "
+#~ "from global to shared memory using "
+#~ "cp.async.bulk https://docs.nvidia.com/cuda/parallel-"
+#~ "thread-execution/index.html#data-movement-and-"
+#~ "conversion-instructions-cp-async-bulk"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx barrier "
+#~ "initialization of thread count using "
+#~ "mbarrier.init https://docs.nvidia.com/cuda/parallel-"
+#~ "thread-execution/index.html#parallel-synchronization-"
+#~ "and-communication-instructions-mbarrier-init"
+#~ msgstr ""
+
+#~ msgid "Number of threads expected to arrive at the barrier."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx load matrix "
+#~ "from shared memory https://docs.nvidia.com/cuda"
+#~ "/parallel-thread-execution/index.html#warp-level-"
+#~ "matrix-instructions-ldmatrix"
+#~ msgstr ""
+
+#~ msgid "The matrix is loaded in column-major format."
+#~ msgstr ""
+
+#~ msgid "The number of matrices."
+#~ msgstr ""
+
+#~ msgid "The data type of the matrices."
+#~ msgstr ""
+
+#~ msgid "The local pointer variable."
+#~ msgstr ""
+
+#~ msgid "The offset of local pointer."
+#~ msgstr ""
+
+#~ msgid "The offset of shared memort pointer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx tensor core "
+#~ "mma instructions https://docs.nvidia.com/cuda/parallel-"
+#~ "thread-execution/index.html#warp-level-matrix-"
+#~ "instructions-for-mma"
+#~ msgstr ""
+
+#~ msgid "The layout of multiplicand fragment A."
+#~ msgstr ""
+
+#~ msgid "The layout of multiplicand fragment B."
+#~ msgstr ""
+
+#~ msgid "The data type of multiplicand fragment A."
+#~ msgstr ""
+
+#~ msgid "The data type of multiplicand fragment B."
+#~ msgstr ""
+
+#~ msgid "The data type of accumulator fragment C."
+#~ msgstr ""
+
+#~ msgid "The multiplicand fragment A variable."
+#~ msgstr ""
+
+#~ msgid "The index of multiplicand fragment A."
+#~ msgstr ""
+
+#~ msgid "The multiplicand fragment B variable."
+#~ msgstr ""
+
+#~ msgid "The accumulator fragment C variable."
+#~ msgstr ""
+
+#~ msgid "The index of accumulator fragment C."
+#~ msgstr ""
+
+#~ msgid "The optional saturation at the output."
+#~ msgstr ""
+
+#~ msgid "The 1-bit operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for sparse tensor core "
+#~ "ptx instructions https://docs.nvidia.com/cuda/parallel-"
+#~ "thread-execution/index.html#warp-level-matrix-"
+#~ "instructions-for-sparse-mma"
+#~ msgstr ""
+
+#~ msgid "The data type of multiplicand fragment C."
+#~ msgstr ""
+
+#~ msgid "The index of multiplicand fragment B."
+#~ msgstr ""
+
+#~ msgid "The metadata of operand."
+#~ msgstr ""
+
+#~ msgid "The metadata index of operand."
+#~ msgstr ""
+
+#~ msgid "The sparse selector indicating the thread that stores the metadata."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx barrier wait "
+#~ "using mbarrier.try_wait https://docs.nvidia.com/cuda"
+#~ "/parallel-thread-execution/index.html#parallel-"
+#~ "synchronization-and-communication-instructions-"
+#~ "mbarrier-test-wait-mbarrier-try-wait"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TVM intrinsic for ptx async copy "
+#~ "wait https://docs.nvidia.com/cuda/parallel-thread-"
+#~ "execution/index.html#data-movement-and-"
+#~ "conversion-instructions-cp-async-wait-group"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The number of the most recent "
+#~ "uncommitted pending cp.async groups to "
+#~ "wait."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Execute a multiplication between two "
+#~ "Q-numbers x and y followed by a"
+#~ " right shift s. The mathematical "
+#~ "expression is:"
+#~ msgstr ""
+
+#~ msgid "out = round(x*y*2^-s)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "More about Q-numbers here: "
+#~ "https://en.wikipedia.org/wiki/Q_(number_format) The "
+#~ "rounding rule is to the nearest "
+#~ "value, rounding half up (i.e., "
+#~ "round(x.1) = x and round (x.5) ="
+#~ " x+1)"
+#~ msgstr ""
+
+#~ msgid "First Q-number"
+#~ msgstr ""
+
+#~ msgid "Second Q-number"
+#~ msgstr ""
+
+#~ msgid "Number of fractional bits in x and y. Needs to be > 0"
+#~ msgstr ""
+
+#~ msgid "Integer shift"
+#~ msgstr ""
+
+#~ msgid "Execute a multiplication between two Q-numbers x and y"
+#~ msgstr ""
+
+#~ msgid "First Q-number."
+#~ msgstr ""
+
+#~ msgid "Second Q-number."
+#~ msgstr ""
+
+#~ msgid "Integer left shift."
+#~ msgstr ""
+
+#~ msgid "Integer right shift."
+#~ msgstr ""
+
+#~ msgid "Number of fractional bits in x and y. Needs to be > 0."
+#~ msgstr ""
+
+#~ msgid "Whether we need to do left shift or not."
+#~ msgstr ""
+
+#~ msgid "Whether we need to do right shift or not."
+#~ msgstr ""
+
+#~ msgid "The input value."
+#~ msgstr ""
+
+#~ msgid "**value** -- The reinterpret cast value of dtype."
+#~ msgstr ""
+
+#~ msgid "Create a tir return expression"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The returned tir expression, whose data"
+#~ " type is int, float or void "
+#~ "pointer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The return expression"
+#~ msgstr ""
+
+#~ msgid "Round elements of the array to the nearest integer."
+#~ msgstr ""
+
+#~ msgid "Take reciprocal of square root of input x."
+#~ msgstr ""
+
+#~ msgid "Return the result of x left shifted by y bits."
+#~ msgstr ""
+
+#~ msgid "Return the result of x right shifted by y bits."
+#~ msgstr ""
+
+#~ msgid "Quick function to get sigmoid"
+#~ msgstr ""
+
+#~ msgid "Load data from device memory or threadgroup memory to simdgroup"
+#~ msgstr ""
+
+#~ msgid "The pointer."
+#~ msgstr ""
+
+#~ msgid "The stride."
+#~ msgstr ""
+
+#~ msgid "Whether to transpose the matrix."
+#~ msgstr ""
+
+#~ msgid "Multiply and accumulate two matrices in simdgroup i.e. d = a * b + c"
+#~ msgstr ""
+
+#~ msgid "The destination matrix."
+#~ msgstr ""
+
+#~ msgid "The index of the destination matrix."
+#~ msgstr ""
+
+#~ msgid "The first matrix."
+#~ msgstr ""
+
+#~ msgid "The index of the first matrix."
+#~ msgstr ""
+
+#~ msgid "The second matrix."
+#~ msgstr ""
+
+#~ msgid "The index of the second matrix."
+#~ msgstr ""
+
+#~ msgid "The third matrix."
+#~ msgstr ""
+
+#~ msgid "The index of the third matrix."
+#~ msgstr ""
+
+#~ msgid "Store data from simdgroup to device memory or threadgroup memory"
+#~ msgstr ""
+
+#~ msgid "The SIMDGroup."
+#~ msgstr ""
+
+#~ msgid "transpose_matrix"
+#~ msgstr ""
+
+#~ msgid "bool"
+#~ msgstr ""
+
+#~ msgid "Take sin of input x."
+#~ msgstr ""
+
+#~ msgid "Take sinh of input x."
+#~ msgstr ""
+
+#~ msgid "Take square root of input x."
+#~ msgstr ""
+
+#~ msgid "Start profile intrinsic. :param id: The intrinsic id. :type id: int"
+#~ msgstr ""
+
+#~ msgid "Make list of stmt from blocks."
+#~ msgstr ""
+
+#~ msgid "The input statement."
+#~ msgstr ""
+
+#~ msgid "**stmt_list** -- The unpacked list of statements"
+#~ msgstr ""
+
+#~ msgid "Make sequence of statements"
+#~ msgstr ""
+
+#~ msgid "List of statements to be combined as sequence."
+#~ msgstr ""
+
+#~ msgid "**stmt** -- The combined statement."
+#~ msgstr ""
+
+#~ msgid "Generic subtract operator."
+#~ msgstr ""
+
+#~ msgid "**op** -- The result Expr of subtract operaton."
+#~ msgstr ""
+
+#~ msgid "Create a sum expression over axis."
+#~ msgstr ""
+
+#~ msgid "Take tan of input x."
+#~ msgstr ""
+
+#~ msgid "Take hyperbolic tanh of input x."
+#~ msgstr ""
+
+#~ msgid "Trace tensor data at the runtime."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The trace function allows to trace "
+#~ "specific tensor at the runtime. The "
+#~ "tracing value should come as last "
+#~ "argument. The trace action should be "
+#~ "specified, by default tvm.default_trace_action "
+#~ "is used."
+#~ msgstr ""
+
+#~ msgid "The name of the trace action."
+#~ msgstr ""
+
+#~ msgid ":obj:`tvm.tir.call_packed`"
+#~ msgstr ""
+
+#~ msgid "Creates packed function."
+#~ msgstr ""
+
+#~ msgid "Get truncated value of the input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The truncated value of the scalar "
+#~ "x is the nearest integer i which"
+#~ " is closer to zero than x is."
+#~ msgstr ""
+
+#~ msgid "Compute the truncdiv of two expressions."
+#~ msgstr ""
+
+#~ msgid "This is the default integer division behavior in C."
+#~ msgstr ""
+
+#~ msgid "Compute the truncmod of two expressions."
+#~ msgstr ""
+
+#~ msgid "Get head access address with memory access pattern info"
+#~ msgstr ""
+
+#~ msgid "The data type of pointer."
+#~ msgstr ""
+
+#~ msgid "The data of pointer."
+#~ msgstr ""
+
+#~ msgid "The offset of pointer."
+#~ msgstr ""
+
+#~ msgid "The read write mask."
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic for tensor core bmma_sync operators"
+#~ msgstr ""
+
+#~ msgid "The bwmma fragment_d."
+#~ msgstr ""
+
+#~ msgid "The fragment_d index."
+#~ msgstr ""
+
+#~ msgid "The bwmma fragment_a."
+#~ msgstr ""
+
+#~ msgid "The fragment_a index."
+#~ msgstr ""
+
+#~ msgid "The bwmma fragment_b."
+#~ msgstr ""
+
+#~ msgid "The fragment_b index."
+#~ msgstr ""
+
+#~ msgid "The bwmma fragment_c."
+#~ msgstr ""
+
+#~ msgid "The fragment_c index."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return new on stack dtype[num] :param"
+#~ " expected: The expected return code. "
+#~ ":type expected: int :param return_unexpected:"
+#~ " The unexpected return code. :type "
+#~ "return_unexpected: int :param nested_call: The"
+#~ " call expression to check return. "
+#~ ":type nested_call: PrimExpr"
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic for tensor core fill_fragment operators"
+#~ msgstr ""
+
+#~ msgid "The wmma fragment"
+#~ msgstr ""
+
+#~ msgid "The shape of wmma fragment."
+#~ msgstr ""
+
+#~ msgid "The fragment index."
+#~ msgstr ""
+
+#~ msgid "The value to be filled in fragment."
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic for tensor core load operators"
+#~ msgstr ""
+
+#~ msgid "The wmma fragment."
+#~ msgstr ""
+
+#~ msgid "The fragment buffer pointer."
+#~ msgstr ""
+
+#~ msgid "The fragment stride."
+#~ msgstr ""
+
+#~ msgid "The fragment layout."
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic for tensor core mma_sync operators"
+#~ msgstr ""
+
+#~ msgid "The wmma fragment_d."
+#~ msgstr ""
+
+#~ msgid "The wmma fragment_a."
+#~ msgstr ""
+
+#~ msgid "The wmma fragment_b."
+#~ msgstr ""
+
+#~ msgid "The wmma fragment_c."
+#~ msgstr ""
+
+#~ msgid "Return new on stack dtype[num]"
+#~ msgstr ""
+
+#~ msgid "The data type of array."
+#~ msgstr ""
+
+#~ msgid "The size of array."
+#~ msgstr ""
+
+#~ msgid "Allocate a NDArray(DLTensor) on stack, return the handle"
+#~ msgstr ""
+
+#~ msgid "The data of array."
+#~ msgstr ""
+
+#~ msgid "The shape of array."
+#~ msgstr ""
+
+#~ msgid "The strides of array."
+#~ msgstr ""
+
+#~ msgid "The dimensions of array."
+#~ msgstr ""
+
+#~ msgid "The element offset of array."
+#~ msgstr ""
+
+#~ msgid "Allocate a shape tuple on stack, return the handle"
+#~ msgstr ""
+
+#~ msgid "The tuple shape."
+#~ msgstr ""
+
+#~ msgid "TVM intrinsic for tensor core store operators"
+#~ msgstr ""
+
+#~ msgid "Get struct field value in array"
+#~ msgstr ""
+
+#~ msgid "The date type of the result."
+#~ msgstr ""
+
+#~ msgid "The array of struct."
+#~ msgstr ""
+
+#~ msgid "The index of struct."
+#~ msgstr ""
+
+#~ msgid "The field of struct."
+#~ msgstr ""
+
+#~ msgid "Set value in struct field in array"
+#~ msgstr ""
+
+#~ msgid "The value to be set in field."
+#~ msgstr ""
+
+#~ msgid "Perform allreduce inside threadblock."
+#~ msgstr ""
+
+#~ msgid "The args."
+#~ msgstr ""
+
+#~ msgid "Throw TVMGetLastError()"
+#~ msgstr ""
+
+#~ msgid "Create a tuple structure in value field of AttrStmt"
+#~ msgstr ""
+
+#~ msgid "The value in tuple."
+#~ msgstr ""
+
+#~ msgid "Create a type annotation expression"
+#~ msgstr ""
+
+#~ msgid "Returns an initialized but arbitrary value"
+#~ msgstr ""
+
+#~ msgid "Concat two vectors"
+#~ msgstr ""
+
+#~ msgid "Get the high level half of the vector"
+#~ msgstr ""
+
+#~ msgid "Get the low level half of the vector"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the target's vscale value. It "
+#~ "will be lowered to llvm.vscale intrinsic"
+#~ " (https://llvm.org/docs/LangRef.html#llvm-vscale-"
+#~ "intrinsic) :returns: **call** -- Call to"
+#~ " the vscale intrinsic :rtype: PrimExpr"
+#~ msgstr ""
+

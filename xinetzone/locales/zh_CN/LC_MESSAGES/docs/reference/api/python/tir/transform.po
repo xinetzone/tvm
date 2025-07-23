@@ -1,0 +1,796 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/transform.rst:20
+msgid "tvm.tir.transform"
+msgstr ""
+
+#~ msgid ""
+#~ "Reshape buffers that appear in the "
+#~ "\"layout_transform_map\" fucntion attribute."
+#~ msgstr ""
+
+#~ msgid "Detect and insert sync points to co-processor."
+#~ msgstr ""
+
+#~ msgid "The pragma key for hint of copy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The function with signature copyintrin(src,"
+#~ " dst, pad_before, pad_after, pad_value)"
+#~ msgstr ""
+
+#~ msgid "Inject prefetch instructions into stmt."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Add line information from the TIR "
+#~ "printer as spans on each statement "
+#~ "and expression."
+#~ msgstr ""
+
+#~ msgid "Lift common attrs with attr_key to outer scope."
+#~ msgstr ""
+
+#~ msgid "The attribute key to be checked."
+#~ msgstr ""
+
+#~ msgid "Run this pass after StorageFlatten."
+#~ msgstr ""
+
+#~ msgid "Flatten the multi-dimensional read/write to 1D."
+#~ msgstr ""
+
+#~ msgid "The size of CPU cache line."
+#~ msgstr ""
+
+#~ msgid "Whether to create bound attributes."
+#~ msgstr ""
+
+#~ msgid "Flatten the multi-dimensional read/write to 2D."
+#~ msgstr ""
+
+#~ msgid "Namespace of all TIR transformations"
+#~ msgstr ""
+
+#~ msgid "Annotate locations that should be run on the device"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Insert `AttrStmt` nodes specifying a "
+#~ "target on which regions within the "
+#~ "PrimFunc should be executed.  Only "
+#~ "modifies functions that have a "
+#~ "`tvm::attr::kTarget` attribute, and where that"
+#~ " target defines a host."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**fpass** -- The result pass"
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Set a PrimFunc as the entry point if it is only function in IRModule."
+#~ msgstr ""
+
+#~ msgid "Apply ftransform to each function in the Module."
+#~ msgstr ""
+
+#~ msgid "This function is a thin wrapper around tvm.tir.transform.prim_func_pass"
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The transformation pass."
+#~ msgstr ""
+
+#~ msgid "Legalize bf16 compute Ops."
+#~ msgstr ""
+
+#~ msgid "Legalize bf16 storage types to u16."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Annotate a PrimFunc with a given "
+#~ "target. :param target: target :type "
+#~ "target: tvm.target.Target"
+#~ msgstr ""
+
+#~ msgid "Combine context calls in the host function."
+#~ msgstr ""
+
+#~ msgid "Replace redundant computations by new variables."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Compact the buffer access region. by "
+#~ "removing the buffer regions that are "
+#~ "not accessed, i.e. narrowing the buffer"
+#~ " shape and adjust the access region"
+#~ " if necessary."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before narrowing, ``B`` is a ``[16, "
+#~ "16]`` buffer, but only a skinny "
+#~ "vector ``B[i, 0:16]`` is accessed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass narrows the buffer shape "
+#~ "and adjust its accessed region "
+#~ "accordingly.  In this particular case, "
+#~ "because only a ``1 * 16`` vector"
+#~ " of ``B`` is accessed, the pass "
+#~ "narrows ``B`` to shape ``[1, 16]``, "
+#~ "and changes the access to ``B[i, "
+#~ "j]`` to ``B[0, j]``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ensure the compacted shape to be "
+#~ "always smaller than the original shape."
+#~ " Otherwise it allows to grow the "
+#~ "shape to match actual accessed buffer"
+#~ " regions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Substitute all the block vars with "
+#~ "the PrimExprs they are bound to, "
+#~ "indicated by the corresponding iter_values "
+#~ "in BlockRealize, and then convert the"
+#~ " blocks into opaque ones by removing"
+#~ " all the iter_values in BlockRealize "
+#~ "and iter_vars in Block."
+#~ msgstr ""
+
+#~ msgid "Convert Parallel For Loops to Serial For Loops."
+#~ msgstr ""
+
+#~ msgid "Convert an IRModule to be SSA form."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass handles cases where the "
+#~ "same `tir.Var` appears in multiple "
+#~ "functions within the same module.  For"
+#~ " example, after extracting a fragment "
+#~ "from one function into another, where"
+#~ " the same `tir.Var` may be defined"
+#~ " both as within the body of the"
+#~ " original function, and as a "
+#~ "parameter within the hoisted function."
+#~ msgstr ""
+
+#~ msgid "Decorate all the function's body as device function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The pass sets default thread bindings"
+#~ " for PrimFuncs, including symbolic shape"
+#~ " functions, allowing their build and "
+#~ "execution on GPU devices. It examines"
+#~ " all the blocks within the PrimFunc"
+#~ " and conducts loop fusion, splitting, "
+#~ "and reordering operation based on the"
+#~ " loop extent and target information, "
+#~ "such as the maximum thread block "
+#~ "number and maximum thread per block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The primary objective of this pass "
+#~ "is not to optimize performance, but "
+#~ "rather to generate a valid GPU "
+#~ "kernel for unscheduled or symbolic shape"
+#~ " PrimFuncs. The pass is currently "
+#~ "only working for CUDA targets."
+#~ msgstr ""
+
+#~ msgid "**ret**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Collects and unificates tir non-scalar"
+#~ " constants to module's attr 'Constants' "
+#~ "array."
+#~ msgstr ""
+
+#~ msgid "Legalize fp8 compute Ops."
+#~ msgstr ""
+
+#~ msgid "The data type we promote fp8 to, options: float16/float32."
+#~ msgstr ""
+
+#~ msgid "Legalize fp8 storage types to u8."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Filter out PrimFuncs that does not "
+#~ "satisfy the given condition. `fcond` "
+#~ "should be a function that takes a"
+#~ " primfunc and returns boolean."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Flatten the multi-dimensional BufferLoad "
+#~ "and BufferStore to single dimensional "
+#~ "BufferLoad/BufferStore for the TIR not "
+#~ "contains opaque block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Force narrow down indexing expressions "
+#~ "and integer buffers to int32 dtype."
+#~ msgstr ""
+
+#~ msgid "This pass should not be used in default cases."
+#~ msgstr ""
+
+#~ msgid "Generalized verison of HoistIfThenElse."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hoist loop-invariant expressions to "
+#~ "outside the eligible loops. Searches for"
+#~ " expressions in:"
+#~ msgstr ""
+
+#~ msgid "LetStmt bindings"
+#~ msgstr ""
+
+#~ msgid "IfThenElse conditions"
+#~ msgstr ""
+
+#~ msgid "Boolean operators"
+#~ msgstr ""
+
+#~ msgid "Hoist loop-invariant IfThenElse nodes to outside the eligible loops."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The variant of the pass. variant "
+#~ "can have any one of following "
+#~ "values [\"basic\", None(Default)].  The basic"
+#~ " variant supports basic hoisting scenarios"
+#~ " where it expects the For & If"
+#~ " Nodes are in place consecutively and"
+#~ " does not involve global scope "
+#~ "variables or more advanced scenarios.  "
+#~ "Default variant supports all hoisting "
+#~ "scenarios,i.e., {\"Basic\" + \"Advanced\"} "
+#~ "supported with control with PassContext "
+#~ "configs like below:      "
+#~ "config={\"tir.HoistIfThenElse\": "
+#~ "{\"support_block_scope_hosting\": True}}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The variant of the pass. variant "
+#~ "can have any one of following "
+#~ "values [\"basic\", None(Default)]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The basic variant supports basic "
+#~ "hoisting scenarios where it expects the"
+#~ " For & If Nodes are in place"
+#~ " consecutively and does not involve "
+#~ "global scope variables or more advanced"
+#~ " scenarios."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Default variant supports all hoisting "
+#~ "scenarios,i.e., {\"Basic\" + \"Advanced\"} "
+#~ "supported with control with PassContext "
+#~ "configs like below:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "config={\"tir.HoistIfThenElse\": "
+#~ "{\"support_block_scope_hosting\": True}}"
+#~ msgstr ""
+
+#~ msgid "Flags for use in HoistExpressionConfig.conditional_types"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Each bitflag represents a type of "
+#~ "expression that should be hoisted to "
+#~ "the outermost loop possible."
+#~ msgstr ""
+
+#~ msgid "Enable all hoisting of conditionals"
+#~ msgstr ""
+
+#~ msgid "If set, look for hoist candidates in all boolean expressions"
+#~ msgstr ""
+
+#~ msgid "If set, look for hoist candidates in tir.if_then_else"
+#~ msgstr ""
+
+#~ msgid "If set, look for hoist candidates in IfElseStmt"
+#~ msgstr ""
+
+#~ msgid "No hoisting of conditionals"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If set, allow hoisting of conditionals"
+#~ " that use a block variable (e.g. "
+#~ "threadIdx.x)"
+#~ msgstr ""
+
+#~ msgid "Flags for use in HoistExpressionConfig.let_binding_types"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Each bitflag represents a type of "
+#~ "let binding expression that should be"
+#~ " hoisted to the outermost loop "
+#~ "possible."
+#~ msgstr ""
+
+#~ msgid "Enable all hoisting of let bindings"
+#~ msgstr ""
+
+#~ msgid "Bindings occuring in Let expressions"
+#~ msgstr ""
+
+#~ msgid "Bindings occuring in LetStmt"
+#~ msgstr ""
+
+#~ msgid "No hoisting of let bindings"
+#~ msgstr ""
+
+#~ msgid "Bindings that are used by a hoisted conditional"
+#~ msgstr ""
+
+#~ msgid "Infer the TensorCore fragment infomation using tensor intrinsics."
+#~ msgstr ""
+
+#~ msgid "Inject double buffer statements."
+#~ msgstr ""
+
+#~ msgid "Rewrite global to shared memory copy on CUDA with asyncronous copy."
+#~ msgstr ""
+
+#~ msgid "Inject ptx.ldg.32 intrinsics."
+#~ msgstr ""
+
+#~ msgid "If True, inject ptx.ldg.32 intrinsics."
+#~ msgstr ""
+
+#~ msgid "Inject permuted layout in mma"
+#~ msgstr ""
+
+#~ msgid "Inject rolling buffer statements."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Transform annotated loops into pipelined "
+#~ "one that parallelize producers and "
+#~ "consumers"
+#~ msgstr ""
+
+#~ msgid "Inject virtual thread loops."
+#~ msgstr ""
+
+#~ msgid "Inline calls to private functions"
+#~ msgstr ""
+
+#~ msgid "Instruments bound checkers."
+#~ msgstr ""
+
+#~ msgid "Insert intrinsic calls to instrument function and loop level profiling."
+#~ msgstr ""
+
+#~ msgid "Legalize packed calls to have its arguments wrapped in TVMValues"
+#~ msgstr ""
+
+#~ msgid "Lift the same thread bindings to their LCA loops."
+#~ msgstr ""
+
+#~ msgid "Lower async DMA to DMA."
+#~ msgstr ""
+
+#~ msgid "Automatically do memory optimizations for auto copy blocks"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lower cross-thread reduction from thread"
+#~ " bindings to intrinsic function calls."
+#~ msgstr ""
+
+#~ msgid "Lower custom datatypes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "See tvm::datatypes::Registry for more "
+#~ "information on adding custom datatypes."
+#~ msgstr ""
+
+#~ msgid "Lower cross-device function calls."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Prior to this pass, host to device"
+#~ " calls are represented as subroutine "
+#~ "calls, with environment parameters (e.g. "
+#~ "env_thread) specified internally.  The device"
+#~ " function is an internal function, "
+#~ "without a `tvm::attr::kGlobalSymbol` attribute."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After this pass, host to device "
+#~ "calls are represented as tvm_call_packed "
+#~ "built-in.  The device function is "
+#~ "an externally-exposed function, with a"
+#~ " non-empty `tvm::attr::kGlobalSymbol` attribute."
+#~ msgstr ""
+
+#~ msgid "Lower attached storage access information on device."
+#~ msgstr ""
+
+#~ msgid "Run this pass after all storage access analysis finish."
+#~ msgstr ""
+
+#~ msgid "Lower block init stmt into IfThenElse statements."
+#~ msgstr ""
+
+#~ msgid "Lower target specific intrinsic calls."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Remove match buffers inside the block."
+#~ " Also, it will validate the binding."
+#~ msgstr ""
+
+#~ msgid "Remove the block to ensure that the TIR can not be scheduled again."
+#~ msgstr ""
+
+#~ msgid "Lower tvm builtin intrinsics."
+#~ msgstr ""
+
+#~ msgid "Lower cross thread alleduce."
+#~ msgstr ""
+
+#~ msgid "Lower vtcm allocation."
+#~ msgstr ""
+
+#~ msgid "Lower warp memory access to low-level device related function calls."
+#~ msgstr ""
+
+#~ msgid "Transform the PrimFuncs in the module to a packed func API."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Prior to this pass, the PrimFunc "
+#~ "may have Buffer arguments defined in "
+#~ "the `PrimFuncNode::buffer_map`.  This pass "
+#~ "consumes the `buffer_map`, using it to"
+#~ " generate `TVMArgs` and `TVMRetValue*` "
+#~ "arguments that implement the `PackedFunc` "
+#~ "API."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For static shapes, the `BufferNode::shape`,"
+#~ " `BufferNode::strides`, and `BufferNode::elem_offset`"
+#~ " member variables are used to "
+#~ "generate runtime checks on the "
+#~ "corresponding member variables in the "
+#~ "user-provided `DLTensor*` or `tvm.nd.array` "
+#~ "argument.  (e.g. A PrimFunc that accepts"
+#~ " a buffer of shape `[16,32]` "
+#~ "validates that the `DLTensor::shape` array "
+#~ "is `[16,32]`.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For dynamic Buffers, in which one "
+#~ "or more of these `BufferNode` member "
+#~ "variables use `tir.Var` that are not "
+#~ "defined by other PrimFunc parameters, "
+#~ "these are instead used to define "
+#~ "the variables based on the corresponding"
+#~ " `DLTensor` members.  (e.g. A PrimFunc "
+#~ "that accepts a buffer of shape "
+#~ "`[tir.Var(\"n\"), tir.Var(\"m\")]`, when passed "
+#~ "a `DLTensor` of shape `[16,32]`, will"
+#~ " define `n = 16` and `n=32`, "
+#~ "based on the argument's shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Transform the PrimFuncs in the module"
+#~ " to a C API compatible with "
+#~ "internal calls."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Prior to this pass, the PrimFunc "
+#~ "may have Buffer arguments defined in "
+#~ "the `PrimFuncNode::buffer_map`.  This pass "
+#~ "consumes the `buffer_map`, using it to"
+#~ " generate `T*` arguments (e.g. `float32*`)"
+#~ " that can be directly called by "
+#~ "a C API."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For static shapes, no runtime validation"
+#~ " is performed to confirm that the "
+#~ "argument buffer's shape matches the "
+#~ "expected shape.  For dynamic shapes, "
+#~ "`MakeUnpackedAPI` requires that the dynamic"
+#~ " parameters be passed as separate "
+#~ "`tir.Var` parameters."
+#~ msgstr ""
+
+#~ msgid "Add the explicit local stage for the shared memory access on GPU."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass merges multiple TIR-level "
+#~ "shared memory allocations into one "
+#~ "allocation."
+#~ msgstr ""
+
+#~ msgid "Narrow down PrimExpr datatype in stmt to target_bits."
+#~ msgstr ""
+
+#~ msgid "The target bit configuration."
+#~ msgstr ""
+
+#~ msgid "Run this pass after FlattenBuffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Locate the buffer allocation to the "
+#~ "exact position (usually is the lca "
+#~ "of buffer access). This pass will "
+#~ "inject opaque block with alloc_buffers "
+#~ "at the allocation site."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rewrite the pointer content type of "
+#~ "arguments, as well as Alloc internal "
+#~ "to the function to use the most"
+#~ " frequently accessed type for load/store"
+#~ " to avoid pointer casting in backend"
+#~ " when possible."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass that works on each "
+#~ ":py:func:`tvm.tir.PrimFunc` in a module. A "
+#~ "function pass class should be created"
+#~ " through py:func:`tvm.tir.transform.function_pass`."
+#~ msgstr ""
+
+#~ msgid "Reduce branching by introducing overcompute"
+#~ msgstr ""
+
+#~ msgid "Remove all instances of builtin::assume"
+#~ msgstr ""
+
+#~ msgid "Remove No Op from the Stmt."
+#~ msgstr ""
+
+#~ msgid "Remove stores of undefined values from the Stmt."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Remove weight layout rewrite block "
+#~ "before benchmarking during tuning stage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If True, exact rewrite of NDArray, "
+#~ "according to the given index map, "
+#~ "will be skipped. Only the shape of"
+#~ " the NDArray is transformed correctly, "
+#~ "and the content of the destination "
+#~ "array will be filled with random "
+#~ "values.  When this pass is called "
+#~ "many times during MetaSchedule tuning, "
+#~ "the raw data of NDArray, before "
+#~ "and after rewrite, does not matter. "
+#~ "Since NDArray layout rewrite, using "
+#~ "IndexMap's MapNDArray, is currently slow, "
+#~ "skipping the exact rewrite is sometimes"
+#~ " necessary."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If True, exact rewrite of NDArray, "
+#~ "according to the given index map, "
+#~ "will be skipped. Only the shape of"
+#~ " the NDArray is transformed correctly, "
+#~ "and the content of the destination "
+#~ "array will be filled with random "
+#~ "values."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When this pass is called many "
+#~ "times during MetaSchedule tuning, the "
+#~ "raw data of NDArray, before and "
+#~ "after rewrite, does not matter. Since"
+#~ " NDArray layout rewrite, using IndexMap's"
+#~ " MapNDArray, is currently slow, skipping"
+#~ " the exact rewrite is sometimes "
+#~ "necessary."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Renormalize the split pattern from "
+#~ "floordiv(floormod()) to floormod(floordiv())"
+#~ msgstr ""
+
+#~ msgid "Detect and rewrite unsafe select that contains memory access."
+#~ msgstr ""
+
+#~ msgid "Run arithmetic simplifications on the statements and expressions."
+#~ msgstr ""
+
+#~ msgid "Skip assert stmt."
+#~ msgstr ""
+
+#~ msgid "Split the function into a host function and device functions."
+#~ msgstr ""
+
+#~ msgid "Rewrite storage allocation pattern."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Moves the allocation to outer most "
+#~ "possible scope. Trying to share space"
+#~ " between allocations to make a static"
+#~ " allocation plan when possible."
+#~ msgstr ""
+
+#~ msgid "Insert sync between parallel read/write of shared buffers."
+#~ msgstr ""
+
+#~ msgid "The target storage scope."
+#~ msgstr ""
+
+#~ msgid "Transform mma buffer layout"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unify all the thread bindings for "
+#~ "\"blockIdx.x/y/z\", \"threadIdx.x/y/z\", and "
+#~ "\"vthread.x/y/z\". Before the unification, two"
+#~ " vars that are bound to a "
+#~ "thread axis (e.g., \"threadIdx.x\") use "
+#~ "different IterVars and variables in "
+#~ "their AttrStmts. After the unification, "
+#~ "we use a consolidated IterVar and "
+#~ "a variable for them."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`vthread` is a legacy behavior that "
+#~ "will be deprecated, though thread "
+#~ "bindings of `vthread` are still also "
+#~ "unified in this pass. Please use "
+#~ "`vthread.x`, `vthread.y` and `vthread.z` "
+#~ "instead."
+#~ msgstr ""
+
+#~ msgid "Unroll the constant loop marked by unroll."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass also automatically attach "
+#~ "pragma unroll tag to loops which "
+#~ "meets the standard."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass attempts to eliminates layout"
+#~ " specific pad branch by overcomputing "
+#~ "the values for padded region. "
+#~ "Eliminating the branch will help to "
+#~ "vectorize code, and improve element wise"
+#~ " ops performance."
+#~ msgstr ""
+
+#~ msgid "Lower vectorization loops."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether vectorization is enabled. Will "
+#~ "lower to scalar loop when it is"
+#~ " turned off."
+#~ msgstr ""
+
+#~ msgid "Verify if func contains illegal host side direct memory access."
+#~ msgstr ""
+
+#~ msgid "Verify if the size of the allocated vtcm memory satisfies the limit."
+#~ msgstr ""
+
+#~ msgid "Decorate a function pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function returns a callback when"
+#~ " pass_func is provided. Otherwise, it "
+#~ "returns the created function pass using"
+#~ " the given optimization function."
+#~ msgstr ""
+
+#~ msgid "The transformation function or class."
+#~ msgstr ""
+
+#~ msgid "The optimization level of this module pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the function pass. The"
+#~ " name could be empty. In this "
+#~ "case, the name of the optimization "
+#~ "function will be used as the pass"
+#~ " name."
+#~ msgstr ""
+
+#~ msgid "The list of passes that the function pass is dependent on."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**create_function_pass** -- A decorator will"
+#~ " be returned if pass_func is not "
+#~ "provided, otherwise return the decorated "
+#~ "result. The returned decorator has two"
+#~ " behaviors depending on the input: A"
+#~ " new FunctionPass will be returned "
+#~ "when we decorate a pass function. "
+#~ "A new FunctionPass class will be "
+#~ "returned when we decorate a class "
+#~ "type."
+#~ msgstr ""
+
+#~ msgid "The following code block decorates a function pass class."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following code creates a function"
+#~ " pass by decorating a user defined"
+#~ " transform function."
+#~ msgstr ""
+

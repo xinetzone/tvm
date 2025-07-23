@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:21
+msgid "Understand TensorIR Abstraction"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:22
+msgid ""
+"TensorIR is the tensor program abstraction in Apache TVM, which is one of"
+" the standard machine learning compilation frameworks. The principal "
+"objective of tensor program abstraction is to depict loops and associated"
+" hardware acceleration options, including threading, the application of "
+"specialized hardware instructions, and memory access."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:27
+msgid ""
+"To help our explanations, let us use the following sequence of tensor "
+"computations as a motivating example. Specifically, for two :math:`128 "
+"\\times 128` matrices ``A`` and ``B``, let us perform the following two "
+"steps of tensor computations."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:31
+msgid ""
+"Y_{i, j} &= \\sum_k A_{i, k} \\times B_{k, j} \\\\\n"
+"C_{i, j} &= \\mathbb{relu}(Y_{i, j}) = \\mathbb{max}(Y_{i, j}, 0)"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:37
+msgid ""
+"The above computations resemble a typical primitive tensor function "
+"commonly seen in neural networks, a linear layer with relu activation. We"
+" use TensorIR to depict the above computations as follows."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:40
+msgid ""
+"Before we invoke TensorIR, let's use native Python codes with NumPy to "
+"show the computation:"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:56
+msgid ""
+"With the low-level NumPy example in mind, now we are ready to introduce "
+"TensorIR. The code block below shows a TensorIR implementation of "
+"``mm_relu``. The particular code is implemented in a language called "
+"TVMScript, which is a domain-specific dialect embedded in python AST."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:84
+msgid "Next, let's invest the elements in the above TensorIR program."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:87
+msgid "Function Parameters and Buffers"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:88
+msgid ""
+"**The function parameters correspond to the same set of parameters on the"
+" numpy function.**"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:101
+msgid ""
+"Here ``A``, ``B``, and ``C`` takes a type named ``T.Buffer``, which with "
+"shape argument ``(128, 128)`` and data type ``float32``. This additional "
+"information helps possible MLC process to generate code that specializes "
+"in the shape and data type."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:106
+msgid ""
+"**Similarly, TensorIR also uses a buffer type in intermediate result "
+"allocation.**"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:116
+msgid "Loop Iterations"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:117
+msgid "**There are also direct correspondence of loop iterations.**"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:119
+msgid ""
+"``T.grid`` is a syntactic sugar in TensorIR for us to write multiple "
+"nested iterators."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:138
+msgid "Computational Block"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:139
+msgid ""
+"A significant distinction lies in computational statements: **TensorIR "
+"incorporates an additional construct termed** ``T.block``."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:158
+msgid ""
+"A **block** represents a fundamental computation unit within TensorIR. "
+"Importantly, a block encompasses more information than standard NumPy "
+"code. It comprises a set of block axes ``(vi, vj, vk)`` and the "
+"computations delineated around them."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:168
+msgid ""
+"The above three lines declare the **key properties** about block axes in "
+"the following syntax."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:174
+msgid "These three lines convey the following details:"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:176
+msgid ""
+"They specify the binding of ``vi``, ``vj``, ``vk`` (in this instance, to "
+"``i``, ``j``, ``k``)."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:177
+msgid ""
+"They declare the original range intended for ``vi``, ``vj``, ``vk`` (the "
+"128 in ``T.axis.spatial(128, i)``)."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:179
+msgid "They announce the properties of the iterators (spatial, reduce)."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:182
+msgid "Block Axis Properties"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:183
+msgid ""
+"Let's delve deeper into the properties of the block axis. These "
+"properties signify the axis's relationship to the computation in "
+"progress. The block comprises three axes ``vi``, ``vj``, and ``vk``, "
+"meanwhile the block reads the buffer ``A[vi, vk]``, ``B[vk, vj]`` and "
+"writs the buffer ``Y[vi, vj]``. Strictly speaking, the block performs "
+"(reduction) updates to Y, which we label as write for the time being, as "
+"we don't require the value of Y from another block."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:189
+msgid ""
+"Significantly, for a fixed value of ``vi`` and ``vj``, the computation "
+"block yields a point value at a spatial location of ``Y`` (``Y[vi, vj]``)"
+" that is independent of other locations in ``Y`` (with different ``vi``, "
+"``vj`` values). We can refer to ``vi``, ``vj`` as **spatial axes** since "
+"they directly correspond to the start of a spatial region of buffers that"
+" the block writes to. The axes involved in reduction (``vk``) are "
+"designated as **reduce axes**."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:196
+msgid "Why Extra Information in Block"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:197
+msgid ""
+"One crucial observation is that the additional information (block axis "
+"range and their properties) makes the block to be **self-contained** when"
+" it comes to the iterations that it is supposed to carry out independent "
+"from the external loop-nest ``i, j, k``."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:201
+msgid ""
+"The block axis information also provides additional properties that help "
+"us to validate the correctness of the external loops that are used to "
+"carry out the computation. For example, the above code block will result "
+"in an error because the loop expects an iterator of size 128, but we only"
+" bound it to a for loop of size 127."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:216
+msgid "Sugars for Block Axes Binding"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:217
+msgid ""
+"In situations where each of the block axes is directly mapped to an outer"
+" loop iterator, we can use ``T.axis.remap`` to declare the block axis in "
+"a single line."
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:225
+msgid "which is equivalent to"
+msgstr ""
+
+#: ../../doc/docs/_staging/deep_dive/tensor_ir/learning.rst:233
+msgid "So we can also write the programs as follows."
+msgstr ""
+

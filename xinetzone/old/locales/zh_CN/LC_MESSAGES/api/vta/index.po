@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/index.rst:2
+msgid "vta"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:8
+msgid "VTA Package is a TVM backend extension to support VTA hardware."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:10
+msgid ""
+"Besides the compiler toolchain, it also includes utility functions to "
+"configure the hardware environment and access remote device through RPC."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:16
+msgid "Subpackages"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:27
+msgid "Submodules"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:44
+msgid "Attributes"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:50:<autosummary>:1
+msgid ":py:obj:`__version__ <vta.__version__>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:52
+msgid "Classes"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:58:<autosummary>:1
+msgid ":py:obj:`Environment <vta.Environment>`\\"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:80
+#: ../../doc/api/vta/index.rst:58:<autosummary>:1
+msgid "Hardware configuration object."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:60
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ":py:obj:`download_bitstream <vta.download_bitstream>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:181
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid "Downloads a cached bitstream corresponding to the current config"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ":py:obj:`get_bitstream_path <vta.get_bitstream_path>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:186
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ""
+"Returns the path to the cached bitstream corresponding to the current "
+"config"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ":py:obj:`get_env <vta.get_env>`\\ \\(\\)"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:196
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid "Get the current VTA Environment."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ":py:obj:`module_loader <vta.module_loader>`\\ \\(\\[bitstream\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:206
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid "Construct a ModuleLoader implementation specialized for VTA."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ""
+":py:obj:`program_fpga <vta.program_fpga>`\\ \\(remote\\[\\, "
+"bitstream\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:221
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid "Upload and program bistream"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid ":py:obj:`reconfig_runtime <vta.reconfig_runtime>`\\ \\(remote\\)"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:234
+#: ../../doc/api/vta/index.rst:71:<autosummary>:1
+msgid "Reconfigure remote runtime based on current hardware spec."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:73
+msgid "Package Contents"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:77
+msgid "Bases: :py:obj:`object`"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:82
+msgid ""
+"This object contains all the information needed for compiling to a "
+"specific VTA backend."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:86 ../../doc/api/vta/index.rst:209
+#: ../../doc/api/vta/index.rst:224 ../../doc/api/vta/index.rst:237
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:87
+msgid "cfg"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:-1
+msgid "dict of str to value."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:88
+msgid "The configuration parameters."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:91
+msgid "Example"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:160
+msgid "The ALU, dma_copy and intrinsics will be mocked to be nop."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:189 ../../doc/api/vta/index.rst:199
+#: ../../doc/api/vta/index.rst:214
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:190
+msgid "bit_path: str"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:191
+msgid "Corresponding to the filepath of the bitstream"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:200
+msgid "env"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:-1
+msgid "Environment"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:201
+msgid "The current environment."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:210
+msgid "bitsream"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:211
+msgid "Path to the bitstream to write prior to uploading code."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:215
+msgid "ModuleLoader :"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:216
+msgid "The ModuleLoader instance."
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:225 ../../doc/api/vta/index.rst:238
+msgid "remote"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:-1
+msgid "RPCSession"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:226 ../../doc/api/vta/index.rst:239
+msgid "The TVM RPC session"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:228
+msgid "bitstream"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:-1
+msgid "str, optional"
+msgstr ""
+
+#: ../../doc/api/vta/index.rst:229
+msgid ""
+"Path to a local bistream file. If unset, tries to download from cache "
+"server."
+msgstr ""
+

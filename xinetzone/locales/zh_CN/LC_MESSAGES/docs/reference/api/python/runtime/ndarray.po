@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/runtime/ndarray.rst:19
+msgid "tvm.runtime.ndarray"
+msgstr ""
+
+#~ msgid "Runtime NDArray API"
+#~ msgstr ""
+
+#~ msgid "Lightweight NDArray class of TVM runtime."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Strictly this is only an Array "
+#~ "Container (a buffer object) No "
+#~ "arthimetic operations are defined. All "
+#~ "operations are performed by TVM "
+#~ "functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The goal is not to re-build "
+#~ "yet another array library. Instead, this"
+#~ " is a minimal data structure to "
+#~ "demonstrate how can we use TVM in"
+#~ " existing project which might have "
+#~ "their own array containers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert this array to numpy array. "
+#~ "This API will be deprecated in TVM"
+#~ " v0.8 release. Please use `numpy` "
+#~ "instead."
+#~ msgstr ""
+
+#~ msgid "Perform a synchronous copy from the array."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The data source we should like to copy from."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**arr** -- Reference to self."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Copy array to target"
+#~ msgstr ""
+
+#~ msgid "The target array to be copied, must have same shape as this array."
+#~ msgstr ""
+
+#~ msgid "The memory scope of the array."
+#~ msgstr ""
+
+#~ msgid "Device of this array"
+#~ msgstr ""
+
+#~ msgid "Type of this array"
+#~ msgstr ""
+
+#~ msgid "Convert this array to numpy array"
+#~ msgstr ""
+
+#~ msgid "**np_arr** -- The corresponding numpy array."
+#~ msgstr ""
+
+#~ msgid "Check object identity equality"
+#~ msgstr ""
+
+#~ msgid "The other object to compare to"
+#~ msgstr ""
+
+#~ msgid "**same** -- Whether other is same as self."
+#~ msgstr ""
+
+#~ msgid "Create an array from source arr."
+#~ msgstr ""
+
+#~ msgid "The array to be copied from"
+#~ msgstr ""
+
+#~ msgid "The device to create the array"
+#~ msgstr ""
+
+#~ msgid "The memory scope of the array"
+#~ msgstr ""
+
+#~ msgid "**ret** -- The created array"
+#~ msgstr ""
+
+#~ msgid "Construct a OpenCL device"
+#~ msgstr ""
+
+#~ msgid "The integer device id"
+#~ msgstr ""
+
+#~ msgid "**dev** -- The created device"
+#~ msgstr ""
+
+#~ msgid "Construct a CPU device"
+#~ msgstr ""
+
+#~ msgid "Construct a CUDA GPU device"
+#~ msgstr ""
+
+#~ msgid "Construct a TVM device with given device type and id."
+#~ msgstr ""
+
+#~ msgid "The device type mask or name of the device."
+#~ msgstr ""
+
+#~ msgid "**dev** -- The corresponding device."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Device can be used to create "
+#~ "reflection of device by string "
+#~ "representation of the device type."
+#~ msgstr ""
+
+#~ msgid "Create an empty array given shape and device"
+#~ msgstr ""
+
+#~ msgid "The shape of the array."
+#~ msgstr ""
+
+#~ msgid "The data type of the array."
+#~ msgstr ""
+
+#~ msgid "The device of the array."
+#~ msgstr ""
+
+#~ msgid "**arr** -- The array tvm supported."
+#~ msgstr ""
+
+#~ msgid "Construct a extension device"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This API is reserved for quick "
+#~ "testing of new device by plugin "
+#~ "device API as ext_dev."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Produces an array from an object "
+#~ "with __dlpack__ method or a DLPack "
+#~ "tensor w/o memory copy. Retreives the"
+#~ " underlying DLPack tensor's pointer to "
+#~ "create an array from the data. "
+#~ "Removes the original DLPack tensor's "
+#~ "destructor as now the array is "
+#~ "responsible for destruction."
+#~ msgstr ""
+
+#~ msgid "**arr** -- The array view of the tensor data."
+#~ msgstr ""
+
+#~ msgid "deprecated:: 0.9.0 Use :py:func:`tvm.cuda` instead."
+#~ msgstr ""
+
+#~ msgid "Construct a Hexagon device"
+#~ msgstr ""
+
+#~ msgid "Construct a metal device"
+#~ msgstr ""
+
+#~ msgid "Return a TVMArray representation of a numpy array."
+#~ msgstr ""
+
+#~ msgid "Construct a ROCM device"
+#~ msgstr ""
+
+#~ msgid "Construct a VPI simulated device"
+#~ msgstr ""
+
+#~ msgid "Construct a Vulkan device"
+#~ msgstr ""
+
+#~ msgid "Construct a webgpu device."
+#~ msgstr ""
+

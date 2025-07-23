@@ -1,0 +1,2243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:19
+msgid "tvm.relax.frontend"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:25
+msgid "tvm.relax.frontend.nn"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:33
+msgid "tvm.relax.frontend.onnx"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:39
+msgid "tvm.relax.frontend.stablehlo"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/frontend.rst:45
+msgid "tvm.relax.frontend.torch"
+msgstr ""
+
+#~ msgid ""
+#~ "**A compiler pass `AttachExternModules`.** It"
+#~ " is introduced to attach a list "
+#~ "of `nn.ExternModule`s into an IRModule "
+#~ "at any stage of the compilation "
+#~ "pipeline, and attach the compiled "
+#~ "external modules as `runtime.Module`s into "
+#~ "IRModule's `external_mods` attribute. It is"
+#~ " required by linking in `relax.build`, "
+#~ "but with the existence of this "
+#~ "pass, source compilation can be deferred"
+#~ " to arbitrary stage of TVM "
+#~ "compilation."
+#~ msgstr ""
+
+#~ msgid "Frontends for constructing Relax programs, with the model importers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Detach the attribute \"params\" in the"
+#~ " functions of the input IRModule as"
+#~ " separate dictionary of params."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The IRModule whose functions' \"param\" "
+#~ "attribute is going to be detached."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* **detached_mod** (*tvm.IRModule*) -- The "
+#~ "IRModule after the detachment. * "
+#~ "**params_dict** (*Dict[str, List[tvm.nd.NDArray]]*) "
+#~ "-- The detached params. The dict "
+#~ "keys corresponds to the names of "
+#~ "the   functions in the input IRModule"
+#~ " that have attribute \"params\"."
+#~ msgstr ""
+
+#~ msgid "**detached_mod** (*tvm.IRModule*) -- The IRModule after the detachment."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**params_dict** (*Dict[str, List[tvm.nd.NDArray]]*) "
+#~ "-- The detached params. The dict "
+#~ "keys corresponds to the names of "
+#~ "the functions in the input IRModule "
+#~ "that have attribute \"params\"."
+#~ msgstr ""
+
+#~ msgid "A PyTorch-like API to build IRModules."
+#~ msgstr ""
+
+#~ msgid "Special type indicating an unconstrained type."
+#~ msgstr ""
+
+#~ msgid "Any is compatible with every type."
+#~ msgstr ""
+
+#~ msgid "Any assumed to have all methods."
+#~ msgstr ""
+
+#~ msgid "All values assumed to be instances of Any."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that all the above statements "
+#~ "are true from the point of view"
+#~ " of static type checkers. At runtime,"
+#~ " Any should not be used with "
+#~ "instance checks."
+#~ msgstr ""
+
+#~ msgid "Module for conv1d layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for conv1d layer."
+#~ msgstr ""
+
+#~ msgid "The input tensor."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the conv1d layer."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Module for conv2d layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for conv2d layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the conv2d layer."
+#~ msgstr ""
+
+#~ msgid "Module for conv3d layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for conv3d layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the conv3d layer."
+#~ msgstr ""
+
+#~ msgid "Module for ConvTranspose1D layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for conv transpose 1d layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the conv transpose 1d layer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Effect is a special non-user "
+#~ "facing type that is used to "
+#~ "represent operations with side effects, "
+#~ "for example, print. It is used to"
+#~ " represent the output of a "
+#~ "computation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create the implicit inputs to a "
+#~ "relax.Function that represents the side "
+#~ "effect"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Emit the initialization of the effect."
+#~ " This method is called by the "
+#~ "compiler to initialize the effect."
+#~ msgstr ""
+
+#~ msgid "finalize the effect as the implicit return value of a relax.Function"
+#~ msgstr ""
+
+#~ msgid "Set the variables that represents the effect"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert the effect to specific dtype."
+#~ " Usually it is no-op for most"
+#~ " of the effects"
+#~ msgstr ""
+
+#~ msgid "Module for embedding layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for embedding layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the embedding layer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The abstract base class for external "
+#~ "modules. External modules are designed "
+#~ "to help incorporate user-provided "
+#~ "handcrafted kernels into the exported "
+#~ "TVM IRModule."
+#~ msgstr ""
+
+#~ msgid "Loads the external module into a TVM runtime module."
+#~ msgstr ""
+
+#~ msgid "Module for GELU activation layer."
+#~ msgstr ""
+
+#~ msgid "Module for group norm layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for group norm layer."
+#~ msgstr ""
+
+#~ msgid "Channel axis of the input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Optional list of axes to compute "
+#~ "norm over, if not specified, assumes "
+#~ "that the first two axes should be"
+#~ " left alone."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the group norm layer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Modeling IO side effect, for example,"
+#~ " printing the content of NDArrays on"
+#~ " screen, inserting debug breakpoints, etc."
+#~ msgstr ""
+
+#~ msgid "Effect to implement KVCache."
+#~ msgstr ""
+
+#~ msgid "Append a new element in KVCache."
+#~ msgstr ""
+
+#~ msgid "The new tensor to append."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create the implicit inputs to a "
+#~ "relax.Function that represents the KVCache "
+#~ "effect."
+#~ msgstr ""
+
+#~ msgid "The name hint of the relax.Var."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The relax.Var for KVCache."
+#~ msgstr ""
+
+#~ msgid "Emit the initialization of the KVCache effect."
+#~ msgstr ""
+
+#~ msgid "The name hint of the initialization binding Var."
+#~ msgstr ""
+
+#~ msgid "The relax BlockBuilder to emit."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finalize the KVCache effect as the "
+#~ "implicit return value of a "
+#~ "relax.Function."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output relax.Var as KVCache."
+#~ msgstr ""
+
+#~ msgid "Convert the KVCache effect to specific dtype."
+#~ msgstr ""
+
+#~ msgid "The target data type to convert."
+#~ msgstr ""
+
+#~ msgid "View the last elements in KVCache."
+#~ msgstr ""
+
+#~ msgid "The number of last elements to view."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The last tensor to view."
+#~ msgstr ""
+
+#~ msgid "Module for Layer Normalization"
+#~ msgstr ""
+
+#~ msgid "Forward method for layer normalization layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the layer normalization layer."
+#~ msgstr ""
+
+#~ msgid "Module for linear layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for linear layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the linear layer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Override to() such that we do not"
+#~ " convert bias if there is "
+#~ "`out_dtype`. Otherwise, we might run "
+#~ "into dtype mismatch when computing `x"
+#~ " + self.bias` since x is of "
+#~ "type `out_dtype` and bias becomes "
+#~ "`dtype`, potentially different."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Base class for neural network "
+#~ "components. Subclass it to build your"
+#~ " models. Modules can nest within each"
+#~ " other in a tree structure using "
+#~ "regular attribute assignment."
+#~ msgstr ""
+
+#~ msgid "Export the module to TVM IRModule and parameters"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A dictionary mapping each input name "
+#~ "to a specification that defines the "
+#~ "inputs shape and dtype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If set to True, then the exported"
+#~ " module will support effects. This "
+#~ "enables things like printing in the "
+#~ "graph."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* **irmodule** (*tvm.ir.IRModule*) -- The "
+#~ "converted tvm IR representation of the"
+#~ " model. * **params** (*List[Tuple[str, "
+#~ "Parameter]]*) -- A list of Parameters"
+#~ " corresponding to the weights of the"
+#~ " model. * **ext_mods** (*List[nn.ExternModule]*)"
+#~ " -- A list of ExternModules that "
+#~ "are used in the model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**irmodule** (*tvm.ir.IRModule*) -- The "
+#~ "converted tvm IR representation of the"
+#~ " model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**params** (*List[Tuple[str, Parameter]]*) -- "
+#~ "A list of Parameters corresponding to"
+#~ " the weights of the model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ext_mods** (*List[nn.ExternModule]*) -- A "
+#~ "list of ExternModules that are used "
+#~ "in the model."
+#~ msgstr ""
+
+#~ msgid "Just-in-time compilation of a nn.model to an executable"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function copies parameters and "
+#~ "buffers from the state_dict into the "
+#~ "current module and its descendants. If"
+#~ " `strict` is set to True, the "
+#~ "keys in the `state_dict` must exactly"
+#~ " match the keys returned by the "
+#~ "`state_dict()` function of this module."
+#~ msgstr ""
+
+#~ msgid "A dictionary containing a whole state of the module"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to strictly enforce that the "
+#~ "keys in `state_dict` match the keys "
+#~ "returned by this module's `state_dict()` "
+#~ "function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**(missing_keys, unexpected_keys)** -- A tuple"
+#~ " of two lists: the missing keys "
+#~ "and the unexpected keys."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This method provides an iterator over"
+#~ " module parameters, yielding both the "
+#~ "parameter name and its corresponding "
+#~ "value."
+#~ msgstr ""
+
+#~ msgid "Prefix to prepend to all parameter names."
+#~ msgstr ""
+
+#~ msgid "生成器"
+#~ msgstr ""
+
+#~ msgid "*(str, Parameter) - Tuple containing the name and parameter*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This method provides an iterator over"
+#~ " module parameters, yielding only the "
+#~ "Parameter value."
+#~ msgstr ""
+
+#~ msgid "*Parameter - The module's parameter*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a dictionary containing references "
+#~ "to the whole state of the module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Dictionary to which state will be "
+#~ "saved. If None, a new dictionary "
+#~ "is created."
+#~ msgstr ""
+
+#~ msgid "**dict** -- a dictionary containing a whole state of the module"
+#~ msgstr ""
+
+#~ msgid "Convert the module to specific dtype recursively"
+#~ msgstr ""
+
+#~ msgid "Holds submodules in a list."
+#~ msgstr ""
+
+#~ msgid "Add a module to the end of the ModuleList"
+#~ msgstr ""
+
+#~ msgid "Feed-forward pass of the module"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The mutator for nn.Module transform. "
+#~ "Users can override the `visit_*` methods"
+#~ " to apply transform in different "
+#~ "structures, or even override the `visit`"
+#~ " method to change the logic of "
+#~ "traversal."
+#~ msgstr ""
+
+#~ msgid "The base dispatching method for visiting of all nodes."
+#~ msgstr ""
+
+#~ msgid "The name of the current node in parent's attribute."
+#~ msgstr ""
+
+#~ msgid "The current node to visit."
+#~ msgstr ""
+
+#~ msgid "**ret_node** -- The new node to replace current node."
+#~ msgstr ""
+
+#~ msgid "The base visiting method for mutation of nn.Parameter nodes."
+#~ msgstr ""
+
+#~ msgid "The current node of nn.Parameter to mutate."
+#~ msgstr ""
+
+#~ msgid "The base visiting method for mutation of nn.Module nodes."
+#~ msgstr ""
+
+#~ msgid "The current node of nn.Module to mutate."
+#~ msgstr ""
+
+#~ msgid "The base visiting method for mutation of nn.ModuleList nodes."
+#~ msgstr ""
+
+#~ msgid "The current node of nn.MoModuleListdule to mutate."
+#~ msgstr ""
+
+#~ msgid "The base visiting method for mutation of nn.Effect nodes."
+#~ msgstr ""
+
+#~ msgid "The current node of nn.Effect to mutate."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A wrapper on top of relax.Expr "
+#~ "whose struct_info is the base "
+#~ "ObjectStructInfo (rather than any its "
+#~ "subclass). Object effectively represents "
+#~ "non-tensor frontend components such as "
+#~ "KV caches."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A subclass of `nn.ExternModule`, which "
+#~ "allows users to provide an object "
+#~ "`.o` file to be linked into "
+#~ "compiled artifact;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A parameter represents the weight of "
+#~ "a neural network layer. It is a"
+#~ " special tensor which could be bound"
+#~ " or not bound to concrete values. "
+#~ "If a parameter is bound to a "
+#~ "concrete value, it is called a "
+#~ "bound parameter, otherwise it is called"
+#~ " an unbound parameter."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the concrete value of the "
+#~ "parameter if it is bound to a "
+#~ "concrete value, otherwise returns None. "
+#~ "The returned value is a "
+#~ "tvm.runtime.NDArray."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Change the dtype of the parameter "
+#~ "if it is not bound to any "
+#~ "concrete data"
+#~ msgstr ""
+
+#~ msgid "Module for rms norm layer."
+#~ msgstr ""
+
+#~ msgid "Forward method for rms norm layer."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The output tensor for the rms norm layer."
+#~ msgstr ""
+
+#~ msgid "Module for ReLU activation layer."
+#~ msgstr ""
+
+#~ msgid "Module for SiLU activation layer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A subclass of `nn.ExternModule`. It "
+#~ "compiles C++/CUDA source code and link"
+#~ " them into the eventual IRModule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Shape/dtype inference.** The `nn.ExternModule` "
+#~ "system requires users to provide "
+#~ "additional information to work, namely, "
+#~ "`symbols`. It is a dictionary that "
+#~ "maps each symbol in the external "
+#~ "object file to its shape/dtype inference"
+#~ " function. Consider a case where "
+#~ "function `my_func` accepts two tensors, "
+#~ "`a` of shape `(x, y, 1)`, and "
+#~ "`b` of shape `(y, z, 5)`, and "
+#~ "produces a tensor `c` of shape "
+#~ "`(x, y, z, 9)`, the shape/dtype "
+#~ "inference function should look like:"
+#~ msgstr ""
+
+#~ msgid "and the `symbols` dictionary should be provided as:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Calling convention.** All external modules"
+#~ " now follows \"destination-passing-style\""
+#~ " (DPS) calling convention, which means "
+#~ "the returned tensors are pre-allocated"
+#~ " by the system already and passed "
+#~ "in as an argument of the external"
+#~ " function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reuse the example above, the "
+#~ "implementation of `my_func` should include "
+#~ "three parameters in its signature, where"
+#~ " tensors are represented using DLTensor "
+#~ "from DLPack, the de facto standard "
+#~ "of in-memory representation of tensors."
+#~ " More details: "
+#~ "https://github.com/dmlc/dlpack/blob/v0.8/include/dlpack/dlpack.h#L163-L206."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To expose the symbol, "
+#~ "`TVM_DLL_EXPORT_TYPED_FUNC(symbol, function)` is "
+#~ "guaranteed available:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**A compiler pass `AttachExternModules`.** It"
+#~ " is introduced to attach a list "
+#~ "of `nn.ExternModule`s into an IRModule "
+#~ "at any stage of the compilation "
+#~ "pipeline, and attach the compiled "
+#~ "external modules as `runtime.Module`s into "
+#~ "IRModule's `external_mods` attribute. It is"
+#~ " required by linking in `tvm.compile`, "
+#~ "but with the existence of this "
+#~ "pass, source compilation can be deferred"
+#~ " to arbitrary stage of TVM "
+#~ "compilation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Caveats.** It is required to call "
+#~ "`nn.add_extern` to register external modules"
+#~ " exactly once during `export_tvm`. Each "
+#~ "symbol should be registered exactly once"
+#~ " to avoid potential conflicts, and "
+#~ "otherwise an error will be raised."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Compiles the source code in a "
+#~ "provided directory and returns the "
+#~ "compiled artifact."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the default compile options "
+#~ "depending on `source_format`, including the"
+#~ " default inlcude paths w.r.t. `tvm_home()`,"
+#~ " default flags to configure DMLC-"
+#~ "Core, and by default, it uses "
+#~ "\"-O3\" and \"-std=c++17\"."
+#~ msgstr ""
+
+#~ msgid "The source code format. It can be either \"cpp\" or \"cu\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The list of packages to be "
+#~ "included under `tvm_home/3rdparty`. Each "
+#~ "element should be a relative path "
+#~ "to `tvm_home/3rdparty`."
+#~ msgstr ""
+
+#~ msgid "**compile_options** -- The list of compilation flags."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the default include paths "
+#~ "according to `tvm_home()`. By default, "
+#~ "it includes TVM, DLPack, and DMLC-"
+#~ "Core. With `tvm_pkg` provided, it also"
+#~ " includes the specified package under "
+#~ "`tvm_home/3rdparty`."
+#~ msgstr ""
+
+#~ msgid "**includes** -- The list of include paths."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Find TVM's home directory. If `TVM_HOME`"
+#~ " environment variable is set, use it."
+#~ " Otherwise, use the directory where "
+#~ "the `tvm` Python package is installed."
+#~ " As a sanity check, it is "
+#~ "required to have `include` and "
+#~ "`3rdparty` as direct subdirectories."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**tvm_home** -- The TVM home directory,"
+#~ " and it is guaranteed to have "
+#~ "`include` and `3rdparty` as direct "
+#~ "subdirectories."
+#~ msgstr ""
+
+#~ msgid "A mixin that generates a"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Contains common logic for "
+#~ "`tvm.relax.frontend.nn.Module` and "
+#~ "`tvm.relax.testing.nn.Module`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A wrapper on top of relax.Expr "
+#~ "whose struct_info is a TensorStructInfo, "
+#~ "providing more convenient access shape "
+#~ "and dtype information. Tensor is always"
+#~ " symbolc and not bound to any "
+#~ "concrete values. Shape and dtype "
+#~ "inference is done eagerly upon tensor"
+#~ " creation, i.e. when operators are "
+#~ "applied on tensors, the shape and "
+#~ "dtype information is already available."
+#~ msgstr ""
+
+#~ msgid "Returns the data type of the tensor."
+#~ msgstr ""
+
+#~ msgid "**dtype** -- The data type of the tensor"
+#~ msgstr ""
+
+#~ msgid "Construct a tensor from numpy constants."
+#~ msgstr ""
+
+#~ msgid "Construct a tensor from a scalar with dtype specified."
+#~ msgstr ""
+
+#~ msgid "Construct a nn.Tensor from relax TensorStructInfo"
+#~ msgstr ""
+
+#~ msgid "Returns the number of dimensions of the tensor."
+#~ msgstr ""
+
+#~ msgid "**ndim** -- The number of dimensions of the tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a placeholder tensor with given"
+#~ " shape and dtype. A placeholder "
+#~ "tensor should never be created directly"
+#~ " by users in usual cases, and "
+#~ "the only exception is to indicate "
+#~ "the shape/dtype of return values of "
+#~ "an external function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If shape is a string `name`, we"
+#~ " create a symbolic shape `tvm.tir.Var(name,"
+#~ " \"int64\")`."
+#~ msgstr ""
+
+#~ msgid "Returns the shape of the tensor as a list of integers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An integer can be a python int "
+#~ "or tvm.tir.PrimExpr, depending on whether "
+#~ "the shape is fully static, for "
+#~ "example, [1, 2, tvm.tir.Var(\"n\")] is a"
+#~ " valid shape where the last dimension"
+#~ " is dynamic while the first two "
+#~ "dimensions are always static constants."
+#~ msgstr ""
+
+#~ msgid "**shape** -- The shape of the tensor"
+#~ msgstr ""
+
+#~ msgid "Type variable."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The preferred way to construct a "
+#~ "type variable is via the dedicated "
+#~ "syntax for generic functions, classes, "
+#~ "and type aliases::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This syntax can also be used to"
+#~ " create bound and constrained type "
+#~ "variables::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "However, if desired, reusable type "
+#~ "variables can also be constructed "
+#~ "manually, like so::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type variables exist primarily for the"
+#~ " benefit of static type checkers.  "
+#~ "They serve as the parameters for "
+#~ "generic types as well as for "
+#~ "generic function and type alias "
+#~ "definitions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The variance of type variables is "
+#~ "inferred by type checkers when they "
+#~ "are created through the type parameter"
+#~ " syntax and when ``infer_variance=True`` is"
+#~ " passed. Manually created type variables"
+#~ " may be explicitly marked covariant "
+#~ "or contravariant by passing ``covariant=True``"
+#~ " or ``contravariant=True``. By default, "
+#~ "manually created type variables are "
+#~ "invariant. See PEP 484 and PEP 695"
+#~ " for more details."
+#~ msgstr ""
+
+#~ msgid "Addition with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "The first input tensor."
+#~ msgstr ""
+
+#~ msgid "The second input tensor."
+#~ msgstr ""
+
+#~ msgid "Name hint."
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed result."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Add an external module to the exporter."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Performs sorting along the given axis"
+#~ " and returns an array of indices "
+#~ "having same shape as an input "
+#~ "array that index data in sorted "
+#~ "order."
+#~ msgstr ""
+
+#~ msgid "The input data tensor."
+#~ msgstr ""
+
+#~ msgid "Axis long which to sort the input tensor."
+#~ msgstr ""
+
+#~ msgid "Whether to sort in descending order, the default is False"
+#~ msgstr ""
+
+#~ msgid "The data type of the output indices."
+#~ msgstr ""
+
+#~ msgid "**out** -- The indices of the sorted tensor."
+#~ msgstr ""
+
+#~ msgid "Cast input tensor to the given data type."
+#~ msgstr ""
+
+#~ msgid "The input data to the operator."
+#~ msgstr ""
+
+#~ msgid "The target data type"
+#~ msgstr ""
+
+#~ msgid "**result** -- The casted result."
+#~ msgstr ""
+
+#~ msgid "Broadcasts a tensor to a specified shape."
+#~ msgstr ""
+
+#~ msgid "The target shape."
+#~ msgstr ""
+
+#~ msgid "**result** -- The broadcasted tensor."
+#~ msgstr ""
+
+#~ msgid "CCL Allgather operator"
+#~ msgstr ""
+
+#~ msgid "Number of workers."
+#~ msgstr ""
+
+#~ msgid "Name hint for this operation."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor of allgather."
+#~ msgstr ""
+
+#~ msgid "CCL Allreduce operator"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The type of reduction operation to "
+#~ "be applied to the input data. Now"
+#~ " \"sum\", \"prod\", \"min\", \"max\" and"
+#~ " \"avg\" are supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether the reduction operation performs "
+#~ "globally or in group as default."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor of allreduce."
+#~ msgstr ""
+
+#~ msgid "Broadcast data from worker-0 to all other workers."
+#~ msgstr ""
+
+#~ msgid "The tensor to be broadcast."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The same tensor, which "
+#~ "has been broadcast to all other "
+#~ "workers."
+#~ msgstr ""
+
+#~ msgid "Split a tensor along dim into the specified number of chunks."
+#~ msgstr ""
+
+#~ msgid "Input tensor to be split."
+#~ msgstr ""
+
+#~ msgid "Number of pieces to slice x into."
+#~ msgstr ""
+
+#~ msgid "Which dimension to split x."
+#~ msgstr ""
+
+#~ msgid "**result** -- A tuple with chunks elements containing slices of x."
+#~ msgstr ""
+
+#~ msgid "Concatenate a list of tensors along an axis."
+#~ msgstr ""
+
+#~ msgid "List of tensors to concatenate."
+#~ msgstr ""
+
+#~ msgid "Dimension to concatenate upon."
+#~ msgstr ""
+
+#~ msgid "Name hint for this operator."
+#~ msgstr ""
+
+#~ msgid "**result** -- Expanded result."
+#~ msgstr ""
+
+#~ msgid "1D convolution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This operator takes the weight as "
+#~ "the 1D convolution kernel and convolves"
+#~ " it with data to produce an "
+#~ "output."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the default case, where the "
+#~ "data_layout is `NCW` and kernel_layout "
+#~ "is `OIW`, conv1d takes in a data"
+#~ " Tensor with shape `(batch_size, "
+#~ "in_channels, width)`, and a weight "
+#~ "Tensor with shape `(channels, in_channels, "
+#~ "kernel_w)`, where `kernel_w` is the "
+#~ "length of the `W` kernel dimension, "
+#~ "to produce an output Tensor with "
+#~ "the following rule:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\mbox{out}[b, c, x] = \\sum_{dx, k}\n"
+#~ "   \\mbox{data}[b, k, \\mbox{strides} * x + dx] *\n"
+#~ "   \\mbox{weight}[c, k, dx]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Padding and dilation are applied to "
+#~ "data and weight respectively before the"
+#~ " computation. This operator accepts data"
+#~ " layout specification. Semantically, the "
+#~ "operator will convert the layout to "
+#~ "the canonical layout (`NCW` for data "
+#~ "and `OIW` for weight), perform the "
+#~ "computation, then convert to the "
+#~ "out_layout."
+#~ msgstr ""
+
+#~ msgid "The weight expressions."
+#~ msgstr ""
+
+#~ msgid "Optional bias tensor of shape [O]."
+#~ msgstr ""
+
+#~ msgid "The strides of convolution. It is required to have length 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The padding of convolution on both "
+#~ "sides of inputs before convolution. It"
+#~ " is required to have length either"
+#~ " 1 or 2."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the dilation rate to be "
+#~ "used for dilated convolution. It is "
+#~ "required to have length 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Number of groups to split the "
+#~ "input into for grouped convolution. The"
+#~ " number of input and output channels"
+#~ " should be divisible by the number"
+#~ " of groups."
+#~ msgstr ""
+
+#~ msgid "1D transposed convolution operator."
+#~ msgstr ""
+
+#~ msgid "This operator can be seen as the gradient operator of conv1d."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output shape can be explained "
+#~ "in the simple case when `data_layout "
+#~ "== \"NCW\"` and `kernel_layout == "
+#~ "\"IOW\"`. Suppose `data` has shape `(N,"
+#~ " in_channel, in_w)`, `weight` has shape "
+#~ "`(in_channel, out_channel, weight_w)`, we need"
+#~ " to assure that `in_channel % groups"
+#~ " == 0`. The shape of the output"
+#~ " will be `(N, out_channel * groups,"
+#~ " out_w)`, where"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`out_w = ((in_w - 1) * strides[0]"
+#~ " + weight_w - 2 * padding[0] +"
+#~ " output_padding[0])`"
+#~ msgstr ""
+
+#~ msgid "The weight tensor."
+#~ msgstr ""
+
+#~ msgid "Used to disambiguate the output shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specifies the dilation rate to be "
+#~ "used for dilated convolution. It is "
+#~ "required to have length either 1."
+#~ msgstr ""
+
+#~ msgid "Layout of the input."
+#~ msgstr ""
+
+#~ msgid "Layout of the weight."
+#~ msgstr ""
+
+#~ msgid "Layout of the output. If not specified, it is the same as data_layout"
+#~ msgstr ""
+
+#~ msgid "Specifies the output data type for mixed precision conv2d."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Applies a 2D convolution over an "
+#~ "input image composed of sevaral input"
+#~ " planes"
+#~ msgstr ""
+
+#~ msgid "Input tensor of shape [B, N, H, W]"
+#~ msgstr ""
+
+#~ msgid "Filters of shape [O, N/groups, kH, kW]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The stride of the convolving kernel. "
+#~ "Can be a single number or tuple"
+#~ " of (sH, sW)."
+#~ msgstr ""
+
+#~ msgid "Implicit paddings on both sides of the input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The spacing between kernel elements. Can"
+#~ " be a single number of tuple "
+#~ "(dH, dW)."
+#~ msgstr ""
+
+#~ msgid "Split input into a number of groups."
+#~ msgstr ""
+
+#~ msgid "Layout of input and output data."
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed result with shape [B, O, oH, oW]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Applies a 3D convolution over an "
+#~ "input image composed of sevaral input"
+#~ " planes"
+#~ msgstr ""
+
+#~ msgid "Input tensor of shape [B, N, D, H, W]"
+#~ msgstr ""
+
+#~ msgid "Filters of shape [O, N/groups, kD, kH, kW]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The stride of the convolving kernel. "
+#~ "Can be a single number or tuple"
+#~ " of (sD, sH, sW)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The spacing between kernel elements. Can"
+#~ " be a single number of tuple "
+#~ "(dD, dH, dW)."
+#~ msgstr ""
+
+#~ msgid "Optional layout of the input and output data."
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed result with shape [B, O, oD, oH, oW]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Numpy style cumsum op. Return the "
+#~ "cumulative inclusive sum of the elements"
+#~ " along a given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which the cumulative sum "
+#~ "is computed. The default (None) is "
+#~ "to compute the cumsum over the "
+#~ "flattened array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Type of the returned array and of"
+#~ " the accumulator in which the "
+#~ "elements are summed. If dtype is "
+#~ "not specified, it defaults to the "
+#~ "dtype of data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If true will return exclusive sum "
+#~ "in which the first element is not"
+#~ " included."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The result has the "
+#~ "same size as data, and the same"
+#~ " shape as data if axis is not"
+#~ " None. If axis is None, the "
+#~ "result is a 1-d array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Call a debug function during runtime."
+#~ " The debug function must be "
+#~ "registered with the following type "
+#~ "signature:"
+#~ msgstr ""
+
+#~ msgid "The name of the debug function to call."
+#~ msgstr ""
+
+#~ msgid "The arguments to pass to the debug function."
+#~ msgstr ""
+
+#~ msgid "Division with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Construct an uninitialized tensor, with the input shape and dtype."
+#~ msgstr ""
+
+#~ msgid "The shape of the created tensor."
+#~ msgstr ""
+
+#~ msgid "The data type of the created tensor."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise comparison for (lhs == rhs)."
+#~ msgstr ""
+
+#~ msgid "Applies the exponential function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{Exp}(x) = e^x\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "The input tensor is required to have float dtype"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Invoke an extern function during "
+#~ "runtime. The extern function must be "
+#~ "registered with the \" TVM runtime "
+#~ "using `TVM_REGISTER_GLOBAL` (C++), or "
+#~ "`tvm.register_func` (Python)."
+#~ msgstr ""
+
+#~ msgid "The name of the extern function to call."
+#~ msgstr ""
+
+#~ msgid "The arguments to pass to the extern function."
+#~ msgstr ""
+
+#~ msgid "The output tensors, only"
+#~ msgstr ""
+
+#~ msgid "**result** -- The result"
+#~ msgstr ""
+
+#~ msgid "Fill array with scalar value."
+#~ msgstr ""
+
+#~ msgid "The value to fill. Must be a scalar tensor."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type of the created "
+#~ "tensor. If dtype is not given, it"
+#~ " will by default use the dtype "
+#~ "of fill_value."
+#~ msgstr ""
+
+#~ msgid "Applies the Gaussian Error Linear Units function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{GeLU}(x) = 0.5 * x * (1 + \\text{erf}(x * 0.5**0.5))\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "where :math:`erf` is the Gauss Error function."
+#~ msgstr ""
+
+#~ msgid "The input data"
+#~ msgstr ""
+
+#~ msgid "If set to tanh, use an approximation when calculating CDF."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the default parameter dtype if "
+#~ "not specified. By default it is "
+#~ "float32."
+#~ msgstr ""
+
+#~ msgid "**dtype** -- The default dtype"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Timestep calculation as described in "
+#~ "Denoising Diffusion Probabilistic Models."
+#~ msgstr ""
+
+#~ msgid "A 1-D Tensor of N indices."
+#~ msgstr ""
+
+#~ msgid "The dimension of the output."
+#~ msgstr ""
+
+#~ msgid "If True, change the order of sine and cosine embeddings."
+#~ msgstr ""
+
+#~ msgid "Adjusts the frequency of the sinusoidal sampling."
+#~ msgstr ""
+
+#~ msgid "Weight adjustment for embedding magnitude."
+#~ msgstr ""
+
+#~ msgid "Controls the minimum frequency of the embeddings."
+#~ msgstr ""
+
+#~ msgid "The name to label this operator with."
+#~ msgstr ""
+
+#~ msgid "**result** -- [N x dim] Tensor of positional embeddings."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise comparison for (lhs > rhs)."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise comparison for (lhs >= rhs)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Applies Group Normalization over a "
+#~ "mini-batch of inputs as described in"
+#~ " the paper `Group Normalization "
+#~ "<https://arxiv.org/abs/1803.08494>`__"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "y = \\frac{x - \\mathrm{E}[x]}{ "
+#~ "\\sqrt{\\mathrm{Var}[x] + \\epsilon}} * "
+#~ "\\gamma + \\beta\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "Input to which rms_norm will be applied."
+#~ msgstr ""
+
+#~ msgid "Number of groups to separate the channels into."
+#~ msgstr ""
+
+#~ msgid "The gamma scale factor."
+#~ msgstr ""
+
+#~ msgid "The beta offset factor."
+#~ msgstr ""
+
+#~ msgid "Small float added to square mean to avoid dividing by zero."
+#~ msgstr ""
+
+#~ msgid "The channel axis of the data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Which axes to compute the groupnorm "
+#~ "over. If None, assumes first two "
+#~ "channels should be ignored."
+#~ msgstr ""
+
+#~ msgid "Resize a tensor using the specified mode."
+#~ msgstr ""
+
+#~ msgid "Input tensor to be resized."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Requested output size, only one of "
+#~ "size and scale_factor may be specified."
+#~ msgstr ""
+
+#~ msgid "Multiplier for spatial size."
+#~ msgstr ""
+
+#~ msgid "Algorithm used for sampling."
+#~ msgstr ""
+
+#~ msgid "How to map pixels before and after sampling."
+#~ msgstr ""
+
+#~ msgid "Recompute the scale_factor for use in interpolation."
+#~ msgstr ""
+
+#~ msgid "Apply antialiasing to output."
+#~ msgstr ""
+
+#~ msgid "Layout of the input and output data."
+#~ msgstr ""
+
+#~ msgid "**result** -- Output tensor with requested shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Layer normalization (Lei Ba and et "
+#~ "al., 2016). Applies layer normalization "
+#~ "to the n-dimensional input array. This"
+#~ " operator takes an n-dimensional input "
+#~ "array and normalizes the input using "
+#~ "the given axis:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "out = \\frac{data - mean(data, "
+#~ "axis)}{\\sqrt{var(data, axis)+\\epsilon}}\n"
+#~ "    * gamma + beta"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unlike batch normalization, the mean and"
+#~ " var are computed along the channel"
+#~ " dimension."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Assume the input has size k on "
+#~ "axis 1, then both gamma and beta"
+#~ " have shape (k,)."
+#~ msgstr ""
+
+#~ msgid "This operator can be optimized away for inference."
+#~ msgstr ""
+
+#~ msgid "Input to which layer_norm will be applied."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The shape of axes to normalize. If"
+#~ " a single integer is used, it "
+#~ "is treated as a singleton list and"
+#~ " this module will normalize over the"
+#~ " last dimension."
+#~ msgstr ""
+
+#~ msgid "Small float added to variance to avoid dividing by zero."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise comparison for (lhs < rhs)."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise comparison for (lhs <= rhs)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "General matrix multiplication of two "
+#~ "tensors, with broadcasting on batched "
+#~ "dimensions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The semantics and output shape deduction"
+#~ " rule is specified as https://data-"
+#~ "apis.org/array-"
+#~ "api/latest/API_specification/generated/array_api.matmul.html."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data type of the matmul "
+#~ "result. When it is not specified, "
+#~ "the output dtype will be the same"
+#~ " as input dtype."
+#~ msgstr ""
+
+#~ msgid "Computes the max of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid "The input data tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a max "
+#~ "is performed. The default, axis=None, "
+#~ "will max all of the elements of"
+#~ " the input tensor. Negative indexing "
+#~ "is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this is set to True, the "
+#~ "axes which are reduced are left in"
+#~ " the result as dimensions with size"
+#~ " one. With this option, the result"
+#~ " will broadcast correctly against the "
+#~ "input tensor."
+#~ msgstr ""
+
+#~ msgid "Element-wise maximum"
+#~ msgstr ""
+
+#~ msgid "Computes the min of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a min "
+#~ "is performed. The default, axis=None, "
+#~ "will min all of the elements of"
+#~ " the input tensor. Negative indexing "
+#~ "is supported."
+#~ msgstr ""
+
+#~ msgid "Element-wise minimum"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a tensor where each row "
+#~ "contains the index sampled from the "
+#~ "multinomial probability distribution located "
+#~ "in the corresponding row of tensor "
+#~ "prob."
+#~ msgstr ""
+
+#~ msgid "备注"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For better cpu performance, use "
+#~ "'vm.builtin.multinomial_from_uniform'. For accurate "
+#~ "results, ensure probabilities are between "
+#~ "0 and 1 and sum to 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A 2-D tensor of shape (batch, "
+#~ "vocab_size) representing probability distributions."
+#~ " Each row is a distribution across"
+#~ " vocabulary for a batch, where: "
+#~ "Values range from [0, 1], indicating "
+#~ "the probability of each vocabulary item."
+#~ " The sum of values in each row"
+#~ " is 1, forming a valid distribution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The uniformly sampled 2-D tensor with"
+#~ " the shape (n, 1). Values range "
+#~ "from 0 to 1, indicating probabilities"
+#~ " sampled uniformly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The 2-D tensor with the shape [n,"
+#~ " 1], which indicates the specific "
+#~ "probability distribution to sample from. "
+#~ "The value of sample_indices[i] determines "
+#~ "that the ith token should be "
+#~ "sampled from the sample_indices[i]th "
+#~ "probability distribution. For instance, if "
+#~ "there are 3 distinct probability "
+#~ "distributions and the requirement is to"
+#~ " sample 2, 3, and 4 tokens from"
+#~ " each, then sample_indices would be "
+#~ "[0, 0, 1, 1, 1, 2, 2, 2, "
+#~ "2]."
+#~ msgstr ""
+
+#~ msgid "The data type of output tensor."
+#~ msgstr ""
+
+#~ msgid "**result** -- The computed tensor with shape (n, 1)."
+#~ msgstr ""
+
+#~ msgid "Multiplication with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Numerical negative of the input tensor."
+#~ msgstr ""
+
+#~ msgid "Broadcasted element-wise comparison for (lhs != rhs)."
+#~ msgstr ""
+
+#~ msgid "Construct a tensor of all zeros, with the input shape and dtype."
+#~ msgstr ""
+
+#~ msgid "Apply spatial padding to the input tensor."
+#~ msgstr ""
+
+#~ msgid "Input tensor to be padded."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List in the format of [before_0, "
+#~ "after_0, before_1, after_1, ...] indicating"
+#~ " how much to pad each axis of"
+#~ " x."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Padding mode to use, constant implies"
+#~ " padded elements will use value "
+#~ "argument."
+#~ msgstr ""
+
+#~ msgid "What to pad with in constant mode."
+#~ msgstr ""
+
+#~ msgid "**result** -- Padded output tensor."
+#~ msgstr ""
+
+#~ msgid "Permutes the dimensions of the input tensor."
+#~ msgstr ""
+
+#~ msgid "The target axes order."
+#~ msgstr ""
+
+#~ msgid "**result** -- The transposed result."
+#~ msgstr ""
+
+#~ msgid "Permutes the dimensions of an array."
+#~ msgstr ""
+
+#~ msgid "The target axes order, reverse order if not specified."
+#~ msgstr ""
+
+#~ msgid "Debug printing a Tensor during runtime."
+#~ msgstr ""
+
+#~ msgid "Rectified Linear Unit (ReLU) activation function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ext{ReLU}(x) =  ext{max}(x, 0)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "The input data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Renormalizes probabilities after filtering "
+#~ "with top_p and top_k, ensuring they "
+#~ "sum up to 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For accurate results, ensure probabilities "
+#~ "are between 0 and 1 and sum "
+#~ "to 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A 2-D tensor of shape (batch, "
+#~ "vocab_size) representing probability distributions."
+#~ msgstr ""
+
+#~ msgid "Probabilities sorted in descending order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The cumulative probability threshold with "
+#~ "shape (batch, 1) for nucleus sampling."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A tensor with shape (batch, 1), "
+#~ "representing the number of top "
+#~ "probabilities to consider for top-k "
+#~ "sampling."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The filtered and nomalized"
+#~ " tensor with the sampe shape as "
+#~ "input prob."
+#~ msgstr ""
+
+#~ msgid "Repeats elements of an array."
+#~ msgstr ""
+
+#~ msgid "The number of repetitions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis along which to repeat "
+#~ "values. The negative numbers are "
+#~ "interpreted counting from the backward. "
+#~ "By default, use the flattened input "
+#~ "array, and return a flat output "
+#~ "array."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The computed result."
+#~ msgstr ""
+
+#~ msgid "Reshape the input array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``-1`` infers the dimension of the "
+#~ "output shape by using the remainder "
+#~ "of the input dimensions keeping the "
+#~ "size of the new array same as "
+#~ "that of the input array. At most"
+#~ " one dimension of shape can be "
+#~ "-1."
+#~ msgstr ""
+
+#~ msgid "The new shape. Should be compatible with the original shape."
+#~ msgstr ""
+
+#~ msgid "**result** -- The reshaped result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``-1`` inference is only performed"
+#~ " at compile-time. That is to "
+#~ "say, in any case the dimension "
+#~ "length of ``-1`` cannot be inferred "
+#~ "in compile-time, an error will be"
+#~ " thrown."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Root mean square normalization (Biao "
+#~ "Zhang and et al., 2019). Applies "
+#~ "root mean square normalization to the"
+#~ " n-dimensional input array. This operator"
+#~ " takes an n-dimensional input array "
+#~ "and normalizes the input using the "
+#~ "given axis:"
+#~ msgstr ""
+
+#~ msgid "out = \\frac{data}{\\sqrt{mean(data, axis)+\\epsilon}} * weight"
+#~ msgstr ""
+
+#~ msgid "The scale factor."
+#~ msgstr ""
+
+#~ msgid "The axes that along which the normalization is applied."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Samples indices from a sorted "
+#~ "probability tensor based on top_p and"
+#~ " top_k criteria."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A 2-D tensor, with shape (batch, "
+#~ "vocab_size), contains probabilities sorted in"
+#~ " descending order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The indices tensor with shape (batch,"
+#~ " vocab_size), corresponding to the "
+#~ "sorted_prob. Potentially from applying argsort"
+#~ " on the original probability tensor "
+#~ "in descending order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Uniformly sampled values with shape (n,"
+#~ " 1) are used to select the "
+#~ "output indices."
+#~ msgstr ""
+
+#~ msgid "**result** -- The selected indices with shape (n, 1)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Computes a scaled dot product attention"
+#~ " on provided attention query, key, "
+#~ "and values. Compliant with the "
+#~ "functional torch implementation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tensor representing current attention lookup"
+#~ " of shape [batch, seq_len, num_heads, "
+#~ "head_size]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tensor representing cross attention mapping"
+#~ " of shape [batch, seq_len_kv, num_heads_kv,"
+#~ " head_size]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tensor representing embedded attention values"
+#~ " of shape [batch, seq_len_kv, num_heads_kv,"
+#~ " head_size_value]."
+#~ msgstr ""
+
+#~ msgid "Optional mask for attention, not yet supported."
+#~ msgstr ""
+
+#~ msgid "If set, uses a causal attention mask."
+#~ msgstr ""
+
+#~ msgid "Optional extra scaling argument applied to attention."
+#~ msgstr ""
+
+#~ msgid "Name hint for this function."
+#~ msgstr ""
+
+#~ msgid "Computes sigmoid."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{sigmoid}(x) = \\frac{1}{1 + \\exp(-x)}\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "Sigmoid Linear Unit function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{SiLU}(x) = x * \\text{sigmoid}(x)\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "Computes softmax."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{softmax}(x)_i = \\frac{\\exp(x_i)}{\\sum_j \\exp(x_j)}\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis to sum over when "
+#~ "computing softmax. If not specified, it"
+#~ " is by default the last axis of"
+#~ " the input tensor. Supports negative "
+#~ "indexing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Performs sorting along the given axis"
+#~ " and returns an array in sorted "
+#~ "order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis along which to sort the input"
+#~ " tensor. By default the last axis "
+#~ "of the input is used."
+#~ msgstr ""
+
+#~ msgid "**out** -- The sorted tensor."
+#~ msgstr ""
+
+#~ msgid "Split an array into multiple sub-arrays."
+#~ msgstr ""
+
+#~ msgid "Indices or sections to split into."
+#~ msgstr ""
+
+#~ msgid "The axis along which to split, default is 0."
+#~ msgstr ""
+
+#~ msgid "**result** -- A list of sub-arrays as the outcome of splitting."
+#~ msgstr ""
+
+#~ msgid "Computes the element-wise sqrt of the input tensor."
+#~ msgstr ""
+
+#~ msgid "Computes the element-wise square of the input tensor."
+#~ msgstr ""
+
+#~ msgid "Squeeze axes in the array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The set of axes to remove. If "
+#~ "axis = None, remove all axis of"
+#~ " dimensions 1. If any specified axis"
+#~ " has dimension that does not equal"
+#~ " 1, it is an error."
+#~ msgstr ""
+
+#~ msgid "**result** -- The squeezed result."
+#~ msgstr ""
+
+#~ msgid "Subtraction with numpy-style broadcasting."
+#~ msgstr ""
+
+#~ msgid "Computes the sum of tensor elements over given axes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Axis or axes along which a sum "
+#~ "is performed. The default, axis=None, "
+#~ "will sum all of the elements of"
+#~ " the input tensor. Negative indexing "
+#~ "is supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Take elements from a tensor along "
+#~ "an axis. Its semantic is mostly "
+#~ "similar to `numpy.take` "
+#~ "(https://numpy.org/doc/stable/reference/generated/numpy.take.html),"
+#~ " which can cover `torch.take` "
+#~ "(https://pytorch.org/docs/stable/generated/torch.take.html) and"
+#~ " `onnx.gather` "
+#~ "(https://github.com/onnx/onnx/blob/main/docs/Changelog.md#Gather-13)."
+#~ msgstr ""
+
+#~ msgid "The source tensor."
+#~ msgstr ""
+
+#~ msgid "The indices of the values to extract."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The axis over which to select "
+#~ "values. If it is none, the input"
+#~ " tensor is required to be one-"
+#~ "dimensional."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The taken result."
+#~ msgstr ""
+
+#~ msgid "Applies the hyperbolic tangent function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\\text{Tanh}(x) = \\frac{e^x - e^{-x}}{e^x + e^{-x}}\n"
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "Build the given tensor_expr_func with te."
+#~ msgstr ""
+
+#~ msgid "A function that returns a te tensor or a list of tensors."
+#~ msgstr ""
+
+#~ msgid "Arguments passed to the function."
+#~ msgstr ""
+
+#~ msgid "A dict of attributes to apply to the function."
+#~ msgstr ""
+
+#~ msgid "Create a `call_tir_inplace` binding with given PrimFunc"
+#~ msgstr ""
+
+#~ msgid "The PrimFunc to call."
+#~ msgstr ""
+
+#~ msgid "The arguments to pass to the PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specify which arguments should be used"
+#~ " for in-place computations. If "
+#~ "`inplace_indices` is a single integer, "
+#~ "it will be made into a singleton"
+#~ " list. Suppose `inplace_indices[i] = j`,"
+#~ " where `j >= 0`. Then the `i`th"
+#~ " output will be an alias of "
+#~ "`args[j]`. If `inplace_indices[i] = -1`, "
+#~ "then the `i`th output will be a"
+#~ " freshly allocated tensor. At least "
+#~ "one member of `inplace_indices` must not"
+#~ " be -1."
+#~ msgstr ""
+
+#~ msgid "The output tensors."
+#~ msgstr ""
+
+#~ msgid "**result** -- The result tensor"
+#~ msgstr ""
+
+#~ msgid "Create a `call_tir` binding with given PrimFunc"
+#~ msgstr ""
+
+#~ msgid "Get the top k elements in an input tensor along the given axis."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ret_type specifies the return type, can"
+#~ " be one of (\"both\", \"values\", "
+#~ "\"indices\")."
+#~ msgstr ""
+
+#~ msgid "Number of top elements to select. Return all elements if k < 1."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The return type [both, values, indices]."
+#~ " \"both\": return both top k data "
+#~ "and indices. \"values\": return top k"
+#~ " data only. \"indices\": return top k"
+#~ " indices only."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to return largest or smallest"
+#~ " elements. The k smallest elements "
+#~ "are returned if largest is False."
+#~ msgstr ""
+
+#~ msgid "The data type of the indices output."
+#~ msgstr ""
+
+#~ msgid "**out** -- The computed result."
+#~ msgstr ""
+
+#~ msgid "Return the upper triangular part of a matrix or a batch of matrices."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The tensor that triu will be "
+#~ "applied to. It is required to have"
+#~ " at least two dimensions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The index indicating the diagonal below"
+#~ " which to zero elements. If k ="
+#~ " 0, the diagonal is the main "
+#~ "diagonal. If k < 0, the diagonal"
+#~ " is below the main diagonal. If "
+#~ "k > 0, the diagonal is above "
+#~ "the main diagonal."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The result tensor."
+#~ msgstr ""
+
+#~ msgid "Add a new axis to a tensor"
+#~ msgstr ""
+
+#~ msgid "Input tensor to expand."
+#~ msgstr ""
+
+#~ msgid "Dimension to expand."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Selecting elements from either the input"
+#~ " tensors depending on the value of"
+#~ " the condition."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a given position, return the "
+#~ "corresponding value in `x1` if "
+#~ "`condition` is True, and return the "
+#~ "corresponding value in `x2` otherwise."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When True, yield `x1`; otherwise, yield"
+#~ " `x2`. Must be broadcasting compatible "
+#~ "with `x1` and `x2`. Must have "
+#~ "boolean dtype."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The first input tensor. Must be "
+#~ "broadcasting compatible with `condition` and"
+#~ " `x2`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The second input tensor. Must be "
+#~ "broadcasting compatible with `condition` and"
+#~ " `x1`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Wrap the given relax.Expr, emit it "
+#~ "using the current BlockBuilder, and "
+#~ "automatically handle nested cases if the"
+#~ " expr represents a Tuple."
+#~ msgstr ""
+
+#~ msgid "The Expr to be wrapped."
+#~ msgstr ""
+
+#~ msgid "Tools for converting ONNX graphs into Relax graphs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert a ONNX model into an "
+#~ "equivalent Relax Function. ONNX graphs "
+#~ "are represented as Python Protobuf "
+#~ "objects."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The current implementation assumes that "
+#~ "the input model is after ONNX "
+#~ "v1.1.0."
+#~ msgstr ""
+
+#~ msgid "ONNX ModelProto after ONNX v1.1.0"
+#~ msgstr ""
+
+#~ msgid "The input shape to the graph"
+#~ msgstr ""
+
+#~ msgid "The input types to the graph"
+#~ msgstr ""
+
+#~ msgid "Override to autodetected opset. This can be helpful for some testing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If True, parameters will be treated "
+#~ "as input variables. If false, parameters"
+#~ " are treated as constant and folded"
+#~ " directly into the graph."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to sanitize the input names "
+#~ "to ensure they are valid Relax "
+#~ "identifiers."
+#~ msgstr ""
+
+#~ msgid "**mod** -- The relax module for compilation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "StableHLO Frontends for constructing Relax "
+#~ "programs, with the model importers"
+#~ msgstr ""
+
+#~ msgid "Convert a StableHLO Module to a Relax program"
+#~ msgstr ""
+
+#~ msgid "The StableHLO Module to convert."
+#~ msgstr ""
+
+#~ msgid "A list of shapes and data types of input tensors."
+#~ msgstr ""
+
+#~ msgid "**output** -- The result IRModule with entry function \"main\""
+#~ msgstr ""
+
+#~ msgid ""
+#~ "PyTorch Frontends for constructing Relax "
+#~ "programs, with the model importers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Capture subgraphs of the PyTorch model"
+#~ " using torch.compile into an IRModule."
+#~ msgstr ""
+
+#~ msgid "The PyTorch model to be captured."
+#~ msgstr ""
+
+#~ msgid "The parameters of the PyTorch model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether to keep model parameters as "
+#~ "input variables of the captured Relax"
+#~ " functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output** -- The output of translation,"
+#~ " including the translated IRModule. If "
+#~ "`keep_params_as_input` is true, the functions"
+#~ " in the IRModule have an attribute"
+#~ " \"params\" that contains the weights "
+#~ "of the input model. The weights "
+#~ "can be detached by "
+#~ "`relax.frontend.detach_params`."
+#~ msgstr ""
+
+#~ msgid "Convert a PyTorch ExportedProgram to a Relax program"
+#~ msgstr ""
+
+#~ msgid "The PyTorch ExportedProgram to convert."
+#~ msgstr ""
+
+#~ msgid "Whether to keep model parameters as input variables."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean flag indicating if to "
+#~ "the return value when it is an "
+#~ "unit tuple. When the return value "
+#~ "is not a unit tuple, no unwrap "
+#~ "will take place."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean flag indicating whether to "
+#~ "bind the return tuple as a relax"
+#~ " var. If the flag is true and"
+#~ " the return value is a tuple, "
+#~ "it will not bind it to a "
+#~ "var."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output** -- The import result "
+#~ "IRModule, with the function \"main\" "
+#~ "containing the translated logic."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Users can use the torch.export.export() "
+#~ "to extract a torch.export.ExportedProgram from"
+#~ " a PyTorch model. The following codes"
+#~ " show how to convert a PyTorch "
+#~ "model to a Relax program."
+#~ msgstr ""
+
+#~ msgid "Convert a PyTorch FX GraphModule to a Relax program"
+#~ msgstr ""
+
+#~ msgid "The PyTorch FX GraphModule to convert."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A custom op conversion map in the"
+#~ " same format as TorchFXImporter.convert_map"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output** -- The import result "
+#~ "IRModule, with the function \"main\" "
+#~ "containing the translated logic. If "
+#~ "`keep_params_as_input` is true, the \"main\""
+#~ " function have an attribute \"params\" "
+#~ "that contains the weights of the "
+#~ "input model. The weights can be "
+#~ "detached by `relax.frontend.detach_params`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Users can use the FX tracer or "
+#~ "dynamo.export() to extract a fx.GraphModule"
+#~ " from a PyTorch model. The following"
+#~ " codes show how to convert a "
+#~ "PyTorch model to a Relax program."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a given PyTorch model, to "
+#~ "lookup the names of the model "
+#~ "inputs in FX, one can use"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "to print out the tabular representation"
+#~ " of the PyTorch module, and then "
+#~ "check the placeholder rows in the "
+#~ "beginning of the tabular."
+#~ msgstr ""
+
+#~ msgid "A helper function to create a relax backend."
+#~ msgstr ""
+
+#~ msgid "The pipeline to be applied to the relax module before sent to build."
+#~ msgstr ""
+
+#~ msgid "**backend** -- The relax dynamo backend."
+#~ msgstr ""
+

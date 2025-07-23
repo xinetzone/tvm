@@ -1,0 +1,323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-05 11:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/runtime/disco.rst:19
+msgid "tvm.runtime.disco"
+msgstr ""
+
+#~ msgid "TVM distributed runtime API."
+#~ msgstr ""
+
+#~ msgid "A Module in a Disco session."
+#~ msgstr ""
+
+#~ msgid "A PackedFunc in a Disco session."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An object that exists on all "
+#~ "workers. The controller process assigns "
+#~ "a unique \"register id\" to each "
+#~ "object, and the worker process uses "
+#~ "this id to refer to the object "
+#~ "residing on itself."
+#~ msgstr ""
+
+#~ msgid "Copy an NDArray value to remote for debugging purposes."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The id of the worker to be copied to."
+#~ msgstr ""
+
+#~ msgid "The value to be copied."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the value of a DRef from "
+#~ "a remote worker. It is only used"
+#~ " for debugging purposes."
+#~ msgstr ""
+
+#~ msgid "The id of the worker to be fetched from."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**value** -- The value of the register."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "A Disco session backed by pipe-based multi-processing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A Disco interactive session. It allows"
+#~ " users to interact with the Disco "
+#~ "command queue with various PackedFunc "
+#~ "calling convention."
+#~ msgstr ""
+
+#~ msgid "Perform an allgather operation on an array."
+#~ msgstr ""
+
+#~ msgid "The array to be gathered from."
+#~ msgstr ""
+
+#~ msgid "The array to be gathered to."
+#~ msgstr ""
+
+#~ msgid "Whether the reduce operation performs globally or in group as default."
+#~ msgstr ""
+
+#~ msgid "Perform an allreduce operation on an array."
+#~ msgstr ""
+
+#~ msgid "The array to be reduced."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The reduce operation to be performed."
+#~ " Available options are: - \"sum\" -"
+#~ " \"prod\" - \"min\" - \"max\" - "
+#~ "\"avg\""
+#~ msgstr ""
+
+#~ msgid "Broadcast an array to all workers"
+#~ msgstr ""
+
+#~ msgid "The array to be broadcasted."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output array.  If None, an "
+#~ "array matching the shape and dtype "
+#~ "of `src` will be allocated on each"
+#~ " worker."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether the broadcast operation performs "
+#~ "globally or in group as default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output_array** -- The DRef containing "
+#~ "the broadcasted data on all workers. "
+#~ "If `dst` was provided, this return "
+#~ "value is the same as `dst`.  "
+#~ "Otherwise, it is the newly allocated "
+#~ "space."
+#~ msgstr ""
+
+#~ msgid "Broadcast an array from worker-0 to all other workers."
+#~ msgstr ""
+
+#~ msgid "Call a PackedFunc on workers providing variadic arguments."
+#~ msgstr ""
+
+#~ msgid "The function to be called."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the variadic arguments, the supported"
+#~ " types include: - integers and "
+#~ "floating point numbers; - DLDataType; -"
+#~ " DLDevice; - str (std::string in "
+#~ "C++); - DRef."
+#~ msgstr ""
+
+#~ msgid "**return_value** -- The return value of the function call."
+#~ msgstr ""
+
+#~ msgid "备注"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Examples of unsupported types: - "
+#~ "NDArray, DLTensor,; - TVM Objects, "
+#~ "including PackedFunc, Module and String."
+#~ msgstr ""
+
+#~ msgid "Copy an NDArray from worker-0 to the controller-side NDArray."
+#~ msgstr ""
+
+#~ msgid "The array to be copied to worker-0."
+#~ msgstr ""
+
+#~ msgid "The NDArray on worker-0."
+#~ msgstr ""
+
+#~ msgid "Copy the controller-side NDArray to worker-0."
+#~ msgstr ""
+
+#~ msgid "The destination NDArray on worker-0."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output_array** -- The DRef containing "
+#~ "the copied data on worker0, and "
+#~ "NullOpt on all other workers.  If "
+#~ "`remote_array` was provided, this return "
+#~ "value is the same as `remote_array`. "
+#~ "Otherwise, it is the newly allocated "
+#~ "space."
+#~ msgstr ""
+
+#~ msgid "Create an empty NDArray on all workers and attach them to a DRef."
+#~ msgstr ""
+
+#~ msgid "The shape of the NDArray."
+#~ msgstr ""
+
+#~ msgid "The data type of the NDArray."
+#~ msgstr ""
+
+#~ msgid "The device of the NDArray."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If False (default), allocate an array"
+#~ " on each worker.  If True, only "
+#~ "allocate an array on worker0."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Take effective when `worker0_only` is "
+#~ "True. If True (default), allocate an "
+#~ "array on each first worker in each"
+#~ " group. If False, only allocate an"
+#~ " array on worker0 globally."
+#~ msgstr ""
+
+#~ msgid "**array** -- The created NDArray."
+#~ msgstr ""
+
+#~ msgid "Gather an array from all other workers to worker-0."
+#~ msgstr ""
+
+#~ msgid "Whether the gather operation performs globally or in group as default."
+#~ msgstr ""
+
+#~ msgid "Get a global function on workers."
+#~ msgstr ""
+
+#~ msgid "The name of the global function."
+#~ msgstr ""
+
+#~ msgid "**func** -- The global packed function"
+#~ msgstr ""
+
+#~ msgid "Import a python module in each worker"
+#~ msgstr ""
+
+#~ msgid "This may be required before call"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The python module name, as it "
+#~ "would be used in a python `import`"
+#~ " statement."
+#~ msgstr ""
+
+#~ msgid "Initialize the underlying communication collective library."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the communication collective"
+#~ " library. Currently supported libraries "
+#~ "are: - nccl - rccl - mpi"
+#~ msgstr ""
+
+#~ msgid "The device IDs to be used by the underlying communication library."
+#~ msgstr ""
+
+#~ msgid "Load a VM module from a file."
+#~ msgstr ""
+
+#~ msgid "The path to the VM module file."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The device to load the VM module"
+#~ " to. Default to the default device"
+#~ " of each worker."
+#~ msgstr ""
+
+#~ msgid "**module** -- The loaded VM module."
+#~ msgstr ""
+
+#~ msgid "Return the number of workers in the session"
+#~ msgstr ""
+
+#~ msgid "Scatter an array across all workers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The array to be scattered.  The "
+#~ "first dimension of this array, "
+#~ "`src.shape[0]`, must be equal to the "
+#~ "number of workers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output array.  If None, an "
+#~ "array with compatible shape and the "
+#~ "same dtype as `src` will be "
+#~ "allocated on each worker."
+#~ msgstr ""
+
+#~ msgid "Whether the scatter operation performs globally or in group as default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output_array** -- The DRef containing "
+#~ "the scattered data on all workers. "
+#~ "If `dst` was provided, this return "
+#~ "value is the same as `dst`.  "
+#~ "Otherwise, it is the newly allocated "
+#~ "space."
+#~ msgstr ""
+
+#~ msgid "Scatter an array from worker-0 to all other workers."
+#~ msgstr ""
+
+#~ msgid "Shut down the Disco session"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Synchronize the controller with worker-0, "
+#~ "and it will wait until the "
+#~ "worker-0 finishes executing all the "
+#~ "existing instructions."
+#~ msgstr ""
+
+#~ msgid "A Disco session backed by socket-based multi-node communication."
+#~ msgstr ""
+
+#~ msgid "A Disco session backed by multi-threading."
+#~ msgstr ""
+

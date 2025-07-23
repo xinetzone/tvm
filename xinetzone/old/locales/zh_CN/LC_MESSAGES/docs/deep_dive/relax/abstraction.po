@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-29 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:21
+msgid "Graph Abstraction for ML Models"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:22
+msgid ""
+"Graph abstraction is a key technique used in machine learning (ML) "
+"compilers to represent and reason about the structure and data flow of ML"
+" models. By abstracting the model into a graph representation, the "
+"compiler can perform various optimizations to improve performance and "
+"efficiency. This tutorial will cover the basics of graph abstraction, its"
+" key elements of Relax IR, and how it enables optimization in ML "
+"compilers."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:29
+msgid "What is Graph Abstraction?"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:30
+msgid ""
+"Graph abstraction is the process of representing an ML model as a "
+"directed graph, where the nodes represent computational operations (e.g.,"
+" matrix multiplication, convolution) and the edges represent the flow of "
+"data between these operations. This abstraction allows the compiler to "
+"analyze the dependencies and relationships between different parts of the"
+" model."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:54
+msgid "Key Features of Relax"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:55
+msgid ""
+"Relax, the graph representation utilized in Apache TVM's Unity strategy, "
+"facilitates end-to-end optimization of ML models through several crucial "
+"features:"
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:59
+msgid ""
+"**First-class symbolic shape**: Relax employs symbolic shapes to "
+"represent tensor dimensions, enabling global tracking of dynamic shape "
+"relationships across tensor operators and function calls."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:63
+msgid ""
+"**Multi-level abstractions**: Relax supports cross-level abstractions, "
+"from high-level neural network layers to low-level tensor operations, "
+"enabling optimizations that span different hierarchies within the model."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:67
+msgid ""
+"**Composable transformations**: Relax offers a framework for composable "
+"transformations that can be selectively applied to different model "
+"components. This includes capabilities such as partial lowering and "
+"partial specialization, providing flexible customization and optimization"
+" options."
+msgstr ""
+
+#: ../../doc/docs/deep_dive/relax/abstraction.rst:72
+msgid ""
+"These features collectively empower Relax to offer a powerful and "
+"adaptable approach to ML model optimization within the Apache TVM "
+"ecosystem."
+msgstr ""
+
