@@ -274,3 +274,7 @@ tvm-site/
 
 # GDB history file
 .gdb_history
+
+# Conan
+CMakeUserPresets.json
+.conan2/

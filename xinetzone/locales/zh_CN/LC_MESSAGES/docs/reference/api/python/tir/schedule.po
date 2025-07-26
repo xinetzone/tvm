@@ -1,0 +1,4922 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/schedule.rst:19
+msgid "tvm.tir.schedule"
+msgstr ""
+
+#: of tvm.tir.schedule:1
+msgid "Namespace for the TensorIR schedule API."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.BlockRV:1
+msgid "A random variable that refers to a block"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:1
+msgid ""
+"An object corresponds to each block sref in the sref tree, which tracks "
+"the producer-consumer dependency between blocks."
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:4
+msgid "Glossary:"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:6
+msgid ""
+"Block scope: A contiguous subtree of the sref tree, rooted at each block "
+"sref, whose components are:"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:9
+msgid "scope root: a block sref"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:10
+msgid "internal srefs: loop srefs"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:11
+msgid "scope leaves: block srefs"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope:13
+msgid ""
+"Child block: The scope leaf blocks under the scope root or a specific "
+"internal sref"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope.get_deps_by_dst:1
+msgid "Get all dependencies whose `dst` is the target `block`."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/schedule.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope.get_deps_by_dst:3
+#: tvm.tir.block_scope.BlockScope.get_deps_by_src:3
+msgid "The queried block"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/schedule.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope.get_deps_by_dst:6
+#: tvm.tir.block_scope.BlockScope.get_deps_by_src:6
+msgid "**blocks** -- The dependencies"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/schedule.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.tir.block_scope.BlockScope.get_deps_by_src:1
+msgid "Get all dependencies whose `src` is the target`block`."
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:1
+msgid "Type of dependency."
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:5
+msgid "Read-after-write dependency"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind tvm.tir.schedule.instruction.Instruction
+#: tvm.tir.schedule.instruction.InstructionKind
+#: tvm.tir.schedule.state.ScheduleDebugMask tvm.tir.schedule.trace.Trace
+msgid "type"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:7
+msgid "int = 0"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:11
+msgid "Write-after-write dependency"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:13
+#: tvm.tir.schedule.state.ScheduleDebugMask:11
+msgid "int = 1"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:17
+msgid "Write-after-read dependency. Not supported in TensorIR for now."
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:19
+#: tvm.tir.schedule.state.ScheduleDebugMask:17
+msgid "int = 2"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:23
+msgid "Opaque dependency"
+msgstr ""
+
+#: of tvm.tir.block_scope.DepKind:25
+msgid "int = 3"
+msgstr ""
+
+#: of tvm.tir.block_scope.Dependency:1
+msgid ""
+"A tuple (src, dst, kind) representing certain types of dependency. For "
+"example, (A, B, kRAW) means block B depends on block A, and the "
+"dependency kind is read-after-write, which means block B reads the result"
+" written by block A."
+msgstr ""
+
+#: of tvm.tir.block_scope.Dependency:5
+msgid "The source of the dependency relation"
+msgstr ""
+
+#: of tvm.tir.block_scope.Dependency:7
+msgid "The destination of the dependency relation"
+msgstr ""
+
+#: of tvm.tir.block_scope.Dependency:9
+msgid "The dependency kind"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:1
+msgid "Schedule instructions each corresponds to a schedule primitive"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:5
+msgid "The kind of the instruction"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:7
+msgid "InstructionKind"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:11
+msgid ""
+"The input random variables of the instruction, and the type of each "
+"element can be one of the following: - BlockRV - LoopRV - ExprRV - float "
+"- int - str - None"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:21
+msgid "List[INPUT_RV_TYPE]"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:25
+msgid ""
+"The attributes of the instruction. Similar to attributes of an operator, "
+"attributes of an instruction are arbitrary constant metadata required by "
+"the instructions. For example, the name of the block to be retrieved in "
+"`GetBlock`."
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:29
+msgid "List[ATTR_TYPE]"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:33
+msgid ""
+"The output random variables of the instruction, and the type of each "
+"element can be one of the following: - BlockRV - LoopRV - ExprRV, atomic "
+"variables only, won't be constants or composite PrimExpr"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.Instruction:39
+msgid "List[OUTPUT_RV_TYPE]"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind:1
+msgid ""
+"Kind of an instruction, e.g. Split, Reorder, etc. Besides the name, every"
+" kind of instruction has its own properties, including: 1) A boolean "
+"indicating if the instruction is pure, i.e. change nothing in the "
+"schedule state 2) A functor that applies the instruction to a TensorIR "
+"schedule 3) A functor that converts the instruction to a statement in "
+"python syntax 4) A functor that serialize its attributes to JSON 5) A "
+"functor that deserialize its attributes from JSON"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind:9
+msgid ""
+"Unlike `tvm.ir.op`, `InstructionKind` doesn't support unstructured "
+"properties, mainly because there is no such usecase yet to add any other "
+"property."
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind:14
+msgid "The name of a kind of instructions"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind:16
+msgid "str"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind:18
+msgid "The functor properties are not exposed on python side at the moment"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind.get:1
+msgid "Retrieve an InstructionKind using its name"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind.get:3
+msgid "The registered name of the InstructionKind"
+msgstr ""
+
+#: of tvm.tir.schedule.instruction.InstructionKind.get:6
+msgid "**kind** -- The InstructionKind retrieved"
+msgstr ""
+
+#: of tvm.tir.schedule.InstructionKind.is_pure:1
+msgid ""
+"Indicates if the instruction is pure, i.e. removing it alone doesn't "
+"mutate the schedule state. For example, the instruction `GetBlock` is "
+"pure because it changes nothing, while `ComputeInline` is not because "
+"removing it leads to a different resulting schedule."
+msgstr ""
+
+#: of tvm.tir.schedule.InstructionKind.is_pure:6
+msgid "**pure** -- The boolean flag indicating if the instruction is pure"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.LoopRV:1
+msgid "A random variable that refers to a loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule:1
+msgid "The user-facing schedule class"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule:3
+msgid ""
+"A schedule is a set of transformations that change the order of "
+"computation but preserve the semantics of computation. Some example of "
+"schedules: 1) Split a loop into two; 2) Reorder two loops; 3) Inline the "
+"computation of a specific buffer into its consumer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule:9
+msgid ""
+"The schedule class stores auxiliary information to schedule correctly and"
+" efficiently."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule:11
+msgid ""
+"Link to tutorial: "
+"https://tvm.apache.org/docs/tutorials/language/schedule_primitives.html"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:1
+msgid "Create a new unit loop on top of the specific block or loop."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:3
+msgid "The block above which the new loop is created"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:6
+msgid "**new_loop** -- The new unit loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:10
+#: tvm.tir.schedule.schedule.Schedule.annotate:11
+#: tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:18
+#: tvm.tir.schedule.schedule.Schedule.bind:20
+#: tvm.tir.schedule.schedule.Schedule.blockize:12
+#: tvm.tir.schedule.schedule.Schedule.cache_index:16
+#: tvm.tir.schedule.schedule.Schedule.cache_inplace:18
+#: tvm.tir.schedule.schedule.Schedule.cache_read:23
+#: tvm.tir.schedule.schedule.Schedule.cache_write:23
+#: tvm.tir.schedule.schedule.Schedule.compute_at:31
+#: tvm.tir.schedule.schedule.Schedule.compute_inline:17
+#: tvm.tir.schedule.schedule.Schedule.decompose_padding:26
+#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:26
+#: tvm.tir.schedule.schedule.Schedule.fuse:14
+#: tvm.tir.schedule.schedule.Schedule.loop_partition:22
+#: tvm.tir.schedule.schedule.Schedule.merge:14
+#: tvm.tir.schedule.schedule.Schedule.pad_einsum:17
+#: tvm.tir.schedule.schedule.Schedule.parallel:12
+#: tvm.tir.schedule.schedule.Schedule.reindex:30
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:25
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:28
+#: tvm.tir.schedule.schedule.Schedule.reorder:15
+#: tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:9
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:28
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:20
+#: tvm.tir.schedule.schedule.Schedule.rfactor:70
+#: tvm.tir.schedule.schedule.Schedule.rolling_buffer:22
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:26
+#: tvm.tir.schedule.schedule.Schedule.set_scope:12
+#: tvm.tir.schedule.schedule.Schedule.split:30
+#: tvm.tir.schedule.schedule.Schedule.storage_align:18
+#: tvm.tir.schedule.schedule.Schedule.tensorize:11
+#: tvm.tir.schedule.schedule.Schedule.transform_block_layout:9
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:63
+#: tvm.tir.schedule.schedule.Schedule.unannotate:9
+#: tvm.tir.schedule.schedule.Schedule.unroll:7
+#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:15
+#: tvm.tir.schedule.schedule.Schedule.vectorize:12
+msgid "示例"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:11
+msgid "Before add_unit_loop, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:25
+msgid "Create the schedule and do add-unit-loop:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.add_unit_loop:33
+msgid "After applying add-unit-loop, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:1
+msgid "Annotate a block/loop with a key value pair"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:3
+msgid "The block/loop to be annotated"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:5
+#: tvm.tir.schedule.schedule.Schedule.unannotate:5
+msgid "The annotation key"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:7
+msgid "The annotation value"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:12
+msgid "Before annotate, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:25
+#: tvm.tir.schedule.schedule.Schedule.unannotate:24
+msgid "Create the schedule and do annotate:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate:33
+msgid "After applying annotate, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:1
+msgid "Annotate the read or write region of a block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:3
+msgid "The block to be annotated"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:5
+msgid "The index of the buffer in block's read or write region"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:7
+msgid "The buffer type: \"read\" or \"write\""
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:9
+msgid ""
+"A function that takes the block's iter_vars and returns a "
+"Tuple[Union[PrimExpr, Tuple[PrimExpr, PrimExpr]], ...] which defines the "
+"new read or write region for the buffer. Each element in the tuple can "
+"be: - A single PrimExpr representing the iter_var itself - A tuple of two"
+" PrimExprs representing the range (begin, end)"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:19
+msgid ""
+"Annotate a 2D read region for a buffer. Before annotate_buffer_access, in"
+" TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:39
+msgid "Create the schedule and do annotate_buffer_access:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:49
+msgid "After applying annotate_buffer_access, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:71
+msgid ""
+"This annotates the read region for buffer A (index 0) in block \"B\" to "
+"be [vi-1:vi+1, vj-1:vj+1] for each (vi, vj) in the block's iteration "
+"domain."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:76
+msgid ""
+"This function allows manual specification of read or write regions, which"
+" can be useful in cases where the compiler cannot accurately infer the "
+"access pattern, such as complex data-dependent accesses. It overrides the"
+" automatically inferred region for the specified buffer. The function "
+"adds an annotation to the block, indicating that an explicit region has "
+"been provided for the buffer at the given index. This annotation is used "
+"in the CompactBufferAllocation pass to respect the manually specified "
+"region instead of relying on automatic inference."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.annotate_buffer_access:85
+msgid ""
+"Caution should be exercised when using this function, as incorrect "
+"annotations may lead to incorrect code generation or runtime errors. It's"
+" crucial to ensure that the specified region covers all actual reads or "
+"writes performed by the block for the given buffer."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.bind:1
+msgid ""
+"Bind the input loop to the given thread axis. It requires: 1) The scope "
+"block that the loop is in should have stage-pipeline property 2) All the "
+"blocks under the loop are complete blocks or reduction blocks, and have "
+"affine bindings 3) For each block under the loop, if the thread axis "
+"starts with \"threadIdx`, the loop can only be contained in data-parallel"
+" block iter and reduction block iters' bindings. Otherwise the loop can "
+"only be contained in data-parallel block iters' bindings"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.bind:9
+msgid "The loop to be bound to the thread axis"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.bind:11
+msgid ""
+"The thread axis to be bound to the loop. Possible candidates: - "
+"blockIdx.x/y/z - threadIdx.x/y/z - vthread.x/y/z - vthread (It is a "
+"legacy behavior that will be deprecated. Please use `vthread.x/y/z` "
+"instead.)"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.bind:21
+msgid "Before bind, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.bind:34
+msgid "Create the schedule and do bind:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.bind:43
+msgid "After applying bind, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:1
+msgid ""
+"Convert multiple blocks or the subtree rooted at a specific loop into a "
+"block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:3
+msgid "The root of the subtree or the specified blocks."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:5
+#: tvm.tir.schedule.schedule.Schedule.loop_partition:15
+#: tvm.tir.schedule.schedule.Schedule.split:16
+#: tvm.tir.schedule.schedule.Schedule.tensorize:7
+msgid "Whether or not to preserve unit iterators in block bindings"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:8
+msgid "**result** -- The new block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:13
+msgid "Before blockize, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:30
+#: tvm.tir.schedule.schedule.Schedule.set_scope:32
+msgid "Create the schedule and do set_scope:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:40
+msgid "After applying blockize, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.blockize:63
+msgid ""
+"blockize requires there is exactly one block under the given loop and the"
+" bindings of the block are divisible by the subspace represented by the "
+"loops starting at the given loop."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:1
+msgid ""
+"Create a block to cache precomputed index for later use. if there is no "
+"index computation, keep unchanged."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:4
+#: tvm.tir.schedule.schedule.Schedule.cache_inplace:5
+msgid "The target block operates on the target buffer."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:6
+msgid "The storage scope of cached block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:8
+msgid ""
+"The repeat threshold that determines a common sub expr, default 0 means "
+"cache all index computation."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:12
+msgid "**cached_blocks** -- The blocks of the stage writing the cache buffers"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:17
+#: tvm.tir.schedule.schedule.Schedule.cache_inplace:19
+msgid "Before cache_inplace, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:30
+msgid "Create the schedule and cache_index:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_index:39
+msgid "After applying cache_index, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_inplace:1
+msgid ""
+"Create blocks that reads & write a buffer region into a cache block. It "
+"requires the target block both read & write the target buffer. Mainly for"
+" inplace operation."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_inplace:7
+#: tvm.tir.schedule.schedule.Schedule.cache_read:9
+msgid ""
+"The index of the buffer in block's read region, the unique name of a read"
+" buffer in the block, or a Buffer object that is within the blocks read "
+"region."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_inplace:11
+#: tvm.tir.schedule.schedule.Schedule.cache_read:13
+#: tvm.tir.schedule.schedule.Schedule.cache_write:13
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:16
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:16
+msgid "The target storage scope."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_inplace:14
+msgid ""
+"**cached_blocks** -- The blocks of the cache stage, read cache first, "
+"write cache second"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_inplace:31
+msgid "Create the schedule and cache_inplace:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_inplace:40
+msgid "After applying cache_inplace, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:1
+msgid "Create a block that reads a buffer region into a read cache. It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:3
+msgid "There is at most one block who write the buffer in the scope."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:5
+#: tvm.tir.schedule.schedule.Schedule.cache_write:5
+msgid "The scope block have stage-pipeline property."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:7
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:12
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:12
+msgid "The consumer block of the target buffer."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:15
+msgid ""
+"An optional list of consumers that should read from the cache. If not "
+"specified, all consumers will use the cache."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:19
+#: tvm.tir.schedule.schedule.Schedule.cache_write:19
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_read:21
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:24
+msgid "**cached_block** -- The block of the cache stage"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:24
+msgid "Before cache_read, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:37
+msgid "Create the schedule and cache_read:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_read:46
+msgid "After applying cache_read, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:1
+msgid "Create a block that reads a buffer region into a write cache. It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:3
+msgid "There is only one block who write the buffer in the scope."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:7
+msgid "The producer block of the target buffer."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:9
+msgid ""
+"The index of the buffer in block's write region, the unique name of a "
+"write buffer in the block, or a Buffer object that is within the blocks "
+"write region."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:15
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:20
+msgid ""
+"An optional list of consumers that should read directly from the cache. "
+"If not specified, all consumers will read from the original buffer."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:24
+msgid "Before cache_write, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:37
+msgid "Create the schedule and cache_write:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.cache_write:46
+msgid "After applying cache_write, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.can_decompose_padding:1
+msgid "Check whether the block match padding pattern and can be decomposed."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:1
+msgid ""
+"Compute-At. Move a producer block under the specific loop, and regenerate"
+" the loops induced by the block so that the buffer region produced by the"
+" producer block could cover those regions consumed by its consumer blocks"
+" under the given loop. It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:5
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:5
+msgid ""
+"`block` and `loop` are under the same scope, `loop` is not the ancestor "
+"of `block`"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:7
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:7
+msgid "The scope block has stage-pipeline property"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:9
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:9
+msgid ""
+"3) The subtree of the scope block, where the given block is in, satisfies"
+" the compact dataflow condition. i.e. all the blocks in the scope block's"
+" subtree must be either complete block or reduction block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:13
+msgid ""
+"4) The block is not an output block with regard to the scope block, i.e. "
+"the buffers written by the block are allocated under the scope block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:16
+msgid "All the consumers of the block are under the given loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:18
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:15
+msgid "The block to be moved"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:20
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:17
+msgid "The loop where the block to be moved under"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:22
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:19
+msgid "Whether to keep the trivial loops whose extents are 1"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:24
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_at:21
+msgid ""
+"The block index of the loop body subtree blocks: - `index = -1` means "
+"inserted into the last possible insertion point; - `index = -2` means "
+"inserted into the first possible insertion point; - Otherwise, `index` is"
+" a nonnegative number that indicates the insertion point"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:32
+msgid "Before compute-at, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:50
+msgid "Create the schedule and do compute-at:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_at:60
+msgid "After applying compute-at, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:1
+msgid "Inline a block into its consumer(s). It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:3
+msgid "The block is a complete non-root block, which only produces one buffer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:5
+#: tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:5
+msgid "The block must not be the only leaf in the scope."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:7
+msgid ""
+"The body of the block must be a BufferStore statement in the form of, "
+"``A[i, j, k, ...] = ...`` where the indices of the LHS are all distinct "
+"atomic variables, and no variables other than those indexing variables "
+"are allowed in the statement."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:13
+msgid "The block to be inlined to its consumer(s)"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:18
+msgid "Before compute-inline, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:36
+msgid "Create the schedule and do compute-inline:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.compute_inline:44
+msgid "After applying compute-inline, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.copy:1
+msgid ""
+"Returns a copy of the schedule, including both the state and the symbol "
+"table, * guaranteeing that * 1) SRef tree is completely reconstructed; * "
+"2) The IRModule being scheduled is untouched; * 3) All the random "
+"variables are valid in the copy, pointing to the corresponding sref * "
+"reconstructed"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.copy:8
+msgid "**copy** -- A new copy of the schedule"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:1
+msgid "Decompose a block of padding computation pattern into two separate blocks."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:3
+msgid "The block which fill const pad values into full write region;"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:5
+msgid ""
+"The block which fill in-bound values into region where pad predicate is "
+"true."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:7
+msgid "The pad value filling block is inserted right before the given loop."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:9
+#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:9
+msgid "The schedule primitive requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:11
+msgid "The input block is a complete block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:13
+#: tvm.tir.schedule.schedule.Schedule.decompose_reduction:13
+msgid "The input loop is the ancestor of the block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:15
+msgid "The input block is a block which match padding pattern."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:17
+msgid "The padding block to be decomposed."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:19
+msgid "The loop above which the pad value filling block is inserted before."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:22
+msgid "**pad_value_block** -- The block filling const pad values."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:27
+msgid "Before decompose-padding, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:38
+msgid "Create the schedule and do decompose-padding with specified loop:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_padding:47
+#: tvm.tir.schedule.schedule.Schedule.pad_einsum:44
+msgid "After applying decompose-padding, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:1
+msgid "Decompose a reduction block into two separate blocks."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:3
+msgid ""
+"The init block, which is translated from the init statement of the "
+"reduction block;"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:5
+msgid "The update block, which is the original block without init statement."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:7
+msgid "The init block is inserted right before the given loop."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:11
+msgid "The input block is a reduction block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:15
+msgid ""
+"The input loop is not lower than all the loops related to reduce block "
+"var."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:17
+msgid "The reduction block to be decomposed"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:19
+msgid "The loop above which the init block is inserted before."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:22
+msgid "**init_block** -- The init block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:27
+msgid "Before decompose-reduction, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:42
+msgid "Create the schedule and do decompose-reduction with specified loop:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.decompose_reduction:52
+msgid "After applying decompose-reduction, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.enter_postproc:1
+msgid "A no-op that marks the start of postprocessing phase of scheduling"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fork_seed:1
+msgid "Returns a forked random state as seed for new schedules"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fork_seed:3
+msgid ""
+"**seed** -- The forked random state, not the same as the current random "
+"state"
+msgstr ""
+
+#: of tvm.tir.schedule.Schedule.func_working_on:1
+msgid ""
+"Returns the GlobalVar of the func that the schedule is currently working "
+"on"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fuse:1
+msgid ""
+"Fuse a list of consecutive loops into one. It requires: 1) The loops "
+"can't have annotations or thread bindings. 2) The (i+1)-th loop must be "
+"the only child of the i-th loop. 3) All loops must start with 0. 4) The "
+"domain of a loop to be fused cannot depend on another loop to be fused."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fuse:7
+msgid "The loops to be fused"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fuse:10
+msgid "**fused_loop** -- The new loop after fusion"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fuse:15
+msgid "Before applying fuse, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fuse:28
+#: tvm.tir.schedule.schedule.Schedule.merge:33
+msgid "Create the schedule and do fuse:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.fuse:37
+#: tvm.tir.schedule.schedule.Schedule.merge:43
+msgid "After applying fuse, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get:1
+msgid ""
+"Returns: - the corresponding Block that a BlockRV evaluates to; - the "
+"corresponding For that a LoopRV evaluates to; - the corresponding integer"
+" that a ExprRV evaluates to; - the corresponding Block that a block sref "
+"points to; - the corresponding For that a loop sref points to;"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get:8
+#: tvm.tir.schedule.schedule.Schedule.get_sref:7
+msgid "The random variable / sref to be evaluated"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get:11
+#: tvm.tir.schedule.schedule.Schedule.get_sref:10
+msgid "**result** -- The corresponding result"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_block:1
+msgid "Retrieve a block in a specific function with its name"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_block:3
+msgid ""
+"By default, if `func_name` is not specified, the schedule will search for"
+" the block in the function that is currently being \"worked on\". To "
+"switch the function to be worked on, use `work_on` before calling this "
+"method."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_block:7
+msgid "The name of the block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_block:9
+msgid "The name of the function"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_block:12
+msgid ""
+"**block** -- The block retrieved IndexError is raised if 0 or multiple "
+"blocks exist with the specific name."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_child_blocks:1
+msgid "Get the leaf blocks of a specific block/loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_child_blocks:3
+msgid "The query block/loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_child_blocks:6
+msgid "**blocks** -- A list of leaf blocks inside a specific block/loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_consumers:1
+msgid "Get the consumers of a specific block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_consumers:3
+#: tvm.tir.schedule.schedule.Schedule.get_producers:3
+msgid "The block in the query"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_consumers:6
+msgid "**consumers** -- A list of consumers of the given block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_loops:1
+msgid "Get the parent loops of the block in its scope, from outer to inner"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_loops:3
+msgid "The query block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_loops:6
+msgid ""
+"**loops** -- A list of loops above the given block in its scope, from "
+"outer to inner"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_output_blocks:1
+msgid ""
+"Get the list of output blocks within the given scope An output block is a"
+" block which has atleast one buffer being written to, but is not "
+"allocated within the PrimFunc"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_output_blocks:5
+msgid "The scope block from which output blocks are collected"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_output_blocks:8
+msgid "**output_blocks** -- A list of all blocks that write to some output buffer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_producers:1
+msgid "Get the producers of a specific block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_producers:6
+msgid "**producers** -- A list of producers of the given block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.get_sref:1
+msgid ""
+"Returns the corresponding sref to the given 1) LoopRV 2) BlockRV 3) Block"
+" 4) For"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:1
+msgid ""
+"Partition a loop into a list of consecutive loops. It requires: 1) The "
+"loop can't have annotation or thread binding. Predicates may be added to "
+"ensure the total loop numbers keeps unchanged. In `factors`, at most one "
+"of the factors can be None, which will be automatically inferred."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:7
+msgid "The loop to be partition"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:9
+msgid ""
+"The partitioning factors Potential inputs are: - None - ExprRV - Positive"
+" constant integers"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:18
+msgid "**partition_loops** -- The new loops after partition"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:23
+msgid "Before partition, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:36
+msgid "Create the schedule and do partition:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.loop_partition:45
+msgid "After applying partition, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.merge:1
+msgid ""
+"Merge a list of loops into one. The loops under their LCA requires: 1) "
+"Under the same scope. 2) Can't have annotations or thread bindings. 3) "
+"Start with 0 and have same extent and same nesting depth. 4) From target "
+"loop to their LCA, The inner loop must be the only child of the outer "
+"loop."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.merge:7
+msgid "The loops to be merged"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.merge:10
+msgid "**fused_loop** -- The new loop after merge"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.merge:15
+msgid "Before applying merge, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.Schedule.mod:1
+msgid "Returns the AST of the module being scheduled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:1
+msgid "Pad the computation of Einsum."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:3
+msgid ""
+"On a block with trivial binding, this primitive pads the iteration domain"
+" of the block by the given padding factors, for example, 127 -> 128, 132 "
+"-> 144 when padding factor is 16. Extra producer and consumer padding "
+"blocks will be generated to avoid out-of-bound buffer access."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:8
+msgid ""
+"Einsum pattern means all the indices on the buffer access are either by "
+"constants (e.g. B[0]) or by variables (e.g. B[i]), but not by composite "
+"expressions (e.g. B[i + 1])."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:11
+msgid "The block that matches the Einsum pattern."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:13
+msgid "The padding for each block iter."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:18
+msgid "Before applying pad-einsum, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.pad_einsum:35
+msgid "Create the schedule and do pad-einsum with specified block:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.parallel:1
+msgid ""
+"Parallelize the input loop. It requires: 1) The scope block that the loop"
+" is in should have stage-pipeline property 2) All the blocks under the "
+"loop are complete blocks or reduction blocks, and have affine bindings 3)"
+" For each block under the loop, the loop can only be contained in data-"
+"parallel block iters' bindings"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.parallel:8
+msgid "The loop to be parallelized"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.parallel:13
+msgid "Before parallel, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.parallel:26
+msgid "Create the schedule and do parallel:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.parallel:34
+msgid "After applying parallel, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:1
+msgid ""
+"Create a block that read/write a buffer region into a read/write cache "
+"with reindexing. The layout of the cache will be the same as by the "
+"iterators of the block that reads/writes the buffer. It requires: 1) "
+"There is only one block who reads/writes the target buffer 2) There is "
+"only one buffer load/store of this buffer in the block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:7
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:4
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:3
+msgid ""
+"The block that accesses the target buffer.  If a string, this must "
+"uniquely identify a block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:10
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:7
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:6
+msgid ""
+"The buffer to be transformed, or a specification of how to identify the "
+"buffer to be transformed.  If `buffer` if a tuple of ``(str,int)``, the "
+"first item should be either \"read\" or \"write\", and the second item is"
+" an index into the block's read or write regions.  If `buffer` is a "
+"string, it is the name of the buffer, which must exist within the "
+"reads/writes of the block.  In addition, the reads/writes of the block "
+"may not contain more than one buffer with this name.  If `buffer` is a "
+"Buffer object, it must exist within the reads/writes of the block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:10
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:7
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:6
+msgid ""
+"The buffer to be transformed, or a specification of how to identify the "
+"buffer to be transformed."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:13
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:10
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:9
+msgid ""
+"If `buffer` if a tuple of ``(str,int)``, the first item should be either "
+"\"read\" or \"write\", and the second item is an index into the block's "
+"read or write regions."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:17
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:14
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:13
+msgid ""
+"If `buffer` is a string, it is the name of the buffer, which must exist "
+"within the reads/writes of the block.  In addition, the reads/writes of "
+"the block may not contain more than one buffer with this name."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:22
+#: tvm.tir.schedule.schedule.Schedule.set_axis_separator:19
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:18
+msgid ""
+"If `buffer` is a Buffer object, it must exist within the reads/writes of "
+"the block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:26
+msgid "**reindex_block** -- The block of the reindex stage"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:31
+msgid "Before reindex, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:45
+msgid "Create the schedule and do reindex:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex:53
+msgid "After applying reindex, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:1
+msgid ""
+"Create a block that reads a buffer region into a read cache using "
+"customized indices specified by index map. The read region of the buffer "
+"must be a single point."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:4
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:4
+msgid ""
+"The cache stage block follows the original order of loops and block "
+"itervars in the block. If a block itervar does not appear in the buffer "
+"access region, it and its corresponding loop variables will be omitted. "
+"User can then use `transform_block_layout` primitive to reorder the block"
+" itervars and surrounding loops of the cache read/write block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:9
+msgid ""
+"Unlike `cache_read`, `reindex_cache_read` only supports single consumer, "
+"please use `cache_read` when there are multiple consumers."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:14
+msgid "The index of the buffer in block's read region."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:18
+#: tvm.tir.schedule.schedule.Schedule.reindex_cache_write:18
+msgid ""
+"User defined indices to access allocated cache buffer, maps from block "
+"iter vars."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:26
+msgid "Before reindex_cache_read, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:39
+msgid "Create the schedule and reindex_cache_read:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:48
+msgid "After applying reindex_cache_read, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_read:66
+msgid ""
+":py:obj:`reindex_cache_write`, :py:obj:`transform_block_layout`, "
+":py:obj:`transform_layout`, :py:obj:`cache_read`, :py:obj:`reindex`"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:1
+msgid ""
+"Create a block that reads a buffer region into a write cache using "
+"customized indices specified by index map. The write region of the buffer"
+" must be a single point."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:9
+msgid ""
+"Unlike `cache_write`, `reindex_cache_write` only supports single "
+"consumer, please use `cache_write` when there are multiple consumers."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:14
+#: tvm.tir.schedule.schedule.Schedule.rolling_buffer:18
+#: tvm.tir.schedule.schedule.Schedule.storage_align:8
+msgid "The index of the buffer in block's write region."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:29
+msgid "Before reindex_cache_write, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:42
+msgid "Create the schedule and reindex_cache_write:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:51
+msgid "After applying reindex_cache_write, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reindex_cache_write:69
+msgid ""
+":py:obj:`reindex_cache_read`, :py:obj:`transform_block_layout`, "
+":py:obj:`transform_layout`, :py:obj:`cache_write`, :py:obj:`reindex`"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.remove_rv:1
+msgid "Remove a random variable from the symbol table"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.remove_rv:3
+msgid "The random variable to be removed"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder:1
+#, python-brace-format
+msgid ""
+"Reorder a list of loops. It doesn't require the loops to be consecutive. "
+"It requires: 1) The loops are in the same chain. That means: the loops "
+"can be ordered to [l_1, l_2, ... , l_n] where l_i is an ancestor of "
+"l_{i+1} and there are only single-branch loops between l_1 and l_n (which"
+" also indicates they are under the same scope). 2) After reordering, the "
+"domain of an outer loop cannot depend on any of the inner loops. 3) For "
+"every block under the loop nests, its block binding must be affine, and "
+"the block variables must be either data parallel or reduction. 4) No "
+"duplicated loops are allowed in the arguments."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder:11
+msgid "The loops in the new order"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder:16
+msgid "Before reorder, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder:29
+msgid "Create the schedule and do reorder:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder:38
+msgid "After applying reorder, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:1
+msgid "Reorder the itervars inside a given block."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:3
+msgid "The block to be transformed."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:5
+msgid "The new block itervar order."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:10
+msgid "Before reorder_block_iter_var, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:27
+msgid "Create the schedule and do reorder_block_iter_var:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:35
+msgid "After applying reorder_block_iter_var, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reorder_block_iter_var:54
+msgid ":py:obj:`reorder`"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_at:1
+msgid ""
+"Reverse-Compute-At. Move a consumer block under the specific loop, and "
+"regenerate the loops induced by the block so that the buffer region "
+"consumed by the consumer block could cover those regions produced by its "
+"producer blocks under the given loop. It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_at:13
+msgid "All the producers of the block are under the given loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_at:29
+msgid "Before reverse-compute-at, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_at:47
+msgid "Create the schedule and do reverse-compute-at:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_at:57
+msgid "After applying reverse-compute-at, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:1
+msgid "Inline a block into its only producer. It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:3
+msgid ""
+"The block is a complete non-root block, which only produces and consumes "
+"one buffer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:7
+msgid ""
+"The only producer of the block is a read-after-write producer and a "
+"complete non-root block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:10
+msgid ""
+"The body of the block must be a BufferStore statement in the form of, "
+"``B[f(i, j, k, ...)] = g(i, j, k, A[i, j, k, ...] ...)`` where the "
+"indices of each `BufferLoad` on the RHS are all distinct atomic "
+"variables, and no variables other than those indexing variables are "
+"allowed in the statement."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:16
+msgid "The block to be inlined to its producer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:21
+msgid "Before reverse-compute-inline, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:39
+msgid "Create the schedule and do reverse-compute-inline:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.reverse_compute_inline:47
+msgid "After applying reverse-compute-inline, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:1
+msgid "Factorize an associative reduction block by the specified loop."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:3
+msgid ""
+"An associative reduction cannot be parallelized directly, because it "
+"leads to potential race condition during accumulation. Alternatively, the"
+" reduction could be factorized on a loop with the following steps: - Step"
+" 1: evenly slice the reduction into `n` separate chunks, where `n` is the"
+" loop extent - Step 2: compute the chunks separately and write the result"
+" into `n` intermediate buffers; - Step 3: accumulate the `n` separate "
+"buffer into the result buffer. Note that the Step 2 above introduces "
+"opportunities for parallelization."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:11
+msgid ""
+"RFactor is a schedule primitive that implements the transformation "
+"described above: Given a block that writes to buffer `B`, it factorizes a"
+" loop of extent `n`."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:14
+msgid "For example, the pseudocode below accumulates `B[i] = sum(A[i, : , : ])`:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:23
+msgid ""
+"Suppose RFactor is applied on the innermost loop `k` and `factor_axis = "
+"1`. RFactor then creates an intermediate buffer and two blocks."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:26
+msgid ""
+"1. The intermediate buffer, or \"rf-buffer\" is a buffer of rank `ndim(B)"
+" + 1` and size `size(B) * n`, whose shape expands from `shape(B)` by "
+"adding an axis of `n` at the position specified by `factor_axis`. For "
+"example,"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:30
+msgid "shape(B) = [1, 2, 3], factor_axis = 0  => shape(B_rf) = [n, 1, 2, 3]"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:31
+msgid "shape(B) = [1, 2, 3], factor_axis = 1  => shape(B_rf) = [1, n, 2, 3]"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:32
+msgid "shape(B) = [1, 2, 3], factor_axis = 2  => shape(B_rf) = [1, 2, n, 3]"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:33
+msgid "shape(B) = [1, 2, 3], factor_axis = 3  => shape(B_rf) = [1, 2, 3, n]"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:35
+msgid ""
+"2. The rfactor block, or \"rf-block\", is a block that writes to the `rf-"
+"buffer` without accumulating over the loop `k`, i.e. the loop `k` is "
+"converted from a reduction loop to a data parallel loop. In our example, "
+"the rf-block is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:48
+msgid ""
+"3. The write-back block, or `wb-block`, is a block that accumulates the "
+"rf-buffer into the result buffer. All the reduction loops are removed "
+"except the loop `k` for accumulation. In our example, the wb-block is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:60
+msgid "The loop outside block for which we want to do rfactor"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:62
+msgid ""
+"The position where the new dimension is placed in the new introduced "
+"rfactor buffer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:65
+msgid ""
+"**rf_block** -- The block which computes partial results over each slices"
+" (i.e., the first block as described in the above illustration)"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:71
+msgid "Before rfactor, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:86
+msgid "Create the schedule and do rfactor:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:95
+msgid "After applying rfactor, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rfactor:119
+msgid ""
+"Rfactor requires: 1) `loop` has only one child block, and it is a "
+"reduction block; 2) `loop` is a reduction loop, i.e. the loop variable is"
+" bound to only reduction variables in the block binding; 3) `loop` is not"
+" parallelized, vectorized, unrolled or bound to any thread axis; 4) The "
+"block scope that `loop` is in is a staged-pipeline; 5) The outermost loop"
+" outside the reduction block should has the reduction block as its first "
+"child block; 6) The outermost reduction loop should have only one child "
+"block; 7) An unary extent loop that is not bound to any reduction or data"
+" parallel variables in the block binding should not appear under some "
+"reduction loop; 8) The reduction block should write to only one buffer, "
+"and its init and body are both simple `BufferStore`s, and the pattern is "
+"registered as an associative reducer. The pre-defined patterns include: "
+"plus, multiplication, min and max; 9) Each of the loops on top of the "
+"block cannot be bound to a data parallel and a reduction block binding at"
+" the same time; 10) `factor_axis` should be in range `[-ndim(B) - 1, "
+"ndim(B)]`, where `B` is the buffer that the reduction block writes to. "
+"Negative indexing is normalized according to numpy convention."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:1
+msgid ""
+"Compute the target buffer via rolling buffering, select the outermost "
+"rollable axis with a positive bound overlap that appears in the block's "
+"ancestor loops as `rolling axis`, fold and circularize the buffer along "
+"the rolling dimension, append block predicate to avoid recomputing "
+"overlapping elements. It requires:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:6
+msgid "The block is not an output block and has only RAW dependencies."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:8
+msgid "The buffer to be an intermediate buffer defined via `alloc_buffer`."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:10
+msgid ""
+"3) The LCA of the producer and consumer of the buffer is a for loop, "
+"typically, the producer and consumer of the buffer are cascaded through "
+"compute_at."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:13
+msgid ""
+"4) The access region of the buffer has at least one dimension that "
+"contains a positive bound overlap."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:16
+#: tvm.tir.schedule.schedule.Schedule.storage_align:6
+msgid "The producer block of the buffer."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:23
+msgid "Before rolling_buffer, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:52
+msgid "Create the schedule and do rolling_buffer:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:60
+msgid "After applying rolling_buffer, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.rolling_buffer:91
+msgid ""
+"The region_cover property of the consumer block of the target buffer will"
+" become false."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_categorical:1
+msgid "Sample an integer given the probability distribution"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_categorical:3
+msgid "The candidates to be sampled from"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_categorical:5
+msgid "The probability of each candidate"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_categorical:7
+#: tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:11
+#: tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:9
+msgid "The sampling decision, if any"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_categorical:10
+msgid "**result** -- The random variable sampled from candidates"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_compute_location:1
+msgid "Sample a compute-at location of the given block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_compute_location:3
+msgid "The block whose compute-at location is to be sampled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_compute_location:5
+msgid "The sampling decision"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_compute_location:8
+msgid "**result** -- The sampled loop where the input block is to be computed at"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:1
+msgid "Sample the factors to a partitioned tile for a specific loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:3
+#: tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:3
+msgid "The loop to be tiled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:5
+#: tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:5
+msgid "The number of tiles to be sampled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:7
+msgid "The position to partition tiles to two parts"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:9
+msgid "The factor of the second part"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_partitioned_tile:14
+msgid ""
+"**result** -- A list of length `n`, the random partitioned tile sizes "
+"sampled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:1
+msgid "Sample the factors to perfect tile a specific loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:7
+msgid "The maximum tile size allowed to be sampled in the innermost loop"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.sample_perfect_tile:12
+msgid "**result** -- A list of length `n`, the random perfect tile sizes sampled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.seed:1
+msgid "Seed the randomness"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.seed:3
+msgid "The new random seed, -1 if use device random, otherwise non-negative"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_axis_separator:1
+msgid ""
+"Set the axis separator of a buffer, where the buffer is specified by a "
+"block and a read or write index."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_axis_separator:22
+msgid "The axis separators."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_axis_separator:27
+msgid "Before set_axis_separator, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_axis_separator:46
+msgid "Create the schedule and do set_axis_separator:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_axis_separator:55
+msgid "After applying set_axis_separator, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:1
+msgid ""
+"Set the storage scope of a buffer, where the buffer is specified by the a"
+" block and a write-index."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:4
+#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:7
+msgid "The producer block of the buffer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:6
+#: tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:9
+msgid "The index of the buffer in block's write region"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:8
+msgid "The storage scope to be set"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:13
+msgid "Before set_scope, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:40
+msgid "After applying set_scope, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.set_scope:59
+msgid ""
+"`set_scope` requires the buffer to be an intermediate buffer defined via "
+"`alloc_buffer`."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.show:1
+#: tvm.tir.schedule.trace.Trace.show:1
+msgid "A sugar for print highlighted TVM script."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.show:3
+msgid ""
+"All parameters are forwarded to the underlying `Module.show` and "
+"`Trace.show` methods."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:1
+msgid ""
+"Split a loop into a list of consecutive loops. It requires: 1) The loop "
+"can't have annotation or thread binding. 2) The loop must start with 0. "
+"Predicates may be added to ensure the total loop numbers keeps unchanged."
+" In `factors`, at most one of the factors can be None, which will be "
+"automatically inferred."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:8
+msgid "The loop to be split"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:10
+msgid ""
+"The splitting factors Potential inputs are: - None - ExprRV - Positive "
+"constant integers"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:18
+msgid ""
+"If enabled, don't create a predicate for guarding the loop. This can be "
+"useful when splitting with scalable factors that the schedule writer "
+"knows are divisible by the loop bound.  Warning: enabling this feature "
+"may result in incorrect code generation if not used carefully."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:18
+msgid ""
+"If enabled, don't create a predicate for guarding the loop. This can be "
+"useful when splitting with scalable factors that the schedule writer "
+"knows are divisible by the loop bound."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:22
+msgid ""
+"Warning: enabling this feature may result in incorrect code generation if"
+" not used carefully."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:26
+msgid "**split_loops** -- The new loops after split"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:31
+msgid "Before split, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:44
+msgid "Create the schedule and do split:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.split:53
+msgid "After applying split, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.Schedule.state:1
+msgid "Returns the ScheduleState in the current schedule class"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:1
+msgid ""
+"Set alignment requirement for specific dimension such that stride[axis] "
+"== k * factor + offset for some k. This is useful to set memory layout "
+"for more friendly memory access pattern. For example, we can set "
+"alignment to be factor=2, offset=1 to avoid bank conflict for thread "
+"access on higher dimension in GPU shared memory."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:10
+msgid "The dimension to be specified for alignment."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:12
+msgid "The factor multiple of alignment."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:14
+msgid "The required offset factor."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:19
+msgid "Before storage_align, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:37
+msgid "Create the schedule and do storage_align:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:45
+msgid "After applying storage_align, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:64
+msgid "After lowering passes, buffer B will have strides as [129, 1]."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.storage_align:66
+msgid ""
+"Storage_align requires the buffer to be an intermediate buffer defined "
+"via `alloc_buffer`."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:1
+msgid "Tensorize the computation enclosed by loop with the tensor intrinsic."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:3
+msgid "The loop to be tensorized."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:5
+msgid "The tensor intrin or the name of the tensor intrin."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:12
+msgid "Before tensorize, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:33
+msgid "Declare and register the tensor intrinsic:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:76
+msgid "Create the schedule and do tensorize:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.tensorize:86
+msgid "After applying tensorize, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.Schedule.trace:1
+msgid "Returns the internally maintained trace of scheduling program execution"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_block_layout:1
+msgid "Apply a transformation represented by IndexMap to block"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_block_layout:3
+msgid "The block to be transformed"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_block_layout:5
+#: tvm.tir.schedule.schedule.Schedule.transform_layout:21
+msgid "The transformation to apply."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_block_layout:10
+msgid "Before transform_block_layout, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_block_layout:24
+msgid "Create the schedule and do transform_block_layout:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_block_layout:32
+msgid "After applying transform_block_layout, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:1
+msgid "Apply a transformation represented by IndexMap to buffer"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:21
+msgid ""
+"The transformation to apply.  If `index_map` is a callable, and the "
+"returned list contains IndexMap.AXIS_SEPARATOR, the SetAxisSeparators "
+"primitive will be called in addition to the TransformLayout primitive."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:23
+msgid ""
+"If `index_map` is a callable, and the returned list contains "
+"IndexMap.AXIS_SEPARATOR, the SetAxisSeparators primitive will be called "
+"in addition to the TransformLayout primitive."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:28
+msgid ""
+"The value to be used for any padding introduced by the transformation.  "
+"If the schedule contains a producer block for the specified buffer, the "
+"pad value will be written as part of the producer block if possible, or "
+"after the producer block otherwise.  Otherwise, if the buffer is an "
+"input, will insert an annotation block to state that the padding contains"
+" the known value.  The pad value may not contain instances of BufferLoad,"
+" except where it loads a value from the buffer being transformed (e.g. to"
+" create a circular buffer with padding that consists of repeated "
+"elements).  Note: If applied to an input buffer, the calling scope is "
+"responsible for ensuring that the pad_value is present. Algebraic "
+"symplifications, branch elimination, and other optimizations may assume "
+"that this precondition is met, and may result in incorrect results being "
+"returned.  If None, the transformation may not introduce padding.  If an "
+"int, float or PrimExpr, the transformation is the specific value to be "
+"present in the padding.  If an IndexMap or Callable, the transformation "
+"is the value to be present in the padding in terms of the transformed "
+"index."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:28
+msgid ""
+"The value to be used for any padding introduced by the transformation.  "
+"If the schedule contains a producer block for the specified buffer, the "
+"pad value will be written as part of the producer block if possible, or "
+"after the producer block otherwise.  Otherwise, if the buffer is an "
+"input, will insert an annotation block to state that the padding contains"
+" the known value."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:36
+msgid ""
+"The pad value may not contain instances of BufferLoad, except where it "
+"loads a value from the buffer being transformed (e.g. to create a "
+"circular buffer with padding that consists of repeated elements)."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:41
+msgid ""
+"Note: If applied to an input buffer, the calling scope is responsible for"
+" ensuring that the pad_value is present. Algebraic symplifications, "
+"branch elimination, and other optimizations may assume that this "
+"precondition is met, and may result in incorrect results being returned."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:47
+msgid "If None, the transformation may not introduce padding."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:49
+msgid ""
+"If an int, float or PrimExpr, the transformation is the specific value to"
+" be present in the padding."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:52
+msgid ""
+"If an IndexMap or Callable, the transformation is the value to be present"
+" in the padding in terms of the transformed index."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:56
+msgid ""
+"If set to true, the schedule  primitive will assume the index_map is "
+"injective and skip checking overlapping of the mapped indices. This can "
+"be useful for complicated index_map that the analysis does not cover. It "
+"is the callers' responsibility to ensure the index map is injective, "
+"otherwise, the correctness of the schedule is not guaranteed."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:64
+msgid "Before transform_layout, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:82
+msgid "Create the schedule and do transform_layout:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.transform_layout:91
+msgid "After applying transform_layout, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unannotate:1
+msgid "Unannotate a block/loop's annotation with key ann_key"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unannotate:3
+msgid "The block/loop to be unannotated"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unannotate:10
+msgid "Before unannotate, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unannotate:32
+msgid "After applying unannotate, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unroll:1
+msgid "Unroll the input loop. It requires nothing"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unroll:3
+msgid "The loop to be unrolled"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unroll:8
+msgid "Before unroll, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unroll:21
+msgid "Create the schedule and do unroll:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unroll:29
+msgid "After applying unroll, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:1
+msgid ""
+"Hide some buffer access in a given block. This is an unsafe schedule "
+"primitive."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:3
+msgid "The block where we hide read access."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:5
+msgid "The buffer type: \"read\"/\"write\"."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:7
+msgid "The array of buffer indices we hide access."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_hide_buffer_access:12
+msgid ""
+"This schedule primitive is unsafe, and may fail dependency analysis. One "
+"use case of `unsafe_hide_buffer_access` is to hide the buffer access to "
+"indices buffers (e.g. in sparse computation) so that we can further "
+"tensorize the block (the indices buffers appeared in read/write regions "
+"may fail the pattern matching in `tensorize` primitive, and hide the "
+"access to these buffers could address the issue)."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:1
+msgid ""
+"Set the data type of a buffer, where the buffer is specified by the a "
+"block and write-index."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:4
+msgid ""
+"This schedule primitive is unsafe and may change the correctness of "
+"program because of type conversion, please use with caution."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:11
+msgid "The data type to be set"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:16
+msgid "Before unsafe_set_dtype, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:35
+msgid "Create the schedule and do unsafe_set_dtype:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:43
+msgid "After applying set_dtype, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.unsafe_set_dtype:64
+msgid ""
+"`unsafe_set_dtype` requires the buffer to be an intermediate buffer "
+"defined via `alloc_buffer`."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.vectorize:1
+msgid ""
+"Vectorize the input loop. It requires: 1) The scope block that the loop "
+"is in should have stage-pipeline property 2) All the blocks under the "
+"loop are complete blocks or reduction blocks, and have affine bindings 3)"
+" For each block under the loop, the loop can only be contained in data-"
+"parallel block iters' bindings"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.vectorize:8
+msgid "The loop to be vectorized"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.vectorize:13
+msgid "Before vectorize, in TensorIR, the IR is:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.vectorize:26
+msgid "Create the schedule and do vectorize:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.vectorize:34
+msgid "After applying vectorize, the IR becomes:"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.work_on:1
+msgid "Instruct the schedule to work on a function in the IRModule."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.work_on:3
+msgid ""
+"By default, the schedule works on the function with the name \"main\", or"
+" the only function in the IRModule if there is only one. If there is "
+"multiple functions in the IRModule, and none of their names are \"main\","
+" users will have to call this method to explicitly specify which function"
+" to work on."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.work_on:8
+msgid ""
+"This sugar function will guide the `GetBlock` method if its `func_name` "
+"is not specified."
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.Schedule.work_on:10
+msgid "The name of the function to work on."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleDebugMask:1
+msgid "The bitmask of the `debug_mask` flag in the ScheduleState class."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleDebugMask:3
+msgid ""
+"If the `debug_mask` flag has a certain bit on, then the correpsonding "
+"verification pass will be conducted. For example, if `(debug_mask & "
+"VERIFY_SREF_TREE) != 0`, then the correctness of the sref tree will be "
+"verified after each schedule instruction."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleDebugMask:9
+msgid "Verify the correctness of the sref tree"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleDebugMask:15
+msgid "Verify the correctness of affine_binding, region_cover and stage_pipeline"
+msgstr ""
+
+#: of tvm.tir.schedule.schedule.ScheduleError:1
+msgid "Error that happens during TensorIR scheduling."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState:1
+msgid ""
+"The state of scheduling, which exposes a `Replace` method as the primary "
+"resort for all the scheduling primitives to manipulate the TensorIR."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState:4
+msgid ""
+"The data structure contains the following information 1) The AST being "
+"scheduled (mod) 2) The sref tree of schedulable statements (indicated by "
+"the srefs) 3) The dependency information of each block scope (block_info)"
+" 4) A reverse mapping from the AST nodes to that in the sref tree "
+"(get_sref) 5) A debug flag, if set, extra checking is enabled "
+"(debug_mask) 6) A enable check flag, if False, some prerequisite checks "
+"are disabled."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState:12
+msgid "The AST of the module being scheduled"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState:14
+msgid ""
+"Do extra correctness checking after the object construction and each time"
+" after calling the Replace method."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState:17
+msgid ""
+"Indicates whether we enable prerequisite checks for some schedule "
+"primitives or not, defaults to `True`."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.get_block_scope:1
+msgid "Get the BlockScope correpsonding to the block sref"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.get_block_scope:3
+msgid "The block sref to be retrieved"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.get_block_scope:6
+#: tvm.tir.schedule.state.ScheduleState.get_sref:6
+msgid "**sref** -- The corresponding sref"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.get_sref:1
+msgid "Return the corresponding sref that points to the stmt"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.get_sref:3
+msgid "The schedulable statement in the TensorIR to be retrieved for its sref"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.replace:1
+msgid ""
+"Replace the part of the AST, as being pointed to by `src_sref`, with a "
+"specific statement `tgt_stmt`, and maintain the sref tree accordingly. "
+"Replace will try to perform copy on write as much as possible when the "
+"ScheduleState holds the only copy to the IRModule and IR nodes."
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.replace:6
+msgid ""
+"Only 3 types of replacements are allowed: from `src_sref->stmt` to "
+"`tgt_stmt`. 1) Block -> Block 2) Loop -> Loop 3) Loop -> BlockRealize"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.replace:11
+msgid "The sref to the statement to be replaced in the TensorIR AST"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.replace:13
+msgid "The statement to be replaced to"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.replace:15
+msgid ""
+"Maps an old block (to be replaced in the subtree under `src_sref->stmt`) "
+"to a new block (replaced to, in the subtree under `tgt_stmt`), and "
+"enforces reuse of srefs between them (rather than create new srefs) i.e. "
+"after being replaced, the sref that points to the old block will point to"
+" the new one"
+msgstr ""
+
+#: of tvm.tir.schedule.state.ScheduleState.replace:21
+msgid ""
+"The reuse of loop srefs are detected automatically according to the reuse"
+" of loop vars."
+msgstr ""
+
+#: of tvm.tir.block_scope.StmtSRef:1
+msgid ""
+"An object that refers to schedulable elements in the TensorIR, aka "
+"\"sref\"."
+msgstr ""
+
+#: of tvm.tir.block_scope.StmtSRef:3
+msgid ""
+"Glossary - Block sref: An StmtSref that points to a TensorIR block. - "
+"Loop sref: An StmtSRef that points to a TensorIR for loop. - Parent sref:"
+" The parent sref of an sref is the block/loop sref that points to its "
+"closest schedulable statement of its ancestors on the TensorIR AST. - "
+"Root sref: Sref to the root block. Every sref has exactly one parent sref"
+" except for root sref. - Sref tree: The parent-children-relationship of "
+"srefs that forms a tree, uniquely determined by the TensorIR AST."
+msgstr ""
+
+#: of tvm.tir.block_scope.StmtSRef.inline_mark:1
+msgid ""
+"A special StmtSRef, which doesn't point to any stmt in the AST, only "
+"serving as a \"mark\" to hint compute-at to do the work of compute-inline"
+msgstr ""
+
+#: of tvm.tir.schedule.StmtSRef.parent:1
+msgid "The parent sref"
+msgstr ""
+
+#: of tvm.tir.block_scope.StmtSRef.root_mark:1
+msgid ""
+"A special StmtSRef, which doesn't point to any stmt in the AST, only "
+"serving as a \"mark\" to hint compute-at to do nothing"
+msgstr ""
+
+#: of tvm.tir.schedule.StmtSRef.stmt:1
+msgid "The block/for stmt the object refers to"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:1
+msgid "An execution trace of a scheduling program."
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:3
+msgid ""
+"A trace has two parts: 1) The instructions invoked so far 2) The random "
+"decisions made upon those instructions, if any"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:7
+msgid ""
+"A trace can be serialized to: 1) Roundtrippable JSON format: can be saved"
+" to file and loaded back 2) Python syntax: allows users to copy-paste the"
+" trace to reproduce the scheduling process"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:11
+msgid ""
+"A trace can be applied to a TensorIR schedule by re-applying all its "
+"instructions possibly with their decisions accordingly. Re-sampling is "
+"invoked if a sampling instruction doesn't have its corresponding "
+"decision; Otherwise the existing decision will be reused accordingly."
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:17
+msgid "The instructions invoked so far in the program execution"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:19
+msgid "List[Instruction]"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:23
+msgid "The random decisions made upon those instructions"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace:25
+msgid "Dict[Instruction, DECISION_TYPE]"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.append:1
+msgid "Append a new instruction to the trace"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.append:3
+msgid "The new instruction to be appended"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.append:5
+msgid "The random decision made on this instruction"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_json_to_schedule:1
+msgid "Apply a JSON-serialized trace to a TensorIR schedule"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_json_to_schedule:3
+msgid "The JSON-serialized trace"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_json_to_schedule:5
+msgid "The TensorIR schedule"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_to_schedule:1
+msgid "Apply the trace to a TensorIR schedule"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_to_schedule:3
+msgid "The schedule to be applied onto"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_to_schedule:5
+#: tvm.tir.schedule.trace.Trace.as_json:3
+#: tvm.tir.schedule.trace.Trace.as_python:3
+#: tvm.tir.schedule.trace.Trace.simplified:3
+#: tvm.tir.schedule.trace.Trace.with_decision:8
+msgid "If postprocessing instructions are removed"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.apply_to_schedule:7
+msgid ""
+"A callback that allows users to mutate decisions on the fly when applying"
+" instructions. The signature of the callback is: - The 1st argument: The "
+"instruction - The 2nd argument: The input random variables - The 3rd "
+"argument: The attributes - The 4th argument: The decision - Return: A new"
+" decision"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.as_json:1
+msgid "Serialize the trace as a JSON-style object"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.as_json:6
+msgid "**json** -- The JSON-style object"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.as_python:1
+msgid "Serialize the trace as a sequence of python statements"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.as_python:6
+msgid "**py_stmts** -- A sequence of python statements"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.get_decision:1
+msgid "Retrieve the decision made on a specific instruction"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.get_decision:3
+msgid "The instruction whose decision is to be retrieved"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.get_decision:6
+msgid ""
+"**decision** -- The corresponding decision; None if there is no decision "
+"made on the instruction"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.pop:1
+msgid ""
+"Remove the last instruction, along with the decision made on that "
+"instruction, if any"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.pop:3
+msgid ""
+"**popped_inst** -- Returns the instruction removed; std::nullopt if the "
+"trace is empty"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.show:3
+msgid ""
+"Pygmentize printing style, auto-detected if None.  See "
+"`tvm.script.highlight.cprint` for more details."
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.show:6
+msgid ""
+"If true, use the formatter Black to format the TVMScript. If None, "
+"determine based on the \"TVM_BLACK_FORMAT\" environment variable."
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.simplified:1
+msgid "Simplify the trace with dead-code elimination"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.simplified:6
+msgid "**trace** -- A simplified trace"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.with_decision:1
+msgid ""
+"Create a new trace with an instruction whose decision is changed, "
+"assuming this instruction exists in the resulting trace"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.with_decision:4
+msgid "The instruction whose decision is to be changed"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.with_decision:6
+msgid "The decision to be changed to"
+msgstr ""
+
+#: of tvm.tir.schedule.trace.Trace.with_decision:11
+msgid "**trace** -- The new trace with the decision changed"
+msgstr ""
+
+#~ msgid "Namespace for the TensorIR schedule API."
+#~ msgstr ""
+
+#~ msgid "A random variable that refers to a block"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An object corresponds to each block "
+#~ "sref in the sref tree, which "
+#~ "tracks the producer-consumer dependency "
+#~ "between blocks."
+#~ msgstr ""
+
+#~ msgid "Glossary:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Block scope: A contiguous subtree of "
+#~ "the sref tree, rooted at each "
+#~ "block sref, whose components are:"
+#~ msgstr ""
+
+#~ msgid "scope root: a block sref"
+#~ msgstr ""
+
+#~ msgid "internal srefs: loop srefs"
+#~ msgstr ""
+
+#~ msgid "scope leaves: block srefs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Child block: The scope leaf blocks "
+#~ "under the scope root or a specific"
+#~ " internal sref"
+#~ msgstr ""
+
+#~ msgid "Get all dependencies whose `dst` is the target `block`."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The queried block"
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**blocks** -- The dependencies"
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Get all dependencies whose `src` is the target`block`."
+#~ msgstr ""
+
+#~ msgid "Type of dependency."
+#~ msgstr ""
+
+#~ msgid "Read-after-write dependency"
+#~ msgstr ""
+
+#~ msgid "type"
+#~ msgstr ""
+
+#~ msgid "int = 0"
+#~ msgstr ""
+
+#~ msgid "Write-after-write dependency"
+#~ msgstr ""
+
+#~ msgid "int = 1"
+#~ msgstr ""
+
+#~ msgid "Write-after-read dependency. Not supported in TensorIR for now."
+#~ msgstr ""
+
+#~ msgid "int = 2"
+#~ msgstr ""
+
+#~ msgid "Opaque dependency"
+#~ msgstr ""
+
+#~ msgid "int = 3"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A tuple (src, dst, kind) representing"
+#~ " certain types of dependency. For "
+#~ "example, (A, B, kRAW) means block "
+#~ "B depends on block A, and the "
+#~ "dependency kind is read-after-write, "
+#~ "which means block B reads the "
+#~ "result written by block A."
+#~ msgstr ""
+
+#~ msgid "The source of the dependency relation"
+#~ msgstr ""
+
+#~ msgid "The destination of the dependency relation"
+#~ msgstr ""
+
+#~ msgid "The dependency kind"
+#~ msgstr ""
+
+#~ msgid "Schedule instructions each corresponds to a schedule primitive"
+#~ msgstr ""
+
+#~ msgid "The kind of the instruction"
+#~ msgstr ""
+
+#~ msgid "InstructionKind"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input random variables of the "
+#~ "instruction, and the type of each "
+#~ "element can be one of the "
+#~ "following: - BlockRV - LoopRV - "
+#~ "ExprRV - float - int - str -"
+#~ " None"
+#~ msgstr ""
+
+#~ msgid "List[INPUT_RV_TYPE]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The attributes of the instruction. "
+#~ "Similar to attributes of an operator,"
+#~ " attributes of an instruction are "
+#~ "arbitrary constant metadata required by "
+#~ "the instructions. For example, the name"
+#~ " of the block to be retrieved "
+#~ "in `GetBlock`."
+#~ msgstr ""
+
+#~ msgid "List[ATTR_TYPE]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output random variables of the "
+#~ "instruction, and the type of each "
+#~ "element can be one of the "
+#~ "following: - BlockRV - LoopRV - "
+#~ "ExprRV, atomic variables only, won't be"
+#~ " constants or composite PrimExpr"
+#~ msgstr ""
+
+#~ msgid "List[OUTPUT_RV_TYPE]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Kind of an instruction, e.g. Split, "
+#~ "Reorder, etc. Besides the name, every"
+#~ " kind of instruction has its own "
+#~ "properties, including: 1) A boolean "
+#~ "indicating if the instruction is pure,"
+#~ " i.e. change nothing in the schedule"
+#~ " state 2) A functor that applies "
+#~ "the instruction to a TensorIR schedule"
+#~ " 3) A functor that converts the "
+#~ "instruction to a statement in python "
+#~ "syntax 4) A functor that serialize "
+#~ "its attributes to JSON 5) A "
+#~ "functor that deserialize its attributes "
+#~ "from JSON"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unlike `tvm.ir.op`, `InstructionKind` doesn't "
+#~ "support unstructured properties, mainly "
+#~ "because there is no such usecase "
+#~ "yet to add any other property."
+#~ msgstr ""
+
+#~ msgid "The name of a kind of instructions"
+#~ msgstr ""
+
+#~ msgid "str"
+#~ msgstr ""
+
+#~ msgid "The functor properties are not exposed on python side at the moment"
+#~ msgstr ""
+
+#~ msgid "Retrieve an InstructionKind using its name"
+#~ msgstr ""
+
+#~ msgid "The registered name of the InstructionKind"
+#~ msgstr ""
+
+#~ msgid "**kind** -- The InstructionKind retrieved"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Indicates if the instruction is pure,"
+#~ " i.e. removing it alone doesn't "
+#~ "mutate the schedule state. For example,"
+#~ " the instruction `GetBlock` is pure "
+#~ "because it changes nothing, while "
+#~ "`ComputeInline` is not because removing "
+#~ "it leads to a different resulting "
+#~ "schedule."
+#~ msgstr ""
+
+#~ msgid "**pure** -- The boolean flag indicating if the instruction is pure"
+#~ msgstr ""
+
+#~ msgid "A random variable that refers to a loop"
+#~ msgstr ""
+
+#~ msgid "The user-facing schedule class"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A schedule is a set of "
+#~ "transformations that change the order of"
+#~ " computation but preserve the semantics "
+#~ "of computation. Some example of "
+#~ "schedules: 1) Split a loop into "
+#~ "two; 2) Reorder two loops; 3) "
+#~ "Inline the computation of a specific "
+#~ "buffer into its consumer"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The schedule class stores auxiliary "
+#~ "information to schedule correctly and "
+#~ "efficiently."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Link to tutorial: "
+#~ "https://tvm.apache.org/docs/tutorials/language/schedule_primitives.html"
+#~ msgstr ""
+
+#~ msgid "Create a new unit loop on top of the specific block or loop."
+#~ msgstr ""
+
+#~ msgid "The block above which the new loop is created"
+#~ msgstr ""
+
+#~ msgid "**new_loop** -- The new unit loop"
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Before add_unit_loop, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do add-unit-loop:"
+#~ msgstr ""
+
+#~ msgid "After applying add-unit-loop, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Annotate a block/loop with a key value pair"
+#~ msgstr ""
+
+#~ msgid "The block/loop to be annotated"
+#~ msgstr ""
+
+#~ msgid "The annotation key"
+#~ msgstr ""
+
+#~ msgid "The annotation value"
+#~ msgstr ""
+
+#~ msgid "Before annotate, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do annotate:"
+#~ msgstr ""
+
+#~ msgid "After applying annotate, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Annotate the read or write region of a block"
+#~ msgstr ""
+
+#~ msgid "The block to be annotated"
+#~ msgstr ""
+
+#~ msgid "The index of the buffer in block's read or write region"
+#~ msgstr ""
+
+#~ msgid "The buffer type: \"read\" or \"write\""
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A function that takes the block's "
+#~ "iter_vars and returns a Tuple[Union[PrimExpr,"
+#~ " Tuple[PrimExpr, PrimExpr]], ...] which "
+#~ "defines the new read or write "
+#~ "region for the buffer. Each element "
+#~ "in the tuple can be: - A "
+#~ "single PrimExpr representing the iter_var "
+#~ "itself - A tuple of two PrimExprs"
+#~ " representing the range (begin, end)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Annotate a 2D read region for a"
+#~ " buffer. Before annotate_buffer_access, in "
+#~ "TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do annotate_buffer_access:"
+#~ msgstr ""
+
+#~ msgid "After applying annotate_buffer_access, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This annotates the read region for "
+#~ "buffer A (index 0) in block \"B\""
+#~ " to be [vi-1:vi+1, vj-1:vj+1] for "
+#~ "each (vi, vj) in the block's "
+#~ "iteration domain."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function allows manual specification "
+#~ "of read or write regions, which "
+#~ "can be useful in cases where the"
+#~ " compiler cannot accurately infer the "
+#~ "access pattern, such as complex data-"
+#~ "dependent accesses. It overrides the "
+#~ "automatically inferred region for the "
+#~ "specified buffer. The function adds an"
+#~ " annotation to the block, indicating "
+#~ "that an explicit region has been "
+#~ "provided for the buffer at the "
+#~ "given index. This annotation is used "
+#~ "in the CompactBufferAllocation pass to "
+#~ "respect the manually specified region "
+#~ "instead of relying on automatic "
+#~ "inference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Caution should be exercised when using"
+#~ " this function, as incorrect annotations"
+#~ " may lead to incorrect code "
+#~ "generation or runtime errors. It's "
+#~ "crucial to ensure that the specified "
+#~ "region covers all actual reads or "
+#~ "writes performed by the block for "
+#~ "the given buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bind the input loop to the given"
+#~ " thread axis. It requires: 1) The "
+#~ "scope block that the loop is in"
+#~ " should have stage-pipeline property "
+#~ "2) All the blocks under the loop"
+#~ " are complete blocks or reduction "
+#~ "blocks, and have affine bindings 3) "
+#~ "For each block under the loop, if"
+#~ " the thread axis starts with "
+#~ "\"threadIdx`, the loop can only be "
+#~ "contained in data-parallel block iter"
+#~ " and reduction block iters' bindings. "
+#~ "Otherwise the loop can only be "
+#~ "contained in data-parallel block iters'"
+#~ " bindings"
+#~ msgstr ""
+
+#~ msgid "The loop to be bound to the thread axis"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The thread axis to be bound to "
+#~ "the loop. Possible candidates: - "
+#~ "blockIdx.x/y/z - threadIdx.x/y/z - "
+#~ "vthread.x/y/z - vthread (It is a "
+#~ "legacy behavior that will be deprecated."
+#~ " Please use `vthread.x/y/z` instead.)"
+#~ msgstr ""
+
+#~ msgid "Before bind, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do bind:"
+#~ msgstr ""
+
+#~ msgid "After applying bind, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert multiple blocks or the subtree"
+#~ " rooted at a specific loop into "
+#~ "a block."
+#~ msgstr ""
+
+#~ msgid "The root of the subtree or the specified blocks."
+#~ msgstr ""
+
+#~ msgid "Whether or not to preserve unit iterators in block bindings"
+#~ msgstr ""
+
+#~ msgid "**result** -- The new block."
+#~ msgstr ""
+
+#~ msgid "Before blockize, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do set_scope:"
+#~ msgstr ""
+
+#~ msgid "After applying blockize, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "blockize requires there is exactly one"
+#~ " block under the given loop and "
+#~ "the bindings of the block are "
+#~ "divisible by the subspace represented by"
+#~ " the loops starting at the given "
+#~ "loop."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a block to cache precomputed "
+#~ "index for later use. if there is"
+#~ " no index computation, keep unchanged."
+#~ msgstr ""
+
+#~ msgid "The target block operates on the target buffer."
+#~ msgstr ""
+
+#~ msgid "The storage scope of cached block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The repeat threshold that determines a"
+#~ " common sub expr, default 0 means "
+#~ "cache all index computation."
+#~ msgstr ""
+
+#~ msgid "**cached_blocks** -- The blocks of the stage writing the cache buffers"
+#~ msgstr ""
+
+#~ msgid "Before cache_inplace, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and cache_index:"
+#~ msgstr ""
+
+#~ msgid "After applying cache_index, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create blocks that reads & write a"
+#~ " buffer region into a cache block."
+#~ " It requires the target block both"
+#~ " read & write the target buffer. "
+#~ "Mainly for inplace operation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The index of the buffer in block's"
+#~ " read region, the unique name of "
+#~ "a read buffer in the block, or "
+#~ "a Buffer object that is within the"
+#~ " blocks read region."
+#~ msgstr ""
+
+#~ msgid "The target storage scope."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**cached_blocks** -- The blocks of the"
+#~ " cache stage, read cache first, write"
+#~ " cache second"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and cache_inplace:"
+#~ msgstr ""
+
+#~ msgid "After applying cache_inplace, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a block that reads a buffer"
+#~ " region into a read cache. It "
+#~ "requires:"
+#~ msgstr ""
+
+#~ msgid "There is at most one block who write the buffer in the scope."
+#~ msgstr ""
+
+#~ msgid "The scope block have stage-pipeline property."
+#~ msgstr ""
+
+#~ msgid "The consumer block of the target buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An optional list of consumers that "
+#~ "should read from the cache. If not"
+#~ " specified, all consumers will use "
+#~ "the cache."
+#~ msgstr ""
+
+#~ msgid "**cached_block** -- The block of the cache stage"
+#~ msgstr ""
+
+#~ msgid "Before cache_read, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and cache_read:"
+#~ msgstr ""
+
+#~ msgid "After applying cache_read, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a block that reads a buffer"
+#~ " region into a write cache. It "
+#~ "requires:"
+#~ msgstr ""
+
+#~ msgid "There is only one block who write the buffer in the scope."
+#~ msgstr ""
+
+#~ msgid "The producer block of the target buffer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The index of the buffer in block's"
+#~ " write region, the unique name of "
+#~ "a write buffer in the block, or"
+#~ " a Buffer object that is within "
+#~ "the blocks write region."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An optional list of consumers that "
+#~ "should read directly from the cache. "
+#~ "If not specified, all consumers will "
+#~ "read from the original buffer."
+#~ msgstr ""
+
+#~ msgid "Before cache_write, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and cache_write:"
+#~ msgstr ""
+
+#~ msgid "After applying cache_write, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Check whether the block match padding pattern and can be decomposed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Compute-At. Move a producer block "
+#~ "under the specific loop, and regenerate"
+#~ " the loops induced by the block "
+#~ "so that the buffer region produced "
+#~ "by the producer block could cover "
+#~ "those regions consumed by its consumer"
+#~ " blocks under the given loop. It "
+#~ "requires:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`block` and `loop` are under the "
+#~ "same scope, `loop` is not the "
+#~ "ancestor of `block`"
+#~ msgstr ""
+
+#~ msgid "The scope block has stage-pipeline property"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3) The subtree of the scope block,"
+#~ " where the given block is in, "
+#~ "satisfies the compact dataflow condition. "
+#~ "i.e. all the blocks in the scope"
+#~ " block's subtree must be either "
+#~ "complete block or reduction block"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "4) The block is not an output "
+#~ "block with regard to the scope "
+#~ "block, i.e. the buffers written by "
+#~ "the block are allocated under the "
+#~ "scope block"
+#~ msgstr ""
+
+#~ msgid "All the consumers of the block are under the given loop"
+#~ msgstr ""
+
+#~ msgid "The block to be moved"
+#~ msgstr ""
+
+#~ msgid "The loop where the block to be moved under"
+#~ msgstr ""
+
+#~ msgid "Whether to keep the trivial loops whose extents are 1"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The block index of the loop body"
+#~ " subtree blocks: - `index = -1` "
+#~ "means inserted into the last possible"
+#~ " insertion point; - `index = -2` "
+#~ "means inserted into the first possible"
+#~ " insertion point; - Otherwise, `index` "
+#~ "is a nonnegative number that indicates"
+#~ " the insertion point"
+#~ msgstr ""
+
+#~ msgid "Before compute-at, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do compute-at:"
+#~ msgstr ""
+
+#~ msgid "After applying compute-at, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Inline a block into its consumer(s). It requires:"
+#~ msgstr ""
+
+#~ msgid "The block is a complete non-root block, which only produces one buffer"
+#~ msgstr ""
+
+#~ msgid "The block must not be the only leaf in the scope."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The body of the block must be "
+#~ "a BufferStore statement in the form "
+#~ "of, ``A[i, j, k, ...] = ...`` "
+#~ "where the indices of the LHS are"
+#~ " all distinct atomic variables, and "
+#~ "no variables other than those indexing"
+#~ " variables are allowed in the "
+#~ "statement."
+#~ msgstr ""
+
+#~ msgid "The block to be inlined to its consumer(s)"
+#~ msgstr ""
+
+#~ msgid "Before compute-inline, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do compute-inline:"
+#~ msgstr ""
+
+#~ msgid "After applying compute-inline, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns a copy of the schedule, "
+#~ "including both the state and the "
+#~ "symbol table, * guaranteeing that * "
+#~ "1) SRef tree is completely "
+#~ "reconstructed; * 2) The IRModule being"
+#~ " scheduled is untouched; * 3) All "
+#~ "the random variables are valid in "
+#~ "the copy, pointing to the corresponding"
+#~ " sref * reconstructed"
+#~ msgstr ""
+
+#~ msgid "**copy** -- A new copy of the schedule"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Decompose a block of padding computation"
+#~ " pattern into two separate blocks."
+#~ msgstr ""
+
+#~ msgid "The block which fill const pad values into full write region;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The block which fill in-bound "
+#~ "values into region where pad predicate"
+#~ " is true."
+#~ msgstr ""
+
+#~ msgid "The pad value filling block is inserted right before the given loop."
+#~ msgstr ""
+
+#~ msgid "The schedule primitive requires:"
+#~ msgstr ""
+
+#~ msgid "The input block is a complete block."
+#~ msgstr ""
+
+#~ msgid "The input loop is the ancestor of the block."
+#~ msgstr ""
+
+#~ msgid "The input block is a block which match padding pattern."
+#~ msgstr ""
+
+#~ msgid "The padding block to be decomposed."
+#~ msgstr ""
+
+#~ msgid "The loop above which the pad value filling block is inserted before."
+#~ msgstr ""
+
+#~ msgid "**pad_value_block** -- The block filling const pad values."
+#~ msgstr ""
+
+#~ msgid "Before decompose-padding, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do decompose-padding with specified loop:"
+#~ msgstr ""
+
+#~ msgid "After applying decompose-padding, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Decompose a reduction block into two separate blocks."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The init block, which is translated "
+#~ "from the init statement of the "
+#~ "reduction block;"
+#~ msgstr ""
+
+#~ msgid "The update block, which is the original block without init statement."
+#~ msgstr ""
+
+#~ msgid "The init block is inserted right before the given loop."
+#~ msgstr ""
+
+#~ msgid "The input block is a reduction block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input loop is not lower than"
+#~ " all the loops related to reduce "
+#~ "block var."
+#~ msgstr ""
+
+#~ msgid "The reduction block to be decomposed"
+#~ msgstr ""
+
+#~ msgid "The loop above which the init block is inserted before."
+#~ msgstr ""
+
+#~ msgid "**init_block** -- The init block"
+#~ msgstr ""
+
+#~ msgid "Before decompose-reduction, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do decompose-reduction with specified loop:"
+#~ msgstr ""
+
+#~ msgid "After applying decompose-reduction, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "A no-op that marks the start of postprocessing phase of scheduling"
+#~ msgstr ""
+
+#~ msgid "Returns a forked random state as seed for new schedules"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**seed** -- The forked random state, "
+#~ "not the same as the current random"
+#~ " state"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the GlobalVar of the func "
+#~ "that the schedule is currently working"
+#~ " on"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fuse a list of consecutive loops "
+#~ "into one. It requires: 1) The "
+#~ "loops can't have annotations or thread"
+#~ " bindings. 2) The (i+1)-th loop must"
+#~ " be the only child of the i-th"
+#~ " loop. 3) All loops must start "
+#~ "with 0. 4) The domain of a "
+#~ "loop to be fused cannot depend on"
+#~ " another loop to be fused."
+#~ msgstr ""
+
+#~ msgid "The loops to be fused"
+#~ msgstr ""
+
+#~ msgid "**fused_loop** -- The new loop after fusion"
+#~ msgstr ""
+
+#~ msgid "Before applying fuse, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do fuse:"
+#~ msgstr ""
+
+#~ msgid "After applying fuse, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns: - the corresponding Block that"
+#~ " a BlockRV evaluates to; - the "
+#~ "corresponding For that a LoopRV "
+#~ "evaluates to; - the corresponding "
+#~ "integer that a ExprRV evaluates to; "
+#~ "- the corresponding Block that a "
+#~ "block sref points to; - the "
+#~ "corresponding For that a loop sref "
+#~ "points to;"
+#~ msgstr ""
+
+#~ msgid "The random variable / sref to be evaluated"
+#~ msgstr ""
+
+#~ msgid "**result** -- The corresponding result"
+#~ msgstr ""
+
+#~ msgid "Retrieve a block in a specific function with its name"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By default, if `func_name` is not "
+#~ "specified, the schedule will search for"
+#~ " the block in the function that "
+#~ "is currently being \"worked on\". To "
+#~ "switch the function to be worked "
+#~ "on, use `work_on` before calling this"
+#~ " method."
+#~ msgstr ""
+
+#~ msgid "The name of the block"
+#~ msgstr ""
+
+#~ msgid "The name of the function"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**block** -- The block retrieved "
+#~ "IndexError is raised if 0 or "
+#~ "multiple blocks exist with the specific"
+#~ " name."
+#~ msgstr ""
+
+#~ msgid "Get the leaf blocks of a specific block/loop"
+#~ msgstr ""
+
+#~ msgid "The query block/loop"
+#~ msgstr ""
+
+#~ msgid "**blocks** -- A list of leaf blocks inside a specific block/loop"
+#~ msgstr ""
+
+#~ msgid "Get the consumers of a specific block"
+#~ msgstr ""
+
+#~ msgid "The block in the query"
+#~ msgstr ""
+
+#~ msgid "**consumers** -- A list of consumers of the given block"
+#~ msgstr ""
+
+#~ msgid "Get the parent loops of the block in its scope, from outer to inner"
+#~ msgstr ""
+
+#~ msgid "The query block"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**loops** -- A list of loops above"
+#~ " the given block in its scope, "
+#~ "from outer to inner"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the list of output blocks "
+#~ "within the given scope An output "
+#~ "block is a block which has atleast"
+#~ " one buffer being written to, but "
+#~ "is not allocated within the PrimFunc"
+#~ msgstr ""
+
+#~ msgid "The scope block from which output blocks are collected"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**output_blocks** -- A list of all "
+#~ "blocks that write to some output "
+#~ "buffer"
+#~ msgstr ""
+
+#~ msgid "Get the producers of a specific block"
+#~ msgstr ""
+
+#~ msgid "**producers** -- A list of producers of the given block"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the corresponding sref to the"
+#~ " given 1) LoopRV 2) BlockRV 3) "
+#~ "Block 4) For"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Partition a loop into a list of"
+#~ " consecutive loops. It requires: 1) "
+#~ "The loop can't have annotation or "
+#~ "thread binding. Predicates may be added"
+#~ " to ensure the total loop numbers "
+#~ "keeps unchanged. In `factors`, at most"
+#~ " one of the factors can be "
+#~ "None, which will be automatically "
+#~ "inferred."
+#~ msgstr ""
+
+#~ msgid "The loop to be partition"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The partitioning factors Potential inputs "
+#~ "are: - None - ExprRV - Positive"
+#~ " constant integers"
+#~ msgstr ""
+
+#~ msgid "**partition_loops** -- The new loops after partition"
+#~ msgstr ""
+
+#~ msgid "Before partition, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do partition:"
+#~ msgstr ""
+
+#~ msgid "After applying partition, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Merge a list of loops into one."
+#~ " The loops under their LCA requires:"
+#~ " 1) Under the same scope. 2) "
+#~ "Can't have annotations or thread "
+#~ "bindings. 3) Start with 0 and have"
+#~ " same extent and same nesting depth."
+#~ " 4) From target loop to their "
+#~ "LCA, The inner loop must be the"
+#~ " only child of the outer loop."
+#~ msgstr ""
+
+#~ msgid "The loops to be merged"
+#~ msgstr ""
+
+#~ msgid "**fused_loop** -- The new loop after merge"
+#~ msgstr ""
+
+#~ msgid "Before applying merge, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Returns the AST of the module being scheduled"
+#~ msgstr ""
+
+#~ msgid "Pad the computation of Einsum."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On a block with trivial binding, "
+#~ "this primitive pads the iteration domain"
+#~ " of the block by the given "
+#~ "padding factors, for example, 127 -> "
+#~ "128, 132 -> 144 when padding "
+#~ "factor is 16. Extra producer and "
+#~ "consumer padding blocks will be "
+#~ "generated to avoid out-of-bound "
+#~ "buffer access."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Einsum pattern means all the indices "
+#~ "on the buffer access are either by"
+#~ " constants (e.g. B[0]) or by "
+#~ "variables (e.g. B[i]), but not by "
+#~ "composite expressions (e.g. B[i + 1])."
+#~ msgstr ""
+
+#~ msgid "The block that matches the Einsum pattern."
+#~ msgstr ""
+
+#~ msgid "The padding for each block iter."
+#~ msgstr ""
+
+#~ msgid "Before applying pad-einsum, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do pad-einsum with specified block:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Parallelize the input loop. It requires:"
+#~ " 1) The scope block that the "
+#~ "loop is in should have stage-"
+#~ "pipeline property 2) All the blocks "
+#~ "under the loop are complete blocks "
+#~ "or reduction blocks, and have affine "
+#~ "bindings 3) For each block under "
+#~ "the loop, the loop can only be "
+#~ "contained in data-parallel block iters'"
+#~ " bindings"
+#~ msgstr ""
+
+#~ msgid "The loop to be parallelized"
+#~ msgstr ""
+
+#~ msgid "Before parallel, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do parallel:"
+#~ msgstr ""
+
+#~ msgid "After applying parallel, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a block that read/write a "
+#~ "buffer region into a read/write cache"
+#~ " with reindexing. The layout of the"
+#~ " cache will be the same as by"
+#~ " the iterators of the block that "
+#~ "reads/writes the buffer. It requires: 1)"
+#~ " There is only one block who "
+#~ "reads/writes the target buffer 2) There"
+#~ " is only one buffer load/store of "
+#~ "this buffer in the block"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The block that accesses the target "
+#~ "buffer.  If a string, this must "
+#~ "uniquely identify a block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The buffer to be transformed, or a"
+#~ " specification of how to identify the"
+#~ " buffer to be transformed.  If "
+#~ "`buffer` if a tuple of ``(str,int)``,"
+#~ " the first item should be either "
+#~ "\"read\" or \"write\", and the second"
+#~ " item is an index into the "
+#~ "block's read or write regions.  If "
+#~ "`buffer` is a string, it is the"
+#~ " name of the buffer, which must "
+#~ "exist within the reads/writes of the "
+#~ "block.  In addition, the reads/writes of"
+#~ " the block may not contain more "
+#~ "than one buffer with this name.  "
+#~ "If `buffer` is a Buffer object, it"
+#~ " must exist within the reads/writes "
+#~ "of the block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The buffer to be transformed, or a"
+#~ " specification of how to identify the"
+#~ " buffer to be transformed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `buffer` if a tuple of "
+#~ "``(str,int)``, the first item should be"
+#~ " either \"read\" or \"write\", and "
+#~ "the second item is an index into"
+#~ " the block's read or write regions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `buffer` is a string, it is "
+#~ "the name of the buffer, which must"
+#~ " exist within the reads/writes of the"
+#~ " block.  In addition, the reads/writes "
+#~ "of the block may not contain more"
+#~ " than one buffer with this name."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `buffer` is a Buffer object, it"
+#~ " must exist within the reads/writes "
+#~ "of the block."
+#~ msgstr ""
+
+#~ msgid "**reindex_block** -- The block of the reindex stage"
+#~ msgstr ""
+
+#~ msgid "Before reindex, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do reindex:"
+#~ msgstr ""
+
+#~ msgid "After applying reindex, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a block that reads a buffer"
+#~ " region into a read cache using "
+#~ "customized indices specified by index "
+#~ "map. The read region of the buffer"
+#~ " must be a single point."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The cache stage block follows the "
+#~ "original order of loops and block "
+#~ "itervars in the block. If a block"
+#~ " itervar does not appear in the "
+#~ "buffer access region, it and its "
+#~ "corresponding loop variables will be "
+#~ "omitted. User can then use "
+#~ "`transform_block_layout` primitive to reorder "
+#~ "the block itervars and surrounding loops"
+#~ " of the cache read/write block."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unlike `cache_read`, `reindex_cache_read` only "
+#~ "supports single consumer, please use "
+#~ "`cache_read` when there are multiple "
+#~ "consumers."
+#~ msgstr ""
+
+#~ msgid "The index of the buffer in block's read region."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "User defined indices to access allocated"
+#~ " cache buffer, maps from block iter"
+#~ " vars."
+#~ msgstr ""
+
+#~ msgid "Before reindex_cache_read, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and reindex_cache_read:"
+#~ msgstr ""
+
+#~ msgid "After applying reindex_cache_read, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`reindex_cache_write`, :obj:`transform_block_layout`, "
+#~ ":obj:`transform_layout`, :obj:`cache_read`, :obj:`reindex`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a block that reads a buffer"
+#~ " region into a write cache using "
+#~ "customized indices specified by index "
+#~ "map. The write region of the "
+#~ "buffer must be a single point."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unlike `cache_write`, `reindex_cache_write` only "
+#~ "supports single consumer, please use "
+#~ "`cache_write` when there are multiple "
+#~ "consumers."
+#~ msgstr ""
+
+#~ msgid "The index of the buffer in block's write region."
+#~ msgstr ""
+
+#~ msgid "Before reindex_cache_write, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and reindex_cache_write:"
+#~ msgstr ""
+
+#~ msgid "After applying reindex_cache_write, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`reindex_cache_read`, :obj:`transform_block_layout`, "
+#~ ":obj:`transform_layout`, :obj:`cache_write`, "
+#~ ":obj:`reindex`"
+#~ msgstr ""
+
+#~ msgid "Remove a random variable from the symbol table"
+#~ msgstr ""
+
+#~ msgid "The random variable to be removed"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reorder a list of loops. It "
+#~ "doesn't require the loops to be "
+#~ "consecutive. It requires: 1) The loops"
+#~ " are in the same chain. That "
+#~ "means: the loops can be ordered to"
+#~ " [l_1, l_2, ... , l_n] where "
+#~ "l_i is an ancestor of l_{i+1} and"
+#~ " there are only single-branch loops"
+#~ " between l_1 and l_n (which also "
+#~ "indicates they are under the same "
+#~ "scope). 2) After reordering, the domain"
+#~ " of an outer loop cannot depend "
+#~ "on any of the inner loops. 3) "
+#~ "For every block under the loop "
+#~ "nests, its block binding must be "
+#~ "affine, and the block variables must "
+#~ "be either data parallel or reduction."
+#~ " 4) No duplicated loops are allowed"
+#~ " in the arguments."
+#~ msgstr ""
+
+#~ msgid "The loops in the new order"
+#~ msgstr ""
+
+#~ msgid "Before reorder, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do reorder:"
+#~ msgstr ""
+
+#~ msgid "After applying reorder, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Reorder the itervars inside a given block."
+#~ msgstr ""
+
+#~ msgid "The block to be transformed."
+#~ msgstr ""
+
+#~ msgid "The new block itervar order."
+#~ msgstr ""
+
+#~ msgid "Before reorder_block_iter_var, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do reorder_block_iter_var:"
+#~ msgstr ""
+
+#~ msgid "After applying reorder_block_iter_var, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ":obj:`reorder`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reverse-Compute-At. Move a consumer "
+#~ "block under the specific loop, and "
+#~ "regenerate the loops induced by the "
+#~ "block so that the buffer region "
+#~ "consumed by the consumer block could "
+#~ "cover those regions produced by its "
+#~ "producer blocks under the given loop."
+#~ " It requires:"
+#~ msgstr ""
+
+#~ msgid "All the producers of the block are under the given loop"
+#~ msgstr ""
+
+#~ msgid "Before reverse-compute-at, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do reverse-compute-at:"
+#~ msgstr ""
+
+#~ msgid "After applying reverse-compute-at, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Inline a block into its only producer. It requires:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The block is a complete non-root"
+#~ " block, which only produces and "
+#~ "consumes one buffer"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The only producer of the block is"
+#~ " a read-after-write producer and "
+#~ "a complete non-root block"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The body of the block must be "
+#~ "a BufferStore statement in the form "
+#~ "of, ``B[f(i, j, k, ...)] = g(i,"
+#~ " j, k, A[i, j, k, ...] ...)``"
+#~ " where the indices of each "
+#~ "`BufferLoad` on the RHS are all "
+#~ "distinct atomic variables, and no "
+#~ "variables other than those indexing "
+#~ "variables are allowed in the statement."
+#~ msgstr ""
+
+#~ msgid "The block to be inlined to its producer"
+#~ msgstr ""
+
+#~ msgid "Before reverse-compute-inline, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do reverse-compute-inline:"
+#~ msgstr ""
+
+#~ msgid "After applying reverse-compute-inline, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Factorize an associative reduction block by the specified loop."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An associative reduction cannot be "
+#~ "parallelized directly, because it leads "
+#~ "to potential race condition during "
+#~ "accumulation. Alternatively, the reduction "
+#~ "could be factorized on a loop with"
+#~ " the following steps: - Step 1: "
+#~ "evenly slice the reduction into `n` "
+#~ "separate chunks, where `n` is the "
+#~ "loop extent - Step 2: compute the"
+#~ " chunks separately and write the "
+#~ "result into `n` intermediate buffers; -"
+#~ " Step 3: accumulate the `n` separate"
+#~ " buffer into the result buffer. Note"
+#~ " that the Step 2 above introduces "
+#~ "opportunities for parallelization."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "RFactor is a schedule primitive that "
+#~ "implements the transformation described above:"
+#~ " Given a block that writes to "
+#~ "buffer `B`, it factorizes a loop "
+#~ "of extent `n`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For example, the pseudocode below "
+#~ "accumulates `B[i] = sum(A[i, : , :"
+#~ " ])`:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Suppose RFactor is applied on the "
+#~ "innermost loop `k` and `factor_axis ="
+#~ " 1`. RFactor then creates an "
+#~ "intermediate buffer and two blocks."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "1. The intermediate buffer, or \"rf-"
+#~ "buffer\" is a buffer of rank "
+#~ "`ndim(B) + 1` and size `size(B) *"
+#~ " n`, whose shape expands from "
+#~ "`shape(B)` by adding an axis of "
+#~ "`n` at the position specified by "
+#~ "`factor_axis`. For example,"
+#~ msgstr ""
+
+#~ msgid "shape(B) = [1, 2, 3], factor_axis = 0  => shape(B_rf) = [n, 1, 2, 3]"
+#~ msgstr ""
+
+#~ msgid "shape(B) = [1, 2, 3], factor_axis = 1  => shape(B_rf) = [1, n, 2, 3]"
+#~ msgstr ""
+
+#~ msgid "shape(B) = [1, 2, 3], factor_axis = 2  => shape(B_rf) = [1, 2, n, 3]"
+#~ msgstr ""
+
+#~ msgid "shape(B) = [1, 2, 3], factor_axis = 3  => shape(B_rf) = [1, 2, 3, n]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "2. The rfactor block, or \"rf-"
+#~ "block\", is a block that writes to"
+#~ " the `rf-buffer` without accumulating "
+#~ "over the loop `k`, i.e. the loop"
+#~ " `k` is converted from a reduction"
+#~ " loop to a data parallel loop. "
+#~ "In our example, the rf-block is:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3. The write-back block, or "
+#~ "`wb-block`, is a block that "
+#~ "accumulates the rf-buffer into the "
+#~ "result buffer. All the reduction loops"
+#~ " are removed except the loop `k` "
+#~ "for accumulation. In our example, the"
+#~ " wb-block is:"
+#~ msgstr ""
+
+#~ msgid "The loop outside block for which we want to do rfactor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The position where the new dimension "
+#~ "is placed in the new introduced "
+#~ "rfactor buffer"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**rf_block** -- The block which computes"
+#~ " partial results over each slices "
+#~ "(i.e., the first block as described "
+#~ "in the above illustration)"
+#~ msgstr ""
+
+#~ msgid "Before rfactor, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do rfactor:"
+#~ msgstr ""
+
+#~ msgid "After applying rfactor, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rfactor requires: 1) `loop` has only "
+#~ "one child block, and it is a "
+#~ "reduction block; 2) `loop` is a "
+#~ "reduction loop, i.e. the loop variable"
+#~ " is bound to only reduction variables"
+#~ " in the block binding; 3) `loop` "
+#~ "is not parallelized, vectorized, unrolled "
+#~ "or bound to any thread axis; 4)"
+#~ " The block scope that `loop` is "
+#~ "in is a staged-pipeline; 5) The"
+#~ " outermost loop outside the reduction "
+#~ "block should has the reduction block "
+#~ "as its first child block; 6) The"
+#~ " outermost reduction loop should have "
+#~ "only one child block; 7) An unary"
+#~ " extent loop that is not bound "
+#~ "to any reduction or data parallel "
+#~ "variables in the block binding should"
+#~ " not appear under some reduction "
+#~ "loop; 8) The reduction block should "
+#~ "write to only one buffer, and its"
+#~ " init and body are both simple "
+#~ "`BufferStore`s, and the pattern is "
+#~ "registered as an associative reducer. "
+#~ "The pre-defined patterns include: plus,"
+#~ " multiplication, min and max; 9) Each"
+#~ " of the loops on top of the "
+#~ "block cannot be bound to a data"
+#~ " parallel and a reduction block "
+#~ "binding at the same time; 10) "
+#~ "`factor_axis` should be in range "
+#~ "`[-ndim(B) - 1, ndim(B)]`, where `B` "
+#~ "is the buffer that the reduction "
+#~ "block writes to. Negative indexing is"
+#~ " normalized according to numpy convention."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Compute the target buffer via rolling"
+#~ " buffering, select the outermost rollable"
+#~ " axis with a positive bound overlap"
+#~ " that appears in the block's ancestor"
+#~ " loops as `rolling axis`, fold and"
+#~ " circularize the buffer along the "
+#~ "rolling dimension, append block predicate "
+#~ "to avoid recomputing overlapping elements. "
+#~ "It requires:"
+#~ msgstr ""
+
+#~ msgid "The block is not an output block and has only RAW dependencies."
+#~ msgstr ""
+
+#~ msgid "The buffer to be an intermediate buffer defined via `alloc_buffer`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "3) The LCA of the producer and "
+#~ "consumer of the buffer is a for"
+#~ " loop, typically, the producer and "
+#~ "consumer of the buffer are cascaded "
+#~ "through compute_at."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "4) The access region of the buffer"
+#~ " has at least one dimension that "
+#~ "contains a positive bound overlap."
+#~ msgstr ""
+
+#~ msgid "The producer block of the buffer."
+#~ msgstr ""
+
+#~ msgid "Before rolling_buffer, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do rolling_buffer:"
+#~ msgstr ""
+
+#~ msgid "After applying rolling_buffer, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The region_cover property of the "
+#~ "consumer block of the target buffer "
+#~ "will become false."
+#~ msgstr ""
+
+#~ msgid "Sample an integer given the probability distribution"
+#~ msgstr ""
+
+#~ msgid "The candidates to be sampled from"
+#~ msgstr ""
+
+#~ msgid "The probability of each candidate"
+#~ msgstr ""
+
+#~ msgid "The sampling decision, if any"
+#~ msgstr ""
+
+#~ msgid "**result** -- The random variable sampled from candidates"
+#~ msgstr ""
+
+#~ msgid "Sample a compute-at location of the given block"
+#~ msgstr ""
+
+#~ msgid "The block whose compute-at location is to be sampled"
+#~ msgstr ""
+
+#~ msgid "The sampling decision"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- The sampled loop where "
+#~ "the input block is to be computed"
+#~ " at"
+#~ msgstr ""
+
+#~ msgid "Sample the factors to a partitioned tile for a specific loop"
+#~ msgstr ""
+
+#~ msgid "The loop to be tiled"
+#~ msgstr ""
+
+#~ msgid "The number of tiles to be sampled"
+#~ msgstr ""
+
+#~ msgid "The position to partition tiles to two parts"
+#~ msgstr ""
+
+#~ msgid "The factor of the second part"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- A list of length "
+#~ "`n`, the random partitioned tile sizes"
+#~ " sampled"
+#~ msgstr ""
+
+#~ msgid "Sample the factors to perfect tile a specific loop"
+#~ msgstr ""
+
+#~ msgid "The maximum tile size allowed to be sampled in the innermost loop"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**result** -- A list of length "
+#~ "`n`, the random perfect tile sizes "
+#~ "sampled"
+#~ msgstr ""
+
+#~ msgid "Seed the randomness"
+#~ msgstr ""
+
+#~ msgid "The new random seed, -1 if use device random, otherwise non-negative"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set the axis separator of a "
+#~ "buffer, where the buffer is specified"
+#~ " by a block and a read or "
+#~ "write index."
+#~ msgstr ""
+
+#~ msgid "The axis separators."
+#~ msgstr ""
+
+#~ msgid "Before set_axis_separator, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do set_axis_separator:"
+#~ msgstr ""
+
+#~ msgid "After applying set_axis_separator, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set the storage scope of a buffer,"
+#~ " where the buffer is specified by "
+#~ "the a block and a write-index."
+#~ msgstr ""
+
+#~ msgid "The producer block of the buffer"
+#~ msgstr ""
+
+#~ msgid "The index of the buffer in block's write region"
+#~ msgstr ""
+
+#~ msgid "The storage scope to be set"
+#~ msgstr ""
+
+#~ msgid "Before set_scope, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "After applying set_scope, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`set_scope` requires the buffer to be"
+#~ " an intermediate buffer defined via "
+#~ "`alloc_buffer`."
+#~ msgstr ""
+
+#~ msgid "A sugar for print highlighted TVM script."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All parameters are forwarded to the "
+#~ "underlying `Module.show` and `Trace.show` "
+#~ "methods."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Split a loop into a list of "
+#~ "consecutive loops. It requires: 1) The"
+#~ " loop can't have annotation or thread"
+#~ " binding. 2) The loop must start "
+#~ "with 0. Predicates may be added to"
+#~ " ensure the total loop numbers keeps"
+#~ " unchanged. In `factors`, at most one"
+#~ " of the factors can be None, "
+#~ "which will be automatically inferred."
+#~ msgstr ""
+
+#~ msgid "The loop to be split"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The splitting factors Potential inputs "
+#~ "are: - None - ExprRV - Positive"
+#~ " constant integers"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If enabled, don't create a predicate "
+#~ "for guarding the loop. This can be"
+#~ " useful when splitting with scalable "
+#~ "factors that the schedule writer knows"
+#~ " are divisible by the loop bound."
+#~ "  Warning: enabling this feature may "
+#~ "result in incorrect code generation if"
+#~ " not used carefully."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If enabled, don't create a predicate "
+#~ "for guarding the loop. This can be"
+#~ " useful when splitting with scalable "
+#~ "factors that the schedule writer knows"
+#~ " are divisible by the loop bound."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Warning: enabling this feature may "
+#~ "result in incorrect code generation if"
+#~ " not used carefully."
+#~ msgstr ""
+
+#~ msgid "**split_loops** -- The new loops after split"
+#~ msgstr ""
+
+#~ msgid "Before split, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do split:"
+#~ msgstr ""
+
+#~ msgid "After applying split, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Returns the ScheduleState in the current schedule class"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set alignment requirement for specific "
+#~ "dimension such that stride[axis] == k"
+#~ " * factor + offset for some k."
+#~ " This is useful to set memory "
+#~ "layout for more friendly memory access"
+#~ " pattern. For example, we can set "
+#~ "alignment to be factor=2, offset=1 to"
+#~ " avoid bank conflict for thread "
+#~ "access on higher dimension in GPU "
+#~ "shared memory."
+#~ msgstr ""
+
+#~ msgid "The dimension to be specified for alignment."
+#~ msgstr ""
+
+#~ msgid "The factor multiple of alignment."
+#~ msgstr ""
+
+#~ msgid "The required offset factor."
+#~ msgstr ""
+
+#~ msgid "Before storage_align, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do storage_align:"
+#~ msgstr ""
+
+#~ msgid "After applying storage_align, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "After lowering passes, buffer B will have strides as [129, 1]."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Storage_align requires the buffer to be"
+#~ " an intermediate buffer defined via "
+#~ "`alloc_buffer`."
+#~ msgstr ""
+
+#~ msgid "Tensorize the computation enclosed by loop with the tensor intrinsic."
+#~ msgstr ""
+
+#~ msgid "The loop to be tensorized."
+#~ msgstr ""
+
+#~ msgid "The tensor intrin or the name of the tensor intrin."
+#~ msgstr ""
+
+#~ msgid "Before tensorize, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Declare and register the tensor intrinsic:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do tensorize:"
+#~ msgstr ""
+
+#~ msgid "After applying tensorize, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Returns the internally maintained trace of scheduling program execution"
+#~ msgstr ""
+
+#~ msgid "Apply a transformation represented by IndexMap to block"
+#~ msgstr ""
+
+#~ msgid "The block to be transformed"
+#~ msgstr ""
+
+#~ msgid "The transformation to apply."
+#~ msgstr ""
+
+#~ msgid "Before transform_block_layout, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do transform_block_layout:"
+#~ msgstr ""
+
+#~ msgid "After applying transform_block_layout, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Apply a transformation represented by IndexMap to buffer"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The transformation to apply.  If "
+#~ "`index_map` is a callable, and the "
+#~ "returned list contains IndexMap.AXIS_SEPARATOR, "
+#~ "the SetAxisSeparators primitive will be "
+#~ "called in addition to the "
+#~ "TransformLayout primitive."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If `index_map` is a callable, and "
+#~ "the returned list contains "
+#~ "IndexMap.AXIS_SEPARATOR, the SetAxisSeparators "
+#~ "primitive will be called in addition "
+#~ "to the TransformLayout primitive."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The value to be used for any "
+#~ "padding introduced by the transformation.  "
+#~ "If the schedule contains a producer "
+#~ "block for the specified buffer, the "
+#~ "pad value will be written as part"
+#~ " of the producer block if possible,"
+#~ " or after the producer block "
+#~ "otherwise.  Otherwise, if the buffer is"
+#~ " an input, will insert an annotation"
+#~ " block to state that the padding "
+#~ "contains the known value.  The pad "
+#~ "value may not contain instances of "
+#~ "BufferLoad, except where it loads a "
+#~ "value from the buffer being transformed"
+#~ " (e.g. to create a circular buffer"
+#~ " with padding that consists of "
+#~ "repeated elements).  Note: If applied to"
+#~ " an input buffer, the calling scope"
+#~ " is responsible for ensuring that the"
+#~ " pad_value is present. Algebraic "
+#~ "symplifications, branch elimination, and other"
+#~ " optimizations may assume that this "
+#~ "precondition is met, and may result "
+#~ "in incorrect results being returned.  If"
+#~ " None, the transformation may not "
+#~ "introduce padding.  If an int, float "
+#~ "or PrimExpr, the transformation is the"
+#~ " specific value to be present in "
+#~ "the padding.  If an IndexMap or "
+#~ "Callable, the transformation is the "
+#~ "value to be present in the padding"
+#~ " in terms of the transformed index."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The value to be used for any "
+#~ "padding introduced by the transformation.  "
+#~ "If the schedule contains a producer "
+#~ "block for the specified buffer, the "
+#~ "pad value will be written as part"
+#~ " of the producer block if possible,"
+#~ " or after the producer block "
+#~ "otherwise.  Otherwise, if the buffer is"
+#~ " an input, will insert an annotation"
+#~ " block to state that the padding "
+#~ "contains the known value."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The pad value may not contain "
+#~ "instances of BufferLoad, except where it"
+#~ " loads a value from the buffer "
+#~ "being transformed (e.g. to create a "
+#~ "circular buffer with padding that "
+#~ "consists of repeated elements)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: If applied to an input "
+#~ "buffer, the calling scope is responsible"
+#~ " for ensuring that the pad_value is"
+#~ " present. Algebraic symplifications, branch "
+#~ "elimination, and other optimizations may "
+#~ "assume that this precondition is met,"
+#~ " and may result in incorrect results"
+#~ " being returned."
+#~ msgstr ""
+
+#~ msgid "If None, the transformation may not introduce padding."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If an int, float or PrimExpr, the"
+#~ " transformation is the specific value "
+#~ "to be present in the padding."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If an IndexMap or Callable, the "
+#~ "transformation is the value to be "
+#~ "present in the padding in terms of"
+#~ " the transformed index."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If set to true, the schedule  "
+#~ "primitive will assume the index_map is"
+#~ " injective and skip checking overlapping"
+#~ " of the mapped indices. This can "
+#~ "be useful for complicated index_map that"
+#~ " the analysis does not cover. It "
+#~ "is the callers' responsibility to ensure"
+#~ " the index map is injective, "
+#~ "otherwise, the correctness of the "
+#~ "schedule is not guaranteed."
+#~ msgstr ""
+
+#~ msgid "Before transform_layout, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do transform_layout:"
+#~ msgstr ""
+
+#~ msgid "After applying transform_layout, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Unannotate a block/loop's annotation with key ann_key"
+#~ msgstr ""
+
+#~ msgid "The block/loop to be unannotated"
+#~ msgstr ""
+
+#~ msgid "Before unannotate, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "After applying unannotate, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Unroll the input loop. It requires nothing"
+#~ msgstr ""
+
+#~ msgid "The loop to be unrolled"
+#~ msgstr ""
+
+#~ msgid "Before unroll, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do unroll:"
+#~ msgstr ""
+
+#~ msgid "After applying unroll, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hide some buffer access in a given"
+#~ " block. This is an unsafe schedule"
+#~ " primitive."
+#~ msgstr ""
+
+#~ msgid "The block where we hide read access."
+#~ msgstr ""
+
+#~ msgid "The buffer type: \"read\"/\"write\"."
+#~ msgstr ""
+
+#~ msgid "The array of buffer indices we hide access."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This schedule primitive is unsafe, and"
+#~ " may fail dependency analysis. One "
+#~ "use case of `unsafe_hide_buffer_access` is "
+#~ "to hide the buffer access to "
+#~ "indices buffers (e.g. in sparse "
+#~ "computation) so that we can further "
+#~ "tensorize the block (the indices buffers"
+#~ " appeared in read/write regions may "
+#~ "fail the pattern matching in `tensorize`"
+#~ " primitive, and hide the access to"
+#~ " these buffers could address the "
+#~ "issue)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set the data type of a buffer, "
+#~ "where the buffer is specified by "
+#~ "the a block and write-index."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This schedule primitive is unsafe and"
+#~ " may change the correctness of "
+#~ "program because of type conversion, "
+#~ "please use with caution."
+#~ msgstr ""
+
+#~ msgid "The data type to be set"
+#~ msgstr ""
+
+#~ msgid "Before unsafe_set_dtype, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do unsafe_set_dtype:"
+#~ msgstr ""
+
+#~ msgid "After applying set_dtype, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`unsafe_set_dtype` requires the buffer to "
+#~ "be an intermediate buffer defined via"
+#~ " `alloc_buffer`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Vectorize the input loop. It requires:"
+#~ " 1) The scope block that the "
+#~ "loop is in should have stage-"
+#~ "pipeline property 2) All the blocks "
+#~ "under the loop are complete blocks "
+#~ "or reduction blocks, and have affine "
+#~ "bindings 3) For each block under "
+#~ "the loop, the loop can only be "
+#~ "contained in data-parallel block iters'"
+#~ " bindings"
+#~ msgstr ""
+
+#~ msgid "The loop to be vectorized"
+#~ msgstr ""
+
+#~ msgid "Before vectorize, in TensorIR, the IR is:"
+#~ msgstr ""
+
+#~ msgid "Create the schedule and do vectorize:"
+#~ msgstr ""
+
+#~ msgid "After applying vectorize, the IR becomes:"
+#~ msgstr ""
+
+#~ msgid "Instruct the schedule to work on a function in the IRModule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By default, the schedule works on "
+#~ "the function with the name \"main\", "
+#~ "or the only function in the "
+#~ "IRModule if there is only one. If"
+#~ " there is multiple functions in the"
+#~ " IRModule, and none of their names"
+#~ " are \"main\", users will have to "
+#~ "call this method to explicitly specify"
+#~ " which function to work on."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This sugar function will guide the "
+#~ "`GetBlock` method if its `func_name` is"
+#~ " not specified."
+#~ msgstr ""
+
+#~ msgid "The name of the function to work on."
+#~ msgstr ""
+
+#~ msgid "The bitmask of the `debug_mask` flag in the ScheduleState class."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the `debug_mask` flag has a "
+#~ "certain bit on, then the correpsonding"
+#~ " verification pass will be conducted. "
+#~ "For example, if `(debug_mask & "
+#~ "VERIFY_SREF_TREE) != 0`, then the "
+#~ "correctness of the sref tree will "
+#~ "be verified after each schedule "
+#~ "instruction."
+#~ msgstr ""
+
+#~ msgid "Verify the correctness of the sref tree"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Verify the correctness of affine_binding, "
+#~ "region_cover and stage_pipeline"
+#~ msgstr ""
+
+#~ msgid "Error that happens during TensorIR scheduling."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The state of scheduling, which exposes"
+#~ " a `Replace` method as the primary"
+#~ " resort for all the scheduling "
+#~ "primitives to manipulate the TensorIR."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The data structure contains the "
+#~ "following information 1) The AST being"
+#~ " scheduled (mod) 2) The sref tree "
+#~ "of schedulable statements (indicated by "
+#~ "the srefs) 3) The dependency information"
+#~ " of each block scope (block_info) 4)"
+#~ " A reverse mapping from the AST "
+#~ "nodes to that in the sref tree "
+#~ "(get_sref) 5) A debug flag, if "
+#~ "set, extra checking is enabled "
+#~ "(debug_mask) 6) A enable check flag, "
+#~ "if False, some prerequisite checks are"
+#~ " disabled."
+#~ msgstr ""
+
+#~ msgid "The AST of the module being scheduled"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do extra correctness checking after the"
+#~ " object construction and each time "
+#~ "after calling the Replace method."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Indicates whether we enable prerequisite "
+#~ "checks for some schedule primitives or"
+#~ " not, defaults to `True`."
+#~ msgstr ""
+
+#~ msgid "Get the BlockScope correpsonding to the block sref"
+#~ msgstr ""
+
+#~ msgid "The block sref to be retrieved"
+#~ msgstr ""
+
+#~ msgid "**sref** -- The corresponding sref"
+#~ msgstr ""
+
+#~ msgid "Return the corresponding sref that points to the stmt"
+#~ msgstr ""
+
+#~ msgid "The schedulable statement in the TensorIR to be retrieved for its sref"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Replace the part of the AST, as"
+#~ " being pointed to by `src_sref`, with"
+#~ " a specific statement `tgt_stmt`, and "
+#~ "maintain the sref tree accordingly. "
+#~ "Replace will try to perform copy "
+#~ "on write as much as possible when"
+#~ " the ScheduleState holds the only "
+#~ "copy to the IRModule and IR nodes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Only 3 types of replacements are "
+#~ "allowed: from `src_sref->stmt` to `tgt_stmt`."
+#~ " 1) Block -> Block 2) Loop ->"
+#~ " Loop 3) Loop -> BlockRealize"
+#~ msgstr ""
+
+#~ msgid "The sref to the statement to be replaced in the TensorIR AST"
+#~ msgstr ""
+
+#~ msgid "The statement to be replaced to"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Maps an old block (to be replaced"
+#~ " in the subtree under `src_sref->stmt`) "
+#~ "to a new block (replaced to, in"
+#~ " the subtree under `tgt_stmt`), and "
+#~ "enforces reuse of srefs between them "
+#~ "(rather than create new srefs) i.e. "
+#~ "after being replaced, the sref that "
+#~ "points to the old block will point"
+#~ " to the new one"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The reuse of loop srefs are "
+#~ "detected automatically according to the "
+#~ "reuse of loop vars."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An object that refers to schedulable "
+#~ "elements in the TensorIR, aka \"sref\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Glossary - Block sref: An StmtSref "
+#~ "that points to a TensorIR block. -"
+#~ " Loop sref: An StmtSRef that points"
+#~ " to a TensorIR for loop. - "
+#~ "Parent sref: The parent sref of an"
+#~ " sref is the block/loop sref that "
+#~ "points to its closest schedulable "
+#~ "statement of its ancestors on the "
+#~ "TensorIR AST. - Root sref: Sref to"
+#~ " the root block. Every sref has "
+#~ "exactly one parent sref except for "
+#~ "root sref. - Sref tree: The "
+#~ "parent-children-relationship of srefs that"
+#~ " forms a tree, uniquely determined by"
+#~ " the TensorIR AST."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A special StmtSRef, which doesn't point"
+#~ " to any stmt in the AST, only"
+#~ " serving as a \"mark\" to hint "
+#~ "compute-at to do the work of "
+#~ "compute-inline"
+#~ msgstr ""
+
+#~ msgid "The parent sref"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A special StmtSRef, which doesn't point"
+#~ " to any stmt in the AST, only"
+#~ " serving as a \"mark\" to hint "
+#~ "compute-at to do nothing"
+#~ msgstr ""
+
+#~ msgid "The block/for stmt the object refers to"
+#~ msgstr ""
+
+#~ msgid "An execution trace of a scheduling program."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A trace has two parts: 1) The "
+#~ "instructions invoked so far 2) The "
+#~ "random decisions made upon those "
+#~ "instructions, if any"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A trace can be serialized to: 1)"
+#~ " Roundtrippable JSON format: can be "
+#~ "saved to file and loaded back 2)"
+#~ " Python syntax: allows users to "
+#~ "copy-paste the trace to reproduce the"
+#~ " scheduling process"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A trace can be applied to a "
+#~ "TensorIR schedule by re-applying all "
+#~ "its instructions possibly with their "
+#~ "decisions accordingly. Re-sampling is "
+#~ "invoked if a sampling instruction "
+#~ "doesn't have its corresponding decision; "
+#~ "Otherwise the existing decision will be"
+#~ " reused accordingly."
+#~ msgstr ""
+
+#~ msgid "The instructions invoked so far in the program execution"
+#~ msgstr ""
+
+#~ msgid "List[Instruction]"
+#~ msgstr ""
+
+#~ msgid "The random decisions made upon those instructions"
+#~ msgstr ""
+
+#~ msgid "Dict[Instruction, DECISION_TYPE]"
+#~ msgstr ""
+
+#~ msgid "Append a new instruction to the trace"
+#~ msgstr ""
+
+#~ msgid "The new instruction to be appended"
+#~ msgstr ""
+
+#~ msgid "The random decision made on this instruction"
+#~ msgstr ""
+
+#~ msgid "Apply a JSON-serialized trace to a TensorIR schedule"
+#~ msgstr ""
+
+#~ msgid "The JSON-serialized trace"
+#~ msgstr ""
+
+#~ msgid "The TensorIR schedule"
+#~ msgstr ""
+
+#~ msgid "Apply the trace to a TensorIR schedule"
+#~ msgstr ""
+
+#~ msgid "The schedule to be applied onto"
+#~ msgstr ""
+
+#~ msgid "If postprocessing instructions are removed"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A callback that allows users to "
+#~ "mutate decisions on the fly when "
+#~ "applying instructions. The signature of "
+#~ "the callback is: - The 1st "
+#~ "argument: The instruction - The 2nd "
+#~ "argument: The input random variables -"
+#~ " The 3rd argument: The attributes -"
+#~ " The 4th argument: The decision - "
+#~ "Return: A new decision"
+#~ msgstr ""
+
+#~ msgid "Serialize the trace as a JSON-style object"
+#~ msgstr ""
+
+#~ msgid "**json** -- The JSON-style object"
+#~ msgstr ""
+
+#~ msgid "Serialize the trace as a sequence of python statements"
+#~ msgstr ""
+
+#~ msgid "**py_stmts** -- A sequence of python statements"
+#~ msgstr ""
+
+#~ msgid "Retrieve the decision made on a specific instruction"
+#~ msgstr ""
+
+#~ msgid "The instruction whose decision is to be retrieved"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**decision** -- The corresponding decision;"
+#~ " None if there is no decision "
+#~ "made on the instruction"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Remove the last instruction, along with"
+#~ " the decision made on that "
+#~ "instruction, if any"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**popped_inst** -- Returns the instruction "
+#~ "removed; NullOpt if the trace is "
+#~ "empty"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pygmentize printing style, auto-detected "
+#~ "if None.  See `tvm.script.highlight.cprint` "
+#~ "for more details."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If true, use the formatter Black "
+#~ "to format the TVMScript. If None, "
+#~ "determine based on the \"TVM_BLACK_FORMAT\""
+#~ " environment variable."
+#~ msgstr ""
+
+#~ msgid "Simplify the trace with dead-code elimination"
+#~ msgstr ""
+
+#~ msgid "**trace** -- A simplified trace"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create a new trace with an "
+#~ "instruction whose decision is changed, "
+#~ "assuming this instruction exists in the"
+#~ " resulting trace"
+#~ msgstr ""
+
+#~ msgid "The instruction whose decision is to be changed"
+#~ msgstr ""
+
+#~ msgid "The decision to be changed to"
+#~ msgstr ""
+
+#~ msgid "**trace** -- The new trace with the decision changed"
+#~ msgstr ""
+

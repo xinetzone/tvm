@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-02 18:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/refs/vta/autotvm.rst:3
+msgid "``autotvm``"
+msgstr ""
+
+#: of vta.autotvm:1
+msgid "Defines AutoTVM components used with VTA."
+msgstr "定义 VTA 使用的 AutoTVM 组件。"
+
+#: of vta.autotvm.module_loader:1
+msgid "Construct a ModuleLoader implementation specialized for VTA."
+msgstr "构造专门用于 VTA 的 ModuleLoader 实现。"
+
+#: of vta.autotvm.module_loader:4
+msgid "Parameters"
+msgstr ""
+
+#: of vta.autotvm.module_loader:6
+msgid "bitsream"
+msgstr ""
+
+#: of vta.autotvm.module_loader:-1
+msgid "Optional[str]"
+msgstr ""
+
+#: of vta.autotvm.module_loader:6
+msgid "Path to the bitstream to write prior to uploading code."
+msgstr "在上传代码之前要写入的 bitstream 的路径。"
+
+#: of vta.autotvm.module_loader:9
+msgid "Returns"
+msgstr ""
+
+#: of vta.autotvm.module_loader:10
+msgid "ModuleLoader :"
+msgstr ""
+
+#: of vta.autotvm.module_loader:11
+msgid "The ModuleLoader instance."
+msgstr "ModuleLoader 实例"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "Returns"
+#~ msgstr "返回值"
+

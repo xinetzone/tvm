@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-11 17:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/api/vta/libinfo/index.rst:2
+msgid "vta.libinfo"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:8
+msgid "Library information."
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:20:<autosummary>:1
+msgid ":py:obj:`_get_lib_name <vta.libinfo._get_lib_name>`\\ \\(lib\\_name\\)"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:26
+#: ../../doc/api/vta/libinfo/index.rst:20:<autosummary>:1
+msgid "Get lib name with extension"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:20:<autosummary>:1
+msgid ""
+":py:obj:`find_libvta <vta.libinfo.find_libvta>`\\ \\(lib\\_vta\\[\\, "
+"optional\\]\\)"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:41
+#: ../../doc/api/vta/libinfo/index.rst:20:<autosummary>:1
+msgid "Find VTA Chisel-based library"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:22
+msgid "Module Contents"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:29
+#: ../../doc/api/vta/libinfo/index.rst:44
+msgid "Returns"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:30
+msgid "lib_name_ext"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:-1
+msgid "str"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:31
+msgid "Name of VTA shared library with extension"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:34
+#: ../../doc/api/vta/libinfo/index.rst:49
+msgid "Parameters"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:35
+msgid "lib_name"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:36
+#: ../../doc/api/vta/libinfo/index.rst:51
+msgid "Name of VTA shared library"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:45
+msgid "lib_found"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:46
+msgid "Library path"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:50
+msgid "lib_vta"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:53
+msgid "optional"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:-1
+msgid "bool"
+msgstr ""
+
+#: ../../doc/api/vta/libinfo/index.rst:54
+msgid "Enable error check"
+msgstr ""
+

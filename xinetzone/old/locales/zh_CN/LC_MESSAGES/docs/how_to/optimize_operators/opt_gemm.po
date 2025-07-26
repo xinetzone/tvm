@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the TVM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TVM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 00:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20004
+msgid "How to optimize GEMM on CPU"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20005
+msgid ""
+"**Author**: [Jian Weng](https://github.com/were),             [Ruofei "
+"Yu](https://github.com/yuruofeifei)"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20007
+msgid ""
+"(TL;DR) TVM provides abstract interfaces which allows users to depict an "
+"algorithm and the algorithm's implementing organization (the so-called "
+"schedule) separately. Typically, writing algorithm in high-performance "
+"schedule breaks the algorithm's readability and modularity. Also, trying "
+"various seemingly promising schedules is time-consuming. With the help of"
+" TVM, we can try these schedules efficiently to enhance the performance."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20013
+msgid ""
+"In this tutorial, we will demonstrate how to use TVM to optimize square "
+"matrix multiplication and achieve 200 times faster than baseline by "
+"simply adding 18 extra lines of code."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20016
+msgid ""
+"There are two important optimizations on intense computation applications"
+" executed on CPU:     1. Increase the cache hit rate of memory access. "
+"Both complex numerical computation and hot-spot        memory access can "
+"be accelerated from high cache hit rate. This requires us to transform "
+"the        origin memory access pattern to the pattern fits the cache "
+"policy.     2. SIMD (Single instruction multi-data), or we call it vector"
+" processing unit. Every time, a        small batch of data, rather than a"
+" single grid, will be processed. This requires us to        transform the"
+" data access pattern in the loop body in uniform pattern so that the LLVM"
+"        backend can lower it to SIMD."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20025
+msgid ""
+"Actually, all the methodologies used in this tutorial is a subset of "
+"tricks mentioned in this [repo](https://github.com/flame/how-to-optimize-"
+"gemm). Some of them have been applied by TVM abstraction automatically, "
+"but some of them cannot be simply applied due to TVM constraints."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:20029
+msgid ""
+"All the experiment results mentioned below, are executed on 2015's 15' "
+"MacBook equipped with Intel i7-4770HQ CPU. The cache line size should be "
+"64 bytes for all the x86 CPUs."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:40002
+msgid "Preparation and Baseline"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:40003
+msgid ""
+"In this tutorial, we will demo how to use TVM to optimize matrix "
+"multiplication. Before actually demonstrating, we first define these "
+"variables. Then we write a baseline implementation, the simplest way to "
+"write a matrix multiplication in TVM."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:60002
+msgid ""
+"In TVM, we can always inspect lower level IR to debug or optimize our "
+"schedule. Here is the generated IR using our baseline schedule."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:80002
+msgid "Blocking"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:80003
+msgid ""
+"A important trick to enhance the cache hit rate is blocking --- data "
+"chunk will be computed block by block. The memory access inside the block"
+" is a small neighbourhood which is with high memory locality. In this "
+"tutorial, I picked up 32 as the blocking factor. So the block will fill "
+"32 * 32 * sizeof(float) which is 4KB in the cache whose total size is "
+"32KB (L1 data cache)"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:100002
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:270002
+msgid "Here is the generated IR after blocking."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:120002
+msgid "Vectorization"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:120003
+msgid ""
+"Another important trick is vectorization. When the memory access pattern "
+"is uniform, the compiler can detect this pattern and pass the continuous "
+"memory to vector processor. In TVM, we can use `vectorize` interface to "
+"hint the compiler this pattern, so that we can accelerate it vastly."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:120008
+msgid ""
+"In this tutorial, we chose to vectorize the inner loop row data since it "
+"is cache friendly."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:140002
+msgid "Here is the generated IR after vectorization."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:160002
+msgid "Loop Permutation"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:160003
+msgid ""
+"If we look at the above IR, we can see the inner loop row data is "
+"vectorized for both B and C. Next we will look at the access pattern of "
+"A. In current schedule, A is accessed column by column which is not cache"
+" friendly. If we change the nested loop order of ki and inner axes mi, "
+"the access pattern for A matrix is more cache friendly."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:180002
+msgid "Here is the generated IR after loop permutation."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:200002
+msgid "Array Packing"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:200003
+msgid ""
+"Another important trick is array packing. The trick is to reorder the "
+"storage of a multi- dimensional array so that it is accessed sequentially"
+" after it is flattened and stored in one- dimensional memory."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:200009
+msgid "NOTE: This figure is a general illustration of how array packing works."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:210002
+msgid ""
+"We can use array packing to address the access pattern for B. Observe the"
+" array access pattern of B after flattening which is not sequential as we"
+" iterate over the K dimension. We can reorder B with dimensions [K][N] so"
+" that it has dimensions [N/bn][K][bn] where bn is the blocking factor and"
+" also the vector size for B in the inner loop.  This reorder splits N "
+"into two dimensions --- bigN (N/bn) and littleN (bn) --- and the new "
+"dimensions [N/bn][K][bn] match the indexing of B from outer to inner "
+"loops (no, ko, ki, ni) resulting in a sequential access pattern for B "
+"after flattening."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:230002
+msgid "Here is the generated IR after array packing."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:250002
+msgid "Write cache for blocks"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:250003
+msgid ""
+"After blocking, the program will write result to C block by block, the "
+"access pattern is not sequential. So we can use a sequential cache array "
+"to hold the block results and write to C when all the block results are "
+"ready."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:290002
+msgid "Parallel"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:290003
+msgid ""
+"Furthermore, we can also utilize multi-core processors to do the thread-"
+"level parallelization."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:310002
+msgid "Here is the generated IR after parallelization."
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:330002
+msgid "Summary"
+msgstr ""
+
+#: ../../xin/docs/how_to/optimize_operators/opt_gemm.ipynb:330003
+#, python-format
+msgid ""
+"After applying the above simple optimizations with only 18 lines of code,"
+" our generated code can achieve 60% of the `numpy` performance with MKL. "
+"Note that the outputs on the web page reflect the running times on a non-"
+"exclusive Docker container, thereby they are *unreliable*. It is highly "
+"encouraged to run the tutorial by yourself to observe the performance "
+"gain achieved by TVM."
+msgstr ""
+
+#~ msgid ":download:`Download Python source code: opt_gemm.py <opt_gemm.py>`"
+#~ msgstr ""
+
+#~ msgid ":download:`Download Jupyter notebook: opt_gemm.ipynb <opt_gemm.ipynb>`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`Gallery generated by Sphinx-Gallery "
+#~ "<https://sphinx-gallery.github.io>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Click :ref:`here "
+#~ "<sphx_glr_download_how_to_optimize_operators_opt_gemm.py>` to"
+#~ " download the full example code"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Author**: `Jian Weng <https://github.com/were>`_,"
+#~ "             `Ruofei Yu "
+#~ "<https://github.com/yuruofeifei>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There are two important optimizations on"
+#~ " intense computation applications executed "
+#~ "on CPU:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Increase the cache hit rate of "
+#~ "memory access. Both complex numerical "
+#~ "computation and hot-spot memory access"
+#~ " can be accelerated from high cache"
+#~ " hit rate. This requires us to "
+#~ "transform the origin memory access "
+#~ "pattern to the pattern fits the "
+#~ "cache policy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "SIMD (Single instruction multi-data), or"
+#~ " we call it vector processing unit."
+#~ " Every time, a small batch of "
+#~ "data, rather than a single grid, "
+#~ "will be processed. This requires us "
+#~ "to transform the data access pattern "
+#~ "in the loop body in uniform "
+#~ "pattern so that the LLVM backend "
+#~ "can lower it to SIMD."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Actually, all the methodologies used in"
+#~ " this tutorial is a subset of "
+#~ "tricks mentioned in this `repo "
+#~ "<https://github.com/flame/how-to-optimize-gemm>`_."
+#~ " Some of them have been applied "
+#~ "by TVM abstraction automatically, but "
+#~ "some of them cannot be simply "
+#~ "applied due to TVM constraints."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Futhermore, we can also utilize "
+#~ "multi-core processors to do the "
+#~ "thread-level parallelization."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After applying the above simple "
+#~ "optimizations with only 18 lines of "
+#~ "code, our generated code can achieve "
+#~ "60% of the `numpy` performance with "
+#~ "MKL. Note that the outputs on the"
+#~ " web page reflect the running times"
+#~ " on a non-exclusive Docker container,"
+#~ " thereby they are *unreliable*. It is"
+#~ " highly encouraged to run the "
+#~ "tutorial by yourself to observe the "
+#~ "performance gain acheived by TVM."
+#~ msgstr ""
+

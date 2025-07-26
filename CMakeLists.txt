@@ -839,3 +839,6 @@ if(USE_ROCM AND USE_RCCL)
   target_link_libraries(tvm PRIVATE rccl)
   target_link_libraries(tvm_runtime PRIVATE rccl)
 endif()
+
+# 添加 VTA 子模块
+add_subdirectory(vta)

@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-05 09:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/get_started/overview.rst:19
+msgid "Overview"
+msgstr "概述"
+
+#: ../../doc/docs/get_started/overview.rst:21
+msgid ""
+"Apache TVM is a machine learning compilation framework, following the "
+"principle of **Python-first development** and **universal deployment**. "
+"It takes in pre-trained machine learning models, compiles and generates "
+"deployable modules that can be embedded and run everywhere. Apache TVM "
+"also enables customizing optimization processes to introduce new "
+"optimizations, libraries, codegen and more."
+msgstr ""
+"Apache TVM 是机器学习编译框架，遵循 Python 优先开发和通用部署的原则。"
+"它接收预训练的机器学习模型，编译并生成可嵌入和在任何地方运行的可部署模块。"
+"Apache TVM 还支持自定义优化流程，以引入新的优化、库、代码生成等。
+
+#: ../../doc/docs/get_started/overview.rst:27
+msgid "Key Principle"
+msgstr "关键原则"
+
+#: ../../doc/docs/get_started/overview.rst:29
+msgid ""
+"**Python-first**: the optimization process is fully customizable in "
+"Python. It is easy to customize the optimization pipeline without "
+"recompiling the TVM stack."
+msgstr ""
+"**Python 优先**：优化流程在 Python 中完全可定制。可以轻松自定义优化流水线，而无需重新编译 TVM 堆栈。"
+
+#: ../../doc/docs/get_started/overview.rst:31
+msgid ""
+"**Composable**: the optimization process is composable. It is easy to "
+"compose new optimization passes, libraries and codegen to the existing "
+"pipeline."
+msgstr ""
+"**可组合**：优化流程是可组合的。可以轻松将新的优化 pass、库和代码生成添加到现有流水线中。"
+
+#: ../../doc/docs/get_started/overview.rst:35
+msgid "Key Goals"
+msgstr "关键目标"
+
+#: ../../doc/docs/get_started/overview.rst:37
+msgid "**Optimize** performance of ML workloads, composing libraries and codegen."
+msgstr ""
+"**优化** ML 工作负载的性能，组合库和代码生成。"
+
+#: ../../doc/docs/get_started/overview.rst:38
+msgid ""
+"**Deploy** ML workloads to a diverse set of new environments, including "
+"new runtime and new hardware."
+msgstr ""
+"**部署** ML 工作负载到多样化的新环境中，包括新的运行时和新硬件。"
+
+#: ../../doc/docs/get_started/overview.rst:39
+msgid ""
+"**Continuously improve and customize** ML deployment pipeline in Python "
+"by quickly customizing library dispatching, bringing in customized "
+"operators and code generation."
+msgstr ""
+"通过快速自定义库调度、引入自定义算子和代码生成，在 Python 中 **持续改进和定制** ML 部署流水线。"
+
+#: ../../doc/docs/get_started/overview.rst:43
+msgid "Key Flow"
+msgstr "关键流程"
+
+#: ../../doc/docs/get_started/overview.rst:45
+msgid ""
+"Here is a typical flow of using TVM to deploy a machine learning model. "
+"For a runnable example, please refer to :ref:`quick_start`"
+msgstr ""
+"要查看可运行的示例，请参阅 :ref:`quick_start`"
+
+#: ../../doc/docs/get_started/overview.rst:48
+msgid "**Import/construct an ML model**"
+msgstr "**导入/构建 ML 模型**"
+
+#: ../../doc/docs/get_started/overview.rst:50
+msgid ""
+"TVM supports importing models from various frameworks, such as PyTorch, "
+"TensorFlow for generic ML models. Meanwhile, we can create models "
+"directly using Relax frontend for scenarios of large language models."
+msgstr ""
+"TVM 支持从各种框架中导入模型，如 PyTorch、TensorFlow，用于通用 ML 模型。同时，我们可以直接使用 Relax 前端创建大型语言模型的场景。"
+
+#: ../../doc/docs/get_started/overview.rst:52
+msgid "**Perform composable optimization** transformations via ``pipelines``"
+msgstr "通过 ``pipelines`` **执行可组合的优化变换**"
+
+#: ../../doc/docs/get_started/overview.rst:54
+msgid ""
+"The pipeline encapsulates a collection of transformations to achieve two "
+"goals:"
+msgstr ""
+"流水线封装了一系列转换，以实现两个目标："
+
+#: ../../doc/docs/get_started/overview.rst:56
+msgid "**Graph Optimizations**: such as operator fusion, and layout rewrites."
+msgstr "**计算图优化**：例如算子融合和布局重写。"
+
+#: ../../doc/docs/get_started/overview.rst:57
+msgid ""
+"**Tensor Program Optimization**: Map the operators to low-level "
+"implementations (both library or codegen)"
+msgstr ""
+"**张量程序优化**：将算子映射到低级实现（包括库和代码生成）。"
+
+#: ../../doc/docs/get_started/overview.rst:61
+msgid ""
+"The two are goals but not the stages of the pipeline. The two "
+"optimizations are performed **at the same level**, or separately in two "
+"stages."
+msgstr ""
+"这两个是目标而不是流水线的阶段。这两种优化在 **同一层级** 进行，或者在两个 **不同阶段** 分别进行。"
+
+#: ../../doc/docs/get_started/overview.rst:64
+msgid "**Build and universal deploy**"
+msgstr "**构建和通用部署**"
+
+#: ../../doc/docs/get_started/overview.rst:66
+msgid ""
+"Apache TVM aims to provide a universal deployment solution to bring "
+"machine learning everywhere with every language with minimum runtime "
+"support. TVM runtime can work in non-Python environments, so it works on "
+"mobile, edge devices or even bare metal devices. Additionally, TVM "
+"runtime comes with native data structures, and can also have zero copy "
+"exchange with the existing ecosystem (PyTorch, TensorFlow, TensorRT, "
+"etc.) using DLPack support."
+msgstr ""
+"Apache TVM 旨在提供一种通用部署解决方案，以最少的运行时支持，将机器学习带到任何地方和任何语言环境中。"
+"TVM 运行时可以在非 Python 环境中工作，因此适用于移动设备、边缘设备甚至裸金属设备。"
+"此外，TVM 运行时具有原生数据结构，并且还可以通过 DLPack 支持与现有生态系统（PyTorch、TensorFlow、TensorRT 等）进行零拷贝交换。"
