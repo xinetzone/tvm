@@ -13,25 +13,12 @@
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations.
-# Base logic to load library for extension package
+
 import tvm_ffi
-import os
-import sys
 
+# make sure lib is loaded first
+from .base import _LIB
 
-def _load_lib():
-    # first look at the directory of the current file
-    file_dir = os.path.dirname(os.path.realpath(__file__))
-
-    if sys.platform.startswith("win32"):
-        lib_dll_name = "tvm_ffi_extension.dll"
-    elif sys.platform.startswith("darwin"):
-        lib_dll_name = "tvm_ffi_extension.dylib"
-    else:
-        lib_dll_name = "tvm_ffi_extension.so"
-
-    lib_path = os.path.join(file_dir, lib_dll_name)
-    return tvm_ffi.load_module(lib_path)
-
-
-_LIB = _load_lib()
+# this is a short cut to register all the global functions
+# prefixed by `my_ffi_extension.` to this module
+tvm_ffi._init_api("my_ffi_extension", __name__)

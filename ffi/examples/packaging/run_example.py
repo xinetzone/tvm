@@ -13,12 +13,28 @@
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations.
+# Base logic to load library for extension package
+import torch
+import sys
+import my_ffi_extension
 
-import tvm_ffi
 
-# make sure lib is loaded first
-from .base import _LIB
+def run_add_one():
+    x = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)
+    y = torch.empty_like(x)
+    my_ffi_extension.add_one(x, y)
+    print(y)
 
-# this is a short cut to register all the global functions
-# prefixed by `tvm_ffi_extension.` to this module
-tvm_ffi._init_api("tvm_ffi_extension", __name__)
+
+def run_raise_error():
+    my_ffi_extension.raise_error("This is an error")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "add_one":
+            run_add_one()
+        elif sys.argv[1] == "raise_error":
+            run_raise_error()
+    else:
+        print("Usage: python run_example.py <add_one|raise_error>")
