@@ -24,41 +24,6 @@ except ImportError:
     torch = None
 
 
-def load_torch_get_current_cuda_stream():
-    """Create a faster get_current_cuda_stream for torch through cpp extension.
-    """
-    source = """
-    #include <c10/cuda/CUDAStream.h>
-
-    int64_t get_current_cuda_stream(int device_id) {
-        at::cuda::CUDAStream stream = at::cuda::getCurrentCUDAStream(device_id);
-        // fast invariant, default stream is always 0
-        if (stream.id() == 0) return 0;
-        // convert to cudaStream_t
-        return reinterpret_cast<int64_t>(static_cast<cudaStream_t>(stream));
-    }
-    """
-    def fallback_get_current_cuda_stream(device_id):
-        """Fallback with python api"""
-        return torch.cuda.current_stream(device_id).cuda_stream
-    try:
-        from torch.utils import cpp_extension
-        result = cpp_extension.load_inline(
-            name="get_current_cuda_stream",
-            cpp_sources=[source],
-            cuda_sources=[],
-            extra_cflags=["-O3"],
-            extra_include_paths=cpp_extension.include_paths("cuda"),
-            functions=["get_current_cuda_stream"],
-        )
-        return result.get_current_cuda_stream
-    except Exception:
-        return fallback_get_current_cuda_stream
-
-
-torch_get_current_cuda_stream = None
-
-
 cdef inline object make_ret_small_str(TVMFFIAny result):
     """convert small string to return value."""
     cdef TVMFFIByteArray bytes
@@ -81,6 +46,8 @@ cdef inline object make_ret(TVMFFIAny result):
     if type_index == kTVMFFINDArray:
         # specially handle NDArray as it needs a special dltensor field
         return make_ndarray_from_any(result)
+    elif type_index == kTVMFFIOpaquePyObject:
+        return make_ret_opaque_object(result)
     elif type_index >= kTVMFFIStaticObjectBegin:
         return make_ret_object(result)
     elif type_index == kTVMFFINone:
@@ -146,9 +113,8 @@ cdef inline int make_args(tuple py_args, TVMFFIAny* out, list temp_args,
             if is_cuda and ctx_dev_type != NULL and ctx_dev_type[0] == -1:
                 ctx_dev_type[0] = temp_dltensor.device.device_type
                 ctx_dev_id[0] = temp_dltensor.device.device_id
-                if torch_get_current_cuda_stream is None:
-                    torch_get_current_cuda_stream = load_torch_get_current_cuda_stream()
-                temp_ptr = torch_get_current_cuda_stream(temp_dltensor.device.device_id)
+                # This is an API that dynamo and other uses to get the raw stream from torch
+                temp_ptr = torch._C._cuda_getCurrentRawStream(temp_dltensor.device.device_id)
                 ctx_stream[0] = <TVMFFIStreamHandle>temp_ptr
             temp_args.append(arg)
         elif hasattr(arg, "__dlpack__"):
@@ -218,7 +184,10 @@ cdef inline int make_args(tuple py_args, TVMFFIAny* out, list temp_args,
             out[i].v_ptr = (<Object>arg).chandle
             temp_args.append(arg)
         else:
-            raise TypeError("Unsupported argument type: %s" % type(arg))
+            arg = _convert_to_opaque_object(arg)
+            out[i].type_index = kTVMFFIOpaquePyObject
+            out[i].v_ptr = (<Object>arg).chandle
+            temp_args.append(arg)
 
 
 cdef inline int FuncCall3(void* chandle,
@@ -467,9 +436,9 @@ def _get_global_func(name, allow_missing):
 
 
 # handle callbacks
-cdef void tvm_ffi_callback_deleter(void* fhandle) noexcept with gil:
-    local_pyfunc = <object>(fhandle)
-    Py_DECREF(local_pyfunc)
+cdef void tvm_ffi_pyobject_deleter(void* fhandle) noexcept with gil:
+    local_pyobject = <object>(fhandle)
+    Py_DECREF(local_pyobject)
 
 
 cdef int tvm_ffi_callback(void* context,
@@ -504,11 +473,26 @@ def _convert_to_ffi_func(object pyfunc):
     CHECK_CALL(TVMFFIFunctionCreate(
         <void*>(pyfunc),
         tvm_ffi_callback,
-        tvm_ffi_callback_deleter,
+        tvm_ffi_pyobject_deleter,
         &chandle))
     ret = Function.__new__(Function)
     (<Object>ret).chandle = chandle
     return ret
+
+
+def _convert_to_opaque_object(object pyobject):
+    """Convert a python object to TVM FFI opaque object"""
+    cdef TVMFFIObjectHandle chandle
+    Py_INCREF(pyobject)
+    CHECK_CALL(TVMFFIObjectCreateOpaque(
+        <void*>(pyobject),
+        kTVMFFIOpaquePyObject,
+        tvm_ffi_pyobject_deleter,
+        &chandle))
+    ret = OpaquePyObject.__new__(OpaquePyObject)
+    (<Object>ret).chandle = chandle
+    return ret
+
 
 _STR_CONSTRUCTOR = _get_global_func("ffi.String", False)
 _BYTES_CONSTRUCTOR = _get_global_func("ffi.Bytes", False)
