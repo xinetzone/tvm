@@ -1,0 +1,890 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-13 13:14+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/arch/pass_infra.rst:21
+msgid "Pass Infrastructure"
+msgstr "Pass 基础设施"
+
+#: ../../doc/docs/arch/pass_infra.rst:23
+msgid ""
+"Both Relax and TVM IR contain a series of optimization passes which "
+"improve performance metrics of models such as mean inference, memory "
+"footprint, or power consumption for specific devices. There is a suite of"
+" standard optimizations as well as machine learning-specific "
+"optimizations including constant folding, dead code elimination, operator"
+" layout alteration, operator fusion, buffer handling, and loop "
+"transformation, etc. Each of these passes is structured as a ir-to-ir "
+"transformation using the analysis result collected during and/or before "
+"traversal."
+msgstr ""
+"Relax 和 TVM IR 都包含一系列优化pass，这些过程可以提高模型在特定设备上的性能指标，例如平均推理时间、内存占用或功耗。"
+"这些优化pass包括标准优化和机器学习特定优化，如常量折叠、死代码消除、算子布局调整、算子融合、缓冲区处理和循环变换等。"
+"每个优化pass都使用在遍历期间和/或遍历之前收集的分析结果，作为 ir-to-ir 转换结构。"
+
+#: ../../doc/docs/arch/pass_infra.rst:31
+msgid ""
+"However, as TVM evolves quickly, the need for a more systematic and "
+"efficient way to manage these passes is becoming apparent. In addition, a"
+" generic framework that manages the passes across different layers of the"
+" TVM stack (e.g. Relax and tir) paves the way for developers to quickly "
+"prototype and plug the implemented passes into the system."
+msgstr ""
+"然而，随着 TVM 的快速发展，管理这些过程的系统性、高效性需求日益明显。"
+"此外，一个管理 TVM 堆栈不同层（例如 Relax 和 tir）中优化pass的通用框架，为开发者快速原型设计和将实现的优化pass集成到系统中铺平了道路。"
+
+#: ../../doc/docs/arch/pass_infra.rst:37
+msgid ""
+"This doc describes the design of such an infra that takes the advantage "
+"of the way production compilers are used to manage the optimization "
+"passes and the style modern deep learning frameworks adopted to build up "
+"layers."
+msgstr ""
+"本文档描述了这样的基础设施设计，该设计利用了生产编译器管理优化pass的方式，以及现代深度学习框架构建层所采用的风格。"
+
+#: ../../doc/docs/arch/pass_infra.rst:41
+msgid ""
+"For example, many existing production compilers, such as GCC and LLVM, "
+"employ pass managers to effectively manage the execution of passes. "
+"Initially managing passes is straightforward as the number of passes is "
+"small, but mature compilers will contain hundreds of individual passes. "
+"Often external users will want to have custom passes correctly scheduled "
+"without having to modify a single handcrafted pass order."
+msgstr ""
+"例如，许多现有的生产编译器，如 GCC 和 LLVM，使用传递管理器来有效管理传递的执行。"
+"最初管理传递很简单，因为传递的数量较少，但成熟的编译器将包含数百个独立的传递。"
+"通常外部用户希望能够在不修改单个手工制作的传递顺序的情况下，正确地安排自定义传递。"
+
+#: ../../doc/docs/arch/pass_infra.rst:48
+msgid ""
+"Similarly, modern deep learning frameworks, such as Pytorch and MXNet "
+"Gluon, also have the tendency to enable pass-style layer construction "
+"scheme through `Sequential`_ and `Block`_, respectively. With such "
+"constructs, these modern frameworks are able to conveniently add "
+"modules/layers to their containers and build up neural networks easily."
+msgstr ""
+"同样，现代深度学习框架（如 Pytorch 和 MXNet Gluon）也倾向于通过 `Sequential`_ 和 `Block`_ 分别启用 "
+"Pass 风格的层次构建方案。通过这些构造，这些现代框架能够方便地将模块/层添加到它们的容器中，并轻松构建神经网络。"
+
+#: ../../doc/docs/arch/pass_infra.rst:54
+msgid ""
+"The design of the TVM pass infra is largely inspired by the hierarchical "
+"pass manager used in LLVM and the block-style containers used in the "
+"popular deep learning frameworks. The major goals of the pass infra "
+"include:"
+msgstr ""
+"TVM 传递基础设施的设计主要受到 LLVM 中使用的分层传递管理器和流行深度学习框架中使用的块式容器启发。"
+"传递基础设施的主要目标包括："
+
+#: ../../doc/docs/arch/pass_infra.rst:58
+msgid ""
+"enabling better programmatic orchestration of optimizations. This allows "
+"users to flexibly customize and build their own optimization pipelines."
+msgstr "实现更好的优化程序化编排。这使得用户能够灵活地定制和构建自己的优化pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:61
+msgid "providing a user-friendly way to debug optimization passes."
+msgstr "提供一种用户友好的方式来调试优化pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:63
+msgid ""
+"alleviating developers from manually and respectively resolving the "
+"dependencies between passes."
+msgstr "减轻开发人员手动分别解决管道之间依赖关系的负担。"
+
+#: ../../doc/docs/arch/pass_infra.rst:66
+msgid ""
+"simplifying the implementation of new passes for developers. For example,"
+" we allow users to implement a pass in Python and let the pass infra "
+"manipulate its execution."
+msgstr "简化开发人员实现新管道的操作。例如，允许用户用 Python 实现其管道，并让管道基础设施来管理其执行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:71
+msgid "The Design"
+msgstr "设计"
+
+#: ../../doc/docs/arch/pass_infra.rst:73
+msgid ""
+"We focus on ease of extension for users, making it possible for users to "
+"quickly add new passes without loss of backward compatibility. The design"
+" contains both the backend and the frontend. The former implements the "
+"main logic of the pass infra. The latter provides simple APIs for users "
+"to interact with, i.e., allowing users to quickly create their own "
+"optimization pipelines."
+msgstr ""
+"专注于用户的扩展便利性，使用户能够快速添加新 Pass 而不损失向后兼容性。该设计包含后端和前端。后端实现了 Pass "
+"基础设施的核心逻辑。前端为用户提供了简单的 API 进行交互，即允许用户快速创建自己的优化pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:80
+msgid "C++ Backend"
+msgstr "C++ 后端"
+
+#: ../../doc/docs/arch/pass_infra.rst:82
+msgid ""
+"We provide a ``PassInfo`` object to contain the basic information needed "
+"by a pass. ``name`` is the pass name, ``opt_level`` indicates at which "
+"optimization level the pass will be enabled, and ``required`` represents "
+"the passes that are required to execute a certain pass (see "
+"`include/tvm/ir/transform.h`_ for more details). For example, during "
+"registration of a pass (will be covered in later), the pass developers "
+"can specify the name of the pass, the optimization level it will be "
+"performed at, and/or the passes that are required. ``opt_level`` could be"
+" used to help the pass infra identify if a certain pass needs to be "
+"executed when running under a user-provided optimization level. The "
+"``required`` field can be used by the pass infra to resolve pass "
+"dependencies."
+msgstr ""
+"提供了 ``PassInfo`` 对象来包含 Pass 所需的基本信息。``name`` 是 Pass 的名称，``opt_level`` 表示 "
+"Pass 将在哪个优化级别启用，``required`` 表示执行某个 Pass 所需的其他 Pass（更多详细信息请参阅 "
+"`include/tvm/ir/transform.h`_）。例如，在 Pass 注册期间（将在后面介绍），Pass 开发者可以指定 Pass "
+"的名称、将在哪个优化级别执行以及/或所需的 Pass。``opt_level`` 可用于帮助 Pass "
+"基础设施识别在用户提供的优化级别下是否需要执行某个 Pass。Pass 基础设施可以使用 ``required`` 字段来解决 Pass "
+"之间的依赖关系。"
+
+#: ../../doc/docs/arch/pass_infra.rst:102
+#: ../../doc/docs/arch/pass_infra.rst:544
+msgid "PassContext"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:104
+msgid ""
+"``PassContext`` carries useful information for an optimization pass. For "
+"example, it contains the error reporting system so optimization authors "
+"can provide diagnostics about why an optimization fails. ``PassContext`` "
+"is also designed to replace the old ``BuildConfig`` which was used to "
+"help users configure the compilation options, including optimization "
+"level and required/disabled passes, etc. For instance, we may have a "
+"configuration which performs all passes at ``opt_level=3`` with some "
+"disabled passes using ``disabled_pass=xx`` provided by ``PassContext``. "
+"Now we could glob all passes at ``opt_level=3`` and exclude those in the "
+"disabled pass list. ``PassContext`` also provides a way to instrument all"
+" passes. See section :ref:`pass_instrument_cpp_backend`."
+msgstr ""
+"``PassContext`` 携带了优化 Pass "
+"所需的有用信息。例如，它包含了错误报告系统，因此优化作者可以提供有关优化失败原因的诊断信息。``PassContext`` 还被设计用来取代旧的 "
+"``BuildConfig``，后者用于帮助用户配置编译选项，包括优化级别和所需/禁用的Pass等。例如，可能有配置，它在 "
+"``opt_level=3`` 下执行所有 Pass，同时使用 ``PassContext`` 提供的 ``disabled_pass=xx`` "
+"禁用某些 Pass。现在，可以全局获取 ``opt_level=3`` 下的所有 Pass，并排除禁用 Pass 列表中的那些 "
+"Pass。``PassContext`` 还提供了一种方法来检测所有 Pass。请参阅 "
+":ref:`pass_instrument_cpp_backend` 部分。"
+
+#: ../../doc/docs/arch/pass_infra.rst:115
+msgid ""
+"This class is designed for users to conveniently write the Python "
+"``with`` syntax to perform optimizations under a certain configuration. "
+"In addition, the users can obtain the context that is available within a "
+"certain program scope in a thread-safe way through "
+"``PassContext::Current()``, since a thread-local store "
+"``PassContextThreadLocalStore`` is used to hold the created pass context "
+"objects. Examples will be provided later to show how we can use both the "
+"C++ and Python APIs to create a compilation pipeline using pass context."
+msgstr ""
+"这个类旨在让用户方便地编写 Python 的 ``with`` 语法，以在特定配置下执行优化。此外，用户可以通过 "
+"``PassContext::Current()`` 以线程安全的方式获取在某个程序范围内可用的上下文，因为使用了线程本地存储 "
+"``PassContextThreadLocalStore`` 来保存创建的 Pass 上下文对象。稍后将提供示例，展示如何使用 C++ 和 "
+"Python API 来创建使用 Pass 上下文的编译管道。"
+
+#: ../../doc/docs/arch/pass_infra.rst:170
+msgid "Pass Constructs"
+msgstr "Pass 构造函数"
+
+#: ../../doc/docs/arch/pass_infra.rst:172
+msgid ""
+"The pass infra is designed in a hierarchical manner, and it could work at"
+" different granularities of Relax/tir programs. A pure virtual class "
+"``PassNode`` is introduced to serve as the base of the different "
+"optimization passes. This class contains several virtual methods that "
+"must be implemented by the subclasses at the level of modules, functions,"
+" or sequences of passes."
+msgstr ""
+"Pass 基础设施以分层方式设计，可以在不同粒度的 Relax/tir 程序中工作。"
+"引入了纯虚拟类 ``PassNode`` ，作为不同优化 Pass 的基础。此类包含几个必须在模块、函数或 Pass 序列级别由子类实现的虚拟方法。"
+
+#: ../../doc/docs/arch/pass_infra.rst:186
+msgid ""
+"The functor shows how a pass must be realized, i.e. it always works on a "
+":py:class:`IRModule` under a certain context. All passes are designed in "
+"a ``Module`` to ``Module`` manner. Therefore, optimizations governed by "
+"the pass infra will always update the whole module."
+msgstr ""
+"该函子展示了如何实现 Pass，即它总是在某个上下文下对 :py:class:`IRModule` 进行操作。所有 Pass 都以 "
+"``Module`` 到 ``Module`` 的方式设计。因此，由 Pass 基础设施管理的优化将始终更新整个模块。"
+
+#: ../../doc/docs/arch/pass_infra.rst:191
+msgid ""
+"Several subclasses have been created to implement different types of "
+"optimization passes, e.g., function-level passes, module-level passes, "
+"and sequential passes.  Each subclass itself could act as a pass manager."
+" For instance, they could collect the required passes and execute them or"
+" build a dependency graph based on the given metadata. The full "
+"definition of them can be found in `src/ir/transform.cc`_."
+msgstr ""
+"已经创建了几个子类来实现不同类型的优化 passes，例如函数级 passes、模块级 passes和 passes 序列。每个子类本身都可以充当 passes 管理器。"
+"例如，它们可以收集所需的传递并执行它们，或者根据给定的元数据构建依赖图。它们的完整定义可以在 `src/ir/transform.cc`_ 中找到。"
+
+#: ../../doc/docs/arch/pass_infra.rst:199
+msgid "Module-Level Passes"
+msgstr "模块级 Pass"
+
+#: ../../doc/docs/arch/pass_infra.rst:201
+msgid ""
+"Module level passes are geared mainly for global and inter-procedural "
+"optimizations (IPO), which are similar to the module pass used in LLVM. "
+"Some typical passes in Relax that need the global picture of a module, "
+"such as A-normal form conversion and lambda lifting, etc., fall into this"
+" set. At this level, users can even add and/or delete functions in a "
+"module. Note that all passes"
+msgstr ""
+"模块级 passes 主要针对全局和跨过程优化（inter-procedural optimizations，简称 IPO），这与 LLVM 中使用的模块传递类似。"
+"Relax 中的一些典型 passes，如 A 范式变换和 lambda 抬升等，都属于这一类。"
+"在这个级别上，用户甚至可以添加和/或删除模块中的函数。请注意，所有 passes"
+
+#: ../../doc/docs/arch/pass_infra.rst:217
+msgid ""
+"``pass_info`` maintains the information needed by a module-level pass. "
+"``pass_func`` sketches the real optimization. For example, we may need to"
+" perform dead code elimination on the module. We could implement the "
+"algorithm in the ``pass_func`` and let it run on a module. It will then "
+"remove the dead code including the unused functions in the module. Note "
+"that this field is designed as a packed function, which enables the "
+"implementation of the optimization in both C++ and Python."
+msgstr ""
+"``pass_info`` 维护了模块级 Pass 所需的信息。``pass_func`` "
+"描述了实际的优化pass。例如，可能需要对模块执行死代码消除。可以在 ``pass_func`` "
+"中实现该算法，并让它在模块上运行。然后，它将删除死代码，包括模块中未使用的函数。请注意，该字段被设计为打包函数，这使得优化可以在 C++ 和 "
+"Python 中实现。"
+
+#: ../../doc/docs/arch/pass_infra.rst:226
+msgid "Function-Level Passes"
+msgstr "函数级 Pass"
+
+#: ../../doc/docs/arch/pass_infra.rst:228
+msgid ""
+"Function-level passes are used to implement various intra-function level "
+"optimizations for a given Relax/tir module. It fetches one function at a "
+"time from the function list of a module for optimization and yields a "
+"rewritten Relax ``Function`` or tir ``PrimFunc``. Most of passes can be "
+"classified into this category, such as common subexpression elimination "
+"and inference simplification in Relax as well as vectorization and "
+"flattening storage in tir, etc."
+msgstr ""
+"函数级别的 pass 用于对给定的 Relax/tir 模块实现各种函数内部级别的优化。"
+"它每次从模块的函数列表中获取一个函数进行优化，并生成一个重写的 Relax Function 或 tir PrimFunc 。"
+"大多数 pass 都可以归入此类，例如 Relax 中的 common 子表达式消除和推断简化，以及 tir 中的向量化和存储扁平化等。"
+
+#: ../../doc/docs/arch/pass_infra.rst:235
+msgid ""
+"Note that the scope of passes at this level is either a Relax function or"
+" a tir primitive function. Therefore, we cannot add or delete a function "
+"through these passes as they are not aware of the global information."
+msgstr ""
+"请注意，此级别 pass 的作用域要么是 Relax 函数，要么是 tir 原始函数。因此，不能通过这些 pass 添加或删除函数，因为它们 unaware of 全局信息。"
+
+#: ../../doc/docs/arch/pass_infra.rst:249
+msgid ""
+"``pass_info`` is identical to what we just described in the module pass. "
+"``pass_func`` takes a function for optimization, it also needs a module "
+"as we may use it for reporting errors. A function could be annotated with"
+" \"SkipOptimization\" so that it will be ignored during optimization."
+msgstr ""
+"``pass_info`` 与刚刚在模块级 Pass 中描述的内容相同。``pass_func`` "
+"接受函数进行优化，它还需要模块，因为可能用它来报告错误。函数可以用“SkipOptimization”进行注释，以便在优化期间忽略它。"
+
+#: ../../doc/docs/arch/pass_infra.rst:255
+msgid "Sequential Passes"
+msgstr "Pass 序列"
+
+#: ../../doc/docs/arch/pass_infra.rst:257
+msgid ""
+"``SequentialPass`` is similar to Pytorch ``nn.Sequential`` that contains "
+"a host of passes for execution."
+msgstr "``SequentialPass`` 类似于 Pytorch 的 ``nn.Sequential``，它包含一系列要执行的 Pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:270
+msgid ""
+"The following code shows how individual passes in a sequential pass are "
+"invoked. Essentially, we sequentially execute each pass in a sequential "
+"pass using the order that they were appended to the pass list."
+msgstr ""
+"以下代码展示了如何在顺序 Pass 中调用各个 Pass。本质上，按照它们被添加到 Pass 列表中的顺序依次执行顺序 Pass 中的每个 "
+"Pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:293
+msgid ""
+"Upon the invocation of a pass, we first check if this pass is enabled. "
+"This is done by first checking if the pass is explicitly disabled by a "
+"user, followed by inspecting if it is specified as a required pass by the"
+" user. If it is still undetermined whether this pass is enabled, its "
+"``opt_level`` will be checked. This pass will be enabled and therefore "
+"executed only when its optimization level is not less than the configured"
+" optimization level in the pass context."
+msgstr ""
+"在调用 Pass 时，首先检查该 Pass 是否启用。这是通过首先检查用户是否显式禁用了该 Pass，然后检查用户是否将其指定为必需 Pass "
+"来完成的。如果仍然无法确定该 Pass 是否启用，将检查其 ``opt_level``。只有当其优化级别不低于 Pass "
+"上下文中配置的优化级别时，该 Pass 才会被启用并执行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:300
+msgid ""
+"To execute the pass, we need first to retrieve the registered pass in the"
+" TVM packed function registry using the pass name. This is possible "
+"because every pass is registered with an API endpoint as we will show "
+"later."
+msgstr ""
+"要执行 Pass，需要首先使用 Pass 名称从 TVM 打包函数注册表中检索已注册的 Pass。这是可能的，因为每个 Pass 都注册了 API"
+" 端点，稍后会展示这一点。"
+
+#: ../../doc/docs/arch/pass_infra.rst:315
+msgid ""
+"Some helper functions are provided to create each type of these "
+"aforementioned passes. These helpers are also exposed to the Python "
+"frontend for users to favorably use Python APIs to create a specific pass"
+" object."
+msgstr ""
+"提供了一些辅助函数来创建上述每种类型的 Pass。这些辅助函数也暴露给 Python 前端，以便用户方便地使用 Python API 创建特定的 "
+"Pass 对象。"
+
+#: ../../doc/docs/arch/pass_infra.rst:342
+msgid "Pass Registration"
+msgstr "Pass 注册"
+
+#: ../../doc/docs/arch/pass_infra.rst:344
+msgid ""
+"We've covered the concept of different level of passes and the context "
+"used for compilation. It would be interesting to see how easily users can"
+" register a pass.  Let's take const folding as an example. This pass has "
+"already been implemented to fold constants in a Relax function (found in "
+"`src/relax/transforms/fold_constant.cc`_)."
+msgstr ""
+"经介绍了不同级别的 pass 的概念以及用于编译的上下文。看看用户可以如何轻松地注册 Pass 会很有趣。"
+"以 const folding 为例。这个 pass 已经被实现用于在 Relax 函数中折叠常量（位于 `src/relax/transforms/fold_constant.cc`_）。"
+
+#: ../../doc/docs/arch/pass_infra.rst:350
+msgid "An API was provided to perform the ``Expr`` to ``Expr`` transformation."
+msgstr "提供了 API 来执行 ``Expr`` 到 ``Expr`` 的变换。"
+
+#: ../../doc/docs/arch/pass_infra.rst:356
+#, python-brace-format
+msgid ""
+"In order to register this pass to the pass infra, we first need to decide"
+" at which level this pass will be performed. As const folding happens on "
+"individual functions, we should intuitively create a ``FunctionPass`` for"
+" it through ``CreateFunctionPass``. The ``pass_func`` is returned as a "
+"packed function that invokes the ``Expr`` to ``Expr`` API on each "
+"function in a `IRModule`. ``{}`` indicates that no prerequisite is "
+"required for this pass. Otherwise, the pass developer has to identify and"
+" list them."
+msgstr ""
+"为了将这个 Pass 注册到 Pass 基础设施中，首先需要确定该 Pass 将在哪个级别执行。由于常量折叠发生在单个函数上，应该直观地通过 "
+"``CreateFunctionPass`` 为其创建 ``FunctionPass``。``pass_func`` 作为打包函数返回，它在 "
+"``IRModule`` 中的每个函数上调用 ``Expr`` 到 ``Expr`` 的API。``{}`` 表示该 Pass "
+"没有先决条件。否则，Pass 开发者必须识别并列出它们。"
+
+#: ../../doc/docs/arch/pass_infra.rst:364
+msgid ""
+"Meanwhile, a pass API endpoint is registered with the name "
+"``\"relax.transform.FoldConstant``. This pass, therefore, becomes an "
+"entry in the registry that can be accessed by both C++ (e.g. the "
+"``GetPass`` above) and Python when needed."
+msgstr ""
+"与此同时，名为 ``relax.transform.FoldConstant`` 的 pass API 端点被注册。"
+"因此，这个 pass 成为注册表中的一个条目，当需要时，C++（例如上述的 ``GetPass`` ）和 Python 都可以访问它。"
+
+#: ../../doc/docs/arch/pass_infra.rst:384
+msgid ""
+"To allow other C++ modules to apply this pass, we declare a free function"
+" in `include/tvm/relax/transform.h`_ as the following:"
+msgstr "为了让其他 C++模块能够应用这个 pass，在 `include/tvm/relax/transform.h`_  中声明了 free 函数，如下所示："
+
+#: ../../doc/docs/arch/pass_infra.rst:394
+#: ../../doc/docs/arch/pass_infra.rst:584
+msgid "Pass Instrument"
+msgstr "Pass 检测"
+
+#: ../../doc/docs/arch/pass_infra.rst:396
+msgid ""
+"Pass Instrument is a mechanism to analyze the pass itself. For example, "
+"we can use the infrastructure to know how much time and memory a pass "
+"requires or how a pass can transform the IR module."
+msgstr ""
+"Pass 检测（Instrument）是一种分析 Pass 本身的机制。例如，可以使用该基础设施来了解 Pass 需要多少时间和内存，或者 "
+"Pass 如何变换 IR 模块。"
+
+#: ../../doc/docs/arch/pass_infra.rst:400
+msgid "We introduce four instrument points in the life-cycle of ``PassContext``."
+msgstr "在 ``PassContext`` 的生命周期中引入了四个检测点。"
+
+#: ../../doc/docs/arch/pass_infra.rst:409
+msgid ""
+"``InstrumentEnterPassContext`` is called immediately when entering the "
+"scope of the ``PassContext`` instance."
+msgstr "``InstrumentEnterPassContext`` 在进入 ``PassContext`` 实例的范围时立即调用。"
+
+#: ../../doc/docs/arch/pass_infra.rst:412
+msgid ""
+"``InstrumentExitPassContext`` is called when leaving the scope of "
+"``PassContext``, or exceptions occur during the execution of passes. This"
+" method is also called when instruments is being overridden by "
+"``override_instruments`` in :py:class:`tvm.transform.PassContext`. See "
+":ref:`pass_instrument_overriden`."
+msgstr ""
+"``InstrumentExitPassContext`` 在离开 ``PassContext`` 的作用域时，或在 passes 执行过程中发生异常时被调用。"
+"当 ``override_instruments`` 在 :py:class:`tvm.transform.PassContext` 中覆盖 instruments 时，该方法也会被调用。"
+"参见 :ref:`pass_instrument_overriden`。"
+
+#: ../../doc/docs/arch/pass_infra.rst:417
+msgid ""
+"``InstrumentBeforePass`` is called before execution. "
+"``InstrumentAfterPass`` is called after execution if the pass should be "
+"run. The behavior is like:"
+msgstr ""
+"``InstrumentBeforePass`` 在执行前调用。如果应该运行此 pass，``InstrumentAfterPass`` "
+"在执行后调用。行为如下："
+
+#: ../../doc/docs/arch/pass_infra.rst:428
+msgid ""
+"The ``PassInstrument`` interface allow you to run arbitrary code inside "
+"above four methods. Multiple ``PassInstrument`` instances can be registed"
+" into a single ``PassContext``. ``PassInstrument`` instances are called "
+"sequentially in the order of ``instruments`` argument passed to "
+"``PassContext``."
+msgstr ""
+"``PassInstrument`` 接口允许你在上述四个方法中运行任意代码。多个 ``PassInstrument`` 实例可以注册到 "
+"``PassContext`` 中。``PassInstrument`` 实例按照传递给 ``PassContext`` 的 "
+"``instruments`` 参数的顺序依次调用。"
+
+#: ../../doc/docs/arch/pass_infra.rst:433
+msgid "``PassInstrument`` provides following interfaces:"
+msgstr "``PassInstrument`` 提供以下接口："
+
+#: ../../doc/docs/arch/pass_infra.rst:457
+msgid ""
+"Python frontend are provided to implement ``PassInstrument`` quickly. See"
+" :ref:`pass_instrument_py_frontend`."
+msgstr ""
+"提供了 Python 前端来快速实现 ``PassInstrument``。请参阅 "
+":ref:`pass_instrument_py_frontend`。"
+
+#: ../../doc/docs/arch/pass_infra.rst:459
+msgid ""
+"Within a ``PassContext``, the call sequence of a ``PassInstrument`` "
+"instance is like:"
+msgstr "在 ``PassContext`` 中，``PassInstrument`` 实例的调用顺序如下："
+
+#: ../../doc/docs/arch/pass_infra.rst:478
+msgid ""
+"Here is a brief introduction of relations between ``PassInstrument`` "
+"interfaces and ``PassContext`` methods. See (`src/ir/transform.cc`_) for "
+"more details."
+msgstr ""
+"以下是 ``PassInstrument`` 接口与 ``PassContext`` "
+"方法之间关系的简要介绍。更多详细信息请参阅(`src/ir/transform.cc`_)。"
+
+#: ../../doc/docs/arch/pass_infra.rst:481
+msgid "``InstrumentEnterPassContext``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:483
+msgid ""
+"``EnterPassContext()`` is executed in the order of ``instruments`` passed"
+" to the ``PassContext``."
+msgstr "``EnterPassContext()`` 按照传递给 ``PassContext`` 的 ``instruments`` 的顺序执行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:484
+msgid ""
+"When an exception raises, ``PassContext`` disable the pass "
+"instrumentation by clearing all registered ``PassInstrument`` instances."
+msgstr "当异常发生时，``PassContext`` 通过清除所有注册的 ``PassInstrument`` 实例来禁用 Pass 检测。"
+
+#: ../../doc/docs/arch/pass_infra.rst:486
+msgid ""
+"Then ``PassContext`` execute ``ExitPassContext()`` method of each "
+"``PassInstrument`` instances which successfully finished "
+"``EnterPassContext()``"
+msgstr ""
+"然后，``PassContext`` 执行每个成功完成 ``EnterPassContext()`` 的 ``PassInstrument`` "
+"实例的 ``ExitPassContext()`` 方法。"
+
+#: ../../doc/docs/arch/pass_infra.rst:488
+msgid ""
+"For example, if ``PassInstrument`` A, B, and C are registered to a "
+"``PassContext`` and A finished ``EnterPassContext()`` while B throws an "
+"exception, then C is never executed; ``ExitPassContext()`` of A is "
+"executed."
+msgstr ""
+"例如，如果 ``PassInstrument`` A、B 和C 注册到 ``PassContext`` 中，并且 A 完成了 "
+"``EnterPassContext()``，而 B 抛出异常，那么 C 永远不会执行；A 的 ``ExitPassContext()`` "
+"会被执行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:492
+msgid "``InstrumentExitPassContext``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:494
+msgid ""
+"``ExitPassContext()`` of each ``PassInstrument`` instances are executed "
+"in the order of ``instruments`` passed to the ``PassContext``."
+msgstr ""
+"每个 ``PassInstrument`` 实例的 ``ExitPassContext()`` 按照传递给 ``PassContext`` 的 "
+"``instruments`` 的顺序执行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:496
+msgid "While an exception occurs, ``instruments`` is cleared."
+msgstr "当异常发生时，``instruments`` 会被清除。"
+
+#: ../../doc/docs/arch/pass_infra.rst:497
+msgid ""
+"``PassInstrument`` Instances registered after the one throwing exceptions"
+" do not execute ``ExitPassContext``."
+msgstr "在抛出异常的实例之后注册的 ``PassInstrument`` 实例不会执行 ``ExitPassContext``。"
+
+#: ../../doc/docs/arch/pass_infra.rst:499
+msgid "``InstrumentBeforePass``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:501
+msgid "``ShouldRun`` is executed if the pass is not listed as a required pass."
+msgstr "如果 Pass 未列为必需 Pass，则执行 ``ShouldRun``。"
+
+#: ../../doc/docs/arch/pass_infra.rst:502
+msgid ""
+"``RunBeforePass`` is executed in the order of ``instruments`` if the pass"
+" is not blocked by ``ShouldRun``."
+msgstr "如果 Pass 未被 ``ShouldRun`` 阻止，则按照 ``instruments`` 的顺序执行 ``RunBeforePass``。"
+
+#: ../../doc/docs/arch/pass_infra.rst:503
+msgid ""
+"Note that ``InstrumentBeforePass`` returns a boolean indicating whether "
+"or not the pass should be run."
+msgstr "请注意，``InstrumentBeforePass`` 返回布尔值，指示是否应运行该 Pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:504
+msgid ""
+"When an exception occur, it is thrown immediately. We rely on Python "
+"Context Manager to exit ``PassContext`` safely (meaning "
+"``ExitPassContext`` of each instruments will be run. For C++, please "
+"refer to `include/tvm/support/with.h`_.)"
+msgstr ""
+"当异常发生时，它会立即抛出。依赖 Python 的上下文管理器来安全地退出 ``PassContext`` （意味着每个检测器的 "
+"``ExitPassContext`` 将被运行。对于 C++，请参阅 `include/tvm/support/with.h`_。）"
+
+#: ../../doc/docs/arch/pass_infra.rst:508
+msgid "``InstrumentAfterPass``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:510
+msgid ""
+"``RunAfterPass`` is executed in the order of ``instruments`` passed to "
+"the ``PassContext``."
+msgstr "``RunAfterPass`` 按照传递给 ``PassContext`` 的 ``instruments`` 的顺序执行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:511
+msgid ""
+"When an exception occur, it is thrown immediately. We rely on Python "
+"Context Manager or ``With`` class(`include/tvm/support/with.h`_) to exit "
+"``PassContext`` safely"
+msgstr ""
+"当异常发生时，它会立即抛出。依赖 Python 的上下文管理器或 ``With`` "
+"类（`include/tvm/support/with.h`_）来安全地退出 ``PassContext``。"
+
+#: ../../doc/docs/arch/pass_infra.rst:515
+msgid "Built-in Instrument"
+msgstr "内置检测器"
+
+#: ../../doc/docs/arch/pass_infra.rst:517
+msgid ""
+"There are several built-in instruments. Those marked with *TODO* are not "
+"implemented yet."
+msgstr "有几个内置的检测器。那些标记为 *TODO* 的尚未实现。"
+
+#: ../../doc/docs/arch/pass_infra.rst:519
+msgid "PassTimingInstrument (see `src/ir/instrument.cc`_)"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:521
+msgid "Profile the execution time of passes."
+msgstr "分析 Pass 的执行时间。"
+
+#: ../../doc/docs/arch/pass_infra.rst:523
+msgid "PrintIRBefore(TODO)"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:525
+msgid ""
+"Print the IR module before the pass transforms it. "
+":py:func:`tvm.transform.PrintIR` can also serve this purpose if we insert"
+" it around passes. However, with the ``PassInstrument``, we don't need to"
+" modify the sequence of passes."
+msgstr ""
+"在 Pass 变换之前打印 IR 模块。如果在 Pass 周围插入 "
+":py:func:`tvm.transform.PrintIR`，也可以实现此目的。然而，使用 ``PassInstrument``，不需要修改 "
+"Pass 的顺序。"
+
+#: ../../doc/docs/arch/pass_infra.rst:529
+msgid "PrintAfter(TODO)"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:531
+msgid "Print the IR module after the pass transforms it."
+msgstr "在 Pass 变换后打印 IR 模块。"
+
+#: ../../doc/docs/arch/pass_infra.rst:534
+msgid "Python Frontend"
+msgstr "Python 前端"
+
+#: ../../doc/docs/arch/pass_infra.rst:536
+msgid ""
+"Only some simple APIs are needed for the frontend side. For example, we "
+"can provide users the following APIs to create and execute a pass (full "
+"implementation is provided in `python/tvm/relax/transform/transform.py`_ "
+"and `python/tvm/ir/transform.py`_). The backend receives the information "
+"and decides which function it should use to create a Pass object."
+msgstr ""
+"前端方面只需要一些简单的 API。例如，可以为用户提供以下 API 来创建和执行 pass"
+"（完整的实现提供在 `python/tvm/relax/transform/transform.py`_ 和 `python/tvm/ir/transform.py`_ 中）。"
+"后端接收这些信息，并决定它应该使用哪个函数来创建 Pass 对象。"
+
+#: ../../doc/docs/arch/pass_infra.rst:546
+msgid ""
+"Python frontend provides a wrapper for the ``PassContext`` to enable the "
+"``with`` syntax by overriding ``__enter__`` and ``__exit__``. A "
+"``current`` static method is offered for users to get the context that is"
+" in use under a certain scope."
+msgstr ""
+"Python 前端为 ``PassContext`` 提供了包装器，通过重写 ``__enter__`` 和 ``__exit__`` 来启用 "
+"``with`` 语法。提供了 ``current`` 静态方法，供用户获取在某个范围内正在使用的上下文。"
+
+#: ../../doc/docs/arch/pass_infra.rst:567
+msgid ""
+"A ``PassContext`` is used to configure the compilation options, including"
+" the optimization level and required/disabled passes. It can also take a "
+"dictionary of configs so that different passes can conveniently fetch the"
+" passed data, such as fallback device info and step/depth for loop "
+"unrolling, etc. In order to enable fetching the required config, the key "
+"must be registered through ``TVM_REGISTER_PASS_CONFIG_OPTION``. For "
+"example, the following is used by the loop unrolling pass"
+msgstr ""
+"``PassContext`` 用于配置编译选项，包括优化级别和所需/禁用的 Pass。它还可以接受配置字典，以便不同的 Pass "
+"可以方便地获取传递的数据，例如回退设备信息和循环展开的步长/深度等。为了能够获取所需的配置，必须通过 "
+"``TVM_REGISTER_PASS_CONFIG_OPTION`` 注册键。例如，以下内容用于循环展开 Pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:579
+msgid "Please refer to `src/tir/transforms/unroll_loop.cc`_ for more details."
+msgstr "更多详细信息请参阅 `src/tir/transforms/unroll_loop.cc`_。"
+
+#: ../../doc/docs/arch/pass_infra.rst:586
+msgid ""
+"One can implement a ``PassInstrument`` by using the ``pass_instrument`` "
+"decorator(`python/tvm/ir/instrument.py`_) on a class implementing "
+"following methods. Note that it is recommended to use the "
+"``pass_instrument`` decorator to implement ``PassInstrument``, instead of"
+" overriding or subclassing."
+msgstr ""
+"可以通过在实现以下方法的类上使用 ``pass_instrument`` "
+"装饰器（`python/tvm/ir/instrument.py`_）来实现 ``PassInstrument``。请注意，建议使用 "
+"``pass_instrument`` 装饰器来实现 ``PassInstrument``，而不是重写或子类化。"
+
+#: ../../doc/docs/arch/pass_infra.rst:591
+msgid "``enter_pass_ctx``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:593
+msgid "This method is run when entering ``PassContext``."
+msgstr "此方法在进入 ``PassContext`` 时运行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:595
+msgid "``exit_pass_ctx``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:597
+msgid "This method is run when exiting ``PassContext``."
+msgstr "此方法在退出 ``PassContext`` 时运行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:599
+msgid "``should_run``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:601
+msgid ""
+"This method is run before a pass is executed, returning a boolean "
+"indicating whether or not the pass should be run."
+msgstr "此方法在 Pass 执行之前运行，返回布尔值，指示是否应运行该 Pass。"
+
+#: ../../doc/docs/arch/pass_infra.rst:604
+msgid "``run_before_pass``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:606
+msgid "If a pass should be run, this method is run just before pass execution."
+msgstr "如果 Pass 应该运行，此方法在 Pass 执行之前运行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:608
+msgid "``run_after_pass``"
+msgstr ""
+
+#: ../../doc/docs/arch/pass_infra.rst:610
+msgid "This method is run right after a pass has been executed."
+msgstr "此方法在 Pass 执行后立即运行。"
+
+#: ../../doc/docs/arch/pass_infra.rst:612
+msgid ""
+"``PassInstrument`` instances can be registered through ``instruments`` "
+"argument in :py:class:`tvm.transform.PassContext`."
+msgstr ""
+"``PassInstrument`` 实例可以通过 :py:class:`tvm.transform.PassContext` 中的 "
+"``instruments`` 参数注册。"
+
+#: ../../doc/docs/arch/pass_infra.rst:615
+msgid ""
+"`use pass instrument`_ tutorial provides examples for how to implement "
+"``PassInstrument`` with Python APIs."
+msgstr "`use pass instrument`_ 教程提供了如何使用 Python API 实现 ``PassInstrument`` 的示例。"
+
+#: ../../doc/docs/arch/pass_infra.rst:620
+msgid "Override Instruments in Current PassContext"
+msgstr "在当前 PassContext 中覆盖检测器"
+
+#: ../../doc/docs/arch/pass_infra.rst:622
+msgid ""
+"``override_instruments`` method is provided to override the "
+"``instruments`` of current ``PassContext``. For example, if passes are "
+"run without explicitly creating a new ``PassContext``, one can still "
+"register ``PassInstrument`` into the global ``PassContext`` by:"
+msgstr ""
+"提供了 ``override_instruments`` 方法来覆盖当前 ``PassContext`` 的 "
+"``instruments``。例如，如果 Pass 在没有显式创建新 ``PassContext`` 的情况下运行，仍然可以通过以下方式将 "
+"``PassInstrument`` 注册到全局 ``PassContext`` 中："
+
+#: ../../doc/docs/arch/pass_infra.rst:634
+msgid ""
+"Note that when ``override_instruments`` is called, the ``exit_pass_ctx`` "
+"method of old ``PassInstrument`` instances are called. Then the "
+"``enter_pass_ctx`` method of new ``PassInstrument`` are called."
+msgstr ""
+"请注意，当调用 ``override_instruments`` 时，会调用旧 ``PassInstrument`` 实例的 "
+"``exit_pass_ctx`` 方法。然后调用新 ``PassInstrument`` 的 ``enter_pass_ctx`` 方法。"
+
+#~ msgid ""
+#~ "Only a few passes currently in "
+#~ "Relay are put in this group. For"
+#~ " example, ``FoldScaleAxis`` requires to "
+#~ "dispatch ``ForwardFoldScaleAxis`` and "
+#~ "``BackwardFoldScaleAxis`` internally. In addition,"
+#~ " ``BackwardFoldScaleAxis`` is recommended to "
+#~ "be fulfilled first. This pass, hence,"
+#~ " is an ideal candidate for "
+#~ "``SequentialPass``."
+#~ msgstr ""
+#~ "目前 Relay 中只有少数 Pass "
+#~ "被归入这一类别。例如，``FoldScaleAxis`` 需要在内部调度 "
+#~ "``ForwardFoldScaleAxis`` 和 "
+#~ "``BackwardFoldScaleAxis``。此外，建议首先完成 "
+#~ "``BackwardFoldScaleAxis``。因此，这个 Pass 是 "
+#~ "``SequentialPass`` 的理想候选者。"
+
+#~ msgid "Pass Objects"
+#~ msgstr "Pass 对象"
+
+#~ msgid ""
+#~ "``Pass`` is the base class of all"
+#~ " pass objects. All methods here are"
+#~ " just simple wrappers that were "
+#~ "implemented in the backend. They are "
+#~ "defined for users to conveniently "
+#~ "interact with the base class in "
+#~ "Python. Only a ``__call__`` is defined"
+#~ " in the pass base class to make"
+#~ " the subclasses as callable objects "
+#~ "so that they can be invoked easily"
+#~ " (e.g., ``pass_xx(arg)``) for execution."
+#~ msgstr ""
+#~ "``Pass`` 是所有 Pass "
+#~ "对象的基类。这里的所有方法都是在后端实现的简单包装器。它们是为了让用户能够方便地在 Python "
+#~ "中与基类交互而定义的。Pass 基类中只定义了 "
+#~ "``__call__``，以使子类成为可调用对象，从而可以轻松调用它们（例如，``pass_xx(arg)``）以执行。"
+
+#~ msgid ""
+#~ "Some auxiliary APIs are provided to "
+#~ "enable easy creation of passes from "
+#~ "the Python frontend and to let the"
+#~ " pass infra control the execution. "
+#~ "For example, ``module_pass``, ``function_pass``, "
+#~ "and ``sequential`` are provided to users"
+#~ " so that they can customize their "
+#~ "own pass or pass pipeline."
+#~ msgstr ""
+#~ "提供了一些辅助 API，以便从 Python 前端轻松创建 Pass，并让 "
+#~ "Pass 基础设施控制执行。例如，向用户提供了 ``module_pass``、``function_pass``"
+#~ " 和 ``sequential``，以便他们可以自定义自己的 Pass 或 Pass"
+#~ " 管道。"
+
+#~ msgid ""
+#~ "For all the passes that are "
+#~ "implemented in the C++ backend, we "
+#~ "provide corresponding Python APIs in "
+#~ "`python/tvm/ir/transform.py`_ and "
+#~ "`python/tvm/relay/transform/transform.py`_, respectively. "
+#~ "For instance, const folding has a "
+#~ "Python API like the following:"
+#~ msgstr ""
+#~ "对于所有在 C++ 后端实现的 Pass，分别在 "
+#~ "`python/tvm/ir/transform.py`_ 和 "
+#~ "`python/tvm/relay/transform/transform.py`_ 中提供了相应的 Python"
+#~ " API。例如，常量折叠有如下的 Python API："
+
+#~ msgid "Users can build a pass through decoration like the following:"
+#~ msgstr "用户可以通过装饰器构建 Pass，如下所示："
+
+#~ msgid ""
+#~ "The ``transform`` function here adds an"
+#~ " ``abs`` function to the input "
+#~ "module, but it could be any "
+#~ "customized optimizations at the module "
+#~ "level. After creating this ``module_pass``,"
+#~ " users can apply it on any "
+#~ "Relay module. For example, we can "
+#~ "build an empty module and apply "
+#~ "this pass to add an ``abs`` "
+#~ "function."
+#~ msgstr ""
+#~ "这里的 ``transform`` 函数向输入模块添加了 ``abs`` "
+#~ "函数，但它可以是模块级别的任何自定义优化。创建这个 ``module_pass`` 后，用户可以将其应用于任何"
+#~ " Relay 模块。例如，可以构建空模块并应用这个 Pass 来添加 ``abs``"
+#~ " 函数。"
+
+#~ msgid ""
+#~ "Correspondingly, we also offer such "
+#~ "functionality for ``function_pass``. For "
+#~ "instance, an example function-level pass"
+#~ " could be written as the following:"
+#~ msgstr "相应地，也为 ``function_pass`` 提供了这样的函数。例如，示例函数级 Pass 可以写成如下形式："
+
+#~ msgid ""
+#~ "Alternatively, users can also directly "
+#~ "register a pass without using the "
+#~ "decorators and then invoke it. For "
+#~ "more examples about how to customize "
+#~ "your own optimization pipeline and debug"
+#~ " Relay and tir passes, please refer"
+#~ " to the `use pass infra`_ tutorial."
+#~ msgstr ""
+#~ "或者，用户也可以直接注册 Pass 而不使用装饰器，然后调用它。有关如何自定义优化pass以及调试 "
+#~ "Relay 和 TIR Pass 的更多示例，请参阅 `use "
+#~ "pass infra`_ 教程。"
+

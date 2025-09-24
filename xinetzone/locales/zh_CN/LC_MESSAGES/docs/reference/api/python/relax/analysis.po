@@ -1,0 +1,1053 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/analysis.rst:19
+msgid "tvm.relax.analysis"
+msgstr ""
+
+#: of tvm.relax.analysis:1
+msgid "Relax IR analysis."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.BaseCheckResult:1
+msgid "Return result of fine-grained base check."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.BaseCheckResult:5
+msgid "Base check comes with fine-grained fail levels."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.BaseCheckResult:7
+msgid "FAIL_L0: The lhs and rhs have no intersection at all."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.BaseCheckResult:8
+msgid "FAIL_L1: We get the failure by looking at static information."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.BaseCheckResult:9
+msgid "FAIL_L2: We get the failure due to unknown symbolic variable relations."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.all_global_vars:1
+msgid ""
+"Return all global variables from expression expr. :param expr: The "
+"expression. :type expr: Expr"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/analysis.rst of
+#: tvm.relax.analysis.analysis.contains_impure_call
+#: tvm.relax.analysis.analysis.has_reshape_pattern
+#: tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage
+msgid "返回"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.all_global_vars:5
+msgid "**ret** -- List of global vars in expr, in post-DFS order"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/analysis.rst of
+#: tvm.relax.analysis.analysis.contains_impure_call
+#: tvm.relax.analysis.analysis.has_reshape_pattern
+#: tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.all_vars:1
+msgid ""
+"Return all (local) variables from expression expr. :param expr: The "
+"expression. :type expr: Expr"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.all_vars:5
+msgid "**ret** -- List of vars in expr, in post-DFS order"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.bound_vars:1
+msgid ""
+"Return all bound variables from expression expr. Bound variables are all "
+"variables that are declared in the expr. They only have meaning inside "
+"that expr, and can only be used in it. :param expr: The expression. :type"
+" expr: Expr"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.bound_vars:7
+msgid "**ret** -- List of bound vars in expr, in post-DFS order"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.collect_non_negative_expressions:1
+msgid "Collect TIR expressions used in non-negative contexts"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.collect_non_negative_expressions:3
+msgid ""
+"Get TIR variables that are non-negative within the context where the "
+"struct info is used.  For example, any expression used as a tensor shape."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.collect_non_negative_expressions:7
+msgid ""
+"The returned list is deduplicated - each TIR expression will appear at "
+"most once.  The order of the list is in the order of occurrence within "
+"the struct info."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/analysis.rst of
+#: tvm.relax.analysis.analysis.contains_impure_call
+#: tvm.relax.analysis.analysis.has_reshape_pattern
+#: tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage
+msgid "参数"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.collect_non_negative_expressions:11
+#: tvm.relax.analysis.analysis.definable_tir_vars_in_struct_info:4
+#: tvm.relax.analysis.analysis.tir_vars_in_struct_info:4
+msgid "The struct info object to be analyzed."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.collect_non_negative_expressions:14
+#: tvm.relax.analysis.analysis.definable_tir_vars_in_struct_info:7
+msgid ""
+"**ret** -- The list of TIR variables that can be defined from the "
+"StructInfo"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.computable_at_compile_time:1
+msgid "Collect variables whose value can be computed at compile-time"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.computable_at_compile_time:3
+msgid ""
+"If a function has the `kNumInput` attribute, then the first `kNumInput` "
+"parameters are provided at run-time, while all remaining parameters may "
+"be known at compile-time.  This utility collects all variable bindings "
+"that only depend, directly or indirectly, on the parameters known at "
+"compile-time."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.computable_at_compile_time:9
+msgid "The `relax.Function` to analyze"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.computable_at_compile_time:12
+msgid ""
+"**ret** -- The set of variables that can be computed at compile-time, in "
+"order of their occurrence within the function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.contains_impure_call:1
+msgid ""
+"Check if the given expression (likely a function body) contains any "
+"impure calls."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.contains_impure_call:3
+msgid "The expression to be examined. If expr is a function, we check the body."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.contains_impure_call:5
+msgid ""
+"For a recursive function, the analysis can ignore the self-calls for "
+"checking purity."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.contains_impure_call:9
+msgid ""
+"**ret** -- True if there is an impure call (call to a function that may "
+"have visible side effects)."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.contains_impure_call:14
+#: tvm.relax.analysis.analysis.has_reshape_pattern:16
+#: tvm.relax.analysis.analysis.remove_all_unused:9
+#: tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:21
+msgid "备注"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.contains_impure_call:15
+msgid ""
+"Relies on StructInfo annotations, so ensure that the module has been "
+"normalized first. Also, an impure call in a *nested* function does *not* "
+"mean that the outer expression contains an impure call--it only does if "
+"the nested function is *later called*."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.definable_tir_vars_in_struct_info:1
+msgid ""
+"Get the TIR variables that may be defined from input struct info. The "
+"returned list is deduplicated - each TIR variable will appear at most "
+"once."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.defined_symbolic_vars:1
+msgid ""
+"Get the TIR variables that defined in the input function. The returned "
+"list is deduplicated - each TIR variable will appear at most once."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.defined_symbolic_vars:4
+#: tvm.relax.analysis.analysis.free_symbolic_vars:4
+msgid "The function object to be analyzed."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.defined_symbolic_vars:7
+msgid ""
+"**ret** -- The list of symbolic variables that are defined in the input "
+"function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.derive_call_ret_struct_info:1
+msgid "Derive the call's ret value struct info from inputs."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.derive_call_ret_struct_info:3
+msgid "The call's function signature."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.derive_call_ret_struct_info:5
+msgid "The call expression"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.derive_call_ret_struct_info:7
+msgid "The context block builder."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.derive_call_ret_struct_info:10
+#: tvm.relax.analysis.analysis.struct_info_base_check:8
+msgid "**ret** -- The derived return value struct info."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.derive_call_ret_struct_info:15
+msgid ""
+"This is an internal derivation function, call.op field is ignored in this"
+" case and the derivation only depends on func_sinfo."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.detect_recursion:1
+msgid "Find all sets of recursive or mutually recursive functions in the module."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.detect_recursion:3
+msgid ""
+"Two or more functions are mutually recursive if there is some cycle of "
+"references among them. For example, if there are two functions A and B, "
+"they are mutually recursive if A calls B and B calls A. Another case "
+"would be with three functions A, B, and C, where A calls B, B calls C, "
+"and C calls A."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.detect_recursion:8
+msgid ""
+"(Note that functions do not have to call each other to reference each "
+"other. For example, if a function returns another function, that is still"
+" a reference that could potentially be recursive, even without a call.)"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.detect_recursion:13
+msgid ""
+"If a function is simply recursive and not mutually recursive with any "
+"other, it will be reported as a group by itself."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.detect_recursion:19
+msgid ""
+"**ret** -- Each member of the list is a list of global functions that "
+"references each other mutually recursively. If a function is simply "
+"recursive and not mutually recursive with any other, it will be a "
+"singleton in this list."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.erase_to_well_defined:1
+msgid "Erase sinfo into a well defined form."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.erase_to_well_defined:3
+msgid ""
+"This function removes the StructInfo's dependencies on shape and vars "
+"that are not defined in given maps."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.erase_to_well_defined:6
+#: tvm.relax.analysis.analysis.get_static_type:3
+msgid "The input struct info."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.erase_to_well_defined:8
+msgid "Specifies the defined shape vars and the values they should map to."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.erase_to_well_defined:10
+msgid "Specifies the defined vars and the values they should map to."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.erase_to_well_defined:13
+msgid "**ret** -- The corresponding erased struct info."
+msgstr ""
+
+#: of tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:1
+msgid ""
+"Analysis function that estimates the memory usage of Relax functions in "
+"an IRModule. The estimation includes the total memory size needed to be "
+"allocated before and after memory planning."
+msgstr ""
+
+#: of tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:5
+msgid ""
+"The result might be over-estimated, as the estimation is static, which "
+"does not consider control flows (such as \"if\" and cross-function "
+"calls). It simply accumulates the size of every alloc_tensor and "
+"alloc_storage."
+msgstr ""
+
+#: of tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:9
+msgid ""
+"This analysis function is used to demonstrate the effect of memory "
+"planning."
+msgstr ""
+
+#: of tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:12
+msgid ""
+"The input IRModule whose functions inside are to be analyzed. If the "
+"input is a Function, we will wrap it with a IRModule, with the function "
+"named \"main\"."
+msgstr ""
+
+#: of tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:17
+msgid "**est** -- The estimation information, in the form of a string."
+msgstr ""
+
+#: of tvm.relax.analysis.estimate_memory_usage.estimate_memory_usage:22
+msgid ""
+"We regards \"relax.memory.alloc_tensor/storage\" as the results produced "
+"by memory planning."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.free_symbolic_vars:1
+msgid ""
+"Get the TIR variables that are used but not defined in the input "
+"function. The returned list is deduplicated - each TIR variable will "
+"appear at most once."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.free_symbolic_vars:7
+msgid ""
+"**ret** -- The list of symbolic variables that are used but not defined "
+"in the input function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.free_vars:1
+msgid ""
+"Return all free variables from expression expr. Free variables are "
+"variables that are not bound by a VarBinding or a function parameter in "
+"the expression. :param expr: The expression. :type expr: Expr"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.free_vars:7
+msgid "**ret** -- List of free vars in expr, in post-DFS order"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.get_static_type:1
+msgid "Get the corresponding static type from a StructInfo."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.get_static_type:6
+msgid "**ret** -- The corresponding static type."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.get_var2val:1
+msgid "Get a mapping from Var to Expr for each variable in the function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.get_var2val:3
+#: tvm.relax.analysis.analysis.remove_all_unused:5
+msgid "The input function to be analyzed."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.get_var2val:6
+msgid "A mapping from Var to Expr."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.has_reshape_pattern:1
+msgid ""
+"Check if the given PrimFunc is essentially doing a reshape operation. The"
+" reshape operation also includes expand_dims, squeeze, flatten, etc."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.has_reshape_pattern:4
+msgid ""
+"Here the allowed reshape pattern is: for example, assume the operation is"
+" `B[l_0, l_1, ..., l_b] = A[r_0, r_1, ..., r_a]`, we check if we can "
+"prove that the flattened index of l_0, ..., l_b under buffer B equals to "
+"the flattened index of r_0, ..., r_a under buffer A."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.has_reshape_pattern:9
+msgid "The function to be examined."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.has_reshape_pattern:12
+msgid "**ret** -- A boolean indicating if the given PrimFunc is doing a reshape."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.has_reshape_pattern:17
+msgid ""
+"According to the description above, the returned result can only be "
+"false-negative and cannot be false-positive, since whenever we cannot "
+"prove the equality, we return false. This property guarantees the safety "
+"of this function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.name_to_binding:1
+msgid "Return a map from variable name to its bindings."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.post_order_visit:1
+msgid ""
+"Recursively visit the ir in post DFS order node, apply fvisit. Each node "
+"is guaranteed to be visited only once."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.post_order_visit:5
+msgid "The input expression."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.post_order_visit:7
+msgid "The visitor function to be applied."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.remove_all_unused:1
+msgid ""
+"It removes: 1. Unused local VarBindings in a DataflowBlock. 2. Unused "
+"DataflowBlocks in a function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.remove_all_unused:10
+msgid ""
+"For IRModule-wise DCE, use "
+"py:func:`tvm.relax.transform.DeadCodeElimination`."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.remove_all_unused:12
+msgid "The function with unused variables removed."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_base_check:1
+msgid "Run a base check to see if base subsumes derived."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_base_check:3
+msgid "The base struct info."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_base_check:5
+msgid "The derived struct info."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_lca:1
+msgid "Unify the two struct info to their least common ancestor."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_lca:3
+msgid "The left operand."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_lca:5
+msgid "The right operand."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.struct_info_lca:8
+msgid "**ret** -- The corresponding lca result."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.suggest_layout_transforms:1
+msgid "Suggest Layout transformations of blocks and buffers in a PrimFunc."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.suggest_layout_transforms:3
+msgid ""
+"PrimFunc on which analysis will be performed and transformations "
+"suggested."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.suggest_layout_transforms:5
+msgid ""
+"List of layout transformations on the output buffers. The number of "
+"layout transformations must match the number of outputs of the PrimFunc."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.suggest_layout_transforms:9
+msgid ""
+"**ret** -- Suggested transforms per block in `func`. For each block the "
+"returned value is a map from the object (block or buffer) to it's index "
+"map transformation."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.tir_vars_in_struct_info:1
+msgid ""
+"Get the TIR variables that appear in the input struct info. The returned "
+"list is deduplicated - each TIR variable will appear at most once."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.tir_vars_in_struct_info:7
+msgid "**ret** -- The list of TIR variables that appear in the input struct info."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.udchain:1
+msgid "Analyze the variable use-def chain in a dataflow block."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.udchain:3
+msgid "The dataflow block to analyze"
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.udchain:6
+msgid "A mapping from variable definition to its uses."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.well_formed:1
+msgid "Check if the IRModule is well formed."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.well_formed:3
+msgid "The input IRModule or relax.Function."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.well_formed:5
+msgid ""
+"A boolean flag indicating if the property \"every Expr must have defined "
+"structure info\" will be checked."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.well_formed:9
+msgid "**ret** -- True if the IRModule is well formed, False if not."
+msgstr ""
+
+#: of tvm.relax.analysis.analysis.well_formed:14
+msgid ""
+"By default the structure info is always checked. It is only in test cases"
+" where `check_struct_info` might be false, so that other well-formed "
+"requirements will be well tested and will not be blocked by not having "
+"structure info."
+msgstr ""
+
+#~ msgid "Relax IR analysis."
+#~ msgstr ""
+
+#~ msgid "Return result of fine-grained base check."
+#~ msgstr ""
+
+#~ msgid "Base check comes with fine-grained fail levels."
+#~ msgstr ""
+
+#~ msgid "FAIL_L0: The lhs and rhs have no intersection at all."
+#~ msgstr ""
+
+#~ msgid "FAIL_L1: We get the failure by looking at static information."
+#~ msgstr ""
+
+#~ msgid "FAIL_L2: We get the failure due to unknown symbolic variable relations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return all global variables from "
+#~ "expression expr. :param expr: The "
+#~ "expression. :type expr: Expr"
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**ret** -- List of global vars in expr, in post-DFS order"
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return all (local) variables from "
+#~ "expression expr. :param expr: The "
+#~ "expression. :type expr: Expr"
+#~ msgstr ""
+
+#~ msgid "**ret** -- List of vars in expr, in post-DFS order"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return all bound variables from "
+#~ "expression expr. Bound variables are all"
+#~ " variables that are declared in the"
+#~ " expr. They only have meaning inside"
+#~ " that expr, and can only be "
+#~ "used in it. :param expr: The "
+#~ "expression. :type expr: Expr"
+#~ msgstr ""
+
+#~ msgid "**ret** -- List of bound vars in expr, in post-DFS order"
+#~ msgstr ""
+
+#~ msgid "Collect TIR expressions used in non-negative contexts"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get TIR variables that are non-"
+#~ "negative within the context where the"
+#~ " struct info is used.  For example,"
+#~ " any expression used as a tensor "
+#~ "shape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The returned list is deduplicated - "
+#~ "each TIR expression will appear at "
+#~ "most once.  The order of the list"
+#~ " is in the order of occurrence "
+#~ "within the struct info."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The struct info object to be analyzed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The list of TIR "
+#~ "variables that can be defined from "
+#~ "the StructInfo"
+#~ msgstr ""
+
+#~ msgid "Collect variables whose value can be computed at compile-time"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a function has the `kNumInput` "
+#~ "attribute, then the first `kNumInput` "
+#~ "parameters are provided at run-time, "
+#~ "while all remaining parameters may be"
+#~ " known at compile-time.  This utility"
+#~ " collects all variable bindings that "
+#~ "only depend, directly or indirectly, on"
+#~ " the parameters known at compile-"
+#~ "time."
+#~ msgstr ""
+
+#~ msgid "The `relax.Function` to analyze"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The set of variables "
+#~ "that can be computed at compile-"
+#~ "time, in order of their occurrence "
+#~ "within the function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check if the given expression (likely"
+#~ " a function body) contains any impure"
+#~ " calls."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The expression to be examined. If "
+#~ "expr is a function, we check the"
+#~ " body."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a recursive function, the analysis"
+#~ " can ignore the self-calls for "
+#~ "checking purity."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- True if there is an "
+#~ "impure call (call to a function "
+#~ "that may have visible side effects)."
+#~ msgstr ""
+
+#~ msgid "备注"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Relies on StructInfo annotations, so "
+#~ "ensure that the module has been "
+#~ "normalized first. Also, an impure call"
+#~ " in a *nested* function does *not*"
+#~ " mean that the outer expression "
+#~ "contains an impure call--it only "
+#~ "does if the nested function is "
+#~ "*later called*."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the TIR variables that may be"
+#~ " defined from input struct info. The"
+#~ " returned list is deduplicated - each"
+#~ " TIR variable will appear at most "
+#~ "once."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the TIR variables that defined "
+#~ "in the input function. The returned "
+#~ "list is deduplicated - each TIR "
+#~ "variable will appear at most once."
+#~ msgstr ""
+
+#~ msgid "The function object to be analyzed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The list of symbolic "
+#~ "variables that are defined in the "
+#~ "input function."
+#~ msgstr ""
+
+#~ msgid "Derive the call's ret value struct info from inputs."
+#~ msgstr ""
+
+#~ msgid "The call's function signature."
+#~ msgstr ""
+
+#~ msgid "The call expression"
+#~ msgstr ""
+
+#~ msgid "The context block builder."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The derived return value struct info."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is an internal derivation function,"
+#~ " call.op field is ignored in this "
+#~ "case and the derivation only depends "
+#~ "on func_sinfo."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Find all sets of recursive or "
+#~ "mutually recursive functions in the "
+#~ "module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Two or more functions are mutually "
+#~ "recursive if there is some cycle "
+#~ "of references among them. For example,"
+#~ " if there are two functions A "
+#~ "and B, they are mutually recursive "
+#~ "if A calls B and B calls A."
+#~ " Another case would be with three "
+#~ "functions A, B, and C, where A "
+#~ "calls B, B calls C, and C "
+#~ "calls A."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(Note that functions do not have "
+#~ "to call each other to reference "
+#~ "each other. For example, if a "
+#~ "function returns another function, that "
+#~ "is still a reference that could "
+#~ "potentially be recursive, even without a"
+#~ " call.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If a function is simply recursive "
+#~ "and not mutually recursive with any "
+#~ "other, it will be reported as a"
+#~ " group by itself."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- Each member of the list"
+#~ " is a list of global functions "
+#~ "that references each other mutually "
+#~ "recursively. If a function is simply "
+#~ "recursive and not mutually recursive "
+#~ "with any other, it will be a "
+#~ "singleton in this list."
+#~ msgstr ""
+
+#~ msgid "Erase sinfo into a well defined form."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function removes the StructInfo's "
+#~ "dependencies on shape and vars that "
+#~ "are not defined in given maps."
+#~ msgstr ""
+
+#~ msgid "The input struct info."
+#~ msgstr ""
+
+#~ msgid "Specifies the defined shape vars and the values they should map to."
+#~ msgstr ""
+
+#~ msgid "Specifies the defined vars and the values they should map to."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The corresponding erased struct info."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Analysis function that estimates the "
+#~ "memory usage of Relax functions in "
+#~ "an IRModule. The estimation includes the"
+#~ " total memory size needed to be "
+#~ "allocated before and after memory "
+#~ "planning."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The result might be over-estimated, "
+#~ "as the estimation is static, which "
+#~ "does not consider control flows (such"
+#~ " as \"if\" and cross-function calls)."
+#~ " It simply accumulates the size of"
+#~ " every alloc_tensor and alloc_storage."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This analysis function is used to "
+#~ "demonstrate the effect of memory "
+#~ "planning."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The input IRModule whose functions "
+#~ "inside are to be analyzed. If the"
+#~ " input is a Function, we will "
+#~ "wrap it with a IRModule, with the"
+#~ " function named \"main\"."
+#~ msgstr ""
+
+#~ msgid "**est** -- The estimation information, in the form of a string."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We regards \"relax.memory.alloc_tensor/storage\" as"
+#~ " the results produced by memory "
+#~ "planning."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the TIR variables that are "
+#~ "used but not defined in the input"
+#~ " function. The returned list is "
+#~ "deduplicated - each TIR variable will"
+#~ " appear at most once."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The list of symbolic "
+#~ "variables that are used but not "
+#~ "defined in the input function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Return all free variables from "
+#~ "expression expr. Free variables are "
+#~ "variables that are not bound by a"
+#~ " VarBinding or a function parameter "
+#~ "in the expression. :param expr: The "
+#~ "expression. :type expr: Expr"
+#~ msgstr ""
+
+#~ msgid "**ret** -- List of free vars in expr, in post-DFS order"
+#~ msgstr ""
+
+#~ msgid "Get the corresponding static type from a StructInfo."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The corresponding static type."
+#~ msgstr ""
+
+#~ msgid "Get a mapping from Var to Expr for each variable in the function."
+#~ msgstr ""
+
+#~ msgid "The input function to be analyzed."
+#~ msgstr ""
+
+#~ msgid "A mapping from Var to Expr."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check if the given PrimFunc is "
+#~ "essentially doing a reshape operation. "
+#~ "The reshape operation also includes "
+#~ "expand_dims, squeeze, flatten, etc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here the allowed reshape pattern is: "
+#~ "for example, assume the operation is "
+#~ "`B[l_0, l_1, ..., l_b] = A[r_0, "
+#~ "r_1, ..., r_a]`, we check if we"
+#~ " can prove that the flattened index"
+#~ " of l_0, ..., l_b under buffer "
+#~ "B equals to the flattened index of"
+#~ " r_0, ..., r_a under buffer A."
+#~ msgstr ""
+
+#~ msgid "The function to be examined."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- A boolean indicating if "
+#~ "the given PrimFunc is doing a "
+#~ "reshape."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "According to the description above, the"
+#~ " returned result can only be "
+#~ "false-negative and cannot be false-"
+#~ "positive, since whenever we cannot prove"
+#~ " the equality, we return false. This"
+#~ " property guarantees the safety of "
+#~ "this function."
+#~ msgstr ""
+
+#~ msgid "Return a map from variable name to its bindings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Recursively visit the ir in post "
+#~ "DFS order node, apply fvisit. Each "
+#~ "node is guaranteed to be visited "
+#~ "only once."
+#~ msgstr ""
+
+#~ msgid "The input expression."
+#~ msgstr ""
+
+#~ msgid "The visitor function to be applied."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It removes: 1. Unused local VarBindings"
+#~ " in a DataflowBlock. 2. Unused "
+#~ "DataflowBlocks in a function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For IRModule-wise DCE, use "
+#~ "py:func:`tvm.relax.transform.DeadCodeElimination`."
+#~ msgstr ""
+
+#~ msgid "The function with unused variables removed."
+#~ msgstr ""
+
+#~ msgid "Run a base check to see if base subsumes derived."
+#~ msgstr ""
+
+#~ msgid "The base struct info."
+#~ msgstr ""
+
+#~ msgid "The derived struct info."
+#~ msgstr ""
+
+#~ msgid "Unify the two struct info to their least common ancestor."
+#~ msgstr ""
+
+#~ msgid "The left operand."
+#~ msgstr ""
+
+#~ msgid "The right operand."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The corresponding lca result."
+#~ msgstr ""
+
+#~ msgid "Suggest Layout transformations of blocks and buffers in a PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "PrimFunc on which analysis will be "
+#~ "performed and transformations suggested."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List of layout transformations on the"
+#~ " output buffers. The number of layout"
+#~ " transformations must match the number "
+#~ "of outputs of the PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- Suggested transforms per "
+#~ "block in `func`. For each block "
+#~ "the returned value is a map from"
+#~ " the object (block or buffer) to "
+#~ "it's index map transformation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Get the TIR variables that appear "
+#~ "in the input struct info. The "
+#~ "returned list is deduplicated - each "
+#~ "TIR variable will appear at most "
+#~ "once."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The list of TIR "
+#~ "variables that appear in the input "
+#~ "struct info."
+#~ msgstr ""
+
+#~ msgid "Analyze the variable use-def chain in a dataflow block."
+#~ msgstr ""
+
+#~ msgid "The dataflow block to analyze"
+#~ msgstr ""
+
+#~ msgid "A mapping from variable definition to its uses."
+#~ msgstr ""
+
+#~ msgid "Check if the IRModule is well formed."
+#~ msgstr ""
+
+#~ msgid "The input IRModule or relax.Function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean flag indicating if the "
+#~ "property \"every Expr must have defined"
+#~ " structure info\" will be checked."
+#~ msgstr ""
+
+#~ msgid "**ret** -- True if the IRModule is well formed, False if not."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By default the structure info is "
+#~ "always checked. It is only in test"
+#~ " cases where `check_struct_info` might be"
+#~ " false, so that other well-formed "
+#~ "requirements will be well tested and "
+#~ "will not be blocked by not having"
+#~ " structure info."
+#~ msgstr ""
+

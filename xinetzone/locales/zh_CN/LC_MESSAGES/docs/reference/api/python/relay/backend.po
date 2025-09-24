@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 10:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../doc/docs/reference/api/python/relay/backend.rst:19
+msgid "tvm.relay.backend"
+msgstr ""
+
+#~ msgid "Backend codegen modules for relay."
+#~ msgstr ""
+
+#~ msgid "The Python interface to the Relay reference interpreter."
+#~ msgstr ""
+
+#~ msgid "An abstract interface for executing Relay programs."
+#~ msgstr ""
+
+#~ msgid "Evaluate a Relay expression on the executor."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The expression to evaluate."
+#~ msgstr ""
+
+#~ msgid "Additional binding of free variable."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**val** -- The evaluation result."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Simple interpreter interface."
+#~ msgstr ""
+
+#~ msgid "The module to support the execution."
+#~ msgstr ""
+
+#~ msgid "The runtime device to run the code on."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The target option to build the "
+#~ "function. Only homogeneous execution is "
+#~ "supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "python: executor = "
+#~ "relay.create_executor(kind=\"debug\", mod=module) a "
+#~ "= executor.evaluate(expr)(args1) b = "
+#~ "executor.evaluate(expr)(args2)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "python: func = relay.create_executor(kind=\"debug\","
+#~ " mod=module).evaluate(expr) a = func(args1) "
+#~ "b = func(args2)"
+#~ msgstr ""
+
+#~ msgid "TE compiler engine (replacing legacy compile_engine)."
+#~ msgstr ""
+
+#~ msgid "Key in the TE Compiler."
+#~ msgstr ""
+
+#~ msgid "The source function."
+#~ msgstr ""
+
+#~ msgid "The target we want to run the function on."
+#~ msgstr ""
+
+#~ msgid "Value in the TE Compiler, including usage statistics."
+#~ msgstr ""
+
+#~ msgid "Lowered output"
+#~ msgstr ""
+
+#~ msgid "TECompiler to get lowered code."
+#~ msgstr ""
+
+#~ msgid "clear the existing cached functions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List items in the cache. :returns: "
+#~ "**item_list** -- The list of items. "
+#~ ":rtype: List[Tuple[CCacheKey, CCacheValue]]"
+#~ msgstr ""
+
+#~ msgid "JIT a source_func to a tvm.runtime.PackedFunc."
+#~ msgstr ""
+
+#~ msgid "The source relay function."
+#~ msgstr ""
+
+#~ msgid "The target platform."
+#~ msgstr ""
+
+#~ msgid "**jited_func** -- The result of jited function."
+#~ msgstr ""
+
+#~ msgid "Lower a source_func to a CachedFunc."
+#~ msgstr ""
+
+#~ msgid "**cached_func** -- The result of lowering."
+#~ msgstr ""
+
+#~ msgid "Get the global TE Compiler."
+#~ msgstr ""
+
+#~ msgid "**engine** -- The TE Compiler."
+#~ msgstr ""
+
+#~ msgid "Convert the shape to correct dtype and vars."
+#~ msgstr ""
+
+#~ msgid "Get all valid implementations from the op strategy."
+#~ msgstr ""
+
+#~ msgid "Note that this function doesn't support op with symbolic input shapes."
+#~ msgstr ""
+
+#~ msgid "Relay operator."
+#~ msgstr ""
+
+#~ msgid "The op attribute."
+#~ msgstr ""
+
+#~ msgid "Input tensors to the op."
+#~ msgstr ""
+
+#~ msgid "The output type."
+#~ msgstr ""
+
+#~ msgid "The target to compile the op."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The list of all valid op implementations."
+#~ msgstr ""
+
+#~ msgid "Lower Relay Function to TIR PrimFunc."
+#~ msgstr ""
+
+#~ msgid "The source primitive function, created by FuseOps."
+#~ msgstr ""
+
+#~ msgid "The compilation target."
+#~ msgstr ""
+
+#~ msgid "**prim_func** -- The created prim func."
+#~ msgstr ""
+
+#~ msgid "Select the best implementation from the op strategy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If use_autotvm is True, it'll first "
+#~ "try to find the best implementation "
+#~ "based on AutoTVM profile results. If "
+#~ "no AutoTVM profile result is found, "
+#~ "it'll choose the implementation with "
+#~ "highest plevel."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If use_autotvm is False, it'll directly"
+#~ " choose the implementation with highest "
+#~ "plevel."
+#~ msgstr ""
+
+#~ msgid "Whether query AutoTVM to pick the best."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The best op implementation"
+#~ " and the corresponding output tensors."
+#~ msgstr ""
+
+#~ msgid "A compiler from a Relay expression to TVM's graph executor."
+#~ msgstr ""
+
+#~ msgid "The compiler is built from a few pieces."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "First we define a compiler from a"
+#~ " single Relay expression to the graph"
+#~ " language. We require the expression "
+#~ "to be a function. The function's "
+#~ "parameters correspond to the "
+#~ "placeholder/inputs and model parameters found"
+#~ " in the computation graph representation."
+#~ " The body of the function represents"
+#~ " the computation graph."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The compiler's output is a program "
+#~ "in the graph language, which is "
+#~ "composed of Node, NodeRef, InputNode, "
+#~ "OpNode. This \"little language\" represents"
+#~ " programs in TVM's graph format."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To connect to the graph executor, "
+#~ "we use a printer that converts our"
+#~ " graph format into TVM's JSON format."
+#~ " The resulting string can be loaded"
+#~ " by contrib.graph_executor or any other "
+#~ "TVM runtime compatible systems."
+#~ msgstr ""
+
+#~ msgid "The compiler from Relay to the TVM runtime system."
+#~ msgstr ""
+
+#~ msgid "Compile a single function into a graph."
+#~ msgstr ""
+
+#~ msgid "The module to compile"
+#~ msgstr ""
+
+#~ msgid "The function to compile."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* **graph_json** (*str*) -- The graph"
+#~ " json that can be consumed by "
+#~ "runtime. * **mod** (*IRModule or "
+#~ "Dict[Target, IRModule]*) -- The lowered "
+#~ "functions. * **params** (*Dict[str, "
+#~ "tvm.nd.NDArray]*) -- Additional constant "
+#~ "parameters."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**graph_json** (*str*) -- The graph json"
+#~ " that can be consumed by runtime."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**mod** (*IRModule or Dict[Target, IRModule]*)"
+#~ " -- The lowered functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**params** (*Dict[str, tvm.nd.NDArray]*) -- "
+#~ "Additional constant parameters."
+#~ msgstr ""
+
+#~ msgid "The Relay Virtual Machine."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Implements a Python interface to "
+#~ "compiling and executing on the Relay "
+#~ "VM."
+#~ msgstr ""
+
+#~ msgid "Compiler that compiles Relay module to VM executable."
+#~ msgstr ""
+
+#~ msgid "Generate the kernel library."
+#~ msgstr ""
+
+#~ msgid "Get the VM executable."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**exec** -- The VM executable that "
+#~ "contains both library code and bytecode."
+#~ msgstr ""
+
+#~ msgid "Return the updated weights."
+#~ msgstr ""
+
+#~ msgid "Lower the module to VM bytecode."
+#~ msgstr ""
+
+#~ msgid "The Relay module to build."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For homogeneous compilation, the unique "
+#~ "build target. For heterogeneous compilation,"
+#~ " a dictionary or list of possible "
+#~ "build targets."
+#~ msgstr ""
+
+#~ msgid "Host compilation target, if target is device."
+#~ msgstr ""
+
+#~ msgid "Helper method that optimizes a Relay module via VM."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Input parameters to the graph that "
+#~ "do not change during inference time. "
+#~ "Used for constant folding."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* **mod** (*tvm.IRModule*) -- The "
+#~ "optimized relay module. * **params** "
+#~ "(*dict*) -- The parameters of the "
+#~ "final module."
+#~ msgstr ""
+
+#~ msgid "**mod** (*tvm.IRModule*) -- The optimized relay module."
+#~ msgstr ""
+
+#~ msgid "**params** (*dict*) -- The parameters of the final module."
+#~ msgstr ""
+
+#~ msgid "Set constant parameters for the model."
+#~ msgstr ""
+
+#~ msgid "An implementation of the executor interface for the Relay VM."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Useful interface for experimentation and "
+#~ "debugging the VM can also be used"
+#~ " directly from the API. supported by"
+#~ " `tvm.runtime.vm`."
+#~ msgstr ""
+
+#~ msgid "Compile the module to VM executable. A helper function for VMCompiler."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Host compilation target, if target is"
+#~ " device. When TVM compiles device "
+#~ "specific program such as CUDA, we "
+#~ "also need host(CPU) side code to "
+#~ "interact with the driver to setup "
+#~ "the dimensions and parameters correctly. "
+#~ "target_host is used to specify the "
+#~ "host side codegen target. By default,"
+#~ " llvm is used if it is enabled,"
+#~ " otherwise a stackvm intepreter is "
+#~ "used."
+#~ msgstr ""
+

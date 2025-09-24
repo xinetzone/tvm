@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:21
+msgid "Vulkan Runtime"
+msgstr "Vulkan 运行时"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:23
+msgid ""
+"TVM supports using Vulkan compute shaders to execute queries.  Each "
+"computational kernel is compiled into a SPIR-V shader, which can then be "
+"called using the TVM interface."
+msgstr ""
+"TVM 支持使用 Vulkan 计算着色器(shader)来执行查询。"
+"每个计算 kernel 都被编译成 SPIR-V 着色器，然后可以通过 TVM 接口调用。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:30
+msgid "Vulkan Features, Limits"
+msgstr "Vulkan 特性与限制"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:34
+msgid ""
+"Since different Vulkan implementations may enable different optional "
+"features or have different physical limits, the code generation must know"
+" which features are available to use.  These correspond to specific "
+"Vulkan capabilities/limits as in :ref:`Vulkan Capabilities Table <tvm-"
+"table-vulkan-capabilities>`. If unspecified, TVM assumes that a "
+"capability is not available, or that a limit is the minimum guaranteed by"
+" the Vulkan spec in the `Required Limits`_ section."
+msgstr ""
+"由于不同的 Vulkan 实现可能启用了不同的可选功能或具有不同的物理限制，代码生成必须知晓哪些功能可用。"
+"这些对应于特定的 Vulkan 能力/限制，如在 :ref:`Vulkan 能力表 <tvm-table-vulkan-capabilities>` 中所示。"
+"如果未指定，TVM 会假设某项功能不可用，或者某项限制是 Vulkan 规范中 `Required Limits`_ 部分所保证的最小值。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:43
+msgid ""
+"These parameters can be either explicitly specific when defining a "
+":ref:`Target <tvm-target-specific-target>`, or can be queried from a "
+"device.  To query from a device, the special parameter ``-from_device=N``"
+" can be used to query all vulkan device parameters from device id ``N``."
+"  Any additional parameters explicitly specified will override the "
+"parameters queried from the device."
+msgstr ""
+"这些参数在定义 :ref:`Target <tvm-target-specific-target>` 时可以是明确指定的，或者可以从设备中查询。"
+"要从设备中查询，可以使用特殊的参数 ``-from_device=N`` 来获取设备 ID 为 ``N`` 的所有 Vulkan 设备参数。"
+"任何额外明确指定的参数都将覆盖从设备查询到的参数。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:52
+#: ../../doc/docs/arch/runtimes/vulkan.rst:161
+msgid "Vulkan Capabilities"
+msgstr "Vulkan 功能"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:56
+#: ../../doc/docs/arch/runtimes/vulkan.rst:165
+msgid "Target Parameter"
+msgstr "Target 参数"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:57
+msgid "Required Vulkan Version/Extension"
+msgstr "所需的 Vulkan 版本/扩展"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:58
+msgid "Parameter Queried"
+msgstr "参数查询"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:59
+msgid "Default Value"
+msgstr "默认值"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:61
+#: ../../doc/docs/arch/runtimes/vulkan.rst:169
+msgid "``supported_subgroup_operations``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:62
+msgid "Vulkan 1.1+"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:63
+msgid "``VkPhysicalDeviceSubgroupProperties::supportedOperations``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:64
+msgid "0 (interpreted as `VkSubgroupFeatureFlagBits`_)"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:66
+msgid "``max_push_constants_size``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:68
+msgid "``VkPhysicalDeviceLimits::maxPushConstantsSize``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:69
+msgid "128 bytes"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:71
+msgid "``max_uniform_buffer_range``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:73
+msgid "``VkPhysicalDeviceLimits::maxUniformBufferRange``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:74
+msgid "16384 bytes"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:77
+msgid "``max_storage_buffer_range``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:79
+msgid "``VkPhysicalDeviceLimits::maxStorageBufferRange``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:80
+msgid "2\\ :sup:`27`\\ bytes"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:83
+msgid "``max_per_stage_descriptor_storage_buffer``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:85
+msgid "``VkPhysicalDeviceLimits::maxPerStageDescriptorStorageBuffers``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:86
+msgid "4"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:89
+#: ../../doc/docs/arch/runtimes/vulkan.rst:173
+msgid "``supports_storage_buffer_storage_class``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:90
+msgid "VK_KHR_storage_buffer_storage_class"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:92
+#: ../../doc/docs/arch/runtimes/vulkan.rst:98
+#: ../../doc/docs/arch/runtimes/vulkan.rst:104
+#: ../../doc/docs/arch/runtimes/vulkan.rst:110
+#: ../../doc/docs/arch/runtimes/vulkan.rst:116
+#: ../../doc/docs/arch/runtimes/vulkan.rst:122
+#: ../../doc/docs/arch/runtimes/vulkan.rst:128
+#: ../../doc/docs/arch/runtimes/vulkan.rst:134
+msgid "false"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:95
+#: ../../doc/docs/arch/runtimes/vulkan.rst:177
+msgid "``supports_storage_buffer_8bit_access``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:96
+msgid "VK_KHR_8bit_storage"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:97
+msgid "``VkPhysicalDevice8BitStorageFeaturesKHR::storageBuffer8BitAccess``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:101
+#: ../../doc/docs/arch/runtimes/vulkan.rst:181
+msgid "``supports_storage_buffer_16bit_access``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:102
+msgid "VK_KHR_16bit_storage"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:103
+msgid "``VkPhysicalDevice16BitStorageFeaturesKHR::storageBuffer16BitAccess``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:107
+#: ../../doc/docs/arch/runtimes/vulkan.rst:185
+msgid "``supports_float16``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:108
+#: ../../doc/docs/arch/runtimes/vulkan.rst:120
+msgid "VK_KHR_shader_float16_int8"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:109
+msgid "``VkPhysicalDeviceShaderFloat16Int8FeaturesKHR::shaderFloat16``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:113
+#: ../../doc/docs/arch/runtimes/vulkan.rst:190
+msgid "``supports_float64``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:115
+msgid "``VkPhysicalDeviceFeatures::shaderFloat64``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:119
+#: ../../doc/docs/arch/runtimes/vulkan.rst:195
+msgid "``supports_int8``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:121
+msgid "``VkPhysicalDeviceShaderFloat16Int8FeaturesKHR::shaderInt8``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:125
+#: ../../doc/docs/arch/runtimes/vulkan.rst:200
+msgid "``supports_int16``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:127
+msgid "``VkPhysicalDeviceFeatures::shaderInt16``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:131
+#: ../../doc/docs/arch/runtimes/vulkan.rst:205
+msgid "``supports_int64``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:133
+msgid "``VkPhysicalDeviceFeatures::shaderInt64``"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:138
+msgid ""
+"As of May 2021, not all Vulkan implementations are supported.  For "
+"example, support for 64-bit integers is required.  If a Vulkan target is "
+"not supported, an error message should be issued during SPIR-V code "
+"generation.  Efforts are also underway to remove these requirements and "
+"support additional Vulkan implementations."
+msgstr ""
+"截至2021年5月，并非所有 Vulkan 实现都得到了支持。"
+"例如，需要对 64 位整数的支持。如果某个 Vulkan 目标不受支持，在 SPIR-V 代码生成期间应发出错误消息。"
+"目前也在努力去除这些要求并支持更多的 Vulkan 实现。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:148
+msgid "SPIR-V Capabilities"
+msgstr "SPIR-V 功能"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:150
+msgid ""
+"Some of the device-specific capabilities also correspond to SPIR-V "
+"capabilities or extensions that must be declared in the shader, or a "
+"minimum SPIR-V version required in order to use a feature.  The TVM-"
+"generated shaders will declare the minimum set of extensions/capabilities"
+" and the minimum allowed version of SPIR-V that are needed to execute the"
+" compiled graph."
+msgstr ""
+"一些特定于设备的能力也对应于 SPIR-V 的能力或扩展，这些必须声明在着色器中，或者为了使用某个功能需要指定的最小 SPIR-V 版本。"
+"TVM 生成的着色器将声明执行编译后的图所需的最小一组扩展/能力和允许的最小 SPIR-V 版本。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:157
+msgid ""
+"If the shader generation requires a capability or extension that is not "
+"enabled in the ``Target``, an exception will be raised."
+msgstr ""
+"如果着色器生成需要一种能力或扩展，而这种能力或扩展在 ``Target`` 中并未启用，那么将引发异常。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:166
+msgid "Required SPIR-V Version/Extension"
+msgstr "所需SPIR-V版本/扩展"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:167
+msgid "Declared Capability"
+msgstr "声明的能力"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:170
+msgid "SPIR-V 1.3+"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:171
+msgid "Varies, see `VkSubgroupFeatureFlagBits`_"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:174
+msgid "SPV_KHR_storage_buffer_storage_class"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:178
+msgid "SPV_KHR_8bit_storage"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:179
+msgid "StorageBuffer8BitAccess"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:182
+msgid "SPV_KHR_16bit_storage"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:183
+msgid "StorageBuffer16BitAccess"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:187
+msgid "Float16"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:192
+msgid "Float64"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:197
+msgid "Int8"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:202
+msgid "Int16"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:207
+msgid "Int64"
+msgstr ""
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:211
+msgid "Vulkan-Specific Environment Variables"
+msgstr "Vulkan 特定环境变量"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:213
+msgid ""
+"Both the SPIR-V code generation and the Vulkan runtime have environment "
+"variables that can modify some of the runtime behavior. These are "
+"intended for debugging purposes, both to more easily test specific code "
+"paths, and to output more information as needed.  All boolean flags are "
+"true if the environment variable is set to a non-zero integer.  An unset "
+"variable, the integer zero, or an empty string are all false boolean "
+"flags."
+msgstr ""
+"SPIR-V 代码生成器和 Vulkan 运行时均包含环境变量，这些变量可以调整运行时的某些行为。"
+"它们主要用于调试目的，旨在更便捷地测试特定代码路径，并根据需要输出更多信息。"
+"所有布尔标志在环境变量被设置为非零整数时都为真。未设置的变量、整数零或空字符串都被视为假的布尔标志。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:234
+msgid ""
+"``TVM_VULKAN_DISABLE_PUSH_DESCRIPTOR`` - A boolean flag.  If true, TVM "
+"will explicitly allocate descriptors, and will not use the "
+"`VK_KHR_push_descriptor`_ or `VK_KHR_descriptor_update_template`_ "
+"extensions.  If false, TVM will decide whether to use these extensions "
+"based on their availability."
+msgstr ""
+"``TVM_VULKAN_DISABLE_PUSH_DESCRIPTOR`` - 布尔标志。如果设为真，TVM 将显式分配描述符，"
+"并且不会使用 `VK_KHR_push_descriptor`_ 或 `VK_KHR_descriptor_update_template`_  扩展。"
+"如果设为假，则 TVM 将根据这些扩展的可用性来决定是否使用它们。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:240
+msgid ""
+"``TVM_VULKAN_DISABLE_DEDICATED_ALLOCATION`` - A boolean flag.  If true, "
+"TVM will not mark memory allocations as being dedicated allocations, and "
+"will not use the `VK_KHR_dedicated_allocation`_ extension.  If false, TVM"
+" will decide whether memory allocations should be marked as dedicated "
+"based on the `VkMemoryDedicatedRequirements`_ for that buffer."
+msgstr ""
+"``TVM_VULKAN_DISABLE_DEDICATED_ALLOCATION`` - 布尔标志。"
+"如果为真，TVM将不会将内存分配标记为专用分配，并且不会使用 `VK_KHR_dedicated_allocation`_ 扩展。"
+"如果为假，TVM 将根据该缓冲区的 `VkMemoryDedicatedRequirements`_ 决定是否应将内存分配标记为专用。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:247
+msgid ""
+"``TVM_VULKAN_ENABLE_VALIDATION_LAYERS`` - A boolean flag.  If true, TVM "
+"will enable `Vulkan validation layers`_ that the device supports.  If "
+"false, no validation layers are enabled."
+msgstr ""
+"``TVM_VULKAN_ENABLE_VALIDATION_LAYERS`` - 布尔标志。"
+"如果为真，TVM 将启用设备支持的 `Vulkan validation layers`_。如果为假，则不启用任何验证层。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:251
+msgid ""
+"``TVM_VULKAN_DISABLE_SHADER_VALIDATION`` - A boolean flag.  If true, the "
+"SPIR-V shader validation done with `spvValidate`_ is skipped. If false "
+"(default), all SPIR-V shaders generated by TVM are validated with "
+"`spvValidate`_."
+msgstr ""
+"``TVM_VULKAN_DISABLE_SHADER_VALIDATION``  布尔标志。"
+"如果设置为真，则跳过使用 `spvValidate`_ 进行的 SPIR-V shader 验证。"
+"如果为假（默认设置），则由 TVM 生成的所有 SPIR-V shaders 都将通过 `spvValidate`_ 进行验证。"
+
+#: ../../doc/docs/arch/runtimes/vulkan.rst:256
+msgid ""
+"``TVM_VULKAN_DEBUG_SHADER_SAVEPATH`` - A path to a directory.  If set to "
+"a non-empty string, the Vulkan codegen will save tir, binary SPIR-V, and "
+"disassembled SPIR-V shaders to this directory, to be used for debugging "
+"purposes."
+msgstr ""
+"``TVM_VULKAN_DEBUG_SHADER_SAVEPATH`` - 指向目录的路径。"
+"如果设置为非空字符串，Vulkan 代码生成器将把中间表示（IR）、二进制SPIR-V以及反汇编的SPIR-V着色器保存到这个目录中，用于调试目的。"

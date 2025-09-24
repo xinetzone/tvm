@@ -1,0 +1,209 @@
+# 设置VTA硬件路径
+set(VTA_HW_PATH "$ENV{VTA_HW_PATH}")
+if(NOT DEFINED ENV{VTA_HW_PATH})
+  set(VTA_HW_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+else()
+  set(VTA_HW_PATH $ENV{VTA_HW_PATH})
+endif()
+
+# 检查VTA硬件路径是否存在
+if(NOT EXISTS ${VTA_HW_PATH})
+  if (USE_VTA_TSIM OR USE_VTA_FSIM OR USE_UFPGA)
+    message(FATAL_ERROR "VTA路径 ${VTA_HW_PATH} 不存在")
+  else()
+    message(STATUS "VTA硬件路径不存在，跳过VTA构建")
+    return()
+  endif()
+endif()
+message(STATUS "VTA构建路径: ${VTA_HW_PATH}")
+
+# VTA 构建配置
+set(VTA_CONFIG ${PYTHON} ${VTA_HW_PATH}/config/vta_config.py)
+# 检查是否存在预生成的配置文件
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/vta_config.json)
+  message(STATUS "使用预生成配置: ${CMAKE_CURRENT_BINARY_DIR}/vta_config.json")
+  set(VTA_CONFIG ${PYTHON} ${VTA_HW_PATH}/config/vta_config.py
+    --use-cfg=${CMAKE_CURRENT_BINARY_DIR}/vta_config.json)
+endif()
+
+# 获取目标平台信息
+execute_process(
+  COMMAND ${VTA_CONFIG} --target
+  OUTPUT_VARIABLE VTA_TARGET
+  OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+set(VTA_TARGET "${VTA_TARGET}" CACHE INTERNAL "VTA target platform")
+message(STATUS "VTA目标平台: ${VTA_TARGET}")
+
+# 获取编译定义
+execute_process(
+  COMMAND ${VTA_CONFIG} --defs
+  OUTPUT_VARIABLE __vta_defs
+)
+string(REGEX MATCHALL "(^| )-D[A-Za-z0-9_=.]*" VTA_DEFINITIONS "${__vta_defs}")
+message(STATUS "Building VTA runtime with target: ${VTA_TARGET}")
+
+# Fast simulator driver build
+if(USE_VTA_FSIM)
+  # Collect source files based on target
+  if(${VTA_TARGET} STREQUAL "vta1.0")
+    file(GLOB FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/runtime_v2/*.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_v2/sim_driver.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_v2/sim_tlpp.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_mte/mte_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta2_topi/xm_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta2_topi/vta_topi.cc)
+    add_definitions(-DUSE_XM_INSTRUCTION -DXM_AUTOTOOL_SUPPORT -DVTA_TARGET_SIM)
+  elseif(${VTA_TARGET} MATCHES "vta2\.0(_lite|_pro)?")
+    file(GLOB FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/runtime_v3/*.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_v3/sim_driver.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_v3/sim_tlpp.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_mte/mte_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3_topi/xm_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3_topi/vta_topi.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/xm_yuv2rgb/xm_yuv2rgb.cc)
+    add_definitions(-DUSE_XM_INSTRUCTION -DXM_AUTOTOOL_SUPPORT -DVTA_TARGET_SIM)
+  elseif(${VTA_TARGET} STREQUAL "vta3.0")
+    file(GLOB FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/runtime_vta3.0/*.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3.0/sim_driver.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3.0/sim_tlpp.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_mte/mte_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3.0_topi/xm_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3.0_topi/vta_topi.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/xm_yuv2rgb/xm_yuv2rgb.cc)
+    add_definitions(-DUSE_XM_INSTRUCTION -DXM_AUTOTOOL_SUPPORT -DVTA_TARGET_SIM)
+  else()
+    # file(GLOB FSIM_RUNTIME_SRCS vta/runtime/*.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim/sim_driver.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim/sim_tlpp.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_mte/mte_runtime.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_mte/mte_runtime_i16o16.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta_topi/utils.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta_topi/vta_topi.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta_topi/vta_topi_i16o16.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta_topi/vta_topi_i16o8.cc)
+    list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta_topi/vta_topi_i8o16.cc)
+  endif()
+
+  list(APPEND FSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/vmem/virtual_memory.cc)
+
+  # Create target library
+  add_library(vta_driver_fsim_${VTA_TARGET} SHARED ${FSIM_RUNTIME_SRCS})
+  add_library(vta::driver::fsim::${VTA_TARGET} ALIAS vta_driver_fsim_${VTA_TARGET})
+  target_include_directories(vta_driver_fsim_${VTA_TARGET} SYSTEM PUBLIC ${VTA_HW_PATH}/include)
+  target_include_directories(vta_driver_fsim_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/src/xm_yuv2rgb)
+  target_compile_definitions(vta_driver_fsim_${VTA_TARGET} PUBLIC DMLC_USE_LOGGING_LIBRARY=<tvm/runtime/logging.h>)
+  foreach(__def ${VTA_DEFINITIONS})
+    string(SUBSTRING ${__def} 3 -1 __strip_def)
+    target_compile_definitions(vta_driver_fsim_${VTA_TARGET} PUBLIC ${__strip_def})
+  endforeach()
+
+  # Platform-specific settings
+  if(APPLE)
+    set_property(TARGET vta_driver_fsim_${VTA_TARGET} APPEND PROPERTY LINK_FLAGS "-undefined dynamic_lookup")
+  endif()
+  target_compile_definitions(vta_driver_fsim_${VTA_TARGET} PUBLIC USE_FSIM_TLPP)
+endif()
+
+# Cycle accurate simulator driver build
+if(USE_VTA_TSIM)
+#   file(GLOB TSIM_RUNTIME_SRCS vta/runtime/*.cc)
+  list(APPEND TSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/tsim/tsim_driver.cc)
+  list(APPEND TSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/dpi/module.cc)
+  list(APPEND TSIM_RUNTIME_SRCS ${VTA_HW_PATH}/src/vmem/virtual_memory.cc)
+
+  add_library(vta_driver_tsim_${VTA_TARGET} SHARED ${TSIM_RUNTIME_SRCS})
+  add_library(vta::driver::tsim::${VTA_TARGET} ALIAS vta_driver_tsim_${VTA_TARGET})
+  target_include_directories(vta_driver_tsim_${VTA_TARGET} SYSTEM PUBLIC ${VTA_HW_PATH}/include)
+  target_compile_definitions(vta_driver_tsim_${VTA_TARGET} PUBLIC DMLC_USE_LOGGING_LIBRARY=<tvm/runtime/logging.h>)
+  foreach(__def ${VTA_DEFINITIONS})
+    string(SUBSTRING ${__def} 3 -1 __strip_def)
+    target_compile_definitions(vta_driver_tsim_${VTA_TARGET} PUBLIC ${__strip_def})
+  endforeach()
+
+  if(APPLE)
+    set_property(TARGET vta_driver_tsim_${VTA_TARGET} APPEND PROPERTY LINK_FLAGS "-undefined dynamic_lookup")
+  endif()
+endif()
+
+# VTA FPGA driver build
+if(USE_VTA_FPGA)
+  # Collect source files based on target
+  if(${VTA_TARGET} STREQUAL "xmfpga_v200")
+    file(GLOB FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/runtime_v2/*.cc)
+    add_definitions(-DUSE_XM_INSTRUCTION)
+  elseif(${VTA_TARGET} MATCHES "xmfpga_(680v200|v500|210v200|650v300)")
+    file(GLOB FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/runtime_v3/*.cc)
+    add_definitions(-DUSE_XM_INSTRUCTION)
+  else()
+    file(GLOB FPGA_RUNTIME_SRCS vta/runtime/*.cc)
+  endif()
+
+  # Add target-specific sources
+  if(${VTA_TARGET} STREQUAL "pynq" OR ${VTA_TARGET} STREQUAL "ultra96")
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/pynq/pynq_driver.cc)
+    add_definitions(-DUSE_OLD_CODESET)
+  elseif(${VTA_TARGET} STREQUAL "xmfpga")
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/xmfpga/xmfpga_driver.cc)
+  elseif(${VTA_TARGET} STREQUAL "xmfpga_v200")
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/xmfpga_v2/xmfpga_driver.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/xmfpga_mte2/mte_runtime.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta2_topi/xm_runtime.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta2_topi/vta_topi.cc)
+  elseif(${VTA_TARGET} MATCHES "xmfpga_(680v200|v500|210v200|650v300)")
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/xmfpga_v2/xmfpga_driver.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/xmfpga_mte2/mte_runtime.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3_topi/xm_runtime.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/sim_vta3_topi/vta_topi.cc)
+  elseif(${VTA_TARGET} STREQUAL "de10nano")
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/de10nano/de10nano_driver.cc)
+    list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/de10nano/cma_api.cc)
+  endif()
+
+  list(APPEND FPGA_RUNTIME_SRCS ${VTA_HW_PATH}/src/xm_yuv2rgb/xm_yuv2rgb.cc)
+
+  # Create target library
+  add_library(vta_driver_fpga_${VTA_TARGET} SHARED ${FPGA_RUNTIME_SRCS})
+  add_library(vta::driver::fpga::${VTA_TARGET} ALIAS vta_driver_fpga_${VTA_TARGET})
+  # Set include directories based on target
+  if(${VTA_TARGET} STREQUAL "xmfpga_v200")
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/src/runtime_v2)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/src/sim_vta2_topi)
+  elseif(${VTA_TARGET} MATCHES "xmfpga_(680v200|v500|210v200|650v300)")
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/src/runtime_v3)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/src/sim_vta3_topi)
+  else()
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC vta/runtime)
+  endif()
+
+  target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/include)
+  target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC ${VTA_HW_PATH}/src/xm_yuv2rgb)
+  target_compile_definitions(vta_driver_fpga_${VTA_TARGET} PUBLIC DMLC_USE_LOGGING_LIBRARY=<tvm/runtime/logging.h>)
+
+  # Add compile definitions
+  foreach(__def ${VTA_DEFINITIONS})
+    string(SUBSTRING ${__def} 3 -1 __strip_def)
+    target_compile_definitions(vta_driver_fpga_${VTA_TARGET} PUBLIC ${__strip_def})
+  endforeach()
+
+  # Link target-specific libraries
+  if(${VTA_TARGET} STREQUAL "pynq" OR ${VTA_TARGET} STREQUAL "ultra96")
+    set(__cma_lib "/workspace/_TVM_workspace/tvm/3rdparty/cma_xlink_cross_arm/libcma.so")
+    target_link_libraries(vta_driver_fpga_${VTA_TARGET} ${__cma_lib})
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC 3rdparty/cma_xlink_cross_arm)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC ${VTA_HW_PATH}/src/pynq)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC 3rdparty)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC "/usr/arm-linux-gnueabihf/include")
+  elseif(${VTA_TARGET} MATCHES "xmfpga(_v200|_680v200|_v500|_210v200|_650v300|$)")
+    set(__cma_lib "/workspace/_TVM_workspace/tvm/3rdparty/mmz_xmfpga/libsmpi.a")
+    target_link_libraries(vta_driver_fpga_${VTA_TARGET} ${__cma_lib})
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} PUBLIC 3rdparty/mmz_xmfpga/)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC ${VTA_HW_PATH}/src/xmfpga_v2)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC 3rdparty)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC "/opt/xm_toolchain/arm-xmv2-linux/usr/rm-xmv2-linux-uclibcgnueabi/include")
+  elseif(${VTA_TARGET} STREQUAL "de10nano")
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC ${VTA_HW_PATH}/src/de10nano)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC 3rdparty)
+    target_include_directories(vta_driver_fpga_${VTA_TARGET} SYSTEM PUBLIC "/usr/arm-linux-gnueabihf/include")
+  endif()
+endif()

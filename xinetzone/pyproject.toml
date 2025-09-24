@@ -1,0 +1,91 @@
+[project]
+name = "tvm"
+dynamic = ["version"]
+description = "道可道，非恒道"
+authors = [
+    {name = "xinetzone", email = "735613050@qq.com"},
+]
+requires-python = ">=3.11"
+readme = "../README.md"
+license = {file = "../LICENSE"}
+maintainers = [
+  {name = "xinetzone", email = "735613050@qq.com"},
+]
+dependencies = [
+  "cython",
+  "cloudpickle",
+  "ml_dtypes",
+  "numpy",
+  "packaging",
+  "psutil",
+  "scipy",
+  "tornado",
+  "typing_extensions",
+]
+
+[project.urls]
+Repository = "https://github.com/xinetzone/tvm"
+Documentation = "https://tvm-book.readthedocs.io/"
+
+[project.optional-dependencies]
+doc = [
+    "mystx",
+    "sphinx",
+    # "ablog",
+    "ipywidgets",
+    "folium",
+    "numpy",
+    "matplotlib",
+    "sphinx-comments",
+    "myst-nb",
+    "nbclient",
+    "pandas",
+    "plotly",
+    "sphinx-design",
+    "sphinx-examples",
+    "sphinx-copybutton",
+    "sphinx-contributors",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex",
+    "sphinxext-opengraph",
+    "sphinx-sitemap",
+    # "sphinx-autoapi>=3.4",
+    "graphviz",
+    "sphinx-intl", # 文档国际化
+    "sphinx-tippy",
+    "sphinx-icon",
+    "autodocsumm"
+]
+
+dev = [
+  # "taolib[flows]",
+  # "mlc-python",
+  "scipy>=1.9.3",
+  "toml",
+  "jaxlib",
+  "xgboost",
+  "pickleshare",
+  "graphviz",
+  "cloudpickle",
+  "psutil",
+  "onnx",
+  "pytest",
+  "ninja",
+  "cmake"
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+package-dir = "../python"
+# includes = []
+excludes = ["old/", "doc/", "locales/",]
+
+[tool.pdm.version]
+source = "file"
+path = "../version.py"

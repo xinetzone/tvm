@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/instrument.rst:19
+msgid "tvm.instrument"
+msgstr ""
+
+#: ../../docstring of tvm.instrument:1
+msgid "Common pass instrumentation across IR variants."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument:1
+msgid "A pass instrument implementation."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument:3
+msgid ""
+"To use, a user class can either subclass from PassInstrument directly, or"
+" can apply the :py:func:`pass_instrument` wrapper.  In either case, the "
+"`enter_pass_ctx`, `exit_pass_ctx`, `should_run`, `run_before_pass`, and "
+"`run_after_pass` methods can be defined to adjust the instrument's "
+"behavior.  See the no-op implementations in this class definition for "
+"more information on each."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1
+msgid "Called when entering the instrumented context."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/instrument.rst
+msgid "返回类型"
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.exit_pass_ctx:1
+msgid "Called when exiting the instrumented context."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.run_after_pass:1
+msgid "Instrument after the pass runs."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.run_after_pass:3
+#: tvm.ir.instrument.PassInstrument.run_before_pass:3
+#: tvm.ir.instrument.PassInstrument.should_run:3
+msgid ""
+"Called once for each pass that is run while the instrumented context is "
+"active."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/instrument.rst
+msgid "参数"
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.run_after_pass:6
+#: tvm.ir.instrument.PassInstrument.run_before_pass:6
+#: tvm.ir.instrument.PassInstrument.should_run:6
+msgid "The module on which an optimization pass is being run."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.run_after_pass:8
+#: tvm.ir.instrument.PassInstrument.run_before_pass:8
+#: tvm.ir.instrument.PassInstrument.should_run:8
+msgid "The pass information."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.run_before_pass:1
+msgid "Instrument before the pass runs."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.should_run:1
+msgid "Determine whether to run the pass or not."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/instrument.rst
+msgid "返回"
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassInstrument.should_run:11
+msgid "**should_run** -- True to run the pass, or False to skip the pass."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid ""
+"A pass instrument to print if before or print ir after each element of a "
+"named pass."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassTimingInstrument:1
+msgid "A wrapper to create a passes time instrument that implemented in C++"
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassTimingInstrument.render:1
+msgid ""
+"Retrieve rendered time profile result :returns: **string** -- The "
+"rendered string result of time profiles :rtype: string"
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.PassTimingInstrument.render:6
+#: tvm.ir.instrument.pass_instrument:7
+msgid "示例"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid "Print the name of the pass, the IR, only after passes execute."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid "Print the name of the pass, the IR, only before passes execute."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.pass_instrument:1
+msgid "Decorate a pass instrument."
+msgstr ""
+
+#: ../../docstring of tvm.ir.instrument.pass_instrument:3
+msgid "Instrument class. See example below."
+msgstr ""
+
+#~ msgid "Common pass instrumentation across IR variants."
+#~ msgstr ""
+
+#~ msgid "A pass instrument implementation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To use, a user class can either"
+#~ " subclass from PassInstrument directly, or"
+#~ " can apply the :py:func:`pass_instrument` "
+#~ "wrapper.  In either case, the "
+#~ "`enter_pass_ctx`, `exit_pass_ctx`, `should_run`, "
+#~ "`run_before_pass`, and `run_after_pass` methods "
+#~ "can be defined to adjust the "
+#~ "instrument's behavior.  See the no-op"
+#~ " implementations in this class definition"
+#~ " for more information on each."
+#~ msgstr ""
+
+#~ msgid "Called when entering the instrumented context."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Called when exiting the instrumented context."
+#~ msgstr ""
+
+#~ msgid "Instrument after the pass runs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Called once for each pass that is"
+#~ " run while the instrumented context "
+#~ "is active."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The module on which an optimization pass is being run."
+#~ msgstr ""
+
+#~ msgid "The pass information."
+#~ msgstr ""
+
+#~ msgid "Instrument before the pass runs."
+#~ msgstr ""
+
+#~ msgid "Determine whether to run the pass or not."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**should_run** -- True to run the pass, or False to skip the pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass instrument to print if "
+#~ "before or print ir after each "
+#~ "element of a named pass."
+#~ msgstr ""
+
+#~ msgid "A wrapper to create a passes time instrument that implemented in C++"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Retrieve rendered time profile result "
+#~ ":returns: **string** -- The rendered "
+#~ "string result of time profiles :rtype:"
+#~ " string"
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Print the name of the pass, the IR, only after passes execute."
+#~ msgstr ""
+
+#~ msgid "Print the name of the pass, the IR, only before passes execute."
+#~ msgstr ""
+
+#~ msgid "Decorate a pass instrument."
+#~ msgstr ""
+
+#~ msgid "Instrument class. See example below."
+#~ msgstr ""
+

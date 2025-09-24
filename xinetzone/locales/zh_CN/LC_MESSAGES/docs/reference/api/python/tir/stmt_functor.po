@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/tir/stmt_functor.rst:19
+msgid "tvm.tir.stmt_functor"
+msgstr ""
+
+#: of tvm.tir.stmt_functor:1
+msgid "Statement functor utilities for IR transformations"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:1
+msgid "Recursively visit and transform ir nodes in post DFS order."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/stmt_functor.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:3
+msgid "The input to be transformed."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:5
+msgid ""
+"The function called in before recursive mutation If preorder returns "
+"None, then the transform will proceed to recursive call. If preorder "
+"returns a not None tvm.tir.Stmt/Expr, the transformer will simply return "
+"it and won't do further recursion."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:10
+msgid "The function called after recursive mutation."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:12
+msgid "List of types that we only enable."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/stmt_functor.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.ir_transform:15 tvm.tir.stmt_functor.substitute:8
+msgid "**result** -- The result."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tir/stmt_functor.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:1
+msgid "Recursively visit the ir in post DFS order node, apply fvisit"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:2
+msgid "Each node is guaranteed to be visited only once."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.post_order_visit:4
+#: tvm.tir.stmt_functor.pre_order_visit:4
+msgid "The visitor function."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.pre_order_visit:1
+msgid "Recursive pre-order visit on stmt AST, applying fvisit on each node."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.pre_order_visit:2
+msgid "If fvisit returns False, it won't visit the children of the node."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:1
+msgid ""
+"Re-generate the definition nodes for a TIR, including VarDef, BufferDef. "
+"This pass works as a simple DeepCopy to duplicate a function with "
+"different Vars and Buffers but the same behavior"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:5
+msgid "The input function"
+msgstr ""
+
+#: of tvm.tir.stmt_functor.renew_defs:8
+msgid "**result** -- The new generated func."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:1
+msgid "Substitute the var specified by vmap."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:3
+msgid "The input."
+msgstr ""
+
+#: of tvm.tir.stmt_functor.substitute:5
+msgid "The variable mapping."
+msgstr ""
+
+#~ msgid "Statement functor utilities for IR transformations"
+#~ msgstr ""
+
+#~ msgid "Recursively visit and transform ir nodes in post DFS order."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The input to be transformed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The function called in before recursive"
+#~ " mutation If preorder returns None, "
+#~ "then the transform will proceed to "
+#~ "recursive call. If preorder returns a"
+#~ " not None tvm.tir.Stmt/Expr, the "
+#~ "transformer will simply return it and"
+#~ " won't do further recursion."
+#~ msgstr ""
+
+#~ msgid "The function called after recursive mutation."
+#~ msgstr ""
+
+#~ msgid "List of types that we only enable."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**result** -- The result."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Recursively visit the ir in post DFS order node, apply fvisit"
+#~ msgstr ""
+
+#~ msgid "Each node is guaranteed to be visited only once."
+#~ msgstr ""
+
+#~ msgid "The visitor function."
+#~ msgstr ""
+
+#~ msgid "Recursive pre-order visit on stmt AST, applying fvisit on each node."
+#~ msgstr ""
+
+#~ msgid "If fvisit returns False, it won't visit the children of the node."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Re-generate the definition nodes for "
+#~ "a TIR, including VarDef, BufferDef. This"
+#~ " pass works as a simple DeepCopy "
+#~ "to duplicate a function with different"
+#~ " Vars and Buffers but the same "
+#~ "behavior"
+#~ msgstr ""
+
+#~ msgid "The input function"
+#~ msgstr ""
+
+#~ msgid "**result** -- The new generated func."
+#~ msgstr ""
+
+#~ msgid "Substitute the var specified by vmap."
+#~ msgstr ""
+
+#~ msgid "The input."
+#~ msgstr ""
+
+#~ msgid "The variable mapping."
+#~ msgstr ""
+

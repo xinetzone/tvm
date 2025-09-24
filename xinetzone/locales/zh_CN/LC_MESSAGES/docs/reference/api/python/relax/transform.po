@@ -1,0 +1,2849 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/docs/reference/api/python/relax/transform.rst:21
+msgid "tvm.relax.transform"
+msgstr ""
+
+#: of tvm.relax.transform:1
+msgid "Relax transformations."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AdjustMatmulOrder:1
+msgid "Reorder `x*(A*B)` to `(x*A)*B`"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AdjustMatmulOrder:3
+msgid ""
+"Useful for optimizing LoRA computations, where `matmul(x, LoraA*LoraB)` "
+"may be computed as `matmul(matmul(x, LoraA), LoraB)`, reducing the total "
+"memory usage."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/transform.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AdjustMatmulOrder:8
+#: tvm.relax.transform.transform.CombineParallelMatmul:12
+#: tvm.relax.transform.transform.ExpandMatmulOfSum:11
+#: tvm.relax.transform.transform.ReorderPermuteDimsAfterConcat:11
+#: tvm.relax.transform.transform.ReorderTakeAfterMatmul:6
+#: tvm.relax.transform.transform.UpdateParamStructInfo:13
+msgid "**ret** -- The corresponding pass."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/transform.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AllocateWorkspace:1
+msgid ""
+"Allocate a workspace, represented by a tensor of size big enough for all "
+"external functions that require a temporary storage, and append it to the"
+" arguments of external functions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AllocateWorkspace:5
+msgid ""
+"An external function can specify its workspace requirement by the "
+"kWorkspaceSize attribute."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AllocateWorkspace:7
+msgid "**ret** -- The registered pass for allocating workspace."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AlterOpImpl:1
+msgid ""
+"Replace all PrimFunc's which have matching 'operator_name' attribute, "
+"with replacement PrimFunc that could possibly have different layouts on "
+"i/o buffers. The layout transformations on i/o buffers is present in the "
+"op_buffer_transforms map. Inserts the layout transformations in the call "
+"sites of PrimFuncs being replaced to transform i/o tensors into expected "
+"layout by new PrimFunc."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/relax/transform.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AlterOpImpl:7
+msgid "op_kind to PrimFunc map"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AlterOpImpl:9
+msgid "op_kind to layout transformation map for each of the buffers"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AlterOpImpl:11
+msgid "op_kind to axis_separator for each index_map"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AlterOpImpl:13
+msgid "op_kind to axis_separator for input index_map"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AlterOpImpl:16
+#: tvm.relax.transform.transform.AnnotateTIROpPattern:3
+#: tvm.relax.transform.transform.AttachGlobalSymbol:3
+#: tvm.relax.transform.transform.BindParams:8
+#: tvm.relax.transform.transform.BindSymbolicVars:9
+#: tvm.relax.transform.transform.CallTIRRewrite:3
+#: tvm.relax.transform.transform.CanonicalizeBindings:12
+#: tvm.relax.transform.transform.ComputePrimValue:11
+#: tvm.relax.transform.transform.ExpandTupleArguments:3
+#: tvm.relax.transform.transform.FewShotTuning:12
+#: tvm.relax.transform.transform.FoldConstant:5
+#: tvm.relax.transform.transform.InlinePrivateFunctions:3
+#: tvm.relax.transform.transform.KillAfterLastUse:3
+#: tvm.relax.transform.transform.LambdaLift:3
+#: tvm.relax.transform.transform.LazyGetInput:30
+#: tvm.relax.transform.transform.LazySetOutput:34
+#: tvm.relax.transform.transform.LowerAllocTensor:13
+#: tvm.relax.transform.transform.LowerRuntimeBuiltin:3
+#: tvm.relax.transform.transform.MetaScheduleTuneIRMod:15
+#: tvm.relax.transform.transform.MetaScheduleTuneTIR:7
+#: tvm.relax.transform.transform.Normalize:5
+#: tvm.relax.transform.transform.NormalizeGlobalVar:8
+#: tvm.relax.transform.transform.RemoveUnusedOutputs:3
+#: tvm.relax.transform.transform.RemoveUnusedParameters:3
+#: tvm.relax.transform.transform.RewriteDataflowReshape:8
+#: tvm.relax.transform.transform.StaticPlanBlockMemory:18
+#: tvm.relax.transform.transform.ToNonDataflow:3
+#: tvm.relax.transform.transform.TopologicalSort:10
+#: tvm.relax.transform.transform.VMBuiltinLower:3
+#: tvm.relax.transform.transform.VMShapeLower:6
+msgid "**ret**"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AnnotateTIROpPattern:1
+msgid "Annotate Op Pattern Kind for TIR functions"
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:1
+msgid "Attach layout free buffers to the tir::PrimFunc."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:3
+msgid ""
+"This pass is used to attach layout free buffers to the tir::PrimFunc "
+"according to the function usage in the relax function. Currently, the "
+"layout free buffers are the model weights and relax constants."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:7
+msgid "Note that we recommend applying CanonicalizeBindings before this pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachAttrLayoutFreeBuffers:9
+msgid "**ret** -- The registered pass for attaching layout free buffers."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.attach_external_modules._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid ""
+"Attach variable bounds to each Relax function, which primarily helps with"
+" memory planning."
+msgstr ""
+
+#: of tvm.relax.transform.transform.AttachGlobalSymbol:1
+msgid "Attach global_symbol to Relax functions and TIR Primfuncs for codegen."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BindParams:1
+#: tvm.relax.transform.transform.BindSymbolicVars:1
+msgid "Bind params of function of the module to constant tensors."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BindParams:3
+msgid "The function name to be bound"
+msgstr ""
+
+#: of tvm.relax.transform.transform.BindParams:5
+msgid "The map from parameter or parameter name to constant tensors."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BindSymbolicVars:3
+msgid "The map from symbolic varname to integer."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BindSymbolicVars:5
+msgid ""
+"The function name to be bound. If None (default), all functions within "
+"the module will be updated."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BundleModelParams:1
+msgid "Bundle several model parameters into a single tuple paramters"
+msgstr ""
+
+#: of tvm.relax.transform.transform.BundleModelParams:3
+msgid ""
+"For each function, if the function has the attribute \"num_input\", "
+"separate between run-time parameters and compile-time weights. Run-time "
+"parameters (e.g. activations) are the first `num_input` parameters, and "
+"the remainder are compile-time weights."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BundleModelParams:8
+msgid ""
+"The name of the tuple parameter. If unspecified, defaults to "
+"\"model_params\"."
+msgstr ""
+
+#: of tvm.relax.transform.transform.BundleModelParams:12
+msgid "**ret** -- The registered pass for bundling model parameters."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CallTIRRewrite:1
+msgid "Perform explicit tensor allocation for call_tir and call_dps_packed."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CanonicalizeBindings:1
+msgid ""
+"Canonicalizes variable definitions (e.g., if there is y = x and z = y, it"
+" replaces uses of y and z with x). Also simplifies match cast nodes "
+"(eliminating redundant checks) and tuple indices."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CanonicalizeBindings:6
+msgid ""
+"Best combined with constant folding and the elimination of unused "
+"definitions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CanonicalizeBindings:8
+msgid ""
+"Note: If a dataflow var is used only in a binding to the dataflow block "
+"output var (i.e., a non-dataflow var), this pass will also remove the "
+"dataflow var and replaces the output var's binding with the dataflow "
+"var's direct definition."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CombineParallelMatmul:1
+msgid ""
+"Combine multiple matmul operators sharing the same LHS matrix into one, "
+"followed by slicing. When all matmul branches in a tree have the same set"
+" of fused ops, the fused ops are applied to the combined matmul output "
+"before slicing."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CombineParallelMatmul:5
+msgid ""
+"Currently, only a limited set of fused ops is supported. It includes bias"
+" add, relu, gelu, gelu_tanh and silu activation."
+msgstr ""
+
+#: of tvm.relax.transform.transform.CombineParallelMatmul:8
+msgid ""
+"A function to filter out unwanted branches, with the signature (input, "
+"[rhs], [bias], binding) -> bool."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ComputePrimValue:1
+msgid "Compute all R.prim_value instances"
+msgstr ""
+
+#: of tvm.relax.transform.transform.ComputePrimValue:3
+msgid ""
+"While high-level relax can include expressions in terms of its symbolic "
+"variables, these expressions cannot natively be computed within relax.  "
+"In order to provide values for symbolic expressions (e.g. "
+"`R.prim_value(N*N)`, where `N` is a symbolic variable), this pass "
+"generates a PrimFunc in which the expression can be computed. The relax "
+"graph is then updated to include a call to that PrimFunc, in place of the"
+" original `R.prim_value(expr)`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertLayout:1
+msgid "Automatic layout conversion pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertLayout:3
+#, python-brace-format
+msgid ""
+"The desired layout of conv2d ops is a map from the name of the op to the "
+"desired layout of the desired feature map, weight and output. For "
+"example, if we want to convert the layout of conv2d from NCHW to NHWC, we"
+" can set the desired layout of conv2d to be ``{\"relax.nn.conv2d\": "
+"[\"NHWC\", \"OHWI\"]}``."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertLayout:9
+msgid "**ret** -- The registered pass for layout conversion."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertToDataflow:1
+msgid ""
+"A pass that converts consecutive dataflow operations inside binding "
+"blocks into dataflow blocks."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertToDataflow:4
+msgid "Note: ConvertToDataflow may need to be called first."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertToDataflow:6
+msgid ""
+"The minimum number of consecutive dataflow bindings the pass needs to "
+"extract a new block."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ConvertToDataflow:10
+msgid "**ret** -- The pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DataflowBlockPass:1
+msgid "A pass that works on each tvm.relax.DataflowBlock in a module."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DataflowUseInplaceCalls:1
+msgid ""
+"Pass that changes calls to operators that can be done in-place "
+"(generally, these are elementwise operations) into in-place "
+"implementations. Supported operators will be replaced by calls to "
+"`call_tir_inplace` that invoke in-place PrimFunc implementations of those"
+" operators (which are based on the legalizations of those operators)."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DataflowUseInplaceCalls:7
+#: tvm.relax.transform.transform.FoldConstant:3
+#: tvm.relax.transform.transform.FuseOps:8
+msgid ""
+"Note: ConvertToDataflow may need to be called first to provide dataflow "
+"blocks."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DataflowUseInplaceCalls:9
+msgid "**ret** -- The pass"
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:1
+msgid "Remove dead code in the IRModule. Currently it removes:"
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:4
+msgid ""
+"Unused local VarBindings (those where the bound var is unused and no "
+"impure operation is used)."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:6
+msgid ""
+"Unused Relax functions in the module. We detect the call chain from the "
+"entry function, and remove all unused functions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:9
+msgid "Any binding blocks that are left empty will be removed by the normalizer."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:12
+msgid "备注"
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:13
+msgid "For function-wise DCE, use py:func:`tvm.relax.analysis.remove_all_unused`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:15
+#: tvm.relax.transform.transform.FuseOpsByPattern:24
+#: tvm.relax.transform.transform.RunCodegen:5
+msgid "The set of entry functions to start from."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DeadCodeElimination:18
+msgid "**ret** -- The registered pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DecomposeOpsForInference:1
+msgid ""
+"Decompose composite operators that are composed by other operators during"
+" inference. For example, the result of batch norm (a triple) will be "
+"simplified. Attention, tensor_to_shape, etc. can be also decomposed into "
+"a number of simplified operators as well."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DecomposeOpsForInference:5
+#: tvm.relax.transform.transform.DecomposeOpsForTraining:5
+msgid ""
+"The name of the specified function. If not specified, the pass will run "
+"in all functions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.DecomposeOpsForInference:9
+#: tvm.relax.transform.transform.DecomposeOpsForTraining:9
+#: tvm.relax.transform.transform.LegalizeOps:27
+#: tvm.relax.transform.transform.MetaScheduleApplyDatabase:10
+#: tvm.relax.transform.transform.RealizeVDevice:3
+msgid "**ret** -- The registered pass"
+msgstr ""
+
+#: of tvm.relax.transform.transform.DecomposeOpsForTraining:1
+msgid ""
+"Decompose composite operators that are composed by other operators during"
+" training. For example, the result of batch norm (a triple) will be "
+"simplified. Attention, tensor_to_shape, etc. can be also decomposed into "
+"a number of simplified operators as well."
+msgstr ""
+
+#: of tvm.relax.transform.transform.EliminateCommonSubexpr:1
+msgid "Eliminate common subexpressions within functions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.EliminateCommonSubexpr:3
+msgid ""
+"Note: For nested functions, this pass performs CSE *within* those "
+"functions"
+msgstr ""
+
+#: of tvm.relax.transform.transform.EliminateCommonSubexpr:5
+msgid "If True, enable eliminating only call nodes."
+msgstr ""
+
+#: of tvm.relax.transform.transform.EliminateCommonSubexpr:8
+msgid "**ret** -- The registered pass that eliminates common subexpressions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ExpandMatmulOfSum:1
+msgid "Expand `matmul(x, A+B)` to `matmul(x,A) + matmul(x,B)`"
+msgstr ""
+
+#: of tvm.relax.transform.transform.ExpandMatmulOfSum:3
+msgid ""
+"If either operand can be fully computed at compile-time (only depends on "
+"function parameters after kNumInput), this expansion is suppressed."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ExpandMatmulOfSum:7
+msgid ""
+"Useful for optimizing LoRA computations, where `matmul(x, Base + "
+"LoraA*LoraB)` may be expanded to `matmul(x, Base) + matmul(x, "
+"LoraA*LoraB)`, allowing it to optimized with  `CombineParallelMatmul`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ExpandTupleArguments:1
+msgid "Expand tuple arguments to internal functions"
+msgstr ""
+
+#: of
+#: tvm.relax.transform.fast_math._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid ""
+"Pass to convert the expensive non linear functions to their fast but "
+"approximate counterparts."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FewShotTuning:1
+msgid ""
+"The pass is designed for few shot tuning for static shape PrimFuncs. It "
+"examines all the blocks within the PrimFunc and conducts loop fusion, "
+"splitting, and other transformations based on MetaSchedule schedule rules"
+" but directly samples from the search space instead of using the tuning "
+"algorithm. User can specify the number of valid counts to try and whether"
+" to use runner for benchmarking."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FewShotTuning:7
+msgid "The number of valid counts to try."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FewShotTuning:9
+msgid "Whether to use runner for benchmarking."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.fold_batch_norm_to_conv2d_for_inference._wrap_class_function_pass.<locals>.PyFunctionPass:1
+msgid ""
+"Fuse Batchnorm to its previous Conv2D This optimization is a special case"
+" of FoldScaleAxis that folds scale into conv2d weights. This pass can be "
+"removed when FoldScaleAcis enhances to support this case."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FoldConstant:1
+msgid "Fold constant expressions within dataflow blocks."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FunctionPass:1
+msgid ""
+"A pass that works on each tvm.relax.Function in a module. A function pass"
+" class should be created through `function_pass`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOps:1
+msgid ""
+"This pass groups bindings in a dataflow block of Relax functions and "
+"generate a new grouped Relax function for each group, according to the "
+"fusion algorithm described in the pass implementation. By grouping "
+"bindings into new Relax functions, we substitute the bindings in the "
+"function being manipulated into function calls to the new grouped "
+"function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOps:6
+msgid ""
+"A follow-up pass named \"FuseTIR\" will generate a TIR PrimFunc for each "
+"grouped function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOps:10
+msgid ""
+"The level of fuse optimization. -1 indicates that the level will be "
+"inferred from pass context."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOps:14
+msgid "**ret** -- The registered pass for operator fusion."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:1
+msgid ""
+"Apply pattern matching to each function in the given module, and group "
+"matched expressions into a new function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:4
+msgid ""
+"The end result is similar to FuseOps, but fusion is driven completely by "
+"the provided patterns."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:6
+msgid ""
+"Note: Only operates within dataflow blocks. ConvertToDataflow may need to"
+" be called first."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:8
+msgid ""
+"A list of patterns to be matched. The order of the patterns determines "
+"the order of priority in which they are matched. Higher-priority patterns"
+" should come earlier in the list.  In addition to FusionPattern, a tuple "
+"can be passed as item of this list. The pattern will be constructed "
+"through :code:`FusionPattern(*item)`"
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:8
+msgid ""
+"A list of patterns to be matched. The order of the patterns determines "
+"the order of priority in which they are matched. Higher-priority patterns"
+" should come earlier in the list."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:11
+msgid ""
+"In addition to FusionPattern, a tuple can be passed as item of this list."
+" The pattern will be constructed through :code:`FusionPattern(*item)`"
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:14
+msgid "Whether or not to keep bound constants in the grouped function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:16
+msgid ""
+"If True, wrap each created composite function with another function, "
+"whose body consists only of a call to the composite function, and "
+"annotate the outer function with \"Codegen\" and \"global_symbol\" "
+"attributes. The \"Codegen\" attribute is set as the prefix of the "
+"corresponding pattern name. For example, \"dnnl\" if the pattern name is "
+"\"dnnl.conv2d_relu\".  This must be True if the created composite "
+"functions are intended to be offloaded to an external backend without "
+"using the MergeCompositeFunctions pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:16
+msgid ""
+"If True, wrap each created composite function with another function, "
+"whose body consists only of a call to the composite function, and "
+"annotate the outer function with \"Codegen\" and \"global_symbol\" "
+"attributes. The \"Codegen\" attribute is set as the prefix of the "
+"corresponding pattern name. For example, \"dnnl\" if the pattern name is "
+"\"dnnl.conv2d_relu\"."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:21
+msgid ""
+"This must be True if the created composite functions are intended to be "
+"offloaded to an external backend without using the "
+"MergeCompositeFunctions pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseOpsByPattern:27
+msgid "**ret** -- The registered pass for pattern-based fusion."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseTIR:1
+msgid "Fuse primitive relax function into a larger TIR function if possible"
+msgstr ""
+
+#: of tvm.relax.transform.transform.FuseTIR:3
+msgid "**ret** -- The registered pass for tir fusion."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.fuse_transpose_matmul._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid "A compiler pass that fuses transpose + matmul."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FusionPattern:1
+msgid ""
+"The pattern used by `FuseOpsByPattern`. It's mainly DFPattern but with "
+"other information to help during the fusion pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FusionPattern:4
+msgid ""
+"The name of pattern. Usually it starts with the name of backend, like "
+"'cutlass.matmul'."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FusionPattern:6
+msgid ""
+"The dataflow pattern that will be used to match expressions that can be "
+"handled by external backends."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FusionPattern:9
+msgid ""
+"The map which is used to extract important expressions from the pattern "
+"match result. All DFPattern in this map should be part of the `pattern`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.FusionPattern:12
+msgid "The function to check whether the match result is accepted."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:1
+msgid "Reverse-mode automatic differentiation."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:3
+msgid ""
+"This pass will differentiate one function in the IRModule. Now the input "
+"function must have only one dataflow block (ConvertToDataflow may need to"
+" be called first)."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:6
+msgid ""
+"For a given function specified by `func_name`, it generates a new "
+"function with the name `func_name + \"_adjoint\"`. The new function "
+"computes the gradient of the **differentiation target** with respect to "
+"the arguments specified by `require_grads` of the original function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:10
+msgid ""
+"If the function has only one return value, the return value will be "
+"specified as target. If the function has more than one return values, the"
+" target will be specified as the target_index-th return value. The target"
+" must be a scalar (0-dim tensor)."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:14
+msgid "The new function will be like:"
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:28
+msgid ""
+"This AD pass also supports checkpointing as described in \"Training deep "
+"nets with sublinear memory cost.\" - Chen, Tianqi, et al. (2016). See "
+"tvm.relax.testing.nn.checkpoint for more details."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:32
+msgid "The name of the specific function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:34
+msgid ""
+"The relax variables whose adjoints is needed. Must be parameters of the "
+"given function and should not be duplicate. If it is not specified, "
+"adjoints of all parameters would be computed."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:38
+msgid ""
+"If the specified function has more than one return values, specify the "
+"index of the return value as the target. If it is not specified, the "
+"first return value will be the target."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:42
+#: tvm.relax.transform.transform.RemovePurityChecking:7
+msgid "**ret** -- The Pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:46
+#: tvm.relax.transform.transform.LegalizeOps:31
+#: tvm.relax.transform.transform.dataflowblock_pass:27
+#: tvm.relax.transform.transform.function_pass:27
+msgid "示例"
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:47
+#: tvm.relax.transform.transform.LegalizeOps:32
+msgid "The following code shows how to use this pass:"
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:66
+#: tvm.relax.transform.transform.Gradient:123
+msgid "The module after the Gradient pass will be:"
+msgstr ""
+
+#: of tvm.relax.transform.transform.Gradient:105
+msgid ""
+"The second example is returning multiple values and specifying the target"
+" with `target_index`:"
+msgstr ""
+
+#: of
+#: tvm.relax.transform.ipc_allreduce_rewrite._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid ""
+"Rewrite all-reduce operation to customized all-reduce impl with IPC "
+"memory."
+msgstr ""
+
+#: of tvm.relax.transform.transform.InlinePrivateFunctions:1
+msgid "Inline all private relax functions"
+msgstr ""
+
+#: of tvm.relax.transform.transform.KillAfterLastUse:1
+msgid "Drop all tensor/storage objects after last use"
+msgstr ""
+
+#: of tvm.relax.transform.transform.LambdaLift:1
+msgid "A pass that lifts local functions into global."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LazyGetInput:1
+msgid "A pass that requests inputs lazily."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LazyGetInput:3
+msgid ""
+"In many cases, the size of the model weights exceeds the available memory"
+" on a GPU.  In these cases, a function that accepts all model weights as "
+"arguments would not be able to be called.  In these cases, parameters "
+"must be loaded as they are required by the function, and unloaded once "
+"they are no longer needed."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LazyGetInput:9
+msgid ""
+"This pass mutates a function such that all model weights (arguments after"
+" the first `func.attrs[\"num_input\"]` arguments) are loaded on demand.  "
+"Rather than accepting the weights as function arguments, the function "
+"accepts a callback argument, which can load each parameter as needed.  "
+"The callback accepts two arguments, first the index of the model weight, "
+"and second the name of the parameter.  The callback should return the "
+"parameter as specified."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LazySetOutput:1
+msgid "A pass that sets function outputs when available"
+msgstr ""
+
+#: of tvm.relax.transform.transform.LazySetOutput:3
+msgid ""
+"In many cases, the size of the model weights exceeds the available memory"
+" on a GPU.  In these cases, a function that produces all model weights as"
+" a single return value would not be able to be called.  In these cases, "
+"parameters must be returned as they are produced, unloaded from the GPU "
+"(or saved to disk), before producing additional outputs."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LazySetOutput:10
+msgid ""
+"This pass mutates a function such that all outputs from a function are "
+"returned when they are available.  The function accepts an additional "
+"callback argument, which is called with each output of the function.  The"
+" callback accepts two arguments, first the index of the output tuple that"
+" was produced (or zero if the output is not a tuple), and second the "
+"value itself."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lazy_transform_params._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid ""
+"Convert transform_params functions into a lazy version. (Load the input "
+"to memory on demand, and immediately free it after the last use.)"
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lazy_transform_params._wrap_class_module_pass.<locals>.PyModulePass:4
+msgid ""
+"Note: ToNonDataflow() and RemovePurityTracking() should be invoked before"
+" this pass."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lazy_transform_params._wrap_class_module_pass.<locals>.PyModulePass:6
+msgid "The name of the get_item function."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lazy_transform_params._wrap_class_module_pass.<locals>.PyModulePass:8
+msgid "The name of the set_item function."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lazy_transform_params._wrap_class_module_pass.<locals>.PyModulePass:10
+msgid ""
+"The parameters of the get_item function except index. The given "
+"parameters will be placed before index. For example, if "
+"extra_get_item_params is [param1, param2], then the pass will generate "
+"call_packed(fget_item, [param1, param2, index])"
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lazy_transform_params._wrap_class_module_pass.<locals>.PyModulePass:15
+msgid ""
+"The parameters of the set_item function except index and value. The given"
+" parameters will be placed before index and value. For example, if "
+"extra_set_item_params is [param1, param2], then the pass will generate "
+"call_packed(fset_item, [param1, param2, index, value])"
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:1
+msgid ""
+"Legalize high-level operator calls in Relax functions to call_tir with "
+"corresponding low-level TIR PrimFuncs."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:4
+msgid ""
+"For each high-level operator, we register the way of legalizing it as a "
+"function, which takes a context BlockBuilder and the Call being legalized"
+" as input, and returns the legalized call. Here the input BlockBuilder is"
+" mainly used for adding the PrimFunc created by call_te into the context "
+"IRModule."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:10
+msgid ""
+"The legalization function for each operator is registered as an attribute"
+" (with attribute key `FLegalize`) of the operator."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:13
+msgid ""
+"This pass provides customizability for users to use their own "
+"legalization function for operators. The pass takes an optional "
+"customized map, with the key to be the operator name (`str`) and value to"
+" be the function (`LegalizeFunc`). The default legalization function will"
+" be overridden by the customized one."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:19
+msgid ""
+"The customized operator legalization function map. The customized "
+"function will override the default one."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:22
+msgid ""
+"A boolean value indicating if to print warnings for CallNode whose op's "
+"legalization function is not registered. By default we don't print "
+"warnings."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LegalizeOps:55
+msgid ""
+"Print out the result by `mod.show()`, we can see the IRModule after "
+"legalization becomes"
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:1
+msgid "Lift transformation of the parameters of a function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:3
+msgid ""
+"When some inputs of the function is marked as 'parameters' (the model "
+"weights), this pass identifies the transformation of the parameters and "
+"lifts them to a separate function called `transform_params`. "
+"`transform_params` takes a tuple of the original parameters as input and "
+"returns a tuple of the transformed parameters. The original function will"
+" be rewritten to accept a tuple of transformed parameters as input."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:9
+msgid ""
+"Users are expected to invoke the `transform_params` function in runtime "
+"and pass the transformed parameters to the original function as input."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:12
+msgid ""
+"Indicates how the parameter transformation function will be produced  - "
+"`False` (default): A separate parameter transformation function will be"
+"   produced for each function with the `\"num_input\"` attribute.  - "
+"`True`: A single parameter transformation function will be produced,   "
+"containing the preprocessing steps common across all functions with   the"
+" `\"num_input\"` attribute.  - List[str]: A single parameter "
+"transformation function will be produced,   containing the preprocessing "
+"steps common across each function whose   name is in the list.  Passing a"
+" list of all functions with the `\"num_input\"`   attribute or an empty "
+"list is equivalent to passing `True`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:12
+msgid "Indicates how the parameter transformation function will be produced"
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:14
+msgid ""
+"`False` (default): A separate parameter transformation function will be "
+"produced for each function with the `\"num_input\"` attribute."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:17
+msgid ""
+"`True`: A single parameter transformation function will be produced, "
+"containing the preprocessing steps common across all functions with the "
+"`\"num_input\"` attribute."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:21
+msgid ""
+"List[str]: A single parameter transformation function will be produced, "
+"containing the preprocessing steps common across each function whose name"
+" is in the list.  Passing a list of all functions with the "
+"`\"num_input\"` attribute or an empty list is equivalent to passing "
+"`True`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LiftTransformParams:27
+msgid "**ret** -- The registered pass for lifting transformation of parameters."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LowerAllocTensor:1
+msgid "Lower remaining instances of R.builtin.alloc_tensor"
+msgstr ""
+
+#: of tvm.relax.transform.transform.LowerAllocTensor:3
+msgid ""
+"The static memory planner removes static instances of "
+"`R.builtin.alloc_tensor`, replacing with `R.memory.alloc_storage` and "
+"`R.memory.alloc_tensor`.  However, `R.builtin.alloc_tensor` still remains"
+" for any dynamic allocations."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LowerAllocTensor:8
+msgid ""
+"This transform replaces any remaining `R.builtin.alloc_tensor` instances "
+"with `R.memory.alloc_storage` and `R.memory.alloc_tensor`.  If no "
+"`R.builtin.alloc_tensor` are present, this pass has no effect."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.lower_gpu_ipc_alloc_storage._wrap_class_module_pass.<locals>.PyModulePass:1
+msgid "Lower the storage/tensor allocation on IPC memory."
+msgstr ""
+
+#: of tvm.relax.transform.transform.LowerRuntimeBuiltin:1
+#: tvm.relax.transform.transform.VMBuiltinLower:1
+msgid "Lowering generic intrinsic to VM intrinsics."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MergeCompositeFunctions:1
+msgid ""
+"Group one or multiple composite functions created by FuseOpsByPattern "
+"into a new function. The new function will be annotated with \"Codegen\" "
+"and \"global_symbol\" attributes, and it is intented to be offloaded to "
+"an external backend."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MergeCompositeFunctions:5
+msgid "**ret** -- The registered pass for merging composite functions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleApplyDatabase:1
+msgid "Apply the best schedule from tuning database."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleApplyDatabase:3
+msgid ""
+"work directory to deduce default database if database is not provided (it"
+" will be ignored when an user passes database)"
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleApplyDatabase:6
+msgid ""
+"A boolean value indicating if to print warnings for TIR functions not "
+"showing up in the database. By default we don't print warning."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneIRMod:1
+msgid "Tune Relax IRModule with MetaSchedule."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneIRMod:3
+msgid "model params"
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneIRMod:5
+msgid "work directory"
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneIRMod:7
+msgid "maximum number of total trials allowed for tuning"
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneIRMod:9
+msgid "maximum number of trials per task"
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneIRMod:11
+msgid ""
+"A list of operator names to specify which op to tune. When it is None, "
+"all operators are tuned."
+msgstr ""
+
+#: of tvm.relax.transform.transform.MetaScheduleTuneTIR:1
+msgid ""
+"Tune TIR with MetaSchedule. :param work_dir: work directory :type "
+"work_dir: str :param max_trials_gloabl: maximum number of total trials "
+"allowed for tuning :type max_trials_gloabl: int"
+msgstr ""
+
+#: of tvm.relax.transform.transform.Normalize:1
+msgid ""
+"Transforming Relax IR to normal form, i.e., the expressions are "
+"normalized(no nesting and hence the AST is in ANF), and all "
+"`struct_info_` of expressions are available."
+msgstr ""
+
+#: of tvm.relax.transform.transform.NormalizeGlobalVar:1
+msgid "Possibly rename the GlobalVar in an IRModule to ensure these properties:"
+msgstr ""
+
+#: of tvm.relax.transform.transform.NormalizeGlobalVar:3
+msgid ""
+"1. (Invariant) First ensure every public function has the same name as "
+"its \"global_symbol\" attribute 2. To ensure 1., we may need to rename "
+"private functions with conflicting names; 3. Finally, the name of every "
+"GlobalVar is unique in the IRModule."
+msgstr ""
+
+#: of
+#: tvm.relax.transform.optimize_layout_transform._wrap_class_function_pass.<locals>.PyFunctionPass:1
+msgid ""
+"Pass to remove redundant transform layout operators introduced by "
+"AlterOpImpl pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.PatternCheckContext:1
+msgid "The input of check function `FusionPattern.check`."
+msgstr ""
+
+#: of tvm.relax.transform.transform.PatternCheckContext:3
+msgid "The expression that's matched with the FusionPattern.pattern."
+msgstr ""
+
+#: of tvm.relax.transform.transform.PatternCheckContext:5
+msgid ""
+"A map which contains all expressions matched by the sub patterns in "
+"FusionPattern.annotation_patterns."
+msgstr ""
+
+#: of tvm.relax.transform.transform.PatternCheckContext:8
+msgid ""
+"Map from variable to its value. It contains variables from bindings that "
+"is being fused by FuseOpsByPattern."
+msgstr ""
+
+#: of tvm.relax.transform.transform.PatternCheckContext:11
+msgid ""
+"A map mapping variable definitions to a set of uses. It has all variables"
+" used in the function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.PatternCheckContext:14
+msgid ""
+"Map from value to its bound variable. It doesn't have variables after the"
+" matched expression."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RealizeVDevice:1
+msgid "Propagate virtual device information."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RemovePurityChecking:1
+msgid ""
+"Activate relax.force_pure on all pure functions in the module and unwrap "
+"all pure override ops into the normal versions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RemovePurityChecking:4
+msgid ""
+"This effectively means that there will be no more purity tracking, useful"
+" for low-level code generation."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RemovePurityChecking:10
+msgid "Should be used after ToNonDataflow()"
+msgstr ""
+
+#: of
+#: tvm.relax.transform.remove_redundant_reshape._wrap_class_function_pass.<locals>.PyFunctionPass:1
+msgid "Transformation pass to remove redundant reshape operator"
+msgstr ""
+
+#: of tvm.relax.transform.transform.RemoveUnusedOutputs:1
+msgid "Remove unused outputs from internal functions"
+msgstr ""
+
+#: of tvm.relax.transform.transform.RemoveUnusedParameters:1
+msgid "Remove unused arguments to internal functions"
+msgstr ""
+
+#: of tvm.relax.transform.transform.ReorderPermuteDimsAfterConcat:1
+msgid ""
+"Reorder `concat(permute_dims(A), permute_dims(B))` into "
+"`permute_dims(concat(A,B))`"
+msgstr ""
+
+#: of tvm.relax.transform.transform.ReorderPermuteDimsAfterConcat:3
+msgid ""
+"Useful for optimizing computations after `CombineParallelMatmul`. The "
+"patterns for optimized `nn.Linear` implementations look for "
+"`matmul(activations, permute_dims(weights))`.  After "
+"`CombineParallelMatmul`, the `matmul(activations, concat(permute_dims(A),"
+" permute_dims(B)))` no longer matches this pattern.  Rearranging into "
+"`matmul(activations, permute_dims(concat(A,B)))` restores the pattern "
+"match."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ReorderTakeAfterMatmul:1
+msgid ""
+"Reorder `matmul(x, take(weights, indices))` to "
+"`take(matmul(x,weights),indices)`"
+msgstr ""
+
+#: of tvm.relax.transform.transform.ReorderTakeAfterMatmul:3
+msgid ""
+"Useful for optimizing LoRA computations, where several LoRAs may be "
+"batched together."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RewriteCUDAGraph:1
+msgid ""
+"Rewrite a Relax module for executing with CUDA graph. This pass "
+"identifies the regions that can be executed with CUDA graph and lifts "
+"them into new functions for runtime graph capturing."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RewriteCUDAGraph:4
+msgid "**ret** -- The registered pass for rewriting cuda graph"
+msgstr ""
+
+#: of tvm.relax.transform.transform.RewriteDataflowReshape:1
+msgid ""
+"Convert all reshape-like call_tir to VM reshape operator call. The VM "
+"reshape operator calls will be further lowered to a CreateView operation "
+"at runtime, instead of doing real data copy. Here \"reshape-like\" "
+"includes reshape, expand_dims, flatten, etc."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RewriteDataflowReshape:6
+msgid ""
+"Note: Operates only in dataflow blocks. ConvertToDataflow may need to be "
+"called first."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RunCodegen:1
+msgid "Produce the runtime::Module with an annotated codegen and global symbol."
+msgstr ""
+
+#: of tvm.relax.transform.transform.RunCodegen:3
+msgid "Pairs of a target name and compilation options"
+msgstr ""
+
+#: of tvm.relax.transform.transform.RunCodegen:8
+msgid "**ret** -- The registered pass to remove unused functions."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitCallTIRByPattern:1
+msgid "Split a PrimFunc into 2 parts: the first part is a TIR PrimFunc which is"
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitCallTIRByPattern:2
+msgid ""
+"matched with some pattern, and the second part is the rest of the "
+"original PrimFunc. It will call fcodegen to generate the code for the "
+"matched pattern to replace it with a ExternFunc call."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitCallTIRByPattern:6
+msgid "The list of patterns to match."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitCallTIRByPattern:8
+msgid "The function to generate the code for the matched patterns."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitCallTIRByPattern:11
+msgid "**ret** -- The registered pass for splitting call_tir."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitLayoutRewritePreproc:1
+msgid ""
+"Split the TIR layout rewrite into multiple TIR functions. This pass is "
+"used in the prepack weight after meta_schedule tuning."
+msgstr ""
+
+#: of tvm.relax.transform.transform.SplitLayoutRewritePreproc:4
+msgid "**ret** -- The registered pass for splitting TIR layout rewrite."
+msgstr ""
+
+#: of tvm.relax.transform.transform.StaticPlanBlockMemory:1
+msgid ""
+"The static memory planning pass on BindingBlock level. The pass will "
+"reuse allocated memory to its best effort, in order to reduce the total "
+"amount of allocated memory size."
+msgstr ""
+
+#: of tvm.relax.transform.transform.StaticPlanBlockMemory:5
+msgid ""
+"The pass \"supports\" dynamic shape in the way of TIR variable upper "
+"bound annotation. We can optionally annotate the attribute "
+"\"tir_var_upper_bound\" to Relax functions. The attribute value is a dict"
+" from strings to integers, denoting the name of TIR variables to the "
+"upper bound values of the TIR vars. Note: The annotated upper bound "
+"attribute only applies to TIR vars in the function signature for clarity."
+msgstr ""
+
+#: of tvm.relax.transform.transform.StaticPlanBlockMemory:12
+#, python-brace-format
+msgid ""
+"For example, we can annotate a Relax function with "
+":code:`R.func_attr({\"tir_var_upper_bound\": {\"n\": 1024}})`. It means "
+"the maximum value of variable that names \"n\" in the function signature "
+"will have upper bound 1024. And we will use 1024 as its value during "
+"memory planning."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ToMixedPrecision:1
+msgid ""
+"Automatic mixed precision pass. Currently the pass assumes the input "
+"module to be fp32 only, and will automatically cast fp32 to fp16 for "
+"certain ops."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ToMixedPrecision:4
+msgid ""
+"Note: Mainly operates within dataflow blocks. ConvertToDataflow may need "
+"to be called first."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ToMixedPrecision:6
+msgid ""
+"The output data type of gemm/conv, which is the data type of the "
+"accumulator."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ToMixedPrecision:8
+msgid ""
+"The names of function parameters whose dtype should become fp16. The  "
+"function signature would change accordingly."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ToMixedPrecision:12
+msgid "**ret** -- The registered pass for mixed precision."
+msgstr ""
+
+#: of tvm.relax.transform.transform.ToNonDataflow:1
+msgid "Transform all dataflow structure to non-dataflow version."
+msgstr ""
+
+#: of tvm.relax.transform.transform.TopologicalSort:1
+msgid "Sort bindings in relax.Dataflow blocks in the order specified"
+msgstr ""
+
+#: of tvm.relax.transform.transform.TopologicalSort:3
+msgid ""
+"The order in which bindings should be emitted.  Allowed values are "
+"\"depth-first\" and \"breadth-first\"."
+msgstr ""
+
+#: of tvm.relax.transform.transform.TopologicalSort:6
+msgid ""
+"The direction in which the sort should be performed.  Allowed values are "
+"\"from-inputs\" and \"from-outputs\"."
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateParamStructInfo:1
+msgid "Update struct info of parameters"
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateParamStructInfo:3
+msgid ""
+"Update struct info of parameters.  Internal bindings and function return "
+"type will be updated using relax's struct inference rules. Errors "
+"resulting from struct inference will be propagated to the user."
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateParamStructInfo:8
+msgid ""
+"A function that is called once for each function parameter, and returns "
+"the updated struct info to be used for it.  If the function returns "
+"`None`, the parameter is not modified."
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateVDevice:1
+msgid "Update virtual device."
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateVDevice:3
+msgid "The new virtual device."
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateVDevice:5
+msgid ""
+"The device index indicates the device on which the update will be "
+"performed."
+msgstr ""
+
+#: of tvm.relax.transform.transform.UpdateVDevice:8
+msgid "**ret** -- The registered pass that modifies the virtual device."
+msgstr ""
+
+#: of tvm.relax.transform.transform.VMShapeLower:1
+msgid "Lower the symbolic shape and argument and match-cast structinfo matching."
+msgstr ""
+
+#: of tvm.relax.transform.transform.VMShapeLower:3
+msgid "Whether emit err context string, can be turned off for testing purposes."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:1
+msgid "Decorate a dataflowblock pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:3
+msgid ""
+"This function returns a callback when pass_func is provided. Otherwise, "
+"it returns the created dataflowblock pass using the given optimization "
+"function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:7
+#: tvm.relax.transform.transform.function_pass:7
+msgid "The transformation function or class."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:9
+msgid "The optimization level of this dataflowblock pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:11
+msgid ""
+"The name of the dataflowblock pass. The name could be empty. In this "
+"case, the name of the optimization function will be used as the pass "
+"name."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:14
+msgid "The list of passes that the dataflowblock pass is dependent on."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:16
+msgid "Boolean variable whether the dataflowblock pass is traceable"
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:19
+msgid ""
+"**create_dataflowblock_pass** -- A decorator will be returned if "
+"pass_func is not provided, otherwise return the decorated result. The "
+"returned decorator has two behaviors depending on the input: A new "
+"DataflowBlockPass will be returned when we decorate a pass function. A "
+"new DataflowBlockPass class will be returned when we decorate a class "
+"type."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:28
+msgid "The following code block decorates a dataflowblock pass class."
+msgstr ""
+
+#: of tvm.relax.transform.transform.dataflowblock_pass:66
+msgid ""
+"The following code creates a dataflowblock pass by decorating a user "
+"defined transform function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:1
+msgid "Decorate a function pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:3
+msgid ""
+"This function returns a callback when pass_func is provided. Otherwise, "
+"it returns the created function pass using the given optimization "
+"function."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:9
+msgid "The optimization level of this function pass."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:11
+msgid ""
+"The name of the function pass. The name could be empty. In this case, the"
+" name of the optimization function will be used as the pass name."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:14
+msgid "The list of passes that the function pass is dependent on."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:16
+msgid "Boolean variable whether the function pass is traceable"
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:19
+msgid ""
+"**create_function_pass** -- A decorator will be returned if pass_func is "
+"not provided, otherwise return the decorated result. The returned "
+"decorator has two behaviors depending on the input: A new FunctionPass "
+"will be returned when we decorate a pass function. A new FunctionPass "
+"class will be returned when we decorate a class type."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:28
+msgid "The following code block decorates a function pass class."
+msgstr ""
+
+#: of tvm.relax.transform.transform.function_pass:58
+msgid ""
+"The following code creates a function pass by decorating a user defined "
+"transform function."
+msgstr ""
+
+#~ msgid "Relax transformations."
+#~ msgstr ""
+
+#~ msgid "Reorder `x*(A*B)` to `(x*A)*B`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Useful for optimizing LoRA computations, "
+#~ "where `matmul(x, LoraA*LoraB)` may be "
+#~ "computed as `matmul(matmul(x, LoraA), LoraB)`,"
+#~ " reducing the total memory usage."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**ret** -- The corresponding pass."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Allocate a workspace, represented by a"
+#~ " tensor of size big enough for "
+#~ "all external functions that require a"
+#~ " temporary storage, and append it to"
+#~ " the arguments of external functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An external function can specify its "
+#~ "workspace requirement by the kWorkspaceSize"
+#~ " attribute."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for allocating workspace."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Replace all PrimFunc's which have "
+#~ "matching 'operator_name' attribute, with "
+#~ "replacement PrimFunc that could possibly "
+#~ "have different layouts on i/o buffers."
+#~ " The layout transformations on i/o "
+#~ "buffers is present in the "
+#~ "op_buffer_transforms map. Inserts the layout"
+#~ " transformations in the call sites of"
+#~ " PrimFuncs being replaced to transform "
+#~ "i/o tensors into expected layout by "
+#~ "new PrimFunc."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "op_kind to PrimFunc map"
+#~ msgstr ""
+
+#~ msgid "op_kind to layout transformation map for each of the buffers"
+#~ msgstr ""
+
+#~ msgid "op_kind to axis_separator for each index_map"
+#~ msgstr ""
+
+#~ msgid "op_kind to axis_separator for input index_map"
+#~ msgstr ""
+
+#~ msgid "**ret**"
+#~ msgstr ""
+
+#~ msgid "Annotate Op Pattern Kind for TIR functions"
+#~ msgstr ""
+
+#~ msgid "Attach layout free buffers to the tir::PrimFunc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass is used to attach layout"
+#~ " free buffers to the tir::PrimFunc "
+#~ "according to the function usage in "
+#~ "the relax function. Currently, the "
+#~ "layout free buffers are the model "
+#~ "weights and relax constants."
+#~ msgstr ""
+
+#~ msgid "Note that we recommend applying CanonicalizeBindings before this pass."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for attaching layout free buffers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Attach variable bounds to each Relax "
+#~ "function, which primarily helps with "
+#~ "memory planning."
+#~ msgstr ""
+
+#~ msgid "Attach global_symbol to Relax functions and TIR Primfuncs for codegen."
+#~ msgstr ""
+
+#~ msgid "Bind params of function of the module to constant tensors."
+#~ msgstr ""
+
+#~ msgid "The function name to be bound"
+#~ msgstr ""
+
+#~ msgid "The map from parameter or parameter name to constant tensors."
+#~ msgstr ""
+
+#~ msgid "The map from symbolic varname to integer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The function name to be bound. If"
+#~ " None (default), all functions within "
+#~ "the module will be updated."
+#~ msgstr ""
+
+#~ msgid "Bundle several model parameters into a single tuple paramters"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For each function, if the function "
+#~ "has the attribute \"num_input\", separate "
+#~ "between run-time parameters and "
+#~ "compile-time weights. Run-time parameters"
+#~ " (e.g. activations) are the first "
+#~ "`num_input` parameters, and the remainder "
+#~ "are compile-time weights."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the tuple parameter. "
+#~ "If unspecified, defaults to \"model_params\"."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for bundling model parameters."
+#~ msgstr ""
+
+#~ msgid "Perform explicit tensor allocation for call_tir and call_dps_packed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Canonicalizes variable definitions (e.g., if"
+#~ " there is y = x and z ="
+#~ " y, it replaces uses of y and"
+#~ " z with x). Also simplifies match "
+#~ "cast nodes (eliminating redundant checks) "
+#~ "and tuple indices."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Best combined with constant folding and"
+#~ " the elimination of unused definitions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: If a dataflow var is used"
+#~ " only in a binding to the "
+#~ "dataflow block output var (i.e., a "
+#~ "non-dataflow var), this pass will "
+#~ "also remove the dataflow var and "
+#~ "replaces the output var's binding with"
+#~ " the dataflow var's direct definition."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Combine multiple matmul operators sharing "
+#~ "the same LHS matrix into one, "
+#~ "followed by slicing. When all matmul "
+#~ "branches in a tree have the same"
+#~ " set of fused ops, the fused "
+#~ "ops are applied to the combined "
+#~ "matmul output before slicing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Currently, only a limited set of "
+#~ "fused ops is supported. It includes "
+#~ "bias add, relu, gelu, gelu_tanh and "
+#~ "silu activation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A function to filter out unwanted "
+#~ "branches, with the signature (input, "
+#~ "[rhs], [bias], binding) -> bool."
+#~ msgstr ""
+
+#~ msgid "Compute all R.prim_value instances"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "While high-level relax can include "
+#~ "expressions in terms of its symbolic "
+#~ "variables, these expressions cannot natively"
+#~ " be computed within relax.  In order"
+#~ " to provide values for symbolic "
+#~ "expressions (e.g. `R.prim_value(N*N)`, where "
+#~ "`N` is a symbolic variable), this "
+#~ "pass generates a PrimFunc in which "
+#~ "the expression can be computed. The "
+#~ "relax graph is then updated to "
+#~ "include a call to that PrimFunc, "
+#~ "in place of the original "
+#~ "`R.prim_value(expr)`."
+#~ msgstr ""
+
+#~ msgid "Automatic layout conversion pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The desired layout of conv2d ops "
+#~ "is a map from the name of "
+#~ "the op to the desired layout of"
+#~ " the desired feature map, weight and"
+#~ " output. For example, if we want "
+#~ "to convert the layout of conv2d "
+#~ "from NCHW to NHWC, we can set "
+#~ "the desired layout of conv2d to be"
+#~ " ``{\"relax.nn.conv2d\": [\"NHWC\", \"OHWI\"]}``."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for layout conversion."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass that converts consecutive "
+#~ "dataflow operations inside binding blocks "
+#~ "into dataflow blocks."
+#~ msgstr ""
+
+#~ msgid "Note: ConvertToDataflow may need to be called first."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The minimum number of consecutive "
+#~ "dataflow bindings the pass needs to "
+#~ "extract a new block."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The pass."
+#~ msgstr ""
+
+#~ msgid "A pass that works on each tvm.relax.DataflowBlock in a module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pass that changes calls to operators "
+#~ "that can be done in-place "
+#~ "(generally, these are elementwise operations)"
+#~ " into in-place implementations. Supported"
+#~ " operators will be replaced by calls"
+#~ " to `call_tir_inplace` that invoke in-"
+#~ "place PrimFunc implementations of those "
+#~ "operators (which are based on the "
+#~ "legalizations of those operators)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: ConvertToDataflow may need to be"
+#~ " called first to provide dataflow "
+#~ "blocks."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The pass"
+#~ msgstr ""
+
+#~ msgid "Remove dead code in the IRModule. Currently it removes:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unused local VarBindings (those where "
+#~ "the bound var is unused and no "
+#~ "impure operation is used)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unused Relax functions in the module."
+#~ " We detect the call chain from "
+#~ "the entry function, and remove all "
+#~ "unused functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Any binding blocks that are left "
+#~ "empty will be removed by the "
+#~ "normalizer."
+#~ msgstr ""
+
+#~ msgid "备注"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For function-wise DCE, use "
+#~ "py:func:`tvm.relax.analysis.remove_all_unused`."
+#~ msgstr ""
+
+#~ msgid "The set of entry functions to start from."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Decompose composite operators that are "
+#~ "composed by other operators during "
+#~ "inference. For example, the result of"
+#~ " batch norm (a triple) will be "
+#~ "simplified. Attention, tensor_to_shape, etc. "
+#~ "can be also decomposed into a "
+#~ "number of simplified operators as well."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the specified function. "
+#~ "If not specified, the pass will "
+#~ "run in all functions."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Decompose composite operators that are "
+#~ "composed by other operators during "
+#~ "training. For example, the result of "
+#~ "batch norm (a triple) will be "
+#~ "simplified. Attention, tensor_to_shape, etc. "
+#~ "can be also decomposed into a "
+#~ "number of simplified operators as well."
+#~ msgstr ""
+
+#~ msgid "Eliminate common subexpressions within functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: For nested functions, this pass"
+#~ " performs CSE *within* those functions"
+#~ msgstr ""
+
+#~ msgid "If True, enable eliminating only call nodes."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass that eliminates common subexpressions."
+#~ msgstr ""
+
+#~ msgid "Expand `matmul(x, A+B)` to `matmul(x,A) + matmul(x,B)`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If either operand can be fully "
+#~ "computed at compile-time (only depends"
+#~ " on function parameters after kNumInput),"
+#~ " this expansion is suppressed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Useful for optimizing LoRA computations, "
+#~ "where `matmul(x, Base + LoraA*LoraB)` "
+#~ "may be expanded to `matmul(x, Base) "
+#~ "+ matmul(x, LoraA*LoraB)`, allowing it "
+#~ "to optimized with  `CombineParallelMatmul`."
+#~ msgstr ""
+
+#~ msgid "Expand tuple arguments to internal functions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pass to convert the expensive non "
+#~ "linear functions to their fast but "
+#~ "approximate counterparts."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The pass is designed for few shot"
+#~ " tuning for static shape PrimFuncs. "
+#~ "It examines all the blocks within "
+#~ "the PrimFunc and conducts loop fusion,"
+#~ " splitting, and other transformations based"
+#~ " on MetaSchedule schedule rules but "
+#~ "directly samples from the search space"
+#~ " instead of using the tuning "
+#~ "algorithm. User can specify the number"
+#~ " of valid counts to try and "
+#~ "whether to use runner for benchmarking."
+#~ msgstr ""
+
+#~ msgid "The number of valid counts to try."
+#~ msgstr ""
+
+#~ msgid "Whether to use runner for benchmarking."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fuse Batchnorm to its previous Conv2D"
+#~ " This optimization is a special case"
+#~ " of FoldScaleAxis that folds scale "
+#~ "into conv2d weights. This pass can "
+#~ "be removed when FoldScaleAcis enhances "
+#~ "to support this case."
+#~ msgstr ""
+
+#~ msgid "Fold constant expressions within dataflow blocks."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass that works on each "
+#~ "tvm.relax.Function in a module. A "
+#~ "function pass class should be created"
+#~ " through `function_pass`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass groups bindings in a "
+#~ "dataflow block of Relax functions and"
+#~ " generate a new grouped Relax "
+#~ "function for each group, according to"
+#~ " the fusion algorithm described in "
+#~ "the pass implementation. By grouping "
+#~ "bindings into new Relax functions, we"
+#~ " substitute the bindings in the "
+#~ "function being manipulated into function "
+#~ "calls to the new grouped function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A follow-up pass named \"FuseTIR\" "
+#~ "will generate a TIR PrimFunc for "
+#~ "each grouped function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The level of fuse optimization. -1 "
+#~ "indicates that the level will be "
+#~ "inferred from pass context."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for operator fusion."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Apply pattern matching to each function"
+#~ " in the given module, and group "
+#~ "matched expressions into a new function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The end result is similar to "
+#~ "FuseOps, but fusion is driven completely"
+#~ " by the provided patterns."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: Only operates within dataflow "
+#~ "blocks. ConvertToDataflow may need to be"
+#~ " called first."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A list of patterns to be matched."
+#~ " The order of the patterns determines"
+#~ " the order of priority in which "
+#~ "they are matched. Higher-priority "
+#~ "patterns should come earlier in the "
+#~ "list.  In addition to FusionPattern, a"
+#~ " tuple can be passed as item of"
+#~ " this list. The pattern will be "
+#~ "constructed through :code:`FusionPattern(*item)`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A list of patterns to be matched."
+#~ " The order of the patterns determines"
+#~ " the order of priority in which "
+#~ "they are matched. Higher-priority "
+#~ "patterns should come earlier in the "
+#~ "list."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In addition to FusionPattern, a tuple"
+#~ " can be passed as item of this"
+#~ " list. The pattern will be "
+#~ "constructed through :code:`FusionPattern(*item)`"
+#~ msgstr ""
+
+#~ msgid "Whether or not to keep bound constants in the grouped function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If True, wrap each created composite "
+#~ "function with another function, whose "
+#~ "body consists only of a call to"
+#~ " the composite function, and annotate "
+#~ "the outer function with \"Codegen\" and"
+#~ " \"global_symbol\" attributes. The \"Codegen\""
+#~ " attribute is set as the prefix "
+#~ "of the corresponding pattern name. For"
+#~ " example, \"dnnl\" if the pattern "
+#~ "name is \"dnnl.conv2d_relu\".  This must "
+#~ "be True if the created composite "
+#~ "functions are intended to be offloaded"
+#~ " to an external backend without using"
+#~ " the MergeCompositeFunctions pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If True, wrap each created composite "
+#~ "function with another function, whose "
+#~ "body consists only of a call to"
+#~ " the composite function, and annotate "
+#~ "the outer function with \"Codegen\" and"
+#~ " \"global_symbol\" attributes. The \"Codegen\""
+#~ " attribute is set as the prefix "
+#~ "of the corresponding pattern name. For"
+#~ " example, \"dnnl\" if the pattern "
+#~ "name is \"dnnl.conv2d_relu\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This must be True if the created"
+#~ " composite functions are intended to "
+#~ "be offloaded to an external backend "
+#~ "without using the MergeCompositeFunctions "
+#~ "pass."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for pattern-based fusion."
+#~ msgstr ""
+
+#~ msgid "Fuse primitive relax function into a larger TIR function if possible"
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for tir fusion."
+#~ msgstr ""
+
+#~ msgid "A compiler pass that fuses transpose + matmul."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The pattern used by `FuseOpsByPattern`. "
+#~ "It's mainly DFPattern but with other "
+#~ "information to help during the fusion"
+#~ " pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of pattern. Usually it "
+#~ "starts with the name of backend, "
+#~ "like 'cutlass.matmul'."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The dataflow pattern that will be "
+#~ "used to match expressions that can "
+#~ "be handled by external backends."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The map which is used to extract"
+#~ " important expressions from the pattern "
+#~ "match result. All DFPattern in this "
+#~ "map should be part of the "
+#~ "`pattern`."
+#~ msgstr ""
+
+#~ msgid "The function to check whether the match result is accepted."
+#~ msgstr ""
+
+#~ msgid "Reverse-mode automatic differentiation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass will differentiate one "
+#~ "function in the IRModule. Now the "
+#~ "input function must have only one "
+#~ "dataflow block (ConvertToDataflow may need "
+#~ "to be called first)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For a given function specified by "
+#~ "`func_name`, it generates a new function"
+#~ " with the name `func_name + "
+#~ "\"_adjoint\"`. The new function computes "
+#~ "the gradient of the **differentiation "
+#~ "target** with respect to the arguments"
+#~ " specified by `require_grads` of the "
+#~ "original function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the function has only one "
+#~ "return value, the return value will "
+#~ "be specified as target. If the "
+#~ "function has more than one return "
+#~ "values, the target will be specified "
+#~ "as the target_index-th return value. "
+#~ "The target must be a scalar (0-dim"
+#~ " tensor)."
+#~ msgstr ""
+
+#~ msgid "The new function will be like:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This AD pass also supports checkpointing"
+#~ " as described in \"Training deep nets"
+#~ " with sublinear memory cost.\" - "
+#~ "Chen, Tianqi, et al. (2016). See "
+#~ "tvm.relax.testing.nn.checkpoint for more details."
+#~ msgstr ""
+
+#~ msgid "The name of the specific function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The relax variables whose adjoints is"
+#~ " needed. Must be parameters of the"
+#~ " given function and should not be "
+#~ "duplicate. If it is not specified, "
+#~ "adjoints of all parameters would be "
+#~ "computed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If the specified function has more "
+#~ "than one return values, specify the "
+#~ "index of the return value as the"
+#~ " target. If it is not specified, "
+#~ "the first return value will be the"
+#~ " target."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The Pass."
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "The following code shows how to use this pass:"
+#~ msgstr ""
+
+#~ msgid "The module after the Gradient pass will be:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The second example is returning multiple"
+#~ " values and specifying the target "
+#~ "with `target_index`:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rewrite all-reduce operation to "
+#~ "customized all-reduce impl with IPC "
+#~ "memory."
+#~ msgstr ""
+
+#~ msgid "Inline all private relax functions"
+#~ msgstr ""
+
+#~ msgid "Drop all tensor/storage objects after last use"
+#~ msgstr ""
+
+#~ msgid "A pass that lifts local functions into global."
+#~ msgstr ""
+
+#~ msgid "A pass that requests inputs lazily."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In many cases, the size of the "
+#~ "model weights exceeds the available "
+#~ "memory on a GPU.  In these cases,"
+#~ " a function that accepts all model"
+#~ " weights as arguments would not be"
+#~ " able to be called.  In these "
+#~ "cases, parameters must be loaded as "
+#~ "they are required by the function, "
+#~ "and unloaded once they are no "
+#~ "longer needed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass mutates a function such "
+#~ "that all model weights (arguments after"
+#~ " the first `func.attrs[\"num_input\"]` arguments)"
+#~ " are loaded on demand.  Rather than"
+#~ " accepting the weights as function "
+#~ "arguments, the function accepts a "
+#~ "callback argument, which can load each"
+#~ " parameter as needed.  The callback "
+#~ "accepts two arguments, first the index"
+#~ " of the model weight, and second "
+#~ "the name of the parameter.  The "
+#~ "callback should return the parameter as"
+#~ " specified."
+#~ msgstr ""
+
+#~ msgid "A pass that sets function outputs when available"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In many cases, the size of the "
+#~ "model weights exceeds the available "
+#~ "memory on a GPU.  In these cases,"
+#~ " a function that produces all model"
+#~ " weights as a single return value "
+#~ "would not be able to be called."
+#~ "  In these cases, parameters must be"
+#~ " returned as they are produced, "
+#~ "unloaded from the GPU (or saved to"
+#~ " disk), before producing additional "
+#~ "outputs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass mutates a function such "
+#~ "that all outputs from a function "
+#~ "are returned when they are available."
+#~ "  The function accepts an additional "
+#~ "callback argument, which is called with"
+#~ " each output of the function.  The"
+#~ " callback accepts two arguments, first "
+#~ "the index of the output tuple that"
+#~ " was produced (or zero if the "
+#~ "output is not a tuple), and second"
+#~ " the value itself."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert transform_params functions into a "
+#~ "lazy version. (Load the input to "
+#~ "memory on demand, and immediately free"
+#~ " it after the last use.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: ToNonDataflow() and RemovePurityTracking() "
+#~ "should be invoked before this pass."
+#~ msgstr ""
+
+#~ msgid "The name of the get_item function."
+#~ msgstr ""
+
+#~ msgid "The name of the set_item function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The parameters of the get_item function"
+#~ " except index. The given parameters "
+#~ "will be placed before index. For "
+#~ "example, if extra_get_item_params is [param1,"
+#~ " param2], then the pass will generate"
+#~ " call_packed(fget_item, [param1, param2, index])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The parameters of the set_item function"
+#~ " except index and value. The given"
+#~ " parameters will be placed before "
+#~ "index and value. For example, if "
+#~ "extra_set_item_params is [param1, param2], "
+#~ "then the pass will generate "
+#~ "call_packed(fset_item, [param1, param2, index, "
+#~ "value])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Legalize high-level operator calls in"
+#~ " Relax functions to call_tir with "
+#~ "corresponding low-level TIR PrimFuncs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For each high-level operator, we "
+#~ "register the way of legalizing it "
+#~ "as a function, which takes a "
+#~ "context BlockBuilder and the Call being"
+#~ " legalized as input, and returns the"
+#~ " legalized call. Here the input "
+#~ "BlockBuilder is mainly used for adding"
+#~ " the PrimFunc created by call_te into"
+#~ " the context IRModule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The legalization function for each "
+#~ "operator is registered as an attribute"
+#~ " (with attribute key `FLegalize`) of "
+#~ "the operator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This pass provides customizability for "
+#~ "users to use their own legalization "
+#~ "function for operators. The pass takes"
+#~ " an optional customized map, with the"
+#~ " key to be the operator name "
+#~ "(`str`) and value to be the "
+#~ "function (`LegalizeFunc`). The default "
+#~ "legalization function will be overridden "
+#~ "by the customized one."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The customized operator legalization function"
+#~ " map. The customized function will "
+#~ "override the default one."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean value indicating if to "
+#~ "print warnings for CallNode whose op's"
+#~ " legalization function is not registered."
+#~ " By default we don't print warnings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Print out the result by `mod.show()`,"
+#~ " we can see the IRModule after "
+#~ "legalization becomes"
+#~ msgstr ""
+
+#~ msgid "Lift transformation of the parameters of a function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When some inputs of the function "
+#~ "is marked as 'parameters' (the model "
+#~ "weights), this pass identifies the "
+#~ "transformation of the parameters and "
+#~ "lifts them to a separate function "
+#~ "called `transform_params`. `transform_params` takes"
+#~ " a tuple of the original parameters"
+#~ " as input and returns a tuple "
+#~ "of the transformed parameters. The "
+#~ "original function will be rewritten to"
+#~ " accept a tuple of transformed "
+#~ "parameters as input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Users are expected to invoke the "
+#~ "`transform_params` function in runtime and "
+#~ "pass the transformed parameters to the"
+#~ " original function as input."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Indicates how the parameter transformation "
+#~ "function will be produced  - `False` "
+#~ "(default): A separate parameter transformation"
+#~ " function will be   produced for each"
+#~ " function with the `\"num_input\"` "
+#~ "attribute.  - `True`: A single parameter"
+#~ " transformation function will be produced,"
+#~ "   containing the preprocessing steps "
+#~ "common across all functions with   the"
+#~ " `\"num_input\"` attribute.  - List[str]: A"
+#~ " single parameter transformation function "
+#~ "will be produced,   containing the "
+#~ "preprocessing steps common across each "
+#~ "function whose   name is in the "
+#~ "list.  Passing a list of all "
+#~ "functions with the `\"num_input\"`   attribute"
+#~ " or an empty list is equivalent "
+#~ "to passing `True`."
+#~ msgstr ""
+
+#~ msgid "Indicates how the parameter transformation function will be produced"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`False` (default): A separate parameter "
+#~ "transformation function will be produced "
+#~ "for each function with the "
+#~ "`\"num_input\"` attribute."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`True`: A single parameter transformation "
+#~ "function will be produced, containing "
+#~ "the preprocessing steps common across "
+#~ "all functions with the `\"num_input\"` "
+#~ "attribute."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List[str]: A single parameter transformation"
+#~ " function will be produced, containing "
+#~ "the preprocessing steps common across "
+#~ "each function whose name is in the"
+#~ " list.  Passing a list of all "
+#~ "functions with the `\"num_input\"` attribute"
+#~ " or an empty list is equivalent "
+#~ "to passing `True`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**ret** -- The registered pass for "
+#~ "lifting transformation of parameters."
+#~ msgstr ""
+
+#~ msgid "Lower remaining instances of R.builtin.alloc_tensor"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The static memory planner removes static"
+#~ " instances of `R.builtin.alloc_tensor`, replacing"
+#~ " with `R.memory.alloc_storage` and "
+#~ "`R.memory.alloc_tensor`.  However, "
+#~ "`R.builtin.alloc_tensor` still remains for any"
+#~ " dynamic allocations."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This transform replaces any remaining "
+#~ "`R.builtin.alloc_tensor` instances with "
+#~ "`R.memory.alloc_storage` and `R.memory.alloc_tensor`.  "
+#~ "If no `R.builtin.alloc_tensor` are present,"
+#~ " this pass has no effect."
+#~ msgstr ""
+
+#~ msgid "Lower the storage/tensor allocation on IPC memory."
+#~ msgstr ""
+
+#~ msgid "Lowering generic intrinsic to VM intrinsics."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Group one or multiple composite "
+#~ "functions created by FuseOpsByPattern into "
+#~ "a new function. The new function "
+#~ "will be annotated with \"Codegen\" and"
+#~ " \"global_symbol\" attributes, and it is"
+#~ " intented to be offloaded to an "
+#~ "external backend."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for merging composite functions."
+#~ msgstr ""
+
+#~ msgid "Apply the best schedule from tuning database."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "work directory to deduce default "
+#~ "database if database is not provided "
+#~ "(it will be ignored when an user"
+#~ " passes database)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A boolean value indicating if to "
+#~ "print warnings for TIR functions not "
+#~ "showing up in the database. By "
+#~ "default we don't print warning."
+#~ msgstr ""
+
+#~ msgid "Tune Relax IRModule with MetaSchedule."
+#~ msgstr ""
+
+#~ msgid "model params"
+#~ msgstr ""
+
+#~ msgid "work directory"
+#~ msgstr ""
+
+#~ msgid "maximum number of total trials allowed for tuning"
+#~ msgstr ""
+
+#~ msgid "maximum number of trials per task"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A list of operator names to "
+#~ "specify which op to tune. When it"
+#~ " is None, all operators are tuned."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tune TIR with MetaSchedule. :param "
+#~ "work_dir: work directory :type work_dir: "
+#~ "str :param max_trials_gloabl: maximum number"
+#~ " of total trials allowed for tuning"
+#~ " :type max_trials_gloabl: int"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Transforming Relax IR to normal form,"
+#~ " i.e., the expressions are normalized(no"
+#~ " nesting and hence the AST is "
+#~ "in ANF), and all ``checked_type_`` and"
+#~ " ``shape_`` of expressions are available."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Possibly rename the GlobalVar in an "
+#~ "IRModule to ensure these properties:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "1. (Invariant) First ensure every public"
+#~ " function has the same name as "
+#~ "its \"global_symbol\" attribute 2. To "
+#~ "ensure 1., we may need to rename"
+#~ " private functions with conflicting names;"
+#~ " 3. Finally, the name of every "
+#~ "GlobalVar is unique in the IRModule."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pass to remove redundant transform "
+#~ "layout operators introduced by AlterOpImpl "
+#~ "pass."
+#~ msgstr ""
+
+#~ msgid "The input of check function `FusionPattern.check`."
+#~ msgstr ""
+
+#~ msgid "The expression that's matched with the FusionPattern.pattern."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A map which contains all expressions "
+#~ "matched by the sub patterns in "
+#~ "FusionPattern.annotation_patterns."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Map from variable to its value. It"
+#~ " contains variables from bindings that "
+#~ "is being fused by FuseOpsByPattern."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A map mapping variable definitions to"
+#~ " a set of uses. It has all "
+#~ "variables used in the function."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Map from value to its bound "
+#~ "variable. It doesn't have variables "
+#~ "after the matched expression."
+#~ msgstr ""
+
+#~ msgid "Propagate virtual device information."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Activate relax.force_pure on all pure "
+#~ "functions in the module and unwrap "
+#~ "all pure override ops into the "
+#~ "normal versions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This effectively means that there will"
+#~ " be no more purity tracking, useful"
+#~ " for low-level code generation."
+#~ msgstr ""
+
+#~ msgid "Should be used after ToNonDataflow()"
+#~ msgstr ""
+
+#~ msgid "Transformation pass to remove redundant reshape operator"
+#~ msgstr ""
+
+#~ msgid "Remove unused outputs from internal functions"
+#~ msgstr ""
+
+#~ msgid "Remove unused arguments to internal functions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reorder `concat(permute_dims(A), permute_dims(B))` "
+#~ "into `permute_dims(concat(A,B))`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Useful for optimizing computations after "
+#~ "`CombineParallelMatmul`. The patterns for "
+#~ "optimized `nn.Linear` implementations look for"
+#~ " `matmul(activations, permute_dims(weights))`.  After"
+#~ " `CombineParallelMatmul`, the `matmul(activations, "
+#~ "concat(permute_dims(A), permute_dims(B)))` no longer"
+#~ " matches this pattern.  Rearranging into"
+#~ " `matmul(activations, permute_dims(concat(A,B)))` "
+#~ "restores the pattern match."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reorder `matmul(x, take(weights, indices))` to"
+#~ " `take(matmul(x,weights),indices)`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Useful for optimizing LoRA computations, "
+#~ "where several LoRAs may be batched "
+#~ "together."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rewrite a Relax module for executing "
+#~ "with CUDA graph. This pass identifies"
+#~ " the regions that can be executed "
+#~ "with CUDA graph and lifts them "
+#~ "into new functions for runtime graph "
+#~ "capturing."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for rewriting cuda graph"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Convert all reshape-like call_tir to "
+#~ "VM reshape operator call. The VM "
+#~ "reshape operator calls will be further"
+#~ " lowered to a CreateView operation at"
+#~ " runtime, instead of doing real data"
+#~ " copy. Here \"reshape-like\" includes "
+#~ "reshape, expand_dims, flatten, etc."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: Operates only in dataflow blocks."
+#~ " ConvertToDataflow may need to be "
+#~ "called first."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Produce the runtime::Module with an "
+#~ "annotated codegen and global symbol."
+#~ msgstr ""
+
+#~ msgid "Pairs of a target name and compilation options"
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass to remove unused functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Split a PrimFunc into 2 parts: the"
+#~ " first part is a TIR PrimFunc "
+#~ "which is"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "matched with some pattern, and the "
+#~ "second part is the rest of the "
+#~ "original PrimFunc. It will call fcodegen"
+#~ " to generate the code for the "
+#~ "matched pattern to replace it with "
+#~ "a ExternFunc call."
+#~ msgstr ""
+
+#~ msgid "The list of patterns to match."
+#~ msgstr ""
+
+#~ msgid "The function to generate the code for the matched patterns."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for splitting call_tir."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Split the TIR layout rewrite into "
+#~ "multiple TIR functions. This pass is "
+#~ "used in the prepack weight after "
+#~ "meta_schedule tuning."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for splitting TIR layout rewrite."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The static memory planning pass on "
+#~ "BindingBlock level. The pass will reuse"
+#~ " allocated memory to its best effort,"
+#~ " in order to reduce the total "
+#~ "amount of allocated memory size."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The pass \"supports\" dynamic shape in"
+#~ " the way of TIR variable upper "
+#~ "bound annotation. We can optionally "
+#~ "annotate the attribute \"tir_var_upper_bound\" "
+#~ "to Relax functions. The attribute value"
+#~ " is a dict from strings to "
+#~ "integers, denoting the name of TIR "
+#~ "variables to the upper bound values "
+#~ "of the TIR vars. Note: The "
+#~ "annotated upper bound attribute only "
+#~ "applies to TIR vars in the "
+#~ "function signature for clarity."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For example, we can annotate a "
+#~ "Relax function with "
+#~ ":code:`R.func_attr({\"tir_var_upper_bound\": {\"n\": "
+#~ "1024}})`. It means the maximum value "
+#~ "of variable that names \"n\" in "
+#~ "the function signature will have upper"
+#~ " bound 1024. And we will use "
+#~ "1024 as its value during memory "
+#~ "planning."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Automatic mixed precision pass. Currently "
+#~ "the pass assumes the input module "
+#~ "to be fp32 only, and will "
+#~ "automatically cast fp32 to fp16 for "
+#~ "certain ops."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: Mainly operates within dataflow "
+#~ "blocks. ConvertToDataflow may need to be"
+#~ " called first."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The output data type of gemm/conv, "
+#~ "which is the data type of the "
+#~ "accumulator."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The names of function parameters whose"
+#~ " dtype should become fp16. The  "
+#~ "function signature would change accordingly."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass for mixed precision."
+#~ msgstr ""
+
+#~ msgid "Transform all dataflow structure to non-dataflow version."
+#~ msgstr ""
+
+#~ msgid "Sort bindings in relax.Dataflow blocks in the order specified"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The order in which bindings should "
+#~ "be emitted.  Allowed values are "
+#~ "\"depth-first\" and \"breadth-first\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The direction in which the sort "
+#~ "should be performed.  Allowed values are"
+#~ " \"from-inputs\" and \"from-outputs\"."
+#~ msgstr ""
+
+#~ msgid "Update struct info of parameters"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Update struct info of parameters.  "
+#~ "Internal bindings and function return "
+#~ "type will be updated using relax's "
+#~ "struct inference rules. Errors resulting "
+#~ "from struct inference will be propagated"
+#~ " to the user."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A function that is called once for"
+#~ " each function parameter, and returns "
+#~ "the updated struct info to be used"
+#~ " for it.  If the function returns "
+#~ "`None`, the parameter is not modified."
+#~ msgstr ""
+
+#~ msgid "Update virtual device."
+#~ msgstr ""
+
+#~ msgid "The new virtual device."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The device index indicates the device"
+#~ " on which the update will be "
+#~ "performed."
+#~ msgstr ""
+
+#~ msgid "**ret** -- The registered pass that modifies the virtual device."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lower the symbolic shape and argument"
+#~ " and match-cast structinfo matching."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether emit err context string, can "
+#~ "be turned off for testing purposes."
+#~ msgstr ""
+
+#~ msgid "Decorate a dataflowblock pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function returns a callback when"
+#~ " pass_func is provided. Otherwise, it "
+#~ "returns the created dataflowblock pass "
+#~ "using the given optimization function."
+#~ msgstr ""
+
+#~ msgid "The transformation function or class."
+#~ msgstr ""
+
+#~ msgid "The optimization level of this dataflowblock pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the dataflowblock pass. "
+#~ "The name could be empty. In this"
+#~ " case, the name of the optimization"
+#~ " function will be used as the "
+#~ "pass name."
+#~ msgstr ""
+
+#~ msgid "The list of passes that the dataflowblock pass is dependent on."
+#~ msgstr ""
+
+#~ msgid "Boolean variable whether the dataflowblock pass is traceable"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**create_dataflowblock_pass** -- A decorator "
+#~ "will be returned if pass_func is "
+#~ "not provided, otherwise return the "
+#~ "decorated result. The returned decorator "
+#~ "has two behaviors depending on the "
+#~ "input: A new DataflowBlockPass will be"
+#~ " returned when we decorate a pass "
+#~ "function. A new DataflowBlockPass class "
+#~ "will be returned when we decorate "
+#~ "a class type."
+#~ msgstr ""
+
+#~ msgid "The following code block decorates a dataflowblock pass class."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following code creates a "
+#~ "dataflowblock pass by decorating a user"
+#~ " defined transform function."
+#~ msgstr ""
+
+#~ msgid "Decorate a function pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This function returns a callback when"
+#~ " pass_func is provided. Otherwise, it "
+#~ "returns the created function pass using"
+#~ " the given optimization function."
+#~ msgstr ""
+
+#~ msgid "The optimization level of this function pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The name of the function pass. The"
+#~ " name could be empty. In this "
+#~ "case, the name of the optimization "
+#~ "function will be used as the pass"
+#~ " name."
+#~ msgstr ""
+
+#~ msgid "The list of passes that the function pass is dependent on."
+#~ msgstr ""
+
+#~ msgid "Boolean variable whether the function pass is traceable"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**create_function_pass** -- A decorator will"
+#~ " be returned if pass_func is not "
+#~ "provided, otherwise return the decorated "
+#~ "result. The returned decorator has two"
+#~ " behaviors depending on the input: A"
+#~ " new FunctionPass will be returned "
+#~ "when we decorate a pass function. "
+#~ "A new FunctionPass class will be "
+#~ "returned when we decorate a class "
+#~ "type."
+#~ msgstr ""
+
+#~ msgid "The following code block decorates a function pass class."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following code creates a function"
+#~ " pass by decorating a user defined"
+#~ " transform function."
+#~ msgstr ""
+

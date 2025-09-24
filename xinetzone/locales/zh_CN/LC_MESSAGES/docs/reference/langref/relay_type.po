@@ -1,0 +1,664 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:20
+msgid "Relay's Type System"
+msgstr "Relay 类型系统"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:22
+msgid ""
+"We briefly introduced types while detailing Relay's expression language, "
+"but have not yet described its type system. Relay is a statically typed "
+"and type-inferred language, allowing programs to be fully typed while "
+"requiring just a few explicit type annotations."
+msgstr ""
+"在详细描述 Relay 的表达式语言时简要介绍了类型，但尚未描述其类型系统。Relay 是一种静态类型和类型推断的语言，允许程序完全类型化，同时只需要少量显式类型注解。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:27
+msgid ""
+"Static types are useful when performing compiler optimizations because "
+"they communicate properties about the data a program manipulates, such as"
+" runtime shape, data layout, and storage, without needing to run the "
+"program. Relay's `Algebraic Data Types`_ allow for easily and flexibly "
+"composing types in order to build data structures that can be reasoned "
+"about inductively and used to write recursive functions."
+msgstr ""
+"静态类型在执行编译器优化时非常有用，因为它们传达了程序操作的数据的属性，例如运行时形状、数据布局和存储，而无需运行程序。Relay的 `代数数据类型`_ 允许轻松灵活地组合类型，以便构建可以归纳推理并用于编写递归函数的数据结构。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:34
+msgid ""
+"Relay's type system features a form of *dependent typing* for shapes. "
+"That is, its type system keeps track of the shapes of tensors in a Relay "
+"program. Treating tensor shapes as types allows Relay to perform more "
+"powerful reasoning at compile time; in particular, Relay can statically "
+"reason about operations whose output shapes vary based on the input "
+"shapes in complex ways. Casting shape inference as a type inference "
+"problem allows Relay to infer the shapes of all tensors at compile time, "
+"including in programs that use branching and function calls."
+msgstr ""
+"Relay 的类型系统具有一种形状的 *依赖类型* 形式。也就是说，它的类型系统跟踪 Relay 程序中张量的形状。"
+"将张量形状视为类型允许 Relay 在编译时执行更强大的推理；特别是，Relay 可以静态地推理那些输出形状以复杂方式基于输入形状变化的操作。"
+"将形状推断视为类型推断问题允许 Relay 在编译时推断所有张量的形状，包括使用分支和函数调用的程序。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:41
+msgid ""
+"Statically reasoning about shapes in this manner allows Relay to be "
+"ahead-of-time compiled and provides much more information about tensors "
+"for optimizations further in the compilation pipeline. Such optimizations"
+" can be implemented as passes, which are Relay-to-Relay AST "
+"transformations, and may use the inferred types (e.g., shape information)"
+" for making decisions about program transformations. For instance, "
+":code:`src/relay/transforms/fuse_ops.cc` gives an implementation of a "
+"pass that uses inferred tensor shapes to replace invocations of operators"
+" in a Relay program with fused operator implementations."
+msgstr ""
+"以这种方式静态推理形状允许 Relay 进行提前编译，并为编译管道中的优化提供更多关于张量的信息。"
+"这些优化可以作为 pass 实现，即 Relay 到 Relay 的 AST 转换，并且可以使用推断的类型（例如，形状信息）来做出程序转换的决策。"
+"例如，:code:`src/relay/transforms/fuse_ops.cc` 提供了 pass 的实现，该 pass 使用推断的张量形状来替换 Relay 程序中算子的调用为融合算子实现。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:50
+msgid ""
+"Reasoning about tensor types in Relay is encoded using *type relations*, "
+"which means that the bulk of type checking in Relay is constraint solving"
+" (ensuring that all type relations are satisfied at call sites). Type "
+"relations offer a flexible and relatively simple way of making the power "
+"of dependent typing available in Relay without greatly increasing the "
+"complexity of its type system."
+msgstr ""
+"在 Relay 中推理张量类型使用 *类型关系* 编码，这意味着 Relay 中的大部分类型检查是约束求解（确保所有类型关系在调用点都得到满足）。"
+"类型关系提供了一种灵活且相对简单的方式，使依赖类型的力量在 Relay 中可用，而不会大大增加其类型系统的复杂性。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:56
+msgid ""
+"Below we detail the language of types in Relay and how they are assigned "
+"to Relay expressions."
+msgstr ""
+"下面详细介绍了 Relay 中的类型语言以及它们如何分配给 Relay 表达式。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:59
+msgid "Type"
+msgstr "类型"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:61
+msgid ""
+"The base type for all Relay types. All Relay types are sub-classes of "
+"this base type."
+msgstr ""
+"所有 Relay 类型的基础类型。所有 Relay 类型都是此基础类型的子类。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:63
+msgid "See :py:class:`~tvm.relay.ty.Type` for its definition and documentation."
+msgstr "请参阅 :py:class:`~tvm.relay.ty.Type` 以获取其定义和文档。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:66
+msgid "Tensor Type"
+msgstr "张量类型"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:68
+msgid "A concrete tensor type in Relay."
+msgstr "Relay 中的具体张量类型。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:70
+msgid ""
+"Tensors are typed according to data type and shape. At present, these use"
+" TVM's data types and shapes, but in the future, Relay may include a "
+"separate AST for shapes. In particular, data types include :code:`bool`, "
+":code:`float32`, :code:`int8` and various other bit widths and numbers of"
+" lanes. Shapes are given as tuples of dimensions (TVM :code:`IndexExpr`),"
+" such as :code:`(5, 5)`; scalars are also given tuple types and have a "
+"shape of :code:`()`."
+msgstr ""
+"张量根据数据类型和形状进行类型化。目前，这些使用 TVM 的数据类型和形状，但将来 Relay 可能包括单独的 AST 用于形状。"
+"特别是，数据类型包括 :code:`bool`、:code:`float32`、:code:`int8` 以及各种其他位宽和通道数。"
+"形状以维度元组（TVM :code:`IndexExpr`）给出，例如 :code:`(5, 5)`；标量也给出元组类型，并具有形状 :code:`()`。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:76
+msgid ""
+"Note, though, that TVM shapes can also include variables and arithmetic "
+"expressions including variables, so Relay's constraint solving phase will"
+" attempt to find assignments to all shape variables to ensure all shapes "
+"will be concrete before running a program."
+msgstr ""
+"但请注意，TVM 形状也可以包括变量和包括变量的算术表达式，因此 Relay 的约束求解阶段将尝试为所有形状变量找到赋值，以确保在运行程序之前所有形状都是具体的。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:81
+msgid ""
+"For example, here is a simple concrete tensor type corresponding to a "
+"10-by-10 tensor of 32-bit floats:"
+msgstr ""
+"例如，这里简单的具体张量类型，对应于 10x10 的 32 位浮点数张量："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:87
+msgid ""
+"See :py:class:`~tvm.relay.ty.TensorType` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.TensorType` 以获取其定义和文档。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:90
+msgid "Tuple Type"
+msgstr "元组类型"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:92
+msgid "A type of a tuple in Relay."
+msgstr "Relay 中元组的类型。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:94
+msgid ""
+"Just as a tuple is simply a sequence of values of statically known "
+"length, the type of a tuple consists of a sequence of the types "
+"corresponding to each member of the tuple."
+msgstr ""
+"正如元组只是静态已知长度的值序列，元组的类型由对应于元组每个成员的类型的序列组成。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:97
+msgid ""
+"Because a tuple type is of statically known size, the type of a tuple "
+"projection is simply the corresponding index into the tuple type."
+msgstr ""
+"由于元组类型是静态已知大小的，元组投影的类型只是元组类型中的相应索引。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:100
+#, python-format
+msgid ""
+"For example, in the below code, :code:`%t` is of type :code:`(Tensor[(), "
+"bool], Tensor[(10, 10), float32])` and :code:`%c` is of type "
+":code:`Tensor[(10, 10), float32]`."
+msgstr ""
+"例如，在下面的代码中，:code:`%t` 的类型为 :code:`(Tensor[(), bool], Tensor[(10, 10), float32])`，而 :code:`%c` 的类型为 :code:`Tensor[(10, 10), float32]`。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:110
+msgid ""
+"See :py:class:`~tvm.relay.ty.TupleType` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.TupleType` 以获取其定义和文档。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:115
+msgid "Type Parameter"
+msgstr "类型参数"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:117
+msgid ""
+"Type parameters represent placeholder types used for polymorphism in "
+"functions. Type parameters are specified according to *kind*, "
+"corresponding to the types those parameters are allowed to replace:"
+msgstr ""
+"类型参数表示用于函数多态性的占位符类型。类型参数根据 *种类* 指定，对应于允许这些参数替换的类型："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:121
+msgid ""
+":code:`Type`, corresponding to top-level Relay types like tensor types, "
+"tuple types, and function types"
+msgstr ""
+":code:`Type`，对应于顶级 Relay 类型，如张量类型、元组类型和函数类型。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:122
+msgid ""
+":code:`BaseType`, corresponding to the base type of a tensor (e.g., "
+":code:`float32`, :code:`bool`)"
+msgstr ""
+":code:`BaseType`，对应于张量的基础类型（例如，:code:`float32`、:code:`bool`）。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:123
+msgid ":code:`Shape`, corresponding to a tensor shape"
+msgstr ":code:`Shape`，对应于张量形状。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:124
+msgid ":code:`ShapeVar`, corresponding to variables within a tensor shape"
+msgstr ":code:`ShapeVar`，对应于张量形状中的变量。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:126
+msgid ""
+"Relay's type system enforces that type parameters are only allowed to "
+"appear where their kind permits them, so if type variable :code:`t` is of"
+" kind :code:`Type`, :code:`Tensor[t, float32]` is not a valid type."
+msgstr ""
+"Relay 的类型系统强制类型参数只允许出现在其种类允许的地方，因此如果类型变量 :code:`t` 的种类为 :code:`Type`，则 :code:`Tensor[t, float32]` 不是有效类型。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:131
+msgid ""
+"Like normal parameters, concrete arguments must be given for type "
+"parameters at call sites."
+msgstr ""
+"与普通参数一样，必须在 call sites 为类型参数提供具体参数。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:135
+msgid ""
+"For example, :code:`s` below is a type parameter of kind :code:`Shape` "
+"and it will be substituted with :code:`(10, 10)` at the call site below:"
+msgstr ""
+"例如，下面的 :code:`s` 是种类为 :code:`Shape` 的类型参数，它将在下面的调用点被替换为 :code:`(10, 10)`："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:145
+msgid ""
+"See :py:class:`~tvm.relay.ty.TypeVar` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.TypeVar` 以获取其定义和文档。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:148
+msgid "Type Constraint"
+msgstr "类型约束"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:150
+msgid ""
+"This is an abstract class representing a type constraint, to be "
+"elaborated upon in further releases. Currently, type relations are the "
+"only type constraints provided; they are discussed below."
+msgstr ""
+"这是表示类型约束的抽象类，将在进一步的版本中详细说明。目前，类型关系是唯一提供的类型约束；它们将在下面讨论。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:154
+msgid ""
+"See :py:class:`~tvm.relay.ty.TypeConstraint` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.TypeConstraint` 以获取其定义和文档。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:157
+msgid "Function Type"
+msgstr "函数类型"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:159
+msgid "A function type in Relay, see `tvm/relay/type.h` for more details."
+msgstr "Relay 中的函数类型，更多详情请参见 `tvm/relay/type.h`。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:161
+msgid ""
+"This is the type assigned to functions in Relay. A function type consists"
+" of a list of type parameters, a set of type constraints, a sequence of "
+"argument types, and a return type."
+msgstr ""
+"这是分配给 Relay 中函数的类型。函数类型由类型参数列表、类型约束集合、参数类型序列和返回类型组成。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:165
+msgid ""
+"We informally write function types as: :code:`fn<type_params>(arg_types) "
+"-> ret_type where type_constraints`"
+msgstr ""
+"非正式地将函数类型写为：:code:`fn<type_params>(arg_types) -> ret_type where type_constraints`。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:168
+msgid ""
+"A type parameter in the function type may appear in the argument types or"
+" the return types. Additionally, each of the type constraints must hold "
+"at every call site of the function. The type constraints typically take "
+"the function's argument types and the function's return type as "
+"arguments, but may take a subset instead."
+msgstr ""
+"函数类型中的类型参数可能出现在参数类型或返回类型中。此外，每个类型约束必须在函数的每个调用点都成立。类型约束通常将函数的参数类型和返回类型作为参数，但也可能只取子集。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:174
+msgid ""
+"See :py:class:`~tvm.relay.ty.FuncType` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.FuncType` 以获取其定义和文档。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:179
+msgid "Type Relation"
+msgstr "类型关系"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:181
+msgid ""
+"A type relation is the most complex type system feature in Relay. It "
+"allows users to extend type inference with new rules. We use type "
+"relations to define types for operators that work with tensor shapes in "
+"complex ways, such as broadcasting operators or :code:`flatten`, allowing"
+" Relay to statically reason about the shapes in these cases."
+msgstr ""
+"类型关系是 Relay 中最复杂的类型系统特性。它允许用户使用新规则扩展类型推断。"
+"使用类型关系来定义以复杂方式处理张量形状的运算符的类型，例如广播运算符或 :code:`flatten`，允许 Relay 在这些情况下静态推理形状。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:188
+msgid ""
+"A type relation :code:`R` describes a relationship between the input and "
+"output types of a Relay function. Namely, :code:`R` is a function on "
+"types that outputs `true` if the relationship holds and `false` if it "
+"fails to hold. Types given to a relation may be incomplete or include "
+"shape variables, so type inference must assign appropriate values to "
+"incomplete types and shape variables for necessary relations to hold, if "
+"such values exist."
+msgstr ""
+"类型关系 :code:`R` 描述了 Relay 函数的输入和输出类型之间的关系。即，:code:`R` 是类型上的函数，如果关系成立则输出 `true`，如果关系不成立则输出 `false`。"
+"提供给关系的类型可能是不完整的或包括形状变量，因此类型推断必须为不完整类型和形状变量分配适当的值以使必要的关系成立，如果存在这样的值。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:196
+msgid "For example we can define an identity relation to be:"
+msgstr "例如，可以定义恒等关系为："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:202
+msgid ""
+"It is usually convenient to type operators in Relay by defining a "
+"relation specific to that operator that encodes all the necessary "
+"constraints on the argument types and the return type. For example, we "
+"can define the relation for :code:`flatten`:"
+msgstr ""
+"通常，通过定义特定于该算子的关系来为 Relay 中的算子类型化是很方便的，该关系编码了参数类型和返回类型的所有必要约束。例如，可以为 :code:`flatten` 定义关系："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:212
+msgid ""
+"If we have a relation like :code:`Broadcast` it becomes possible to type "
+"operators like :code:`add`:"
+msgstr ""
+"如果有像 :code:`Broadcast` 这样的关系，就可以为像 :code:`add` 这样的算子类型化："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:220
+msgid ""
+"The inclusion of :code:`Broadcast` above indicates that the argument "
+"types and the return type must be tensors where the shape of :code:`t3` "
+"is the broadcast of the shapes of :code:`t1` and :code:`t2`. The type "
+"system will accept any argument types and return type so long as they "
+"fulfill :code:`Broadcast`."
+msgstr ""
+"上面包含的 :code:`Broadcast` 表示参数类型和返回类型必须是张量，其中 :code:`t3` 的形状是 :code:`t1` 和 :code:`t2` 形状的广播结果。"
+"只要参数类型和返回类型满足 :code:`Broadcast`，类型系统就会接受它们。”"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:226
+msgid ""
+"Note that the above example relations are written in Prolog-like syntax, "
+"but currently the relations must be implemented by users in C++ or "
+"Python. More specifically, Relay's type system uses an *ad hoc* solver "
+"for type relations in which type relations are actually implemented as "
+"C++ or Python functions that check whether the relation holds and "
+"imperatively update any shape variables or incomplete types. In the "
+"current implementation, the functions implementing relations should "
+"return :code:`False` if the relation fails to hold and :code:`True` if "
+"the relation holds or if there is not enough information to determine "
+"whether it holds or not."
+msgstr ""
+"请注意，上述示例关系是用类似 Prolog 的语法编写的，但目前这些关系必须由用户在 C++ 或 Python 中实现。"
+"更具体地说，Relay 的类型系统使用了一种 *临时* 求解器来处理类型关系，其中类型关系实际上是作为 C++ 或 Python 函数实现的，"
+"这些函数检查关系是否成立，并强制更新任何形状变量或不完整类型。"
+"在当前实现中，如果关系不成立，实现关系的函数应返回 :code:`False`；如果关系成立或没有足够的信息来确定关系是否成立，则应返回 :code:`True`。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:236
+msgid ""
+"The functions for all the relations are run as needed (if an input is "
+"updated) until one of the following conditions holds:"
+msgstr ""
+"所有关系的函数会在需要时（例如当输入更新时）运行，直到满足以下条件之一为止："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:239
+msgid "All relations hold and no incomplete types remain (typechecking succeeds)."
+msgstr "所有关系均成立且不存在未完成的类型（类型检查成功）。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:240
+msgid "A relation fails to hold (a type error)."
+msgstr "某个关系未能成立（出现类型错误）。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:241
+msgid ""
+"A fixpoint is reached where shape variables or incomplete types remain "
+"(either a type error or more type annotations may be needed)."
+msgstr ""
+"达到固定点，其中形状变量或不完整类型仍然存在（可能需要类型错误或更多类型注释）。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:243
+msgid ""
+"Presently all of the relations used in Relay are implemented in C++. See "
+"the files in :code:`src/relay/op` for examples of relations implemented "
+"in C++."
+msgstr ""
+"目前，Relay 中使用的所有关系都是用 C++ 实现的。有关用 C++ 实现的关系的示例，请参见 :code:`src/relay/op` 目录中的文件。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:247
+msgid ""
+"See :py:class:`~tvm.relay.ty.TypeRelation` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.TypeRelation` 以了解其定义和文档说明。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:250
+msgid "Incomplete Type"
+msgstr "不完整类型"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:252
+msgid ""
+"An incomplete type is a type or portion of a type that is not yet known. "
+"This is only used during type inference. Any omitted type annotation is "
+"replaced by an incomplete type, which will be replaced by another type at"
+" a later point."
+msgstr ""
+"不完整类型”是指尚未确定的类型或类型的一部分。它仅在类型推断过程中使用。任何省略的类型注解都会被替换为不完整类型，随后会在某个时刻被其他类型所替代。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:257
+msgid ""
+"Incomplete types are known as \"type variables\" or \"type holes\" in the"
+" programming languages literature. We use the name \"incomplete type\" in"
+" order to more clearly distinguish them from type parameters: Type "
+"parameters must be bound to a function and are replaced with concrete "
+"type arguments (instantiated) at call sites, whereas incomplete types may"
+" appear anywhere in the program and are filled in during type inference."
+msgstr ""
+"在编程语言文献中，不完整类型被称为“类型变量”(\"type variables\")或“类型孔”(\"type holes\")。"
+"使用“不完整类型”这一名称，以便更清晰地将它们与类型参数区分开来：类型参数必须绑定到函数上，并在调用点被具体类型参数替换（实例化），而不完整类型可能出现在程序的任何位置，并在类型推断过程中被填充。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:262
+msgid ""
+"See :py:class:`~tvm.relay.ty.IncompleteType` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.IncompleteType` 以了解其定义和文档说明。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:267
+msgid "Algebraic Data Types"
+msgstr "代数数据类型"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:269
+msgid "*Note: ADTs are not currently supported in the text format.*"
+msgstr "*注意：文本格式目前不支持ADT（代数数据类型）。*"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:271
+msgid ""
+"Algebraic data types (ADTs) are described in more detail in :ref:`their "
+"overview <adt-overview>`; this section describes their implementation in "
+"the type system."
+msgstr ""
+"代数数据类型（Algebraic data types，简称 ADTs）在 :ref:`其概述 <adt-overview>` 中有更详细的描述；本节将介绍它们在类型系统中的实现。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:275
+msgid ""
+"An ADT is defined by a collection of named constructors, each of which "
+"takes arguments of certain types. An instance of an ADT is a container "
+"that stores the values of the constructor arguments used to produce it as"
+" well as the name of the constructor; the values can be retrieved by "
+"deconstructing the instance by matching based on its constructor. Hence, "
+"ADTs are sometimes called \"tagged unions\": like a C-style union, the "
+"contents of an instance for a given ADT may have different types in "
+"certain cases, but the constructor serves as a tag to indicate how to "
+"interpret the contents."
+msgstr ""
+"代数数据类型（ADT）由一组命名的构造函数定义，每个构造函数接受特定类型的参数。ADT 的实例是容器，它存储用于生成该实例的构造函数参数的值以及构造函数的名称；这些值可以通过基于其构造函数进行匹配来解构实例并检索。"
+"因此，ADT 有时被称为“带标签的联合体”：与 C 风格的联合体类似，在某些情况下，给定 ADT 的实例内容可能具有不同的类型，但构造函数充当标签以指示如何解释这些内容。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:286
+msgid ""
+"From the type system's perspective, it is most pertinent that ADTs can "
+"take type parameters (constructor arguments can be type parameters, "
+"though ADT instances with different type parameters must be treated as "
+"different types) and be recursive (a constructor for an ADT can take an "
+"instance of that ADT, thus an ADT like a tree or list can be inductively "
+"built up). The representation of ADTs in the type system must be able to "
+"accommodate these facts, as the below sections will detail."
+msgstr ""
+"从类型系统的角度来看，最关键的是 ADT 可以接受类型参数（构造函数的参数可以是类型参数，尽管具有不同类型参数的 ADT 实例必须被视为不同的类型），"
+"并且可以是递归的（ADT 的构造函数可以接受该 ADT 的实例，因此可以归纳地构建像树或列表这样的 ADT）。"
+"类型系统中 ADT 的表示必须能够适应这些特性，以下部分将详细说明。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:296
+msgid "Global Type Variable"
+msgstr "全局类型变量"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:298
+msgid ""
+"To represent ADTs compactly and easily allow for recursive ADT "
+"definitions, an ADT definition is given a handle in the form of a global "
+"type variable that uniquely identifies it. Each ADT definition is given a"
+" fresh global type variable as a handle, so pointer equality can be used "
+"to distinguish different ADT names."
+msgstr ""
+"为了简洁地表示 ADT 并方便递归 ADT 的定义，ADT 定义会被赋予全局类型变量作为句柄，以唯一标识它。每个 ADT 定义都会被赋予新的全局类型变量作为句柄，因此可以通过指针相等性来区分不同的 ADT 名称。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:304
+msgid ""
+"For the purposes of Relay's type system, ADTs are differentiated by name;"
+" that means that if two ADTs have different handles, they will be "
+"considered different types even if all their constructors are "
+"structurally identical."
+msgstr ""
+"在 Relay 类型系统中，ADT 通过名称进行区分；这意味着如果两个 ADT 具有不同的句柄，即使它们的所有构造函数在结构上完全相同，它们也会被视为不同的类型。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:309
+msgid ""
+"Recursion in an ADT definition thus follows just like recursion for a "
+"global function: the constructor can simply reference the ADT handle "
+"(global type variable) in its definition."
+msgstr ""
+"因此，ADT 定义中的递归与全局函数的递归类似：构造函数只需在其定义中引用 ADT 句柄（全局类型变量）即可。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:313
+msgid ""
+"See :py:class:`~tvm.relay.ty.GlobalTypeVar` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.GlobalTypeVar` 以了解其定义和文档说明。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:316
+msgid "Definitions (Type Data)"
+msgstr "定义（类型数据）"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:318
+msgid ""
+"Besides a name, an ADT needs to store the constructors that are used to "
+"define it and any type parameters used within them. These are stored in "
+"the module, :ref:`analogous to global function definitions<module-"
+"description>`."
+msgstr ""
+"除了名称之外，ADT 还需要存储用于定义它的构造函数以及其中使用的任何类型参数。这些内容存储在模块中，:ref:`类似于全局函数定义 <module-description>`。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:322
+msgid ""
+"While type-checking uses of ADTs, the type system sometimes must index "
+"into the module using the ADT name to look up information about "
+"constructors. For example, if a constructor is being pattern-matched in a"
+" match expression clause, the type-checker must check the constructor's "
+"signature to ensure that any bound variables are being assigned the "
+"correct types."
+msgstr ""
+"在类型检查 ADT 的使用时，类型系统有时必须使用 ADT 名称索引到模块中，以查找有关构造函数的信息。例如，如果在匹配表达式子句中对构造函数进行模式匹配，类型检查器必须检查构造函数的签名，以确保为任何绑定变量分配了正确的类型。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:329
+msgid ""
+"See :py:class:`~tvm.relay.adt.TypeData` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.adt.TypeData` 以了解其定义和文档说明。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:332
+msgid "Type Call"
+msgstr "类型调用"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:334
+msgid ""
+"Because an ADT definition can take type parameters, Relay's type system "
+"considers an ADT definition to be a *type-level function* (in that the "
+"definition takes type parameters and returns the type of an ADT instance "
+"with those type parameters). Thus, any instance of an ADT is typed using "
+"a type call, which explicitly lists the type parameters given to the ADT "
+"definition."
+msgstr ""
+"由于 ADT 定义可以接受类型参数，Relay 的类型系统将 ADT 定义视为一种 *类型级函数* （即该定义接受类型参数并返回具有这些类型参数的 ADT 实例的类型）。"
+"因此，任何 ADT 实例的类型都通过类型调用来表示，其中明确列出了提供给 ADT 定义的类型参数。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:341
+msgid ""
+"It is important to list the type parameters for an ADT instance, as two "
+"ADT instances built using different constructors but the same type "
+"parameters are of the *same type* while two ADT instances with different "
+"type parameters should not be considered the same type (e.g., a list of "
+"integers should not have the same type as a list of pairs of floating "
+"point tensors)."
+msgstr ""
+"列出 ADT 实例的类型参数非常重要，因为使用不同构造函数但相同类型参数构建的两个 ADT 实例属于 *同一类型*，而具有不同类型参数的两个 ADT 实例不应被视为同一类型（例如，整数列表不应与浮点张量对列表具有相同的类型）。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:348
+msgid ""
+"The \"function\" in the type call is the ADT handle and there must be one"
+" argument for each type parameter in the ADT definition. (An ADT "
+"definition with no arguments means that any instance will have no type "
+"arguments passed to the type call)."
+msgstr ""
+"类型调用中的“函数”是 ADT 句柄，并且必须为 ADT 定义中的每个类型参数提供参数。（没有参数的 ADT 定义意味着任何实例都不会有类型参数传递给类型调用）。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:353
+msgid ""
+"See :py:class:`~tvm.relay.ty.TypeCall` for its definition and "
+"documentation."
+msgstr ""
+"请参阅 :py:class:`~tvm.relay.ty.TypeCall` 以了解其定义和文档说明。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:356
+msgid "Example: List ADT"
+msgstr "示例：列表 ADT"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:358
+msgid ""
+"This subsection uses the simple list ADT (included as a default ADT in "
+"Relay) to illustrate the constructs described in the previous sections. "
+"Its definition is as follows:"
+msgstr ""
+"本小节使用简单的列表 ADT（作为 Relay 中的默认 ADT 包含）来说明前面部分描述的结构。其定义如下："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:369
+msgid ""
+"Thus, the global type variable :code:`List` is the handle for the ADT. "
+"The type data for the list ADT in the module notes that :code:`List` "
+"takes one type parameter and has two constructors, :code:`Nil` (with "
+"signature :code:`fn<a>() -> List[a]`) and :code:`Cons` (with signature "
+":code:`fn<a>(a, List[a]) -> List[a]`). The recursive reference to "
+":code:`List` in the :code:`Cons` constructor is accomplished by using the"
+" global type variable :code:`List` in the constructor definition."
+msgstr ""
+"因此，全局类型变量 :code:`List` 是 ADT 的句柄。模块中列表 ADT 的类型数据表明 :code:`List` 接受类型参数并具有两个构造函数："
+":code:`Nil`（签名为 :code:`fn<a>() -> List[a]`）和 :code:`Cons`（签名为 :code:`fn<a>(a, List[a]) -> List[a]`）。"
+"在 :code:`Cons` 构造函数中对 :code:`List` 的递归引用是通过在构造函数定义中使用全局类型变量 :code:`List` 来实现的。"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:378
+msgid "Below two instances of lists with their types given, using type calls:"
+msgstr "以下是两个列表实例及其类型，使用类型调用表示："
+
+#: ../../doc/docs/reference/langref/relay_type.rst:385
+msgid ""
+"Note that :code:`Nil()` can be an instance of any list because it does "
+"not take any arguments that use a type parameter. (Nevertheless, for any "
+"*particular* instance of :code:`Nil()`, the type parameter must be "
+"specified.)"
+msgstr ""
+"请注意，:code:`Nil()` 可以是任何列表的实例，因为它不接受任何使用类型参数的参数。（然而，对于 :code:`Nil()` 的任何*特定*实例，必须指定类型参数。）"
+
+#: ../../doc/docs/reference/langref/relay_type.rst:390
+msgid ""
+"Here are two lists that are rejected by the type system because the type "
+"parameters do not match:"
+msgstr ""
+"以下是两个被类型系统拒绝的列表，因为类型参数不匹配："

@@ -1,0 +1,67 @@
+name: Deploy TVM 文档
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["dev"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: recursive
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "pyproject.toml"
+      - name: 🔧 Build HTML
+        run: |
+          cd xinetzone
+          conda install -c conda-forge gcc gxx ninja  "llvmdev>=15" "cmake>=3.24" git
+          python -m pip install --upgrade pip setuptools
+          pip install taolib[flows] cython cmake conan ninja
+          invoke init
+          invoke config
+          invoke Ninja
+          pip install -ve .[doc,dev]
+          invoke pull
+          invoke doc
+      - name: Setup Pages
+        uses: actions/configure-pages@main
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: 'xinetzone/_build/html/'
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
+        # uses: peaceiris/actions-gh-pages@v3.6.1
+
