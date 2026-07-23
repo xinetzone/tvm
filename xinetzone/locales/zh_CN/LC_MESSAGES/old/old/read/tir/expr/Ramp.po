@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:10002
+#, python-brace-format
+msgid "{class}`~tvm.tir.expr.Ramp`"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:30002
+msgid "源码：`tvm/include/tvm/tir/expr.h`"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70002
+msgid ""
+"`RampNode` 类，它继承自 `PrimExprNode`。这个类用于构建具有多个元素的向量，其中第 `i` 个元素等于 `base + i"
+" * stride`。这在构造连续向量加载的索引时非常有用。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70004
+msgid "类中有三个成员变量："
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70005
+msgid "`base`：表示向量的起始值。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70006
+msgid "`stride`：表示每个步长的跨度。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70007
+msgid "`lanes`：表示向量的总元素个数。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70009
+msgid "类中还包含了三个方法："
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70010
+msgid "`VisitAttrs`：用于访问类的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70011
+msgid "`SEqualReduce`：用于比较两个 `RampNode` 对象是否相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70012
+msgid "`SHashReduce`：用于计算 `RampNode` 对象的哈希值。"
+msgstr ""
+
+#: ../../doc/old/old/read/tir/expr/Ramp.ipynb:70014
+msgid ""
+"此外，类中还定义了静态常量字符串 `_type_key`，用于表示类的类型，以及宏 "
+"`TVM_DECLARE_FINAL_OBJECT_INFO`，用于声明类的相关信息。"
+msgstr ""
+

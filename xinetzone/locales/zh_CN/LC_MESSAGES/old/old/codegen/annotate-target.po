@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:10002
+msgid "注解 Target"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:40002
+msgid "注解多 end"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:70002
+msgid "`relu` 在 `test` 目标上执行，其余算子在 `default` 目标上执行："
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:90002
+msgid "类型传播"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:120002
+msgid "RefCreate"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:150002
+msgid "测试 TupleNode 在 AnnotateTarget 转换中的处理"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:170002
+msgid "验证当元组被支持的节点包围时，元组是否被包含在注解"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:190002
+msgid "测试复合函数"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:210002
+msgid "测试双目标"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:230002
+msgid "测试不同目标"
+msgstr ""
+
+#: ../../doc/old/old/codegen/annotate-target.ipynb:260002
+msgid "其他"
+msgstr ""
+

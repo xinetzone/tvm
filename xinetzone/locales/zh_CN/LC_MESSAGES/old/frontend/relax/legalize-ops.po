@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:10002
+msgid "测试自定义算子合法化变换功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:10004
+msgid "本测试验证用户是否可以为特定算子定义自定义的合法化变换逻辑。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:30002
+msgid "自定义 legalize"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:40002
+msgid "将 `R.add` 算子通过自定义函数变换为使用 `topi.add` 的 TE 调用并验证变换后的 IR 是否与预期结果一致。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:60002
+msgid "定义自定义的合法化变换函数，将 `x` 和 `y` 的顺序调换后调用 `topi.add`："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:80002
+msgid "应用 `LegalizeOps` 变换，传入自定义的合法化函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:100002
+msgid "测试不同类型的调用是否都能被正确合法化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:110002
+msgid "定义包含多种调用类型的测试模块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:140002
+msgid "测试无法进行合法化转变换的情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:150002
+msgid "本测试验证当算子没有对应的合法化函数或缺少必要的形状信息时，变换行为是否符合预期"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:160002
+msgid "情况1：算子没有对应的合法化函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:180002
+msgid "定义简单的包含 `add` 算子的模块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:210002
+msgid "恢复原有的合法化函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:230002
+msgid "情况2：无法确定所有形状信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:250002
+msgid "测试不同数据类型的标量算子合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:260002
+msgid "本测试验证 `LegalizeOps` 在处理 `float16`、`uint8` 和 `bool` 等不同数据类型时能够正确保留类型信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:280002
+msgid "应用转换并验证结果"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:330002
+msgid "测试矩阵乘法算子合法化要求已知数据类型"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:340002
+msgid "本测试验证当 `matmul` 算子缺少明确数据类型时，合法化转换应抛出适当的错误"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:360002
+msgid "测试带 vdevice 的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:360004
+msgid "本测试验证当参数类型仅在 `vdevice` 上不同时，`LegalizeOps` 能够为不同目标生成不同的内核。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:360006
+msgid "这是回归测试，之前的实现中，具有不同 `vdevice` 的参数类型会被合法化为使用相同的 `PrimFunc`。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:380002
+msgid "自定义算子，测试递归合法化功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:390002
+msgid "定义测试参数，测试不同的合法化变换返回方式"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-ops.ipynb:420002
+msgid "本测试验证算子的合法化变换可能生成新的需要合法化的算子"
+msgstr ""
+

@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:10002
+msgid "规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:30002
+msgid "测试基本函数的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40002
+msgid "`Normalize` 变换将嵌套的算子分解为单独的绑定语句，使 IR 更加扁平化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40004
+msgid "输入: 包含嵌套 `add` 和 `multiply` 算子的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40005
+msgid "预期输出: 分解后的 ANF(Administrative Normal Form) 形式，每个算子都有独立的绑定变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40006
+msgid "测试重点: 验证函数体的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40007
+msgid "ANF 形式特点: 每个复杂表达式都被分解为一系列绑定到变量的简单表达式"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40008
+msgid "核心步骤:"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40009
+msgid "手动构建带嵌套算子的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40010
+msgid "应 用Normalize 变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40011
+msgid "验证转换结果是否符合 ANF 形式"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:40012
+msgid "测试方法: 使用 `assert_structural_equal` 验证变换前后 IR 结构是否一致"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:60002
+msgid ""
+"注意: TVMScript 解析器会自动规范化用 TVMScript 编写的 IR，因此手动构造函数，这里构建包含嵌套操作的函数: "
+"`multiply(add(x,x), add(x,x))`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:80002
+msgid "注意: `from_expr` API 将私有函数(没有 `global_symbol` 的函数)命名为 `\"main\"`："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:110002
+msgid "测试条件语句(If节点)的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:120002
+msgid "输入: 包含 If 节点的函数，if 和 else 分支中包含嵌套操作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:120003
+msgid "预期输出: 规范化后的函数，其中 If 节点的分支被变换为 seq exprs，每个算子都有独立绑定"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:120004
+msgid "测试重点: 验证条件分支内的操作是否被正确规范化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:120005
+msgid "变换机制: Normalize 变换会确保 If 节点的两个分支都被变换为规范化的表达式序列"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:160002
+msgid "测试已经是ANF形式的IR的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:170002
+msgid "输入: 已经符合ANF形式的IR模块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:170003
+msgid "预期输出: 保持不变，Normalize变换对其不产生影响"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:170004
+msgid "测试重点: 验证Normalize变换对已经规范化的IR是幂等的"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:170005
+msgid "幂等性说明: 多次应用同一个变换应产生相同的结果，不会改变已经符合要求的IR"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:190002
+msgid "测试序列表达式(SeqExpr)中非叶节点体的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:190004
+msgid "输入: 序列表达式的体(body)不是叶节点的情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:190005
+msgid "预期输出: 将非叶节点体绑定到一个变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:190006
+msgid "测试重点: 验证seq expr中非叶节点的处理逻辑"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:190007
+msgid "技术细节: 规范化过程会将复杂的表达式绑定到变量，使表达式结构更加扁平"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:220002
+msgid "测试If节点分支的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:220003
+msgid "输入: If节点的分支不是序列表达式的情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:220004
+msgid "预期输出: 将If节点的分支转换为序列表达式"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:220005
+msgid "测试重点: 验证If节点内部结构的规范化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:220006
+msgid "技术要点: 规范化过程会确保If节点的两个分支都符合ANF形式"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:240002
+msgid "测试If节点条件的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:240003
+msgid "输入: If节点的条件是复杂表达式的情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:240004
+msgid "预期输出: 将复杂条件表达式分解为单独的绑定语句"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:240005
+msgid "测试重点: 验证If条件表达式的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:240006
+msgid "技术细节: 即使是if条件也会被规范化，确保所有复杂表达式都被分解"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:260002
+msgid "测试元组元素获取(TupleGetItem)的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:260003
+msgid "输入: 嵌套的TupleGetItem操作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:260004
+msgid "预期输出: 将嵌套的元组索引操作分解为单独的绑定语句"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:260005
+msgid "测试重点: 验证复杂元组操作的规范化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:260006
+msgid "技术细节: 多层嵌套的元组索引会被分解为多个简单的索引操作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:280002
+msgid "测试相邻块合并的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:280003
+msgid "输入: 包含多个相邻数据块和绑定块的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:280004
+msgid "预期输出: 将相邻的同类块合并，并规范化变量引用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:280005
+msgid "测试重点: 验证块合并优化逻辑"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:280006
+msgid "优化策略: Normalize转换会合并相邻的相同类型块，减少IR中的块数量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:300002
+msgid "测试嵌套序列表达式的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:300003
+msgid "输入: 包含嵌套SeqExpr的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:300004
+msgid "预期输出: 展平嵌套结构，将所有绑定提升到顶层"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:300005
+msgid "测试重点: 验证嵌套序列的展平逻辑"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:300006
+msgid "转换机制: Normalize转换会递归处理嵌套的序列表达式，将它们展平为单一层次的绑定"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:320002
+msgid "测试包含数据流块的嵌套序列表达式的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:320003
+msgid "输入: 包含DataflowBlock的嵌套SeqExpr"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:320004
+msgid "预期输出: 展平嵌套结构，同时保留数据流块的特性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:320005
+msgid "测试重点: 验证嵌套数据流块的处理逻辑"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:320006
+msgid "技术挑战: 需要在展平嵌套结构的同时，保持数据流块的语义完整性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:340002
+msgid "测试深层嵌套序列表达式的规范化处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:340003
+msgid "输入: 多层嵌套的SeqExpr"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:340004
+msgid "预期输出: 完全展平深层嵌套结构"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:340005
+msgid "测试重点: 验证深层嵌套的处理能力"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:340006
+msgid "边界测试: 确保规范化转换能够处理任意深度的嵌套结构"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:360002
+msgid "测试在数据流块中嵌套非数据流块的错误情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:360003
+msgid "标记为预期失败的测试"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:360004
+msgid "验证: 在数据流块中嵌套普通绑定块应该失败"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:380002
+msgid "测试移除void类型变量的使用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:380003
+msgid "验证: 所有空元组都应该内联构造"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:380004
+msgid "技术细节: 为了可读性，TVMScript隐藏了void类型变量的绑定，但在Relax中使用空元组表示void"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/normalize.ipynb:380005
+msgid "优化处理: 通过规范化将void类型变量的使用替换为内联的R.tuple()"
+msgstr ""
+

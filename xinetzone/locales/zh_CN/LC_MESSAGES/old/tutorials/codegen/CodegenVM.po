@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:10002
+msgid "VM 代码生成"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:50002
+msgid "测试 VM 内置的复制算子功能"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:80002
+msgid "测试 VM 设备间数据传输"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:100002
+msgid "测试常量条件的if语句"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:120002
+msgid "测试VM可执行文件的序列化和导出"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:140002
+msgid "测试条件分支执行"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:160002
+msgid "测试VM返回常量元组"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:180002
+msgid "测试常量作为函数调用参数"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:200002
+msgid "测试形状检查内置函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:220002
+msgid "测试原语值处理"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:240002
+msgid "测试字符串常量"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:260002
+msgid "测试数据类型常量"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:280002
+msgid "测试VM内置的reshape操作"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:300002
+msgid "测试VM对象销毁（内存释放）功能"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/CodegenVM.ipynb:320002
+msgid "测试VM保留简单绑定"
+msgstr ""
+

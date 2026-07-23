@@ -1,0 +1,518 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10002
+msgid "使用 Relax 训练 API 训练模型"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10004
+msgid "社区对使用 TVM 进行模型训练的关注日益增加。作为 TVM 的新一代图级中间表示（IR），Relax 也需要满足训练模型的需求。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10006
+msgid "在 Relax 上构建了完整的训练工作流，包含："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10007
+msgid "**基于源码转换的自动微分工具**"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10008
+msgid "**优化器抽象** 及常见优化器实现"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10009
+msgid "**损失函数抽象** 及常见损失函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10010
+msgid "将这些组件整合的易用 **训练器 API**"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10012
+msgid "这些训练 API 可满足多种需求："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10013
+msgid "从零开始训练模型：利用 TVM 的编译优势加速训练过程"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10014
+msgid "基于 TVM 在设备端进行模型微调"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10015
+msgid "将训练过程部署到 TVM 支持的各种设备（如 FPGA 和树莓派）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10017
+msgid "本教程将演示如何通过训练 API："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10018
+msgid "使用高层 Trainer API 从头训练模型"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10019
+msgid "使用底层自动微分、优化器和损失函数 API 进行训练"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10020
+msgid "深入解析自动微分系统的源码实现"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:10022
+msgid "将使用 Fashion MNIST 数据集训练 MLP 模型，该方法同样适用于大多数常见模型。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:20002
+msgid "准备工作"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:20004
+msgid "首先，需要导入必要的依赖项并加载数据集。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:40002
+msgid ""
+"将在 [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) "
+"数据集上训练模型。以下代码使用 torchvision（PyTorch 的计算机视觉库）下载并预处理数据。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:40004
+msgid "请注意，仅使用 PyTorch 进行数据加载。从 PyTorch Dataloader 加载的数据将在训练过程中转换为 NumPy 数组。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:60002
+msgid ""
+"从数据加载器中取一个样本来看：Fashion MNIST 数据集中的每个样本都是 $28 \\times 28$ "
+"的灰度图像，并属于10种服装类别之一。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:80002
+msgid "模型定义"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:80004
+msgid "将使用三层感知机（Perceptron）进行图像分类。首先需要定义该感知机的主干结构："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:100002
+msgid "方法一：使用训练器 API"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:100004
+msgid "训练器结构"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:100006
+msgid "训练给定模型的更简单方式是使用训练器 API。该 API 提供了参数更新和模型推理的核心接口。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:100008
+msgid "构建训练器时，需要先创建优化器和损失函数。我们只需指定**超参数**（如学习率、归约方法等）即可完成构建，在此阶段无需提供模型参数。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120002
+msgid ""
+"随后，需要构建 `SetupTrainer`。这是 `Trainer` "
+"的辅助类，本质上是变换（pass），用于将主干模块转换为完整且规范化的训练器模块。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120004
+msgid "变换后的模块将包含以下方法："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120005
+msgid "`predict`: 模型预测方法（由输入模块提供）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120006
+msgid "`loss`: 计算预测结果与真实标签之间的指定损失"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120007
+msgid "`loss_adjoint`: 计算损失值及参数的伴随梯度"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120008
+msgid ""
+"`update_params`: 接收参数、参数梯度和优化器状态作为输入，返回更新后的参数和新优化器状态。该方法包含名为 "
+"`optim_state` 的函数属性，表示指定优化器的初始状态。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120010
+msgid "构建 `SetupTrainer` 需要指定以下要素："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120011
+#: ../../doc/old/tutorials/training/train-model.ipynb:200009
+msgid "损失函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120012
+#: ../../doc/old/tutorials/training/train-model.ipynb:270002
+msgid "优化器"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:120013
+msgid "模型输出和标签的 `struct_info`（结构信息）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:140002
+msgid ""
+"最后一步，引入 `Trainer`。`Trainer` 是运行时组件，通过 SetupTrainer "
+"配置主干模块结构后构建并运行模块，同时内部维护参数的运行时值。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:140004
+msgid "构建 Trainer 需要指定以下要素："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:140005
+msgid "主干模块（Backbone）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:140006
+msgid "参数数量 $n$"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:140007
+msgid "`SetupTrainer` 实例"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:140009
+msgid "主干函数的前 $n$ 个参数将被识别为模型参数，这些参数将在训练过程中被优化器更新。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170002
+#: ../../doc/old/tutorials/training/train-model.ipynb:290002
+msgid "训练流程"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170004
+msgid "训练器构建完成后，即可在其基础上执行标准训练流程。我们将随机初始化参数，并进行 5 轮（epoch）训练。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170006
+msgid ""
+"`Trainer` 提供 `xaiver_uniform_init_params` 方法（注：应为 Xavier Uniform "
+"初始化），用于通过 Xavier 均匀分布初始化所有参数。若需自定义参数初始化，可调用以下方法："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170007
+msgid ""
+"`trainer.load_params(extern_param_dict: Dict[str, Union[np.ndarray, "
+"NDArray]])` 加载预设参数"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170008
+msgid "`trainer.export_params() -> Dict[str, NDArray]` 导出当前参数"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170010
+msgid "`update_params` 方法将用于参数更新，其内部执行流程如下："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170011
+msgid "**前向传播**：获取模型输出及损失值"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170012
+msgid "**梯度计算**：计算参数梯度"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170013
+msgid "**参数更新**：根据优化器算法更新参数"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170014
+msgid "**返回损失**：将当前损失值返回调用方"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:170016
+msgid "`predict` 方法专为推理设计，接收一批特征数据并返回预测结果（即主干网络的输出）。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190002
+msgid "为什么需要区分 Trainer 和 SetupTrainer？"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190004
+msgid "这种设计源于「编译期」与「运行期」的职责分离："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190006
+msgid "**编译期组件**（SetupTrainer 及之前组件）："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190007
+msgid "负责构建完整的计算图（IRModule）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190008
+msgid "完成所有静态分析与优化"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190009
+msgid "生成可部署的通用计算逻辑"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190011
+msgid "**运行期组件**（Trainer）："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190012
+msgid "接收编译期生成的 IRModule"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190013
+msgid "管理模型参数的动态更新"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190014
+msgid "维护训练过程中的临时状态"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190016
+msgid "这种分离架构使 TVM 能够："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190017
+msgid "在服务器端完成计算图编译优化"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190018
+msgid "将优化后的 IRModule 部署到边缘设备"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190019
+msgid "在资源受限的设备上仅执行必要的参数更新"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:190021
+msgid "这正是 TVM 实现「一次编译，到处运行」的关键设计决策。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200002
+msgid "方法二：使用底层训练 API"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200004
+msgid "我们也可以通过底层训练 API 直接构建和运行 IRModule。这些 API 主要包括："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200005
+msgid "损失函数库"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200006
+msgid "优化器库"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200007
+msgid "自动微分过程"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200011
+msgid "TVM 在 `tvm.relax.training.loss` 模块中提供了丰富的损失函数实现，包括："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200012
+msgid "`CrossEntropyLoss`（交叉熵损失）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200013
+msgid "`L1Loss`（L1 损失）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200014
+msgid "`MSELoss`（均方误差损失）等"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200016
+msgid "您也可以通过继承 `tvm.relax.training.loss.Loss` 基类来自定义损失函数。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:200018
+msgid ""
+"损失类的实例化仅需指定超参数，其 `__call__()` 方法将接收模型输出和标签的 struct_info（结构信息），并生成对应的 "
+"Relax 损失函数："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:230002
+msgid ""
+"基于自动微分过程的技术要求，我们需要将主干函数与损失函数进行融合。为此，我们提供了 "
+"`relax.training.utils.append_loss` 工具来实现二者的融合："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250002
+msgid "梯度计算过程"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250004
+msgid "为优化模型参数，我们需要计算参数的梯度。TVM 提供了自动微分转换过程 `relax.transform.Gradient` 来实现梯度计算。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250006
+msgid "该自动微分（AD）系统是训练工作流的核心，基于源码转换方法实现。当前版本对输入函数有以下限制："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250007
+msgid "**单数据流块限制**：函数必须仅包含一个数据流块"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250008
+msgid "**算子支持限制**：仅支持算术运算、元组操作等基础 Relax 算子"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250010
+msgid "`Gradient` 接收三个关键参数："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250011
+msgid "目标函数的全局变量名"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250012
+msgid "需要计算梯度的参数变量"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250013
+msgid "输入 IRModule"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:250015
+msgid "执行后将返回包含梯度计算逻辑的新 IRModule。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270004
+msgid "TVM 在 `relax.training.optimizer` 模块中提供了多种经典优化器实现，包括："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270005
+msgid "基础 SGD"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270006
+msgid "带动量的 SGD"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270007
+msgid "Adam 优化器"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270009
+msgid "您也可以通过继承 `relax.training.optimizer.Optimizer` 基类来实现自定义优化器。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270011
+msgid "优化器实例的创建仅需指定超参数（如学习率）。通过 `init()` 方法进行初始化时需传入："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270012
+msgid "单个 Relax 变量 或"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270013
+msgid "Relax 变量列表（计算图中的变量节点）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270015
+msgid "该方法将完成优化器状态的初始化。初始化后，可通过以下两种方式使用优化器："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270016
+msgid "调用 `get_function()` 获取对应的 Relax 优化函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:270017
+msgid "将其关联到现有 IRModule 的计算流程中"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:290004
+msgid "完成 IRModule 的构建后，即可开始模型训练。我们需要依次执行以下操作："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:290005
+msgid "对 IRModule 进行规范化处理"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:290006
+msgid "编译生成可执行模块"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:290007
+msgid "准备必要的输入数据："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310002
+msgid "本演示仅展示单步训练过程，多步训练逻辑与此类似。"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310004
+msgid "**核心组件交互流程**："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310005
+msgid "**伴随函数**（由自动微分过程生成）："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310006
+msgid "输入：主干网络输入 + 真实标签"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310007
+msgid "输出：损失值 + 参数梯度元组"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310009
+msgid "**优化器函数**（由优化器类构建）："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310010
+msgid "输入：参数元组 + 梯度元组 + 优化器状态元组"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310011
+msgid "输出：更新后的参数元组 + 新优化器状态元组"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310013
+msgid "通过 `opt.state` 可获取优化器状态对象，该状态包含优化过程中的关键信息："
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310014
+msgid "已执行的训练步数（steps）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310015
+msgid "动量缓存（momentum）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:310016
+msgid "自适应学习率参数（如 Adam 中的一/二阶矩估计）"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/train-model.ipynb:330002
+msgid "打印计算结果："
+msgstr ""
+

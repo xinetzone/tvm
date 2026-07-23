@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:10002
+msgid "TVM 自动量化校准 C++ 代码解读"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:10004
+msgid ""
+"参考：`tvm/src/relay/quantize/calibrate.cc` 和 "
+"`tvm/python/tvm/relay/quantize/_calibrate.py`"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40002
+msgid ""
+"这段代码实现了平滑离散概率分布函数(SmoothDistribution)，用于最小化 KL 散度。该函数接受浮点数向量 `p` "
+"作为输入，并返回平滑后的浮点数向量。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40004
+msgid "具体实现过程如下："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40005
+msgid ""
+"首先定义两个大小为 `p.size()` 的整数向量 `is_zeros` 和 `is_nonzeros`，分别用于记录 `p` 中每个元素是否为"
+" `0` 或非 `0`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40006
+msgid ""
+"使用 `std::generate` 函数生成 `is_zeros` 和 `is_nonzeros` 向量，其中 `is_zeros[i]` 表示"
+" `p[i]` 是否为 `0`，`is_nonzeros[i]` 表示 `p[i]` 是否非 `0`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40007
+msgid "计算 `p` 中 `0` 的个数 `n_zeros` 和非 0 的个数 `n_nonzeros`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40008
+msgid "如果 `n_nonzeros` 为 `0`，说明离散概率分布格式有误，所有元素都为 `0`，直接返回空向量。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40009
+msgid ""
+"计算 `eps1`，即 `eps` 乘以 `n_zeros` 除以 `n_nonzeros`。如果 `eps1` 大于等于 "
+"`1.0`，也直接返回空向量。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40010
+msgid "定义新的向量 `ret`，将 `p`的值复制到 `ret` 中。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40011
+msgid "遍历 `p` 中的每个元素，根据 `is_zeros` 和 `is_nonzeros` 的值对 `ret` 进行更新，最终得到平滑后的离散概率分布。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:40012
+msgid "返回平滑后的向量 `ret`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:60002
+msgid ""
+"这段代码是一个计算信息熵的函数，输入参数为两个浮点数数组 `p` 和 `q` 以及它们的大小 `size`。函数首先计算 `p` 和 `q` "
+"的元素之和，然后遍历数组，对每个元素进行归一化处理，并计算信息熵。最后返回计算得到的信息熵值。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:70002
+msgid ""
+"这段代码是一个最小化 KL 散度的函数，输入参数为一个整数向量 hist、一个浮点数向量 hist_edges、两个整数 num_bins 和 "
+"num_quantized_bins。函数首先定义了一些变量，包括零分箱索引zero_bin_idx、半量化分箱数num_half_quantized_bins、阈值向量thresholds、发散度向量divergence和量化分箱向量quantized_bins。然后，函数遍历hist_edges中的元素，计算每个元素对应的p和q分布，并计算它们之间的KL散度。最后，函数返回具有最小"
+" KL 散度的阈值。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:90002
+msgid ""
+"这段代码定义了 StatsCollector 类，它继承自 ExprMutator 类。该类的主要作用是收集表达式中的量化信息，并将这些信息存储在"
+" `profile_data_` 数组中。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:90004
+msgid ""
+"在Collect函数中，首先调用Mutate函数对输入的表达式进行遍历和修改，然后将其转换为FunctionNode类型，并检查其是否为空。接着，将"
+" `profile_data_` 数组转换为 Tuple 类型，并将其作为新的函数体。最后，将新函数的返回类型设置为 "
+"`NullValue<Type>()`，表示返回类型为空。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:90006
+msgid ""
+"在 ``VisitExpr_`` 函数中，首先调用 ``ExprMutator::VisitExpr_`` 函数对 ``CallNode`` "
+"类型的节点进行处理。如果该节点算子是 ``simulated_quantize_op_``，则获取该节点的属性，并创建一个新的 "
+"``SimulatedQuantizeAttrs`` "
+"对象。接着，将该节点的第一个参数作为量化表达式，创建一个占位符常量，并将它们与新属性一起传递给 ``Call`` 函数，生成 "
+"``identity_quantize`` 节点。如果该节点的属性 ``kind`` 不等于 ``kQWeight``，则将非 ``const``"
+" 表达式添加到 ``profile_data_`` 数组中。最后，返回 ``identity_quantize`` 节点。否则，直接返回 "
+"``new_e`` 节点。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:110002
+msgid ""
+"这段代码定义了一个名为 `StatsCollector` 的类，它继承自 `ExprMutator` "
+"类。该类的主要作用是收集表达式中的量化信息，并将这些信息存储在 `profile_data_` `数组中。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:110004
+msgid ""
+"在Collect函数中，首先调用Mutate函数对输入的表达式进行遍历和修改，然后将其转换为FunctionNode类型，并检查其是否为空。接着，将profile_data_数组转换为Tuple类型，并将其作为新的函数体。最后，将新函数的返回类型设置为"
+" `NullValue<Type>()`，表示返回类型为空。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:110006
+msgid ""
+"在 `VisitExpr_` 函数中，首先调用 ``ExprMutator::VisitExpr_`` "
+"函数对CallNode类型的节点进行处理。如果该节点的算子是 `simulated_quantize_op_`，则获取该节点的属性，并创建一个新的"
+" "
+"SimulatedQuantizeAttrs对象。接着，将该节点的第一个参数作为量化表达式，创建一个占位符常量，并将它们与新属性一起传递给Call函数，生成一个identity_quantize节点。如果该节点的属性kind不等于kQWeight，则将非const表达式添加到profile_data_数组中。最后，返回identity_quantize节点。否则，直接返回new_e节点。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:110008
+msgid ""
+"此外，还定义了两个全局变量：`CreateStatsCollector` 和 "
+"``FindScaleByKLMinimization``。`CreateStatsCollector` 用于创建统计收集器，而 "
+"`FindScaleByKLMinimization` 用于通过KL最小化方法查找scale。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/calibrate-cpp.ipynb:130002
+msgid "示例："
+msgstr ""
+

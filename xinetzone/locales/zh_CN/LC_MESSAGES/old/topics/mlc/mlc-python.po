@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:10002
+msgid "`mlc-python`"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:20002
+msgid ""
+"[MLC-Python](https://github.com/mlc-ai/mlc-python) 是一款以 Python "
+"为核心的工具包，它通过提供 Python 风格的数据类、结构感知工具以及基于 Python 的文本格式，极大地简化了 AI "
+"编译器、运行时环境和复合 AI 系统的开发流程。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:20004
+msgid ""
+"除了纯粹的 Python 环境外，MLC 还原生支持与 C++ 插件的零拷贝互操作，使得从纯 Python 开发到混合开发乃至无 Python "
+"依赖的工程实践过渡变得顺畅无阻。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:30002
+msgid "📥 安装"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:40002
+msgid "🔑 关键特性"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:40004
+msgid "🏗️ 使用 MLC 数据类定义 IRs"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:40006
+msgid "MLC提供了 Python 风格的数据类："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:70002
+msgid "**类型安全**。MLC 数据类通过 Cython 和 C++ 强制执行严格的类型检查。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:110002
+#, python-brace-format
+msgid "**序列化**。MLC 数据类支持 {mod}`pickle` 序列化和 JSON 序列化。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:140002
+msgid "🐍 为 IRs 设计基于 Python 的文本格式"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:140004
+msgid "**打印机**。MLC 查找方法 `__ir_print__` 以将 IR 节点转换为 Python AST："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:140006
+msgid ""
+"**[[示例](https://github.com/mlc-ai/mlc-"
+"python/blob/main/python/mlc/testing/toy_ir/ir.py)]**。将玩具 IR 定义复制到 REPL "
+"中，然后创建下面的 `Func` 节点："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:160002
+#, python-brace-format
+msgid "方法 {func}`mlc.printer.to_python` 将 IR 节点转换为基于 Python 的文本；"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:180002
+msgid "方法 `mlc.printer.print_python` 进一步以适当的语法高亮渲染文本。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:200002
+msgid "**AST 解析器**。MLC 提供了一套简洁的 API，用于利用 Python 的 AST 模块实现解析器，包括："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:200003
+msgid "检查 API，用于获取 Python 类或函数的源代码及其捕获的变量；"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:200004
+msgid "变量管理 API，有助于正确处理作用域；"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:200005
+msgid "AST 片段评估 API；"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:200006
+msgid "错误渲染 API。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:200008
+msgid ""
+"**[[示例](https://github.com/mlc-ai/mlc-"
+"python/blob/main/python/mlc/testing/toy_ir/parser.py)]**。借助 MLC API，可以用 "
+"100 行代码实现解析器，用于解析上述由 `__ir_printer__` 定义的 Python 文本格式。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:210002
+msgid "🎯 使用 MLC 结构感知工具测试 IRs"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:210004
+msgid "通过在 IR 定义中标注 `structure`，MLC 支持结构相等性和结构哈希，以检测 IR 之间的结构等价性："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:210006
+msgid "使用 `structure` 定义玩具 IR："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:230002
+msgid "**结构相等性**。成员方法 `eq_s` 用于比较由MLC的结构化数据类表示的两个IR（中间表示）的结构相等性（即 alpha 等价）。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:260002
+msgid ""
+"**结构哈希**。MLC 数据类的结构可以通过 `hash_s` 进行哈希计算，这保证了如果两个数据类是 alpha "
+"等价的，它们将具有相同的结构哈希值："
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:280002
+msgid "⚡ 逐步迁移到 C++ 并使用 MLC 插件"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:280004
+msgid "(🚧 正在建设中)"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:280006
+msgid ""
+"MLC 无缝支持与 C++ 插件的零拷贝双向互操作性，且无需额外依赖。通过逐步迁移类和方法，可以将纯 Python 原型过渡到混合开发或无 "
+"Python 开发模式。"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:290002
+msgid "⛽ 开发"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:290004
+msgid "⚙️ 可编辑构建"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:300002
+msgid "🎡 构建 Wheels"
+msgstr ""
+
+#: ../../doc/old/topics/mlc/mlc-python.ipynb:300004
+msgid ""
+"本项目使用 `cibuildwheel` 来构建跨平台的 wheels。更多详情请参阅 "
+"`.github/workflows/wheels.yml`。"
+msgstr ""
+

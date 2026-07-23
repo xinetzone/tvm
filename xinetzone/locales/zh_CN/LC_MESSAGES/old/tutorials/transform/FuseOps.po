@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:10002
+msgid "TVM `FuseOps` 变换"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:20002
+msgid "算子融合是一种优化技术，通过将多个连续的算子合并为单一的算子，减少内存传输和提高计算效率。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:20004
+msgid "测试涵盖了各种融合场景，包括简单算子融合、卷积算子融合、元组算子融合等。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:50002
+msgid "简单算子融合测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:50004
+msgid "测试基本的算子融合功能：将 `add`、`exp` 和 `squeeze` 三个连续的算子融合为单一算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:50006
+msgid "这是基础测试，验证融合机制的正确性。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:80002
+msgid "测试卷积算子融合的情况"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:80004
+msgid ""
+"该测试验证卷积算子与加法算子的融合逻辑，特别是在存在多条计算路径的情况下，融合是否能够正确进行。测试会验证不同数据类型(float32, "
+"float16, int8)下的融合结果。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:120002
+msgid "涉及连接算子和元组节点的融合测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:120004
+msgid "测试包含 `concatenate` 算子和 Tuple 节点的融合场景。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:120006
+msgid ""
+"具体测试 `max_pool2d`、`upsampling`、`concatenate` 和 `add` "
+"四个算子的融合。此测试验证了包含复杂数据结构（如元组）的算子融合机制。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:150002
+msgid "测试当 `Tuple` 节点是其组中的根节点时的算子融合情况"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:150004
+msgid "此测试验证当数据流向以 `Tuple` 节点为根时，融合逻辑是否正确处理这种情况。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:150006
+msgid "预期结果：由于 `Tuple` 节点作为输出根节点，不会发生算子融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:170002
+msgid "元组获取与元素级算子的融合测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:170004
+msgid "测试从元组中获取元素并进行元素级算子的融合场景。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:170006
+msgid ""
+"具体测试 `split`、`TupleGetItem`、`sigmoid`、`tanh`、`exp`、`multiply` 和 `add` "
+"等算子的融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:170008
+msgid "此测试验证了元组算子与元素级计算的融合机制。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:200002
+msgid "元组获取作为根节点的融合测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:200004
+msgid "测试 `TupleGetItem` 算子作为根节点的融合场景。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:200006
+msgid "具体测试 `split` 和 `TupleGetItem` 的融合，以及后续的 `dense` 算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:200008
+msgid "此测试验证了元组算子作为根节点时的融合行为。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:230002
+msgid "元组作为中间节点的融合测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:230004
+msgid "测试元组作为中间节点的融合场景。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:230006
+msgid "具体测试多个 `squeeze`、`add` 和 `concatenate` 算子的融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:230008
+msgid "此测试验证了包含多个中间元组节点的复杂计算图的融合机制。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:250002
+msgid "连续元组算子的融合测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:250004
+msgid "测试连续元组算子的融合场景。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:250006
+msgid ""
+"具体测试多次 `add`、`concatenate`、`pool2d` "
+"等算子的融合。此测试验证了包含重复模式和多层次元组算子的复杂计算图的融合机制。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:280002
+msgid "测试类似 Inception 网络结构的算子融合情况"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:280004
+msgid "该测试验证具有分支结构的网络（如Inception模块）中，卷积和激活函数等算子的融合逻辑是否正确。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:310002
+msgid "测试并行的单射算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:310004
+msgid "该测试验证多个并行的单射算子（如add、squeeze、transpose）是否能被正确融合为复合算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:340002
+msgid "测试softmax算子与后续算子的融合情况"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:340004
+msgid "该测试验证 `softmax` 算子是否能与后续的 `cast` 算子融合，以优化执行效率。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:360002
+msgid "测试多个 Relax 函数的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:360004
+msgid "该测试验证在包含多个独立函数的模块中，每个函数内的算子是否能被正确融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:380002
+msgid "测试包含 `call_dps_packed` 调用的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:380004
+msgid "该测试验证当函数中包含 `call_dps_packed` 调用时，`FuseOps` 变换是否会跳过这些调用，保持原始结构。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:400002
+msgid "测试 `call_dps_packed` 调用边缘的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:400004
+msgid "该测试验证当 `call_dps_packed` 调用位于算子链边缘时，其他可融合的算子是否能被正确融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:420002
+msgid "测试 LayerNorm 和 SiLU 激活函数的融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:420004
+msgid "该测试验证 LayerNorm 算子和 ReLU 激活函数是否能被正确融合，以减少内存传输和计算开销。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:450002
+msgid "测试多路径网络结构的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:450004
+msgid "该测试验证具有多条计算路径的网络中，各路径上的算子是否能被正确融合，特别是卷积、矩阵乘法和加法等算子的融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:480002
+msgid "测试包含无效组的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:480004
+msgid "该测试验证当网络中存在未被使用的计算路径（无效组）时，FuseOps转换是否能正确处理这种情况，只融合有效的计算路径。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:510002
+msgid "测试符号形状感知的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:510004
+msgid "该测试验证当张量形状包含符号变量时，算子融合是否能正确处理这些符号形状。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:540002
+msgid "该测试进一步验证包含更复杂符号形状表达式的算子融合情况，包括 `full`、`trilu` 和 `broadcast_to` 等算子的融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:570002
+msgid "测试形状表达式参数的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:570004
+msgid "该测试验证当函数参数包含形状表达式时，算子融合是否能正确处理这种情况。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:600002
+msgid "测试跳过 `match_cast` 的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:600004
+msgid "该测试验证当函数中包含 `match_cast` 算子时，`FuseOps` 变换是否会跳过这些算子，保持原始结构。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:620002
+msgid "测试包含原始值参数的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:620004
+msgid "该测试验证当函数调用包含原始值参数（如整数、字符串、数据类型）时，算子融合是否能正确处理这些情况。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:640002
+msgid "测试部分使用元组参数的算子融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:640004
+msgid "该测试验证当函数参数是元组且只使用了其中一部分元素时，算子融合是否能正确处理这种情况。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:660002
+msgid "测试包含 in-place 算子的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:660004
+msgid "该测试验证当函数中包含原地（in-place）算子时，算子融合是否能正确处理这些算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:680002
+msgid "测试包含打包参数的算子融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/FuseOps.ipynb:680004
+msgid "该测试验证当函数参数是打包的元组时，算子融合是否能正确处理这种情况。"
+msgstr ""
+

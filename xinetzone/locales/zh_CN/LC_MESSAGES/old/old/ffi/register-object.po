@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/ffi/register-object.ipynb:10002
+msgid "`register_object`"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:10004
+msgid ""
+"`tvm.register_object(type_key=None)` 实现的关键接口是 "
+"`_LIB.TVMObjectTypeKey2Index`，函数的作用是根据给定的 `key` "
+"获取对应的类型索引。（根据注释的说明，具体的实现细节可能在其他地方进行定义。如果你需要使用这个函数，可以在代码中包含该函数的声明，并在需要的地方调用它来获取类型索引。）拿到索引后，调用"
+" `_register_object(tindex, cls)` 在 Python 端完成注册。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:20002
+msgid "`_LIB.TVMObjectTypeKey2Index` 的实现如下查找链路："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:20013
+msgid "-> `tvm::runtime::ObjectInternal::ObjectTypeKey2Index` 定义如下："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:20020
+msgid "-> `Object::TypeKey2Index` 定义如下："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:20027
+#: ../../doc/old/old/ffi/register-object.ipynb:20037
+msgid "->"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30002
+msgid ""
+"`TVMObjectTypeKey2Index` 接受两个参数：一个指向字符类型的指针 `type_key` 和一个指向无符号整数类型的指针 "
+"`out_tindex`。函数的返回类型是 `int`。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30004
+msgid "函数的参数解释如下："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30005
+msgid "`const char* type_key`：表示类型键的字符串指针。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30006
+msgid "`unsigned* out_tindex`：指向无符号整数的指针，用于存储转换后的类型索引。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30008
+msgid "函数的返回值解释如下："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30009
+msgid "当成功时，返回 `0`。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30010
+msgid "当失败时，返回非零值。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:30012
+msgid "如果你需要使用这个函数，可以在代码中包含该函数的声明，并在需要的地方调用它来将类型键转换为类型索引。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:40002
+msgid "在上述查找过程发现：`TVM_REGISTER_NODE_TYPE` 宏，用于注册 key2index 的绑定。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:50002
+msgid "`TVM_REGISTER_NODE_TYPE` 宏用于在 C++ 中注册节点类型。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:50004
+msgid ""
+"首先，`TVM_REGISTER_NODE_TYPE(TypeName)` 宏定义了函数调用，该函数调用了 "
+"`TVM_REGISTER_OBJECT_TYPE(TypeName)` 和 "
+"`TVM_REGISTER_REFLECTION_VTABLE(TypeName, "
+"::tvm::detail::ReflectionTrait<TypeName>)` 两个函数。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:50006
+msgid ""
+"`TVM_REGISTER_OBJECT_TYPE(TypeName)` 函数用于注册对象类型，将给定的类型名称 `TypeName` "
+"与相应的对象类型关联起来。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:50007
+msgid ""
+"`TVM_REGISTER_REFLECTION_VTABLE(TypeName, "
+"::tvm::detail::ReflectionTrait<TypeName>)` 函数用于注册反射虚函数表（vtable），将给定的类型名称 "
+"`TypeName` 与相应的反射虚函数表关联起来。这个虚函数表中包含了该类型的反射方法。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:50008
+#, python-brace-format
+msgid ""
+"接下来，`.set_creator([](const std::string&) -> ObjectPtr<Object> {...})` "
+"是可选的设置函数，用于指定如何创建该类型的对象实例。在这个例子中，使用了 lambda 表达式作为创建函数，它接受字符串参数，并返回新创建的 "
+"`TypeName` 类型的对象实例。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:50010
+msgid "综上所述，这段代码的作用是注册节点类型，并提供了创建该类型对象实例的方法。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:60002
+msgid "`register_object` 示例"
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:70002
+msgid "在 `src/tvm_ext.cc` 中定义 `test.BaseObj`："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:80002
+msgid "在 Python 端调用："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:110002
+msgid "或者："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:130002
+msgid "如果想要改变 `node` 实例的显示内容，也可以在 C++ 端写入："
+msgstr ""
+
+#: ../../doc/old/old/ffi/register-object.ipynb:150002
+msgid "或者直接在 Python 端改写："
+msgstr ""
+

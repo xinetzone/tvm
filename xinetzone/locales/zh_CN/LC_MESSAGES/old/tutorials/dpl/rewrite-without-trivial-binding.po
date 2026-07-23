@@ -1,0 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/dpl/rewrite-without-trivial-binding.ipynb:10002
+msgid "测试无琐碎绑定的重写"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite-without-trivial-binding.ipynb:30003
+msgid "rewrite_call 应避免生成琐碎的 \"y = x\" 绑定"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite-without-trivial-binding.ipynb:30005
+msgid ""
+"这可能并非在所有情况下都可行，并且遵循与 CanonicalizeBindings 相同的规则。例如，将 `relax.Var` 绑定到 "
+"`relax.DataflowVar` 可能无法移除，以确保 `relax.DataflowVar` 仅在 `DataflowBlock` "
+"内使用。"
+msgstr ""
+

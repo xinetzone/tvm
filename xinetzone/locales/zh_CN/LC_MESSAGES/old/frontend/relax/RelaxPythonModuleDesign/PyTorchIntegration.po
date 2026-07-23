@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:10002
+msgid "PyTorch 与 TVM Relax 的集成"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:20002
+msgid "此测试验证以下内容："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:20003
+msgid "PyTorch 张量与 TVM 后端的无缝输入/输出"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:20004
+msgid "Python、TIR 和 Relax 函数之间的跨函数调用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:20005
+msgid "动态 Python 函数的添加和执行"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:20006
+msgid "端到端流水线测试"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:20007
+msgid "错误处理和边缘情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:50002
+msgid "测试模块的创建和实例化功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:70002
+msgid "测试在 GPU 上创建和实例化模块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:90002
+msgid "测试 Python 函数是否正确执行"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:110002
+msgid "测试 TIR 函数是否正确执行"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:130002
+msgid "测试动态添加 Python 函数的功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:150002
+msgid "测试通过 `call_dps_packed` 调用动态添加的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:170002
+msgid "测试端到端的执行流水线"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:190002
+msgid "测试在 GPU 上的端到端执行流水线"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:210002
+msgid "测试不同函数类型之间的数据流"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:230002
+msgid "测试各种边缘情况下的错误处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:250002
+msgid "测试张量类型在整个执行过程中的保留"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/PyTorchIntegration.ipynb:270002
+msgid "测试批处理多个输入的功能"
+msgstr ""
+

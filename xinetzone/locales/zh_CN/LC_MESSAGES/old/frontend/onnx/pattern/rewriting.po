@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:10002
+msgid "基于模式的使用规则进行重写"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:10004
+msgid "参考：[rewrite_patterns](https://onnxscript.ai/tutorial/rewriter/rewrite_patterns.html)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:20002
+msgid "ONNX 重写工具为用户提供了一个功能，可以根据用户提供的重写规则，将 ONNX 计算图中的某些模式替换为另一种模式。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:20004
+msgid "使用方法"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:20006
+msgid "在计算图重写模式时，需要三个主要部分："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:20008
+msgid "`target_pattern`：要匹配的原始模式。这个模式使用类似 ONNXScript 的算子编写函数。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:20009
+msgid "`replacement_pattern`：用于替换原始模式的模式。这个模式也使用类似 ONNXScript 的算子编写函数。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:20010
+msgid "`match_condition`（可选）：只有满足匹配条件时，才会进行模式重写。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:30002
+msgid "简单的例子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:30004
+msgid "一个简单示例，演示了如何使用 GELU 激活函数的此功能："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:30006
+msgid "可以使用给定公式中的高斯误差函数来计算 GELU 激活函数："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:40002
+#, python-brace-format
+msgid ""
+"\n"
+"\\text{GELU} = x\\Phi(x) = x \\cdot \\frac{1}{2} [1 + \\text{erf}(x / "
+"\\sqrt{2})]\n"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:60002
+msgid "使用 `onnxscript` 算子创建需要替换的目标模式。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:80002
+msgid "之后，创建由 GELU `onnxscript` 算子组成的替换模式。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:100003
+msgid "替换模式的输入是 `ir.Value` 类型。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:110002
+msgid "在这个例子中，我们不需要 `match_condition`，所以暂时跳过这个选项。然后使用 `RewriteRule` 函数创建重写规则。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:130002
+msgid "现在重写规则已经创建，下一步是应用这些基于模式的重写规则。`rewriter.rewrite` 调用包含三个主要部分："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:130004
+msgid "`model`：要应用模式重写规则的原始模型。这是 `onnx.ModelProto` 类型。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:130005
+msgid ""
+"`function_rewrite_rules`：（可选）此参数用于传递基于函数名称的重写规则。如何使用此参数的步骤将在另一个教程中介绍。此参数是"
+" `Sequence[type[FunctionRewriteRule]]` 类型。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:130006
+msgid "`pattern_rewrite_rules`：（可选）此参数用于传递基于提供的替换模式的重写规则。在本教程中，我们将仅使用此参数与model结合。此参数是以下类型之一："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:130007
+msgid "`Sequence[PatternRewriteRule]`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:130008
+msgid "`RewriteRuleSet`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:140003
+msgid ""
+"`pattern_rewrite_rules` 接受 `PatternRewriteRule` 类型的序列，或者 "
+"`RewriteRuleSet`，后者本质上也是使用 `PatternRewriteRule` "
+"类型的序列创建的规则集。因此，如果要传递单个重写规则，需要将其作为序列的一部分传递。有关如何创建和使用规则集的步骤，请参阅“[使用不同模式创建规则集](https://onnxscript.ai/tutorial/rewriter/rewrite_patterns.html"
+"#heading-target-commute-ruleset)”部分中的示例。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:150002
+msgid "下面的代码片段演示了如何使用 `rewriter.rewrite` 调用上述创建的重写规则："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:170002
+msgid "利用 `commute` 参数进行模式匹配"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:180002
+msgid "使用不同模式创建规则集"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:180004
+msgid ""
+"此方法需要创建两个单独的规则，并将它们打包成 `PatternRewriteRules` 的序列或 `RewriteRuleSet`。创建 "
+"`RewriteRuleSet` 是首选选项，但两者都可以使用。为了创建一个包含多个规则（例如 `rule1` 和 `rule2`）的 "
+"`RewriteRuleSet`："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:190002
+msgid "为了将此方法应用于上述示例，首先创建两个单独的目标模式，如下所示："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:210002
+msgid ""
+"然后，为每个目标模式创建两个单独的 `PatternRewriteRules`。将这些规则打包成一个 `RewriteRuleSet` "
+"对象，并通过传递创建的 `RewriteRuleSet` 作为 `pattern_rewrite_rules` 参数来应用重写。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:230002
+msgid "在创建规则时使用 `commute` 参数"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:230004
+msgid ""
+"为相似模式创建多个目标模式可能会很繁琐。为了避免这种情况，可以在创建 `RewriteRuleSet` 时利用 `commute` 参数。只需设置"
+" `commute=True`，即可避免为因交换性而不同的模式创建多个目标模式。满足交换性属性的不同模式的多个规则会自动打包成 "
+"`RewriteRuleSet` 对象。然后通过传递创建的 `RewriteRuleSet` 作为 `pattern_rewrite_rules`"
+" 参数来应用重写。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:250002
+msgid "使用 `match_condition` 参数进行模式匹配"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:250004
+msgid ""
+"本节将讨论如何利用 `match_condition` 参数。`match_condition` "
+"参数检查模式是否在考虑某些约束的情况下与目标模式匹配。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:250006
+msgid ""
+"基于 [ONNX Matmul "
+"规范](https://github.com/onnx/onnx/blob/main/docs/Operators.md#MatMul)，onnx"
+" Matmul的行为类似于 `numpy.matmul`，并且也遵循 `numpy` 广播。因此，在这个特定模式中，如果 `matmul` "
+"广播满足，那么我们不需要 `reshapes`。为了验证这一点，我们需要检查以下内容："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:250008
+msgid "输入形状检查：`input_a` 和 `input_b` 应该是可广播的"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:250009
+msgid "输出形状检查：`shape_c` 应该与从 `matmul(input_a, input_b)` 得到的输出形状相同"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:260002
+msgid "如果上述情况为真，那么我们不需要 `reshapes`，可以使用基于模式的重写来消除它们。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:260004
+msgid "首先，以类似于第一个示例的方式编写目标模式和替换模式。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:280003
+msgid ""
+"在这种情况下，目标模式有5个输入：`input_a`、`input_b`、`shape_a`、`shape_b`、`shape_c`。然而，替换模式仅利用了"
+" `input_a` 和 `input_b`。为了避免在替换模式签名中引用所有未使用的参数，只传递 `input_a` 和 "
+"`input_b`，并使用 `**_` 来表示所有未使用的参数。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:280005
+msgid ""
+"同样，在编写条件检查函数时，我们只需要 `input_a`、`input_b` 和 `shape_c`。在条件匹配函数签名中使用 `**_` "
+"来表示所有未使用的参数。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:290002
+msgid "为了验证 `matmul` 广播是否满足，我们编写一个条件检查函数，如下所示："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/pattern/rewriting.ipynb:310002
+msgid ""
+"所有必要的组件都准备好了，现在创建带有 `match_condition` 函数的模式重写规则，然后调用 `rewriter.rewrite` "
+"来应用重写。"
+msgstr ""
+

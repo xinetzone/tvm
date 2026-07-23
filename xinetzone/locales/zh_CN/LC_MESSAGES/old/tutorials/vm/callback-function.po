@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:10002
+msgid "测试回调函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:20002
+msgid "测试 TVM Relax 虚拟机（VM）中 Python 回调函数与 Relax 函数之间的交互机制，具体包括："
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:20003
+msgid "双向数据传递：测试 Relax 函数向Python回调函数传递张量，以及Python回调函数向Relax函数返回张量的能力。"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:20004
+msgid "异常传播：测试Python回调函数中抛出的异常是否能够正确传播到调用方，并且保留完整的堆栈跟踪信息。"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:20005
+msgid ""
+"多种执行模式：所有测试都在两种执行模式下运行 - "
+"bytecode（字节码）模式和compiled（编译）模式，以验证VM在不同执行策略下的行为一致性。"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:20007
+msgid ""
+"文件使用TVM的测试框架，通过参数化测试方式自动在不同配置下运行测试用例，确保Relax VM的回调机制能够正常工作。这些测试对于保证TVM "
+"Relax与Python之间的交互可靠性非常重要，特别是在需要混合执行Python代码和编译后代码的场景中。"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:40002
+msgid "测试将张量从 Relax 函数传递给 Python 回调函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:80002
+msgid "测试从Python回调函数生成张量并传递给Relax函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/vm/callback-function.ipynb:100002
+msgid "测试Python回调函数中的异常是否能正确传播，并保留完整的堆栈跟踪"
+msgstr ""
+

@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/topi/saturate.ipynb:10002
+msgid "`saturate` (有 bug)"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/saturate.ipynb:10004
+msgid "实现很简单："
+msgstr ""
+
+#: ../../doc/old/old/read/topi/saturate.ipynb:30002
+msgid ""
+"`saturate` 的函数，它接受两个参数：类型为`te.Tensor` 的张量 `x` 和字符串类型的数据类型 "
+"`dtype`。函数的作用是计算并返回饱和值，即在给定的数据类型范围内对输入张量 `x` 进行截断。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/saturate.ipynb:30004
+msgid ""
+"具体来说，函数首先使用 `te.min_value(dtype)` 获取给定数据类型的最小值，然后使用 "
+"`te.max(te.min_value(dtype), te.min(x, te.max_value(dtype)))` "
+"计算饱和值。这里，`te.min(x, te.max_value(dtype))` 确保了输入张量 `x` "
+"中的每个元素都不会超过给定数据类型的最大值。然后，`te.max(te.min_value(dtype), ...)` "
+"确保了结果不会低于给定数据类型的最小值。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/saturate.ipynb:30006
+msgid "总之，这个函数的作用是将输入张量 `x` 的值限制在给定数据类型的范围内，并返回截断后的结果。"
+msgstr ""
+

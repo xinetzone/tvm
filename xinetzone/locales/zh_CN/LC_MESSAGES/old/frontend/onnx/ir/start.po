@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:10002
+msgid "开始使用 ONNX IR"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:10004
+msgid ""
+"ONNX IR 与 ONNX Script 包一起提供，可以通过 `onnxscript.ir` 获取。要从 ONNX 文件创建 `IR` "
+"对象，将其加载为 `ModelProto` 并调用 `ir.from_proto()` 或 "
+"`ir.serde.deserialize_model`："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:10006
+msgid ""
+"参考：[ONNX IR "
+"快速上手](https://microsoft.github.io/onnxscript/intermediate_representation/index.html)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:40002
+msgid "可以探索 IR 对象："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:60002
+msgid "输入信息："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:80002
+msgid "输出信息："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:100002
+msgid "使用第一个输入的节点。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:120002
+msgid "产生最后一个输出（作为第i个输出）的节点。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:140002
+msgid "打印计算图："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/start.ipynb:160002
+msgid "将 `IR` 对象转换回 `ModelProto`："
+msgstr ""
+

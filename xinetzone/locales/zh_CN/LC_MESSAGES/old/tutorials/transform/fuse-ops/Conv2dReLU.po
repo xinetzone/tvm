@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:10002
+msgid "融合 Conv2dReLU"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:30002
+msgid "构建模型："
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:70002
+msgid "绑定参数"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:110002
+msgid "`FuseOpsByPattern`"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:170002
+msgid "融合 `Conv2dReLUx2`"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:220002
+msgid "模板匹配依赖顺序："
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:240002
+msgid "变换器会优先尝试匹配第一个模式 `conv2d_pat`"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:240003
+msgid "即使存在更复杂的 `conv2d_relu` 模式，由于顺序优先，会先应用简单的 `conv2d` 融合"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:240004
+msgid "最终结果中只有 `conv2d` 算子被融合，ReLU 算子保持独立"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/Conv2dReLU.ipynb:260002
+msgid "融合 `Conv2dConv2dReLU`"
+msgstr ""
+

@@ -1,0 +1,760 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-31 14:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:10002
+msgid "对象属性辅助函数"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:10004
+msgid "源码：`tvm/include/tvm/ir/attrs.h` & `tvm/src/support/ffi_testing.cc`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:10006
+msgid "核心"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:10007
+msgid "使用 TVM 中的 `AttrsNode` 类和相关宏来声明和使用具有默认值和边界检查的命名属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:10010
+msgid "示例："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:20002
+msgid ""
+"首先，定义了名为 `MyAttrs` 的结构体，它继承自 "
+"`tvm::AttrsNode<MyAttrs>`。这个结构体包含了三个属性：`learning_rate`、`num_hidden` 和 "
+"`name`。在头文件中，可以使用 `TVM_DECLARE_ATTRS` "
+"宏来声明这些属性。在这个例子中，声明了三个属性字段：`num_hidden`、`learning_rate` 和 `name`。每个字段都使用了 "
+"`TVM_ATTR_FIELD` 宏来指定属性的名称和一些选项。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:20004
+msgid ""
+"对于 `num_hidden` 字段，使用 `set_lower_bound(1)` 来设置它的下界为 `1`，表示该属性的有效取值范围是大于等于"
+" $1$ 的整数。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:20005
+msgid ""
+"对于 `learning_rate` 字段，使用 `set_default(0.01f)` 来设置它的默认值为 "
+"`0.01`。这意味着如果在代码中没有显式地给 `learning_rate` 赋值，那么它将被初始化为 `0.01`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:20006
+msgid ""
+"对于 `name` 字段，使用 `set_default(\"hello\")` 来设置它的默认值为 "
+"`\"hello\"`。同样地，如果在代码中没有显式地给 `name` 赋值，那么它将被初始化为 `\"hello\"`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:20008
+msgid ""
+"在源文件（通常是 C++）中，需要注册这个新的节点类型。使用 `TVM_REGISTER_NODE_TYPE(MyAttrs)` 宏可以将 "
+"`MyAttrs` 节点类型注册到 TVM 中，使其可以在后续的编译和执行过程中被识别和使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:20010
+msgid ""
+"总结起来，这段代码演示了如何使用TVM的 `AttrsNode` "
+"类和相关宏来声明和使用具有默认值和边界检查的命名属性。通过这种方式，可以更方便地管理和使用模型的属性信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30002
+msgid "`TVM_DECLARE_ATTRS` 和 `TVM_ATTR_FIELD`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30016
+msgid "这段代码定义了两个宏，用于在 TVM 中声明属性函数和属性字段。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30018
+msgid ""
+"第一个宏 `TVM_DECLARE_ATTRS` 用于声明属性函数。它接受两个参数：`ClassName` 表示类的名称，`TypeKey` "
+"表示类型键，用于在 TVM 节点系统中标识该属性的类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30020
+msgid ""
+"在宏的定义中，首先使用 `static constexpr` 关键字将 `TypeKey` 赋值给了名为 `_type_key` "
+"的静态常量字符指针。这样做的目的是确保 `_type_key` 的值在编译时就已经确定，并且只初始化一次。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30021
+msgid ""
+"接下来，通过调用 `TVM_DECLARE_FINAL_OBJECT_INFO` 宏来声明最终对象信息，其中包含了类名 `ClassName` "
+"和基类 `::tvm::BaseAttrsNode`。这个宏的作用是将类名和基类传递给 TVM 的元编程系统，以便正确地生成派生类的元数据。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30022
+msgid ""
+"最后，通过模板函数 `_tvm_VisitAttrs` 来实现属性访问的机制。这个函数接受类型为 `FVisit` "
+"的函数对象作为参数，用于遍历和访问属性。函数体中的注释 `// NOLINT(*)` 表示编译器在编译时应忽略该函数未被使用的错误警告。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30024
+msgid ""
+"第二个宏 `TVM_ATTR_FIELD` 用于声明属性字段。它也接受两个参数：`FieldName` 表示属性的字段名，`&FieldName`"
+" 表示对应的变量。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30026
+msgid ""
+"在宏的定义中，使用之前定义的模板函数 `_tvm_fvisit` 来处理属性字段的访问。`_tvm_fvisit(#FieldName, "
+"&FieldName)` 将属性字段的名称和对应的变量传递给 `_tvm_fvisit` "
+"函数。这样，在后续的编译和执行过程中，就可以正确地访问和操作该属性字段了。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30029
+msgid "在 `#FieldName` 中，`#` 符号是 C++ 中的预处理器指令的开始。它用于指示编译器将紧随其后的文本视为预处理指令。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30031
+msgid ""
+"在这种情况下，`#FieldName` 被视为宏定义的开始。宏定义是一种在编译之前进行文本替换的技术。通过使用 "
+"`#FieldName`，我们可以定义名为 `FieldName` 的宏。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30033
+msgid ""
+"在给定的代码片段中，`#FieldName` 被用作参数传递给宏 `TVM_ATTR_FIELD`。这意味着当该宏被调用时，`FieldName`"
+" 将被替换为实际的值。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30035
+msgid ""
+"总结起来，`#FieldName` 是 C++ 中预处理指令的语法，用于定义宏。在这个特定的代码片段中，它被用作参数传递给宏 "
+"`TVM_ATTR_FIELD`，并在宏展开时被替换为相应的值。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:30038
+msgid "总结起来，这段代码定义了两个宏，用于在 TVM 中声明属性函数和属性字段。通过使用这些宏，可以在 C++ 代码中方便地声明和使用带有类型键的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40002
+msgid "`NullValue` 和 `NullValue<DataType>`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40004
+msgid "模板函数"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40018
+msgid "这段代码定义了两个模板函数：`NullValue` 和 `NullValue<DataType>`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40020
+msgid ""
+"第一个函数 `NullValue` 是泛型函数，它接受类型参数 `TObjectRef`。这个函数的作用是创建表示空值的 `TObjectRef`"
+" 类型的对象。在函数内部，首先使用 `static_assert` 进行编译时断言，确保传入的类型 `TObjectRef` 是可空类型（即具有 "
+"`_type_is_nullable` 成员变量）。然后，创建 `ObjectPtr<Object>` 类型的空指针，并将其作为参数传递给 "
+"`TObjectRef` 类型的构造函数，创建表示空值的对象。最后，返回创建的空值对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40022
+msgid ""
+"第二个函数 `NullValue<DataType>` 是特化版本的 `NullValue` 函数，它专门用于处理 `DataType` "
+"类型的对象。在这个函数内部，直接返回表示空值的 `DataType` 类型的对象，其值为 `DataType::kHandle, 0, 0`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40024
+msgid "`AttrError`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40037
+msgid "`AttrError` 结构体，它继承自 `Error` 类。`AttrError` 结构体用于表示在属性检查过程中抛出的错误。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40039
+msgid ""
+"在 `AttrError` 结构体中，定义了构造函数，该构造函数接受字符串参数 `msg`，表示错误信息。构造函数通过调用父类 `Error` "
+"的构造函数来初始化 `AttrError` 对象，并将错误信息与字符串     `\"AttributeError:\"` 拼接起来。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40041
+msgid "`AttrFieldInfoNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40043
+msgid "`AttrFieldInfoNode` 类，该类继承自 `Object` 类。这个类主要用于存储属性字段的信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40070
+msgid "在 `AttrFieldInfoNode` 类中，定义了三个成员变量："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40071
+msgid "`name`：表示字段的名称；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40072
+msgid "`type_info`：表示字段类型的文档字符串信息；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40073
+msgid "`description`：表示字段类型的详细描述。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40075
+msgid ""
+"此外，还定义了名为 `VisitAttrs` 的成员函数，该函数接受指向 `AttrVisitor` 类的指针作为参数。在 "
+"`VisitAttrs` 函数中，调用 `AttrVisitor` 类的 `Visit` 方法，将 `name`、`type_info` 和 "
+"`description` 这三个成员变量的值传递给 `Visit` 方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40077
+msgid "最后，定义了两个静态常量成员变量："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40078
+msgid "`_type_key`：表示该类的类型键，值为 `\"AttrFieldInfo\"`；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40079
+msgid ""
+"`_type_has_method_sequal_reduce` 和 "
+"`_type_has_method_shash_reduce`：这两个静态常量成员变量的值都为 `false`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40081
+msgid "此外，还使用 `TVM_DECLARE_FINAL_OBJECT_INFO` 宏声明了 `AttrFieldInfoNode` 类的对象信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40083
+msgid "`AttrFieldInfo`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40085
+msgid "`AttrFieldInfo` 类，该类继承自 `ObjectRef` 类。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40094
+msgid ""
+"在 `AttrFieldInfo` 类中，使用` TVM_DEFINE_OBJECT_REF_METHODS` 宏来定义一些方法，这些方法用于操作"
+" `AttrFieldInfo` 对象和 `ObjectRef` 对象之间的关联关系。具体来说， "
+"`TVM_DEFINE_OBJECT_REF_METHODS` 宏将 `AttrFieldInfo` 类的方法映射到 `ObjectRef` "
+"类的方法上，从而实现了 `AttrFieldInfo` 对象与 `ObjectRef` 对象的相互操作。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40096
+msgid "`BaseAttrsNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40098
+msgid "`BaseAttrsNode` 的基类，它继承自 `Object` 类。这个基类主要用于表示所有属性类的基类。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40155
+msgid "在 `BaseAttrsNode` 类中，定义了一些类型别名和虚函数："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40156
+msgid "`TVMArgs` 和 `TVMRetValue` 分别表示 TVM 的参数和返回值类型；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40157
+msgid "`VisitAttrs` 虚函数，用于访问属性；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40158
+msgid "`InitBySeq` 模板函数，用于通过序列化的方式初始化属性；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40159
+msgid "`PrintDocString` 虚函数，用于打印可读的文档字符串；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40160
+msgid "`VisitNonDefaultAttrs` 纯虚函数，用于访问不等于默认值的属性；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40161
+msgid "`ListFieldInfo` 纯虚函数，用于获取属性字段信息；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40162
+msgid "`InitByPackedArgs` 纯虚函数，用于通过键值对的方式初始化属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40164
+msgid "此外，还定义了一些静态常量和宏："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40165
+msgid ""
+"`_type_has_method_sequal_reduce` 和 `_type_has_method_shash_reduce` "
+"表示该类型是否具有相等和哈希减少的方法；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40166
+msgid "`_type_key` 表示该类型的键；"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:40167
+msgid "`TVM_DECLARE_BASE_OBJECT_INFO` 宏用于声明基对象信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50002
+msgid "`Attrs`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50014
+msgid ""
+"`Attrs` 的类，该类继承自 `ObjectRef` 类。在 `Attrs` 类中，使用 "
+"`TVM_DEFINE_OBJECT_REF_METHODS` 宏来定义一些方法，这些方法用于操作 `Attrs` 对象和 `ObjectRef`"
+" 对象之间的关联关系。具体来说，`TVM_DEFINE_OBJECT_REF_METHODS` 宏将 `Attrs` 类的方法映射到 "
+"`ObjectRef` 类的方法上，从而实现了 `Attrs` 对象与 `ObjectRef` 对象的相互操作。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50016
+msgid "`TestAttrs` 示例"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50040
+msgid "这段代码定义了名为 `TestAttrs` 的结构体，它继承自 `AttrsNode<TestAttrs>`。这个结构体包含以下成员变量："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50042
+msgid "`int axis`：整数类型的变量，表示轴。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50043
+msgid "`String name`：字符串类型的变量，表示名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50044
+msgid "`Array<PrimExpr> padding`：`PrimExpr` 类型的数组，表示输入的填充。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50045
+msgid ""
+"`TypedEnvFunc<int(int)> func`：类型为 `TypedEnvFunc<int(int)>` "
+"的函数对象，表示一些随机的环境函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:50047
+#, python-brace-format
+msgid ""
+"在 `TVM_DECLARE_ATTRS` 宏中，为这些成员变量设置了默认值、边界值和描述信息。例如，`axis` 字段的默认值为 "
+"`10`，下界为 `1`，上界为 `10`；`name` 字段没有设置默认值，也没有描述信息；`padding` 字段的默认值为 `{0, "
+"0}`；`func` 字段的默认值为 `nullptr`，并描述了这是随机的环境函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:90002
+msgid "`DictAttrs` 和 `DictAttrsNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:100113
+msgid "这段代码定义了两个类：`DictAttrsNode` 和 `DictAttrs`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:100115
+msgid ""
+"`DictAttrsNode` 是特殊的属性类型，它由映射（map）支持。这个映射的键是字符串，值是对象引用（ObjectRef）。这个类实现了 "
+"`BaseAttrsNode` 的属性行为，它的字段可以直接通过 `object.field_name` 访问，就像其他普通的节点一样。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:100117
+msgid ""
+"`DictAttrs` 是管理 `DictAttrsNode` "
+"引用的类。它有构造函数，接受映射作为参数，这个映射就是属性。此外，它还提供了一些实用的方法来访问这些属性。例如，`GetAttr` "
+"方法可以获取特定的属性，如果该属性不存在，则返回默认值。`HasNonzeroAttr` 方法可以检查特定的属性是否存在并且其值是否不为零。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:100119
+msgid "总的来说，这段代码提供了灵活的方式来存储和管理属性，特别是那些需要动态访问的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:120002
+msgid "`AttrsWithDefaultValues` 和 `WithAttr`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:120061
+msgid "这段代码主要包含两个模板函数：`AttrsWithDefaultValues` 和 `WithAttr`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:120063
+msgid ""
+"`AttrsWithDefaultValues` 函数用于创建具有默认值的 `TAttrs` 对象。它首先检查传入的类型是否为 `Attrs` "
+"的子类，然后创建新的 `TAttrs::ContainerType` 对象，并使用 `InitByPackedArgs` "
+"方法初始化其属性。最后，返回包含这些属性的新 `TAttrs` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:120064
+msgid ""
+"`WithAttr` 函数用于复制函数或模块，并覆盖其属性值键与值。它接受三个参数：要注释的对象（`BaseFunc` 或 "
+"`IRModule`）、属性键和属性值。函数首先确保操作的是叶子节点，然后对输入进行写时复制。接下来，如果节点已经定义了属性，它将在属性字典中设置新的键值对；否则，它将创建一个新的属性字典并将其设置为节点的属性。最后，返回输入对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:120066
+msgid "这两个函数都使用了 C++ 的模板编程特性，允许它们处理不同类型的对象和属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:130002
+msgid "`WithAttrs` 和 `WithoutAttr`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:130071
+msgid "这段代码定义了两个模板函数：`WithAttrs` 和 `WithoutAttr`。这两个函数都用于处理函数或模块的属性，但它们的操作方式有所不同。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:130073
+msgid ""
+"`WithAttrs` 函数接受输入参数 `input` 和属性映射 `attrs`，然后将这些属性添加到 `input` 中。如果 "
+"`input` 已经定义了属性，那么它会遍历 `attrs` 中的每个键值对，并将它们添加到 `input` 的属性字典中。如果 `input` "
+"没有定义属性，那么它会创建一个新的属性字典，并将 `attrs` 中的所有键值对添加到这个新的字典中。最后，函数返回更新后的 `input`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:130075
+msgid ""
+"`WithoutAttr`函数接受输入参数 `input` 和属性键 `attr_key`，然后从 `input` 中删除指定的属性。如果 "
+"`input` 已经定义了属性，那么它会复制 `input`，然后在复制的属性字典中删除指定的键。如果删除后的属性字典为空，那么它会将 "
+"`input` 的属性设置为 `NullValue<DictAttrs>`。最后，函数返回更新后的 `input`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:130077
+msgid "这两个函数都使用了 C++ 的模板编程特性，允许它们处理不同类型的对象和属性。同时，它们都使用了写时复制（CopyOnWrite）优化，以提高性能。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140002
+msgid "属性实现细节"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140004
+msgid "`AttrNopEntry`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140027
+msgid ""
+"`AttrNopEntry` 结构体，它没有在 `set_default`、`bound` 和 `describe` "
+"方法中执行任何操作。这个结构体主要用于作为占位符，当需要实现这些方法但不需要实际功能时使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140029
+msgid "`AttrNopEntry` 结构体包含以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140031
+msgid ""
+"`describe`：接受 `const char*` 类型的参数 `str`，并返回 `TSelf&` "
+"类型的引用。这个方法什么都不做，直接返回当前对象的引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140032
+msgid ""
+"`set_default`：接受泛型类型 `T` 的参数 `value`，并返回 `TSelf&` "
+"类型的引用。这个方法什么都不做，直接返回当前对象的引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140033
+msgid ""
+"`set_lower_bound`：接受泛型类型 `T` 的参数 `begin`，并返回 `TSelf&` "
+"类型的引用。这个方法什么都不做，直接返回当前对象的引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140034
+msgid ""
+"`set_upper_bound`：接受泛型类型 `T` 的参数 `end`，并返回 `TSelf&` "
+"类型的引用。这个方法什么都不做，直接返回当前对象的引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140036
+msgid "这个结构体的主要作用是提供空操作的占位符，以便在需要实现这些方法但不需要实际功能的情况下使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140038
+msgid "`AttrNormalVisitor`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140056
+msgid ""
+"这段代码定义了名为 `AttrNormalVisitor` "
+"的类，它是对普通访问者（`AttrVisitor`）的包装。这个类的主要目的是在不改变原有访问者接口的情况下，为其添加一些额外的功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140058
+msgid ""
+"`AttrNormalVisitor` 类有构造函数，接受指向 `AttrVisitor` 对象的指针作为参数，并将其存储在私有成员变量 "
+"`visitor_` 中。这样，`AttrNormalVisitor` 对象就可以通过调用 `visitor_` 来访问原始的访问者对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140060
+msgid ""
+"此外，`AttrNormalVisitor` 类还重载了 `operator()`，使其可以像函数一样被调用。这个重载版本的 "
+"`operator()` 接受两个模板参数：`const char*` 类型的键和泛型类型 `T` 的值。在函数体中，它首先调用 "
+"`visitor_->Visit(key, value)`，将键和值传递给原始的访问者对象。然后，它返回 `AttrNopEntry` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140062
+msgid "总之，这段代码定义了 `AttrNormalVisitor` 类，用于包装普通的访问者对象，并为其添加一些额外的功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140064
+msgid "`AttrsSEqualVisitor` 和 `AttrsSHashVisitor`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140106
+msgid ""
+"`AttrsSEqualVisitor` 类用于比较两个对象（`lhs_` 和 `rhs_`）的属性是否相等。它接受 `Object` "
+"指针作为左操作数，`Object` 指针作为右操作数，以及 `SEqualReducer` "
+"对象来执行实际的比较操作。在构造函数中，它将这三个参数存储为私有成员变量。然后，它重载了 `operator()` "
+"函数，该函数接受一个键和一个值，并使用 `SEqualReducer` 对象来比较这两个值。如果它们不相等，`result_` "
+"成员变量将被设置为`false`。最后，`operator()` 函数返回 `AttrNopEntry` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:140108
+msgid ""
+"`AttrsSHashVisitor` 类用于计算对象的哈希值。它接受 `SHashReducer` "
+"对象作为参数，并在构造函数中将其存储为私有成员变量。然后，它重载了 `operator()` 函数，该函数接受一个键和一个值，并使用 "
+"`SHashReducer` 对象来计算这个值的哈希值。最后，`operator()` 函数返回 `AttrNopEntry` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:160002
+msgid "`AttrInitEntry`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170002
+msgid "这段代码定义了模板结构体 `AttrInitEntry`，用于初始化和设置属性的默认值。这个结构体包含以下成员："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170004
+msgid "`type_key_`：类型键，用于标识属性的类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170005
+msgid "`key_`：字段名，用于标识属性的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170006
+msgid "`value_`：内部值，指向属性的值的指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170007
+msgid ""
+"`value_missing_`：一个布尔值，表示属性值是否缺失。在构造函数中初始化为 "
+"`false`，表示属性值已经存在。如果在析构时仍然缺失，则抛出异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170009
+msgid "结构体还提供了以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170011
+msgid "构造函数：接受 `AttrInitEntry` 对象作为右值引用，将其他对象的属性复制到当前对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170012
+msgid "拷贝构造函数：实现深拷贝，避免意外抛出异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170013
+msgid "析构函数：在析构时检查 `value_missing_` 是否为 `true`，如果是，则抛出异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170014
+msgid "`set_lower_bound()`：设置属性的下界，如果属性值小于下界，则抛出异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170015
+msgid "`set_upper_bound()`：设置属性的上界，如果属性值大于上界，则抛出异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170016
+msgid "`set_default()`：设置属性的默认值，如果属性值缺失，则设置为给定的默认值。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:170017
+msgid "`describe()`：一个虚函数，用于描述属性。在这个实现中，它什么都不做，直接返回 `*this`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:180002
+msgid "`SetValue` 和 `SetIntValue`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:180004
+msgid ""
+"这段代码是 C++ 模板函数的实现，用于将不同类型的 `TVMArgValue` 对象转换为其他类型的值。这些转换包括从 `Expr` "
+"类型到常量、从 `int` 类型到 `DataType` 类型、从 `std::string` 类型到字符串等。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:180006
+msgid ""
+"`SetValue` 函数是一个通用模板函数，用于将 `TVMArgValue` 对象转换为指定类型的指针所指向的值。它首先尝试使用 "
+"`operator T()` 进行转换，如果失败则尝试使用 `static_cast<T>()` 进行转换。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:180008
+msgid ""
+"`SetIntValue` 函数是专门用于处理整数类型的函数。它首先检查 `val` 的类型是否为 "
+"`kDLInt`，如果是，则直接将其转换为`T`类型并赋值给指针；否则，它会创建 `IntImm` 表达式，并将其值转换为 `T` "
+"类型后赋值给指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:180010
+msgid ""
+"接下来的几个模板特化函数是对特定类型的特殊处理。例如，对于 `DataType` 和 `std::string` 类型，它们分别使用 "
+"`operator DataType()` 和 `operator std::string()` 进行转换。对于 `double` "
+"类型，它首先检查 `val` 的类型是否为 `kDLFloat` 或 `kDLInt`，如果是，则直接将其转换为 `double` "
+"类型并赋值给指针；否则，它会创建 `ObjectRef` 表达式，并根据表达式的类型选择相应的转换方式。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:180012
+msgid "最后，对于 `int`、`int64_t`、`uint64_t` 和 `bool`类型，它们都调用了 `SetIntValue` 函数进行处理。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190002
+msgid "`AttrInitVisitor`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190048
+msgid "这段代码定义了一个名为 `AttrInitVisitor` 的模板类，用于在访问过程中初始化值。该类接受一个类型参数`FFind`，并包含以下成员："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190050
+msgid "`hit_count_`：匹配属性的数量计数器，用于判断是否有未匹配的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190051
+msgid "构造函数：接受一个类型键（`type_key`）和一个查找函数（`ffind`），并将它们分别赋值给成员变量`type_key_`和`ffind_`。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190052
+msgid "重载的调用运算符`operator()`：接受一个键（`key`）和一个指向值的指针（`value`），并返回一个`AttrInitEntry<T>`类型的对象。在这个函数中，首先创建一个`TVMArgValue`类型的变量`val`和一个`AttrInitEntry<T>`类型的变量`opt`。然后，将`type_key_`、`key`和`value`分别赋值给`opt`的成员变量。接下来，使用`ffind_`函数查找键对应的值，如果找到了，就调用`SetValue`函数设置值，并将`opt.value_missing_`设置为`false`，同时增加`hit_count_`的值；如果没有找到，就将`opt.value_missing_`设置为`true`。最后，返回移动后的`opt`对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190053
+msgid "私有成员变量：`type_key_`和`ffind_`，分别表示类型键和查找函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190055
+msgid ""
+"此外，还定义了一个名为 `CreateInitVisitor` 的内联函数，用于创建 `AttrInitVisitor` "
+"对象。这个函数接受一个类型键（`type_key`）和一个查找函数（`ffind`），并返回一个`AttrInitVisitor<FFind>`类型的对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190057
+msgid "其他属性模板函数"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190059
+msgid "这段代码定义了一些模板类和函数，用于处理不同类型的属性文档。以下是对每个部分的简要解释："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190061
+msgid ""
+"`TypeName` 结构体模板：这个模板用于获取已知于 tvm 的类型名称。它接受一个类型参数 T，并返回一个指向常量字符指针的静态成员变量 "
+"value。对于一些特定的类型（如 int、int64_t、uint64_t、DataType、std::string、bool、void* 和 "
+"double），已经为它们提供了特化版本。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190063
+msgid ""
+"`AttrDocEntry` 类：这个类表示属性文档条目。它有一个构造函数，接受一个 ObjectPtr<AttrFieldInfoNode> "
+"类型的参数 info，并将其存储在私有成员变量 info_ 中。此外，它还提供了一些方法，如 "
+"describe、set_default、set_lower_bound 和 set_upper_bound，用于设置属性文档条目的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190065
+msgid ""
+"`AttrDocVisitor` 类：这个类是一个访问者模式的实现，用于遍历属性文档条目。它有一个模板方法 "
+"operator()，接受一个键和一个值，然后创建一个 AttrFieldInfoNode 对象，并将其添加到 fields_ "
+"数组中。最后，它返回一个 AttrDocEntry 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190067
+msgid ""
+"`AttrExistVisitor` 类：这个类也实现了访问者模式，用于检查属性是否存在。它有一个模板方法 "
+"operator()，接受一个键和一个值，然后检查 key 是否等于已存在的键。如果找到匹配的键，它将 exist_ 设置为 true。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190069
+msgid ""
+"`AttrTriggerNonDefaultEntry` 结构体模板：这个模板用于触发非默认属性的访问。它接受一个 AttrVisitor "
+"指针、一个键和一个数据指针作为参数。当触发器为 true 时，它会调用 visitor_ 的 Visit 方法。此外，它还提供了一些方法，如 "
+"describe、set_default、set_lower_bound 和 set_upper_bound，用于设置属性文档条目的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:190071
+msgid ""
+"`AttrNonDefaultVisitor` 类：这个类是 `AttrTriggerNonDefaultEntry` "
+"的一个特化版本，用于非默认属性的访问。它接受一个 AttrVisitor 指针作为参数，并在调用操作符 () 时返回一个 "
+"AttrTriggerNonDefaultEntry 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200002
+msgid "`AttrsNode` 和 `BaseAttrsNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200004
+msgid ""
+"这段代码定义了一个名为 `AttrsNode` "
+"的模板类，它是所有属性节点的基类。这个类使用了一种被称为“递归模板模式”的技巧，通过模板参数`DerivedType`来表示最终的属性类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200006
+msgid "`AttrsNode`类提供了以下方法："
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200008
+msgid "`VisitAttrs(AttrVisitor* v)`：访问属性并调用相应的访问者函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200009
+msgid "`VisitNonDefaultAttrs(AttrVisitor* v)`：访问非默认属性并调用相应的访问者函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200010
+msgid ""
+"`InitByPackedArgs(const runtime::TVMArgs& args, bool "
+"allow_unknown)`：通过打包的参数初始化属性。它首先检查参数的数量是否为偶数，然后根据参数数量选择线性搜索或构造映射进行查找。如果允许未知属性且未找到匹配项，则抛出异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200011
+msgid ""
+"`SEqualReduce(const DerivedType* other, SEqualReducer equal) "
+"const`：使用给定的相等比较器对当前对象和另一个派生类型的对象进行相等性比较。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200012
+msgid "`SHashReduce(SHashReducer hash_reducer) const`：使用给定的哈希减少器对当前对象的哈希值进行计算。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200013
+msgid "`ListFieldInfo() const final`：列出当前对象的所有属性字段信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200014
+msgid "`PrintDocString(std::ostream& os) const`：将当前对象的属性文档字符串打印到输出流中。"
+msgstr ""
+
+#: ../../doc/old/old/read/attrs/ir-attrs.ipynb:200016
+msgid ""
+"此外，还提供了一个名为 `BaseAttrsNode` "
+"的友元类，它提供了两个静态方法`InitBySeq`和`PrintDocString`。`InitBySeq`方法接受一系列参数，并将它们传递给`InitByPackedArgs`方法进行初始化。`PrintDocString`方法用于打印当前对象的属性文档字符串。"
+msgstr ""
+
+#~ msgid ""
+#~ "`AttrsWithDefaultValues` 函数用于创建具有默认值的 `TAttrs` "
+#~ "对象。它首先检查传入的类型是否为 `Attrs` 的子类，然后创建新的 "
+#~ "`TAttrs::ContainerType` 对象，并使用 `InitByPackedArgs` "
+#~ "方法初始化其属性。最后，返回包含这些属性的新 `TAttrs` 对象。\\"
+#~ msgstr ""
+

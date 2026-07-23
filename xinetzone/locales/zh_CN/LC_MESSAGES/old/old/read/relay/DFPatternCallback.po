@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:10002
+#, python-brace-format
+msgid "解读 {class}`~tvm.relay.dataflow_pattern.DFPatternCallback`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:30002
+msgid "`DFPatternCallbackNode` 类，它是所有数据流模式回调的基础类型。这个类继承自 `Object` 类。它包含以下成员变量："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:30004
+msgid "`DFPattern pattern`：匹配的模式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:30005
+msgid ""
+"`PackedFunc function`：找到匹配表达式时要调用的函数。 3.` bool require_type`：在回调之前是否需要运行 "
+"`InferType`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:30007
+msgid "`bool rewrite_once`：是否只运行一次回调。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:30009
+msgid ""
+"此外，这个类还包含名为 `VisitAttrs` 的成员函数，用于访问这些属性。最后，它还定义了静态常量字符串 "
+"`_type_key`，用于表示这个类的类型，以及 `TVM_DECLARE_BASE_OBJECT_INFO` 宏，用于声明这个类的信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:70002
+msgid ""
+"当在 `DFPatternCallback` 上调用 `rewrite` "
+"时，后端将找到与模式匹配的部分，调用回调函数，并将匹配的表达式替换为回调返回的内容。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:70004
+msgid "用户需要继承这个类并提供 `\"self.pattern\"` 来匹配。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:70006
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80004
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:70007
+msgid "`require_type`: `bool` 类型，表示是否需要在回调之前运行 `InferType`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:70008
+msgid "`rewrite_once`: `bool` 类型，如果为 `True`，则只运行一次回调。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80002
+#, python-brace-format
+msgid ""
+"{func}`~tvm.relay.dataflow_pattern.DFPatternCallback.callback` "
+"函数，用于在找到模式匹配时使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80005
+msgid "`pre`: `tvm.relay.Expr` 类型，表示原始图中的匹配表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80006
+msgid "`post`: `tvm.relay.Expr` 类型，表示重写输入后的匹配表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80007
+msgid ""
+"`node_map`: `tvm.ir.container.Map[DFPattern, List[Expr]]` "
+"类型，表示模式和匹配表达式之间的映射关系。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80009
+msgid "返回值："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/DFPatternCallback.ipynb:80010
+msgid "`result`: `tvm.relay.Expr` 类型，表示通过回调重写匹配子图的表达式。"
+msgstr ""
+

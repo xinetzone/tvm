@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:10002
+msgid "升级 TF1 为 TF2"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:40002
+msgid "检查点迁移"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:40004
+msgid "定义辅助函数："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:60002
+msgid "先看 TF1 的例子："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:80002
+msgid "TF2 的例子："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:100003
+msgid "基于名称的检查点中的键是变量的名称。基于对象的检查点中的键指向从根对象到变量的路径。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:100006
+msgid "查看 `tf2-ckpt` 中的键，可以看出它们全部指向每个变量的对象路径。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:100008
+msgid "仔细研究下面的打印信息："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:120002
+msgid "尝试使用下面的代码段，看看检查点键如何随对象结构变化："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:140002
+msgid "下面是对不同模型使用相同检查点的示例。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:140004
+msgid "使用 `tf1.train.Saver` 保存 TF1 检查点："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:160002
+msgid "使用 `tf.compat.v1.Saver` 在 Eager 模式下加载检查点："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:180002
+msgid "使用 TF2 API `tf.train.Checkpoint` 加载检查点："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:200002
+msgid "SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:220002
+msgid "定义简单运算："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:240002
+msgid "TensorFlow 1：保存和导出 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:240004
+msgid ""
+"在 TensorFlow 1 中，使用 "
+"`tf.compat.v1.saved_model.Builder`、`tf.compat.v1.saved_model.simple_save`"
+" 和 `tf.estimator.Estimator.export_saved_model` API 来构建、保存及导出 TensorFlow "
+"计算图和会话。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:240006
+msgid "使用 SavedModelBuilder 将计算图保存为 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:260002
+msgid "为应用构建 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:280002
+msgid "TensorFlow 2：保存和导出 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:280004
+msgid "保存并导出使用 `tf.Module` 定义的 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:280006
+msgid ""
+"要在 TensorFlow 2 中导出模型，必须定义 `tf.Module` 或 `tf.keras.Model` "
+"来保存模型的所有变量和函数。随后，可以调用 `tf.saved_model.save` 来创建 SavedModel。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:300002
+msgid "保存并导出使用 Keras 定义的 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:300004
+msgid ""
+"用于保存和导出的 Keras API（`Model.save` 或 `tf.keras.models.save_model`）可以从 "
+"`tf.keras.Model` 导出 SavedModel。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:320002
+msgid "加载 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:320004
+msgid "TensorFlow 1：使用 `tf.saved_model.load` 加载 SavedModel"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:320006
+msgid ""
+"在 TensorFlow 1 中，可以使用 `tf.saved_model.load` 将 SavedModel "
+"直接导入当前计算图和会话。可以在张量输入和输出名称上调用 `Session.run`："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:340002
+msgid "TensorFlow 2：加载使用 tf.saved_model 保存的模型"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf1-tf2.ipynb:340004
+msgid "在 TensorFlow 2 中，对象会加载到存储变量和函数的 Python 对象中。这与从 TensorFlow 1 保存的模型兼容。"
+msgstr ""
+

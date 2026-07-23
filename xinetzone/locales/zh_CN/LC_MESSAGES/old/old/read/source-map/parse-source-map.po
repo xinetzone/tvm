@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:10002
+msgid "源码映射"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:10004
+msgid ""
+"`tvm/include/tvm/ir/source_map.h` "
+"定义从源名称映射到源代码的映射（map）机制。这样的映射通常用于在编译过程中进行调试或生成代码的文档。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20002
+msgid "`SourceName` 和 `SourceNameNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20004
+msgid "`SourceName` 表示文件源代码名称的类。它继承自 `ObjectRef` 类，并具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20005
+msgid "`String name`：源代码的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20006
+msgid ""
+"`TVM_DLL static SourceName Get(const String& "
+"name)`：静态方法，用于根据给定的操作符名称获取对应的 `SourceName` 对象。如果该名称未注册，则会引发错误。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20008
+msgid "`SourceNameNode` 是表示源代码片段名称的节点类。它继承自 `Object` 类，并具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20009
+msgid "`String name`：源代码片段的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20010
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30010
+msgid "`void VisitAttrs(AttrVisitor* v)`：访问者方法，用于在属性访问期间处理属性访问。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20011
+msgid ""
+"`bool SEqualReduce(const SourceNameNode* other, SEqualReducer equal) "
+"const`：静态成员函数，用于比较两个 `SourceNameNode` 对象的名称是否相等。它接受一个指向另一个 "
+"`SourceNameNode` 对象的指针和一个相等性比较器作为参数，并返回一个布尔值表示比较结果。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20012
+msgid ""
+"`static constexpr const char* _type_key = "
+"\"SourceName\"`：静态常量字符指针，用于标识该类的类型键。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:20013
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SourceNameNode, Object)`：宏定义，用于声明 "
+"`SourceNameNode` 类的最终对象信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30002
+msgid "`SpanNode` 和 `Span`"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30004
+msgid "`SpanNode` 是一个用于存储前端源代码中生成节点的位置信息的类。它具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30005
+msgid "`SourceName source_name`：源文件的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30006
+msgid "`int line`：起始行号。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30007
+msgid "`int column`：起始列偏移量。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30008
+msgid "`int end_line`：结束行号。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30009
+msgid "`int end_column`：结束列偏移量。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30011
+msgid ""
+"`bool SEqualReduce(const SpanNode* other, SEqualReducer equal) "
+"const`：静态成员函数，用于比较两个 `SpanNode` 对象的位置信息是否相等。它接受一个指向另一个 `SpanNode` "
+"对象的指针和一个相等性比较器作为参数，并返回一个布尔值表示比较结果。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30012
+msgid "`static constexpr const char* _type_key = \"Span\"`：静态常量字符指针，用于标识该类的类型键。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30013
+msgid ""
+"`TVM_DECLARE_BASE_OBJECT_INFO(SpanNode, Object)`：宏定义，用于声明 `SpanNode` "
+"类的基类信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30015
+msgid "`Span`是继承自 `ObjectRef` 的类，用于表示跨度信息。它具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30016
+msgid "`SourceName source_name`：跨度所在文件的源代码名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30017
+msgid "`int line`：跨度起始行号。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30018
+msgid "`int column`：跨度起始列偏移量。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30019
+msgid "`int end_line`：跨度结束行号。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30020
+msgid "`int end_column`：跨度结束列偏移量。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30021
+msgid ""
+"`TVM_DLL Span(SourceName source_name, int line, int end_line, int column,"
+" int end_column)`：构造函数，用于创建一个指定位置信息的 `Span` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30022
+msgid ""
+"`TVM_DLL Span Merge(const Span& other) "
+"const`：合并两个跨度对象，将它们合并为一个跨度对象，以捕获组合后的区域。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:30023
+msgid ""
+"`TVM_DEFINE_OBJECT_REF_METHODS(Span, ObjectRef, SpanNode)`：宏定义，用于声明 "
+"`Span` 类的基类信息以及对象引用的方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40002
+msgid "`SequentialSpanNode` 和 `SequentialSpan`"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40004
+msgid "`SequentialSpanNode` 是一个用于存储多个源表达式生成的表达式跨度列表的类。它具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40005
+msgid "`Array<Span> spans`：原始源跨度列表，用于构建顺序跨度。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40006
+msgid ""
+"`void VisitAttrs(AttrVisitor* v)`：访问者方法，用于在属性访问期间处理属性访问。它调用基类的 "
+"`VisitAttrs` 方法，并访问 `spans` 属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40007
+msgid ""
+"`static constexpr const char* _type_key = "
+"\"SequentialSpan\"`：静态常量字符指针，用于标识该类的类型键。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40008
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SequentialSpanNode, SpanNode)`：宏定义，用于声明 "
+"`SequentialSpanNode` 类的最终对象信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40009
+msgid ""
+"`bool SEqualReduce(const SequentialSpanNode* other, SEqualReducer equal) "
+"const`：静态成员函数，用于比较两个 `SequentialSpanNode` "
+"对象的顺序跨度是否相等。它首先检查两个对象的跨度列表大小是否相同，如果不同则返回 "
+"`false`。然后逐个比较每个跨度是否相等，如果有不相等的跨度则返回 `false`，否则返回 `true`。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40011
+msgid "`SequentialSpan` 是一个引用类，属于 `SequentialSpanNode`。它具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40012
+msgid ""
+"`TVM_DLL SequentialSpan(Array<Span> "
+"spans)`：构造函数，接受一个跨度列表作为参数，用于创建一个顺序跨度对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40013
+msgid ""
+"`TVM_DLL SequentialSpan(std::initializer_list<Span> "
+"init)`：构造函数，接受一个初始化器列表作为参数，用于创建一个顺序跨度对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:40014
+msgid ""
+"`TVM_DEFINE_OBJECT_REF_METHODS(SequentialSpan, Span, "
+"SequentialSpanNode)`：宏定义，用于声明 `SequentialSpan` 类的基类信息以及对象引用的方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50002
+msgid "`SourceNode` 和 `Source`"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50004
+msgid ""
+"`SourceNode` 表示一个程序源代码，可以代表来自 ML 框架的源代码或表示 `tvm::IRModule` 的源代码。它继承自 "
+"`Object` 类，具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50005
+msgid "`source_name`：源代码的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50006
+msgid "`source`：原始源代码。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50007
+msgid "`line_map`：将换行符映射到原始源代码的列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50008
+msgid ""
+"`VisitAttrs(AttrVisitor* v)`：访问者方法，用于处理属性访问。它调用基类的 `VisitAttrs` 方法，并访问 "
+"`source_name` 和 `source` 属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50009
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60008
+msgid "`_type_key`：静态常量字符指针，用于标识该类的类型键。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50010
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SourceNode, Object)`：宏定义，用于声明 `SourceNode`"
+" 类的最终对象信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50012
+msgid "`Source`类表示一个程序源代码的引用，继承自 `ObjectRef` 类。它具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50013
+msgid ""
+"`Source(SourceName src_name, std::string source)`：构造函数，接受 `SourceName` "
+"对象和字符串作为参数，用于创建 `Source` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50014
+msgid "`tvm::String GetLine(int line)`：方法，接受整数作为行号，返回对应行的源代码字符串。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50015
+msgid ""
+"`TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS(Source, ObjectRef, "
+"SourceNode)`：宏定义，用于声明 `Source` 类的可空对象引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:50017
+msgid "这些类可以用于表示和操作不同编程语言的程序源代码。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60002
+msgid "`SourceMapNode` 和 `SourceMap`"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60004
+msgid "`SourceMapNode` 表示从唯一源名称映射到源片段的节点。它继承自 `Object` 类，具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60005
+msgid "`source_map`：源映射，使用 `Map<SourceName, Source>` 类型表示。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60006
+msgid ""
+"`VisitAttrs(AttrVisitor* v)`：访问者方法，用于处理属性访问。它调用基类的 `VisitAttrs` 方法，并访问 "
+"`source_map` 属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60007
+msgid ""
+"`SEqualReduce(const SourceMapNode* other, SEqualReducer equal) "
+"const`：静态成员函数，用于比较两个 `SourceMapNode` 对象的源映射是否相等。它接受一个指向另一个 "
+"`SourceMapNode` 对象的指针和一个相等性比较器作为参数，并返回比较结果。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60009
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SourceMapNode, Object)`：宏定义，用于声明 "
+"`SourceMapNode` 类的最终对象信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60011
+msgid "`SourceMap`类表示一个源映射，用于存储前端源代码中生成节点的位置信息。它继承自 `ObjectRef` 类，具有以下成员变量和方法："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60012
+msgid "构造函数："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60013
+msgid ""
+"`SourceMap(Map<SourceName, Source> source_map)`：接受 `Map<SourceName, "
+"Source>` 类型的源映射作为参数，用于创建 `SourceMap` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60014
+msgid ""
+"`SourceMap(std::initializer_list<std::pair<SourceName, Source>> "
+"source_map)`：接受一个包含源名称和源片段的初始化器列表作为参数，用于创建 `SourceMap` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60015
+msgid "`SourceMap()`：无参构造函数，使用空的源映射创建一个`SourceMap`对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60016
+msgid "`Add(const Source& source)`：方法，用于向源映射中添加一个源片段。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60017
+msgid "`operator->()`：重载箭头操作符，返回一个指向`SourceMapNode`对象的指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60018
+msgid ""
+"`TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS(SourceMap, ObjectRef, "
+"SourceMapNode)`：宏定义，用于声明 `SourceMap` 类的可空对象引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/parse-source-map.ipynb:60020
+msgid "这些类可以用于在计算图的前端源代码中建立源名称与源片段之间的映射关系，以便进行优化和转换等操作。"
+msgstr ""
+

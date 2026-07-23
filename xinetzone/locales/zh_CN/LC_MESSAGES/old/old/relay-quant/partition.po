@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:10002
+msgid "量化分区"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:20002
+msgid "构建 PyTorch 前端模型："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:40002
+msgid "翻译 PyTorch 前端模型为 Relay 模型："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:70002
+msgid "调用分区 pass："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:90002
+msgid "为了展示分区的效果，将 TVM 默认注册的属性函数清除："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:110002
+msgid "此时调用分区 pass，则有："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:130002
+msgid "下面看看如何从算子层面考虑对模型进行分区。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:160002
+#, python-brace-format
+msgid "{func}`register_partition_function` 为算子注册 `\"FQPartitionRewrite\"` 属性。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:180002
+#, python-brace-format
+msgid "{func}`partition_expr_check` 用于检查 `expr` 是否为 `QPartitionExpr`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:200002
+#, python-brace-format
+msgid "{func}`_forward_op` 用于重写回调函数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:210002
+msgid "`nn.relu` 和 `nn.max_pool2d` 分区"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:220002
+msgid "对 `nn.relu` 进行分区，可以："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:250002
+msgid "也可以对 `nn.max_pool2d` 执行同样的操作："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:280002
+#, python-brace-format
+msgid ""
+"{func}`_max_pool2d_partition` 和 {func}`_relu_partition` "
+"本质上是同样的功能实现，可以将它们合并为一个函数："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:300002
+msgid "可以看出 `nn.max_pool2d` + `nn.relu` 实现了融合："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/partition.ipynb:320002
+msgid "`dense+add+relu` 分区"
+msgstr ""
+

@@ -1,0 +1,490 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-31 14:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../doc/docs/reference/api/python/instrument.rst:19
+msgid "tvm.ir.instrument"
+msgstr ""
+
+#: of tvm.ir.instrument:1
+msgid "Common pass instrumentation across IR variants."
+msgstr ""
+
+#: of tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid "Dump the IR after the pass runs."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument:1
+msgid "A pass instrument implementation."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument:3
+msgid ""
+"To use, a user class can either subclass from PassInstrument directly, or"
+" can apply the :py:func:`pass_instrument` wrapper.  In either case, the "
+"`enter_pass_ctx`, `exit_pass_ctx`, `should_run`, `run_before_pass`, and "
+"`run_after_pass` methods can be defined to adjust the instrument's "
+"behavior.  See the no-op implementations in this class definition for "
+"more information on each."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.enter_pass_ctx:1
+msgid "Called when entering the instrumented context."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/instrument.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.exit_pass_ctx:1
+msgid "Called when exiting the instrumented context."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.run_after_pass:1
+msgid "Instrument after the pass runs."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.run_after_pass:3
+#: tvm.ir.instrument.PassInstrument.run_before_pass:3
+#: tvm.ir.instrument.PassInstrument.should_run:3
+msgid ""
+"Called once for each pass that is run while the instrumented context is "
+"active."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/instrument.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.run_after_pass:6
+#: tvm.ir.instrument.PassInstrument.run_before_pass:6
+#: tvm.ir.instrument.PassInstrument.should_run:6
+msgid "The module on which an optimization pass is being run."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.run_after_pass:8
+#: tvm.ir.instrument.PassInstrument.run_before_pass:8
+#: tvm.ir.instrument.PassInstrument.should_run:8
+msgid "The pass information."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.run_before_pass:1
+msgid "Instrument before the pass runs."
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.should_run:1
+msgid "Determine whether to run the pass or not."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/instrument.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.ir.instrument.PassInstrument.should_run:11
+msgid "**should_run** -- True to run the pass, or False to skip the pass."
+msgstr ""
+
+#: of tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid ""
+"A pass instrument to print if before or print ir after each element of a "
+"named pass."
+msgstr ""
+
+#: of tvm.ir.instrument.PassTimingInstrument:1
+msgid "A wrapper to create a passes time instrument that implemented in C++"
+msgstr ""
+
+#: of tvm.ir.instrument.PassTimingInstrument.render:1
+msgid ""
+"Retrieve rendered time profile result :returns: **string** -- The "
+"rendered string result of time profiles :rtype: string"
+msgstr ""
+
+#: of tvm.ir.instrument.PassTimingInstrument.render:6
+#: tvm.ir.instrument.pass_instrument:7
+msgid "示例"
+msgstr ""
+
+#: of pathlib.Path:1
+msgid "PurePath subclass that can make system calls."
+msgstr ""
+
+#: of pathlib.Path:3
+msgid ""
+"Path represents a filesystem path but unlike PurePath, also offers "
+"methods to do system calls on path objects. Depending on your system, "
+"instantiating a Path will return either a PosixPath or a WindowsPath "
+"object. You can also instantiate a PosixPath or WindowsPath directly, but"
+" cannot instantiate a WindowsPath on a POSIX system or vice versa."
+msgstr ""
+
+#: of pathlib.Path.absolute:1
+msgid ""
+"Return an absolute version of this path No normalization or symlink "
+"resolution is performed."
+msgstr ""
+
+#: of pathlib.Path.absolute:4
+msgid "Use resolve() to resolve symlinks and remove '..' segments."
+msgstr ""
+
+#: of pathlib.Path.as_uri:1
+msgid "Return the path as a URI."
+msgstr ""
+
+#: of pathlib.Path.chmod:1
+msgid "Change the permissions of the path, like os.chmod()."
+msgstr ""
+
+#: of pathlib.Path.copy:1
+msgid "Recursively copy this file or directory tree to the given destination."
+msgstr ""
+
+#: of pathlib.Path.copy_into:1
+msgid "Copy this file or directory tree into the given existing directory."
+msgstr ""
+
+#: of pathlib.Path.cwd:1
+msgid "Return a new path pointing to the current working directory."
+msgstr ""
+
+#: of pathlib.Path.exists:1
+msgid "Whether this path exists."
+msgstr ""
+
+#: of pathlib.Path.exists:3
+msgid ""
+"This method normally follows symlinks; to check whether a symlink exists,"
+" add the argument follow_symlinks=False."
+msgstr ""
+
+#: of pathlib.Path.expanduser:1
+msgid ""
+"Return a new path with expanded ~ and ~user constructs (as returned by "
+"os.path.expanduser)"
+msgstr ""
+
+#: of pathlib.Path.from_uri:1
+msgid "Return a new path from the given 'file' URI."
+msgstr ""
+
+#: of pathlib.Path.glob:1
+msgid ""
+"Iterate over this subtree and yield all existing files (of any kind, "
+"including directories) matching the given relative pattern."
+msgstr ""
+
+#: of pathlib.Path.group:1
+msgid "Return the group name of the file gid."
+msgstr ""
+
+#: of pathlib.Path.hardlink_to:1
+msgid "Make this path a hard link pointing to the same file as *target*."
+msgstr ""
+
+#: of pathlib.Path.hardlink_to:3
+msgid "Note the order of arguments (self, target) is the reverse of os.link's."
+msgstr ""
+
+#: of pathlib.Path.home:1
+msgid "Return a new path pointing to expanduser('~')."
+msgstr ""
+
+#: of tvm.ir.instrument.Path.info:1
+msgid ""
+"A PathInfo object that exposes the file type and other file attributes of"
+" this path."
+msgstr ""
+
+#: of pathlib.Path.is_block_device:1
+msgid "Whether this path is a block device."
+msgstr ""
+
+#: of pathlib.Path.is_char_device:1
+msgid "Whether this path is a character device."
+msgstr ""
+
+#: of pathlib.Path.is_dir:1
+msgid "Whether this path is a directory."
+msgstr ""
+
+#: of pathlib.Path.is_fifo:1
+msgid "Whether this path is a FIFO."
+msgstr ""
+
+#: of pathlib.Path.is_file:1
+msgid ""
+"Whether this path is a regular file (also True for symlinks pointing to "
+"regular files)."
+msgstr ""
+
+#: of pathlib.Path.is_junction:1
+msgid "Whether this path is a junction."
+msgstr ""
+
+#: of pathlib.Path.is_mount:1
+msgid "Check if this path is a mount point"
+msgstr ""
+
+#: of pathlib.Path.is_socket:1
+msgid "Whether this path is a socket."
+msgstr ""
+
+#: of pathlib.Path.is_symlink:1
+msgid "Whether this path is a symbolic link."
+msgstr ""
+
+#: of pathlib.Path.iterdir:1
+msgid "Yield path objects of the directory contents."
+msgstr ""
+
+#: of pathlib.Path.iterdir:3
+msgid ""
+"The children are yielded in arbitrary order, and the special entries '.' "
+"and '..' are not included."
+msgstr ""
+
+#: of pathlib.Path.lchmod:1
+msgid ""
+"Like chmod(), except if the path points to a symlink, the symlink's "
+"permissions are changed, rather than its target's."
+msgstr ""
+
+#: of pathlib.Path.lstat:1
+msgid ""
+"Like stat(), except if the path points to a symlink, the symlink's status"
+" information is returned, rather than its target's."
+msgstr ""
+
+#: of pathlib.Path.mkdir:1
+msgid "Create a new directory at this given path."
+msgstr ""
+
+#: of pathlib.Path.move:1
+msgid "Recursively move this file or directory tree to the given destination."
+msgstr ""
+
+#: of pathlib.Path.move_into:1
+msgid "Move this file or directory tree into the given existing directory."
+msgstr ""
+
+#: of pathlib.Path.open:1
+msgid ""
+"Open the file pointed to by this path and return a file object, as the "
+"built-in open() function does."
+msgstr ""
+
+#: of pathlib.Path.owner:1
+msgid "Return the login name of the file owner."
+msgstr ""
+
+#: of pathlib.Path.read_bytes:1
+msgid "Open the file in bytes mode, read it, and close the file."
+msgstr ""
+
+#: of pathlib.Path.read_text:1
+msgid "Open the file in text mode, read it, and close the file."
+msgstr ""
+
+#: of pathlib.Path.readlink:1
+msgid "Return the path to which the symbolic link points."
+msgstr ""
+
+#: of pathlib.Path.rename:1
+msgid "Rename this path to the target path."
+msgstr ""
+
+#: of pathlib.Path.rename:3 pathlib.Path.replace:3
+msgid ""
+"The target path may be absolute or relative. Relative paths are "
+"interpreted relative to the current working directory, *not* the "
+"directory of the Path object."
+msgstr ""
+
+#: of pathlib.Path.rename:7 pathlib.Path.replace:7
+msgid "Returns the new Path instance pointing to the target path."
+msgstr ""
+
+#: of pathlib.Path.replace:1
+msgid "Rename this path to the target path, overwriting if that path exists."
+msgstr ""
+
+#: of pathlib.Path.resolve:1
+msgid ""
+"Make the path absolute, resolving all symlinks on the way and also "
+"normalizing it."
+msgstr ""
+
+#: of pathlib.Path.rglob:1
+msgid ""
+"Recursively yield all existing files (of any kind, including directories)"
+" matching the given relative pattern, anywhere in this subtree."
+msgstr ""
+
+#: of pathlib.Path.rmdir:1
+msgid "Remove this directory.  The directory must be empty."
+msgstr ""
+
+#: of pathlib.Path.samefile:1
+msgid ""
+"Return whether other_path is the same or not as this file (as returned by"
+" os.path.samefile())."
+msgstr ""
+
+#: of pathlib.Path.stat:1
+msgid ""
+"Return the result of the stat() system call on this path, like os.stat() "
+"does."
+msgstr ""
+
+#: of pathlib.Path.symlink_to:1
+msgid ""
+"Make this path a symlink pointing to the target path. Note the order of "
+"arguments (link, target) is the reverse of os.symlink."
+msgstr ""
+
+#: of pathlib.Path.touch:1
+msgid "Create this file with the given access mode, if it doesn't exist."
+msgstr ""
+
+#: of pathlib.Path.unlink:1
+msgid "Remove this file or link. If the path is a directory, use rmdir() instead."
+msgstr ""
+
+#: of pathlib.Path.walk:1
+msgid "Walk the directory tree from this directory, similar to os.walk()."
+msgstr ""
+
+#: of pathlib.Path.write_bytes:1
+msgid "Open the file in bytes mode, write to it, and close the file."
+msgstr ""
+
+#: of pathlib.Path.write_text:1
+msgid "Open the file in text mode, write to it, and close the file."
+msgstr ""
+
+#: of tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid "Print the name of the pass, the IR, only after passes execute."
+msgstr ""
+
+#: of tvm.ir.instrument._wrap_class_pass_instrument.<locals>.PyPassInstrument:1
+msgid "Print the name of the pass, the IR, only before passes execute."
+msgstr ""
+
+#: of tvm.ir.instrument.pass_instrument:1
+msgid "Decorate a pass instrument."
+msgstr ""
+
+#: of tvm.ir.instrument.pass_instrument:3
+msgid "Instrument class. See example below."
+msgstr ""
+
+#~ msgid "Common pass instrumentation across IR variants."
+#~ msgstr ""
+
+#~ msgid "A pass instrument implementation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To use, a user class can either"
+#~ " subclass from PassInstrument directly, or"
+#~ " can apply the :py:func:`pass_instrument` "
+#~ "wrapper.  In either case, the "
+#~ "`enter_pass_ctx`, `exit_pass_ctx`, `should_run`, "
+#~ "`run_before_pass`, and `run_after_pass` methods "
+#~ "can be defined to adjust the "
+#~ "instrument's behavior.  See the no-op"
+#~ " implementations in this class definition"
+#~ " for more information on each."
+#~ msgstr ""
+
+#~ msgid "Called when entering the instrumented context."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Called when exiting the instrumented context."
+#~ msgstr ""
+
+#~ msgid "Instrument after the pass runs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Called once for each pass that is"
+#~ " run while the instrumented context "
+#~ "is active."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The module on which an optimization pass is being run."
+#~ msgstr ""
+
+#~ msgid "The pass information."
+#~ msgstr ""
+
+#~ msgid "Instrument before the pass runs."
+#~ msgstr ""
+
+#~ msgid "Determine whether to run the pass or not."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "**should_run** -- True to run the pass, or False to skip the pass."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A pass instrument to print if "
+#~ "before or print ir after each "
+#~ "element of a named pass."
+#~ msgstr ""
+
+#~ msgid "A wrapper to create a passes time instrument that implemented in C++"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Retrieve rendered time profile result "
+#~ ":returns: **string** -- The rendered "
+#~ "string result of time profiles :rtype:"
+#~ " string"
+#~ msgstr ""
+
+#~ msgid "示例"
+#~ msgstr ""
+
+#~ msgid "Print the name of the pass, the IR, only after passes execute."
+#~ msgstr ""
+
+#~ msgid "Print the name of the pass, the IR, only before passes execute."
+#~ msgstr ""
+
+#~ msgid "Decorate a pass instrument."
+#~ msgstr ""
+
+#~ msgid "Instrument class. See example below."
+#~ msgstr ""
+
+#~ msgid "tvm.instrument"
+#~ msgstr ""
+

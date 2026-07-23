@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:10002
+msgid "解读  `SourceMap`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:20002
+msgid "`SourceMapNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30002
+msgid "`SourceMapNode` 继承自 `Object` 类，它表示源代码映射。该类具有以下成员变量和成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30004
+msgid "`source_map`：一个`Map<SourceName, Source>`类型的成员变量，表示源名称到源代码片段的映射。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30005
+msgid ""
+"`VisitAttrs(AttrVisitor* "
+"v)`：一个成员函数，用于访问属性。它接受一个指向`AttrVisitor`对象的指针作为参数，并调用`v->Visit(\"source_map\","
+" &source_map)`来访问`source_map`属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30006
+msgid ""
+"`SEqualReduce(const SourceMapNode* other, SEqualReducer equal) "
+"const`：一个成员函数，用于比较两个`SourceMapNode`对象是否相等。它接受一个指向另一个`SourceMapNode`对象的指针和一个`SEqualReducer`对象作为参数，并使用`equal`函数比较两个对象的`source_map`属性是否相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30007
+msgid "`_type_key`：一个静态常量字符指针，表示该类型的键。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30008
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SourceMapNode, "
+"Object)`：一个宏定义，用于声明`SourceMapNode`对象的最终信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:30010
+msgid "总体来说，这段代码定义了一个表示源代码映射的类，并提供了相应的属性访问和相等性比较功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:40002
+msgid "`SourceMap`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50002
+msgid "`SourceMap` 类继承自 `ObjectRef` 类。该类具有以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50004
+msgid ""
+"`explicit SourceMap(Map<SourceName, Source> "
+"source_map)`：一个构造函数，用于创建一个`SourceMap`对象。它接受一个`Map<SourceName, "
+"Source>`类型的参数`source_map`，表示源名称到源代码片段的映射。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50005
+msgid ""
+"`explicit SourceMap(std::initializer_list<std::pair<SourceName, Source>> "
+"source_map)`：另一个构造函数，用于创建一个`SourceMap`对象。它接受一个`std::initializer_list<std::pair<SourceName,"
+" "
+"Source>>`类型的参数`source_map`，表示源名称到源代码片段的映射。这个构造函数会将传入的初始化列表转换为`Map<SourceName,"
+" Source>`类型，并调用第一个构造函数进行创建。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50006
+msgid "`SourceMap()`：一个默认构造函数，用于创建一个空的`SourceMap`对象。它会调用第二个构造函数，传入一个空的初始化列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50007
+msgid ""
+"`Add(const Source& "
+"source)`：一个成员函数，用于向`SourceMap`中添加一个源代码片段。它接受一个指向`Source`对象的常量引用作为参数。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50008
+msgid "`operator->()`：一个重载的箭头运算符，用于获取指向`SourceMapNode`对象的指针。它首先检查当前对象是否为空，然后将当前对象转换为可变指针，并将其转换为`SourceMapNode*`类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50009
+msgid ""
+"`TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS(SourceMap, ObjectRef, "
+"SourceMapNode)`：一个宏定义，用于定义`SourceMap`对象的非空引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceMap.ipynb:50011
+msgid "总体来说，这段代码定义了一个用于表示源代码映射的类，并提供了相应的构造函数、添加源代码片段和访问映射节点的功能。"
+msgstr ""
+

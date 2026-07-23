@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10002
+#, python-brace-format
+msgid "{class}`~tvm.relay.frontend.common.AttrCvt`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10004
+#, python-brace-format
+msgid ""
+"{class}`~tvm.relay.frontend.common.AttrCvt` "
+"的类，它是通用的属性转换器。该类用于将给定的属性字典进行转换，并返回新的属性字典。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10006
+msgid "该类的构造函数接受以下参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10007
+msgid ""
+"`op_name`：算子名称，可以是字符串或可调用对象。如果是字符串，则返回的算子名称为该字符串；如果是可调用对象，则通过调用 "
+"`op_name(attr)` 来获取算子名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10008
+msgid "`transforms`：一个字典，包含要进行转换的属性名和对应的新属性名、默认值以及转换函数。如果只提供了新属性名，则相当于重命名属性名；如果提供了默认值，则该属性被视为可选；如果提供了转换函数，则使用该函数处理原始属性值。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10009
+msgid "`excludes`：一个列表，包含不应出现的被排除属性。如果出现了这些属性，则会引发 `NotImplementedError` 异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10010
+msgid "`disables`：一个列表，包含在 `relay` 中禁用的属性。会记录警告日志。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10011
+msgid "`ignores`：一个列表，包含在 `relay` 中忽略的属性。会记录调试级别的日志。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10012
+msgid "`extras`：一个字典，包含一系列要添加到返回的属性字典中的额外属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10013
+msgid ""
+"`custom_check`：一个可调用对象，接受属性作为参数，并返回 `True/False`。如果返回的不是 `True`，则会引发 "
+"`RuntimeError` 异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10015
+msgid ""
+"该类还定义了一些辅助方法，如 `__call__` 方法用于执行属性转换，`_parse_default` "
+"方法用于解析默认值，`_parse_bool` 方法用于解析布尔值，以及 `_required_attr` 方法用于获取必需的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/common/AttrConverter.ipynb:10017
+msgid "使用示例："
+msgstr ""
+

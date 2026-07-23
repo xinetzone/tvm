@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:10002
+msgid "DefuseOps"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:10004
+msgid ""
+"源码文件 `tvm/src/relay/transforms/defuse_ops.cc` 是 Relay "
+"框架中的运算，用于将融合运算（`relay::transform::FuseOps`）的结果还原为融合之前的状态。即 `x == "
+"DefuseOps(FuseOps(x))`。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:20002
+msgid ""
+"名为 `DefuseOpsMutator`，继承自 `ExprMutator`。它包含了一个嵌套的类 `FuncBodyMutator`，也继承自"
+" `ExprMutator`。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:20004
+msgid ""
+"`DefuseOpsMutator` 类有两个成员函数：`VisitExpr_(const CallNode* n)` 和 "
+"`DefuseOps(const Expr& expr)`。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:20006
+msgid ""
+"`VisitExpr_(const CallNode* n)` 函数接受指向 `CallNode` 对象的指针作为参数，并返回 `Expr` "
+"对象。在函数内部，首先调用父类 `ExprMutator` 的 `VisitExpr_` 函数来处理 `n`。然后，如果返回的对象是 "
+"`CallNode` 类型，就进一步检查其算子是否为 `FunctionNode` 类型。如果是，则创建无序的哈希表 `name_to_args`"
+" 来存储函数参数的名称和对应的表达式。接下来，遍历函数的参数列表，将每个参数的名称和对应的表达式添加到哈希表中。最后，使用 "
+"`FuncBodyMutator` 类的构造函数创建新的 `FuncBodyMutator` 对象，并将 `name_to_args` "
+"作为参数传递给它。然后调用该对象的 `Mutate` 函数，传入函数体的表达式，最终返回处理后的表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:20008
+msgid ""
+"`DefuseOps(const Expr& expr)` 函数接受 `Expr` 对象的引用作为参数，并返回 `Expr` 对象。它的作用是创建"
+" `DefuseOpsMutator` 对象，并调用其 `Mutate` 函数来处理输入的表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:40002
+#, python-brace-format
+msgid "直接调用 {class}`tvm.relay.transform.DefuseOps`："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/defuse-ops.ipynb:60002
+#, python-brace-format
+msgid "为了更好理解 {class}`tvm.relay.transform.DefuseOps` 实现功能，可以使用 Python 模拟其功能："
+msgstr ""
+

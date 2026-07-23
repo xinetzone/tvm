@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:10002
+#, python-brace-format
+msgid "解读 {func}`~tvm.relay.transform.InferTypeLocal`"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:50002
+#, python-brace-format
+msgid ""
+"{func}`~tvm.relay.transform.InferTypeLocal` 函数的作用是推断单个 `expr` "
+"的类型，并重用类型信息来实现这一点。它会填充表达式中的 `checked_type` 字段。我们假设计算图中现有的类型信息是正确的！"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:50004
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:50005
+msgid "`expr`: `relay.Expr`，我们想要知道其类型的表达式"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:50007
+msgid "返回值："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:50008
+msgid "`type`: `relay.Type`，表达式的类型"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:70002
+msgid "这个函数的作用是推断表达式的类型，并重用现有的类型信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:70004
+msgid "类型检查的结果是一个新的表达式，其中给定节点的不明确的类型信息被填充。局部版本可以使用整个表达式中填充的现有类型信息，并假设这些信息是正确的。局部版本还避免了检查大量的计算图，假设类型信息被正确填充，如果我们迭代地调用类型推断，这会使其更快。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:70006
+msgid "返回值：表达式的类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:90002
+msgid ""
+"与 `InferType` "
+"不同的是，它使用现有的类型信息来避免在计算图中递归遍历很多部分，并且只检查输入节点的类型。如果您需要在传递过程中迭代运行类型推断，这将使其更快。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:90004
+msgid ""
+"但是，它假设任何现有填充的类型推断都是正确的！如果某些填充的类型推断是错误的，可能会返回错误类型的结果或引发类型错误。如果您知道当前计算图中并非所有填充的类型字段都是正确的，则应使用"
+" `InferType()` 代替。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/InferTypeLocal.ipynb:90006
+msgid ""
+"该函数首先创建 `SameTypedSubgraphExtractor` 对象，然后使用该对象从给定的表达式中提取子图。接下来，它调用 "
+"`relay::InferType()` 函数来推断子图的类型，并将结果存储在 `result_type` 变量中。最后，它将 "
+"`result_type` 分配给 `expr` 对象的 `checked_type_` 属性，并将其作为函数的返回值返回。"
+msgstr ""
+

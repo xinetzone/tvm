@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:10002
+msgid "统一 Caffe 网络结构"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:40002
+msgid "处理 in-place 层"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:60002
+msgid ""
+"该函数用于处理 Caffe 网络中的 in-place 层，解决因输入输出绑定（in-place）导致的名称冲突问题。  "
+"具体来说，当某层的输入（`bottom`）和输出（`top`）名称相同时（即 in-place 层），需要将其 `top` "
+"改为层名称（`pl.name`），并通过映射表 `changed_top_dict` 动态更新其他层的 `bottom`，确保后续层引用正确。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:100002
+msgid "为什么需要这样的处理？"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:100003
+msgid "避免名称冲突：原 in-place 层的输入输出绑定会导致后续层无法正确引用输出名称（如 pool1 无法找到 \"conv1_out\"）。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:100004
+msgid "兼容性需求：部分框架（如 PyTorch、TensorFlow）不支持 Caffe 的原生 in-place 机制，需显式修改名称以保证结构清晰。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:110002
+msgid "统一输入节点表示"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:150002
+msgid "替换数字名称"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/caffe/parse/unity-struct.ipynb:170002
+msgid "统一 caffe 结构"
+msgstr ""
+

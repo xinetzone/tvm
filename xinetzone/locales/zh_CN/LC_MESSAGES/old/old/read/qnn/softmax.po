@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/qnn/softmax.ipynb:10002
+#, python-brace-format
+msgid "{func}`tvm.relay.qnn.op.softmax`"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/softmax.ipynb:10004
+msgid "源码：``tvm/src/relay/qnn/op/softmax.cc``"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/softmax.ipynb:90002
+msgid ""
+"这段代码是一个用于规范化 QNN softmax 操作的函数。它接受三个参数：`attrs`（Softmax "
+"属性）、`new_args`（新的调用节点参数）和 `arg_types`（输入和输出的类型）。该函数返回  Relay 算子序列，用于执行 "
+"softmax 运算。"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/softmax.ipynb:90004
+msgid ""
+"该函数首先检查输入参数的数量是否正确，然后从 `new_args` "
+"中提取出输入、缩放因子、零点、输出缩放因子和输出零点等参数。接着，它使用这些参数计算出量化数据，并按照[算法 "
+"1](https://arxiv.org/pdf/2207.01405.pdf) 进行计算。最后，它将结果重新量化并返回。"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/softmax.ipynb:90006
+msgid "需要注意的是，这个函数是高度实验性的，有时可能缺乏准确性。此外，输入缩放因子必须在 0 到 1 之间。"
+msgstr ""
+

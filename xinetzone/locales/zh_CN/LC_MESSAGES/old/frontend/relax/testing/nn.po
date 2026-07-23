@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:10002
+#, python-brace-format
+msgid "{mod}`tvm.relax.testing.nn`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:30002
+msgid "`emit`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:70002
+msgid "参数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:90002
+#, python-brace-format
+msgid "{data}`tvm.realx.testing.nn.Module.define_subroutine`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:100002
+msgid ""
+"当 `nn.Module` 类的 `define_subroutine` 属性设置为 `True` "
+"时，模块会被正确定义为子例程（`subroutine`），而不是内联到调用者代码中。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:120002
+msgid "`Activation` 类：简单的 `ReLU` 激活函数层，设置` define_subroutine = True`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:120003
+msgid "`Layer` 类：包含权重参数和激活函数的神经网络层，同样设置 `define_subroutine = True`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:130002
+msgid "通过 `define_subroutine = True` 设置，确保："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:130004
+msgid "`Activation` 和 `Layer` 类被编译为独立的子例程函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:130005
+msgid "生成的 IR 模块中包含私有函数 `layer` 和 `activation`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:130006
+msgid "主函数 `main` 正确调用这些子例程"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/testing/nn.ipynb:140002
+msgid "该功能允许开发者将复杂的模型分解为可重用的子例程，提高代码的模块化和可维护性，同时有助于 TVM 优化器进行更有效的优化。"
+msgstr ""
+

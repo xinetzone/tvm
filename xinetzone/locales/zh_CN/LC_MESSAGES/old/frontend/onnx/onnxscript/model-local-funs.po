@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/onnxscript/model-local-funs.ipynb:10002
+msgid "ONNX Script 模型本地函数"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/model-local-funs.ipynb:10003
+msgid ""
+"ONNX 中的模型可能包含模型本地函数。当将 onnxscript 函数转换为 ModelProto 时，默认行为是将所有被传递调用的 "
+"function-ops 的函数定义作为生成模型中的模型本地函数包含在内（对于这些函数，已经看到了 onnxscript "
+"函数定义）。调用者可以通过明确提供要包含在生成模型中的 FunctionProtos 列表来覆盖此行为。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/model-local-funs.ipynb:10005
+msgid "首先，让我们定义一个调用其他 ONNXScript 函数的 ONNXScript 函数。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/model-local-funs.ipynb:30002
+msgid "让我们看看默认生成的模型是什么样的："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/model-local-funs.ipynb:50002
+msgid "现在，让我们明确指定要包含哪些函数。首先，生成一个不包含模型本地函数的模型："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/model-local-funs.ipynb:70002
+msgid "现在，生成一个包含一个模型本地函数的模型："
+msgstr ""
+

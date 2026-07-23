@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:10002
+#, python-brace-format
+msgid "{class}`~tvm.relay.transform.MergeComposite`"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:20002
+msgid "合并复合（merge composite）过程旨在将多个符合特定模式的 Relay 算子合并，并将它们组合成单一的 Relay 函数。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:20004
+msgid "例如，假设有如下计算图："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:20015
+msgid "在合并复合过程之前的 Relay IR："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:20027
+msgid "在合并复合过程之后的 Relay IR："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:20044
+msgid "正如你在第二个 Relay 示例中所看到的，指定的模式被封装在函数中。然后调用该函数，产生与第一个 Relay 示例相同的结果。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:20046
+msgid "这个合并复合过程的便利用途是将多个算子卸载到单一的外部代码生成函数中。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:40002
+msgid "简单的合并"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:50002
+msgid "从简单的计算图中正确生成复合函数。期望模式 `make_add_relu_pattern` 能够被合并成单一的算子 `add_relu`。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:70002
+msgid "查看效果："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:110002
+msgid "分支合并"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:110004
+msgid "测试从分支图中正确生成复合函数。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:110006
+msgid "期望模式 `make_add_sub_mul_pattern` 能够被合并成单一的算子 `add_sub_mul`。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:130002
+msgid "重用调用合并"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:130004
+msgid "测试从重用调用节点的简单图中正确生成复合函数。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:130006
+msgid "期望模式 `make_add_add_add` 能够被合并成单一的算子 `add_add_add`。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:150002
+msgid "合并多个模式"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:150004
+msgid "测试图中不同模式是否正确合并。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:150006
+msgid ""
+"期望模式 `make_conv_bias_relu_pattern` 能够被合并成单一的算子 `conv_bias_relu`。同时，也期望 "
+"`make_add_relu_pattern` 能够被合并成单一的算子 `add_relu`。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:170002
+msgid "合并可选模式"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:170004
+msgid ""
+"测试包含可选算子的模式。可以定义包含某些可选算子的模式。合并复合过程将为所有匹配的模式创建复合函数，但会带有不同的 "
+"\"PartitionedFromPattern\" 属性。期望后端代码生成器能够分析该属性并确定相应的算子。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:170014
+msgid ""
+"在上面的示例中，匹配情况 A 的复合函数将具有 "
+"`PartitionedFromPattern=\"nn.conv2d_nn.bias_add_nn.relu_\"`，而匹配情况 B "
+"的复合函数将是 `\"nn.conv2d_nn.bias_add_\"`。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:190002
+msgid "依序合并"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:190004
+msgid "测试模式是否按照它们在模式表中的顺序进行合并。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:190006
+msgid "在某些情况下，一个模式可能是另一个模式的子图，此时不清楚哪个匹配应该优先。优先级应取决于模式在模式表中声明的顺序。最先声明的模式将以最高优先级合并，而最后声明的模式将以最低优先级合并。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:210002
+msgid "检查 A 是否具有最高优先级："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:230002
+msgid "检查 B 是否具有最高优先级："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:250002
+msgid "检查 C 是否具有最高优先级："
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:270002
+msgid "并行合并"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:270004
+msgid "测试依赖于相同输入的并行模式是否正确合并。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:270006
+msgid ""
+"测试图难以用 ASCII 图形表示。它本质上是两个并行的 ``add-sub-mul`` 单元，它们都消耗 `input_1` 和 "
+"`input_2`，并将它们的结果相乘以生成输出。期望两个并行分支都能被合并，并且它们仍然应该消耗相同的输入变量 `input_1` 和 "
+"`input_2`。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:290002
+msgid "多输入子图"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:290004
+msgid "测试多个输入子图连接到另一个子图的情况。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:290038
+msgid ""
+"行为上的差异源于 `add_sub_mul` 期望 `add` 和 `sub` 的输入是相同的（相同的两个 `relay` 表达式）。因此，当你有"
+" 4 个独立的输入时，模式不应被合并。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:320002
+msgid "合并 `TupleGetItem`"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:320003
+msgid "测试可以从包含 `TupleGetItem` 节点的模式中合并复合函数。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:340002
+msgid "``with`` 检查"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:380002
+msgid "diamond 不合并的情况"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:380004
+msgid "左侧的模式不应匹配右侧的结构。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:400002
+msgid "查询张量类型"
+msgstr ""
+
+#: ../../doc/old/old/compiler/MergeComposite.ipynb:440002
+msgid "不会因 `einsum` 算子而导致错误"
+msgstr ""
+

@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:10002
+msgid "合法化 qdq"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:30002
+msgid "测试从 float32 到 int8 的量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:60002
+msgid "测试从 float16 到 uint8 的量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:90002
+msgid "测试符号形状输入下，从float32到int8的量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:120002
+msgid "测试使用标量参数（而非张量）时，从float32到int8的量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:150002
+msgid "测试使用一维常量数组作为参数时，从float32到int8的量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:180002
+msgid "测试使用标量参数时，从float16到int8的量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:210002
+msgid "测试从int8到float32的反量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:240002
+msgid "测试使用标量参数时，从int8到float32的反量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:270002
+msgid "测试符号形状输入下，从int8到float32的反量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:300002
+msgid "测试从int8到float16的反量化算子的合法化变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/legalize-qdq.ipynb:330002
+msgid "测试使用标量参数时，从int8到float16的反量化算子的合法化变换"
+msgstr ""
+

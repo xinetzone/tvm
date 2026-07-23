@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:10002
+msgid "DPL 模式重写"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:30002
+msgid "简单的示例"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:40002
+msgid "原始表达式为："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:40004
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{aligned}\n"
+"&x2 = x + x\\\\\n"
+"&x4 = x2 + x2\n"
+"\\end{aligned}\n"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:70002
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:180002
+msgid "构建模板："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:90002
+msgid "重写模式："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:120002
+msgid "此时将 $x + x$ 重写为 $x \\times 2$ 。更进一步，原式可以化简为："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:140002
+msgid "不进行重写，按原样返回原始调用节点："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:160002
+msgid "重写注意力模块"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:210002
+msgid "测试交换律模式匹配"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:250002
+msgid "测试重复模式匹配"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/rewrite.ipynb:260002
+msgid "重写调用应迭代直到收敛:"
+msgstr ""
+

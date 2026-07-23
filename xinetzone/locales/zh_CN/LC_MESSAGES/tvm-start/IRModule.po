@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/IRModule.ipynb:10002
+msgid "IRModule"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:10004
+msgid ""
+"Apache TVM Unity 的核心抽象，即 IRModule。IRModule 包含整个 ML 模型，包括 "
+"计算图、张量程序和对外部库的潜在调用。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:30002
+msgid "创建 IRModule"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:30004
+msgid "IRModules 可以通过多种方式进行初始化。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:40002
+msgid "从现有前端模型导入"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:40003
+msgid "初始化 IRModule 的最常见方法是从现有模型导入。Apache TVM Unity 支持从一系列框架导入，如 PyTorch 和 ONNX。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:70002
+msgid "使用 Relax NN 模块编写"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:70004
+msgid "Apache TVM Unity还提供了一系列类似 PyTorch 的 API，帮助用户直接编写 IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:90002
+msgid "通过 TVMScript 创建"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:90003
+msgid ""
+"TVMScript 是一种基于 Python 的 DSL，用于 IRModule。我们可以直接以 TVMScript 语法输出 "
+"IRModule，或者解析 TVMScript 以获取 IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:110002
+msgid "IRModule的属性"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:110004
+msgid "IRModule 是一组函数的集合，通过 GlobalVars 索引。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:130002
+msgid "我们可以通过使用 GlobalVars 或它们的名称来索引 IRModule 中的函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:150002
+msgid "IRModule 上的变换"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:150004
+msgid ""
+"变换是 Apache TVM Unity 的重要组成部分。一个变换接受一个 IRModule 并输出另一个 "
+"IRModule。我们可以将一系列变换应用于一个 IRModule 以获得一个新的 IRModule。这是优化模型的常见方法。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:160002
+msgid ""
+"有关每个变换的详细信息，请参阅[变换 API "
+"参考](https://tvm.apache.org/docs/reference/api/python/relax/transform.html"
+"#api-relax-transformation)。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:160004
+msgid ""
+"首先对 IRModule 应用 `LegalizeOps` 变换。此变换将 Relax 模块转换为混合阶段，同一个模块内包 Relax 和 "
+"TensorIR 函数。同时，Relax 算子将被转换为 `call_tir`。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:180002
+msgid "变换后，模块内会有更多的函数。再次打印全局变量。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:200002
+msgid ""
+"Apache TVM Unity "
+"为用户提供了一组默认的变换管道，以简化变换过程。然后我们可以将默认管道应用于模块。默认的零管道包含一些非常基础的变换，包括："
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:200004
+msgid ""
+"`LegalizeOps`：此变换将 Relax 算子转换为具有相应 TensorIR 函数的 `call_tir` "
+"函数。在此变换之后，IRModule 将包含 Relax 函数和 TensorIR 函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:200005
+msgid "`AnnotateTIROpPattern`：此变换注解 TensorIR 函数的模式，为后续的算子融合做准备。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:200006
+msgid "`FoldConstant`：此 pass 执行常量折叠，优化涉及常量的运算。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:200007
+msgid ""
+"`FuseOps` 和 "
+"`FuseTIR`：这两个传递基于上一步（`AnnotateTIROpPattern`）中注解的模式共同工作以融合算子。这些传递转换 Relax "
+"函数和 TensorIR 函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:210003
+msgid "在这里，我们在流程中应用了两次 `LegalizeOps`。第二次是多余的，但无害。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:210005
+msgid "每个传递都可以在流程中重复，因为我们确保传递可以处理所有合法的 IRModule 输入。这种设计可以帮助用户构建他们自己的管道。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:230002
+msgid "通用部署IRModule"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:230004
+msgid ""
+"优化完成后，我们可以将模型编译为 TVM 运行时模块。值得注意的是，Apache TVM Unity "
+"提供了通用部署的能力，这意味着可以在不同的后端（包括 CPU、GPU 和其他新兴后端）上部署相同的 IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:230006
+msgid "在 CPU 上部署"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:230007
+msgid "我们可以通过将目标指定为 `llvm` 来在 CPU 上部署 IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:250002
+msgid "在 GPU 上部署"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:250004
+msgid ""
+"除了 CPU 后端，还可以在其他后端上部署 IRModule。例如，可以将 IRModule 部署在 GPU 上。GPU "
+"需要包含额外信息的程序，如线程绑定和共享内存分配。需要进一步的转换来生成 GPU 程序。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:250006
+msgid "使用 DLight 来生成 GPU 程序。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:270002
+msgid "现在可以像在 CPU 上那样，在 GPU 上编译 IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:290002
+msgid "在其他后端上部署"
+msgstr ""
+
+#: ../../doc/tvm-start/IRModule.ipynb:290004
+msgid ""
+"Apache TVM Unity 还支持其他后端，如各种类型的 GPU（Metal、ROCm、Vulkan 和 OpenCL）、各种类型的 "
+"CPU（x86、ARM）以及其他新兴后端（例如 WebAssembly）。部署过程与 GPU 后端类似。"
+msgstr ""
+

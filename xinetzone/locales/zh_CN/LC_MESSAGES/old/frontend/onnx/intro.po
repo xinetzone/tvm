@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10002
+msgid "ONNX 概述"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10004
+msgid ""
+"源代码：[ONNX](https://github.com/onnx/onnx) & [ONNX with "
+"Python](https://onnx.ai/onnx/intro/python.html)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10007
+msgid ""
+"ONNX 是一种开放格式，旨在表示机器学习模型。ONNX "
+"定义了一组通用的算子——机器学习和深度学习模型的基本构建块——以及一种通用的文件格式，以便 AI "
+"开发人员能够使用多种框架、工具、运行时和编译器来处理模型。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10010
+msgid "技术设计"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10011
+msgid "ONNX 提供了一种可扩展的计算图模型定义，以及内置算子和标准数据类型的定义。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10013
+msgid "每个计算数据流图都结构化为一个节点列表，这些节点形成一个无环图。节点有一个或多个输入和一个或多个输出。每个节点都是对一个算子的调用。该计算图还包含元数据，以帮助记录其用途、作者等信息。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:10015
+msgid "算子在计算图外部实现，但内置算子集是跨框架可移植的。支持 ONNX 的每个框架都会提供对这些算子在适用数据类型上的实现。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:20002
+msgid "ONNX Python 接口"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:20004
+msgid "参考：[onnx python](https://onnx.ai/onnx/intro/python.html)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:30002
+msgid ""
+"ONNX 是强类型的。必须为函数的输入和输出定义形状和类型。下面介绍一些常用的 [make "
+"function](https://onnx.ai/onnx/api/helper.html#l-onnx-make-function)："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:30004
+msgid "`make_tensor_value_info`：声明给定形状和类型的变量（输入或输出）。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:30005
+msgid "`make_node`: 创建由运算（算子类型）、输入和输出定义的节点。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:30006
+msgid "`make_graph`: 用于使用前两个函数创建的 ONNX graph 对象。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:30007
+msgid "`make_model`: 将 graph 和附加元数据合并在一起。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:30010
+msgid "在整个创建过程中，需要为 graph 中每个节点的每个输入和输出命名。graph 的输入和输出由 onnx 对象定义，字符串用于引用中间结果。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:50002
+msgid "创建输入变量："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:80002
+msgid "查看 `X`："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:100002
+msgid "创建输出变量："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:120002
+msgid "将上述变量组织为计算图的节点："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:140002
+msgid "查看 `node1`："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:160002
+msgid "将节点组织为计算图："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:200002
+msgid "将计算图变换为模型："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:230003
+#, python-brace-format
+msgid "空的形状（{data}`None`）意味着任何形状。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:230006
+msgid "访问 ONNX graph"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:230008
+msgid "ONNX graph 也可以通过查看计算图中每个对象的字段来检查。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:230010
+msgid "查看输入列表："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:250002
+msgid "更优雅的打印输入信息："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:280002
+msgid "同样可以查看输出信息："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:300002
+msgid "查看节点信息："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:320002
+msgid "ONNX 序列化与反序列化"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:320004
+msgid ""
+"onnx 中的每个对象（参见 [Protos](https://onnx.ai/onnx/api/classes.html#l-onnx-"
+"classes)）都可以用 `SerializeToString` 方法序列化。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:340002
+msgid "反序列化，加载序列化的模型："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:360002
+msgid "数据也可以序列化："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:380002
+msgid "反序列化数据："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:400002
+msgid "也可以使用便捷函数 `load_tensor_from_string`："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:420002
+msgid "ONNX 初始化器与默认值"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:420004
+msgid ""
+"之前的模型假设线性回归的系数也是模型的输入。那不太方便。它们应该作为常量或初始化项成为模型本身的一部分，以遵循 onnx "
+"语义。下一个示例修改了前一个示例，将输入 `A` 和 `B` 更改为初始化式。（参见 "
+"[array](https://onnx.ai/onnx/api/numpy_helper.html#l-numpy-helper-onnx-"
+"array)）。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:420006
+msgid "`onnx.numpy_helper.to_array`: 将 ONNX 转换为 NumPy 数组。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:420007
+msgid "`onnx.numpy_helper.from_array`: 将 NumPy 数组转换为 ONNX。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:440002
+msgid "查看初始化值："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:460002
+msgid "ONNX 节点属性"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:480002
+msgid "ONNX 评估与运行时"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:480004
+msgid ""
+"完整 API 的描述见 [onnx.reference](https://onnx.ai/onnx/api/reference.html#l"
+"-reference-implementation)。它接受一个模型(ModelProto，文件名，…)。方法 `run` "
+"返回字典中指定的一组给定输入的输出。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:500002
+msgid "ONNX 评估节点"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:500004
+msgid "评估器还可以评估简单的节点，以检查算子在特定输入上的行为。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:520002
+msgid "类似的代码也可以在 `GraphProto` 或 `FunctionProto` 上工作。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:520004
+msgid "ONNX 逐步评估"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:520006
+msgid ""
+"转换库接受使用机器学习框架（如 PyTorch、scikit-learn 等）训练的现有模型，并将其转换为 ONNX "
+"graph。复杂的模型通常不会在第一次尝试中工作，查看中间结果可能有助于找到未正确转换的部分。参数详细显示有关中间结果的信息。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:540002
+msgid "ONNX 评估自定义节点"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:540003
+msgid "以下示例仍然实现了线性回归，但在 `A` 中添加了单位矩阵："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/intro.ipynb:540005
+msgid ""
+"\n"
+"Y = X(A + I) + B\n"
+msgstr ""
+

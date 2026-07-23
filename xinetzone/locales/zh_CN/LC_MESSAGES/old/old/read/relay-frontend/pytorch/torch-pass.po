@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay-frontend/pytorch/torch-pass.ipynb:10002
+msgid "PyTorch pass"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/pytorch/torch-pass.ipynb:20002
+msgid "`torch._C._jit_pass_lower_all_tuples`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/pytorch/torch-pass.ipynb:20004
+msgid ""
+"来源：[[Bug] [Frontend][Pytorch] Relay IR is inconsistent with that of the "
+"original model](https://discuss.tvm.apache.org/t/bug-frontend-pytorch-"
+"relay-ir-is-inconsistent-with-that-of-the-original-model/12010)"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/pytorch/torch-pass.ipynb:20006
+msgid ""
+"`torch._C._jit_pass_lower_all_tuples` 是 PyTorch 的内部函数，用于将 Python 组转换为 "
+"TorchScript 元组。这个函数的主要作用是在 TorchScript 编译过程中，将 Python 代码中的元组操作转换为 "
+"TorchScript 元组操作，以便在 TorchScript 环境中执行。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/pytorch/torch-pass.ipynb:20008
+msgid ""
+"具体来说，`torch._C._jit_pass_lower_all_tuples` 函数会遍历 TorchScript "
+"IR（Intermediate Representation，中间表示）中的所有节点，找到所有使用 Python 元组的算子，并将它们替换为对应的"
+" TorchScript 元组算子。这样，在后续的 TorchScript 优化和变换过程中，就可以直接处理这些元组算子，而不需要额外的 "
+"Python 到 TorchScript 的桥接代码。"
+msgstr ""
+

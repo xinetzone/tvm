@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:10002
+msgid "AnnotateUsedMemory C++ 源码"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:20017
+msgid ""
+"这段代码是用于分析每个原始函数调用站点所需的最小内存。它通过分析每个函数调用站点的输入/输出张量的活跃性，并计算这些张量所需的总内存来实现这一目标。这个信息被添加为一个名为"
+" `\"used_memory\"` 的注解，以字节为单位列出每个调用站点所需的内存大小。此外，被注释为 `\"io_used_memory\"`"
+" 的函数，表示 IO 张量所需的总内存。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:20019
+msgid "需要注意的是，此 Pass 不支持动态形状，用户需要自行检查是否在可能输入动态形状的情况下应用了此 Pass。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:30002
+msgid "简单的例子："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:30004
+msgid "修改前："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:30015
+msgid "修改后："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:30026
+msgid "在上面的简单示例中，`io_used_memory`和 `used_memory` 是相同的，因为只有一个原始函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:50002
+msgid ""
+"这段代码定义了一个名为 `AnnotateUsedMemoryMutator` 的类，该类继承自 "
+"`transform::DeviceAwareExprMutator`。这个类的主要目的是在输入函数中添加一个名为 "
+"`\"io_used_memory\"` 的注解，该注解表示 IO 张量所需的总大小。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:50004
+msgid ""
+"`AnnotateUsedMemoryMutator` 类有一个构造函数，它接受三个参数：IR "
+"模块、控制流图和活跃度分析。这些参数用于初始化类的私有成员变量。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:50006
+msgid ""
+"类中的 `operator()` 方法接受一个函数作为输入，并返回一个新的函数，其中包含了 `\"io_used_memory\"` "
+"注解。这个方法首先计算输入和输出张量的总大小，然后遍历函数体中的表达式，对每个 `let` 节点进行处理。对于调用原始函数的 `call` "
+"节点，它会计算活跃张量的大小并将结果存储起来；对于绑定原始函数的 function 节点，它会使用之前存储的结果来添加 "
+"`\"used_memory\"` 注解。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/cpp.ipynb:50008
+msgid ""
+"此外，类还包含一些辅助方法，如`PreVisitLetBinding_`、`PostVisitLet_`和`CheckPrimitiveFunctionCall`，这些方法用于在遍历过程中处理特定的"
+" `let` 节点和调用站点。"
+msgstr ""
+

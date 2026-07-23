@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:10002
+msgid "解读 `Source`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:20002
+msgid "`SourceNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30002
+msgid "`SourceNode` 继承自 `Object` 类的子类，它表示程序源代码。该类具有以下成员变量和成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30004
+msgid "`source_name`：`SourceName` 类型的成员变量，表示源名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30005
+msgid "`source`：`String` 类型的成员变量，表示原始源代码。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30006
+msgid ""
+"`line_map`：`std::vector<std::pair<int, int>>` "
+"类型的成员变量，表示行映射，将行号映射到原始源代码中的字符位置。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30007
+msgid ""
+"`VisitAttrs(AttrVisitor* "
+"v)`：一个成员函数，用于访问属性。它接受一个指向`AttrVisitor`对象的指针作为参数，并依次调用`v->Visit(\"source_name\","
+" &source_name)`、`v->Visit(\"source\", &source)`来访问相应的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30008
+msgid "`_type_key`：一个静态常量字符指针，表示该类型的键。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30009
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SourceNode, "
+"Object)`：一个宏定义，用于声明`SourceNode`对象的最终信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:30011
+msgid "总体来说，这段代码定义了一个表示程序源代码的类，并提供了相应的属性访问功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:40002
+msgid "`Source`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:50002
+msgid "`Source` 类继承自 `ObjectRef` 类。该类具有以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:50004
+msgid ""
+"`Source(SourceName src_name, std::string "
+"source)`：一个构造函数，用于创建一个`Source`对象。它接受两个参数：`src_name`表示源名称，`source`表示源代码字符串。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:50005
+msgid ""
+"`GetLine(int "
+"line)`：一个成员函数，用于获取指定行号的源代码内容。它接受一个整数类型的参数`line`，表示要获取的行号，并返回一个`tvm::String`类型的结果，表示该行的源代码内容。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:50006
+msgid ""
+"`TVM_DEFINE_NOTNULLABLE_OBJECT_REF_METHODS(Source, ObjectRef, "
+"SourceNode)`：一个宏定义，用于定义`Source`对象的非空引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Source.ipynb:50008
+msgid "总体来说，这段代码定义了一个用于表示程序源代码的类，并提供了相应的构造函数和获取指定行源代码的功能。"
+msgstr ""
+

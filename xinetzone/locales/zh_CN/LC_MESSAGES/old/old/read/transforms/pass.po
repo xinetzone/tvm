@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10002
+msgid "TVM Relay Pass"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10004
+msgid "参考："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10006
+#, python-brace-format
+msgid "{func}`tvm.transform.module_pass`"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10007
+#, python-brace-format
+msgid "{func}`tvm.relay.transform.function_pass`"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10008
+#, python-brace-format
+msgid "{func}`tvm.instrument.pass_instrument`"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10009
+msgid "[pass_infra](https://daobook.github.io/tvm/docs/arch/pass_infra.html)"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10010
+msgid ""
+"[如何使用 TVM Pass "
+"Infra](https://daobook.github.io/tvm/docs/how_to/extend_tvm/use_pass_infra.html)"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10012
+#, python-brace-format
+msgid ""
+"Relay/tir 程序的优化可以应用在不同的粒度上，即函数级 "
+"{class}`tvm.relay.transform.FunctionPass`/{class}`tvm.tir.transform.PrimFuncPass`"
+" 和模块级 {class}`tvm.transform.ModulePass`。或者用户可以依赖于 "
+"{class}`tvm.transform.Sequential` 在 Relay/tir 程序上应用 pass 序列，其中 pass "
+"之间的依赖性可以由 pass infra 解析。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10014
+msgid "函数级 Pass"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10016
+#, python-brace-format
+msgid ""
+"当提供 `pass_func` 时，{func}`~tvm.relay.transform.function_pass` "
+"函数返回回调函数。否则，它将使用给定的优化函数返回创建的函数级 pass。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10018
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10020
+msgid "`pass_func`：变换函数或变换类。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10021
+msgid "`opt_level`：优化级别。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10022
+msgid "`name`：pass 的名称。名称可以为空。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10023
+msgid "`required`：依赖的 pass 列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10025
+msgid "直接看例子。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:10027
+msgid "创建函数 `func`："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:30002
+msgid "创建函数级的 pass："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:50002
+msgid "此 pass 仅将 `func` 变换为 `new_func`。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:50004
+msgid "创建 `new_func`："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:70002
+msgid "`fpass` 是特殊的 pass，它将每个函数替换为 `new_func`："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:90002
+msgid "现在，`input_mod` 中的每个函数都被 `new_func` 替换："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:110002
+msgid "也可以通过装饰用户定义的 `transform` 函数来创建函数级 pass："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:130002
+msgid "给定模块 `input_mod`，优化可以如下调用："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:150002
+msgid "模块级 Pass"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:150004
+#, python-brace-format
+msgid ""
+"模块级 Pass {func}`tvm.transform.module_pass` 与 "
+"{func}`~tvm.relay.transform.function_pass` 的定义和使用很相似。也分为类模式和函数模式两种。"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:150006
+msgid "类模式："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:180002
+msgid "运行 `pipeline`："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/pass.ipynb:200002
+msgid "函数模式："
+msgstr ""
+

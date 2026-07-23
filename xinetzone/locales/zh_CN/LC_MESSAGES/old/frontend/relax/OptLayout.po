@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:10002
+msgid "优化布局变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:20002
+msgid ""
+"`OptimizeLayoutTransform` "
+"能够优化计算图中的布局变换操作，消除不必要的张量布局变换，从而提高计算效率。文件通过三个测试场景全面检验了该优化 pass 的能力："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:20004
+msgid "**单参数布局转换优化**：验证在单一输入和输出情况下，布局优化能够消除中间不必要的布局转换操作。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:20005
+msgid "**多参数布局转换优化**：验证在多输入情况下，布局优化能够有效管理多个张量的布局转换，避免冗余操作。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:20006
+msgid "**填充与移除填充操作优化**：验证在包含填充、计算和移除填充的复杂场景中，布局优化能够识别并消除不必要的填充/移除填充循环操作。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:20008
+msgid ""
+"每个测试场景都定义了优化前的 `Before` 模块和预期优化后的 `Expected` 模块，并通过 "
+"`_run_pass_compare_output` 函数应用转换并验证结果。这些测试确保了 TVM Relax "
+"布局优化转换能够正确识别和优化各种复杂场景下的张量布局转换操作。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:50002
+msgid "单参数布局变换优化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:80002
+msgid "多参数（三个输入）情况下的布局变换优化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/OptLayout.ipynb:110002
+msgid "包含填充和移除填充操作的布局变换优化"
+msgstr ""
+

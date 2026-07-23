@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-31 14:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../doc/docs/reference/api/python/tirx/stmt_functor.rst:19
+msgid "tvm.tirx.stmt_functor"
+msgstr ""
+
+#: of tvm.tirx.stmt_functor:1
+msgid "Statement functor utilities for IR transformations"
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.ir_transform:1
+msgid "Recursively visit and transform ir nodes in post DFS order."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tirx/stmt_functor.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.ir_transform:3
+msgid "The input to be transformed."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.ir_transform:5
+msgid ""
+"The function called in before recursive mutation If preorder returns "
+"None, then the transform will proceed to recursive call. If preorder "
+"returns a not None tvm.tirx.Stmt/Expr, the transformer will simply return"
+" it and won't do further recursion."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.ir_transform:10
+msgid "The function called after recursive mutation."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.ir_transform:12
+msgid "List of types that we only enable."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tirx/stmt_functor.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.ir_transform:15 tvm.tirx.stmt_functor.substitute:8
+msgid "**result** -- The result."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tirx/stmt_functor.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.post_order_visit:1
+msgid "Recursively visit the ir in post DFS order node, apply fvisit"
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.post_order_visit:2
+msgid "Each node is guaranteed to be visited only once."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.post_order_visit:4
+#: tvm.tirx.stmt_functor.pre_order_visit:4
+msgid "The visitor function."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.pre_order_visit:1
+msgid "Recursive pre-order visit on stmt AST, applying fvisit on each node."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.pre_order_visit:2
+msgid "If fvisit returns False, it won't visit the children of the node."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.substitute:1
+msgid "Substitute the var specified by vmap."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.substitute:3
+msgid "The input."
+msgstr ""
+
+#: of tvm.tirx.stmt_functor.substitute:5
+msgid "The variable mapping."
+msgstr ""
+

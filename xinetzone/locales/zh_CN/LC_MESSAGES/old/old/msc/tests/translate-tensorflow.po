@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:10002
+msgid "翻译 tensorflow 代码"
+msgstr ""
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:50002
+msgid "常用函数："
+msgstr ""
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:100002
+msgid "测试 tensorflow1 转译器对池化的支持情况"
+msgstr ""
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:130002
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:180002
+msgid "显式填充（`tf.VERSION >= 2.4.1`）："
+msgstr ""
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:150002
+msgid "测试 tensorflow1 转译器对卷积的支持情况"
+msgstr ""
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:200002
+msgid "测试 tensorflow1 转译器对 biasadd 的支持情况"
+msgstr ""
+
+#: ../../doc/old/old/msc/tests/translate-tensorflow.ipynb:230002
+msgid "其他测试"
+msgstr ""
+

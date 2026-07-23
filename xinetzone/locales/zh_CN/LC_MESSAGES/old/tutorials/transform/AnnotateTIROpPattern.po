@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:10002
+msgid "`AnnotateTIROpPattern`"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:30002
+msgid "`kOutEWiseFusable` 模式"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:40002
+msgid "测试复杂运算算子模式的注解："
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:40004
+msgid "验证矩阵乘法等复杂算子是否被正确识别为 `kOutEWiseFusable` 模式。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:40005
+msgid "这类算子可以将元素级算子融合到其输出中，但不能链接另一个复杂算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:60002
+msgid "测试带类型转换的复杂运算算子模式注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:60004
+msgid ""
+"验证带有不同类型转换模式的矩阵乘法是否仍被正确识别为 `kOutEWiseFusable` "
+"模式。测试多种类型转换场景：直接变换乘积结果、变换输入后相乘、嵌套变换。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:80002
+msgid "测试带有整型变量签名的复杂运算算子模式注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:90002
+msgid "验证带有显式整型变量参数的矩阵乘法是否被正确识别为`kOutEWiseFusable`模式。此测试确保即使函数签名中包含显式维度参数，模式识别仍能正常工作。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:110002
+msgid "`kCommReduce` 模式"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:120002
+msgid "验证求和等归约操作是否被正确识别为`kCommReduce`模式。这类算子具有交换性，用于对输入数据进行汇总计算。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:140002
+msgid "`kElemWise` 模式"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:150002
+msgid "验证简单的元素级操作（如加法）是否被正确识别为`kElemWise`模式。这类算子对输入张量的每个元素进行独立计算。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:170002
+msgid "`kBroadcast` 模式"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:180002
+msgid "验证广播操作是否被正确识别为 `kBroadcast` 模式。这类算子可以将低维输入广播到高维输出，轴必须按顺序排列。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:200002
+msgid "`kInjective` 模式"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:210002
+msgid "验证单射算子是否被正确识别为 `kInjective` 模式。这类算子的输出轴可以单射映射到单个输入轴，可安全地与其他单射算子和归约算子融合。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:230002
+msgid "测试偏置加法算子模式的注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:230004
+msgid "验证偏置加法算子是否被正确识别为 `kElemWise` 模式。偏置加法是一种特殊的元素级算子，其中一个输入被广播到另一个输入的维度。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:250002
+msgid "测试带单位维度形状的广播加法算子模式注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:250004
+msgid "验证带有单位维度（`size=1`）的广播加法是否被正确识别为 `kElemWise` 模式。此测试确保优化器能够正确处理常见的广播场景。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:270002
+msgid "测试零维元素级加法算子模式注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:270004
+msgid "验证标量（零维张量）与向量的加法是否被正确识别为 `kElemWise` 模式。此测试确保优化器能够正确处理标量与数组的运算。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:290002
+msgid "测试池化算子模式的注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:290004
+msgid "验证最大池化算子是否被正确识别为 `kOutEWiseFusable` 模式。池化是一种复杂运算，可以融合元素级算子到其输出中。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:310002
+msgid "测试softmax算子模式的注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:310004
+msgid ""
+"验证 softmax 算子是否被正确识别为 `kOutEWiseFusable` 模式。`softmax` "
+"是一种复杂运算，包含多个步骤但仍可融合元素级算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:330002
+msgid "测试多缓冲区存储的算子模式注解回退行为"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:330004
+msgid "验证累积和（cumsum）算子是否被正确识别为 `kOpaque` 模式。当算子包含复杂的缓冲区存储模式时，优化器会将其视为不透明算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:350002
+msgid "测试同时计算和与平方和的算子模式注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:350004
+msgid "验证同时计算元素和与平方和的操作是否被正确识别为`kCommReduce`模式。此测试确保优化器能够正确处理多输出的归约操作。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:370002
+msgid "测试无缓冲区存储的算子模式注解"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/AnnotateTIROpPattern.ipynb:370004
+msgid "验证包含外部调用且缺乏明确缓冲区存储模式的算子是否被正确识别为 `kOpaque` 模式。当优化器无法确定算子的具体行为时，会将其视为不透明算子。"
+msgstr ""
+

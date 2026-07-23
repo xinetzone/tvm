@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:10002
+msgid "MSCGraph 简介"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:30002
+msgid ""
+"MSCGraph 是 MSC 的核心，它对编译器的作用类似于 IR（中间表示）。MSCGraph 是 `Relax` 的 "
+"DAG（有向无环图）格式。构建 MSCGraph 的目标是使压缩算法的开发和权重管理（这在训练时很重要）更加容易。如果所选的运行时目标不支持所有的"
+" Calls，那么 Relax/Relay 模块将拥有多个 MSCGraphs。MSCGraph 存在于编译过程各个阶段，用于管理模型计算信息。"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:50002
+msgid "构建 MSC 计算图"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:70002
+msgid "从 `relax` 构建 msc 计算图："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:100002
+msgid "MSCGraph 和 Relex 之间的差异"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:100003
+msgid "MSCGraph 具有 DAG（有向无环图）格式，而 Relax 具有表达式格式。"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:100004
+msgid "MSCGraph 将张量分类为输入和权重，而 Relex 将张量定义为变量和常量。"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:100005
+msgid ""
+"MSCGraph 使用节点名称（如 `conv1`，`layer1.conv1` ...）作为搜索节点的主要 ID，而 Relax "
+"使用带有前缀的索引（如 `lvXX`，`gv`）。"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:100008
+msgid "导出序列化文件以加载计算图："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:120002
+msgid "导出用于可视化的 prototxt 文件："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:140002
+msgid "通过将 `relax/relay` 结构转换成 MSCGraph，可以使用 DAG 风格的方法进行节点的查找与遍历："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:160002
+msgid "MSCGraph 的基本结构和 onnx 类似：一个 MSCGraph 中包含多个 MSCJoint（计算节点）和 MSCTensor（数据）。"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:170002
+msgid "MSCJoint"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:170004
+msgid ""
+"作用等同于 `relax.Expr`，`torch.nn.Module`，`onnx.Node` 等，即一个计算图中计算逻辑的最小表达单元。一个 "
+"`MSCJoint` 对应一个 `relax.Expr` 或 `Function`（如果使用了一些 `pattern` 做分图，例如 "
+"`conv2d+bias fuse` 成 `conv2d_bais`），`MSCJoint` 和 `Expr` 的区别在于 `MSCJoint` "
+"包含更多拓扑信息，不仅仅有 `relax.Call.args` 对应的 `inputs`，也包括 `parents`、`children` 以及 "
+"`outputs` ，可以更方便的获取拓扑关系。"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:170006
+msgid "以下为 `MSCJoint` 的描述示例："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190002
+msgid "其中包含几个重要成员："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190004
+msgid "`ID(ID_1)`：节点的 `index`，也是遍历计算图的时候使用的排序数值"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190005
+msgid "NAME(`conv2d`)：节点名称，每个节点有唯一的 `name`，用来查找节点"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190006
+msgid "PARENTS/CHILDREN(inp_0/batch_norm)：节点的拓扑关系"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190007
+msgid "`ATTRS`：节点属性，为了向后兼容都是用 string 类型保存，codegen 的时候会 cast 成对应类型"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190008
+msgid ""
+"IN/OUT(relu)：节点输入输出，每个节点有1到多个outputs，每个output都是一个 MSCTensor；Inputs 则为 "
+"parents 的 outputs 的引用"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:190009
+msgid ""
+"WEIGHTS：节点weights，每个 weights 是一个 `ref:MSCTensor` 对，`ref` 表示 weight 类型，如 "
+"`\"weight\",\"bias\",\"gamma\"` "
+"等，定义ref的原因主要是考虑到模型压缩针对不同的weight类型操作不同，故需要对weight进行分类"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:200002
+msgid "MSCTensor"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:200003
+msgid "这种数据结构在relax中并未体现，可以理解为NDArray的抽象。MSCTensor描述每个节点outputs以及weights的信息。通过MSCTensor可以查找到producer和consumers，方便对tensor进行操作时获取上下文。MSCTensor格式设计参照了tensorflow的tensor。以下为一个MSCTensor的描述，包含几个重要属性："
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:220002
+msgid "Name(conv2d:0)：tensor名字，格式为节点名称:数字格式，同tensorflow相同。以这种标记可以查找tensor的producer"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:220003
+msgid "Shape(1,6,4,4)：tensor的shape，动态维度用-1表示"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:220004
+msgid "Dtype(float32)：tensor的数据类型"
+msgstr ""
+
+#: ../../doc/old/old/msc/graph/intro.ipynb:220005
+msgid "Layout(NCHW)：MSC中新加的属性，tensor的数据排布格式。这一属性在剪枝过程中比较重要，对一些计算过程算子的优化也起到参考作用"
+msgstr ""
+

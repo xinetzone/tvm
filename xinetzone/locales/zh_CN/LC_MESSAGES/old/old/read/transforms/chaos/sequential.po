@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/transforms/chaos/sequential.ipynb:10002
+msgid "Relay Sequential pass"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/sequential.ipynb:80002
+msgid "测试 seq pass"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/sequential.ipynb:80004
+msgid "空白 pass："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/sequential.ipynb:100002
+msgid "模块级 pass："
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/sequential.ipynb:120002
+msgid "带作用域的 pass"
+msgstr ""
+
+#: ../../doc/old/old/read/transforms/chaos/sequential.ipynb:150002
+msgid "嵌套型 pass"
+msgstr ""
+

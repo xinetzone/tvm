@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:10002
+msgid "`tvm::relay::transformForwardRewrite`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:10004
+msgid "源码：`tvm/include/tvm/relay/transform.h`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30002
+msgid "`ForwardRewrite` 函数，它接受四个参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30004
+msgid "`expr`：表达式节点。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30005
+msgid "`rewrite_map_attr_name`：字符串，表示与重写规则函数对应的 Op 的属性名。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30006
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50007
+msgid "`fcontext`：回调函数，用于为每个调用节点提供上下文参数。默认值为 `nullptr`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30007
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50008
+msgid "`fmulti_ref_trigger`：变换函数，当表达式被多个调用者使用时调用。默认值为 `nullptr`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30009
+msgid "函数的返回值：重写后的表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:30011
+msgid "函数的主要功能是在后序 DFS 顺序下应用重写规则来重写表达式。这个函数用作辅助函数，在 pass 中重写表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50002
+msgid "`ForwardRewrite` 的另一个函数，用于在后序 DFS 顺序下应用重写规则来重写表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50004
+msgid "接受四个参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50005
+msgid "`expr`：表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50006
+msgid "`rewrite_func`：重写函数，将应用于所有算子。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:50010
+msgid "两个函数的返回值都是重写后的表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60002
+msgid "这两个`ForwardRewrite`函数的主要区别在于它们使用的重写规则的形式。具体分析如下："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60004
+msgid "**第一个 ForwardRewrite 函数**"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60005
+msgid "**参数差异**：这个函数接受一个字符串参数 `rewrite_map_attr_name`，它表示与重写规则函数对应的 Op 的属性名。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60006
+msgid "**使用场景**：当重写规则与特定的算子属性相关联时，这种形式很有用，例如，根据某些属性值选择不同的重写规则。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60008
+msgid "**第二个 ForwardRewrite 函数**"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60009
+msgid "**参数差异**：这个函数接受 `FForwardRewrite` 类型的参数 `rewrite_func`，这是一个函数对象，将应用于所有算子。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60010
+msgid "**使用场景**：当有一系列通用的重写规则需要应用于所有算子时，这种形式更为合适。这提供了一种更灵活的方法来定义和应用程序广泛的重写逻辑。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60012
+msgid "**功能对比**"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60013
+msgid "**灵活性对比**：使用 `FForwardRewrite` 对象的版本提供了更大的灵活性，因为它允许传递一个可以处理各种算子的函数对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60014
+msgid "**适用性对比**：如果重写逻辑依赖于特定算子的属性，则使用属性名的版本可能更直接和方便。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60016
+msgid "**以下情况使用第一个函数**"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60017
+msgid "当重写逻辑与特定算子的属性紧密相关，且这些属性定义了如何进行重写时。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60018
+msgid "当需要在运行时根据属性值选择不同的重写策略时。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60020
+msgid "**以下情况使用第二个函数**"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60021
+msgid "当有一组通用的重写规则需要统一应用于所有算子时。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60022
+msgid "当重写逻辑不依赖于特定算子的属性，而是依赖于算子本身或其他上下文信息时。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/ForwardRewrite.ipynb:60024
+msgid ""
+"总的来说，在选择使用哪个 `ForwardRewrite` "
+"函数时，应考虑重写逻辑的具体需求和应用场景。如果重写规则高度依赖于特定操作的属性，第一个函数可能更合适；如果需要更通用的重写逻辑，第二个函数提供了更大的灵活性。"
+msgstr ""
+

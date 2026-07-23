@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:10002
+msgid "计算图分区"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:50002
+msgid "测试外部 C 编译器处理单一算子"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:70002
+msgid "测试外部 C 编译器处理默认算子"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:100002
+msgid "测试外部编译器处理经过清理的算子"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:120002
+msgid "测试外部 C 编译器处理多个函数"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:140002
+msgid "测试外部 C 编译器"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:160002
+msgid "测试函数提升"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:190002
+msgid "测试函数提升内联"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:210002
+msgid "测试常量传播"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:230002
+msgid "测试多输出"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:260002
+msgid "测试混合单输出和多输出"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:280002
+msgid "测试一个输出被多次使用的情况"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:300002
+msgid "测试重复输出的情况"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:320002
+msgid "测试重复合并和 `TupleGetItem` 的情况"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:340002
+msgid "测试常量元组"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:360002
+msgid "测试扁平化元组输出"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:380002
+msgid "测试元组输出的执行"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:380004
+msgid "测试具有元组输出的子图的 C 代码生成和运行时。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:400002
+msgid "测试外部优化"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:420002
+msgid "测试保留类型导入"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:420004
+msgid "测试确保在 BYOC 管道中保留类型定义和导入。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/graph-partitioning.ipynb:440002
+msgid "测试不绑定常量"
+msgstr ""
+

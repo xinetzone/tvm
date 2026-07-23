@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:10002
+msgid "浮点数到定点的转换(TOPI)"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:20002
+#, python-brace-format
+msgid ""
+"{func}`~tvm.topi.hexagon.utils.get_fixed_point_value` 的函数，它接受浮点数 `flp` "
+"和字符串 `dtype` 作为输入参数。该函数的目的是将给定的浮点数转换为定点数，并返回定点数值以及用于计算该值的 log2 的缩放因子。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:20004
+msgid ""
+"函数首先检查输入的浮点数是否为 `NaN` "
+"或无穷大，如果是，则引发运行时错误。接下来，它将浮点数打包为字节对象，并将其解包为整数。然后，它提取存储在整数中的指数值，并根据给定的数据类型计算最大位数。接着，它计算缩放因子，即"
+" 2 的指数值减 127。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:20006
+msgid ""
+"如果计算出的缩放因子大于 "
+"127，函数将引发运行时错误，表示值太小，无法进行定点转换。然后，它计算缩放因子对应的整数值，并将浮点数乘以缩放因子。最后，它将结果四舍五入为最接近的整数，并检查结果是否在给定数据类型的范围内。如果不在范围内，函数将调整缩放因子以避免溢出，并重新计算定点数值。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:20008
+msgid "最后，函数返回定点数值和对数 2 的缩放因子。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:50003
+msgid "将浮点数值转换为定点数是将浮点值乘以缩放因子并将其四舍五入到最接近的整数来实现的。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:60002
+msgid "根据 [IEEE-754 标准](https://en.wikipedia.org/wiki/IEEE_754-1985)，浮点数值可以表示为："
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:60004
+#, python-brace-format
+msgid ""
+"\n"
+"(-1)^S * M * 2^{E-Bias}\n"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:70002
+msgid "$S$ 是符号位（0 或 1）。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:70003
+msgid ""
+"$M$ 是尾数。它由标准化浮点值的隐含 1 或非标准化值的 0 以及小数部分组成。这确保了尾数始终在 $[0, 2)$ "
+"范围内。请注意，此函数不处理非标准化值。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:70004
+msgid "$E$ 是指数。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:80002
+msgid ""
+"在单精度中，23 位用于表示尾数的小数部分（因此，下面的计算之一会出现 '23'），$8$ "
+"位用于指数。由于指数字段需要表示正负值，因此在实际值上添加了偏置值（对于单精度为 $127$）。因此，要计算实际的指数，必须从存储的值中减去 "
+"$127$。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:90002
+msgid ""
+"如上所述，为了找到相应的定点数，我们将值乘以缩放因子，然后将其四舍五入到最接近的整数。缩放因子选择为 2 "
+"的幂，它是可以安全地与浮点值相乘的最大值，而不会导致结果溢出用于表示定点值的整数类型的范围。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:90004
+msgid "因此，如果假设缩放因子为 $2^x$，则得到的定点数值将为："
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:90006
+#, python-brace-format
+msgid ""
+"\n"
+"round((-1)^S * (M) * 2^{E-Bias} * 2^x)\n"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:90010
+msgid "化简后："
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:90012
+#, python-brace-format
+msgid ""
+"\n"
+"round((-1)^S * (M) * 2^{E-Bias+x})\n"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:100002
+#, python-brace-format
+msgid ""
+"现在，如果使用 `'int16'` 作为定点数值，则其必须 $\\ge -(2 * 2^{14})$ 且 $\\le (2 * 2^{14}) -"
+" 1$。由于尾数 $M$ 始终小于 $2$，为了使定点数值在此范围内，$2^{E-Bias+x}$ 必须 $\\le 2^{14} - "
+"1$。并且，如果我们忽略 $-1$，$(E-Bias+x)$ 应该 $\\le 14$。请注意，如果尾数过于接近 "
+"$2$，这将导致结果超出范围并需要将其饱和。在下面的实现中，我们执行范围检查并调整比例以避免饱和。对于大多数情况，$2^x$（其中 $x = 14"
+" - (E-Bias)$ 或 $14 - (E-127)$ 对于单精度）是可用于将浮点值转换为定点数的最适合 `'int16'` "
+"类型的缩放因子，以最小化精度损失。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:110002
+msgid "如果我们假设缩放因子为 $2^x$，那么定点数值将为："
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:110004
+#, python-brace-format
+msgid ""
+"\n"
+"round((-1)^S * M * 2^{E-Bias+x})\n"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:110008
+#, python-brace-format
+msgid ""
+"现在，我们需要找到一个满足条件的 $x$ 值，使得定点数值在上述范围内。我们知道 $M$ 小于 $2$，因此 $M * 2^{E-Bias+x}$"
+" 小于 $2 * 2^{E-Bias+x}$。要使定点数值在 $[2^{14}-1, 2^{15}-1]$ 之间，我们需要选择一个合适的 $x$ "
+"值。最接近的 $x$ 值是 $13-E+Bias$。"
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:120003
+msgid "关于各种浮点数值的额外说明："
+msgstr ""
+
+#: ../../doc/old/old/read/topi/get_fixed_point_value.ipynb:120005
+#, python-brace-format
+msgid ""
+"非标准化值：会导致断言失败。非标准化值的问题是，它们需要一个非常大的缩放因子（$\\ge "
+"2^{127}$）才能转换为定点值。随着非标准化值变小，缩放因子变得太大，无法表示为 IEEE-754 "
+"浮点值（如下面的计算所示），因此，这里不处理非标准化值。 2.`NaN`和 `INF`：断言失败"
+msgstr ""
+

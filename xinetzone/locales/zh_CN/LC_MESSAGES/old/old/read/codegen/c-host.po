@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:10002
+msgid "C-host 代码生成简介"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:40002
+msgid "`add` c-host 代码生成"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:80002
+msgid "`add_pipeline` c host 代码生成"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:110002
+msgid "`tir.reinterpret` c host"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:140002
+msgid "`tir.ceil` c host"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:160002
+msgid "`tir.floor` c host"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:180002
+msgid "`tir.round` c host"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:200002
+msgid "subroutine c host"
+msgstr ""
+
+#: ../../doc/old/old/read/codegen/c-host.ipynb:220002
+#, python-brace-format
+msgid "{func}`tvm.tir.call_intrin` c host"
+msgstr ""
+

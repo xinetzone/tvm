@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:10002
+#, python-brace-format
+msgid "解读 {class}`~tvm.target.generic_func.generic_func.GenericFunc`"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:50002
+msgid "这段代码定义了名为 `FTVMStrategy` 的类型别名，它表示通用函数。这个通用函数用于生成算子的策略。它的函数签名如下："
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:50009
+msgid ""
+"其中，`Attrs` 表示属性集合，`Array<Tensor>` 表示输入张量数组，`Type` 表示输出类型，`Target` "
+"表示目标平台。这个函数可以根据不同的目标平台进行重定义。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80002
+msgid "这段代码定义了一个名为`GenericFunc`的类，它继承自`ObjectRef`。这个类表示一个通用函数，可以针对每个目标平台进行特化。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80004
+msgid "该类中定义了一些成员函数和变量："
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80006
+msgid "`set_default`函数用于设置默认函数实现，并返回对自身的引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80007
+msgid "`register_func`函数用于注册一个特化函数，并返回对自身的引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80008
+msgid "`operator()`函数用于通过直接传递未打包格式来调用通用函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80009
+msgid "`CallPacked`函数用于根据当前目标上下文调用相关函数，并将参数以打包格式传递。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80010
+msgid "`GetPacked`函数用于获取指定当前目标上下文的打包函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80011
+msgid "`Get`函数用于查找或注册给定名称的`GenericFunc`实例。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80012
+msgid "`RegisterGenericFunc`函数用于将`GenericFunc`实例添加到注册表中。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80013
+msgid "`operator->`运算符用于访问内部节点容器。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80014
+msgid "`ContainerType`类型别名表示内部节点容器的类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/targets/GenericFunc.ipynb:80015
+msgid "`Manager`结构体表示内部管理类。"
+msgstr ""
+

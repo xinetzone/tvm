@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/extension/cpp-call.ipynb:10002
+msgid "C++ 调用 Python"
+msgstr ""
+
+#: ../../doc/old/old/extension/cpp-call.ipynb:20002
+#, python-brace-format
+msgid ""
+"由于 {class}`~tvm.runtime.PackedFunc` 可以接受另一个 "
+"{class}`~tvm.runtime.PackedFunc` 作为参数，因此可以将 Python 中的函数（作为 "
+"{class}`~tvm.runtime.PackedFunc`）传递给 C++。"
+msgstr ""
+

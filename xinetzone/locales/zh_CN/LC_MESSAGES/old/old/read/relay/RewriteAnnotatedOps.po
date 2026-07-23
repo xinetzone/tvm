@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:10002
+#, python-brace-format
+msgid "{cpp:func}`tvm::relay::RewriteAnnotatedOps`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:10004
+msgid "源码：`tvm/include/tvm/relay/transform.h`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:30002
+msgid "`RewriteAnnotatedOps` 函数，它接受两个参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:30004
+msgid "`expr`：一个表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:30005
+msgid "`fallback_device`：一个整数，表示默认设备，用于没有注解的算子。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:30007
+msgid "函数的主要功能是重写带有注解的程序。它返回更新后的程序。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/RewriteAnnotatedOps.ipynb:30009
+msgid ""
+"具体来说，这个函数的作用是将带有注解的算子重写为在指定的设备上执行。如果没有指定设备，则使用默认设备。这个函数可以用于优化程序的性能，例如将某些算子移动到"
+" GPU 上执行以加速计算。"
+msgstr ""
+

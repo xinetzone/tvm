@@ -1,0 +1,432 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:21
+msgid "Adding a Compiler Pass to Relay"
+msgstr "向 Relay 添加编译器 Pass"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:23
+msgid ""
+"Compiler passes are the primary interface for both extending Relay's "
+"feature set and for performing optimizations on Relay programs. By "
+"writing a compiler pass, you can modify the AST or collect information "
+"about the AST, depending on your goal. Indeed, some of Relay's most "
+"important built-in features (e.g., autodiff and type inference) are "
+"nothing more than \"standard\" compiler passes."
+msgstr ""
+"编译器 pass 是扩展 Relay 功能集以及对 Relay 程序执行优化的主要接口。通过编写编译器 pass，您可以根据目标修改抽象语法树（AST）或收集有关 AST 的信息。"
+"事实上，Relay 中一些最重要的内置功能（例如自动微分和类型推断）也不过是“标准”的编译器 pass。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:30
+msgid "At a high level, there are two key components to writing a pass:"
+msgstr "从高层次来看，编写 pass 有两个关键组成部分："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:32
+msgid "Creating one or more C++ classes that traverse the program"
+msgstr "创建一个或多个遍历程序的 C++ 类"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:33
+msgid ""
+"Wrapping the traversal implementation and its metadata in the pass "
+"manager API so it can neatly interface with the :ref:`pass-infra`"
+msgstr ""
+"将遍历实现及其元数据封装在 pass 管理器 API 中，以便与 :ref:`pass-infra` 无缝对接"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:35
+msgid ""
+"To begin, we'll give an overview of the key mechanisms for writing a "
+"compiler pass. Then, we'll walk through a concrete example of the "
+"constant-folding pass in Relay."
+msgstr ""
+"首先，将概述编写编译器 pass 的关键机制。接着，将通过 Relay 中的常量折叠 pass 这一具体示例进行详细讲解。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:40
+msgid "AST Traversers"
+msgstr "AST遍历器"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:42
+msgid ""
+"The base class used to traverse Relay programs is ``ExprFunctor``. The "
+"public interface it provides is a ``VisitExpr`` method that takes an "
+"expression and zero or more arguments and returns an instance of some "
+"type. When you extend this class, you define the AST traversal pattern by"
+" overriding implementations of ``VisitExpr_`` for each type of "
+"expression."
+msgstr ""
+"用于遍历 Relay 程序的基础类是 ``ExprFunctor``。它提供的公共接口是 ``VisitExpr`` 方法，该方法接受表达式以及零个或多个参数，并返回某种类型的实例。"
+"当您扩展此类时，可以通过为每种表达式类型重写 ``VisitExpr_`` 的实现来定义 AST 遍历模式。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:48
+msgid ""
+"The relation between ``VisitExpr`` and ``VisitExpr_`` has to do with "
+"dispatch. Each ``VisitExpr_`` definition targets a specific type of "
+"expression, but you don't always know which node type you'll be visiting."
+" To remedy this, ``ExprFunctor`` provides a ``VisitExpr`` function which "
+"routes from the given expression to the ``VisitExpr_`` case that handles "
+"it. Although C++ already provides dynamic dispatch, ``ExprFunctor`` "
+"defines its own vtable, which ``VisitExpr`` uses. By defining our own "
+"vtable, we have more control over dispatch. For example, if we wanted to "
+"define a ``PrintVisitor`` traverser that printed \"Here\" before every "
+"visit, we could override ``VisitExpr``:"
+msgstr ""
+"``VisitExpr`` 和 ``VisitExpr_`` 之间的关系与调度有关。每个 ``VisitExpr_`` 定义都针对特定类型的表达式，但您并不总是知道将要访问哪种节点类型。"
+"为了解决这个问题，``ExprFunctor`` 提供了 ``VisitExpr`` 函数，它从给定的表达式路由到处理它的 ``VisitExpr_`` 情况。"
+"尽管 C++ 已经提供了动态调度，``ExprFunctor`` 定义了自己的虚函数表（vtable），``VisitExpr`` 使用它。通过定义我们自己的虚函数表，可以更好地控制调度。"
+"例如，如果想定义 ``PrintVisitor`` 遍历器，在每次访问之前打印“Here”，可以重写 ``VisitExpr``："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:66
+msgid ""
+"``ExprFunctor`` itself is a very general class, which is why more often "
+"than not, you will be extending ``ExprVisitor`` or ``ExprMutator``. These"
+" classes extend ``ExprFunctor`` and provide default implementations of "
+"``VisitExpr_`` that capture common traversal patterns for each expression"
+" type. Having these default implementations means we only need to provide"
+" overriding implementations for the expression types where we want "
+"different behavior. We describe each subclass on its own in the following"
+" sections."
+msgstr ""
+"``ExprFunctor`` 本身是非常通用的类，这就是为什么您通常会扩展 ``ExprVisitor`` 或 ``ExprMutator``。"
+"这些类扩展了 ``ExprFunctor``，并为每种表达式类型提供了 ``VisitExpr_`` 的默认实现，这些实现捕获了常见的遍历模式。"
+"拥有这些默认实现意味着只需要为希望行为不同的表达式类型提供重写实现。将在接下来的部分中分别描述每个子类。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:75
+msgid "Expression Visitors"
+msgstr "表达式访问器"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:77
+msgid ""
+"``ExprVisitor`` is for passes that don't modify the program and instead "
+"perform program analyses and collect information. With this class, "
+"``VisitExpr`` and the private counterparts return nothing. The "
+"``VisitExpr_`` implementations provided by this class simply visit all of"
+" the expression's fields that are expressions. The default implementation"
+" for ``IfNode`` is shown below."
+msgstr ""
+"``ExprVisitor`` 用于不修改程序而是执行程序分析并收集信息的传递。使用此类时，``VisitExpr`` 及其私有对应方法不返回任何内容。该类提供的 ``VisitExpr_`` 实现仅访问表达式的所有字段。下面展示了 ``IfNode`` 的默认实现。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:92
+msgid ""
+"Note that we're calling ``VisitExpr`` and not ``VisitExpr_`` here, so we "
+"can use the vtable in ``ExprFunctor`` for routing."
+msgstr ""
+"请注意，在这里调用的是 ``VisitExpr`` 而不是 ``VisitExpr_``，因此可以使用 ``ExprFunctor`` 中的虚函数表进行路由。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:95
+msgid ""
+"Now, if we wanted to write a class ``CallChecker`` that checks if any "
+"function calls appear in the program, we would only need to extend "
+"``ExprVisitor`` and define the following ``VisitExpr_`` method:"
+msgstr ""
+"现在，如果想编写类 ``CallChecker`` 来检查程序中是否出现任何函数调用，只需要扩展 ``ExprVisitor`` 并定义以下 ``VisitExpr_`` 方法："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:105
+msgid ""
+"where ``result_`` is a field. In this case, we don't need to further "
+"recurse on the fields of the ``CallNode``, because ``result_`` is already"
+" true and we now know the original expression contains a call. To make "
+"this visitor usable, we would provide the following public method:"
+msgstr ""
+"其中 ``result_`` 是字段。在这种情况下，不需要进一步递归访问 ``CallNode`` 的字段，因为 ``result_`` 已经为真，现在知道原始表达式包含调用。为了使这个访问器可用，将提供以下公共方法："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:118
+msgid ""
+"And that's all we need. It is very common to define a public interface "
+"that performs some bookkeeping before invoking the top-level recursion. "
+"We could of course further wrap the API by making a standalone procedure "
+"that creates a ``CallChecker`` instance and calls ``Check`` on it, but "
+"the takeaway is that we've achieved our goal with very little effort."
+msgstr ""
+"这就是所需要的。通常，会定义公共接口，在调用顶层递归之前执行一些簿记工作。"
+"当然，还可以通过创建独立的函数来进一步封装API，该函数创建 ``CallChecker`` 实例并调用其上的 ``Check`` 方法，但关键是已经以极少的努力实现了目标。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:125
+msgid "Expression Mutators"
+msgstr "表达式变换器"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:127
+msgid ""
+"``ExprMutator`` is for passes that transform the program in some way. "
+"With this class, ``VisitExpr`` and its private counterparts return "
+"``Expr``. The default ``VisitExpr_`` implementations provided by this "
+"class visit all of the expression's fields that are expressions and set "
+"the fields to be the result of visiting them. The default implementation "
+"for ``TupleGetItemNode`` is shown below."
+msgstr ""
+"``ExprMutator`` 用于以某种方式变换程序的传递。使用此类时，``VisitExpr`` 及其私有对应方法返回 ``Expr``。"
+"该类提供的默认 ``VisitExpr_`` 实现访问表达式的所有字段，并将这些字段设置为访问它们的结果。下面展示了 ``TupleGetItemNode`` 的默认实现。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:145
+msgid ""
+"There are a few things to notice here. First, ``Mutate`` is an alias for "
+"``VisitExpr`` in ``ExprMutator``. Second, we only return a new node if "
+"the call to ``Mutate`` modified the ``tuple`` field. This method of "
+"update is called a functional update and doing so avoids unnecessary "
+"allocations."
+msgstr ""
+"这里有几件事需要注意。首先，``Mutate`` 是 ``ExprMutator`` 中 ``VisitExpr`` 的别名。"
+"其次，只有在调用 ``Mutate`` 修改了 ``tuple`` 字段时，才返回新节点。这种更新方法称为函数式更新，这样做可以避免不必要的分配。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:150
+msgid ""
+"One feature ``ExprMutator`` has that ``ExprVisitor`` doesn't is a built-"
+"in ``memo_`` field for caching results. It makes sense that "
+"``ExprMutator`` has a memoizer, because we know which types of results "
+"we're caching (i.e., ``Expr``), whereas the visit methods of "
+"``ExprVisitor`` don't return anything. Usually, when we want to cache "
+"results in a subclass of ``ExprVisitor``, we need to define the cache "
+"ourselves."
+msgstr ""
+"``ExprMutator`` 有 ``ExprVisitor`` 没有的特性，那就是内置的 ``memo_`` 字段，用于缓存结果。"
+"``ExprMutator`` 拥有记忆器(memoizer)是合理的，因为知道缓存的是哪种类型的结果（即 ``Expr``），而 ``ExprVisitor`` 的访问方法不返回任何内容。"
+"通常，当需要在 ``ExprVisitor`` 的子类中缓存结果时，需要自己定义缓存。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:157
+msgid ""
+"Now, if we wanted to write a class ``IfCollapser`` that replaces every if"
+" statement with its true branch, we would override ``VisitExpr_`` for "
+"``IfNode``:"
+msgstr ""
+"现在，如果想编写类 ``IfCollapser``，用其真分支替换每个 if 语句，将为 ``IfNode`` 重写 ``VisitExpr_``："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:167
+msgid ""
+"Note that the returned expression will not necessarily be an ``IfNode``, "
+"and this is fine, because the return type is ``Expr``. Now, we create the"
+" public interface:"
+msgstr ""
+"请注意，返回的表达式不一定是 ``IfNode``，这是可以的，因为返回类型是 ``Expr``。现在，创建公共接口："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:177
+msgid ""
+"With this mutator, we didn't need to do any bookkeeping, but we still "
+"want to follow the convention of having a descriptive method as the "
+"interface."
+msgstr ""
+"使用这个变换器，不需要进行任何簿记工作，但仍然希望遵循将描述性方法作为接口的惯例。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:181
+msgid "Example: Constant Folding"
+msgstr "示例：常量折叠"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:183
+msgid ""
+"In order to better understand the process of writing a pass, we will look"
+" at the constant folding pass (found in "
+"`src/relay/transforms/fold_constant.cc`_) as a guide, because it is a "
+"relatively simple pass that incorporates both types of traversals."
+msgstr ""
+"为了更好地理解编写 pass 的过程，将参考常量折叠 pass（位于 `src/relay/transforms/fold_constant.cc`_），因为它是相对简单的 pass，结合了两种类型的遍历。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:188
+msgid ""
+"Constant folding involves evaluating expressions in the program that only"
+" involve constant values, then replacing those expressions with the "
+"result of evaluating them. The goal of this pass is to frontload all of "
+"the computations that we can. To achieve this, the constant folding pass "
+"makes use of a visitor (``ConstantChecker``) and a mutator "
+"(``ConstantFolder``)."
+msgstr ""
+"常量折叠涉及评估程序中仅涉及常量值的表达式，然后用评估结果替换这些表达式。"
+"此 pass 的目标是提前进行所有可能的计算。为了实现这一点，常量折叠 pass 使用了访问者（``ConstantChecker``）和变换器（``ConstantFolder``）。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:195
+msgid "The ``ConstantChecker`` Visitor"
+msgstr "``ConstantChecker`` 访问者"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:197
+msgid ""
+"This visitor is used to check if an expression is constant. In Relay, we "
+"define an expression to be constant if it is a ``ConstantNode`` or it is "
+"a ``TupleNode`` with only constant fields."
+msgstr ""
+"此访问者用于检查表达式是否为常量。在 Relay 中，将表达式定义为常量，如果它是 ``ConstantNode``，或者它是仅包含常量字段的 ``TupleNode``。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:201
+msgid ""
+"We use a ``memo_`` field to map from nodes to whether they are constant "
+"and to cache these results. Below are the ``VisitExpr_`` definitions in "
+"the ``ConstantChecker``."
+msgstr ""
+"使用 ``memo_`` 字段来从节点映射到它们是否为常量，并缓存这些结果。以下是 ``ConstantChecker`` 中的 ``VisitExpr_`` 定义。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:222
+msgid ""
+"The bookkeeping used to coordinate these definitions is a ``Check`` "
+"method that returns whether the given expression is considered constant."
+msgstr ""
+"用于协调这些定义的簿记是 ``Check`` 方法，它返回给定的表达式是否被视为常量。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:235
+msgid ""
+"We don't modify ``memo_`` for every node we encounter; instead we only "
+"modify ``memo_`` when the encountered node could potentially be constant."
+" Then we rely on the default value being false when ``memo_`` doesn't "
+"contain ``expr``."
+msgstr ""
+"不会为遇到的每个节点修改 ``memo_``；相反，只在遇到的节点可能为常量时修改 ``memo_``。然后，当 ``memo_`` 中不包含 ``expr`` 时，依赖于默认值为 `false`。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:241
+msgid "The ``ConstantFolder`` Mutator"
+msgstr "``ConstantFolder`` 变换器"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:243
+msgid ""
+"This mutator performs the bulk of the constant folding pass and "
+"internally uses ``ConstantChecker``. In Relay, there are three node types"
+" that are involved in constant folding: ``LetNode``, "
+"``TupleItemGetNode``, and ``CallNode``. In the following paragraphs, we "
+"explain the roles of each in the pass."
+msgstr ""
+"这个变换器执行了常量折叠传递的大部分工作，并在内部使用了 ``ConstantChecker``。"
+"在 Relay 中，有三种节点类型参与了常量折叠：``LetNode``、``TupleItemGetNode`` 和 ``CallNode``。在接下来的段落中，将解释每种节点在此传递中的作用。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:269
+msgid ""
+"In the ``LetNode`` case, we first attempt to const-fold the value being "
+"bound in the expression. If we can, then we populate ``memo_`` and return"
+" the result of visiting the body---essentially, propagating the bound "
+"value to its use sites in the body. If we can't const-fold the bound "
+"value, we mimic the default implementation."
+msgstr ""
+"在 ``LetNode`` 的情况下，首先尝试对表达式中绑定的值进行常量折叠。"
+"如果能够成功折叠，那么会填充 ``memo_`` 并返回访问主体（body）的结果——本质上，是将绑定的值传播到主体中的使用位置。如果我们无法对绑定的值进行常量折叠，则会模拟默认的实现方式。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:287
+msgid ""
+"In the ``TupleItemGetNode`` case, we check if ``op->tuple`` field is a "
+"``TupleNode``. If so, we replace the tuple get with the field of the "
+"tuple pointed to by ``op->index``. The reason we need to check is because"
+" ``op->tuple`` might evaluate to a tuple, without itself being a tuple."
+msgstr ""
+"在 ``TupleItemGetNode`` 的情况下，会检查 ``op->tuple`` 字段是否为 ``TupleNode``。"
+"如果是，会将元组获取算子替换为由 ``op->index`` 指向的元组字段。需要进行检查的原因是，``op->tuple`` 可能本身不是元组，但其求值结果可能是元组。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:319
+msgid ""
+"In the ``CallNode`` case, we first use the ``VisitExpr_`` of "
+"``ExprMutator`` to visit the call, which const-folds all of the fields of"
+" the call. We use ``ExprMutator::VisitExpr_`` instead of ``VisitExpr``, "
+"because we want to bypass the vtable (to avoid an infinite loop) and use "
+"the default implementation provided by ``ExprMutator``. Then we evaluate "
+"the call only if all of the arguments are constant (using "
+"``ConstantChecker``). Evaluating the call produces a **value**, so we use"
+" a helper method ``ValueToExpr`` to allow us to place the evaluated "
+"expression back into the AST."
+msgstr ""
+"在 ``CallNode`` 的情况下，首先使用 ``ExprMutator`` 的 ``VisitExpr_`` 方法来访问调用节点，这会对调用的所有字段进行常量折叠。"
+"使用 ``ExprMutator::VisitExpr_`` 而不是 ``VisitExpr``，是因为希望绕过虚函数表（vtable，以避免无限循环）并使用 ``ExprMutator`` 提供的默认实现。"
+"然后，仅在所有参数都是常量时（使用 ``ConstantChecker``）才对调用进行求值。对调用求值会生成 **值**，因此使用辅助方法 ``ValueToExpr``，将求值后的表达式重新放回抽象语法树（AST）中。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:328
+msgid ""
+"Now, we construct a more convenient interface ``FoldConstant`` for our "
+"constant folder. ``FoldConstant`` is a standalone function outside of the"
+" ``ConstantFolder`` class that takes an expression and internally creates"
+" and uses a ``ConstantFolder`` instance (the full definition can be found"
+" in `src/relay/transforms/fold_constant.cc`_)."
+msgstr ""
+"现在，为常量折叠器构建了更便捷的接口 ``FoldConstant``。"
+"``FoldConstant`` 是独立于 ``ConstantFolder`` 类之外的函数，它接收表达式并在内部创建并使用 ``ConstantFolder`` 实例（完整定义可以在 `src/relay/transforms/fold_constant.cc`_ 中找到）。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:336
+msgid "Registering a Pass with the Pass Manager"
+msgstr "向 Pass 管理器注册 Pass"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:338
+msgid ""
+"*Note: please see the documentation on the :ref:`pass-infra` for more "
+"specific detail on this subject.*"
+msgstr ""
+"*注意：有关此主题的更多具体细节，请参阅 :ref:`pass-infra` 的文档。*"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:340
+msgid ""
+"With the AST traversers written, the pass can be registered to become a "
+"TVM API endpoint with the following code:"
+msgstr ""
+"编写完 AST 遍历器后，可以通过以下代码将 Pass 注册为 TVM API 的端点："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:357
+msgid ""
+"If the ``Pass`` object produced by the above code is given to the pass "
+"infrastructure, it will ensure that the AST traversal is applied to every"
+" function in the given Relay module, which is the behavior one would "
+"expect for a constant folding pass (it should fold all constants where "
+"possible)."
+msgstr ""
+"如果将由上述代码生成的 ``Pass`` 对象传递给 Pass 基础设施，它将确保 AST 遍历应用于给定 Relay 模块中的每个函数，这是常量折叠 Pass 所期望的行为（它应尽可能折叠所有常量）。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:362
+msgid ""
+"The function ``CreateFunctionPass`` allows for registering the "
+"optimization level of the pass (in this case, 2), which can be used to "
+"group together passes based on their general utility, a name for the "
+"pass, and any dependencies for the pass. A pass's dependencies are given "
+"as a list of any passes whose results are necessary to be able to run the"
+" current pass. ``FoldConstant`` does not have any dependencies, but many "
+"Relay passes do depend on having type information, so ``InferType`` is a "
+"common dependency; others may depend on the program's being in A-normal "
+"form, via the ``ToANormalForm`` pass."
+msgstr ""
+"函数 ``CreateFunctionPass`` 允许注册 Pass 的优化级别（在本例中为2），该级别可用于根据 Pass 的通用功能、Pass 的名称以及 Pass 的任何依赖项将其分组。"
+"Pass 的依赖项以列表形式给出，这些依赖项是运行当前 Pass 所必需的其他 Pass 的结果。"
+"``FoldConstant`` 没有任何依赖项，但许多 Relay Pass 确实依赖于类型信息，因此 ``InferType`` 是常见的依赖项；其他 Pass 可能依赖于通过 ``ToANormalForm`` Pass将程序转换为 A 范式（A-normal form）。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:371
+msgid ""
+"Note that the ``PassContext`` object contains information a pass uses for"
+" error reporting and configuration options; ``FoldConstant`` does not "
+"need this information but other passes may reference their "
+"``PassContext`` objects."
+msgstr ""
+"请注意，``PassContext`` 对象包含了 Pass 用于错误报告和配置选项的信息；``FoldConstant`` 不需要这些信息，但其他 Pass 可能会引用它们的 ``PassContext`` 对象。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:375
+msgid ""
+"The pass can now be invoked via the pass infrastructure, though it's a "
+"good idea to also add a Python binding for the pass, as in this code "
+"snippet:"
+msgstr ""
+"现在可以通过 Pass 基础设施调用该 Pass，不过最好也为该 Pass 添加 Python 绑定，如以下代码片段所示："
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:383
+msgid ""
+"Once ``Pass`` objects are defined in the above fashion, they can be "
+"invoked using the pass infrastructure's ``Sequential`` construct, which "
+"takes a list of passes and applies them in sequence to a Relay module, "
+"obtaining a transformed module as a result. For example, the below code "
+"applies both the ``FoldConstant`` and ``ToANormalForm`` passes (one after"
+" the other) to each function in ``mod`` and obtains a new module."
+msgstr ""
+"一旦以上述方式定义了 ``Pass`` 对象，就可以使用 Pass 基础设施的 ``Sequential`` 构造来调用它们。"
+"``Sequential`` 接受 Pass 列表，并按顺序将它们应用于 Relay 模块，从而获得变换后的模块。"
+"例如，以下代码将 ``FoldConstant`` 和 ``ToANormalForm`` Pass依次应用于 ``mod`` 中的每个函数，并生成新模块。"
+
+#: ../../doc/docs/dev/how_to/relay_add_pass.rst:397
+msgid ""
+"More detail about registration can be found in :ref:`tvm-runtime-system` "
+"and more information about the pass manager interface can be found in "
+":ref:`pass-infra`. Relay's standard passes are listed in "
+"`include/tvm/relay/transform.h`_ and implemented in "
+"`src/relay/transforms/`_."
+msgstr ""
+"有关注册的更多详细信息可以在 :ref:`tvm-runtime-system` 中找到，有关 Pass 管理器接口的更多信息可以在 :ref:`pass-infra` 中找到。"
+"Relay 的标准 Pass 列在 `include/tvm/relay/transform.h`_ 中，并在 `src/relay/transforms/`_ 中实现。"

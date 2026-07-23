@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:10002
+msgid "变换"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:10003
+msgid "在本节中，将深入探讨 Relax 程序的变换。变换是编译流程中的关键组成部分，用于优化并与硬件后端进行集成。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:20002
+msgid "首先，按照在 [上一节](relax-creation) 中所做的那样，创建简单的 Relax 程序。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:40002
+msgid "应用变换"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:40004
+#, python-brace-format
+msgid ""
+"Pass 是对程序应用变换的主要方式。可以对程序应用 Pass。作为第一步，让应用内置的 "
+"{py:class}`~tvm.relax.transform.LegalizeOps` Pass，将高级算子降级为低级算子。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:60002
+msgid "从输出可以看到，程序中的高级算子（即 ``relax.op``）已被相应的低级算子（即 ``relax.call_tir``）所取代。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:60004
+msgid ""
+"接下来，尝试应用算子融合，这是机器学习编译器中广泛使用的一种优化技术。请注意，在 Relax 中，融合优化是通过一系列 Pass "
+"的协作完成的。可以按顺序应用这些 Pass。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:80002
+msgid "结果显示，``matmul``、``add`` 和 ``relu`` 算子被融合到了内核中（即 ``call_tir``）。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:80004
+#, python-brace-format
+msgid "有关所有内置 Pass 的详细信息，请参阅 {py:mod}`tvm.relax.transform`。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:80006
+msgid "自定义 Pass"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:80008
+msgid "也可以定义自己的 Pass。以下是将 ``relu`` 算子重写为 ``gelu`` 算子的示例。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:80010
+msgid "首先，需要编写 Relax IR Mutator 来执行重写。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:100002
+msgid "然后，可以编写 Pass，将 Mutator 应用到整个模块中。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:120002
+msgid "打印输出显示，``relax.nn.relu`` 运算符已被重写为 ``relax.nn.gelu`` 运算符。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:120004
+#, python-brace-format
+msgid "有关 Mutator 的详细信息，请参阅 {py:class}`~tvm.relax.expr_functor.PyExprMutator`。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:120006
+msgid "总结"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/transformation.ipynb:120008
+msgid "在本节中，展示了如何对 Relax 程序应用转换。还展示了如何定义和应用自定义转换。"
+msgstr ""
+

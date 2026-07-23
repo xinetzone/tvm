@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:10002
+msgid "ONNX Script 简介"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:10004
+msgid "ONNX Script 使得开发者能够使用 Python 的子集自然地编写 ONNX 函数和模型。它旨在实现以下几点："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:10006
+msgid "表达性强：能够编写所有 ONNX 函数。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:10007
+msgid "简洁明了：函数代码自然且简单。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:10008
+msgid "可调试：允许进行即时模式评估，可以使用标准的 Python 调试器来调试代码。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20002
+msgid "请注意，ONNX Script 并不打算支持整个 Python 语言。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20004
+msgid "ONNX Script 提供了一些主要功能，用于编写和调试 ONNX 模型和函数："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20006
+msgid "转换器，将 Python ONNX Script 函数转换为 ONNX 图，通过遍历 Python 抽象语法树来构建与该函数等效的 ONNX 图。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20007
+msgid ""
+"运行时填充层（shim），允许这样的函数被评估（以“即时模式”）。当前这个功能依赖于 ONNX Runtime 来执行 ONNX "
+"操作，并且正在进行一个仅支持 Python 的 ONNX 参考运行时的开发，也将得到支持。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20008
+msgid ""
+"转换器，将 ONNX 模型和函数转换成 ONNX Script。这个功能可以用于完全地在 ONNX Script &#8596; ONNX "
+"图之间进行循环转换。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20010
+msgid "请注意，运行时旨在帮助理解和调试函数定义。性能不是此处的目标。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20012
+msgid "ONNX Script 尝鲜"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:20014
+msgid "以下是使用 ONNX Script 的简单示例。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:40002
+msgid ""
+"装饰器解析函数的代码并将其转换为中间表示形式。如果转换失败，它将触发报错信息，指示检测到的错误。如果成功，可以生成如下所示的函数的相应 ONNX "
+"表示（FunctionProto 类型的值）："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:60002
+msgid ""
+"类似地，可以生成 ONNX 模型。ONNX 模型和 ONNX 函数之间有一些区别。例如，ONNX 模型必须指定输入和输出的类型（与 ONNX "
+"函数不同）。以下示例说明了我们如何生成 ONNX 模型："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:80002
+msgid "ONNX Script 即时评估模式"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/intro.ipynb:80004
+msgid "即时评估模式主要用于调试和检查中间结果是否符合预期。之前定义的函数可以如下调用，并且这将在即时评估模式下执行。"
+msgstr ""
+

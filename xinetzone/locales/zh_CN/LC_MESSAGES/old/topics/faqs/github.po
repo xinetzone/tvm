@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/topics/faqs/github.md:1
+msgid "GitHub FAQs"
+msgstr ""
+
+#: ../../doc/old/topics/faqs/github.md:3
+msgid "如何在 Colab 上运行 GitHub 代码"
+msgstr ""
+
+#: ../../doc/old/topics/faqs/github.md:5
+msgid ""
+"打开 [colab-github](https://colab.research.google.com/github/) 并添加 GiHub "
+"地址，选择你想要运行的代码即可。"
+msgstr ""
+

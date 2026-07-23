@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:10002
+msgid "FFI 容器"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:30002
+msgid "数组"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:50002
+msgid "`map`"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:70002
+msgid "数组映射"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:110002
+msgid "整数映射"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:130002
+msgid "字符串映射"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:150002
+msgid "KeyError"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:170002
+#, python-brace-format
+msgid "{data}`repr`"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:190002
+msgid "序列化"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:220002
+msgid "`in` 容器"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:240002
+msgid "`ndarray` 容器"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:260002
+msgid "`ReturnsVariant`"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/container.ipynb:280002
+msgid "`AcceptsVariant`"
+msgstr ""
+

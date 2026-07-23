@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:10002
+msgid "TensorFlow2 Keras 推理"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:10005
+msgid "主题"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:10006
+msgid ""
+"TVM 对 TensorFlow1 模型的支持并不完善，为了提高开发效率，本节讨论如何将 TensorFlow1 模型转换为 "
+"TensorFlow2 的 Keras 模型，最终再将其转换为 ONNX 或者 TFLite 模型。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:10009
+msgid "参考：[migrating_checkpoints](https://www.tensorflow.org/guide/migrate/migrating_checkpoints)"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:10011
+msgid ""
+"下面以模型 "
+"[resnet_v2_50](http://download.tensorflow.org/models/resnet_v2_50_2017_04_14.tar.gz)"
+" 为例展示。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:10013
+msgid "需要克隆项目 [models](https://github.com/tensorflow/models)，然后执行如下操作。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:30002
+msgid "切换到 `models/research/slim` 目录下："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:50002
+msgid "将 TF1 升级为 TF2："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:70002
+msgid "预处理："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:90002
+msgid "前向推理："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:120002
+msgid "打印标签信息："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:140002
+msgid "将其模型和参数与加载下来："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:190002
+msgid "转换为 ONNX 模型"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:200002
+msgid ""
+"[Keras 模型转换 ONNX](https://onnxruntime.ai/docs/tutorials/tf-get-"
+"started.html)："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:220002
+msgid "构建库："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:240002
+msgid "推理："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:260002
+msgid "验证一致性："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:280002
+msgid "转换为 TFLite 模型"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:300002
+msgid "加载 TFLite 模型："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:320002
+msgid "验证结果一致性："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/tf-slim/tf2-keras.ipynb:340003
+msgid "TFLite 转换出现了问题，暂时搁置。"
+msgstr ""
+

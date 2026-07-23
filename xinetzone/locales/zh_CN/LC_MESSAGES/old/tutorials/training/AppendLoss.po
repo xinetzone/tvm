@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/training/AppendLoss.ipynb:10002
+#, python-brace-format
+msgid "{class}`~tvm.relax.training.AppendLoss`"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/AppendLoss.ipynb:30002
+msgid "简单测试"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/AppendLoss.ipynb:60002
+msgid "测试多主干"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/AppendLoss.ipynb:60004
+msgid "测试带多个主干(backbone)输出的场景"
+msgstr ""
+
+#: ../../doc/old/tutorials/training/AppendLoss.ipynb:80002
+msgid "测试附加参数"
+msgstr ""
+

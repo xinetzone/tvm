@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:10002
+msgid "op IR"
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:40002
+msgid "op 属性"
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:50002
+msgid "属性访问："
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:70002
+msgid "注册 op 属性函数："
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:90002
+msgid "重置属性函数："
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:110002
+msgid "重置 `log` 属性函数："
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:130002
+msgid "op 临时属性"
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:150002
+msgid "op 注册"
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:170003
+msgid "`\"TOpIsStateful\"` 为 `True` 表示算子是有状态的或包含内部状态。"
+msgstr ""
+
+#: ../../doc/old/old/read/op/ir-op.ipynb:170005
+msgid "我们总是可以通过添加额外的句柄参数并返回它来处理有状态的算子。"
+msgstr ""
+

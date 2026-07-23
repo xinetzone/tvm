@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/ffi/intro.md:1
+msgid "FFI 简介"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:3
+msgid "FFI（外部函数接口（Foreign Function Interface） 特性："
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:4
+msgid "专门的干净 Any/AnyView，可以存储项的强引用和弱引用"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:5
+msgid "基于 Any/AnyView 构建的函数（以前称为 PackedFunc）系统"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:6
+msgid "最小的 C API，支持整体调用。目标是带来干净的、稳定的 FFI 规范，适用于编译和注册代码"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:7
+msgid "基于模块重写的核心 Python 绑定和生成代码"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:8
+msgid "最新 dlpack 支持"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:10
+msgid "好处："
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:11
+msgid "Any 可以支持 POD 类型（int）和对象类型。"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:12
+msgid "容器（例如 Array）现在也可以包含 Any 值，例如支持 Array<int> ，无需 boxed 类型"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:13
+msgid "错误处理为基于对象的方式，允许跨语言更清晰的回溯"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:14
+msgid "映射（Map）保留插入顺序"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:15
+msgid "隔离稳定最小核心 ABI/API 基础模块路径"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:16
+msgid "基于类型特性的设计，清晰定义值与 Any 系统如何交互"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:17
+msgid "根据特征按需自动转换不同类型"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:19
+msgid "升级说明"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:20
+msgid "对于像 `Map<ObjectRef, ObjectRef>` 这样的通用容器，考虑使用 `Map<Any, Any>` 代替"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:21
+msgid "用 `ffi::Function` 代替 `PackedFunc`"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:22
+msgid "现在 `cast<T>` 或 `.as<T>()` （返回可选）需要显式转换以实现更好的类型安全"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:23
+msgid "可能可以插入 `args[i].cast<T>()` 来显式转换为 `T`，或者使用带类型的版本"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:24
+msgid ""
+"对于需要某种形式 boxing 的地方，属性大多变成 POD 类型，例如现在使用 `bool` 和 `int64_t` 来表示 `int` 和 "
+"`bool` 属性"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:26
+#, python-brace-format
+msgid "{mod}`tvm.ffi` 模块"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:28
+#, python-brace-format
+msgid ""
+"{mod}`tvm.ffi` 模块实现 TVM C 语言核心 API 与 Python 的接口绑定，是 Python 调用底层 C++ "
+"实现的关键桥梁。可以单独使用不依赖其他组件，这种设计便于："
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:29
+msgid "模块化部署"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:30
+msgid "减少依赖冲突"
+msgstr ""
+
+#: ../../doc/old/tutorials/ffi/intro.md:31
+msgid "快速集成到其他系统"
+msgstr ""
+

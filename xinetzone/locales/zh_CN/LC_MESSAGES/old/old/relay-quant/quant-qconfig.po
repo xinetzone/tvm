@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10002
+msgid "量化配置"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10004
+#, python-brace-format
+msgid "{class}`~tvm.relay.quantize.QConfig` 通过设置配置变量来配置量化行为。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10007
+#, python-brace-format
+msgid ""
+"{class}`~tvm.relay.quantize.QConfig` 对象在 C++ 中由节点系统（node system）支持，并且可以与 "
+"Python 和 C++ 之间交换参数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10009
+#, python-brace-format
+msgid "不要直接构造，而是使用 {func}`tvm.relay.quantize.qconfig`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10011
+#, python-brace-format
+msgid ""
+"一旦实例被构造，由 C++ 节点支持的字段就是不可变的。有关字段的信息请参见 "
+"{data}`tvm.relay.quantize.QConfig._node_defaults`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10015
+#, python-brace-format
+msgid ""
+"{func}`tvm.ir.make_node` 通过其类型键和字段创建新的 IR 节点。如果创建的节点是 AttrsNode "
+"的实例，则创建函数还将运行绑定检查和 Attrs 支持的默认值设置。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:10017
+msgid "比如："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30018
+msgid ""
+"`SimulatedQuantizeAttrs` 结构体用于表示模拟量化算子的属性。该结构体继承自 `tvm::AttrsNode` 类，并使用 "
+"`TVM_DECLARE_ATTRS` 宏来声明属性。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30020
+msgid "在结构体中，定义了三个成员变量："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30021
+msgid "`kind`：表示字段的类型和配置提示，用于指导量化算子的 nbit/dtype 设置。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30022
+msgid "`sign`：表示是否使用带符号的数据类型，默认为 `true`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30023
+msgid ""
+"`rounding`：表示舍入模式，可以是 `floor`（向下取整）、`ceil`（向上取整）或 `round`（四舍五入），默认为 "
+"`round`。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30025
+msgid "通过 `TVM_ATTR_FIELD` 宏来指定每个成员变量的名称和描述信息。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:30027
+msgid "这个结构体可以用于定义模拟量化算子所需的属性，例如在模型编译期间传递给量化层的配置参数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:40002
+msgid "用于存储量化配置选项的类："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50002
+msgid "`QConfig` 类和 `QConfigContext` 结构体，用于管理构建配置的上下文。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50004
+msgid "`QConfig` 类是容器类，它继承自 `ObjectRef` 类。它具有以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50005
+msgid "默认构造函数和带有 `ObjectPtr<Object>` 参数的构造函数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50006
+msgid "重载了箭头运算符 `->`，以支持获取 `QConfigNode` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50007
+msgid "`EnterQConfigScope` 静态函数，用于将新的 `BuildConfig` 上下文压入线程本地栈中。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50008
+msgid "`ExitQConfigScope` 静态函数，用于从线程本地上下文栈中弹出 `BuildConfig` 上下文，恢复之前的配置作为当前上下文。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50009
+msgid ""
+"`Current` 静态函数，用于从线程本地存储中获取当前的 `BuildConfig` 上下文，如果没有进入 `BuildConfig` "
+"范围，则返回默认配置。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50010
+msgid "使用 `ContainerType` 别名指定 `QConfigNode` 为容器类型。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:50012
+msgid ""
+"`QConfigContext` 结构体是 RAII（资源获取即初始化）容器，用于提供受控的 `BuildConfig` "
+"上下文。它在构造时将配置压入上下文栈中，并在析构时弹出上下文。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60002
+msgid "Python 端 `tvm.relay.quantize.qconfig` 参数解读："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60003
+msgid "`nbit_dict: QAnnotateKind`: 每种注释字段的位数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60004
+msgid "`calibrate_mode: str`: 校准模式：'global_scale' 或者 'kl_divergence'。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60005
+msgid "`global_scale`: 使用 global scale。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60006
+msgid "`kl_divergence`: 在数据集中通过 KL 散度查找 scale。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60007
+msgid "`global_scale: float`: 校准的全局 scale。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60008
+msgid "`weight_scale: str`: 计算权重的 scale 的方法（用 `QAnnotateKind.WEIGHT` 注解）。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60009
+msgid "`power2`: 找到张量绝对值的最大值，然后将其向上取到 $2$ 的幂次方。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60010
+msgid "`max`: 找到张量绝对值的最大值。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60011
+msgid "`skip_dense_layer: bool = True`: 是否跳过所有的 `nn.dense` 层类型。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60012
+msgid "`skip_conv_layers: list[int]`: 指定要跳过的层。提供索引列表，指示哪些卷积层保持不变。从 $0$ 开始。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60013
+msgid "`do_simulation: bool`: 是否仅使用浮点运算进行模拟。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60014
+msgid "`round_for_shift: bool`： 是否在移位时添加舍入偏差。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60015
+msgid ""
+"`debug_enabled_ops: list[str]|None = None`: 部分量化指定的算子进行调试。默认值为 "
+"`None`，这意味着将尝试调用所有算子的注解重写函数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60016
+msgid "`rounding: str`: 定点乘法的舍入方向。\"UPWARD\" 或者 \"TONEAREST\"。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/quant-qconfig.ipynb:60017
+msgid ""
+"`partition_conversions: str = 'disabled'`: 可选值：`'disabled'`、`'enabled'` "
+"或者 `'fully_integral'`。如果设置为 `'enabled'` 或 "
+"`'fully_integral'`，则将量化的结果划分到模块容器，其中包含前缀函数（由输入转换为量化数据空间组成），中间函数（由核心量化网络组成），后缀函数（由输出反量化组成）以及主函数（依次调用前缀、中间和后缀函数）。如果设置为"
+" `'fully_integral'` 且结果中存在未量化的算子，则会引发异常。默认值为 `'disabled'`。"
+msgstr ""
+

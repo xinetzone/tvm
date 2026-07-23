@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:10002
+msgid "张量"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:30002
+msgid "tensor"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:50002
+msgid "rank_zero"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:70002
+msgid "conv1d"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:90002
+msgid "slice"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:110002
+msgid "reduce_multi_axis"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:130002
+msgid "comm_reducer"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:150002
+msgid "comm_reducer_overload"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:170002
+msgid "reduce"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:190002
+msgid "reduce_multiout_with_cond"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:210002
+msgid "scan"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:230002
+msgid "scan_multi_out"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:250002
+msgid "extern"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:270002
+msgid "extern_multi_out"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:290002
+msgid "tuple_inputs"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:310002
+msgid "tuple_with_different_deps"
+msgstr ""
+
+#: ../../doc/old/tutorials/te/tensor.ipynb:330002
+msgid "tensor_inputs"
+msgstr ""
+

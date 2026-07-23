@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:10002
+msgid "GetFixedPointMultiplierShift"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:10004
+msgid "源码：`tvm/src/relay/qnn/utils.cc`"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:30002
+msgid ""
+"函数 `GetFixedPointMultiplierShift`，它接受双精度浮点数 `double_multiplier` "
+"作为参数，返回包含两个整数的 pair 对象。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:30004
+msgid ""
+"该函数的作用是将输入的双精度浮点数转换为定点数表示形式，即将其转换为具有固定小数位数的数值。具体来说，它将输入的浮点数分解为尾数和指数两部分，并将尾数转换为整数，使得小数点位于第"
+" 31 位和第 30 位之间。然后，将这个整数和指数一起返回。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:30006
+#, python-brace-format
+msgid ""
+"在函数内部，首先判断输入的浮点数是否为零，如果是，则直接返回零值对。否则，使用 `std::frexp` "
+"函数获取浮点数的尾数和指数。接着，将尾数乘以 $2^{31}$，并四舍五入得到整数。如果这个整数等于 "
+"$2^{31}$，则将其除以2，并将指数加1。最后，将整数转换为 `int32_t` 类型，并检查其是否小于等于 `int32_t` "
+"的最大值。如果满足条件，则将其和指数一起返回。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:40002
+msgid "`std::frexp` 是 C++ 标准库中的一个函数，用于将一个浮点数分解为尾数和指数。它的原型如下："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:40008
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:40009
+msgid "`x`：要分解的浮点数。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:40010
+msgid "`exp`：指向一个整数的指针，用于存储分解后的指数(xponent)部分。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:40012
+msgid "返回值："
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/realize/GetFixedPointMultiplierShift.ipynb:40013
+msgid "返回分解后的尾数(Mantissa)部分。"
+msgstr ""
+

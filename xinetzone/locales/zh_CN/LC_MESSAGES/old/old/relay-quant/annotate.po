@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:10002
+msgid "量化注解"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:40002
+msgid ""
+"这段代码定义了 `QAnnotateExpr` 类，它继承自 "
+"`TempExpr`。这个类主要用于表示带有注解的表达式。其中，`QAnnotateExprNode` "
+"是内部类，用于存储表达式和注解类型。`VisitAttrs` 方法用于访问表达式和注解类型的属性。`Realize` 方法返回原始表达式。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:40004
+msgid ""
+"`QAnnotateExpr` 类的构造函数接受一个表达式和一个注解类型作为参数，并将它们存储在 `QAnnotateExprNode` "
+"对象中。`TVM_DEFINE_OBJECT_REF_METHODS` 宏用于定义对象的引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:40006
+msgid ""
+"最后，`TVM_REGISTER_GLOBAL` 宏用于注册全局函数，该函数接受一个表达式和一个整数类型的注解，并返回 "
+"`QAnnotateExpr` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:60002
+msgid ""
+"这段代码定义了 `QuantizeAnnotate` 函数，它的作用是对输入的函数进行量化注解。具体来说，它首先定义了名为 "
+"`fmulti_ref` 的 `lambda` 函数，该函数接受一个表达式作为参数，如果该表达式是 `TempExprNode` "
+"的实例，则对其进行量化注解，否则直接返回原表达式。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:60004
+msgid ""
+"接下来，定义了一个名为 `pass_func` 的函数，它接受一个函数、一个 IR 模块和一个 PassContext "
+"作为参数。在这个函数中，首先对输入的函数进行前向重写，然后遍历函数中的自由变量，将它们添加到新的参数列表中。最后，使用新的参数列表创建一个新的函数，并返回。"
+msgstr ""
+
+#: ../../doc/old/old/relay-quant/annotate.ipynb:60006
+msgid ""
+"最后，使用 `CreateFunctionPass` 创建一个函数传递，并将其注册为全局函数 "
+"`relay._quantize.QuantizeAnnotate`。同时，还注册了一个名为 `QAnnotateExprNode` 的节点类型。"
+msgstr ""
+

@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:10003
+msgid "在 VTA 上部署预训练的视觉模型"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:10005
+msgid "**Author**: [Thierry Moreau](https://homes.cs.washington.edu/~moreau/)"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:10007
+msgid ""
+"本教程提供了端到端的 demo，介绍了如何在 VTA 加速器设计上运行 ImageNet 分类推理来执行 ImageNet 分类任务。它将 "
+"Relay 展示为前端编译器，它可以执行量化（VTA 只支持 int8/32 推理）和 graph packing（以便在 core "
+"中支持张量化），从而为硬件目标处理计算图。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:10009
+msgid "安装依赖"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:10011
+msgid "现在回到 python 代码。导入包。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:40002
+msgid "定义 platform"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:40004
+msgid "在 CPU 和 VTA 上执行，并定义模型。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:40006
+msgid ""
+"从 "
+"[tvm/vta/vta_hw/config/vta_config.json](https://github.com/xinetzone/tvm/tree/dev/vta/vta_hw/config/vta_config.json)"
+" 文件加载 VTA 参数："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:60002
+msgid "设定设备："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:60004
+msgid "在 CPU 上推理，使用 ``device=arm_cpu``"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:60005
+msgid "在 FPGA 上推理，使用 ``device=vta``"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:80002
+msgid "用于查找何时 start/end bit packing 的字典："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:100003
+msgid ""
+"``start_pack`` 和 ``stop_pack`` 标签指示从哪里开始和结束 graph packing relay "
+"pass：换句话说，从哪里开始和结束 VTA 卸载。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:100006
+msgid "设定运行目标设备："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:130002
+msgid "获取远程执行"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:130004
+msgid ""
+"当 `env.TARGET` 为 `'pynq'` 时，重新配置 FPGA 和 runtime。否则，如果 `env.TARGET` 为 "
+"`'sim'`，则在本地执行。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:150002
+msgid "从远程获取执行上下文："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170002
+msgid "构建 graph executor 推理"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170004
+msgid "从 Gluon 模型动物园抓取视觉模型，用 Relay 编译。编译步骤如下："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170006
+msgid "将 MXNet 前端模块翻译为 Relay 模块。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170007
+msgid "应用 8-bit 量化：这里跳过了第一个 conv 层和 dense 层，这两个层都将在 CPU 上的 fp32 中执行。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170008
+msgid "执行  graph packing 来改变张量化的数据布局。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170009
+msgid "进行常数折叠以减少算子的数量（例如，消除 batch norm multiply）。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170010
+msgid "执行对 object 文件的 relay 构建。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170011
+msgid "将 object 文件加载到远程（FPGA 设备）。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:170013
+msgid "加载预配置的 AutoTVM 调度："
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:190002
+msgid "进行图像分类推理"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:190004
+msgid "只需要下载 category 文件，`synset.txt` 和输入测试图像。"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:210002
+msgid "执行推理并收集执行统计信息"
+msgstr ""
+
+#: ../../doc/old/old/vta/tutorials/frontend/deploy_classification.ipynb:210005
+#, python-brace-format
+msgid "更多内容参考 {meth}`tvm.runtime.Module.time_evaluator`。"
+msgstr ""
+

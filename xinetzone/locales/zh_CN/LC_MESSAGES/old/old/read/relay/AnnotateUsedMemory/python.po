@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/python.ipynb:10002
+msgid "python 端 AnnotateUsedMemory"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/python.ipynb:70002
+msgid "注解简单原语函数内存"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/python.ipynb:100002
+msgid "注解混合数据类型的原语函数内存"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/python.ipynb:120002
+msgid "注解 `concatenate` 内存"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/python.ipynb:130002
+msgid "当将两个函数的结果连接成一个结果时，第二个函数还将具有第一个函数的活跃结果，因此将使用较大的“已使用内存”值进行标注。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/AnnotateUsedMemory/python.ipynb:150002
+msgid "注解其他数据"
+msgstr ""
+

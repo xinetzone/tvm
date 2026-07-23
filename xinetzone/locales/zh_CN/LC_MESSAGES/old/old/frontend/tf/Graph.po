@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/frontend/tf/Graph.ipynb:10002
+#, python-brace-format
+msgid "{class}`~tensorflow.Graph`"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/Graph.ipynb:20002
+#, python-brace-format
+msgid ""
+"{class}`~tensorflow.Graph` 被 {class}`~tensorflow.function` "
+"用来表示函数的计算过程。每个图包含一组 {class}`~tensorflow.Operation` 对象，这些对象代表计算单元；以及 "
+"{class}`~tensorflow.Tensor` 对象，这些对象代表在算子之间流动的数据单元。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/Graph.ipynb:40002
+msgid "直接使用图（已弃用）"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/Graph.ipynb:40003
+#, python-brace-format
+msgid ""
+"可以直接构建和使用 {class}`~tensorflow.Graph`，而无需 "
+"{class}`~tensorflow.function`，这是在 TensorFlow 1 中的要求。但这种做法已被弃用，建议改用 "
+"{class}`~tensorflow.function`。如果直接使用 {class}`~tensorflow.Graph`，还需要其他已弃用的"
+" TensorFlow 1 类来执行图，例如 `tf.compat.v1.Session`。"
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/Graph.ipynb:40005
+#, python-brace-format
+msgid ""
+"可以使用 {meth}`~tensorflow.Graph.as_default` 上下文管理器注册默认图。然后，算子将被添加到 "
+"{class}`~tensorflow.Graph` 中而不是立即执行。例如："
+msgstr ""
+
+#: ../../doc/old/old/frontend/tf/Graph.ipynb:90002
+msgid ""
+"计算图的 `GraphDef` 版本信息。（有关每个版本含义的详细信息，请参阅 "
+"[GraphDef](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/graph.proto)）。"
+msgstr ""
+

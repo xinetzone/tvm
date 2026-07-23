@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/customize-opt.ipynb:10002
+msgid "自定义优化"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:10004
+msgid "Apache TVM 主要设计目标是使优化流水线易于定制，无论是研究或开发目的，还是迭代工程优化。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:30002
+msgid "可组合IRModule优化"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:30004
+msgid ""
+"Apache TVM提供了一种灵活的方式来优化 IRModule。围绕 IRModule "
+"优化的所有运算都可以与现有流水线组合。请注意，每个优化可以聚焦于 **部分计算图**，实现局部 lower 或者局部优化。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:30006
+msgid "准备 Relax 模块"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:30008
+msgid "首先准备 Relax 模块。这个模块可以从其他框架导入，用 NN 模块前端或 TVMScript 构建。这里使用简单的神经网络模型作为例子。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:50002
+msgid "库调度"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:50004
+msgid "希望快速尝试针对特定平台（例如 GPU）的变体库优化。可以为特定平台和算子编写特定的调度过程。这里展示如何为某些模式调度 CUBLAS 库。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:50007
+msgid "本教程仅演示了针对 CUBLAS 的单个算子调度，突出显示了优化流水线的灵活性。在真实案例中，可以导入多个模式并将它们调度到不同的内核。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:70002
+msgid "调度过程之后"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:70004
+msgid ""
+"可以看到第一个 ``nn.Linear`` 和 ``nn.ReLU`` 被融合并重写为 ``call_dps_packed`` 函数，该函数调用 "
+"CUBLAS 库。值得注意的是，其他部分没有改变，这意味着我们可以有选择地为某些计算调度优化。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:70006
+msgid "自动调优"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:70008
+msgid "在之前的例子基础上，可以通过自动调优进一步优化模型的 **其余计算部分**。这里我们展示如何使用元调度来自动调优模型。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:70010
+msgid ""
+"可以使用 ``MetaScheduleTuneTIR`` 过程来简化模型调优，而 ``MetaScheduleApplyDatabase`` "
+"过程则将最佳配置应用到模型上。调优过程将生成搜索空间，调优模型，接下来的步骤将把最佳配置应用到模型上。在运行这些过程之前，需要通过 "
+"``LegalizeOps`` 将 Relax 算子降低为 TensorIR 函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:90002
+msgid "DLight 规则"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:90004
+msgid ""
+"DLight "
+"规则是一组用于调度和优化内核的默认规则。DLight规则旨在实现快速编译和**公平**的性能。在某些情况下，例如语言模型，DLight提供出色的性能，而对于通用模型，它在性能和编译时间之间取得平衡。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:110003
+msgid "本教程重点在于展示优化流水线的演示，而不是将性能推向极限。当前的优化可能不是最佳的。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:120002
+msgid "部署优化后的模型"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:120004
+msgid "可以构建并将优化后的模型部署到 TVM 运行时。"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:140002
+msgid "总结"
+msgstr ""
+
+#: ../../doc/tvm-start/customize-opt.ipynb:140004
+msgid ""
+"本教程展示了如何为 Apache TVM "
+"中的机器学习模型自定义优化流水线。我们可以容易地组合优化过程，并为计算图的不同部分自定义优化。优化流水线的灵活性使我们能够快速迭代优化并提高模型性能。"
+msgstr ""
+

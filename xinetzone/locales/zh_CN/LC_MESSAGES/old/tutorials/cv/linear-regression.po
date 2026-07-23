@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10002
+msgid "线性回归"
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10004
+msgid ""
+"参考：[linear-regression](https://zh.d2l.ai/chapter_linear-networks/linear-"
+"regression.html)"
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10006
+msgid "线性回归基于几个简单的假设："
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10007
+#, python-brace-format
+msgid ""
+"假设因变量 $\\mathbf{x}$ 和自变量 $y$ 的关系是线性的：即 $y$ 可以表示为 $\\mathbf{x}$ "
+"的加权和，通常允许包含观测值的一些噪声。"
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10008
+msgid "假设任何噪声都比较正常，如噪声遵循正态分布。"
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10010
+#, python-brace-format
+msgid ""
+"设定预测结果为 $\\hat{y}$，特征向量 $\\mathbf{x} \\in \\mathbb{R}^d$ 和权重 $\\mathbf{w}"
+" \\in \\mathbb{R}^d$，偏置项 $b \\in \\mathbb{R}$，则线性回归可以表示为"
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10012
+#, python-brace-format
+msgid ""
+"\n"
+"\\hat{y} = \\mathbf{w}^\\top \\mathbf{x} + b\n"
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10016
+msgid ""
+"这里 $\\mathbf{x}$ 对应单个样本特征。对于 $n$ 个样本特征集合 $\\mathbf{X} \\in \\mathbb{R}^{n"
+" \\times d}$，预测值 $\\hat{\\mathbf{y}} \\in \\mathbb{R}^n$ 可以通过矩阵-向量乘法表示为："
+msgstr ""
+
+#: ../../doc/old/tutorials/cv/linear-regression.ipynb:10018
+msgid ""
+"\n"
+"{\\hat{\\mathbf{y}}} = \\mathbf{X} \\mathbf{w} + b\n"
+msgstr ""
+

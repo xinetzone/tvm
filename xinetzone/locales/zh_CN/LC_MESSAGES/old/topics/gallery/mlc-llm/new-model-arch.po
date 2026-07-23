@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:10002
+msgid "使用 TVM nn.module 工作流在 MLC-LLM 中添加新模型架构"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:10004
+msgid ""
+"在本教程中，将演示如何使用新的 TVM nn.module 工作流在 MLC-LLM 中添加新模型架构。TVM nn.module "
+"是新的模型编译工作流，旨在为 MLC-LLM 带来模块化的 Python 优先编译，使用户和开发者能够更无缝地支持新模型和功能。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:10006
+msgid ""
+"例如，在 TVM nn.module 工作流下，定义 Mistral 模型架构所需的代码量仅为旧工作流的一半左右。从高层次来看，TVM "
+"nn.module 与 PyTorch nn.module 接口非常相似。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:10008
+msgid ""
+"在这里，将使用 [GPT-2](https://huggingface.co/gpt2) 进行演示。GPT-2 "
+"是以自监督方式在非常大的英语语料库上预训练的 transformers 模型，可用于猜测句子中的下一个单词。它在 Huggingface "
+"中的[模型定义](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)可以找到。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:20002
+msgid "定义 GPT-2 模型"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:20004
+msgid "在 `mlc-llm/python/mlc_llm/model/` 下创建 `gpt2` 文件夹。其结构将如下所示："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:20014
+msgid ""
+"首先关注 `gpt2_model.py`。该文件使用 `tvm.relax.frontend.nn.Module` 以模块化的方式定义 GPT-2"
+" 模型架构，类似于 PyTorch 的对应部分。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:40002
+msgid "在 `gpt2_model.py` 中定义配置类"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:40004
+msgid ""
+"首先，定义配置类，它几乎是从 Huggingface 的 "
+"[GPT2Config](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/configuration_gpt2.py)"
+" 直接翻译过来的。该类的属性应与 Huggingface 配置中的相应属性同名，否则 Huggingface 配置将无法正确加载。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:40006
+msgid "`__post_init__` 函数在所有数据类属性初始化后被调用。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:60002
+msgid "在 `gpt2_model.py` 中定义模型架构"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:60004
+#, python-brace-format
+msgid ""
+"使用 {class}`tvm.relax.frontend.nn.Module`，能够以模块化的方式定义模型架构。它看起来与 PyTorch "
+"风格非常相似，只是前向函数实际上并不执行计算。它使用作为输入传递的占位符来跟踪计算图。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:60006
+msgid ""
+"你可以选择使用 `op._print(some_tensor)` 在运行编译模块时打印张量的中间值。如果你这样做，你必须在 "
+"`export_tvm()` 和 `jit()` 中指定 `debug=True`。除了手动打印外，还提供了[端到端的调试模块 "
+"`DebugChat`](#Debug-Compiled-MLC-Model-with-DebugChat)，它将自动转储所有层的中间值。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:80002
+msgid ""
+"请注意，已经提供了一些内置的常用模块，你会发现它们非常方便。例如，这里的 `nn.Linear` 和 `nn.KVCache` 模块都是 MLC-"
+"LLM "
+"中的[内置模块](https://github.com/apache/tvm/blob/unity/python/tvm/relax/frontend/nn/modules.py)。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:80004
+msgid ""
+"同样，也提供了许多常见的对张量进行操作的[内置算子](https://github.com/apache/tvm/blob/unity/python/tvm/relax/frontend/nn/op.py)。例如，`op.reshape`、`op.matmul`、`op.softmax`"
+" 等。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:90002
+msgid "使用 `nn.spec` 定义模型规范"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:90004
+msgid "一旦验证了模型的每一层行为正确，就可以编写模型规范，将模型从 `nn.module` 转换为 TVM IRModule。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:90006
+msgid "在 `get_default_spec` 函数中，需要定义如下模型规范："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:110002
+msgid ""
+"所有指定的方法，例如 `embed`、`prefill`、`decode` 等，都将被导出到 TVM IRModule 中。支持 "
+"`nn.spec.Tensor`、`nn.spec.Tuple` 和整数作为 relax 函数的输入。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:110004
+msgid "\"default\" 和 \"packed\" 调用约定之间的区别如下：![](images/diff.png)"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:120002
+msgid ""
+"在提供模型规范后，可以使用 `export_tvm` 函数轻松地将 TVM nn.module 转换为 relax Tensor "
+"IR。可以查看整个模型的 Tensor IR 表示，以及模型参数名称和数据类型的完整列表。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140002
+msgid "在 `gpt2_loader.py` 中定义加载器"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140004
+msgid "在 `gpt2_loader.py` 中，定义了如何将 Huggingface 的参数转换为 MLC 模型所使用的格式。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140006
+msgid ""
+"加载器类将返回 [`ExternMapping`](https://github.com/mlc-ai/mlc-"
+"llm/blob/main/python/mlc_llm/loader/mapping.py)，其中包含两种映射："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140007
+msgid "**源 -> MLC 参数映射**：例如参数重命名、参数转换等。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140008
+msgid "**未使用的映射**：源中未在 MLC 模型定义中使用的参数。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140010
+msgid ""
+"在 GPT-2 中，由于使用了 Conv1D，需要对 `c_attn`、`c_proj` 和 `c_fc` "
+"的权重进行转置。为此，将提供映射函数，如下所示："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:140026
+msgid ""
+"为了使 GPT-2 参数转换正常工作，还需要进行一些重命名操作。请参考[gpt2_loader.py](https://github.com"
+"/mlc-ai/mlc-llm/blob/main/python/mlc_llm/model/gpt2/gpt2_loader.py)。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:150002
+msgid "将模型添加到支持的预构建模型工作流"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:150004
+msgid "一旦整个模型在 TVM 的 `nn.module` 中定义完毕，包括模型架构、模型加载器和模型量化器，就可以将其添加到支持的预构建模型工作流中。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:150006
+msgid ""
+"在[`mlc-llm/python/mlc_llm/model/model.py`](https://github.com/mlc-ai/mlc-"
+"llm/blob/main/python/mlc_llm/model/model.py)中，将GPT-2模型添加到 `MODELS` 列表中："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:160002
+msgid "编译 GPT-2 模型库和权重"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:160004
+msgid "以下步骤与[通用模型编译工作流](https://llm.mlc.ai/docs/compilation/compile_models.html)相同。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:190002
+msgid "gen_config: 生成 `mlc-chat-config.json` 并处理分词器"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:210002
+msgid "编译：根据 `mlc-chat-config.json` 中的规范编译模型库"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230003
+msgid "使用 DebugChat 调试编译的 MLC 模型"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230005
+msgid ""
+"在成功编译模型库并转换模型权重后，检查模型是否生成正确的输出非常重要。一种检查方法是在相同的输入 tokens 下，将模型的输出 logits "
+"与其 Huggingface PyTorch 版本的输出进行比较。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230007
+msgid "为了帮助调试 MLC 模型，提供了 `mlc_llm.testing.DebugChat` 模块，该模块可以："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230009
+msgid "加载刚刚编译的 MLC 模型"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230010
+msgid "使用用户指定的 prompt 运行模型的完整 `forward` 流程"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230011
+msgid "转储所有层的中间值。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:230013
+msgid ""
+"然后，您可以将这些中间值与 Huggingface PyTorch 模型的中间值进行比较。（对于 PyTorch，您可以使用 "
+"[`register_forward_hook`](https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook)"
+" 提取中间值。）"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:250002
+msgid ""
+"中间输出会被转储到 `debug-gpt2` 文件夹中。对于每个 prefill/decode "
+"阶段，都有单独的文件夹，其中包含存储每个内核函数调用参数的 `.npz` 文件。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:250004
+msgid ""
+"例如：`./debug-gpt2/decode_2/f0_take3.npz` 对应第 2 个解码步骤中的第 0 个 `take` 函数调用。输出"
+" logits 会保存到 `logits.npz` 中。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:250006
+msgid ""
+"**注意**：由于 TIR 函数调用采用[目标传递风格](https://mlc.ai/chapter_end_to_end/index.html"
+"#call-dps-packed-construct)，每个函数调用的参数会如下所示："
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:250013
+msgid "因此，函数调用的最后一个参数将是输出。"
+msgstr ""
+
+#: ../../doc/old/topics/gallery/mlc-llm/new-model-arch.ipynb:250015
+msgid "`.npz` 文件可以按以下方式加载："
+msgstr ""
+

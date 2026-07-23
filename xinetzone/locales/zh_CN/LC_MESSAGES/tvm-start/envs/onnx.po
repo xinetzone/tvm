@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/envs/onnx.md:1
+msgid "ONNX 环境配置指南"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/onnx.md:3
+msgid "ONNX 生态系统包含多个组件，建议安装以下核心包："
+msgstr ""
+
+#: ../../doc/tvm-start/envs/onnx.md:13
+msgid "安装验证"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/onnx.md:15
+msgid "运行以下 Python 代码验证安装是否成功："
+msgstr ""
+

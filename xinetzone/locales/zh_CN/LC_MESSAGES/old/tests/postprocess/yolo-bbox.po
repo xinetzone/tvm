@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:10002
+msgid "YOLO 后处理之坐标变换"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20002
+msgid "YOLO 后处理的坐标变换主要目的是将模型预测的坐标转换为图像上的真实坐标。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20004
+msgid ""
+"模型预测的坐标表示  YOLO 模型通常会对每个预测框输出 4 个坐标值，一般为 $(t_x, t_y, t_w, "
+"t_h)$，这些值是相对于网格单元的偏移和缩放。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20007
+msgid "$t_x$ 和 $t_y$：预测框中心相对于所在网格单元左上角的偏移。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20008
+msgid "$t_w$ 和 $t_h$：预测框的宽度和高度相对于锚框的缩放。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20009
+msgid "从网格单元偏移到特征图坐标  将预测的偏移和缩放转换为特征图上的坐标 $(b_x, b_y, b_w, b_h)$。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20012
+#, python-brace-format
+msgid ""
+"\n"
+"    \\begin{aligned}\n"
+"    &b_x = \\sigma(t_x) + c_x\\\\\n"
+"    &b_y = \\sigma(t_y) + c_y\\\\\n"
+"    &b_w = p_w * \\exp(t_w)\\\\\n"
+"    &b_h = p_h * \\exp(t_h)\n"
+"    \\end{aligned}\n"
+"    "
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20020
+msgid "其中："
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20022
+msgid "$\\sigma$ 是 Sigmoid 函数, 用于将偏移限制在 $[0, 1]$ 范围内。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20023
+msgid "$c_x$ 和 $c_y$ 是当前网格单元左上角在特征图上的坐标。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20024
+msgid "$p_w$ 和 $p_h$ 是预先定义的锚框的宽度和高度。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20025
+msgid "从特征图坐标到图像坐标  将特征图上的坐标转换为原始图像上的坐标 $(x, y, w, h)$。"
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20028
+#, python-brace-format
+msgid ""
+"\n"
+"    \\begin{aligned}\n"
+"    &x = b_x * \\text{stride}\\\\\n"
+"    &y = b_y * \\text{stride}\\\\\n"
+"    &w = b_w * \\text{stride}\\\\\n"
+"    &h = b_h * \\text{stride}\\\\\n"
+"    \\end{aligned}\n"
+"    "
+msgstr ""
+
+#: ../../doc/old/tests/postprocess/yolo-bbox.ipynb:20036
+msgid "其中，`stride` 是特征图相对于原始图像的下采样倍数。"
+msgstr ""
+

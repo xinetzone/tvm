@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 21:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../doc/docs/topic/microtvm/index.rst:21
+msgid "microTVM: TVM on bare-metal"
+msgstr "microTVM：在裸机上运行的 TVM""
+
+#: ../../doc/docs/topic/microtvm/index.rst:23
+msgid ""
+"microTVM runs TVM models on bare-metal (i.e. IoT) devices. microTVM "
+"depends only on the C standard library, and doesn't require an operating "
+"system to execute. microTVM is currently under heavy development."
+msgstr ""
+"microTVM 在裸机（即物联网）设备上运行 TVM 模型。"
+"microTVM 仅依赖于 C 标准库，并且不需要操作系统即可执行。microTVM 目前正在积极开发中。"
+
+#: ../../doc/docs/topic/microtvm/index.rst:31
+msgid "microTVM is:"
+msgstr "microTVM 是："
+
+#: ../../doc/docs/topic/microtvm/index.rst:33
+msgid "an extension to TVM's compiler to allow it to target microcontrollers"
+msgstr "TVM 编译器的扩展，使其能够针对微控制器进行优化和编译。"
+
+#: ../../doc/docs/topic/microtvm/index.rst:34
+msgid "a way to run the TVM RPC server on-device, to allow autotuning"
+msgstr "一种在设备上运行 TVM RPC 服务器的方法，以实现自动调优。"
+
+#: ../../doc/docs/topic/microtvm/index.rst:35
+msgid ""
+"a minimal C runtime that supports standalone model inference on bare "
+"metal devices."
+msgstr ""
+"极简的 C 运行时环境，支持在裸机设备上进行独立的模型推理。"
+
+#: ../../doc/docs/topic/microtvm/index.rst:38
+msgid "Supported Hardware"
+msgstr "支持的硬件"
+
+#: ../../doc/docs/topic/microtvm/index.rst:40
+msgid ""
+"microTVM currently tests against Cortex-M microcontrollers with the "
+"Zephyr RTOS; however, it is flexible and portable to other processors "
+"such as RISC-V and does not require Zephyr. The current demos run against"
+" QEMU and the following hardware:"
+msgstr ""
+"microTVM 目前针对使用 Zephyr 实时操作系统的 Cortex-M 微控制器进行测试；然而，它具有灵活性，并且可以移植到其他处理器，如 RISC-V，且不依赖于 Zephyr。"
+"当前的演示程序在 QEMU 以及以下硬件上运行："
+
+#: ../../doc/docs/topic/microtvm/index.rst:44
+msgid ""
+"`STM Nucleo-F746ZG <https://www.st.com/en/evaluation-tools/nucleo-"
+"f746zg.html>`_"
+msgstr ""
+
+#: ../../doc/docs/topic/microtvm/index.rst:45
+msgid ""
+"`STM STM32F746 Discovery <https://www.st.com/en/evaluation-"
+"tools/32f746gdiscovery.html>`_"
+msgstr ""
+
+#: ../../doc/docs/topic/microtvm/index.rst:46
+msgid ""
+"`nRF 5340 Development Kit <https://www.nordicsemi.com/Software-and-tools"
+"/Development-Kits/nRF5340-DK>`_"
+msgstr ""
+
+#: ../../doc/docs/topic/microtvm/index.rst:50
+msgid "Getting Started with microTVM"
+msgstr "microTVM 入门指南"
+
+#: ../../doc/docs/topic/microtvm/index.rst:52
+msgid ""
+"Before working with microTVM, we recommend you have a supported "
+"development board. Then, follow these tutorials to get started with "
+"microTVM. Tutorials are in the order that could help developers to learn "
+"more as they follow through them. Here is a list of tutorials that you "
+"can start with:"
+msgstr ""
+"在使用 microTVM 之前，建议您拥有一块受支持的开发板。"
+"然后，按照以下教程开始使用 microTVM。这些教程按顺序排列，可以帮助开发者在学习过程中逐步深入。以下是您可以开始的教程列表："
+
+#: ../../doc/docs/topic/microtvm/index.rst:56
+msgid "Try :ref:`microTVM CLI Tool <tutorial-micro-cli-tool>`."
+msgstr ""
+
+#: ../../doc/docs/topic/microtvm/index.rst:57
+msgid "Try the :ref:`microTVM TFLite Tutorial <tutorial_micro_tflite>`."
+msgstr ""
+
+#: ../../doc/docs/topic/microtvm/index.rst:58
+msgid ""
+"Try running a more complex tutorial: :ref:`Creating Your MLPerfTiny "
+"Submission with microTVM <tutorial-micro-mlperftiny>`."
+msgstr ""
+"尝试运行更复杂的教程：:ref:`使用 microTVM 创建您的 MLPerfTiny 提交 <tutorial-micro-mlperftiny>`。"
+
+#: ../../doc/docs/topic/microtvm/index.rst:62
+msgid "Help and Discussion"
+msgstr "帮助与讨论"
+
+#: ../../doc/docs/topic/microtvm/index.rst:64
+msgid ""
+"The `TVM Discuss Forum <https://discuss.tvm.ai>`_ is a great place to "
+"collaborate on microTVM tasks, and maintains a searchable history of past"
+" problems."
+msgstr ""
+"`TVM 讨论论坛 <https://discuss.tvm.ai>`_ 是协作解决 microTVM 任务的好地方，并且保留了可搜索的历史问题记录。"

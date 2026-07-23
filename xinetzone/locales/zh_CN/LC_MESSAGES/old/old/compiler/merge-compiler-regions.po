@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:10002
+msgid "合并编译器区域"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:10004
+msgid "参考：`tvm/tests/python/relay/test_pass_merge_compiler_regions.py`"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:20002
+#, python-brace-format
+msgid ""
+"{func}`~tvm.relay.op.annotation.compiler_begin` 和 "
+"{func}`~tvm.relay.op.annotation.compiler_end` 函数的主要作用是在 Relay "
+"表达式中标记区域的开始和结束，该区域将由指定的编译器处理。这个函数通常用于优化和调度，允许不同的编译器处理不同的表达式区域。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:40002
+msgid "处理菱形区域"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:50002
+msgid "在菱形计算图中存在的数据依赖关系是否被合并过程正确解决。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:50015
+msgid "注意不能简单地将三个支持的算子合并在一起，否则两个子图都会依赖于另一个。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:90002
+msgid "计算图示例"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:100002
+msgid ""
+"参见 [RFC 5830](https://discuss.tvm.apache.org/t/relay-improved-graph-"
+"partitioning-algorithm/5830) 蓝色节点是加法（目标：测试），红色节点是减法（目标：默认）。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:110002
+msgid "原始计算图："
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:140002
+msgid "优化之后的计算图："
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:160002
+msgid "测试条件语句"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:170002
+msgid "这个测试了限制区域在 if_else 控制流中成功传播。"
+msgstr ""
+
+#: ../../doc/old/old/compiler/merge-compiler-regions.ipynb:170018
+msgid "避免 O1 合并到 O2。"
+msgstr ""
+

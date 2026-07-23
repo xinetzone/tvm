@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:10002
+msgid "解读 `packed_func`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:20002
+msgid "`PackedFuncObj`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:20004
+msgid "`PackedFuncObj` 类是 `Object` 类的子类。这个类的主要目的是作为 `PackedFunc` 的底层容器。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:20006
+msgid ""
+"`PackedFuncObj` 类中定义了一些公共方法，如 `CallPacked`，用于以打包格式调用函数。此外，它还定义了一些静态常量，如 "
+"`_type_index` 和 `_type_key`，以及模板结构体 `Extractor`，用于从可调用类型中提取可调用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:20008
+msgid ""
+"在 `PackedFuncObj` 类中，还定义了内部函数类型 `FCallPacked`，它是接受三个参数（指向 `PackedFuncObj`"
+" 的指针、`TVMArgs` 对象和指向 `TVMRetValue` 的指针）并返回 `void` 的函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:20010
+msgid ""
+"最后，`PackedFuncObj` 类有构造函数，它接受指向 `FCallPacked` 类型的函数指针作为参数，并将其存储在成员变量 "
+"`f_call_packed_` 中。此外，该类还显式删除了默认构造函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:30002
+msgid "`PackedFuncSubObj`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:30004
+msgid ""
+"C++ 模板类 `PackedFuncSubObj` 继承自 `PackedFuncObj`。这个类的主要目的是用于构造 "
+"`PackedFuncObj` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:30006
+msgid ""
+"在类定义中，首先使用 `std::remove_cv` 和 `std::remove_reference` 来移除类型参数 `TCallable`"
+" 的 const 和引用限定符，得到新的类型 `TStorage`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:30008
+msgid ""
+"然后，定义了两个类型别名：`TSelf` 表示派生自 `PackedFuncSubObj<TCallable>` 的类型，`TCallable` "
+"表示传入的可调用对象类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:30010
+msgid ""
+"接着，定义了构造函数，接受类型为 `TCallable` 的参数 `callable`。在这个构造函数中，首先调用基类的构造函数，传入提取器 "
+"`Extractor<TSelf>::Call`，然后将传入的 `callable` 参数赋值给成员变量`callable_`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:30012
+msgid "最后，定义了可变的成员变量 `callable_`，其类型为 `TStorage`，用于存储可调用对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40002
+msgid "`PackedFunc`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40004
+msgid ""
+"`PackedFunc` 的 C++ 类，它是 TVM（开源机器学习编译器）中用于表示类型擦除函数的统一接口。它对应于 C 运行时 API 中的 "
+"`TVMFunctionHandle`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40006
+msgid "这个类的主要功能是："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40008
+msgid ""
+"构造函数：可以从空指针创建 `PackedFunc` 对象，也可以从可调用类型（其签名与 `PackedFunc` 一致）创建 "
+"`PackedFunc` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40009
+msgid "调用函数：可以直接通过传递解包格式的参数来调用打包函数，返回值会自动转换回原始类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40010
+msgid "判断是否为空：可以通过比较算子来判断 `PackedFunc` 对象是否为空。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40012
+msgid "以下是一些关键部分的代码解释："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40014
+#, python-brace-format
+msgid ""
+"`PackedFunc(std::nullptr_t null) : ObjectRef(nullptr) {}`：这是从空指针创建 "
+"`PackedFunc` 对象的构造函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40015
+#, python-brace-format
+msgid ""
+"`template <typename TCallable, ...> explicit PackedFunc(TCallable data) "
+"{...}`：这是从可调用类型创建 `PackedFunc` "
+"对象的构造函数。这里使用了模板特化，确保传入的类型可以转换为`std::function<void(TVMArgs, "
+"TVMRetValue*)>`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40016
+msgid ""
+"`template <typename... Args> inline TVMRetValue operator()(Args&&... "
+"args) const;`：这是重载的调用运算符，用于直接调用打包函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40017
+msgid ""
+"`void CallPacked(TVMArgs args, TVMRetValue* rv) "
+"const;`：这是调用打包函数的方法，接受解包格式的参数和返回值。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40018
+#, python-brace-format
+msgid ""
+"`bool operator==(std::nullptr_t null) const { return data_ == nullptr; "
+"}`：这是重载的等于运算符，用于判断 `PackedFunc` 对象是否为空。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:40019
+msgid ""
+"`bool operator!=(std::nullptr_t null) const { return data_ != nullptr; "
+"}`：这是重载的不等于运算符，用于判断 `PackedFunc` 对象是否不为空。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50002
+msgid "`TypedPackedFunc`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50004
+msgid ""
+"模板类 `tvm::runtime::TypedPackedFunc<tvm::relay::Function "
+"(tvm::relay::Function, tvm::IRModule, "
+"tvm::relay::transform::PassContext)>`，它用于包装具有特定函数签名的 "
+"`PackedFunc`。这个类提供了编译时类型检查，可以与运行时系统一起使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50006
+msgid "`TypedPackedFunc` 的主要功能如下："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50008
+msgid ""
+"构造函数：可以从 `nullptr`、`PackedFunc`、`TVMRetValue`、`TVMArgValue` 和 "
+"`TVMMovableArgValue_` 中构造。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50009
+msgid "从 lambda 函数构造：可以使用相同签名的 lambda 函数构造 `TypedPackedFunc` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50010
+msgid "赋值算子：可以从类型化的lambda函数或 `PackedFunc` 中复制赋值。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50011
+msgid "回调算子：可以像普通函数一样调用 `TypedPackedFunc` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50012
+msgid "转换为 `PackedFunc`：可以将 `TypedPackedFunc` 对象直接转换为底层的 `PackedFunc` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/packed-func.ipynb:50014
+msgid "这个类的主要用途是在 C++ 代码中使用具有编译时类型检查的函数，以提高代码的可读性和安全性。"
+msgstr ""
+

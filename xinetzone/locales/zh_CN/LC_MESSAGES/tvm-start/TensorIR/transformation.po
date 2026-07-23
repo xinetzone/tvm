@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:10002
+msgid "元张量函数变换"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:10004
+msgid "在本节中，将介绍编译流程的主要组成部分——元张量函数变换。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:30002
+msgid "在我们转换函数之前，让我们先评估原始实现的性能。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:50002
+msgid "初始化调度"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:50004
+msgid "使用提供的 **MyModule** 作为输入来建立 Schedule 辅助类，以此启动代码转换的过程。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:70002
+msgid "循环平铺(Tiling)"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:70003
+msgid "接下来，我们执行必要的操作来获取块 **Y** 及其关联循环的引用。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:90002
+msgid "我们现在开始执行转换。第一个修改是将循环``j``拆分为两个独立的循环，内层循环的长度为4。必须了解的是，转换过程是分步进行的；因此，如果无意中再次执行块，将会出现一个错误，指出变量``j``不存在。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:110002
+msgid "转换的结果可以被检查，因为它被保留在``sch.mod``中。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:130002
+msgid "在初始转换阶段之后，生成了两个补充循环``j_0``和``j_1``，它们的范围分别为32和4。接下来的动作是重新排序这两个循环。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:150002
+msgid "利用局部性"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:150003
+msgid ""
+"接下来，我们将执行两个额外的转换步骤以获得不同的变体。首先，使用名为 **reverse_compute_at** 的原语将块 **C** 移动到"
+" **Y** 的内层循环中。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:170002
+msgid "重写约简"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:170003
+msgid ""
+"到目前为止，约简初始化和更新步骤一直保留在同一个块体中。这种混合形式便于循环转换，因为初始化和更新的外部循环``i``, "
+"``j``通常需要保持同步。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:170005
+msgid "在循环转换之后，我们可以使用**decompose_reduction**原语将Y元素的初始化与约简更新分开。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:190002
+msgid "跟踪转换"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:190003
+msgid "TensorIR调度是一种过程语言，转换是以逐步方式执行的。我们可以通过打印调度或调度的历史来跟踪转换。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:190005
+msgid "我们已经通过打印``sch.mod``看到了调度。我们还可以通过``sch.trace``打印调度的历史。"
+msgstr ""
+
+#: ../../doc/tvm-start/TensorIR/transformation.ipynb:210002
+msgid "或者，我们可以结合历史跟踪输出IRModule。"
+msgstr ""
+

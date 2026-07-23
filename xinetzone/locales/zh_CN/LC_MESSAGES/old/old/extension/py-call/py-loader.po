@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/extension/py-call/py-loader.ipynb:20002
+msgid "Python 端加载 C++ 端动态库"
+msgstr ""
+
+#: ../../doc/old/old/extension/py-call/py-loader.ipynb:20004
+#, python-brace-format
+msgid "可以使用 {mod}`ctypes` 加载动态库："
+msgstr ""
+
+#: ../../doc/old/old/extension/py-call/py-loader.ipynb:40002
+msgid ""
+"加载失败，是由于 `libtvm_ext.so` 是在 `libtvm.so` 基础上拓展的，故而需要先提前加载 `libtvm.so`，或者直接"
+" `import tvm`："
+msgstr ""
+
+#: ../../doc/old/old/extension/py-call/py-loader.ipynb:60002
+#, python-brace-format
+msgid "加载动态库，也可以直接使用 {func}`~tvm_book.tvm_ext.libinfo.load_lib`："
+msgstr ""
+
+#: ../../doc/old/old/extension/py-call/py-loader.ipynb:90002
+msgid "回调 C++ 函数："
+msgstr ""
+
+#: ../../doc/old/old/extension/py-call/py-loader.ipynb:110002
+msgid "测试："
+msgstr ""
+

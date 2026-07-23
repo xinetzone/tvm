@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:10002
+msgid "DPL 模式匹配"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:60002
+msgid "节点级匹配"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:70002
+msgid "测试表达式模式："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:90002
+msgid "测试变量模式："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:130002
+msgid "匹配常量："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:150002
+msgid "模糊匹配："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:170002
+msgid "回调匹配："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:190002
+msgid "匹配函数："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:210002
+msgid "元组匹配："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:250002
+msgid "匹配 `or`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:270002
+msgid "匹配 `and`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:290002
+msgid "匹配 `not`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:310002
+msgid "匹配 `type`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:330002
+msgid "匹配 `dtype`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:350002
+msgid "匹配 `shape`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:370002
+msgid "匹配：PrimArray"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:370007
+msgid "`is_shape` 和 `has_shape` 的区别在于："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:370009
+msgid "`is_shape` 直接匹配形状（例如，作为参数）；"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:370010
+msgid "`has_shape` 匹配张量并对该张量的形状做出假设。"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:390002
+msgid "匹配外部函数："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:410002
+msgid "匹配算子属性："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:430002
+msgid "匹配 call 属性："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:450002
+msgid "匹配 `is_call_tir`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:470002
+msgid "匹配 `call_packed`："
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/match.ipynb:490002
+msgid "图级匹配"
+msgstr ""
+

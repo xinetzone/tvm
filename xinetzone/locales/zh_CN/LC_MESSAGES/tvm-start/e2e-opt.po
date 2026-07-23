@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:10002
+msgid "端到端模型优化样例"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:20002
+msgid "参考：[e2e_opt_model](https://tvm.apache.org/docs/how_to/tutorials/e2e_opt_model.html)"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:30002
+msgid ""
+"本教程展示了如何使用 Apache TVM 来优化机器学习模型。使用来自 PyTorch 的预训练 ResNet-18 模型，并利用 TVM 的 "
+"Relax API 对其进行端到端的优化。请注意，默认的端到端优化可能不适合复杂的模型。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:30004
+msgid "准备阶段"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:30006
+msgid "首先，准备模型和输入信息。使用来自PyTorch的预训练ResNet-18模型。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:60002
+msgid "整体流程概述"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:60009
+msgid "整体流程包括以下步骤："
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:60011
+msgid ""
+"**构建或导入模型**：构建神经网络模型，或者从其他框架（如 PyTorch、ONNX）导入预训练的模型，并创建 TVM "
+"IRModule，其中包含编译所需的所有信息，包括用于计算图的高级别 Relax 函数和用于张量程序的低级 TensorIR 函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:60012
+msgid "**执行可组合优化**：执行一系列优化转换，例如图优化、张量程序优化和库调度。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:60013
+msgid "**构建和通用部署**：将优化后的模型构建为可在通用运行时部署的模块，并在不同设备上执行，如 CPU、GPU 或其他加速器。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:70002
+msgid "将模型转换为 IRModule"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:70004
+msgid "使用 Relax 前端（面向 PyTorch）将模型转换为 IRModule，以便进一步优化。除了模型外，我们还需要提供输入的形状和数据类型。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:90002
+msgid "IRModule 优化"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:90004
+msgid ""
+"Apache TVM 提供了灵活的方式来优化 IRModule。围绕 IRModule "
+"优化的所有运算都可以与现有的流水线组合。注意，每个转换都可以通过 ``tvm.ir.transform.Sequential`` "
+"组合成一个优化流水线。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:90006
+msgid ""
+"在本教程中，专注于通过自动调优（auto-tuning）对模型进行端到端优化。利用 MetaSchedule "
+"调优模型，并将调优日志存储到数据库。还可以应用数据库到模型以获得最佳性能。"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:110002
+msgid "构建和部署"
+msgstr ""
+
+#: ../../doc/tvm-start/e2e-opt.ipynb:110004
+msgid "最后，构建优化后的模型并将其部署到目标设备。"
+msgstr ""
+

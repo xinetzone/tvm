@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/codegen/TIRCodegenVM.ipynb:10002
+msgid "TIR VM 代码生成"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/TIRCodegenVM.ipynb:40002
+msgid "测试VM编译模式下的基本加法算子代码生成"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/TIRCodegenVM.ipynb:70002
+msgid "测试VM编译模式下调用TIR函数的代码生成"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/TIRCodegenVM.ipynb:100002
+msgid "测试VM编译模式下条件分支（if-else）的代码生成"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/TIRCodegenVM.ipynb:130002
+msgid "测试VM编译模式下处理常量的代码生成"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/TIRCodegenVM.ipynb:160002
+msgid "测试VM编译模式下使用常量作为函数调用参数的代码生成"
+msgstr ""
+

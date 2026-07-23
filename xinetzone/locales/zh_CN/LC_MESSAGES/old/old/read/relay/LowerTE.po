@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:10002
+msgid "LowerTE"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:20002
+msgid "LowerTE pass 负责将 Relay 表达式转换为 TIR PrimFunc。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:20004
+msgid "测试用例覆盖了不同场景下的转换，包括原始函数、编译器函数和外部函数的处理。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:60002
+msgid ""
+"所有尝试使用结构等价测试与从 Relay 文本解析的预期 IRModule 进行比较的尝试都因设置正确的 call_lower "
+"属性的难度而受挫，特别是设置具有正确 GlobalVar 实例的属性。因此，下面通过直接断言结构正确性来测试。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:70002
+msgid "测试将原语 (Primitive) 函数转换为 TIR PrimFunc"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:100002
+msgid "测试将带有编译器标记的函数转换为外部函数"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:100004
+msgid "验证标记为 Compiler=\"test_pass_lower_te\" 的函数能否被正确处理并转换为外部函数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:120002
+msgid "测试处理已标记为外部的函数"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:120003
+msgid "验证已经标记为 Extern=1 的全局函数能否被正确处理："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:140002
+msgid "测试处理具有动态形状的外部函数"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/LowerTE.ipynb:140004
+msgid "验证带有动态形状（`?` 维度）的外部函数能否被正确处理，并生成相应的形状函数"
+msgstr ""
+

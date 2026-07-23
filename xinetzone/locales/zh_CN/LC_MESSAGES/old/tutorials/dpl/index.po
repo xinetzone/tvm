@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/dpl/index.md:1
+msgid "Relax 数据流模式语言"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/index.md:3
+msgid ""
+"Relax 引入了一种名为 数据流模式语言（Dataflow Pattern Language，简称 "
+"DPL）的模式匹配语言，用于描述和匹配计算图中的特定模式，从而支持更灵活的图优化。"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/index.md:5
+msgid "核心思想"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/index.md:6
+msgid ""
+"DPL "
+"的核心思想是通过声明式的方式描述计算图中的子图模式。这种语言允许开发者定义计算图中的特定结构（如算子组合、数据流模式等），并基于这些模式进行优化或变换。"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/index.md:8
+msgid "模式匹配：通过定义模式，可以在计算图中查找符合特定结构的子图。"
+msgstr ""
+
+#: ../../doc/old/tutorials/dpl/index.md:9
+msgid "图优化：匹配到特定模式后，可以对其进行替换、重写或优化。"
+msgstr ""
+

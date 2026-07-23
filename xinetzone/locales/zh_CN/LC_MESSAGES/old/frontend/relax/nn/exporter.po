@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:10002
+msgid "exporter"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:40002
+msgid "A user can define their own nn.Module subclasses"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:40004
+msgid ""
+"Like the built-in subclasses, these can be exported from nn.Module to "
+"Relax."
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:60002
+msgid "Passing debug=True provides an argument for IO effects"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:80002
+msgid "An argument may have a dynamic shape"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:100002
+msgid "A dynamic shape may be used in multiple functions"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:120002
+msgid "nn.Module instances may contain other nn.Module"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/nn/exporter.ipynb:120004
+msgid ""
+"When exporting to a Relax IRModule, all `nn.Parameter` instances within "
+"the `nn.Module` become Relax function parameters."
+msgstr ""
+

@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:10002
+msgid "解读 `Span`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:10004
+msgid "`SpanNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20002
+msgid "`SpanNode` 继承自 `Object` 类的子类，它表示生成节点的前端源代码中的位置信息。该类具有以下成员变量和成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20004
+msgid "`source_name`：`SourceName` 类型的成员变量，表示生成节点的源名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20005
+msgid "`line`：整数类型的成员变量，表示行号。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20006
+msgid "`column`：整数类型的成员变量，表示列偏移量。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20007
+msgid "`end_line`：整数类型的成员变量，表示结束行号。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20008
+msgid "`end_column`：整数类型的成员变量，表示结束列号。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20009
+msgid ""
+"`VisitAttrs(AttrVisitor* v)`：成员函数，用于访问属性。它接受指向 `AttrVisitor` "
+"对象的指针作为参数，并依次调用 `v->Visit(\"source_name\", "
+"&source_name)`、`v->Visit(\"line\", &line)`、`v->Visit(\"column\", "
+"&column)`、`v->Visit(\"end_line\", &end_line)` 和 `v->Visit(\"end_column\","
+" &end_column)` 来访问相应的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20010
+msgid "`_type_has_method_sequal_reduce`：静态常量表达式布尔值，表示该类型是否具有 `SEqualReduce` 方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20011
+msgid ""
+"`SEqualReduce(const SpanNode* other, SEqualReducer equal) "
+"const`：成员函数，用于比较两个 `SpanNode` 对象是否相等。它接受一个指向另一个 `SpanNode` 对象的指针和一个 "
+"`SEqualReducer` 对象作为参数，并使用 `equal` 函数比较两个对象的相应属性是否相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20012
+msgid "`_type_key`：静态常量字符指针，表示该类型的键。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20013
+msgid ""
+"`TVM_DECLARE_BASE_OBJECT_INFO(SpanNode, Object)`：宏定义，用于声明 `SpanNode` "
+"对象的基本信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:20015
+msgid "总体来说，这段代码定义了表示生成节点位置信息的类，并提供了相应的属性访问和相等性比较功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:30002
+msgid "`Span`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:30016
+msgid "`Span` 类继承自 `ObjectRef` 类。该类具有以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:30018
+msgid ""
+"`Span(SourceName source_name, int line, int end_line, int column, int "
+"end_column)`：一个构造函数，用于创建 `Span` 对象。它接受五个参数：`source_name` 表示源名称，`line` "
+"表示起始行号， `end_line` 表示结束行号，`column` 表示起始列号，`end_column` 表示结束列号。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:30019
+msgid ""
+"`Merge(const Span& other) const`：成员函数，用于合并两个 `Span` 对象为一个捕获了组合区域的 `Span` "
+"对象。它接受一个指向另一个 `Span` 对象的常量引用作为参数，并返回一个新的 `Span` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:30020
+msgid ""
+"`TVM_DEFINE_OBJECT_REF_METHODS(Span, ObjectRef, SpanNode)`：宏定义，用于定义 "
+"`Span` 对象的引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:30022
+msgid "总体来说，这段代码定义了一个用于表示源代码片段位置信息的类，并提供了相应的构造函数和合并功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:40002
+msgid "`SequentialSpanNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50002
+msgid "`SequentialSpanNode` 类继承自 `SpanNode` 类。该类具有以下成员变量和成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50004
+msgid "`spans`：`Array<Span>` 类型的成员变量，表示原始 source exprs 列表中的 span，用于构造顺序 span。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50005
+msgid ""
+"`VisitAttrs(AttrVisitor* "
+"v)`：一个成员函数，用于访问属性。它接受一个指向`AttrVisitor`对象的指针作为参数，并首先调用基类的`VisitAttrs`函数，然后调用`v->Visit(\"spans\","
+" &spans)`来访问`spans`属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50006
+msgid "`_type_key`：一个静态常量字符指针，表示该类型的键。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50007
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SequentialSpanNode, "
+"SpanNode)`：一个宏定义，用于声明`SequentialSpanNode`对象的最终信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50008
+msgid ""
+"`SEqualReduce(const SequentialSpanNode* other, SEqualReducer equal) "
+"const`：一个成员函数，用于比较两个`SequentialSpanNode`对象是否相等。它接受一个指向另一个`SequentialSpanNode`对象的指针和一个`SEqualReducer`对象作为参数，并使用`equal`函数比较两个对象的`spans`属性是否相等。如果长度不相等或任何一个元素不相等，则返回`false`；否则返回`true`。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:50010
+msgid "总体来说，这段代码定义了一个用于存储由多个源表达式生成的表达式的顺序跨度列表的类，并提供了相应的属性访问和相等性比较功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:60002
+msgid "`SequentialSpan`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:70002
+msgid "`SequentialSpan` 类继承自 `Span` 类。该类具有以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:70004
+msgid ""
+"`SequentialSpan(Array<Span> "
+"spans)`：一个构造函数，用于创建一个`SequentialSpan`对象。它接受一个`Array<Span>`类型的参数`spans`，表示顺序跨度列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:70005
+msgid ""
+"`SequentialSpan(std::initializer_list<Span> "
+"init)`：另一个构造函数，用于创建一个`SequentialSpan`对象。它接受一个`std::initializer_list<Span>`类型的参数`init`，表示顺序跨度列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:70006
+msgid ""
+"`TVM_DEFINE_OBJECT_REF_METHODS(SequentialSpan, Span, "
+"SequentialSpanNode)`：一个宏定义，用于定义`SequentialSpan`对象的引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/Span.ipynb:70008
+msgid "总体来说，这段代码定义了一个用于表示顺序跨度列表的类，并提供了相应的构造函数和引用方法。"
+msgstr ""
+

@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:10002
+msgid "TVMScript `@I.pyfunc` 装饰器"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:20002
+msgid "本测试验证以下内容："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:20003
+msgid "`@I.pyfunc` 装饰器的正确工作方式"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:20004
+msgid "Python 函数如何正确集成到 IRModule 中"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:20005
+msgid "BasePyModule 继承关系是否正确处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:20006
+msgid "为 Python 函数创建 ExternFunc 节点的功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:40002
+msgid "测试 `@I.pyfunc` 装饰器是否正确创建 `pyfuncs` 属性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:60002
+msgid "测试 `pyfuncs` 中的 Python 函数是否可调用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:80002
+msgid "测试 Python 函数是否正确执行"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:100002
+msgid "测试模块是否包含用于 IRModule 操作的 functions 属性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:120002
+msgid "测试模块是否有用于 TVMScript 输出的 `script()` 方法"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:140002
+msgid "测试模块是否具有 BasePyModule 继承标志"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:160002
+msgid "测试模块的创建和执行功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:180002
+msgid "测试模块在 GPU 设备上的创建和执行功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:200002
+msgid "测试 Python 函数如何与 TIR 函数协作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/RelaxPythonModuleDesign/pyfunc.ipynb:220002
+msgid "测试 `@I.pyfunc` 装饰器是否保留函数签名"
+msgstr ""
+

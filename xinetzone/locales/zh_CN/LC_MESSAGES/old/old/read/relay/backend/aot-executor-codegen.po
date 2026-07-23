@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/backend/aot-executor-codegen.ipynb:10002
+msgid "aot-executor-codegen"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/backend/aot-executor-codegen.ipynb:10004
+msgid "源码：`tvm/src/relay/backend/aot_executor_codegen.cc`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/backend/aot-executor-codegen.ipynb:30002
+msgid "这段代码主要包含两个函数：`DivRoundUp` 和 `GetMemorySizeBytes`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/backend/aot-executor-codegen.ipynb:30004
+msgid ""
+"`DivRoundUp` "
+"函数用于计算将一个数（`size`）除以另一个数（`word_size`）后向上取整的结果。这个函数接收两个参数，分别是原始大小（`size`）和元素大小（`word_size`）。它通过将"
+" `size` 加上 `word_size - 1`，然后除以 `word_size` 来实现向上取整的效果。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/backend/aot-executor-codegen.ipynb:30006
+msgid ""
+"`GetMemorySizeBytes` 函数用于计算给定张量类型（`TensorType`）所需的内存大小。它首先初始化一个名为 `size` "
+"的变量为 `1`，然后遍历 `ttype` 的形状（`shape`），将每个维度的大小相乘。接着，它将 `size` 乘以 `ttype` "
+"的数据类型（`dtype`）所占用的位数（`bits`）与通道数（`lanes`）之积，再除以 8（因为 `1 字节 = 8 "
+"位`），最后返回计算出的内存大小。在这个过程中，它还检查了维度是否为负数以及是否可以将形状转换为整数。"
+msgstr ""
+

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:10002
+msgid "node functor"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:10004
+msgid "源码：`tvm/include/tvm/node/functor.h`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:20002
+msgid "`NodeFunctor`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:20004
+msgid "`NodeFunctor` 的模板类，它用于根据第一个参数的类型动态分派函数。这个类在构造基于 AST/IR 节点类型的多态分派时非常有用。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:30002
+msgid ""
+"`NodeFunctor` 类有两个模板参数：`R` 表示返回值类型，`Args...` 表示函数的其他参数类型。它的内部包含函数指针类型 "
+"`FPointer`，用于存储指向特定类型的函数的指针。此外，还有名为 `func_` 的内部向量，用于存储这些函数指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:30004
+msgid "`NodeFunctor` 类提供了以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:30006
+msgid ""
+"`can_dispatch(const ObjectRef& n) const`：检查是否可以对给定的节点进行分派。如果节点的类型索引小于 "
+"`func_` 的大小且对应的函数指针不为空，则返回 `true`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:30007
+msgid ""
+"`operator()(const ObjectRef& n, Args... args) "
+"const`：调用分派函数。首先检查是否可以对给定的节点进行分派，然后使用节点的类型索引从 `func_` 中获取相应的函数指针，并调用该函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:30008
+msgid ""
+"`set_dispatch(FPointer f)`：为特定类型的节点设置分派函数。首先计算节点类型的运行时类型索引，然后调整 `func_` "
+"的大小以容纳新的函数指针（如果需要），并将新函数指针设置为给定的函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:30009
+msgid ""
+"`clear_dispatch()`：清除特定类型的节点的分派函数。首先计算节点类型的运行时类型索引，然后将对应的函数指针设置为 "
+"`nullptr`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:50002
+msgid ""
+"这段代码定义了名为 `tostr` 的 `NodeFunctor` 对象，该对象用于将不同类型的节点转换为字符串。`NodeFunctor` "
+"是模板类，接受函数签名作为参数，该函数签名表示如何将节点转换为字符串。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:50004
+msgid ""
+"在这段代码中，`NodeFunctor` 的函数签名为`std::string (const ObjectRef& n, std::string "
+"prefix)`，表示它接受 `ObjectRef` 类型的节点和字符串前缀，并返回字符串。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:50006
+msgid ""
+"接下来，使用 `set_dispatch` 方法为 `NodeFunctor` 设置两个分派函数。第一个分派函数处理 `Add` "
+"类型的节点，它将节点转换为字符串并将前缀添加到字符串末尾。第二个分派函数处理 `IntImm` "
+"类型的节点，它也将节点转换为字符串并将前缀添加到字符串末尾。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:50008
+msgid ""
+"然后，创建两个表达式 `x` 和 `y`，其中 `x` 是常量节点，值为 `1`。通过将这两个表达式传递给 `tostr` "
+"对象，可以将其转换为字符串。由于 `x` 是 `Add` 类型的节点，因此调用 `tostr(x, \"My\")` "
+"时，将调用第一个分派函数，输出结果为 `\"MyAdd\"`。同样，由于 `y` 是 `IntImm` 类型的节点，因此调用 `tostr(y, "
+"\"My\")` 时，将调用第二个分派函数，输出结果为 `\"MyIntImm\"`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60002
+msgid "`TVM_STATIC_IR_FUNCTOR`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60007
+msgid ""
+"这段代码是宏定义，用于生成一个名为 `__make_functor##_##ClsName` "
+"的函数对象。这个函数对象是静态的（static）并且具有 `TVM_ATTRIBUTE_UNUSED` 属性，表示它不会被使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60009
+msgid "解析如下："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60011
+msgid "`#define` 是 C/C++ 预处理器指令，用于定义宏。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60012
+msgid "`TVM_REG_FUNC_VAR_DEF(ClsName)` 是宏的名称，其中 `ClsName` 是参数，表示类名。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60013
+msgid "`static TVM_ATTRIBUTE_UNUSED auto& __make_functor##_##ClsName` 是宏的定义部分。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60014
+msgid "`static` 表示这是静态成员函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60015
+msgid "`TVM_ATTRIBUTE_UNUSED` 是属性，表示该变量或函数未被使用，编译器不会发出警告。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60016
+msgid "`auto&` 表示返回值类型为引用到自动类型的变量。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60017
+msgid "`__make_functor##_##ClsName` 是生成的函数对象的名称，其中 `##` 是连接符，用于将两个字符串连接在一起。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:60019
+msgid ""
+"综上所述，这段代码的作用是定义名为 `__make_functor##_##ClsName` 的静态函数对象，该函数对象具有 "
+"`TVM_ATTRIBUTE_UNUSED` 属性，表示它不会被使用。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:70002
+msgid ""
+"这段代码定义了名为 `TVM_STATIC_IR_FUNCTOR` 的宏，用于设置 `NodeFunctor` 的调度。`NodeFunctor`"
+" 是一种用于实现类似于访问者模式的函数对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:70004
+msgid ""
+"在这段代码中，`ReprPrinter` 类使用了 `NodeFunctor` 来实现打印功能。通过使用 "
+"`vtable`，可以轻松地为新的节点类型添加新的调度函数，而无需更改 `ReprPrinter` 接口。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:70006
+msgid ""
+"`ReprPrinter::FType& ReprPrinter::vtable()` 函数返回全局函数表。这个函数表是一个静态成员变量，它存储了"
+" `NodeFunctor` 的实例。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/node_functor.ipynb:70008
+msgid ""
+"`TVM_STATIC_IR_FUNCTOR(ClsName, FField)` 宏的作用是将 `ClsName` 类的 `FField` "
+"函数作为 `NodeFunctor` 的调度函数添加到全局函数表中。这样，当调用 `print` "
+"方法时，会根据节点的类型选择相应的调度函数进行处理。"
+msgstr ""
+

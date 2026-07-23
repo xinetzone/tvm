@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:10002
+msgid "创建 TVM 的 NDArray 的子类"
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb
+msgid "C++ 源码："
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:20002
+msgid "编译："
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:40002
+msgid "`tvm_ext.ivec_create`"
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:60002
+msgid "要使用此插件，外部库应执行以下操作："
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:60004
+msgid "继承 TVM 的 NDArray 和 NDArray 容器；"
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:60005
+msgid "遵循新的对象协议以将新 NDArray 定义为引用类。"
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:60006
+msgid "在 Python 前端上，继承 `tvm.nd.NDArray`，并使用 `tvm.register_object` 注册类型。"
+msgstr ""
+
+#: ../../doc/old/old/extension/NDSubClass.ipynb:90002
+msgid "`tvm_ext.NDSubClass`"
+msgstr ""
+

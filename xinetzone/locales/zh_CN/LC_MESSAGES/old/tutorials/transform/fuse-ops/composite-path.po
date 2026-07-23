@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:10002
+msgid "复合路径"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:30002
+msgid "创建简单的计算图，只包含一个乘法算子。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60002
+msgid "当前有两种 BYOC (自带代码生成)的实现路径："
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60004
+msgid "路径1：`[FuseOpsByPattern(patterns, annotate_codegen=True), RunCodegen()]`"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60005
+msgid ""
+"路径2：`[FuseOpsByPattern(patterns, annotate_codegen=False), "
+"MergeCompositeFunctions(), RunCodegen()]` 为了保持一致性，两条路径都应具有与 "
+"`RunCodegen()` 相同的接口。"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60008
+msgid "关键点说明："
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60010
+msgid "两种路径最终功能等效但实现方式不同"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60011
+msgid "路径1直接生成带代码生成属性的融合函数"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:60012
+msgid "路径2先进行基础融合，再通过 `MergeCompositeFunctions` 添加代码生成属性"
+msgstr ""
+
+#: ../../doc/old/tutorials/transform/fuse-ops/composite-path.ipynb:80002
+msgid "路径二："
+msgstr ""
+

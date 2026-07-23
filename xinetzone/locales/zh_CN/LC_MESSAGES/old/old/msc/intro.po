@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/msc/intro.md:1
+msgid "MSC 简介"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:3
+msgid "MSC 中的编译流水线如下所示："
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:5
+msgid "![](images/msc.jpeg)"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:7
+msgid "核心概念"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:9
+msgid ""
+"MSCGraph：MSC 的核心 IR（中间表示）。MSCGraph 是 Relax.Function/Relay.Function 的 "
+"DAG（有向无环图）格式。"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:11
+msgid "MSC codegen：为框架生成模型构建代码（包括控制 MSCTool 的包装器）。"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:12
+msgid "RuntimeManager：管理运行时、MSCGraphs 和 MSCTools 的抽象模块。"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:13
+msgid "MSCTools：决定压缩策略并控制压缩过程的工具。此外，还为调试添加了一些额外的工具到MSCTools中。"
+msgstr ""
+
+#: ../../doc/old/old/msc/intro.md:14
+msgid "Config：MSC 使用配置来控制编译过程。这使得编译过程易于被记录和重放。"
+msgstr ""
+

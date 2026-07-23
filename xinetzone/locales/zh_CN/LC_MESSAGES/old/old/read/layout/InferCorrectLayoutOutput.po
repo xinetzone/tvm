@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/layout/InferCorrectLayoutOutput.ipynb:10002
+msgid "InferCorrectLayoutOutput"
+msgstr ""
+
+#: ../../doc/old/old/read/layout/InferCorrectLayoutOutput.ipynb:60002
+#, python-brace-format
+msgid "{func}`~tvm.relay.op.op.register_infer_correct_layout` 用于为算子注册推断布局函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/layout/InferCorrectLayoutOutput.ipynb:60004
+msgid "参数说明："
+msgstr ""
+
+#: ../../doc/old/old/read/layout/InferCorrectLayoutOutput.ipynb:60005
+msgid "`op_name`：字符串类型，表示算子的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/layout/InferCorrectLayoutOutput.ipynb:60006
+#, python-brace-format
+msgid ""
+"`infer_layout`：函数类型，接受两个参数 `attrs` 和 `inputs`，返回 "
+"{class}`~tvm.relay.transform.infer_layout_utils.InferCorrectLayoutOutput`"
+" 类型的对象。该函数用于推断正确的布局。"
+msgstr ""
+
+#: ../../doc/old/old/read/layout/InferCorrectLayoutOutput.ipynb:60007
+msgid "`level`：整数类型，表示优先级级别。"
+msgstr ""
+

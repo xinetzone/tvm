@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:10002
+msgid "Relax 构建"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:10004
+msgid "本教程将演示如何创建 Relax 函数和程序。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:10006
+msgid "介绍定义 Relax 函数的多种方法，包括使用 TVMScript 和 Relax NNModule API。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:20002
+msgid "使用 TVMScript 创建 Relax 程序"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:20004
+msgid ""
+"TVMScript 是一种领域特定语言，用于表示 Apache TVM 的中间表示（IR）。它是一种 Python 方言，可用于定义包含 "
+"TensorIR 和 Relax 函数的 IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:20006
+msgid "在本节中，将展示如何使用 TVMScript 仅通过高级 Relax 运算符来定义简单的多层感知机（MLP）模型。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:40002
+msgid "Relax 不仅是一种图级别的中间表示（IR），还支持跨级别的表示与转换。具体来说，可以在 Relax 函数中直接调用 TensorIR 函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:60005
+msgid "你可能会注意到打印输出的内容与编写的 TVMScript 代码有所不同。这是因为以标准格式打印 IRModule，同时支持输入时的语法糖。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:60007
+msgid "例如，可以将多个操作合并到一行中，如下所示："
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:60013
+msgid "然而，规范化表达式要求每个绑定中只能有一个操作。因此，打印输出的内容与编写的 TVMScript 代码不同，如下所示："
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:70002
+msgid "使用 NNModule API 创建 Relax 程序"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:70004
+msgid "除了 TVMScript 外，还提供了一种类似 PyTorch 的 API 来定义神经网络。它的设计更加直观且易于使用。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:70006
+msgid "在本节中，将展示如何使用 Relax NNModule API 来定义相同的多层感知机（MLP）模型。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:90002
+msgid "在定义完 NNModule 后，可以通过 `export_tvm` 将其导出为 TVM IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:110002
+msgid ""
+"还可以在 NNModule 中插入自定义的函数调用，例如 Tensor Expression (TE)、TensorIR 函数或其他 TVM "
+"打包函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:130002
+msgid "使用 Block Builder API 创建 Relax 程序"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:130004
+msgid ""
+"除了上述 API 外，我们还提供了 Block Builder API 用于创建 Relax 程序。它是一种 IR 构建器 "
+"API，更加底层，广泛用于 TVM 的内部逻辑中，例如编写自定义的 Pass。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:150002
+msgid ""
+"此外，Block Builder API 支持构建包含 Relax 函数、TensorIR 函数以及其他 TVM 打包函数的跨级别 "
+"IRModule。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:170002
+msgid ""
+"需要注意的是，Block Builder API 不如上述 API 那样用户友好，但它是与 IR 定义紧密结合的最低层级 "
+"API。对于仅希望定义和转换机器学习模型的用户，推荐使用上述 API。然而，对于那些希望构建更复杂转换的用户，Block Builder API "
+"则是更为灵活的选择。"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:180002
+msgid "总结"
+msgstr ""
+
+#: ../../doc/tvm-start/Relax/creation.ipynb:180003
+msgid ""
+"本教程展示了如何针对不同的使用场景，通过 TVMScript、NNModule API、Block Builder API 以及 "
+"PackedFunc API 来创建 Relax 程序。"
+msgstr ""
+

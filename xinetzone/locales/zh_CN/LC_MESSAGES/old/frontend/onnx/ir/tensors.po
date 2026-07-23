@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:10002
+msgid "在 ONNX IR 中的张量表示"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:10004
+msgid "参考：[`ir.TensorProtocol`](https://onnxscript.ai/intermediate_representation/tensors.html)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:10006
+msgid ""
+"ONNX IR提供了 "
+"[`ir.TensorProtocol`](https://onnxscript.ai/intermediate_representation/ir_api.html#onnxscript.ir.TensorProtocol)"
+" 接口，以便使用不同的数据结构作为张量的后备数据。除了传统的 `onnx.TensorProto` 之外，您还可以使用 "
+"`np.ndarray`、`torch.Tensor`、`jax.Array` 以及几乎任何其他东西来表示计算图中的张量。这使得它们可以通过相同的"
+" `TensorProtocol` 接口进行访问和序列化，而在初始化期间不会发生额外的复制。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:20002
+msgid "`ir.TensorProtocol`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:20004
+msgid ""
+"[`ir.TensorProtocol`](https://microsoft.github.io/onnxscript/intermediate_representation/ir_api.html#onnxscript.ir.TensorProtocol)"
+" 定义了一个只读接口，用于表示张量。实现该接口的张量类具有 `name`、 `shape`、 `dtype`、 `size`、 `nbytes` "
+"和 `metadata_props` 等属性，用于描述张量的基本属性。此外，它还应实现两个方法 `numpy` 和 `__array__` "
+"，这两个方法将从底层数据生成等效的 NumPy 数组。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:20007
+#, python-brace-format
+msgid ""
+"当与初始化器、常量值和张量属性交互时，最好假设使用 `ir.TensorProtocol`，只有在需要检查具体类时才使用 "
+"{func}`isinstance`。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:30002
+msgid "张量类"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:30004
+msgid "`ir.TensorProtoTensor`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:30006
+msgid ""
+"使用 "
+"[`ir.TensorProtoTensor`](https://microsoft.github.io/onnxscript/intermediate_representation/ir_api.html#onnxscript.ir.TensorProtoTensor)"
+" 作为对 proto 的包装以实现 `ir.TensorProtocol` 接口。您可以像往常一样访问 `shape`、 `dtype` "
+"等。只有在调用 `numpy()` 时才会产生副本。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:40002
+msgid ""
+"直接初始化 `ir.TensorProtoTensor`，如下所示，是可能的。然而，通常建议使用 "
+"`ir.serde.deserialize_tensor`，因为它可以处理所有类型的 `TensorProto` "
+"（例如，`ir.TensorProtoTensor` 不处理外部张量）。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:60002
+msgid "`ir.ExternalTensor`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:60004
+msgid ""
+"存储在外部磁盘上的张量数据通常很大，加载时将占用内存。[`ir.ExternalTensor`](https://microsoft.github.io/onnxscript/intermediate_representation/ir_api.html#onnxscript.ir.ExternalTensor)"
+" 类使用内存映射来避免将张量加载到内存中。您可以使用张量作为普通的 NumPy 数组，内存使用量最小。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:60006
+msgid ""
+"请参阅 `ir.serde.deserialize_tensor` 以找到将 `onnx.TensorProto` 转换为 "
+"`ir.ExternalTensor` 的示例。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:70002
+msgid "`ir.Tensor`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:70004
+msgid ""
+"`ir.Tensor` 是围绕 NumPy 数组兼容的数组对象（如 `np.ndarray` 和 "
+"`torch.Tensor`）的包装器。它最适合创建内存中的张量，而不将其转换为 `TensorProto`，以减少转换开销。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:70007
+msgid "如果一个数组对象定义了 `__array__` 方法，则它是兼容的。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:80002
+msgid "从数组创建张量，只需用 NumPy 数组初始化即可"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:100002
+msgid "初始化器将从数组中获取数据类型和形状信息。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:110002
+msgid "如果要从 NumPy 数组以外的对象创建张量，您需要指定数据类型："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:130002
+msgid "字符串张量"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:130004
+msgid ""
+"使用 "
+"[`ir.StringTensor`](https://microsoft.github.io/onnxscript/intermediate_representation/ir_api.html#onnxscript.ir.StringTensor)"
+" 创建字符串张量。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:140002
+msgid "回退 `TensorProto`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:140004
+msgid ""
+"在以下场景中，展示了如何从 `TensorProto` 转换到 `ir.Tensor`，运行一些计算，然后将其转换回 `ir.Tensor`，最后"
+" `TensorProto`："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:160002
+msgid "处理非原生 NumPy 数据类型：`bfloat16`、`float8`、`int4`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170002
+msgid ""
+"`ir.Tensor.numpy()` 生成张量值的 NumPy 数组表示。当张量的数据类型为 `BFLOAT16` 、 "
+"`FLOAT8[...]` 或 `[U]INT4` 时，这些类型不支持 NumPy，将使用 `ml_dtypes` 包中的数据类型。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170004
+msgid "`uint4` / `int4` 总是解包；`tobyte()` 生成预期的打包表示。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170006
+msgid "`ir.Tensor` 的初始化需要 NumPy 数组遵循以下类型约束，或者具有 `ml_dtypes` 数据类型。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170007
+msgid "`int8` 用于（未打包的） `int4`，符号位扩展到 8 位。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170008
+msgid "`uint8` 用于（解包的）`uint4`。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170009
+msgid "`uint8` 用于 8 位数据类型，如 `float8`。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:170010
+msgid "`uint16` 用于 `bfloat16`。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:180002
+msgid "以下示例展示了如何创建 `FLOAT8E4M3FN` 张量，变换其值，并创建新的张量来存储变换后的值。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:200002
+msgid "高级用法"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:200004
+msgid "子类化 `ir.Tensor`以实现更高效的访问和更广泛的支持 `dtype`"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:200006
+msgid ""
+"`ir.Tensor` 内部将任何与数组兼容的对象转换为 NumPy 数组，以生成 `tobytes()` "
+"中的字节表示。由于额外的转换，这可能会降低效率。它还限制了对于 NumPy 不支持的数据类型（如 `bfloat16`）的支持，因为 "
+"`__array__` 方法将失败。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:200008
+msgid ""
+"为了完全支持来自其他框架的数组，通常创建专门的类来处理它们是个好主意。下面的 `TorchTensor` 类演示了您如何通过子类化 "
+"`ir.Tensor` 来处理 PyTorch 张量："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:220002
+msgid ""
+"该类实现了 `tobytes()` ，以生成张量在序列化为 ONNX 文件/TensorProto 时的正确字节表示。该类还实现了 "
+"`__array__()` 方法，以返回 NumPy 不支持的数据类型的位表示。这样，分析阶段仍然可以对这些值进行计算。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:230002
+msgid "使用不同框架进行计算"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:230004
+msgid ""
+"由于 `ir.Tensor` 实现了 `__array__` 方法和 `__dlpack__` "
+"方法，其内容可以在不复制的情况下与计算框架共享。例如："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/ir/tensors.ipynb:250002
+msgid ""
+"这在您在图上创建需要计算具体值的传递时特别有用。您可以使用您喜欢的框架来创建传递。包含新创建的 `ir.Tensor` "
+"的转换图将与下游传递兼容，即使它们利用其他计算框架也是如此。"
+msgstr ""
+

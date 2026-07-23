@@ -1,0 +1,390 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-31 14:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../doc/docs/reference/api/python/s_tir/transform.rst:19
+msgid "tvm.s_tir.transform"
+msgstr ""
+
+#: of tvm.s_tir.transform:1
+msgid "Namespace of all S-TIR transformations"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.AnnotateIrregularLoop:1
+msgid "Annotate irregular loop mark."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/s_tir/transform.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.AnnotateIrregularLoop:3
+#: tvm.s_tir.transform.transform.CanonicalizeLoop:3
+#: tvm.s_tir.transform.transform.CompactBufferAllocation:9
+#: tvm.s_tir.transform.transform.ConvertBlocksToOpaque:5
+#: tvm.s_tir.transform.transform.DecorateDeviceScope:3
+#: tvm.s_tir.transform.transform.DefaultGPUSchedule:3
+#: tvm.s_tir.transform.transform.HoistExpression:3
+#: tvm.s_tir.transform.transform.HoistIfThenElse:7
+#: tvm.s_tir.transform.transform.InferFragment:3
+#: tvm.s_tir.transform.transform.InjectDoubleBuffer:3
+#: tvm.s_tir.transform.transform.InjectPTXAsyncCopy:3
+#: tvm.s_tir.transform.transform.InjectPermutedLayout:3
+#: tvm.s_tir.transform.transform.InjectSoftwarePipeline:3
+#: tvm.s_tir.transform.transform.InjectVirtualThread:3
+#: tvm.s_tir.transform.transform.InstrumentBoundCheckers:3
+#: tvm.s_tir.transform.transform.InstrumentProfileIntrinsics:3
+#: tvm.s_tir.transform.transform.LiftThreadBinding:3
+#: tvm.s_tir.transform.transform.LoopPartition:3
+#: tvm.s_tir.transform.transform.LowerAsyncDMA:3
+#: tvm.s_tir.transform.transform.LowerAutoCopy:3
+#: tvm.s_tir.transform.transform.LowerCrossThreadReduction:4
+#: tvm.s_tir.transform.transform.LowerInitBlock:3
+#: tvm.s_tir.transform.transform.LowerMatchBuffer:3
+#: tvm.s_tir.transform.transform.LowerOpaqueBlock:3
+#: tvm.s_tir.transform.transform.LowerThreadAllreduce:3
+#: tvm.s_tir.transform.transform.LowerVtcmAlloc:3
+#: tvm.s_tir.transform.transform.ManifestSharedMemoryLocalStage:3
+#: tvm.s_tir.transform.transform.MergeSharedMemoryAllocations:4
+#: tvm.s_tir.transform.transform.PlanAndUpdateBufferAllocationLocation:5
+#: tvm.s_tir.transform.transform.RemoveStoreUndef:3
+#: tvm.s_tir.transform.transform.RemoveWeightLayoutRewriteBlock:6
+#: tvm.s_tir.transform.transform.RenormalizeSplitPattern:3
+#: tvm.s_tir.transform.transform.RewriteUnsafeSelect:3
+#: tvm.s_tir.transform.transform.ThreadSync:6
+#: tvm.s_tir.transform.transform.TransformMmaBufferLayout:3
+#: tvm.s_tir.transform.transform.UnifyThreadBinding:4
+#: tvm.s_tir.transform.transform.UseAssumeToReduceBranches:3
+#: tvm.s_tir.transform.transform.VerifyVTCMLimit:8
+msgid "**fpass** -- The result pass"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/s_tir/transform.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.CanonicalizeLoop:1
+msgid "Canonicalize the loop to start from zero and use trivial step"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.CompactBufferAllocation:1
+msgid ""
+"Compact the buffer access region by removing the buffer regions that are "
+"not accessed, i.e. narrowing the buffer shape and adjust the access "
+"region if necessary."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/s_tir/transform.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.CompactBufferAllocation:5
+msgid ""
+"Ensure the compacted shape to be always smaller than the original shape. "
+"Otherwise it allows to grow the shape to match actual accessed buffer "
+"regions."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.ConvertBlocksToOpaque:1
+msgid ""
+"Substitute all the block vars with the PrimExprs they are bound to, "
+"indicated by the corresponding iter_values in BlockRealize, and then "
+"convert the blocks into opaque ones by removing all the iter_values in "
+"BlockRealize and iter_vars in Block."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.DecorateDeviceScope:1
+msgid "Decorate all the function's body as device function."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.DefaultGPUSchedule:1
+msgid "Set default thread bindings for GPU PrimFuncs."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.HoistExpression:1
+msgid "Hoist loop-invariant expressions to outside the eligible loops."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.HoistIfThenElse:1
+msgid "Hoist loop-invariant IfThenElse nodes to outside the eligible loops."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.HoistIfThenElse:3
+msgid ""
+"The variant of the pass. variant can have any one of following values "
+"[\"basic\", None(Default)]."
+msgstr ""
+
+#: of tvm.tirx.transform.transform.HoistedConditionals:1
+msgid "Flags for use in HoistExpressionConfig.conditional_types"
+msgstr ""
+
+#: of tvm.tirx.transform.transform.HoistedConditionals:3
+msgid ""
+"Each bitflag represents a type of expression that should be hoisted to "
+"the outermost loop possible."
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedConditionals.All:1
+msgid "Enable all hoisting of conditionals"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedConditionals.BooleanExpression:1
+msgid "If set, look for hoist candidates in all boolean expressions"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedConditionals.IfElseExpr:1
+msgid "If set, look for hoist candidates in tirx.if_then_else"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedConditionals.IfElseStmt:1
+msgid "If set, look for hoist candidates in IfElseStmt"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedConditionals.Never:1
+msgid "No hoisting of conditionals"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedConditionals.UsingBlockVar:1
+msgid ""
+"If set, allow hoisting of conditionals that use a block variable (e.g. "
+"threadIdx.x)"
+msgstr ""
+
+#: of tvm.tirx.transform.transform.HoistedLetBindings:1
+msgid "Flags for use in HoistExpressionConfig.let_binding_types"
+msgstr ""
+
+#: of tvm.tirx.transform.transform.HoistedLetBindings:3
+msgid ""
+"Each bitflag represents a type of let binding expression that should be "
+"hoisted to the outermost loop possible."
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedLetBindings.All:1
+msgid "Enable all hoisting of let bindings"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedLetBindings.Bind:1
+msgid "Bindings occurring in Bind nodes"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedLetBindings.LetExpr:1
+msgid "Bindings occurring in Let expressions"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedLetBindings.Never:1
+msgid "No hoisting of let bindings"
+msgstr ""
+
+#: docstring of tvm.s_tir.transform.HoistedLetBindings.RequiredByConditional:1
+msgid "Bindings that are used by a hoisted conditional"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InferFragment:1
+msgid "Infer the TensorCore fragment information using tensor intrinsics."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectDoubleBuffer:1
+msgid "Inject double buffer statements."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectDoubleBufferConfig:1
+msgid "Config for inject double buffer pass"
+msgstr ""
+
+#: of tvm.s_tir.transform.InjectDoubleBufferConfig.split_loop:1
+msgid "Split loop factors"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectPTXAsyncCopy:1
+msgid "Rewrite global to shared memory copy on CUDA with asynchronous copy."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectPTXLDG32:1
+msgid "Inject ptx.ldg.32 intrinsics."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectPTXLDG32:3
+msgid "If True, inject ptx.ldg.32 intrinsics."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectPermutedLayout:1
+msgid "Inject permuted layout in mma"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectSoftwarePipeline:1
+msgid ""
+"Transform annotated loops into pipelined one that parallelize producers "
+"and consumers"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InjectVirtualThread:1
+msgid "Inject virtual thread loops."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InstrumentBoundCheckers:1
+msgid "Instruments bound checkers."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.InstrumentProfileIntrinsics:1
+msgid "Insert intrinsic calls to instrument function and loop level profiling."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LiftThreadBinding:1
+msgid "Lift the same thread bindings to their LCA loops."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LoopPartition:1
+msgid "Partition loops in the stmt."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LoopPartitionConfig:1
+msgid "Config for loop partition pass"
+msgstr ""
+
+#: of tvm.s_tir.transform.LoopPartitionConfig.no_unroll_loop_with_extent_one:1
+msgid "Don't unroll loops with extent 1"
+msgstr ""
+
+#: of tvm.s_tir.transform.LoopPartitionConfig.partition_const_loop:1
+msgid "Split constant loop"
+msgstr ""
+
+#: of
+#: tvm.s_tir.transform.LoopPartitionConfig.unroll_loop_with_partition_hint_no_interval:1
+msgid "Unroll loops with pragma_loop_partition_hint and no interval"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerAsyncDMA:1
+msgid "Lower async DMA to DMA."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerAutoCopy:1
+msgid "Automatically do memory optimizations for auto copy blocks"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerCrossThreadReduction:1
+msgid ""
+"Lower cross-thread reduction from thread bindings to intrinsic function "
+"calls."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerInitBlock:1
+msgid "Lower block init stmt into IfThenElse statements."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerMatchBuffer:1
+msgid "Remove match buffers inside the block. Also, it will validate the binding."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerOpaqueBlock:1
+msgid "Remove the block to ensure that the TIR can not be scheduled again."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerThreadAllreduce:1
+msgid "Lower cross thread allreduce."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.LowerVtcmAlloc:1
+msgid "Lower vtcm allocation."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.ManifestSharedMemoryLocalStage:1
+msgid "Add the explicit local stage for the shared memory access on GPU."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.MergeSharedMemoryAllocations:1
+msgid ""
+"This pass merges multiple TIR-level shared memory allocations into one "
+"allocation."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.PlanAndUpdateBufferAllocationLocation:1
+msgid ""
+"Locate the buffer allocation to the exact position (usually is the lca of"
+" buffer access). This pass will inject opaque block with alloc_buffers at"
+" the allocation site."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.RemoveStoreUndef:1
+msgid "Remove stores of undefined values from the Stmt."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.RemoveWeightLayoutRewriteBlock:1
+msgid ""
+"Remove weight layout rewrite block before benchmarking during tuning "
+"stage."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.RemoveWeightLayoutRewriteBlock:3
+msgid ""
+"If True, exact rewrite of Tensor, according to the given index map, will "
+"be skipped."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.RenormalizeSplitPattern:1
+msgid ""
+"Renormalize the split pattern from floordiv(floormod()) to "
+"floormod(floordiv())"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.RewriteUnsafeSelect:1
+msgid "Detect and rewrite unsafe select that contains memory access."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.ThreadSync:1
+msgid "Insert sync between parallel read/write of shared buffers."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.ThreadSync:3
+msgid "The target storage scope."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.TransformMmaBufferLayout:1
+msgid "Transform mma buffer layout"
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.UnifyThreadBinding:1
+msgid ""
+"Unify all the thread bindings for \"blockIdx.x/y/z\", "
+"\"threadIdx.x/y/z\", and \"vthread.x/y/z\"."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.UseAssumeToReduceBranches:1
+msgid ""
+"Eliminate layout specific pad branch by overcomputing values for padded "
+"region."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.VerifyVTCMLimit:1
+msgid "Verify if the size of the allocated vtcm memory satisfies the limit."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.VerifyVTCMLimit:3
+msgid ""
+"The limit is determined from the \"vtcm-capacity\" attribute of the "
+"target."
+msgstr ""
+
+#: of tvm.s_tir.transform.transform.VerifyVTCMLimit:5
+msgid "The default target to use if a PrimFunc does not have a target attribute."
+msgstr ""
+

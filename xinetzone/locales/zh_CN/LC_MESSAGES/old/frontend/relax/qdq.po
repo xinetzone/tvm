@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:10002
+msgid "Relax 量化/反量化算子模块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:10004
+msgid ""
+"此模块提供了 Relax 框架中的量化(quantize)和反量化(dequantize)算子的 Python "
+"前端接口。这些算子用于神经网络模型量化过程中的张量类型转换，支持通道级别的量化参数设置。量化可以将高精度浮点数模型转换为低精度整数模型，以减少模型大小和加速推理。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:10006
+msgid "qdq 在 TVM 的量化生态中扮演着关键角色，主要负责："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:10008
+msgid "**提供量化转换接口**：作为 Python 前端 API，连接用户代码与 TVM 底层量化实现"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:10009
+msgid "**支持模型压缩与加速**：通过高精度到低精度的转换，实现模型大小减小和推理速度提升"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:10010
+msgid "**保持量化精度**：实现了标准的量化/反量化数学公式，保证转换过程中的精度损失最小化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30002
+msgid "主要功能与数学原理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30004
+msgid "该模块提供两个核心函数："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30006
+msgid "1. `quantize` 函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30008
+msgid "**功能**：将浮点类型张量（如 `float32`）转换为整数类型张量（如 `int8`）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30009
+msgid ""
+"量化数学公式：`Q_output = clamp(round(input_tensor/scale) + zero_point, "
+"out_dtype::min, out_dtype::max)`   其中："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30011
+msgid "`input_tensor/scale`: 将输入数据归一化到零点附近"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30012
+msgid "`round()`: 四舍五入到最近的整数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30013
+msgid "`+ zero_point`: 添加零点偏移，使零点(通常是0)能够精确表示"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30014
+#: ../../doc/old/frontend/relax/qdq.ipynb:60008
+msgid "`clamp()`: 将结果限制在目标数据类型的最小和最大值之间"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30015
+msgid "过程：归一化 → 四舍五入 → 添加零点偏移 → 值域裁剪"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30016
+msgid "**典型应用**：模型训练后的量化、量化感知训练中的量化运算"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:30019
+msgid "该算子接收输入张量，并生成具有相同形状的量化输出。输入张量可以是任意形状。量化过程会将浮点数值映射到整数域，同时保留原始数据的相对关系。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50002
+msgid "参数描述："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50003
+msgid "`data : tvm.relax.Expr`   需要被量化的输入张量，通常为浮点类型"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50006
+msgid ""
+"`scale : tvm.relax.Expr`   量化缩放因子，用于控制量化的精度。   当为张量时，可以实现通道级(per-"
+"channel)量化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50010
+msgid ""
+"`zero_point : tvm.relax.Expr`   量化零点，使得零点在整数域中能够精确表示。   当为张量时，可以实现通道级"
+"(per-channel)量化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50014
+msgid "`axis : int, 可选`   量化的通道轴。默认值为 `-1`，表示最后一个轴"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50017
+msgid "`out_dtype : str, 可选`   输出张量的数据类型，默认为 `\"int8\"`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50020
+msgid "返回值："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:50021
+msgid "`result : tvm.relax.Expr`   量化后的整数张量，形状与输入相同"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60002
+msgid "2. `dequantize` 函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60003
+msgid "**功能**：将整数类型张量转换回浮点类型张量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60004
+msgid ""
+"**数学原理**：`output = clamp(scale * (input_tensor - zero_point), "
+"out_dtype::min, out_dtype::max)`   其中："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60006
+msgid "`input_tensor - zero_point`: 减去零点偏移，恢复归一化的值"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60007
+msgid "`* scale`: 乘以缩放因子，恢复原始数据范围"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60009
+msgid "减去零点偏移 → 乘以缩放因子 → 值域裁剪"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60010
+msgid "**典型应用**：量化模型推理过程中的反量化操作、量化模型与浮点模型的结果比较"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60013
+msgid "该算子接收量化后的输入张量，并生成具有相同形状的反量化输出。反量化过程是量化的逆运算，用于在需要时恢复原始浮点数据的近似值。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60016
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60018
+msgid "`data : tvm.relax.Expr`   需要被反量化的输入张量，通常为整数类型"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60021
+msgid ""
+"`scale : tvm.relax.Expr`   量化缩放因子，必须与量化时使用的scale相同。   当为张量时，可以实现通道级(per-"
+"channel)反量化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60025
+msgid ""
+"`zero_point : tvm.relax.Expr`   量化零点，必须与量化时使用的zero_point相同。   "
+"当为张量时，可以实现通道级(per-channel)反量化"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60029
+msgid "`axis : int, 可选`   反量化的通道轴。默认值为-1，表示最后一个轴"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60032
+msgid "`out_dtype : str, 可选`   输出张量的数据类型，默认为\"float32\""
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60035
+msgid "返回值"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:60037
+msgid "`result : tvm.relax.Expr`   反量化后的浮点张量，形状与输入相同"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:70002
+msgid "使用场景与优势"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:70004
+msgid "该模块主要应用于以下场景："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:70006
+msgid "**模型压缩**：将FP32模型转换为INT8/UINT8模型，减少约75%的存储空间"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:70007
+msgid "**推理加速**：在支持整数运算的硬件（如GPU、NPU）上显著提升推理性能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:70008
+msgid "**低精度推理**：在边缘设备等计算资源受限环境中部署深度学习模型"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:70009
+msgid "**量化感知训练**：在训练过程中模拟量化效果，提高量化后模型的精度"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80002
+msgid "关键参数与使用方法"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80004
+msgid "共用参数说明"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80005
+msgid "`data`：输入张量（量化时为浮点型，反量化时为整型）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80006
+msgid "`scale`：缩放因子（可以是标量或张量，张量时实现通道级量化）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80007
+msgid "`zero_point`：零点值（可以是标量或张量）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80008
+msgid "`axis`：通道轴（默认为 `-1`，表示最后一维）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:80009
+msgid "`out_dtype`：输出数据类型（量化默认int8，反量化默认float32）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:90002
+msgid "输入输出示例"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:90004
+msgid "量化算子示例"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:110002
+msgid "反量化算子示例"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:130002
+msgid "测试量化和反量化算子的正确性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:180002
+msgid "测试量化和反量化算子的结构信息推断"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:200002
+msgid "测试符号形状输入下量化和反量化算子的结构信息推断"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:220002
+msgid "测试 float8_e4m3fn 数据类型下量化和反量化算子的结构信息推断"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/qdq.ipynb:240002
+msgid "测试 float8_e5m2 数据类型下量化和反量化算子的结构信息推断"
+msgstr ""
+

@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:10002
+msgid "构建源信息"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:10004
+msgid "`tvm/include/tvm/ir/si_builder.h` 定义了名为 `SIBuilder` 的类，用于在重写表达式期间构建源信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20002
+msgid "该类提供了以下公共成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20004
+msgid "`SIBuilder(const Span& span = Span())`：创建空的 `SIBuilder` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20005
+msgid ""
+"`SIBuilder(const Array<Span>& spans = Array<Span>())`：从一个 `Span` 数组中创建一个 "
+"`SIBuilder` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20006
+msgid ""
+"`SIBuilder(const std::initializer_list<Span>& init)`：从一个 `Span` "
+"初始化器列表中创建一个 `SIBuilder` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20007
+#, python-brace-format
+msgid ""
+"`SIBuilder(const T& entry, const tvm::Array<T>& inputs = {})`：从一个给定的 "
+"`entry` 和一个输入 `inputs` 创建一个 `SIBuilder` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20008
+#, python-brace-format
+msgid ""
+"`SIBuilder(const tir::Stmt& entry, const tvm::Array<PrimExpr>& inputs = "
+"{})`：从一个给定的 `entry` 和一个输入 `inputs` 创建一个 `SIBuilder` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20009
+#, python-brace-format
+msgid ""
+"`SIBuilder(const tir::Stmt& entry, const tvm::Array<tir::Stmt>& inputs = "
+"{})`：从一个给定的 `entry` 和一个输入 `inputs` 创建一个 `SIBuilder` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20010
+msgid "`~SIBuilder()`：析构函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20011
+msgid "`SIBuilder(const SIBuilder&) = delete`：禁止拷贝构造。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20012
+msgid "`SIBuilder& operator=(const SIBuilder&) = delete`：禁止赋值拷贝。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20013
+msgid "`Span Build() const`：构建一个基于给定的 `Span` 或子图的源信息跨度。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20014
+msgid ""
+"`void RecursivelyFillSpan(const T& entry, const std::unordered_set<T, "
+"ObjectPtrHash, ObjectPtrEqual>& inputs) const`：递归地填充从 `entry` 到 `inputs` "
+"的所有 `Expr` 的跨度。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20015
+msgid ""
+"`void RecursivelyFillSpan(const tir::Stmt& entry, const "
+"std::unordered_set<PrimExpr, ObjectPtrHash, ObjectPtrEqual>& inputs) "
+"const`：递归地填充从 `entry` 到 `inputs` 的所有 `PrimExpr` 的跨度。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20016
+msgid ""
+"`void RecursivelyFillSpan(const tir::Stmt& entry, const "
+"std::unordered_set<tir::Stmt, ObjectPtrHash, ObjectPtrEqual>& inputs) "
+"const`：递归地填充从 `entry` 到 `inputs` 的所有 `Stmt` 的跨度。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20018
+msgid "私有成员变量包括："
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20020
+msgid "`struct Impl;`：内部实现结构体。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20021
+msgid "`std::unique_ptr<Impl> impl_`：指向内部实现结构体的指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/source-map/si-builder.ipynb:20022
+msgid ""
+"`std::unique_ptr<Impl> CreateImpl(const Span& span)`：根据给定的 `span` "
+"创建内部实现结构体。"
+msgstr ""
+

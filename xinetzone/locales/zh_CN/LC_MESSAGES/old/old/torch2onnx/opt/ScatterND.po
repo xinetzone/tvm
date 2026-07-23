@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:10002
+msgid "onnx ScatterND"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:10004
+msgid "参考：[ScatterND](https://onnx.ai/onnx/operators/onnx__ScatterND.html)"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:10006
+msgid ""
+"ScatterND 算子涉及三个输入：秩为 `r`（`r >= 1`）的 `data` 张量，秩为 `q`（`q >= 1`）的 "
+"`indices` 张量，以及秩为 `q + r - indices.shape[-1] - 1` 的 `updates` "
+"张量。该算子的输出是通过创建 `data` 输入的副本，然后根据 ``indices`` 指定的特定位置，将其值更新为 `updates` "
+"张量中指定的值来产生的。它的输出形状与 `data` 的形状相同。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:10008
+msgid ""
+"`indices` 是整数张量。设 `k` 为索引形状的最后一维，即 `indices.shape[-1]`。`indices` 被视为由 `k`"
+" 元组组成的 `(q-1)` 维张量，其中每个 `k` 元组都是对 `data` 的偏索引（partial-index）。因此， `k` "
+"的值最多可以等于数据的秩。当 `k` 等于 `data` 的秩时，每个更新项指定了对张量单个元素的更新。当 `k` 小于 `data` "
+"的秩时，每个更新项指定了对张量切片的更新。索引值可以是负数，按照从末尾开始倒数的通常惯例，但需要在有效范围内。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:10010
+msgid ""
+"`updates` 被视为替换切片值的(q-1)维张量。因此，`updates` "
+"形状的前(q-1)个维度必须与索引形状的前(q-1)个维度匹配。`updates` 的其余维度对应于替换切片值的维度。每个替换切片值是 (r-k)"
+" 维张量，对应于 `data` 的尾部 (r-k) 个维度。因此，`updates` 的形状必须等于 `indices.shape[0:q-1] "
+"++ data.shape[k:r-1]`，其中 `++` 表示形状的连接。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:10012
+msgid "输出通过以下方程计算："
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:20002
+msgid ""
+"上述循环中的迭代顺序未指定。特别是，索引中不应有重复项：也就是说，如果 `idx1 != idx2`，那么 `indices[idx1] != "
+"indices[idx2]`。这确保了输出值不依赖于迭代顺序。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:20004
+msgid ""
+"缩减（`reduction`）允许指定可选的缩减操作，该操作将所有 `updates` 张量中的值应用于指定 `indices` 的 "
+"`output`。在将 `reduction` 设置为“none”的情况下，索引中不应有重复项：也就是说，如果 `idx1 != idx2`，那么"
+" `indices[idx1] != indices[idx2]`。这确保了输出值不依赖于迭代顺序。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:20006
+msgid "当 `reduction` 设置为某个缩减函数 `f` 时，`output` 按以下方式计算："
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:20015
+msgid "其中 `f` 是指定的加法（`+`），乘法（`*`），最大值（`max`）或最小值（`min`）。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:20017
+msgid "这个算子是 `GatherND` 的逆运算。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:30002
+msgid "示例1："
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:40002
+msgid "示例2："
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:70002
+msgid "![模型结构](images/ScatterND.jpg)"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:70002
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:110002
+msgid "模型结构"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/ScatterND.ipynb:110002
+msgid "![模型结构](images/ScatterND-s.jpg)"
+msgstr ""
+

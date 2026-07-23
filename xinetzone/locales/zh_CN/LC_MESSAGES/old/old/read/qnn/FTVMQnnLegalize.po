@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:10002
+#, python-brace-format
+msgid "{func}`~tvm.relay.qnn.transform.FTVMQnnLegalize`"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:10004
+msgid ""
+"源码：`tvm/python/tvm/relay/qnn/transform.py` & "
+"`tvm/src/relay/qnn/pass/legalize.cc`"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:50002
+msgid ""
+"这段代码定义了一个名为 `Legalize` 的函数，它的作用是将 QNN 算子合法化。与 Relay Legalize 不同，这个函数只对 "
+"QNN 算子进行合法化。可以通过使用 `FTVMQnnLegalize` 属性名称为 `FTVMLegalize` 算子属性注册一个算子的 "
+"transformation/legalization 函数。QNN 和 Relay Legalize "
+"的隔离使我们能够更好地分离关注点，从而得到更好的软件实践。合法化可以针对每个目标进行配置。"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:50004
+msgid "假设原始图如下："
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:50016
+msgid ""
+"现在，我们知道 Intel Cascade Lake 有 VNNI 指令来加速卷积。然而，它只适用于 u8 x i8 "
+"输入。因此，在这里，我们可以使用 QNN Legalize 将上述图转换为以下形式："
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:50031
+msgid ""
+"在这个合法化中，由于我们已经为 QNN 算子进行了隔离合法化，它只会触发 `qnn.conv2d` （而不是 "
+"`nn.relu`）的转换。此传递可以跟随 `CanonicalizeOps` 进一步将 `qnn.requantize` 和 "
+"`qnn.conv2d` 降低为仅包含 Relay 算子的表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/qnn/FTVMQnnLegalize.ipynb:50033
+msgid "函数返回 `tvm.transform.Pass` 对象，该对象将 QNN 算子合法化。"
+msgstr ""
+

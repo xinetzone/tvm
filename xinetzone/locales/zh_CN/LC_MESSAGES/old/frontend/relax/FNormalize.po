@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10002
+msgid "FNormalize"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10004
+msgid "FNormalize 是 TVM Relax 中的特殊属性，用于标准化算子的参数格式。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10006
+msgid "测试主要验证 FNormalize 在不同场景下的行为，包括："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10007
+msgid "解析 TVMScript 时是否抑制 FNormalize 应用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10008
+msgid "在 C++ 和 Python 的 Mutator 中是否正确应用 FNormalize"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10009
+msgid "标准化后的调用节点是否格式良好"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10010
+msgid "未标准化的调用节点是否格式不良"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:10011
+msgid "针对特定算子（如 `call_tir`、`call_tir_inplace`、`call_tir_with_grad`）的参数元组内联处理"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:40002
+msgid "测试在解析 TVMScript 时是否抑制应用 FNormalize"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:60002
+msgid "测试在 C++ 的 ExprMutator 子类中是否应用 FNormalize"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:90002
+msgid "测试在 Python 的 ExprMutator 子类中是否应用 FNormalize"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:110002
+msgid "测试如果 FNormalize 不应用更改，IR 是否格式良好"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:130002
+msgid "测试如果 FNormalize 应用更改，IR 是否格式不良"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:150002
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:170002
+msgid "测试 FNormalize 是否为 R.call_tir 内联参数元组"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:190002
+msgid "测试 FNormalize 是否为 R.call_tir_inplace 内联参数元组"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/FNormalize.ipynb:210002
+msgid "测试 FNormalize 是否为 R.call_tir_with_grad 内联参数元组"
+msgstr ""
+

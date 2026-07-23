@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:10002
+msgid "`SourceName` 解读"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20002
+msgid "`SourceNameNode`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20031
+msgid "`SourceNameNode` 继承自 `Object` 类的子类，它表示源代码片段的名称。该类具有以下成员变量和成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20033
+msgid "`name`：一个字符串类型的成员变量，表示源代码片段的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20034
+msgid ""
+"`VisitAttrs(AttrVisitor* "
+"v)`：一个成员函数，用于访问属性。它接受一个指向`AttrVisitor`对象的指针作为参数，并调用`v->Visit(\"name\", "
+"&name)`来访问`name`属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20035
+msgid "`_type_has_method_sequal_reduce`：一个静态常量表达式布尔值，表示该类型是否具有`SEqualReduce`方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20036
+msgid ""
+"`SEqualReduce(const SourceNameNode* other, SEqualReducer equal) "
+"const`：一个成员函数，用于比较两个`SourceNameNode`对象是否相等。它接受一个指向另一个`SourceNameNode`对象的指针和一个`SEqualReducer`对象作为参数，并使用`equal`函数比较两个对象的`name`属性是否相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20037
+msgid "`_type_key`：一个静态常量字符指针，表示该类型的键。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20038
+msgid ""
+"`TVM_DECLARE_FINAL_OBJECT_INFO(SourceNameNode, "
+"Object)`：一个宏定义，用于声明`SourceNameNode`对象的最终信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:20040
+msgid "总体来说，这段代码定义了一个表示源代码片段名称的类，并提供了相应的属性访问和相等性比较功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:30002
+msgid "`SourceName`"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:30023
+msgid "`SourceName` 类，它继承自 `ObjectRef` 类。该类具有以下成员函数："
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:30025
+msgid ""
+"`Get(const String& name)`：一个静态成员函数，用于获取给定算子名称的 `SourceName` "
+"对象。如果源名称尚未注册，则会引发错误。该函数接受字符串类型的参数 `name`，表示算子的名称，并返回在整个程序生命周期内有效的 "
+"`SourceName` 对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:30026
+msgid ""
+"`TVM_DEFINE_OBJECT_REF_METHODS(SourceName, ObjectRef, "
+"SourceNameNode)`：一个宏定义，用于定义 `SourceName` 对象的引用方法。"
+msgstr ""
+
+#: ../../doc/old/old/read/ir/source-map/SourceName.ipynb:30028
+msgid "总体来说，这段代码定义了一个用于获取算子名称对应的 `SourceName` 对象的类，并提供了相应的引用方法。"
+msgstr ""
+

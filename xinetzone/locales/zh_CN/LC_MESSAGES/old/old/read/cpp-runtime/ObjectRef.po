@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:10002
+#, python-brace-format
+msgid "{class}`tvm::runtime::ObjectRef`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20002
+#, python-brace-format
+msgid ""
+"{class}`tvm::runtime::ObjectRef` 是所有 {class}`tvm::runtime::Object` "
+"引用的基类。以下是对代码中各部分的解释："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20004
+msgid "`ObjectRef() = default;`：这是默认构造函数，用于创建一个空的对象引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20005
+#, python-brace-format
+msgid ""
+"`explicit ObjectRef(ObjectPtr<Object> data) : data_(data) "
+"{}`：这是一个显式的构造函数，用于通过现有对象指针创建一个对象引用。它接受一个类型为 `ObjectPtr<Object>` 的参数 "
+"`data`，并将其赋值给成员变量 `data_`。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20006
+msgid ""
+"`bool same_as(const ObjectRef& other) "
+"const`：这个成员函数用于比较两个对象引用是否相同。它接受一个类型为 `const ObjectRef&` 的参数 "
+"`other`，并返回一个布尔值表示它们是否相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20007
+msgid ""
+"`bool operator==(const ObjectRef& other) const`：这个成员函数重载了等于运算符 "
+"`==`，用于比较两个对象引用是否相等。它也接受一个类型为 `const ObjectRef&` 的参数 "
+"`other`，并返回一个布尔值表示它们是否相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20008
+msgid ""
+"`bool operator!=(const ObjectRef& other) const`：这个成员函数重载了不等于运算符 "
+"`!=`，用于比较两个对象引用是否不相等。它也接受一个类型为 `const ObjectRef&` 的参数 "
+"`other`，并返回一个布尔值表示它们是否不相等。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20009
+msgid ""
+"`bool operator<(const ObjectRef& other) const`：这个成员函数重载了小于运算符 "
+"`<`，用于比较两个对象引用的顺序。它也接受一个类型为 `const ObjectRef&` 的参数 "
+"`other`，并返回一个布尔值表示当前对象引用是否小于另一个对象引用。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20010
+msgid ""
+"`bool defined() const`：这个成员函数用于检查对象引用是否已定义（即不为 "
+"nullptr）。它返回一个布尔值表示对象引用是否已定义。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20011
+msgid "`const Object* get() const`：这个成员函数返回内部对象指针。它是一个常量指针，指向 `Object` 类型的对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20012
+msgid ""
+"`const Object* operator->() const`：这个成员函数返回内部对象指针的箭头操作符。它也是一个常量指针，指向 "
+"`Object` 类型的对象。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20013
+msgid "`bool unique() const`：这个成员函数用于检查对象引用的唯一性。它返回一个布尔值表示对象引用是否是唯一的。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20014
+msgid "`int use_count() const`：这个成员函数返回对象的使用计数（用于调试目的）。它返回一个整数值表示对象的使用计数。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:20016
+msgid ""
+"此外，该类还定义了一些其他成员函数和成员变量，包括模板函数 `as()`、`DowncastNoCheck()`、静态成员变量 "
+"`_type_is_nullable`、保护成员变量 `data_` 等。这些函数和变量提供了对对象引用进行操作和获取相关信息的功能。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30002
+msgid "`as`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30009
+msgid "`as` 函数的作用："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30011
+msgid "尝试将内部对象 `ObjectRef` 转换为相应类型的原始指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30012
+msgid "如果转换失败，函数将返回空指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30013
+msgid "目标类型为 `ObjectType`，必须是 `Object` 的子类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30015
+msgid ""
+"函数使用了模板参数 `ObjectType` 和默认参数`std::enable_if_t<std::is_base_of_v<Object, "
+"ObjectType>>>`。模板参数用于指定要转换的目标类型，而默认参数则用于在编译时检查目标类型是否为 `Object` 的子类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30017
+msgid "函数的返回类型是 `const ObjectType*`，表示返回指向常量的原始指针。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/ObjectRef.ipynb:30019
+msgid ""
+"总结起来，函数模板 `as`，用于将内部对象 `ObjectRef` 转换为目标类型 `ObjectType` "
+"的原始指针。如果转换失败，函数将返回空指针。"
+msgstr ""
+

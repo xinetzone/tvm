@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:10002
+msgid "torch转ONNX：Upsample"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:50002
+msgid "将给定的多通道 1D（时间）、2D（空间）或 3D（体积）数据进行上采样。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:50004
+msgid ""
+"输入数据被假定为 `minibatch x channels x [可选深度] x [可选高度] x 宽度` 的形式。因此，对于空间输入，我们期望"
+" 4D 张量；对于体积输入，我们期望 5D 张量。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:50006
+msgid "可用的上采样算法包括最近邻和线性、双线性、三次线性以及针对 3D、4D 和 5D 输入张量的三线性插值。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:50008
+#, python-brace-format
+msgid "可以给出 {attr}`scale_factor`（缩放因子）或目标输出大小来计算输出大小。(两者不能同时给出，因为这样会产生歧义)"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:60002
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:60004
+msgid ""
+"`size` (`int` 或 `Tuple[int]` 或 `Tuple[int, int]` 或 `Tuple[int, int, "
+"int]`, 可选) – 输出空间大小"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:60005
+msgid ""
+"`scale_factor` (float或 `Tuple[float]` 或 `Tuple[float, float]` 或 "
+"`Tuple[float, float, float]`, 可选) – 空间大小的乘数。如果是元组，则必须与输入大小匹配。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:60006
+msgid ""
+"`mode` (`str`, 可选) – "
+"上采样算法：`'nearest'`（最近邻）、`'linear'`（线性）、`'bilinear'`（双线性）、`'bicubic'`（三次）和 "
+"`'trilinear'`（三线性）中的一种。默认值： `'nearest'`"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:60007
+msgid ""
+"`align_corners` (`bool`, 可选) – 如果为 "
+"`True`，则输入和输出张量的角像素对齐，从而保留这些像素的值。这只在模式为 "
+"`'linear'`、`'bilinear'`、`'bicubic'` 或 `'trilinear'` 时有效。默认值： `False`"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:60008
+msgid ""
+"`recompute_scale_factor` (`bool`, 可选) – 重新计算用于插值计算的 `scale_factor`。如果 "
+"`recompute_scale_factor` 为 `True`，则必须传入 `scale_factor`，并且使用 "
+"`scale_factor` 来计算输出大小。计算出的输出大小将用于推断插值的新比例。请注意，当 `scale_factor` "
+"为浮点数时，由于舍入和精度问题，它可能与重新计算的 `scale_factor` 不同。如果 `recompute_scale_factor` 为"
+" `False`，则直接使用 `size` 或 `scale_factor` 进行插值。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:70002
+#, python-brace-format
+msgid ""
+"输入：$(N, C, W_{in})$、$(N, C, H_{in}, W_{in})$ 或者 $(N, C, D_{in}, H_{in}, "
+"W_{in})$"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:70003
+#, python-brace-format
+msgid ""
+"输出：$(N, C, W_{out})$、$(N, C, H_{out}, W_{out})$ 或者 $(N, C, D_{out}, "
+"H_{out}, W_{out})$"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:80003
+msgid ""
+"当 `align_corners` 为 `True` 时，线性插值模式（`linear`、`bilinear`、`bicubic` 和 "
+"`trilinear`）不会按比例对齐输出和输入像素，因此输出值可能依赖于输入大小。在版本 0.3.1 "
+"之前，这些模式的默认行为就是这样的。从那时起，默认行为变为 `align_corners = False`。具体示例请见下文，了解这如何影响输出。"
+msgstr ""
+
+#: ../../doc/old/old/torch2onnx/opt/Upsample.ipynb:80007
+#, python-brace-format
+msgid "如果你想进行下采样/一般重采样，你应该使用 {func}`interpolate` 函数。"
+msgstr ""
+

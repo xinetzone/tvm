@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:10002
+msgid "添加 relay 算子"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:10004
+msgid "参考：[relay_add_op](https://xinetzone.github.io/tvm/docs/dev/how_to/relay_add_op.html)"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:20002
+msgid ""
+"属性是固定的参数，应该在编译时就知道。比如卷积算子的 `stride` 和 `expand` "
+"是属于卷积算子属性节点的字段的适当的例子。属性一般定义在 `include/tvm/relay/attrs/` 文件夹中，也可以直接通过 "
+"Python 接口定义："
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30002
+msgid "`register_op_attr` 函数用于注册算子的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30004
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30005
+msgid "`op_name`（str 类型）：算子的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30006
+msgid "`attr_key`（str 类型）：属性的名称。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30007
+msgid "`value`（object 类型，可选）：要设置的值。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30008
+msgid "`level`（int 类型，可选）：优先级级别，默认为 `10`。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30010
+msgid "返回值："
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30011
+msgid "如果 `value` 没有指定，则返回注册函数 `fregister`。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30012
+msgid "如果 `value` 指定了，则直接返回注册函数 `_register(value)`。"
+msgstr ""
+
+#: ../../doc/old/old/read/expr/relay-add-op.ipynb:30014
+msgid "内部函数 `_register` 用于实际执行算子注册，它调用了 `_ffi_api.RegisterOpAttr` 函数来注册算子的属性。"
+msgstr ""
+

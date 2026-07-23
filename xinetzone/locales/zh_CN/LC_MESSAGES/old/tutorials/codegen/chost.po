@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:10002
+msgid "C host"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:30002
+msgid "add"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:60002
+msgid "reinterpret"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:90002
+msgid "ceil"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:120002
+msgid "floor"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:150002
+msgid "round"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:170002
+msgid "子程序调用"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/chost.ipynb:180002
+msgid "通过 `private=True` 标记的 subroutine 不应出现在导出函数列表"
+msgstr ""
+

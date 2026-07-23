@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/ffi/libinfo.ipynb:10002
+#, python-brace-format
+msgid "{mod}`tvm._ffi.libinfo`"
+msgstr ""
+
+#: ../../doc/old/old/ffi/libinfo.ipynb:40002
+#, python-brace-format
+msgid "{func}`~tvm._ffi.libinfo.get_dll_directories` 函数，用于获取可能包含动态链接库（DLL）的目录。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/libinfo.ipynb:40004
+msgid ""
+"该函数首先获取当前文件所在的目录，然后根据不同的操作系统平台，将可能包含 DLL 的目录添加到列表中。例如，在 Linux 和 FreeBSD "
+"上，它将从环境变量 `LD_LIBRARY_PATH` 和 `PATH` 中提取路径；在 macOS 上，它将从环境变量 "
+"`DYLD_LIBRARY_PATH` 和 `PATH` 中提取路径；在 Windows 上，它将从环境变量 `PATH` 中提取路径。"
+msgstr ""
+
+#: ../../doc/old/old/ffi/libinfo.ipynb:40006
+msgid ""
+"此外，该函数还将一些默认的构建目录添加到列表中，例如使用 CMake 构建的默认目录、使用 Make 构建的默认目录等。最后，如果设置了环境变量 "
+"`TVM_HOME`，则将其作为查找库的额外目录添加到列表中。最终，该函数返回包含所有有效目录的列表。"
+msgstr ""
+

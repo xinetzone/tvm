@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:10002
+#, python-brace-format
+msgid "解读 {class}`~tvm.relay.analysis._ffi_api._test_type_solver`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:10004
+msgid ""
+"参考：`tvm/tests/python/relay/test_type_solver.py` & "
+"`tvm/src/relay/analysis/type_solver.h`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60002
+#, python-brace-format
+msgid ""
+"{class}`~tvm.ir.type_relation.TypeRelation` 类，继承自 "
+"`TypeConstraint`。它表示用户定义的类型关系，是类型上的输入输出关系。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60004
+#, python-brace-format
+msgid ""
+"{class}`~tvm.ir.type_relation.TypeRelation` 比 "
+"{class}`~tvm.ir.type_relation.TypeCall` 更通用，因为它允许推断输入和输出。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60006
+msgid "参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60007
+#, python-brace-format
+msgid "`func`: {class}`~tvm.ir.base.EnvFunc`，用户定义的关系函数。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60008
+msgid "`args`: `[tvm.ir.Type]`，要传递给 `func` 的类型列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60009
+msgid "`num_inputs`: `int`，`args` 中的输入参数数量，这作为类型推断的提示。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60010
+msgid "`attrs`: `Attrs`，附加到关系信息的属性。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60012
+msgid "返回值："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:60013
+msgid "`type_relation`: `tvm.ir.TypeRelation`，类型关系。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90002
+msgid "这段代码是类型推断器（TypeSolver）的接口定义。类型推断器用于解决类型之间的约束关系，以确定未知类型的具体值。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90004
+msgid "该接口包含以下方法："
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90005
+msgid "`AddConstraint`: 向求解器中添加类型约束。参数包括要添加的约束和约束发生的位置。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90006
+msgid "`Resolve`: 将给定的类型解析为解决方案类型。参数是要解析的类型，返回解析后的类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90007
+msgid "`Solve`: 使用当前已知信息开始解决类型。返回是否所有不完整类型都已完全解析。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90008
+msgid "`Unify`: 统一 lhs 和 rhs。参数包括左操作数、右操作数以及问题出现的位置。还可以指定是否分配给 lhs 和 rhs。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:90009
+msgid "`Emit`: 报告诊断信息。参数是要报告的诊断信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:100002
+msgid "广播的类型推断(solver)"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:120002
+msgid "其他类型推断(solver)"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:140002
+msgid "不兼容的类型推断"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:160002
+msgid "测试在布局转换过程中整数的兼容性"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180002
+msgid "首先定义了一个变量 `x`，它是一个形状为 (2, 3, 48, 48) 的浮点数张量。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180003
+msgid ""
+"然后使用 `relay.nn.conv2d` 函数进行卷积操作，输入是 `x`，权重的形状为 (1, 3, 1, 1)，步长为 [47, "
+"47]，通道数为 1，卷积核大小为 [1, 1]。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180004
+msgid "接下来使用 `relay.nn.bias_add` 函数将偏置项添加到卷积输出上，得到 `bias_out`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180005
+msgid ""
+"使用 `relay.op.broadcast_to` 函数将 `bias_out` 广播到形状为 [2, 1, 2, 2] 的张量，得到 "
+"`broadcast_out`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180006
+msgid "最后，将 `bias_out` 和 `broadcast_out` 相加，得到结果 `y`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180007
+msgid "创建一个工作负载 `mod`，其中包含计算图 `y`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180008
+msgid "使用 TVM 的优化级别为 3 的上下文，将目标设置为 \"llvm\"。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180009
+msgid "对计算图 `mod` 进行规范化操作，然后进行布局转换操作。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay/type-solver.ipynb:180011
+msgid "这段代码的目的是测试在布局转换过程中整数的兼容性，确保在不同类型的数据之间进行操作时不会引发错误或异常。"
+msgstr ""
+

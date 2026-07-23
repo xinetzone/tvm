@@ -1,0 +1,440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:10002
+msgid "Relax 构建块核心"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:30002
+msgid "测试 BlockBuilder 在处理函数定义时的错误情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:30004
+msgid ""
+"验证了当函数定义中没有显式声明参数，但可能在函数体中隐式引用了外部变量（如 `m`, `n`, `x`, "
+"`y`）时，系统是否会抛出适当的错误。这是一种编译时错误检查机制，确保函数定义的完整性和正确性。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:60002
+msgid "简单测试"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80002
+msgid "变量定义："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80003
+msgid "`m` 和 `n` 是 TIR（Tensor Intermediate Representation）变量，表示 int64 类型的标量尺寸"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80004
+msgid "`x` 和 `y` 是 Relax 变量，分别表示形状为 `[m, n]` 和 `[n]` 的 `float16` 张量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80005
+msgid "`bb` 是 `rx.BlockBuilder()` 实例，用于构建 Relax 构建块。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80007
+msgid "块构建过程："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80008
+msgid "`bb._begin_binding_block()`：开始绑定块（Binding Block）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80009
+msgid "`gv0 = bb.emit(rx.op.add(x, y))`：创建全局变量 `gv0`，表示 `x` 和 `y` 的加法运输"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80010
+msgid "`bb._begin_dataflow_block()`：开始数据流块（Dataflow Block）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80011
+msgid "`lv0 = bb.emit(rx.op.multiply(gv0, y))`：创建局部变量 `lv0`，表示 `gv0` 和 `y` 的乘法"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80012
+msgid "`gv1 = bb.emit_output(...)`：创建输出变量 `gv1`，表示 `lv0` 的平方"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80013
+msgid "`b0 = bb._end_block()`：结束当前块并返回块对象"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80014
+msgid "代码重复创建了另一个数据流块 `b1` 和普通绑定块 `b2`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80017
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130019
+msgid "测试目的："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80018
+msgid "验证BlockBuilder能够正确创建和区分不同类型的块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80019
+msgid "测试变量作用域管理（全局变量gv0、gv1、gv2、gv3和局部变量lv0、lv1）"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80020
+msgid "验证数据流块和普通绑定块的创建机制"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80021
+msgid "测试基本算子（add、multiply）的使用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80023
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130027
+msgid "关键概念："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80024
+msgid "**Binding Block**：普通绑定块，用于顺序执行的计算"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80025
+msgid "**Dataflow Block**：数据流块，通常用于表示可以并行执行的计算，内部变量为局部变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80026
+msgid "**BlockBuilder**：Relax中用于构建计算图的核心工具"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:80028
+msgid "这段代码展示了Relax模块中构建计算图的基本模式，包括块的创建、变量的定义和操作的执行，同时验证了BlockBuilder的正确性。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:90002
+msgid "为构建块中变量指定名称"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:110002
+msgid "测试 BlockBuilder 创建函数的功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130002
+msgid "函数创建与块构建："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130003
+msgid "`with bb.function(\"func\", [x, y])`：创建名为\"func\"的函数，参数为x和y"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130004
+msgid "`with bb.dataflow()`：在函数内创建数据流块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130005
+msgid "`lv0 = bb.emit(rx.op.add(x, y))`：在数据流块中创建局部变量lv0，表示x和y的加法"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130006
+msgid "`lv1 = bb.emit(rx.op.multiply(lv0, y))`：创建局部变量lv1，表示lv0和y的乘法"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130007
+msgid "`gv0 = bb.emit_output(lv1)`：创建全局变量gv0，表示数据流块的输出"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130009
+msgid "验证逻辑："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130010
+msgid "断言lv0的名称提示(name_hint)为\"lv\""
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130011
+msgid "断言lv1的名称提示为\"lv1\""
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130012
+msgid "断言gv0的名称提示为\"gv\""
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130013
+msgid "`func = bb.finalize()[\"func\"]`：获取最终的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130014
+msgid "断言函数参数正确"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130015
+msgid "断言函数体结构正确"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130016
+msgid "断言gv0的结构信息正确"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130017
+msgid "断言函数体包含1个块，且该块包含3个绑定"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130020
+msgid "验证使用BlockBuilder创建函数的基本流程"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130021
+msgid "测试函数参数的设置和传递"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130022
+msgid "验证数据流块的创建和操作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130023
+msgid "测试变量名称提示的自动生成"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130024
+msgid "验证函数输出的设置和获取"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130025
+msgid "确认函数结构和绑定数量的正确性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130028
+msgid "**function**：Relax中的函数定义，包含参数和函数体"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130029
+msgid "**dataflow**：数据流块，用于表示可以并行执行的计算"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130030
+msgid "**emit**：向当前块中添加操作并返回生成的变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130031
+msgid "**emit_output**：标记数据流块的输出变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130032
+msgid "**emit_func_output**：设置函数的返回值"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130033
+msgid "**finalize**：完成构建并返回创建的函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:130035
+msgid "这段代码全面测试了使用BlockBuilder创建包含单个数据流块的函数的各个环节，确保了函数创建、参数传递、块操作和输出设置等功能的正确性。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:160002
+msgid "验证 Relax BlockBuilder 对二元算子（如加法、乘法）的 形状和类型推导 功能"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:180002
+msgid "`match_cast`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:180004
+msgid "`match_cast` 是一种类型转换机制，用于将变量与特定的结构信息进行匹配"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:200002
+msgid "该测试函数全面验证了 match_cast 操作的功能，包括："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:200003
+msgid "将张量从任意维度转换为指定的符号维度形状"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:200004
+msgid "将固定形状转换为符号维度形状"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:200005
+msgid "为转换后的变量指定名称"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:200006
+msgid "验证转换操作的底层表示和属性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:200008
+msgid ""
+"`match_cast` 操作在 Relax "
+"中扮演着重要角色，它允许开发者在编写程序时明确指定变量的结构信息，同时为框架提供了进行静态类型检查和形状推断的能力。这些测试确保了 "
+"match_cast 操作能够正确处理不同类型的变量转换，并验证了转换结果的正确性。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:210002
+msgid "`emit_normalized`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:210004
+msgid "测试函数专注于验证 `emit_normalized` 方法在数据流块中处理 `MatchCast` 操作的能力。它确保："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:210005
+msgid "`MatchCast` 操作能够被正确地添加到数据流块中"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:210006
+msgid "`MatchCast` 操作的属性（源值、结构信息、目标变量）被正确设置"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:210007
+msgid "数据流块能够正确管理和绑定 `MatchCast` 操作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:210009
+msgid ""
+"`emit_normalized` 方法是 BlockBuilder 中的一个重要方法，它允许直接添加规范化的操作，而不需要通过 Builder "
+"的其他方法（如 `match_cast`）来创建。这个测试确保了该方法在数据流块中的正确行为，为开发者提供了更灵活的编程方式。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:230002
+msgid "`normalize`"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:230004
+msgid "测试函数全面验证了 `normalize` 方法对不同类型节点的规范化能力，包括："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:230005
+msgid "**Call 节点**：验证操作节点在规范化后具有正确的形状信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:230006
+msgid "**Tuple 节点**：验证元组节点在规范化后具有正确的结构信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:230007
+msgid "**嵌套 Tuple 节点**：验证嵌套元组在规范化后保持正确的层次结构信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:230009
+msgid ""
+"`normalize` 方法是 BlockBuilder "
+"中的一个核心方法，它确保各种类型的节点在创建后具有正确的结构信息，这对于后续的静态分析、优化和代码生成至关重要。通过规范化，框架可以明确每个节点的类型和形状，从而进行更精确的处理。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:250002
+msgid "处理元组类型的结构信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:250004
+msgid "测试确保Relax框架能够正确处理元组类型的结构信息，包括："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:250005
+msgid "元组索引操作能正确继承元素的结构信息"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:250006
+msgid "元组解包功能按预期工作"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:250007
+msgid "对错误的解包操作提供明确的错误提示 这些功能对于静态类型分析、形状推导和代码正确性验证至关重要。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:270002
+msgid "调用TE函数"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:270004
+msgid "测试确保Relax框架能够正确集成和调用TE函数，这是TVM中连接Relax前端与底层张量计算的重要机制。测试验证了："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:270005
+msgid "位置参数和关键字参数的正确传递"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:270006
+msgid "TE计算与Relax函数的正确嵌套"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:270007
+msgid "函数结构和绑定关系的正确性 这些功能对于将高级Relax程序转换为可执行的底层张量计算至关重要。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290002
+msgid "TE函数的名称唯一性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290004
+msgid "测试确保Relax框架在调用TE函数时能够为不同的张量参数生成唯一的名称。名称唯一性对于以下方面至关重要："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290005
+msgid "避免代码生成和优化过程中的命名冲突"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290006
+msgid "确保张量和缓冲区的正确识别和引用"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290007
+msgid "提高代码的可读性和可维护性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290008
+msgid "保证底层计算图的正确性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:290010
+msgid "这个测试特别关注矩阵乘法操作，验证了从参数到缓冲区的完整命名链都能保持唯一性。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310002
+msgid "调用TE函数时能够正确验证参数类型"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310004
+msgid "测试确保Relax框架在调用TE函数时能够正确验证参数类型，特别是形状参数。具体来说："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310005
+msgid "`topi.reshape`通常期望形状参数是具体的元组（如`(200,)`），而非`ShapeStructInfo`类型的变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310006
+msgid "测试验证了`call_te`方法能够检测到这种类型不匹配并抛出适当的异常"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310007
+msgid "确保框架在早期阶段就能捕获类型错误，避免后续执行过程中出现更严重的问题"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310008
+msgid "维护了类型安全和API使用的正确性"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:310010
+msgid "这个测试是框架健壮性的重要保障，确保用户在使用API时能够得到明确的错误提示，而不是遇到隐藏的类型不兼容问题。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/blockbuilder/core.ipynb:330002
+msgid "`emit_te` 测试"
+msgstr ""
+

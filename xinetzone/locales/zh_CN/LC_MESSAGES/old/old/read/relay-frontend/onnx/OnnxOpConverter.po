@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:10002
+#, python-brace-format
+msgid "{class}`~tvm.relay.frontend.onnx.OnnxOpConverter`"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:50002
+#, python-brace-format
+msgid "{class}`~tvm.relay.frontend.onnx.OnnxOpConverter` 是用于持有 ONNX op 转换器的辅助类。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60002
+msgid "包含类方法 `get_converter` ，用于获取与给定 `opset` 匹配的转换器。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60004
+msgid "参数 `opset`：来自模型的 `opset`（版本号）。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60005
+msgid "返回值：转换器，应该是 `_impl_vx` 的形式，其中 `x` 是小于或等于 `opset` 的最大支持版本号。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60007
+msgid "方法的具体实现如下："
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60009
+msgid ""
+"首先，使用列表推导式从类的 `dir()` 中获取所有以 `\"_impl_v\"` 开头的属性，并将其转换为整数类型，得到版本列表 "
+"`versions`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60010
+msgid "将 `versions` 列表和 `[opset]` 进行合并，并对合并后的列表进行排序，得到新的 `versions` 列表。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60011
+msgid "在 `versions` 列表中找到 `opset` 所在的索引位置，然后取该位置前一个元素的值作为版本号 `version`。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60012
+#, python-brace-format
+msgid "检查是否存在名为`_impl_v{version}`的属性，如果存在，则返回该属性对应的转换器。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60013
+msgid "如果不存在对应的转换器，抛出 `NotImplementedError` 异常，并显示未实现的 `opset` 版本信息。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/OnnxOpConverter.ipynb:60015
+msgid "这段代码的作用是根据给定的 `opset` 找到相应的转换器，以便在处理 ONNX 模型时进行算子的转换。"
+msgstr ""
+

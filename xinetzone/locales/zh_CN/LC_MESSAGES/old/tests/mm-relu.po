@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tests/mm-relu.ipynb:10002
+msgid "mm-relu 示例"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:20002
+msgid "记"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:20004
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{cases}\n"
+"\\mathbf{x}_i = \\begin{bmatrix} \\mathbf{x}_i^{(1)} & "
+"\\mathbf{x}_i^{(2)} & \\cdots & \\mathbf{x}_i^{(m)} \\end{bmatrix}^T  "
+"\\\\\n"
+"\\mathbf{y}_j = \\begin{bmatrix} \\mathbf{y}_j^{(1)} & "
+"\\mathbf{y}_j^{(2)} & \\cdots & \\mathbf{y}_j^{(p)} \\end{bmatrix}^T \n"
+"\\end{cases}\n"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:20011
+msgid "有"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:20014
+#, python-brace-format
+msgid ""
+"\n"
+"\\begin{cases}\n"
+"<\\mathbf{x}_i, \\mathbf{y}_j> = \\mathbf{x}_i^T \\mathbf{y}_j \\\\\n"
+"\\mathbf{X} = \\begin{bmatrix} \\mathbf{x}_1^T & \\mathbf{x}_2^T & "
+"\\cdots & \\mathbf{x}_n^T \\end{bmatrix}^T \\\\\n"
+"\\mathbf{Y} = \\begin{bmatrix} \\mathbf{y}_1^T & \\mathbf{y}_2^T & "
+"\\cdots & \\mathbf{y}_n^T \\end{bmatrix}^T\n"
+"\\end{cases}\n"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:20022
+msgid "可以推出"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:20024
+#, python-brace-format
+msgid ""
+"\n"
+"<\\mathbf{X}, \\mathbf{Y}> = \\mathbf{X}^T \\mathbf{Y}  = "
+"(\\mathbf{x}_i^T \\mathbf{y}_j)_{m \\times p}\n"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:30002
+msgid "ReLU 函数定义："
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:30004
+#, python-brace-format
+msgid ""
+"\n"
+"\\mathbf{relu}(X) = \\mathbf{\\max}(X, 0)\n"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:50002
+msgid "使用 NumPy 实现如下："
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:70002
+msgid "NumPy 低级实现："
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:90002
+msgid "验证数值一致性"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:110002
+msgid "TensorIR 实现"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:170002
+msgid "随机调度变换 (Stochastic Schedule Transformation)"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:170004
+msgid "考虑简单的模型："
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:200002
+msgid "随机变换搜索"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:220002
+msgid "使用随机变换来指定好的程序的搜索空间，使用 ``tune_tir`` API 帮助在搜索空间内搜索并找到最优的调度变换。"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:240002
+msgid "查看调优结果:"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:270002
+msgid "利用默认的自动调度"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:270004
+msgid ""
+"Meta-Schedule 带有内置通用随机变换集合，能够适用于广泛的 TensorIR 计算。这种方法也称为自动调度 (auto-"
+"scheduling)，因为搜索空间是由系统生成的。可以通过删除行 "
+"`space=ms.space_generator.ScheduleFn(stochastic_schedule_mm)` 来运行它。"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:280002
+msgid ""
+"在底层，Meta-Schedule 分析每个 TensorIR block "
+"的数据访问和循环模式，并提出对程序的随机变换方式。我们不会在本章中讨论这些通用的变换，但要注意它们也只是随机转换加上代码分析而已。可以使用上一节中学到的相同机制来增强自动调度。"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:310002
+msgid "结果比原始代码快得多。可以查看历史轨迹和最终代码。在高层次的理解中，历史轨迹包含："
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:310003
+msgid "更多级的循环变换"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:310004
+msgid "中间计算的矢量化"
+msgstr ""
+
+#: ../../doc/old/tests/mm-relu.ipynb:310005
+msgid "并行化和循环展开"
+msgstr ""
+

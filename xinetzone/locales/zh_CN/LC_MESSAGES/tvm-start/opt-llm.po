@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/opt-llm.ipynb:10002
+msgid "优化大语言模型"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:10004
+msgid "参考：[optimize_llm](https://tvm.apache.org/docs/how_to/tutorials/optimize_llm.html)"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:20002
+msgid ""
+"随着大型语言模型(LLMs)在众多不同的领域成为热门的研究方向，将它们部署在云端和边缘设备上成为了具有挑战性的任务。在本教程中，将演示如何使用 "
+"Apache TVM 来优化大语言模型。使用来自 Hugging Face 的预训练 TinyLlama 模型，并在不同的设备上进行部署。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:20004
+msgid "整体流程包括以下步骤："
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:20006
+msgid ""
+"**构建或导入模型**：构建一个神经网络模型，或者从其他框架（如 PyTorch、ONNX）导入预训练的模型，并创建 TVM "
+"IRModule，其中包含编译所需的所有信息，包括用于计算图的高级别 Relax 函数和用于张量程序的低级 TensorIR 函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:20007
+msgid "**执行可组合优化**：执行一系列优化转换，例如图优化、张量程序优化和库调度。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:20008
+msgid "**构建和通用部署**：将优化后的模型构建为可在通用运行时部署的模块，并在不同设备上执行，如 CPU、GPU 或其他加速器。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:30002
+msgid "构建模型架构"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:30004
+msgid ""
+"将使用来自 Hugging Face 的预训练 TinyLlama 模型。然而，通常只加载来自 Hugging Face "
+"的预训练权重，而不加载模型架构。需要自己构建模型架构。Apache TVM 准备了类似 PyTorch 的 API 来构建模型架构。可以使用这个 "
+"API 来构建模型架构。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:50002
+msgid "首先，需要定义模型配置。配置包括模型的关键参数，如隐藏层大小、中间层大小等。为了方便起见，特别为 TinyLlama 模型定义了常量配置。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:70002
+msgid ""
+"接下来，定义 Paged KV 缓存的 RoPE 模式。RoPE 模式用于对查询和键张量应用相对位置编码（RoPE）。RoPE 模式可以设置为 "
+"`NONE`、`NORMAL` 或 `INLINE`。如果 RoPE 模式为 `NONE`，KV 缓存将不会对查询和键张量应用 RoPE。如果 "
+"RoPE 模式为 `NORMAL`，在将键张量添加到缓存之前，会对键张量应用 RoPE。如果 RoPE 模式为 "
+"`INLINE`，注意力内核会即时对查询和键张量应用 RoPE。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:90002
+msgid "其次，定义模型架构。模型架构由三部分组成："
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:90004
+msgid "嵌入层：嵌入层将输入的token ID转换为隐藏状态。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:90005
+msgid "解码器层：解码器层是模型的核心。每个解码器层由一个自注意力层和一个前馈网络（feed-forward network，FFN）层组成。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:90006
+msgid "输出层：输出层将隐藏状态转换为logits。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:90008
+msgid ""
+"首先我们定义 FFN 层。请注意，下面的 FFN 层是优化实现，我们将 `gate` 和 `up` projection 融合到一个内核中。FFN"
+" 层的原始实现是：`FFN(x) = down_proj(silu(gate(x)) * up(x))` 我们可以将 `gate` 和 `up` "
+"projection 结合到一个内核中以获得更好的性能。优化后的实现是："
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110002
+msgid "然后我们定义 **自注意层**（self-attention layer）。自注意层由三部分组成："
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110004
+msgid "**QKV 投影**：QKV 投影将输入的隐藏状态转换为 `query`、`key` 和 `value` 张量。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110005
+msgid "注意力： 注意力层计算注意力分数并应用 `softmax` 运算。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110006
+msgid "输出投影：输出投影将注意力输出转换为隐藏状态。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110008
+msgid "我们对自注意层的不同部分进行优化："
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110010
+msgid "QKV 投影：我们利用 QKV 投影上的水平融合，并将它们融合为一个 内核。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:110011
+msgid "注意力： 我们利用 attention 的水平融合，融合 QKV 投影和"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:130002
+msgid "最后，使用 FFN 和自注意力层定义模型架构。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:150002
+msgid "将模型导出为 Relax IRModule"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:150003
+msgid "定义模型架构后，我们可以将模型导出为 Relax IRModule。为了演示，我们只展示了模型架构的一部分和参数。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:170002
+msgid "定义优化管道"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:170003
+msgid "我们定义了一系列优化传递来优化模型。这个优化管道是专门为LLMs设计的。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:190002
+msgid "准备模型权重"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:190003
+msgid "我们从 Hugging Face 加载预训练权重，并准备模型权重。预训练权重以 Hugging Face 格式存储。我们需要加载权重并准备模型参数。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:220002
+msgid "部署编译后的模型"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:220003
+msgid ""
+"模型和权重准备就绪后，我们可以将编译后的模型部署到目标设备上。语言模型的推理包括两个步骤：预填充(prefill)和解码。预填充步骤用于处理输入标记并存储"
+" KVCache。解码步骤用于生成标记，直到生成结束标记。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:230002
+msgid "标记化"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:230003
+msgid "第一步是将输入提示进行标记化，并将标记嵌入到隐藏状态中。标记化和嵌入过程与原始模型相同。我们使用HF分词器对输入提示进行标记化，并将标记嵌入到隐藏状态中。请注意，不同的模型需要不同的标记化和提示格式，请参考模型文档以获取正确的标记化和提示格式。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:250002
+msgid "创建KVCache"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:250003
+msgid ""
+"在开始推理之前，我们需要创建KVCache。KVCache用于存储注意力层的键和值张量。Apache "
+"TVM提供了一个PagedKVCache来存储键和值张量。我们使用指定的参数创建PagedKVCache。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:270002
+msgid "嵌入"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:270003
+msgid "下一步是将标记嵌入到隐藏状态中。我们使用Relax IRModule中编译的embed函数将标记嵌入到隐藏状态中。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:290002
+msgid "Prefill"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:290003
+msgid "在运行前向传播之前，我们首先获取一些用于准备的辅助函数。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:310002
+msgid ""
+"由于我们正在创建一个新的序列，我们需要调用 `add_sequence_func` 来初始化请求。此外，我们还需要调用 "
+"`begin_forward_func` 来开始前向传播，以及 `end_forward_func` 来结束前向传播。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:330002
+msgid "现在我们从预填充步骤获得了输出 `logits`。这些 `logits` 用于通过抽样生成标记。让我们从 `logits` 中抽样标记。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:330004
+msgid "在本教程中，简化了抽样过程，选择概率最高的标记。实际上，应该根据概率分布来抽样标记。同时，为了使教程简洁，在 CPU 上执行抽样过程。"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:350002
+msgid "解码"
+msgstr ""
+
+#: ../../doc/tvm-start/opt-llm.ipynb:350003
+msgid ""
+"预填充步骤完成后，我们可以开始解码步骤。解码步骤用于生成标记，直到生成结束标记。我们使用Relax IRModule中编译的 `decode` "
+"函数来生成标记。"
+msgstr ""
+

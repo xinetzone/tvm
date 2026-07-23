@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:10002
+msgid "解析 ONNX GraphProto"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:40002
+msgid "`GraphProto` 类是辅助类，用于处理从 `pb2.GraphProto` 复制到 Relay 表达式。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:40004
+msgid "该类有以下参数："
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:40005
+msgid "`shape`：一个字典，表示图的输入形状。这是一个可选参数。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:40006
+msgid "`dtype`：一个字符串或字典，表示图的输入类型。如果是一个字典，则键是输入名称，值是对应的数据类型。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:40007
+msgid ""
+"`freeze_params`：一个布尔值。如果为 `True`，则导入器会将提供的任何 ONNX 输入值（权重、形状等）嵌入到 Relay "
+"模型中作为常量而不是变量。这允许在编译时进行更积极的优化，并在特定输入表示传统上被视为编译时常量的属性时使模型静态化。"
+msgstr ""
+
+#: ../../doc/old/old/read/relay-frontend/onnx/GraphProto.ipynb:40008
+msgid ""
+"`op_type_dict`：一个字典，用于 `span` 跨度填充使用。如果算子的名称属性未设置，则 `op_type_dict` "
+"将通过将文字算子类型与呈现顺序相结合来提供替代方案。"
+msgstr ""
+

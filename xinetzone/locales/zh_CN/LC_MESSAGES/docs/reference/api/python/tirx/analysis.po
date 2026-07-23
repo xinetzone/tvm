@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-31 14:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../doc/docs/reference/api/python/tirx/analysis.rst:19
+msgid "tvm.tirx.analysis"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis:1
+msgid "Wrapping existing analysis utils."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:1
+msgid "Deeply compare two nested expressions."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tirx/analysis.rst
+msgid "参数"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:3
+msgid "The left operand."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:5
+msgid "The right operand."
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tirx/analysis.rst
+msgid "返回"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:8
+msgid "**result** -- The comparison result"
+msgstr ""
+
+#: ../../doc/docs/reference/api/python/tirx/analysis.rst
+msgid "返回类型"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:13
+msgid ""
+"This function does not remap variable bindings, it will not return true "
+"for (let x = 1 in x + 1) vs (let y = 1 in y + 1), unless x.same_as(y). "
+"Use py:func:`tvm.ir.structural_equal` to handle structural variable "
+"remapping."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:17
+msgid ""
+"Due to the restriction of not remapping variables, this function can run "
+"faster than StructuralEqual and can be used as a utility function during "
+"arithmetic simplifications."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:21
+msgid ""
+"Always consider py:func:`tvm.ir.structural_equal` first, which handles "
+"the structural remapping."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.expr_deep_equal:24
+msgid ":py:obj:`tvm.ir.structural_equal`"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.undefined_vars:1
+msgid "Find undefined vars in a TIR statement or expression."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.undefined_vars:3
+msgid "The TIR statement or expression to be checked."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.undefined_vars:5
+msgid "The vars that is defined"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.undefined_vars:8
+msgid "**result** -- The undefined vars."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_memory:1
+msgid "Verify if func contains illegal host side direct memory access."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_memory:3
+#: tvm.tirx.analysis.analysis.verify_ssa:3
+msgid "The module to be verified."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_memory:6
+#: tvm.tirx.analysis.analysis.verify_ssa:6
+msgid "**result** -- The result of verification."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_ssa:1
+msgid "Verify if the func is in SSA form."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_well_formed:1
+msgid "Verify if the given TIR is well-formed. The verification includes:"
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_well_formed:2
+msgid "Check if expressions not contain vars that is defined outside the block."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_well_formed:4
+msgid "The function or module to be verified."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_well_formed:6
+msgid "The indicator if it raises an error when the function is not well-formed."
+msgstr ""
+
+#: of tvm.tirx.analysis.analysis.verify_well_formed:9
+msgid "**result** -- Whether it is a well-formed TIR function."
+msgstr ""
+

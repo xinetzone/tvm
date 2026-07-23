@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:10002
+msgid "测试 LambdaLift"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:30002
+msgid "测试 LambdaLift 能否将局部绑定的函数提升到 IRModule 顶层"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:40002
+msgid "变换前的 `IRModule`：内部函数定义在 `main` 函数内部"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:70002
+msgid "`main_inner` 是被提升的内部函数："
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:90002
+msgid "测试变换不会修改输入模块"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:100002
+msgid ""
+"如果输出需要新的 StructInfo，必须创建新的 relax 变量。不能更新现有 relax 变量的 struct "
+"info，因为该变量可能被其他 IRModule 使用。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:120002
+msgid "测试闭包变换"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:160002
+msgid "测试递归函数提升"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:190002
+msgid "测试多个顶级函数的提升"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:200002
+msgid "IRModule 中的 GlobalVar 名称去重是通过附加它们被提升的函数名称来实现的。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:220002
+msgid "测试无局部函数的情况"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:240002
+msgid "测试非纯函数的提升"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:270002
+msgid "测试与全局函数同名的 lambda 函数提升"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:280002
+msgid ""
+"测试提升的 lambda "
+"名称可能不会与先前的名称冲突。模块已有名为`main_inner`的函数，该名称与LambdaLift为提升函数选择的第一个名称相同。"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:300002
+msgid "测试由内部函数定义的符号变量"
+msgstr ""
+
+#: ../../doc/old/frontend/relax/lambda-lift.ipynb:320002
+msgid "测试由外部函数定义的符号变量"
+msgstr ""
+

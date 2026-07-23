@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/tvm-start/envs/caffe.md:1
+msgid "Caffe 环境配置指南"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:4
+msgid ""
+"Caffe 环境配置有许多坑，请自行抉择，其实，若仅仅使用 caffe 做推理，完全不需要完整的 caffe 环境，详情见 "
+"[caffeproto](../../../frontend/relax/caffe/caffeproto)"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:7
+msgid "安装最小依赖库"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:9
+msgid "本指南介绍在 Linux（Ubuntu/Debian 系统）上安装最小依赖库来运行 CPU 模式的 Caffe。"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:12
+msgid "conda 与系统依赖包对应关系"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:28
+msgid "这些依赖库是 Caffe 运行的基础组件："
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "依赖库"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "功能"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "Protocol Buffers"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "序列化数据结构"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "LevelDB/LMDB"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "数据存储后端"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "Snappy"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "数据压缩"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "OpenCV"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "图像处理"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "HDF5"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "数据存储格式"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "Boost"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "C++ 工具库"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "BLAS（OpenBLAS）"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "基础线性代数运算"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "GFlags"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "命令行参数解析"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "GLog"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:11
+msgid "日志记录"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:42
+msgid "获取源码"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:49
+msgid "配置 `Makefile.config`"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:58
+msgid "关闭 MLSL 支持"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:61
+msgid ""
+"MLSL (Machine Learning Scaling Library) 是 Intel "
+"提供的分布式训练加速库。对于单机训练场景，可以安全关闭此功能："
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:68
+msgid "关闭 MLSL 的优势："
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:77
+msgid "编译和测试"
+msgstr ""
+
+#: ../../doc/tvm-start/envs/caffe.md:109
+msgid "安装到系统或自定义路径（可选）"
+msgstr ""
+

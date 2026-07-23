@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:10002
+msgid "extern"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:30002
+msgid ""
+"验证 TVM 在不同目标设备上的向量化代码生成能力。测试分为 CPU 和 GPU 两个版本：CPU 版本使用循环展开策略处理向量化计算，GPU "
+"版本通过线程块和线程索引实现并行。核心逻辑通过手动构建 TIR 中间表示，验证生成代码在 LLVM/OpenCL/CUDA 后端的正确性。测试使用"
+" `te.extern` 创建外部计算节点，并检查输出结果是否符合预期。"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:40002
+msgid "CPU 版本：使用 SIMD 向量化策略（`float32x2`），每次迭代处理 2 个元素，实现 2 倍循环展开"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:60002
+msgid "GPU 版本：通过 `blockIdx.x` 和 `threadIdx.x` 实现两级并行，适配 GPU 的 SIMT 架构"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:80002
+msgid "`te.extern` 创建外部计算节点，分离计算定义与实现"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:80003
+msgid "`vload/vstore` 实现显式向量化内存访问"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:80004
+msgid "内存对齐：向量化访问要求 64 位对齐（`float32x2`对应 `2*4B=8B`）"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:120002
+msgid "跨设备统一验证："
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:150002
+msgid "打包 buffer"
+msgstr ""
+
+#: ../../doc/old/tutorials/codegen/extern.ipynb:200002
+msgid "打包缓冲区中间表示"
+msgstr ""
+

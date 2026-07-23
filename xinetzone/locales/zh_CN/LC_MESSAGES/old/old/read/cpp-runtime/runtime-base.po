@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:10002
+msgid "TVM Runtime base"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:10004
+msgid "源码见：`tvm/src/runtime/runtime_base.h`"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20002
+msgid "这段代码是 C++ 头文件，它定义了一些宏和函数，用于处理 TVM 运行时 API 的异常情况。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20004
+msgid "首先，该头文件包含了一些必要的头文件："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20006
+msgid "`<tvm/runtime/c_runtime_api.h>`：包含 TVM C API 的声明。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20007
+msgid "`<stdexcept>`：包含标准异常类的定义。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20009
+msgid "接下来，定义了两个宏："
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20010
+msgid "`API_BEGIN()`：用于标记函数开始执行的位置。在函数体中，使用 `try` 块来捕获可能抛出的异常。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20011
+msgid ""
+"`API_END()`：用于标记函数结束执行的位置。在函数体中，使用 `catch` "
+"块来捕获特定的异常类型，并返回相应的错误码。如果没有捕获到任何异常，则返回 `0` 表示成功。如果发生了 `EnvErrorAlreadySet`"
+" 异常，则返回 `-2`；如果发生了其他类型的异常，则调用  `TVMAPIHandleException()` 函数来处理异常并返回相应的值。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20013
+msgid ""
+"此外，还定义了宏 `API_END_HANDLE_ERROR(Finalize)`，用于处理异常并在发生错误时执行清理操作。与 "
+"`API_END()` 类似，它也使用 `try` 和 `catch` 块来捕获异常，但在捕获到异常后，会先执行传入的 `Finalize` "
+"参数所表示的清理操作，然后再调用 `TVMAPIHandleException()` 函数处理异常并返回相应的错误码。"
+msgstr ""
+
+#: ../../doc/old/old/read/cpp-runtime/runtime-base.ipynb:20015
+msgid ""
+"最后，定义了函数 `TVMAPIHandleException()`，用于处理异常。它接受 `std::exception` "
+"类型的参数，并返回整数值，表示 API 执行后的返回值。"
+msgstr ""
+

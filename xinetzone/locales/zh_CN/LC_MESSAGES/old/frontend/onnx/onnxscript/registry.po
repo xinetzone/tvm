@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:10002
+msgid "扩展 ONNX 注册表"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:10004
+msgid ""
+"参考：[扩展 ONNX "
+"注册表](https://pytorch.org/tutorials//beginner/onnx/onnx_registry_tutorial.html)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20002
+msgid "本教程是对 ONNX 注册表的简介，它使用户能够实现新的 ONNX 算子，甚至用新实现替换现有算子。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20004
+msgid ""
+"在模型导出到 ONNX 的过程中，PyTorch 模型被降低到由 [ATen "
+"算子](https://pytorch.org/docs/stable/torch.compiler_ir.html)组成的中间表示。虽然 "
+"ATen 算子由 PyTorch 核心团队维护，但 ONNX 导出器团队负责独立地通过 [ONNX "
+"Script](https://onnxscript.ai/) 将这些算子实现到 ONNX。用户也可以用自己的实现替换 ONNX "
+"导出器团队实现的行为，以修复错误或针对特定的 ONNX 运行时改进性能。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20006
+msgid "ONNX 注册表管理 PyTorch 算子与 ONNX 算子对应项之间的映射，并提供 API 以扩展注册表。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20008
+msgid "在本教程中，我们将涵盖三种需要使用自定义操作符扩展 ONNX 注册表的场景："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20010
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:30002
+msgid "不受支持的 ATen 算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20011
+msgid "具有现有 ONNX 运行时支持的自定义算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:20012
+msgid "没有 ONNX 运行时支持的自定义算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:30004
+msgid ""
+"尽管 ONNX 导出器团队尽力支持所有的 ATen 算子，但其中一些可能尚未得到支持。在这一节中，我们将演示如何将不受支持的 ATen 算子添加到"
+" ONNX 注册表中。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:30007
+msgid ""
+"实现不受支持的 ATen 算子的步骤与用自定义实现替换现有 ATen 算子的实现相同。由于我们在这个教程中实际上没有一个不受支持的 ATen "
+"算子符可以使用，我们将利用这个机会，用自定义实现来替换 `aten::add.Tensor` 的实现，就像如果该算子不存在于 ONNX "
+"注册表中一样。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:40002
+msgid "当模型由于不受支持的操作符而无法导出到 ONNX 时，ONNX 导出器将显示类似于以下的错误消息："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:50002
+msgid ""
+"错误消息指示不受支持的 ATen 算子的完全限定名称是 "
+"`aten::add.Tensor`。算子的完全限定名称由命名空间、算子名称和重载组成，格式为 "
+"`namespace::operator_name.overload`。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:50004
+msgid "要为不受支持的 ATen 算子添加支持或替换现有算子的实现，需要："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:50006
+msgid "ATen 算子的完全限定名称（例如 `aten::add.Tensor`）。此信息总是如上所示的错误消息中出现。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:50007
+msgid "使用 ONNX Script 的算子实现。ONNX Script 是本教程的先决条件。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:50008
+msgid ""
+"因为 `aten::add.Tensor` 已经被 ONNX "
+"注册表支持，我们将演示如何用自定义实现替换它，但请记住，同样的步骤适用于支持新的不受支持的 ATen 算子。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:50010
+msgid ""
+"这是可能的，因为 `OnnxRegistry` 允许用户覆盖算子注册。我们将用我们的自定义实现覆盖 `aten::add.Tensor` "
+"的注册，并验证它的存在。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:70002
+msgid ""
+"现在让我们检查模型，并验证模型是否使用了 `custom_aten_add` 而不是 `aten::add.Tensor`。图中有一个用于 "
+"`custom_aten_add` 的图节点，在其内部有四个函数节点，分别对应每个算子，以及一个用于常量属性的节点。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:90002
+msgid ""
+"这就是 `custom_aten_add_model` 在 ONNX 图中使用 Netron 的样子： "
+"![](images/custom_aten_add.jpg)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:100002
+msgid ""
+"在 `custom_aten_add` 函数内部，我们可以看到在函数中使用的三个 ONNX 节点（`CastLike`、`Add` 和 "
+"`Mul`），以及常量属性：![](images/custon_aten_add_2.jpg)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:110002
+msgid ""
+"这就是我们需要做的全部工作，以将新的 ATen 算子注册到 ONNX 注册表中。作为额外的一步，我们可以使用 ONNX Runtime "
+"运行模型，并将结果与 PyTorch 进行比较。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:130002
+msgid "具有现有 ONNX Runtime 支持的自定义算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:130003
+msgid ""
+"在这种情况下，用户使用标准的 PyTorch 算子创建模型，但 ONNX 运行时（例如 Microsoft 的 ONNX "
+"Runtime）可以为该内核提供自定义实现，有效地替换 ONNX 注册表中的现有实现。另一个用例是，当用户想要使用现有 ONNX "
+"算子的自定义实现来修复错误或提高特定算子的性能时。为了实现这一点，我们只需要将新实现注册到现有的 ATen 完全限定名称。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:130005
+msgid ""
+"在以下示例中，我们使用了来自 ONNX Runtime 的 `com.microsoft.Gelu`，它与 ONNX 规范中的 Gelu "
+"不同。因此，我们用命名空间 `com.microsoft` 和算子名称 `Gelu` 注册了 Gelu。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:130007
+msgid "在我们开始之前，让我们检查 `aten::gelu.default` 是否真的受到 ONNX 注册表的支持。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:150002
+msgid ""
+"在我们的示例中，`aten::gelu.default` 算子受到 ONNX 注册表的支持，所以 "
+"`onnx_registry.is_registered_op()` 返回 `True`。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:170002
+msgid ""
+"让我们检查模型，并验证模型是否使用了 `custom_aten_gelu()` 而不是 `aten::gelu`。注意图中有一个用于 "
+"`custom_aten_gelu` 的图节点，在 `custom_aten_gelu` 内部，有一个命名空间为 `com.microsoft` "
+"的 `Gelu` 函数节点。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:190002
+msgid ""
+"下面的图表显示了使用 Netron 的 `custom_aten_gelu_model` ONNX "
+"图：![](images/custom_aten_gelu.jpg)"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:200002
+msgid ""
+"在 `custom_aten_gelu` 函数内部，我们可以看到在函数中使用的来自模块 `com.microsoft` 的 `Gelu` "
+"节点：![](images/custom_aten_gelu2.jpg)。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:220002
+msgid "这就是我们需要做的全部工作。作为额外的步骤，我们可以使用 ONNX Runtime 运行模型，并将结果与 PyTorch 进行比较。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:240002
+msgid "没有 ONNX Runtime 支持的自定义算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:240004
+msgid "在这种情况下，算子不受任何 ONNX 运行时的支持，但我们希望将其作为自定义算子使用在 ONNX 图中。因此，我们需要在三个地方实现该算子："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:240006
+msgid "PyTorch FX 图"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:240007
+msgid "ONNX 注册表"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:240008
+msgid "ONNX 运行时"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:240010
+msgid "在以下示例中，我们希望使用一个自定义算子，它接受一个张量输入，并返回一个输出。该算子将输入加到自身，并返回四舍五入的结果。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:250002
+msgid "在 PyTorch FX 图中注册自定义算子（Beta）"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:250004
+msgid "首先，我们需要在 PyTorch FX 图中实现该算子。这可以通过使用 `torch._custom_op` 来完成。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:270002
+msgid "在 ONNX 注册表中注册自定义算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:270003
+msgid ""
+"对于步骤2和3，我们需要在 ONNX 注册表中实现该算子。在这个例子中，我们将使用命名空间 `test.customop` 和算子名称 "
+"`CustomOpOne` 以及 `CustomOpTwo` 在 ONNX 注册表中实现该算子。这两个算子已在 "
+"[`cpu_ops.cc`](https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/test/testdata/custom_op_library/cpu/cpu_ops.cc)"
+" 中注册并构建。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:290002
+msgid ""
+"`onnx_program` 通过 `onnx_program.model_proto` 将导出的模型暴露为 protobuf。图中有一个用于 "
+"`custom_addandround` 的图节点，在 `custom_addandround` 内部，有两个函数节点，每个算子一个。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:310002
+msgid "在 ONNX Runtime 中注册自定义算子"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:310004
+msgid ""
+"要将您的自定义算子库链接到 ONNX Runtime，您需要将 C++ 代码编译成共享库，并将其链接到 ONNX "
+"Runtime。请按照以下说明操作："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:310006
+msgid ""
+"按照 [ONNX Runtime "
+"的指令](https://pytorch.org/tutorials//beginner/onnx/%60https://github.com/microsoft/onnxruntime/blob"
+"/gh-pages/docs/reference/operators/add-custom-op.md)用 C++ 实现您的自定义算子。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:310007
+msgid ""
+"从 [ONNX Runtime "
+"发布页面](https://github.com/microsoft/onnxruntime/releases)下载 ONNX Runtime "
+"源码分发版。"
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:310008
+msgid "编译并将您的自定义算子库链接到 ONNX Runtime，例如："
+msgstr ""
+
+#: ../../doc/old/frontend/onnx/onnxscript/registry.ipynb:310012
+msgid "使用 ONNX Runtime Python API 运行模型，并将结果与 PyTorch 进行比较。"
+msgstr ""
+

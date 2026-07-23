@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, xinetzone
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 13:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../doc/old/old/codegen/module-export.ipynb:10002
+msgid "module 导出"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:10004
+msgid "参考：`tvm/tests/python/runtime/test_runtime_module_export.py`"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:40002
+msgid "`CSourceModuleCreate`"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb
+msgid "CSourceModuleCreate 用于创建 C 源代码模块，以便查看和编译 GCC 代码。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50004
+msgid "参数说明:"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50005
+msgid "**`const String& code`**"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50006
+msgid "这是字符串类型的参数，表示需要被查看和编译的 GCC 代码。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50007
+msgid "`const` 表示这个参数在函数内部不会被修改。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50008
+msgid "`String&` 表示这是字符串的引用，避免了不必要的拷贝。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50010
+msgid "**`const String& fmt`**"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50011
+msgid "这是字符串类型的参数，表示代码的格式。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50012
+msgid "可能用于指定代码的格式化方式（如缩进、换行等），或者用于指定代码的语言类型（如 C、C++ 等）。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50014
+msgid "**`const Array<String>& func_names`**"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50015
+msgid "这是字符串数组类型的参数，表示运行时模块中函数的名称。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50016
+msgid "`Array<String>` 可能是自定义的数组类型，用于存储多个字符串。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50017
+msgid "这些函数名称可能是需要在生成的 C 源代码模块中导出的函数。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50019
+#, python-brace-format
+msgid "**`const Array<String>& const_vars = {}`**"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50020
+msgid "这是可选的字符串数组类型的参数，表示C源代码模块中需要的常量变量。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50021
+#, python-brace-format
+msgid "`= {}` 表示这个参数有默认值，即空数组。如果调用函数时不提供这个参数，函数会使用空数组作为默认值。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50023
+msgid "返回值:"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50024
+msgid "**`runtime::Module`**"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50025
+msgid "这是函数的返回值类型，表示创建的 C 源代码模块。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50026
+msgid "`runtime::Module` 可能是自定义的类或结构体，用于表示运行时模块。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50028
+msgid "函数功能:"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50029
+msgid "该函数的主要功能是创建 C 源代码模块，该模块可以用于查看和编译 GCC 代码。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50030
+msgid "生成的模块可能包含指定的函数名称和常量变量，并且可以根据提供的代码格式进行格式化。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50032
+msgid "使用场景"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50033
+msgid "这个函数可能用于编译器或代码生成工具中，用于将高级语言代码（如 GCC 代码）转换为 C 源代码模块，以便进一步编译或执行。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:50034
+msgid "通过指定函数名称和常量变量，可以定制生成的C源代码模块的内容。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:60002
+msgid "示例调用"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:80002
+msgid "下面介绍更加复杂的例子。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:80004
+msgid "先定义一些头文件。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:100002
+msgid "动态库导出"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:120002
+msgid "静态库导出"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:130002
+msgid "生成两个 LLVM 模块："
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:150002
+msgid "``mod1`` 当前是 `'llvm'` 模块，将其保存并重新加载为普通的 `'static_library'`："
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:170002
+msgid "将 `mod1` 作为静态库导入到 `mod0` 中，并将其编译为独立的 DSO（动态共享对象）。"
+msgstr ""
+
+#: ../../doc/old/old/codegen/module-export.ipynb:190002
+msgid "导入的 ``mod1`` 被静态链接到 `mod0` 中。"
+msgstr ""
+
